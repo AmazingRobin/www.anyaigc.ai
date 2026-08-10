@@ -274,29 +274,36 @@ body{
 .af-btn-secondary{background:#fff;color:var(--af-ink);border:1px solid #d8b8aa}
 .af-btn-secondary:hover{background:#fdf6f2;border-color:var(--af-coral)}
 
-/* ---------- 页脚 ---------- */
-.af-footer{
-  background:#2a211f;
+/* ---------- 页脚（与 index.html 的 .af-sitefoot 保持一致） ---------- */
+.af-sitefoot{
+  background:#231b19;
   border-top:4px solid var(--af-coral);
   padding:28px 20px;
   text-align:center;
 }
-.af-footer-links{
+.af-sitefoot-inner{
+  max-width:1180px;
+  margin:0 auto;
+}
+.af-sitefoot-links{
   display:flex;
-  gap:20px;
+  align-items:center;
   justify-content:center;
+  gap:8px 16px;
   flex-wrap:wrap;
   margin-bottom:12px;
 }
-.af-footer-links a{
+.af-sitefoot-links a{
   font-size:14px;
+  font-weight:600;
   color:#cfc3bd;
   text-decoration:none;
   transition:color .2s ease;
 }
-.af-footer-links a:hover{color:#ffd38a}
-.af-footer-copy{font-size:13px;color:#8d7d76}
-.af-footer-copy a{color:#ffd38a;text-decoration:none}
+.af-sitefoot-links a:hover{color:#ffd38a}
+.af-sitefoot-links a:focus-visible{outline:3px solid rgba(255,211,138,.45);outline-offset:2px;border-radius:3px}
+.af-sitefoot-sep{color:#7d6a63}
+.af-sitefoot-copy{margin:0;font-size:13px;color:#b8aba4;line-height:1.8}
 
 a:focus-visible{outline:3px solid rgba(255,211,138,.55);outline-offset:2px;border-radius:3px}
 
@@ -316,6 +323,8 @@ a:focus-visible{outline:3px solid rgba(255,211,138,.55);outline-offset:2px;borde
   .af-topbar-inner{flex-direction:column;align-items:flex-start;gap:10px}
   .af-final-actions{display:grid;grid-template-columns:1fr;width:100%}
   .af-btn{width:100%}
+  .af-sitefoot-links{flex-direction:column;gap:8px}
+  .af-sitefoot-sep{display:none}
 }
 
 @media print{
@@ -326,6 +335,7 @@ a:focus-visible{outline:3px solid rgba(255,211,138,.55);outline-offset:2px;borde
   .af-hero-desc,.af-meta{color:#333}
   .af-badge{background:none;border:1px solid #999;color:#333}
   .af-section{border:1px solid #ccc;break-inside:avoid}
-  .af-footer{background:#fff;border-top:1px solid #ccc}
-  .af-footer-copy{color:#333}
+  .af-sitefoot{background:#fff;border-top:1px solid #ccc}
+  .af-sitefoot-links a{color:#333}
+  .af-sitefoot-copy{color:#333}
 }
