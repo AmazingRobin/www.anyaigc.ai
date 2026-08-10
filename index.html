@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AnyAIGC API中转站</title>
+</head>
+<body>
+    <main class="semi-layout-content" id="main-content" style="flex: 1 0 auto; overflow-y: auto; padding-left: 0px; padding-right: 0px; padding-bottom: 0px; position: relative; contain: layout style paint; content-visibility: auto;"><div style="display: block;"><div class="w-full overflow-x-hidden"><div class="overflow-x-hidden w-full"><div class="w-full overflow-x-hidden" data-lang="zh" data-lang-main="zh"><div><style>
+        body { margin: 0; padding: 0; }
+.af-page{
+  --af-ink:#241c1a;
+  --af-muted:#6c615c;
+  --af-canvas:#f8f5f2;
+  --af-surface:#ffffff;
+  --af-line:#eaded8;
+  --af-coral:#e45f45;
+  --af-coral-dark:#bd432f;
+  --af-amber:#d9a441;
+  --af-sage:#63796b;
+  background:var(--af-canvas);
+  color:var(--af-ink);
+  font-family:inherit;
+}
+.af-hero{background:#2a211f;color:#fff;border-bottom:4px solid var(--af-coral)}
+.af-inner{max-width:1180px;margin:0 auto;padding:68px 20px 44px}
+.af-badge{display:inline-block;padding:7px 12px;border-radius:999px;background:#3a2d29;border:1px solid #59423b;color:#f5d8cb;font-size:13px;font-weight:700;margin-bottom:18px}
+.af-title{max-width:980px;font-size:48px;line-height:1.16;font-weight:800;margin:0 0 18px;letter-spacing:0}
+.af-desc{font-size:17px;line-height:1.8;max-width:980px;color:#f7efeb;margin:0 0 12px}
+.af-sub{font-size:15px;line-height:1.85;max-width:980px;color:#cfc3bd;margin:0 0 28px}
+.af-highlight{color:#ffd38a;font-weight:700}
+.af-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:34px}
+.af-btn{display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box;min-height:46px;padding:12px 20px;border-radius:8px;text-decoration:none;font-weight:700;transition:background-color .2s ease,border-color .2s ease,transform .2s ease}
+.af-btn:hover{transform:translateY(-1px)}
+.af-btn:focus-visible{outline:3px solid rgba(255,211,138,.45);outline-offset:2px}
+.af-btn-primary{background:var(--af-coral);color:#fff;border:1px solid var(--af-coral)}
+.af-btn-primary:hover{background:var(--af-coral-dark);border-color:var(--af-coral-dark)}
+.af-btn-secondary{background:#342824;color:#fff;border:1px solid #665049}
+.af-btn-secondary:hover{background:#41312c;border-color:#8a6a60}
+.af-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:18px}
+.af-card{box-sizing:border-box;min-height:138px;background:#342825;border:1px solid #55413b;border-top:3px solid var(--af-coral);padding:18px;border-radius:8px}
+.af-card:nth-child(2){border-top-color:var(--af-amber)}
+.af-card:nth-child(3){border-top-color:#7e9a87}
+.af-card:nth-child(4){border-top-color:#d98d72}
+.af-card h3{margin:0 0 9px;font-size:17px;color:#fff}
+.af-card p{margin:0;color:#d8ccc6;line-height:1.7;font-size:14px}
+.af-section{max-width:1180px;margin:0 auto;padding:38px 20px 72px}
+.af-section-head{margin:0 0 16px}
+.af-section-head-spaced{margin-top:30px}
+.af-section-head h2{margin:0 0 6px;font-size:24px;line-height:1.35;color:var(--af-ink)}
+.af-section-head p{margin:0;color:var(--af-muted);font-size:14px;line-height:1.7}
+.af-list,.af-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.af-item,.af-step,.af-code{box-sizing:border-box;background:var(--af-surface);border:1px solid var(--af-line);border-radius:8px;padding:21px}
+.af-item{border-top:3px solid #e6b16a}
+.af-item:nth-child(2){border-top-color:#de745d}
+.af-item:nth-child(3){border-top-color:#7f9b89}
+.af-item h4,.af-step h4{margin:0 0 9px;color:var(--af-ink);font-size:17px}
+.af-item p,.af-step p{margin:0;color:var(--af-muted);line-height:1.75;font-size:14px}
+.af-steps{margin-top:18px}
+.af-step-num{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:999px;background:var(--af-coral);color:#fff;font-weight:800;margin-bottom:12px}
+.af-code{margin-top:18px;background:#211d1c;color:#f6e7df;border-color:#4a3934;border-left:4px solid var(--af-amber)}
+.af-code pre{margin:0;white-space:pre-wrap;word-break:break-word;font-size:13px;line-height:1.75}
+.af-tools{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:18px}
+.af-tool{display:block;box-sizing:border-box;min-height:130px;background:var(--af-surface);border:1px solid var(--af-line);border-top:3px solid #df725a;border-radius:8px;padding:18px;font-size:14px;color:var(--af-ink);font-weight:700;text-decoration:none;transition:border-color .2s ease,transform .2s ease,box-shadow .2s ease}
+.af-tool:nth-child(4n+2){border-top-color:#dda744}
+.af-tool:nth-child(4n+3){border-top-color:#78917f}
+.af-tool:nth-child(4n+4){border-top-color:#c27a69}
+.af-tool:hover{transform:translateY(-2px);border-color:#d8b9ac;box-shadow:0 10px 24px rgba(77,48,38,.08)}
+.af-tool-desc{display:block;font-weight:400;color:var(--af-muted);line-height:1.7;margin-top:6px}
+.af-final-cta{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-top:24px;padding:22px;background:#fff3ed;border:1px solid #f1c9b9;border-left:4px solid var(--af-coral);border-radius:8px}
+.af-final-copy h2{margin:0 0 6px;font-size:21px;color:var(--af-ink)}
+.af-final-copy p{margin:0;color:var(--af-muted);font-size:14px;line-height:1.7}
+.af-final-actions{display:flex;gap:10px;flex-wrap:wrap;flex:0 0 auto}
+.af-final-actions .af-btn-secondary{background:#fff;color:var(--af-ink);border-color:#d8b8aa}
+.af-inline-lang .lang{display:none!important}
+.af-inline-lang .lang-zh{display:inline!important}
+[data-lang-main] .af-inline-lang .lang{display:none!important}
+[data-lang-main="zh"] .af-inline-lang .lang-zh,
+[data-lang-main="en"] .af-inline-lang .lang-en,
+[data-lang-main="ja"] .af-inline-lang .lang-ja,
+[data-lang-main="ko"] .af-inline-lang .lang-ko{display:inline!important}
+.lang{display:none!important}
+.lang-zh{display:block!important}
+[data-lang-main] .lang{display:none!important}
+[data-lang-main="zh"] .lang-zh,
+[data-lang-main="en"] .lang-en,
+[data-lang-main="ja"] .lang-ja,
+[data-lang-main="ko"] .lang-ko{display:block!important}
+.af-btn .lang,
+.af-card h3 .lang,
+.af-item h4 .lang,
+.af-step h4 .lang{display:none!important}
+.af-btn .lang-zh,
+.af-card h3 .lang-zh,
+.af-item h4 .lang-zh,
+.af-step h4 .lang-zh{display:inline!important}
+[data-lang-main] .af-btn .lang,
+[data-lang-main] .af-card h3 .lang,
+[data-lang-main] .af-item h4 .lang,
+[data-lang-main] .af-step h4 .lang{display:none!important}
+[data-lang-main="zh"] .af-btn .lang-zh,
+[data-lang-main="en"] .af-btn .lang-en,
+[data-lang-main="ja"] .af-btn .lang-ja,
+[data-lang-main="ko"] .af-btn .lang-ko,
+[data-lang-main="zh"] .af-card h3 .lang-zh,
+[data-lang-main="en"] .af-card h3 .lang-en,
+[data-lang-main="ja"] .af-card h3 .lang-ja,
+[data-lang-main="ko"] .af-card h3 .lang-ko,
+[data-lang-main="zh"] .af-item h4 .lang-zh,
+[data-lang-main="en"] .af-item h4 .lang-en,
+[data-lang-main="ja"] .af-item h4 .lang-ja,
+[data-lang-main="ko"] .af-item h4 .lang-ko,
+[data-lang-main="zh"] .af-step h4 .lang-zh,
+[data-lang-main="en"] .af-step h4 .lang-en,
+[data-lang-main="ja"] .af-step h4 .lang-ja,
+[data-lang-main="ko"] .af-step h4 .lang-ko{display:inline!important}
+@media (max-width:980px){
+  .af-grid,.af-tools{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:760px){
+  .af-inner{padding:48px 16px 32px}
+  .af-section{padding:30px 16px 54px}
+  .af-title{font-size:34px}
+  .af-desc{font-size:16px}
+  .af-grid,.af-list,.af-steps,.af-tools{grid-template-columns:1fr}
+  .af-card,.af-tool{min-height:0}
+  .af-final-cta{align-items:flex-start;flex-direction:column}
+}
+@media (max-width:480px){
+  .af-title{font-size:30px}
+  .af-btns,.af-final-actions{display:grid;grid-template-columns:1fr;width:100%}
+  .af-btn{width:100%}
+}
+</style>
+
+<div class="af-page">
+  <section class="af-hero">
+    <div class="af-inner">
+      <div class="af-badge af-inline-lang">
+        <span class="lang lang-zh">OpenAI Compatible · 500+ 模型统一目录</span>
+        <span class="lang lang-en">OpenAI Compatible · 500+ Models in One Catalog</span>
+        <span class="lang lang-ja">OpenAI 互換 · 500以上のモデルを一元管理</span>
+        <span class="lang lang-ko">OpenAI 호환 · 500개 이상의 모델 통합 카탈로그</span>
+      </div>
+
+      <h1 class="af-title af-inline-lang">
+        <span class="lang lang-zh">AnyAIGC · 国内外大模型 API 中转平台</span>
+        <span class="lang lang-en">AnyAIGC · API Gateway for Global and Chinese AI Models</span>
+        <span class="lang lang-ja">AnyAIGC · 国内外大規模モデル API 中継プラットフォーム</span>
+        <span class="lang lang-ko">AnyAIGC · 글로벌 및 중국 AI 모델 API 중계 플랫폼</span>
+      </h1>
+
+      <p class="af-desc af-inline-lang">
+        <span class="lang lang-zh">国内网络可直接调用，兼容 OpenAI 协议，统一接入 Claude、OpenAI、Gemini、Grok、DeepSeek、通义千问、Kimi、豆包、智谱 GLM，以及文本、图像、视频、向量与检索模型。</span>
+        <span class="lang lang-en">OpenAI-compatible access to Claude, OpenAI, Gemini, Grok, DeepSeek, Qwen, Kimi, Doubao and GLM, plus text, image, video, embedding and retrieval models.</span>
+        <span class="lang lang-ja">OpenAI プロトコル互換で、Claude、OpenAI、Gemini、Grok、DeepSeek、Qwen、Kimi、Doubao、GLM、画像、動画、ベクトル、検索モデルを統一接続。</span>
+        <span class="lang lang-ko">OpenAI 프로토콜과 호환되며 Claude, OpenAI, Gemini, Grok, DeepSeek, Qwen, Kimi, Doubao, GLM과 텍스트, 이미지, 영상, 임베딩, 검색 모델을 통합 제공합니다.</span>
+      </p>
+
+      <p class="af-sub af-inline-lang">
+        <span class="lang lang-zh">适合开发者、工作室与企业团队接入 AI 应用、代码工具、自动化工作流和内部系统。<span class="af-highlight">模型 ID、价格与维护状态以控制台实时展示为准。</span></span>
+        <span class="lang lang-en">Built for developers, studios and teams shipping AI apps, coding tools, automation and internal systems. <span class="af-highlight">Current model IDs, pricing and maintenance status are shown in the console.</span></span>
+        <span class="lang lang-ja">開発者、スタジオ、企業チームの AI アプリ、コードツール、自動化、社内システムに対応。<span class="af-highlight">モデル ID、料金、提供状況はコンソールの最新表示をご確認ください。</span></span>
+        <span class="lang lang-ko">개발자, 스튜디오, 기업 팀의 AI 앱, 코딩 도구, 자동화 및 내부 시스템 구축에 적합합니다. <span class="af-highlight">모델 ID, 가격 및 운영 상태는 콘솔의 최신 정보를 기준으로 합니다.</span></span>
+      </p>
+
+      <div class="af-btns">
+        <a class="af-btn af-btn-primary" href="https://anyaigc.ai/register?aff=oOK7"><span class="lang lang-zh">创建API Key</span><span class="lang lang-en">Create an API Key</span><span class="lang lang-ja">API Key を作成</span><span class="lang lang-ko">API Key 만들기</span></a>
+        <a class="af-btn af-btn-secondary" href="https://anyaigc.ai/pricing"><span class="lang lang-zh">查看模型与价格</span><span class="lang lang-en">Models and Pricing</span><span class="lang lang-ja">モデルと料金</span><span class="lang lang-ko">모델 및 가격</span></a>
+      </div>
+
+      <div class="af-grid">
+        <div class="af-card"><h3><span class="lang lang-zh">500+ 模型统一目录</span><span class="lang lang-en">500+ Model Catalog</span><span class="lang lang-ja">500以上のモデル</span><span class="lang lang-ko">500개 이상 모델</span></h3><p><span class="lang lang-zh">覆盖语言、图像、视频、向量与检索模型，按控制台实时目录选择。</span><span class="lang lang-en">Language, image, video, embedding and retrieval models in one live catalog.</span><span class="lang lang-ja">言語、画像、動画、ベクトル、検索モデルを一つのカタログで選択。</span><span class="lang lang-ko">언어, 이미지, 영상, 임베딩, 검색 모델을 하나의 카탈로그에서 선택합니다.</span></p></div>
+        <div class="af-card"><h3><span class="lang lang-zh">兼容 OpenAI SDK</span><span class="lang lang-en">OpenAI SDK Compatible</span><span class="lang lang-ja">OpenAI SDK 互換</span><span class="lang lang-ko">OpenAI SDK 호환</span></h3><p><span class="lang lang-zh">多数现有项目只需替换 Base URL、API Key 和模型 ID 即可迁移。</span><span class="lang lang-en">Most existing projects migrate by changing the Base URL, API Key and model ID.</span><span class="lang lang-ja">多くの既存プロジェクトは Base URL、API Key、モデル ID の変更で移行可能。</span><span class="lang lang-ko">대부분의 기존 프로젝트는 Base URL, API Key, 모델 ID 변경으로 이전할 수 있습니다.</span></p></div>
+        <div class="af-card"><h3><span class="lang lang-zh">国内直连与灵活分组</span><span class="lang lang-en">Direct Access and Routing</span><span class="lang lang-ja">直接接続とルーティング</span><span class="lang lang-ko">직접 연결 및 라우팅</span></h3><p><span class="lang lang-zh">国内网络通常无需额外代理，可按价格、线路与可用性策略选择分组。</span><span class="lang lang-en">Choose routing groups by price, route and availability policy for your workload.</span><span class="lang lang-ja">価格、経路、可用性ポリシーに応じてルーティンググループを選択。</span><span class="lang lang-ko">가격, 경로 및 가용성 정책에 따라 라우팅 그룹을 선택할 수 있습니다.</span></p></div>
+        <div class="af-card"><h3><span class="lang lang-zh">按量计费与企业发票</span><span class="lang lang-en">Pay as You Go</span><span class="lang lang-ja">従量課金</span><span class="lang lang-ko">종량제</span></h3><p><span class="lang lang-zh">适合个人、工作室与企业团队按需使用，企业用户可联系客服确认发票方案。</span><span class="lang lang-en">Clear usage-based billing for individuals and teams, with enterprise support available.</span><span class="lang lang-ja">個人やチーム向けの従量課金。企業向けサポートにも対応。</span><span class="lang lang-ko">개인과 팀을 위한 사용량 기반 과금과 기업 지원을 제공합니다.</span></p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="af-section">
+    <div class="af-section-head">
+      <h2><span class="lang lang-zh">从需求到首次调用</span><span class="lang lang-en">From Use Case to First Request</span><span class="lang lang-ja">要件から最初の API 呼び出しまで</span><span class="lang lang-ko">요구사항부터 첫 API 호출까지</span></h2>
+      <p><span class="lang lang-zh">先确认使用场景与模型，再按三步完成接入，减少迁移和排错成本。</span><span class="lang lang-en">Choose the use case and model first, then complete integration in three steps.</span><span class="lang lang-ja">利用目的とモデルを確認し、3ステップで接続を完了します。</span><span class="lang lang-ko">사용 목적과 모델을 확인한 뒤 세 단계로 연동을 완료하세요.</span></p>
+    </div>
+
+    <div class="af-list">
+      <div class="af-item"><h4><span class="lang lang-zh">覆盖哪些场景？</span><span class="lang lang-en">Use Cases</span><span class="lang lang-ja">利用シーン</span><span class="lang lang-ko">활용 사례</span></h4><p><span class="lang lang-zh">AI 应用、代码工具、聊天助手、自动化流程、企业系统、知识库，以及图像、视频和检索任务。</span><span class="lang lang-en">AI apps, coding tools, assistants, automation, internal systems, knowledge bases, image, video and retrieval workloads.</span><span class="lang lang-ja">AI アプリ、コードツール、アシスタント、自動化、社内システム、ナレッジベース、画像、動画、検索用途に対応。</span><span class="lang lang-ko">AI 앱, 코딩 도구, 도우미, 자동화, 내부 시스템, 지식베이스, 이미지, 영상 및 검색 작업에 적합합니다.</span></p></div>
+      <div class="af-item"><h4><span class="lang lang-zh">为什么选择统一接口？</span><span class="lang lang-en">Why One API?</span><span class="lang lang-ja">統一 API の利点</span><span class="lang lang-ko">통합 API를 선택하는 이유</span></h4><p><span class="lang lang-zh">通过统一 Base URL 和 API Key 管理多模型调用，减少重复对接，并方便按项目切换模型与分组。</span><span class="lang lang-en">Manage multiple models through one Base URL and API Key, reducing repeated integrations and simplifying model changes.</span><span class="lang lang-ja">1つの Base URL と API Key で複数モデルを管理し、重複接続を減らしてモデル切替を簡素化。</span><span class="lang lang-ko">하나의 Base URL과 API Key로 여러 모델을 관리해 중복 연동을 줄이고 모델 전환을 단순화합니다.</span></p></div>
+      <div class="af-item"><h4><span class="lang lang-zh">支持哪些开发工具？</span><span class="lang lang-en">Supported Tools</span><span class="lang lang-ja">対応ツール</span><span class="lang lang-ko">지원 도구</span></h4><p><span class="lang lang-zh">支持 Claude Code、Codex、OpenClaw、Hermes、Cursor、Dify、Cherry Studio、Chatbox、OpenWebUI 与 n8n。</span><span class="lang lang-en">Works with Claude Code, Codex, OpenClaw, Hermes, Cursor, Dify, Cherry Studio, Chatbox, OpenWebUI and n8n.</span><span class="lang lang-ja">Claude Code、Codex、OpenClaw、Hermes、Cursor、Dify、Cherry Studio、Chatbox、OpenWebUI、n8n に対応。</span><span class="lang lang-ko">Claude Code, Codex, OpenClaw, Hermes, Cursor, Dify, Cherry Studio, Chatbox, OpenWebUI 및 n8n을 지원합니다.</span></p></div>
+    </div>
+
+    <div class="af-section-head af-section-head-spaced">
+      <h2><span class="lang lang-zh">三步完成接入</span><span class="lang lang-en">Connect in Three Steps</span><span class="lang lang-ja">3ステップで接続</span><span class="lang lang-ko">세 단계로 연동</span></h2>
+      <p><span class="lang lang-zh">创建 API Key 后，复制 Base URL 和真实模型 ID，即可开始验证调用。</span><span class="lang lang-en">Create an API Key, copy the Base URL and current model ID, then validate your first request.</span><span class="lang lang-ja">API Key を作成し、Base URL と現在のモデル ID をコピーして最初の呼び出しを確認します。</span><span class="lang lang-ko">API Key를 만든 뒤 Base URL과 현재 모델 ID를 복사해 첫 호출을 확인하세요.</span></p>
+    </div>
+
+    <div class="af-steps">
+      <div class="af-step"><div class="af-step-num">1</div><h4><span class="lang lang-zh">注册账号</span><span class="lang lang-en">Create Account</span><span class="lang lang-ja">アカウント登録</span><span class="lang lang-ko">계정 만들기</span></h4><p><span class="lang lang-zh">注册 AnyAIGC账号，进入控制台后即可开始创建自己的 API Key。</span><span class="lang lang-en">Sign up for AnyAIGC and create your own API Key from the console.</span><span class="lang lang-ja">AnyAIGCに登録し、コンソールから API Key を作成できます。</span><span class="lang lang-ko">AnyAIGC에 가입한 뒤 콘솔에서 API Key를 만들 수 있습니다.</span></p></div>
+      <div class="af-step"><div class="af-step-num">2</div><h4><span class="lang lang-zh">创建 API Key</span><span class="lang lang-en">Create API Key</span><span class="lang lang-ja">API Key 作成</span><span class="lang lang-ko">API Key 생성</span></h4><p><span class="lang lang-zh">复制 Base URL、API Key 和模型名称，按文档完成接入配置。</span><span class="lang lang-en">Copy the Base URL, API Key and model name, then follow the docs to integrate.</span><span class="lang lang-ja">Base URL、API Key、モデル名をコピーし、ドキュメントに従って接続します。</span><span class="lang lang-ko">Base URL, API Key, 모델명을 복사하고 문서에 따라 연동하세요.</span></p></div>
+      <div class="af-step"><div class="af-step-num">3</div><h4><span class="lang lang-zh">接入项目或工具</span><span class="lang lang-en">Connect Apps</span><span class="lang lang-ja">アプリに接続</span><span class="lang lang-ko">앱 연결</span></h4><p><span class="lang lang-zh">把 OpenAI SDK、Cursor、Dify、Chatbox 等工具的接口地址替换为 AnyAIGC地址。</span><span class="lang lang-en">Replace the API endpoint in OpenAI SDK, Cursor, Dify or Chatbox with AnyAIGC.</span><span class="lang lang-ja">OpenAI SDK、Cursor、Dify、Chatbox の API 接続先を AnyAIGCに変更します。</span><span class="lang lang-ko">OpenAI SDK, Cursor, Dify, Chatbox의 API 주소를 AnyAIGC 주소로 바꾸세요.</span></p></div>
+    </div>
+
+   <div class="af-code">
+<pre class="lang lang-zh">Base URL: https://anyaigc.ai/v1
+
+OpenAI SDK 接入时，将 baseURL 改为上方地址，
+apiKey 使用你在 AnyAIGC控制台创建的 API Key。</pre>
+<pre class="lang lang-en">Base URL: https://anyaigc.ai/v1
+
+When using the OpenAI SDK, set baseURL to the address above,
+and use the API Key created in your AnyAIGC console.</pre>
+<pre class="lang lang-ja">Base URL: https://anyaigc.ai/v1
+
+OpenAI SDK を使う場合は baseURL を上記のアドレスに変更し、
+AnyAIGC コンソールで作成した API Key を使用してください。</pre>
+<pre class="lang lang-ko">Base URL: https://anyaigc.ai/v1
+
+OpenAI SDK를 사용할 때 baseURL을 위 주소로 변경하고,
+AnyAIGC 콘솔에서 생성한 API Key를 사용하세요.</pre>
+</div>
+
+<div class="af-section-head af-section-head-spaced">
+  <h2><span class="lang lang-zh">常用开发工具接入</span><span class="lang lang-en">Developer Tool Integrations</span><span class="lang lang-ja">開発ツール連携</span><span class="lang lang-ko">개발 도구 연동</span></h2>
+  <p><span class="lang lang-zh">选择工具查看对应配置教程，接入前请先确认客户端支持的协议与真实模型 ID。</span><span class="lang lang-en">Open the matching setup guide and confirm the protocol and current model ID supported by your client.</span><span class="lang lang-ja">各ツールの設定ガイドを確認し、対応プロトコルと現在のモデル ID を確認してください。</span><span class="lang lang-ko">도구별 설정 가이드를 확인하고 클라이언트가 지원하는 프로토콜과 현재 모델 ID를 확인하세요.</span></p>
+</div>
+
+<div class="af-tools">
+  <a class="af-tool" href="https://docs.anyaigc.ai" target="_blank" rel="noopener">Claude Code<div class="af-tool-desc"><span class="lang lang-zh">终端 Claude 编程工作流，适合项目理解、代码问答、重构建议和脚本编写</span><span class="lang lang-en">Terminal coding workflow for project understanding, code Q&amp;A, refactoring and scripts</span><span class="lang lang-ja">プロジェクト理解、コード質問、リファクタリング、スクリプト作成向け</span><span class="lang lang-ko">프로젝트 이해, 코드 질의응답, 리팩터링 및 스크립트 작성에 적합</span></div></a>
+
+  <a class="af-tool" href="https://docs.anyaigc.ai" target="_blank" rel="noopener">Codex<div class="af-tool-desc"><span class="lang lang-zh">本地代码代理接入，适合读写项目、执行命令、修复问题、运行测试和工程化开发</span><span class="lang lang-en">Coding agent setup for editing projects, running commands, fixing issues and testing</span><span class="lang lang-ja">プロジェクト編集、コマンド実行、問題修正、テスト向け</span><span class="lang lang-ko">프로젝트 수정, 명령 실행, 문제 해결 및 테스트에 적합</span></div></a>
+
+  <a class="af-tool" href="https://docs.anyaigc.ai" target="_blank" rel="noopener">OpenClaw<div class="af-tool-desc"><span class="lang lang-zh">本地 AI 工作台接入，适合浏览器操作、文件处理、工具调用和多模型配置</span><span class="lang lang-en">Local AI workspace for browser actions, file handling, tools and multi-model setup</span><span class="lang lang-ja">ブラウザ操作、ファイル処理、ツール呼び出し、複数モデル設定向け</span><span class="lang lang-ko">브라우저 작업, 파일 처리, 도구 호출 및 멀티 모델 설정에 적합</span></div></a>
+
+  <a class="af-tool" href="https://docs.anyaigc.ai" target="_blank" rel="noopener">Hermes<div class="af-tool-desc"><span class="lang lang-zh">Agent 网关与自动化消息流转，适合任务分发、工具调用转发和长期流程编排</span><span class="lang lang-en">Agent gateway for task dispatch, tool-call forwarding and long-running workflows</span><span class="lang lang-ja">タスク配信、ツール呼び出し転送、長時間ワークフロー向け</span><span class="lang lang-ko">작업 분배, 도구 호출 전달 및 장기 워크플로에 적합</span></div></a>
+
+  <a class="af-tool" href="https://docs.anyaigc.ai" target="_blank" rel="noopener">Cursor<div class="af-tool-desc"><span class="lang lang-zh">适合代码生成、重构、项目问答与日常开发工作流</span><span class="lang lang-en">For code generation, refactoring, project Q&amp;A and daily development</span><span class="lang lang-ja">コード生成、リファクタリング、プロジェクト質問、日常開発向け</span><span class="lang lang-ko">코드 생성, 리팩터링, 프로젝트 질의응답 및 일상 개발에 적합</span></div></a>
+
+  <a class="af-tool" href="https://docs.anyaigc.ai" target="_blank" rel="noopener">Dify<div class="af-tool-desc"><span class="lang lang-zh">适合 AI 工作流、知识库、客服和企业内部应用</span><span class="lang lang-en">For AI workflows, knowledge bases, support assistants and internal apps</span><span class="lang lang-ja">AI ワークフロー、ナレッジベース、社内アプリ向け</span><span class="lang lang-ko">AI 워크플로, 지식베이스, 고객지원 및 내부 앱에 적합</span></div></a>
+
+  <a class="af-tool" href="https://docs.anyaigc.ai" target="_blank" rel="noopener">Chatbox / Cherry Studio<div class="af-tool-desc"><span class="lang lang-zh">适合日常对话、总结、翻译和多模型切换</span><span class="lang lang-en">For chat, summaries, translation and switching between models</span><span class="lang lang-ja">会話、要約、翻訳、複数モデル切替向け</span><span class="lang lang-ko">대화, 요약, 번역 및 멀티 모델 전환에 적합</span></div></a>
+
+  <a class="af-tool" href="https://docs.anyaigc.ai" target="_blank" rel="noopener">OpenWebUI / n8n<div class="af-tool-desc"><span class="lang lang-zh">适合自建平台、自动化编排与团队工具链</span><span class="lang lang-en">For self-hosted platforms, automation and team toolchains</span><span class="lang lang-ja">自社プラットフォーム、自動化、チームツール向け</span><span class="lang lang-ko">자체 플랫폼, 자동화 및 팀 도구 체인에 적합</span></div></a>
+</div>
+
+<div class="af-final-cta">
+  <div class="af-final-copy">
+    <h2><span class="lang lang-zh">准备开始第一次调用？</span><span class="lang lang-en">Ready for Your First Request?</span><span class="lang lang-ja">最初の API 呼び出しを始めますか？</span><span class="lang lang-ko">첫 API 호출을 시작하시겠어요?</span></h2>
+    <p><span class="lang lang-zh">先查看控制台中的真实模型 ID 和价格，再创建 API Key 进行小规模验证。</span><span class="lang lang-en">Check the current model ID and pricing in the console, then create an API Key for a small validation request.</span><span class="lang lang-ja">コンソールでモデル ID と料金を確認し、API Key を作成して小規模に検証してください。</span><span class="lang lang-ko">콘솔에서 모델 ID와 가격을 확인한 뒤 API Key를 만들어 소규모로 검증하세요.</span></p>
+  </div>
+  <div class="af-final-actions">
+    <a class="af-btn af-btn-primary" href="https://anyaigc.ai/register?aff=oOK7"><span class="lang lang-zh">注册并创建 API Key</span><span class="lang lang-en">Create an API Key</span><span class="lang lang-ja">API Key を作成</span><span class="lang lang-ko">API Key 만들기</span></a>
+    <a class="af-btn af-btn-secondary" href="https://anyaigc.ai/pricing"><span class="lang lang-zh">查看模型与价格</span><span class="lang lang-en">Models and Pricing</span><span class="lang lang-ja">モデルと料金</span><span class="lang lang-ko">모델 및 가격</span></a>
+  </div>
+</div>
+</section>
+</div></div></div></div></div></div></main>
+</body>
+</html>
