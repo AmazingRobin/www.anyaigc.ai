@@ -4,7 +4,7 @@
 
 > 一个 Base URL，一个 API Key，统一调用 500+ 国内外大模型。兼容 OpenAI 协议，国内网络可直连。
 
-本仓库是 [anyaigc.ai](https://anyaigc.ai) 的官方站点，同时这份 README 也可作为平台的完整介绍与接入指南。
+本仓库是 [anyaigc.ai](https://anyaigc.ai) 的官方站点，下面为平台的完整介绍与接入指南。
 
 ---
 
