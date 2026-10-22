@@ -1,0 +1,39 @@
+/*
+ * 专题页统一滚动条样式。所有 /zh/models/ 与 /en/models/ 页面都要在其他样式之前引入：
+ *   <link rel="stylesheet" href="/assets/models/scrollbar.css">
+ * 默认是浅色主题（专题首页）。深色专题页在 <html> 上加 data-scrollbar="dark"。
+ * 这里只提供中性默认值。每个专题页必须在自己的 CSS 里覆盖 --sb-thumb / --sb-thumb-bg / --sb-thumb-hover / --sb-track，
+ * 换成该模型的品牌色（scripts/check_topics.py 会检查）。
+ */
+:root{
+  --sb-size:10px;
+  --sb-track:#f1ebe7;
+  --sb-thumb:#cdb8ae;
+  --sb-thumb-bg:var(--sb-thumb);
+  --sb-thumb-hover:#e45f45;
+}
+:root[data-scrollbar="dark"]{
+  --sb-track:#101012;
+  --sb-thumb:#3a3a40;
+  --sb-thumb-hover:#5b5b62;
+}
+
+/* Chrome / Edge / Safari：用 ::-webkit-scrollbar，可以做圆角、渐变和悬停色。
+   注意 Chrome 121+ 一旦设置 scrollbar-color 就会忽略这些规则，所以标准属性只给不支持的浏览器 */
+::-webkit-scrollbar{width:var(--sb-size);height:var(--sb-size)}
+::-webkit-scrollbar-track{background:transparent}
+html::-webkit-scrollbar-track{background:var(--sb-track)}
+::-webkit-scrollbar-thumb{background:var(--sb-thumb-bg);border-radius:999px;border:2px solid transparent;background-clip:padding-box;min-height:40px}
+::-webkit-scrollbar-thumb:hover{background:var(--sb-thumb-hover);background-clip:padding-box}
+::-webkit-scrollbar-button{display:none;width:0;height:0}
+::-webkit-scrollbar-corner{background:transparent}
+
+/* Firefox 等不支持 ::-webkit-scrollbar 的浏览器 */
+@supports not selector(::-webkit-scrollbar){
+  html{scrollbar-width:thin;scrollbar-color:var(--sb-thumb) var(--sb-track)}
+  *{scrollbar-width:thin;scrollbar-color:var(--sb-thumb) transparent}
+}
+
+/* 文本选中色 */
+::selection{background:rgba(228,95,69,.28)}
+:root[data-scrollbar="dark"] ::selection{background:rgba(254,60,125,.35);color:#fff}

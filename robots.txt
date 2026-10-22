@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /.spec-workflow/
+Disallow: /scripts/
+
+Sitemap: https://www.anyaigc.ai/sitemap.xml

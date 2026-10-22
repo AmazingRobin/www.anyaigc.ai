@@ -2,7 +2,7 @@
 
 简体中文 ｜ [English](./README.en.md)
 
-> 一个 Base URL，一个 API Key，统一调用 500+ 国内外大模型。兼容 OpenAI 协议，国内网络可直连。
+> 一个 Base URL，一个 API Key，统一调用 300+ 国内外大模型。兼容 OpenAI 协议，国内网络可直连。
 
 本仓库是 [anyaigc.ai](https://anyaigc.ai) 的官方站点，下面为平台的完整介绍与接入指南。
 
@@ -40,7 +40,7 @@ AnyAIGC 是一个 **大模型 API 中转（聚合）平台**。它把 Claude、O
 
 ## ✨ 核心特性
 
-### 🗂️ 500+ 模型统一目录
+### 🗂️ 300+ 模型统一目录
 覆盖语言、图像、视频、向量（Embedding）与检索模型，在控制台按实时目录选择，不用记各家的接口差异。
 
 ### 🔌 兼容 OpenAI SDK
@@ -76,7 +76,7 @@ Claude Code、Codex、Cursor、Dify、Chatbox、n8n 等客户端共用同一个 
 ## 🛠️ 三步完成接入
 
 ### 1️⃣ 注册账号
-注册 AnyAIGC 账号并进入控制台 👉 [立即注册](https://anyaigc.ai/register?aff=oOK7)
+注册 AnyAIGC 账号并进入控制台 👉 [立即注册](https://anyaigc.ai/register?aff=oOK7&channel=c_wpduopc9)
 
 ### 2️⃣ 创建 API Key
 在控制台创建 API Key，同时记下：
@@ -236,7 +236,7 @@ curl https://anyaigc.ai/v1/chat/completions \
 | 入口 | 地址 |
 | :--- | :--- |
 | 🏠 官网 | <https://anyaigc.ai> |
-| 🔑 注册并创建 API Key | <https://anyaigc.ai/register?aff=oOK7> |
+| 🔑 注册并创建 API Key | <https://anyaigc.ai/register?aff=oOK7&channel=c_wpduopc9> |
 | 💵 模型与价格 | <https://anyaigc.ai/pricing> |
 | 📚 接入文档 | <https://docs.anyaigc.ai> |
 
@@ -246,6 +246,6 @@ curl https://anyaigc.ai/v1/chat/completions \
 
 **一个 Base URL，接入你需要的全部模型** 🚀
 
-[创建 API Key](https://anyaigc.ai/register?aff=oOK7) · [查看模型与价格](https://anyaigc.ai/pricing) · [阅读文档](https://docs.anyaigc.ai)
+[创建 API Key](https://anyaigc.ai/register?aff=oOK7&channel=c_wpduopc9) · [查看模型与价格](https://anyaigc.ai/pricing) · [阅读文档](https://docs.anyaigc.ai)
 
 </div>

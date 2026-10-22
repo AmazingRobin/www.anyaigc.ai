@@ -2,7 +2,7 @@
 
 [简体中文](./README.md) ｜ English
 
-> One Base URL, one API Key — call 500+ domestic and overseas large models through a single endpoint. OpenAI-compatible, with direct access from within mainland China.
+> One Base URL, one API Key — call 300+ domestic and overseas large models through a single endpoint. OpenAI-compatible, with direct access from within mainland China.
 
 This repository hosts the official site for [anyaigc.ai](https://anyaigc.ai). This README also serves as a complete platform overview and integration guide.
 
@@ -40,7 +40,7 @@ It suits **developers, indie studios and enterprise teams** building AI apps, co
 
 ## ✨ Key Features
 
-### 🗂️ 500+ models in one catalog
+### 🗂️ 300+ models in one catalog
 Covers language, image, video, embedding and retrieval models. Pick from the live catalog in the console — no need to memorize each vendor's API quirks.
 
 ### 🔌 OpenAI SDK compatible
@@ -76,7 +76,7 @@ Main coverage grouped by vendor (**exact model IDs, pricing and maintenance stat
 ## 🛠️ Get Started in Three Steps
 
 ### 1️⃣ Register an account
-Register an AnyAIGC account and open the console 👉 [Sign up now](https://anyaigc.ai/register?aff=oOK7)
+Register an AnyAIGC account and open the console 👉 [Sign up now](https://anyaigc.ai/register?aff=oOK7&channel=c_wpduopc9)
 
 ### 2️⃣ Create an API Key
 Create an API Key in the console, and note down:
@@ -236,7 +236,7 @@ Yes — contact support to confirm the specifics.
 | Entry | URL |
 | :--- | :--- |
 | 🏠 Website | <https://anyaigc.ai> |
-| 🔑 Register & create an API Key | <https://anyaigc.ai/register?aff=oOK7> |
+| 🔑 Register & create an API Key | <https://anyaigc.ai/register?aff=oOK7&channel=c_wpduopc9> |
 | 💵 Models & pricing | <https://anyaigc.ai/pricing> |
 | 📚 Integration docs | <https://docs.anyaigc.ai> |
 
@@ -246,6 +246,6 @@ Yes — contact support to confirm the specifics.
 
 **One Base URL, access every model you need** 🚀
 
-[Create an API Key](https://anyaigc.ai/register?aff=oOK7) · [View models & pricing](https://anyaigc.ai/pricing) · [Read the docs](https://docs.anyaigc.ai)
+[Create an API Key](https://anyaigc.ai/register?aff=oOK7&channel=c_wpduopc9) · [View models & pricing](https://anyaigc.ai/pricing) · [Read the docs](https://docs.anyaigc.ai)
 
 </div>
