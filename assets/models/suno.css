@@ -84,6 +84,8 @@ img{max-width:100%;display:block}
 .s-dot{width:7px;height:7px;border-radius:50%;background:var(--s-green);box-shadow:0 0 0 4px rgba(2,217,92,.18)}
 .s-h1{margin:0;max-width:900px;font-size:72px;line-height:1.02;font-weight:500;letter-spacing:-.015em;color:#fff;text-wrap:balance}
 .s-h1 span{display:block}
+.s-h1 .s-h1-brand{display:flex;align-items:center;justify-content:center;gap:.22em}
+.s-logo{flex:0 0 auto;width:.82em;height:.82em}
 .s-hero-sub{margin:20px 0 0;max-width:620px;font-size:17px;line-height:1.7;font-weight:300;color:#fff}
 .s-prompt{position:relative;width:min(760px,100%);margin:36px auto 0;padding:18px 18px 14px 22px;text-align:left;border-radius:20px;border:1px solid var(--s-line);background:rgba(28,28,31,.35);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);box-shadow:-5px 0 40px rgba(255,176,3,.12),5px 0 40px rgba(254,60,125,.12)}
 .s-prompt-text{min-height:32px;margin:0;font-size:18px;line-height:32px;color:rgba(255,255,255,.88)}
@@ -196,6 +198,13 @@ img{max-width:100%;display:block}
 .s-glass strong{display:block;font-size:36px;line-height:1.1;font-weight:500;color:#fff;letter-spacing:-.01em}
 .s-glass h3{margin:12px 0 6px;font-size:17px;font-weight:500;color:#fff}
 .s-glass p{margin:0;font-size:14.5px;line-height:1.65;color:var(--s-muted)}
+
+/* ---------- 企业接入 ---------- */
+.s-ent{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;max-width:1000px;margin:0 auto}
+.s-ent .s-glass{width:auto;background:var(--s-card);-webkit-backdrop-filter:none;backdrop-filter:none;border-color:var(--s-line)}
+.s-ent .s-glass strong{font-size:30px}
+#enterprise .s-price-cta{margin-top:36px}
+@media (max-width:640px){.s-ent{grid-template-columns:1fr}}
 
 /* ---------- 快速开始 ---------- */
 .s-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin:0 0 40px;padding:0;list-style:none;counter-reset:step}

@@ -1,4 +1,4 @@
-/* Claude Opus 5.5 专题页样式：参考 anthropic.com/claude/opus 的象牙白 + 陶土色编辑风格，不使用其品牌素材 */
+/* Claude 系列专题页共用样式：参考 anthropic.com/claude/{opus,sonnet,haiku,fable} 的象牙白 + 陶土色编辑风格（四个官方页同一模板） */
 :root{
   --o-bg:#faf9f5;
   --o-bg-2:#f5f4ed;
@@ -24,6 +24,8 @@
 /* 滚动条：基础样式见 scrollbar.css，这里换成象牙底 + 陶土色 */
 :root{--sb-track:#faf9f5;--sb-thumb:#d1cfc5;--sb-thumb-bg:#d1cfc5;--sb-thumb-hover:#d97757}
 ::selection{background:rgba(217,119,87,.25);color:var(--o-ink)}
+/* 深色区域（页脚、总览页结尾、代码块）选中文字用浅色，避免深底深字看不清 */
+.o-foot ::selection,.p-final ::selection,.o-code ::selection,.o-tag::selection,.o-btn-dark::selection,.o-pill-dark::selection{background:rgba(217,119,87,.55);color:#faf9f5}
 
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
@@ -238,3 +240,19 @@ code{font-family:var(--o-mono);font-size:.88em;padding:1px 6px;border-radius:4px
   .o-final h2{font-size:32px}
   .o-foot-cols{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
+
+/* ---------- 旧版提示 ---------- */
+.o-notice{display:flex;align-items:flex-start;gap:14px;max-width:720px;margin:28px auto 0;padding:16px 18px;border:1px solid var(--o-line-2);border-left:3px solid var(--o-clay);border-radius:10px;background:var(--o-bg-2);text-align:left;font-size:14.5px;line-height:1.6;color:var(--o-body)}
+.o-notice strong{color:var(--o-ink)}
+.o-notice a{color:var(--o-ink);text-decoration:underline;text-decoration-thickness:1.3px;text-underline-offset:3px}
+.o-notice a:hover{color:var(--o-clay-ink)}
+
+/* ---------- 同系列模型 ---------- */
+.o-family{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:0;padding:0;list-style:none}
+.o-family a{display:flex;flex-direction:column;gap:4px;height:100%;padding:16px 18px;border:1px solid var(--o-line);border-radius:12px;background:var(--o-bg-2);text-decoration:none;color:var(--o-ink);transition:border-color .2s var(--o-ease),background-color .2s var(--o-ease)}
+.o-family a:hover{border-color:var(--o-line-2);background:var(--o-bg-3)}
+.o-family b{font-size:16px;font-weight:700}
+.o-family span{font-size:13px;line-height:1.5;color:var(--o-muted)}
+.o-family .o-tag{align-self:flex-start;margin-bottom:2px;color:var(--o-bg)}
+.o-family [aria-current="page"]{border-color:var(--o-clay);background:#fff}
+@media (max-width:640px){.o-family{grid-template-columns:1fr}}

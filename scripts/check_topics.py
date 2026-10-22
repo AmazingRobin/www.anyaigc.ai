@@ -54,6 +54,38 @@ def check_scrollbar(tag, html):
         errors.append(f'{tag} 专题 CSS 里不要设置 scrollbar-color（Chrome 121+ 会忽略自定义滚动条）')
 
 
+ENT = {
+    'zh': ('增值税', '专票', '对公转账', '合同', '专属'),
+    'en': ('VAT', 'bank transfer', 'contract', 'dedicated'),
+}
+
+
+def check_enterprise(tag, lang, html):
+    # 每个专题页都必须有企业接入版块，并在 description 和 FAQ 里写明开票/对公转账
+    if 'id="enterprise"' not in html:
+        errors.append(f'{tag} 缺少企业接入版块（section id="enterprise"）')
+    if 'href="#enterprise"' not in html:
+        errors.append(f'{tag} 导航缺少指向 #enterprise 的入口')
+    m = re.search(r'id="enterprise".*?</section>', html, re.S)
+    body = m.group(0) if m else ''
+    low = body.lower()
+    miss = [k for k in ENT[lang] if k.lower() not in low]
+    if m and miss:
+        errors.append(f'{tag} 企业接入版块缺少要点：{", ".join(miss)}')
+    if m and 'https://anyaigc.ai/customersupport' not in body:
+        errors.append(f'{tag} 企业接入版块缺少联系客服按钮')
+    d = re.search(r'<meta name="description" content="(.*?)"', html)
+    key = ('对公', '专票', '发票') if lang == 'zh' else ('invoic', 'bank transfer', 'contract')
+    if d and not any(k in d.group(1).lower() for k in key):
+        errors.append(f'{tag} meta description 未提及企业开票/对公转账')
+    faq_key = ('专票', '对公转账') if lang == 'zh' else ('VAT special invoice', 'bank transfer')
+    for k in faq_key:
+        if not re.search(r'"@type": "Question", "name": "[^"]*' + re.escape(k), html, re.I):
+            errors.append(f'{tag} FAQ 缺少关于「{k}」的问题')
+    if re.search(r'联系客服确认发票方案|contact support about invoicing', html, re.I):
+        errors.append(f'{tag} 仍有含糊的开票说法，应改为明确支持对公转账和增值税发票')
+
+
 def page_url(lang, slug):
     return f'{SITE}/{lang}/models/' + ('' if slug == 'index' else slug)
 
@@ -102,6 +134,7 @@ def check(lang, slug):
         errors.append(f'{tag} 未引入 /assets/models/scrollbar.css')
     if slug != 'index':
         check_scrollbar(tag, s)
+        check_enterprise(tag, lang, s)
 
     types = []
     for m in re.findall(r'<script type="application/ld\+json">(.*?)</script>', s, re.S):
@@ -135,6 +168,11 @@ def check(lang, slug):
     for r in re.findall(r'https://anyaigc\.ai/register[^"\s<]*', s):
         if r.replace('&amp;', '&') != REGISTER:
             errors.append(f'{tag} 注册链接应为 {REGISTER}，实际 {r}')
+    # 只看可见文字和 JSON-LD 文本，忽略标签属性（如 class="s-group"、scope="rowgroup"）
+    body = re.sub(r'<script\b.*?</script>|<style\b.*?</style>', ' ', s, flags=re.S)
+    visible = re.sub(r'<[^>]+>', ' ', body) + ' '.join(re.findall(r'"(?:name|text)": "([^"]*)"', s))
+    if re.search(r'分组|\bgroups?\b', visible, re.I):
+        errors.append(f'{tag} 页面不能出现令牌分组信息（分组/group）')
     if '500+' in s:
         errors.append(f'{tag} 平台模型数应写 300+，发现 500+')
 
@@ -159,7 +197,8 @@ def main():
                 errors.append(f'[{lang}/models/index.html] JSON-LD ItemList 未加入 {slug}')
             if f'<loc>{page_url(lang, slug)}</loc>' not in sitemap:
                 errors.append(f'[sitemap.xml] 未加入 {page_url(lang, slug)}')
-        cards = len(re.findall(r'<li class="af-model[ "]', hub))
+        # 卡片 + 分类标题里链接的系列总览页（如 Claude 系列标题链接到 /models/claude）
+        cards = len(re.findall(r'<li class="af-model[ "]', hub)) + len(re.findall(r'<h3 class="af-section-head"[^>]*><a href="/' + lang + r'/models/', hub))
         m = re.search(r'"numberOfItems": (\d+)', hub)
         if m and int(m.group(1)) != len(slugs[lang]) - 1:
             errors.append(f'[{lang}/models/index.html] numberOfItems={m.group(1)}，实际专题数 {len(slugs[lang]) - 1}')

@@ -25,6 +25,8 @@ scripts/preview.py        本地预览（模拟 Cloudflare clean URL）
 scripts/check_topics.py   专题页自检
 ```
 
+同一厂商的系列模型（如 Claude 全系）共用一套样式和脚本：`assets/models/claude.css`、`assets/models/claude.js`。系列页面底部有「同系列模型」列表（`section#family`，放在 FAQ 前），新增或下线一个系列模型时，要同步更新该系列所有页面的列表、专题首页对应分类、sitemap。旧版模型（官方标为 Legacy）首屏加 `.o-notice` 提示并链接到替代型号，FAQ 加一条「停用了吗」。
+
 `<slug>` 用小写短横线，和模型官方名对齐，例如 `suno`、`gpt-5`、`claude-opus-4-5`。中英文用同一个 slug。
 
 ## 固定信息（所有页面统一）
@@ -39,6 +41,7 @@ scripts/check_topics.py   专题页自检
 | 联系客服 | `https://anyaigc.ai/customersupport` |
 | 鉴权方式 | `Authorization: Bearer <API Key>` |
 | 计价货币 | USD |
+| 企业服务 | 增值税普票/专票、对公转账、签订合同、专属客服与技术对接（每个专题页必须写；不写 SLA、企业专属分组/线路） |
 
 ## 工作流程
 
@@ -79,7 +82,9 @@ scripts/check_topics.py   专题页自检
 
 ### 6. 分享图
 
-做 1200×630 的 `assets/og/<slug>-zh.png` 和 `<slug>-en.png`：写一个临时 HTML，用 Playwright 截图。风格跟专题页一致，内容是模型名 + 一句卖点 + 3–4 个标签。临时 HTML 用完删掉。
+做 1200×630 的 `assets/og/<slug>-zh.png` 和 `<slug>-en.png`：写一个临时 HTML，用 Playwright 截图。风格跟专题页一致，内容是模型名 + 一句卖点 + 3–4 个标签。临时 HTML 用完删掉。Claude 系列用 `python scripts/og_claude.py` 生成源文件（副标题在脚本的 `SUBS` 里维护）。
+
+**品牌名必须写成 `AnyAIGC`（区分大小写）**，分享图、导航、页脚都一样，不要用 `text-transform:uppercase` 或写成 `ANYAIGC`。（环境变量名 `ANYAIGC_API_KEY` 是代码，不受此限制。）
 
 ### 7. 验证（必须做完再交付）
 
@@ -88,7 +93,7 @@ python scripts/preview.py            # http://localhost:8765/zh/models/<slug>
 PYTHONIOENCODING=utf-8 python scripts/check_topics.py
 ```
 
-- `check_topics.py` 必须 0 错误。它会检查 title/description、canonical、hreflang、OG、JSON-LD、FAQ 条数一致、站内链接、scrollbar.css 引入与滚动条品牌色变量、注册链接参数、中英对称、专题首页与 sitemap 注册。
+- `check_topics.py` 必须 0 错误。它会检查 title/description、canonical、hreflang、OG、JSON-LD、FAQ 条数一致、站内链接、scrollbar.css 引入与滚动条品牌色变量、注册链接参数、企业接入版块/导航/description/FAQ、中英对称、专题首页与 sitemap 注册。
 - 用 Playwright 在 1440×900 和 390×844 截全页，确认：没有 JS 报错、手机端 `scrollWidth` 不超过视口、价格表在手机上可读。
 - 点一次语言切换链接，确认中英互跳正常。
 - 不要用 `python -m http.server` 预览，它不支持 clean URL，`/en/models/<slug>` 会 404。
@@ -103,7 +108,11 @@ PYTHONIOENCODING=utf-8 python scripts/check_topics.py
 
 - **每个专题页按该模型官网的风格单独设计，不套固定模板。** 配色、字体气质、版块节奏都参考官网。样式写在 `assets/models/<slug>.css`，类名用模型专属前缀（Suno 用 `s-`），避免和其他专题冲突。
 - 不使用专辑封面、产品截图、插画等素材，用 CSS 渐变、SVG、波形等自己画。
-- 模型的标志性图形（如 Claude 星芒）不要自己画，画出来不像。用户指定来源时，从官方页面提取原始 SVG path 内联使用（例：Claude 星芒取自 `claude.ai/login` 的 `svg[data-cds="ClaudeLogo"]` 第一个 path，viewBox `0 0 24 24`）。专题页、专题首页卡片和分享图用同一份 path。
+- **模型 logo 一律用 lobe-icons，不要自己画**（MIT 协议，https://github.com/lobehub/lobe-icons ，图标检索 https://lobehub.com/zh/icons ）。
+  - 下载固定版本的 SVG 到 `assets/icons/<id>.svg`（地址 `https://registry.npmmirror.com/@lobehub/icons-static-svg/<版本>/files/icons/<id>.svg`，版本号写在 `scripts/icons.py` 的 `VERSION`）。有 `-color` 彩色版就用彩色版（如 `claude-color`），没有就用单色版并在 SVG 上写 `fill`（如 `suno` 在深色页用白色）。
+  - 新模型：把 id 加进 `scripts/icons.py` 的 `ICONS`，运行 `python scripts/icons.py --fetch`，再在脚本里加对应页面的替换规则。脚本把 path 内联进页面（首屏、结尾、专题首页卡片），重复运行结果不变。
+  - 分享图用同一份 SVG（`scripts/og_claude.py` 读 `assets/icons/claude-color.svg`）。
+  - 页脚商标声明照常保留。
 - 专题首页（`/zh/models/`、`/en/models/`）统一用 `hub.css`，沿用站点首页的 af-* 暖色风格，不按模型变。
 - **滚动条必须换成该模型的品牌色。** 所有专题页 `<head>` 里先引入 `/assets/models/scrollbar.css`（只提供圆角、尺寸和中性默认色），再引入页面自己的 CSS，并在自己的 CSS 里覆盖全部 4 个变量：
   - 浅色页面：写在 `:root{...}` 里
@@ -122,6 +131,7 @@ PYTHONIOENCODING=utf-8 python scripts/check_topics.py
   颜色从模型官网的主色/强调色里取，轨道色和页面背景一致。不要在页面里设置 `scrollbar-color`，Chrome 121+ 设置它后会忽略 `::-webkit-scrollbar` 的圆角和渐变。`check_topics.py` 会检查这 4 个变量是否齐全。
 - 资源和站内链接一律用 `/` 开头的绝对路径。站内链接不带 `.html`。
 - `/assets/models/` 下的 CSS/JS 引用都带版本号 `?v=YYYYMMDD`（例 `/assets/models/suno.css?v=20261022`）。改了某个 CSS/JS，就把所有引用它的页面里的版本号改成当天日期，否则浏览器和 Cloudflare 会继续用缓存里的旧文件。
+- 页面里如果设置了全局 `::selection` 文字颜色，深色区域（页脚、深色结尾、代码块、深色按钮/标签）必须单独设置浅色选中样式，否则深底深字看不清。
 - 关键颜色（品牌色、logo 填充）直接写在 SVG 的 `fill` 属性上，不要只靠外部 CSS，避免样式缓存或加载失败时颜色不对。
 - 必须支持 `prefers-reduced-motion`，动画在该模式下关闭。
 - 响应式断点至少覆盖 1100 / 900 / 640px，手机端不能横向溢出。
@@ -135,9 +145,10 @@ PYTHONIOENCODING=utf-8 python scripts/check_topics.py
 5. 使用场景
 6. 平台优势：300+ 模型一个 Key、国内直连、固定价格、并发
 7. 快速开始：三步 + cURL / Python 示例
-8. FAQ：8–12 条
-9. 结尾 CTA + 相关链接（专题首页、模型广场、文档、另一语言版本）
-10. 页脚：免责声明"<模型> 是 <公司> 的商标，AnyAIGC 是独立 API 服务商，与其无隶属关系"
+8. **企业接入（必须有）**：`<section id="enterprise">`，增值税普票/专票、对公转账、签订合同、专属客服与技术对接，主按钮联系企业客服。完整要求见 CLAUDE.md「企业接入」。不写 SLA 和企业专属分组/线路。
+9. FAQ：8–12 条，其中必须包含开票（增值税专票）和对公转账/合同两条
+10. 结尾 CTA + 相关链接（专题首页、模型广场、文档、另一语言版本）
+11. 页脚：免责声明"<模型> 是 <公司> 的商标，AnyAIGC 是独立 API 服务商，与其无隶属关系"
 
 ### 价格版块
 

@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Suno API 价格与接入｜Suno v6 音乐生成 API $0.1191/次 - AnyAIGC</title>
-<meta name="description" content="AnyAIGC Suno API：一个 API Key 调用 Suno v6/v5.5 音乐生成，发起创作 $0.1191/次，支持人声伴奏分离、MIDI、歌词生成、音效与 Persona，固定价格，300 RPM 并发，国内网络可直连。">
-<meta name="keywords" content="Suno API,Suno API 价格,Suno API 中转,Suno v6 API,AI 音乐生成 API,Suno 接口,人声伴奏分离 API,AnyAIGC">
+<meta name="description" content="Suno API：一个 API Key 调用 Suno v6/v5.5 音乐生成，发起创作 $0.1191/次，支持人声伴奏分离、MIDI、歌词生成、音效与 Persona，固定价格，300 RPM 并发，支持对公转账与增值税专票。">
+<meta name="keywords" content="Suno API,Suno API 价格,Suno API 中转,Suno v6 API,AI 音乐生成 API,Suno 接口,人声伴奏分离 API,Suno API 企业,Suno API 发票,AnyAIGC">
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
 <meta name="theme-color" content="#101012">
 <link rel="canonical" href="https://www.anyaigc.ai/zh/models/suno">
@@ -19,17 +19,17 @@
 <meta property="og:locale:alternate" content="en_US">
 <meta property="og:url" content="https://www.anyaigc.ai/zh/models/suno">
 <meta property="og:title" content="Suno API 价格与接入｜AI 音乐生成 API - AnyAIGC">
-<meta property="og:description" content="发起创作 $0.1191/次，人声伴奏分离、MIDI、歌词、音效一个 API 搞定。固定价格，300 RPM 并发。">
+<meta property="og:description" content="发起创作 $0.1191/次，人声伴奏分离、MIDI、歌词、音效一个 API 搞定。固定价格，300 RPM 并发，企业可对公转账、开专票。">
 <meta property="og:image" content="https://www.anyaigc.ai/assets/og/suno-zh.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="AnyAIGC Suno API：AI 音乐生成接口">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Suno API 价格与接入｜AI 音乐生成 API - AnyAIGC">
-<meta name="twitter:description" content="发起创作 $0.1191/次，人声伴奏分离、MIDI、歌词、音效一个 API 搞定。固定价格，300 RPM 并发。">
+<meta name="twitter:description" content="发起创作 $0.1191/次，人声伴奏分离、MIDI、歌词、音效一个 API 搞定。固定价格，300 RPM 并发，企业可对公转账、开专票。">
 <meta name="twitter:image" content="https://www.anyaigc.ai/assets/og/suno-zh.png">
 <link rel="stylesheet" href="/assets/models/scrollbar.css?v=20261022">
-<link rel="stylesheet" href="/assets/models/suno.css?v=20261022">
+<link rel="stylesheet" href="/assets/models/suno.css?v=20261022d">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -53,7 +53,7 @@
       "@id": "https://www.anyaigc.ai/zh/models/suno#webpage",
       "url": "https://www.anyaigc.ai/zh/models/suno",
       "name": "Suno API 价格与接入｜Suno v6 音乐生成 API $0.1191/次 - AnyAIGC",
-      "description": "AnyAIGC Suno API：一个 API Key 调用 Suno 音乐生成，发起创作 $0.1191/次，支持人声伴奏分离、MIDI、歌词生成、音效与 Persona，固定价格，300 RPM 并发。",
+      "description": "AnyAIGC Suno API（支持企业对公转账、合同与增值税普票/专票）：一个 API Key 调用 Suno 音乐生成，发起创作 $0.1191/次，支持人声伴奏分离、MIDI、歌词生成、音效与 Persona，固定价格，300 RPM 并发。",
       "inLanguage": "zh-CN",
       "isPartOf": {"@id": "https://www.anyaigc.ai/#website"},
       "breadcrumb": {"@id": "https://www.anyaigc.ai/zh/models/suno#breadcrumb"},
@@ -112,7 +112,9 @@
         {"@type": "Question", "name": "Suno API 能做哪些事？", "acceptedAnswer": {"@type": "Answer", "text": "可以用文本描述或自定义歌词生成带人声的完整歌曲或纯音乐，生成歌词和音效，提升风格标签，上传参考音频，进行人声伴奏分离、全轨道分离并导出 MIDI，获取逐句歌词时间线，以及创建歌手风格 Persona。"}},
         {"@type": "Question", "name": "支持哪些 Suno 模型版本？", "acceptedAnswer": {"@type": "Answer", "text": "通过 mv 参数选择版本：chirp-v3-0、chirp-v3-5、chirp-v4、chirp-v4-5、chirp-v5、chirp-v5-5、chirp-v6、chirp-v6-wild、chirp-v6-mini，覆盖 Suno v3 到最新的 v6 系列。不传 mv 时使用默认版本，可用版本以 AnyAIGC 文档为准。"}},
         {"@type": "Question", "name": "Max Mode 和普通创作有什么区别？", "acceptedAnswer": {"@type": "Answer", "text": "Max Mode 使用更高质量的生成设置，通常在人声细节和编曲完整度上更好，价格为普通创作的 2 倍（$0.2382/次）。适合正式发布的成品，普通模式适合小样和批量探索。"}},
-        {"@type": "Question", "name": "国内可以直接调用 Suno API 吗？", "acceptedAnswer": {"@type": "Answer", "text": "可以。AnyAIGC 面向国内网络优化，通常无需额外代理即可调用 Suno 接口，按美元价格计费，企业用户可联系客服确认发票方案。"}},
+        {"@type": "Question", "name": "国内可以直接调用 Suno API 吗？", "acceptedAnswer": {"@type": "Answer", "text": "可以。AnyAIGC 面向国内网络优化，通常无需额外代理即可调用 Suno 接口，按美元价格计费，企业可对公转账并开具增值税发票。"}},
+        {"@type": "Question", "name": "AnyAIGC 能开发票吗？支持增值税专票吗？", "acceptedAnswer": {"@type": "Answer", "text": "能。AnyAIGC 可以按实际充值金额开具增值税普通发票和增值税专用发票，开票信息提交给客服即可。"}},
+        {"@type": "Question", "name": "企业可以对公转账和签合同吗？", "acceptedAnswer": {"@type": "Answer", "text": "可以。支持企业对公转账充值，也可以签订服务合同，并提供专属客服和技术对接。企业采购请联系 AnyAIGC 客服。"}},
         {"@type": "Question", "name": "生成的音乐可以商用吗？", "acceptedAnswer": {"@type": "Answer", "text": "商用权利取决于 Suno 的最新授权条款及你的具体使用场景。正式商用发布前，请查阅 Suno 官方条款；如有疑问可联系 AnyAIGC 客服。"}},
         {"@type": "Question", "name": "支持哪些曲风和语言？", "acceptedAnswer": {"@type": "Answer", "text": "Suno 覆盖流行、摇滚、电子、Lo-fi、说唱、民谣、电影配乐等主流曲风，并支持中文、英文、日文、韩文等多种语言的歌词与人声。"}}
       ]
@@ -132,6 +134,7 @@
         <li><a href="/zh/models/">模型专题</a></li>
         <li><a href="https://anyaigc.ai/pricing">模型广场</a></li>
         <li><a href="#pricing">Suno 价格</a></li>
+        <li><a href="#enterprise">企业接入</a></li>
         <li><a href="https://docs.anyaigc.ai" target="_blank" rel="noopener">API 文档</a></li>
       </ul>
     </nav>
@@ -167,7 +170,7 @@
         </ol>
       </nav>
       <p class="s-eyebrow"><span class="s-dot" aria-hidden="true"></span>v3 – v6 全版本 · 固定价格 · 300 RPM</p>
-      <h1 class="s-h1" id="hero-title"><span>Suno API</span><span>让代码写出任何歌曲</span></h1>
+      <h1 class="s-h1" id="hero-title"><span class="s-h1-brand"><svg class="s-logo" viewBox="0 0 24 24" fill="#ffffff" fill-rule="evenodd" aria-hidden="true" focusable="false"><path d="M16.5 0C20.642 0 24 5.373 24 12h-9c0 6.627-3.358 12-7.5 12C3.358 24 0 18.627 0 12h9c0-6.627 3.358-12 7.5-12z"></path></svg>Suno API</span><span>让代码写出任何歌曲</span></h1>
       <p class="s-hero-sub">在 AnyAIGC 用一个 API Key 调用 Suno：从一句提示词生成带人声的完整歌曲，再做人声伴奏分离、导出 MIDI、生成歌词与音效。发起创作只要 $0.1191/次。</p>
 
       <div class="s-prompt" data-prompts='["做一首关于周五下班的 City Pop，女声，副歌要上头","给游戏第三关写一段紧张的 8-bit 战斗配乐","为咖啡品牌写一首 30 秒的温暖民谣广告歌","一首雨夜城市的 Lo-fi 钢琴，纯音乐"]'>
@@ -194,6 +197,7 @@
         <li><strong>4 项</strong>免费工具</li>
         <li><strong>MIDI</strong>全轨道导出</li>
         <li><strong>v3 – v6</strong>全版本可选</li>
+        <li><strong>对公 · 专票</strong>企业采购</li>
         <li aria-hidden="true"><strong>$0.1191</strong>每次创作</li>
         <li aria-hidden="true"><strong>300 RPM</strong>并发</li>
         <li aria-hidden="true"><strong>300+</strong>模型共用一个 Key</li>
@@ -201,6 +205,7 @@
         <li aria-hidden="true"><strong>MIDI</strong>全轨道导出</li>
         <li aria-hidden="true"><strong>多语言</strong>歌词与人声</li>
         <li aria-hidden="true"><strong>v3 – v6</strong>全版本可选</li>
+        <li aria-hidden="true"><strong>对公 · 专票</strong>企业采购</li>
       </ul>
     </div>
   </section>
@@ -362,8 +367,28 @@
       <h2 class="s-mega-title s-reveal" id="mega-title">300 RPM<small>支持每分钟 300 次请求，批量生产不排队</small></h2>
       <div class="s-glass-row">
         <div class="s-glass s-reveal"><strong>1 个 Key</strong><h3>300+ 模型通用</h3><p>Suno、Claude、GPT、Gemini、视频与图像模型共用同一个 API Key 和余额。</p></div>
-        <div class="s-glass s-reveal"><strong>国内直连</strong><h3>无需额外代理</h3><p>面向国内网络优化，开发和生产环境都能稳定调用，企业可开发票。</p></div>
+        <div class="s-glass s-reveal"><strong>国内直连</strong><h3>无需额外代理</h3><p>面向国内网络优化，开发和生产环境都能稳定调用。</p></div>
         <div class="s-glass s-reveal"><strong>固定价</strong><h3>账单可预期</h3><p>每个功能一个价格，不随积分、会员等级浮动，成本好算。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 企业接入 -->
+  <section class="s-section" id="enterprise" aria-labelledby="ent-title">
+    <div class="s-wrap">
+      <div class="s-head s-center s-reveal">
+        <h2 class="s-h2" id="ent-title">企业接入 Suno API</h2>
+        <p class="s-lead">团队和公司可以直接走企业流程采购，财务、法务和技术对接都有对应支持。</p>
+      </div>
+      <div class="s-glass-row s-ent">
+        <div class="s-glass s-reveal"><strong>增值税发票</strong><h3>普票、专票都能开</h3><p>按实际充值金额开具增值税普通发票或增值税专用发票，方便企业报销和抵扣。</p></div>
+        <div class="s-glass s-reveal"><strong>对公转账</strong><h3>公司账户直接付款</h3><p>支持企业对公转账充值，无需个人垫付，账目清晰。</p></div>
+        <div class="s-glass s-reveal"><strong>签订合同</strong><h3>满足采购与法务流程</h3><p>可与 AnyAIGC 签订服务合同，适配企业内部的采购审批要求。</p></div>
+        <div class="s-glass s-reveal"><strong>专属对接</strong><h3>客服与技术支持</h3><p>提供专属客服和技术对接，协助完成接入、批量任务调度和日常问题排查。</p></div>
+      </div>
+      <div class="s-price-cta s-reveal">
+        <a class="s-pill s-pill-aura s-pill-lg" href="https://anyaigc.ai/customersupport">联系企业客服</a>
+        <a class="s-pill s-pill-ghost s-pill-lg" href="https://anyaigc.ai/register?aff=oOK7&channel=c_wpduopc9">先注册试用</a>
       </div>
     </div>
   </section>
@@ -443,7 +468,9 @@ print(task[<span class="s">"status"</span>], task.get(<span class="s">"fail_reas
         <details><summary><h3>Suno API 能做哪些事？</h3></summary><div class="s-ans"><p>用文本描述或自定义歌词生成带人声的完整歌曲或纯音乐，生成歌词和音效，提升风格标签，上传参考音频，做人声伴奏分离、全轨道分离并导出 MIDI，获取逐句歌词时间线，以及创建歌手风格 Persona。</p></div></details>
         <details><summary><h3>支持哪些 Suno 模型版本？</h3></summary><div class="s-ans"><p>通过 <code>mv</code> 参数选择版本：<code>chirp-v3-0</code>、<code>chirp-v3-5</code>、<code>chirp-v4</code>、<code>chirp-v4-5</code>、<code>chirp-v5</code>、<code>chirp-v5-5</code>、<code>chirp-v6</code>、<code>chirp-v6-wild</code>、<code>chirp-v6-mini</code>，覆盖 Suno v3 到最新的 v6 系列。不传 <code>mv</code> 时使用默认版本，可用版本以 <a href="https://docs.anyaigc.ai/reference/suno/submit/music" target="_blank" rel="noopener">AnyAIGC 文档</a>为准。</p></div></details>
         <details><summary><h3>Max Mode 和普通创作有什么区别？</h3></summary><div class="s-ans"><p>Max Mode 使用更高质量的生成设置，通常在人声细节和编曲完整度上更好，价格为普通创作的 2 倍（$0.2382/次）。正式发布的成品用 Max Mode，小样和批量探索用普通模式更划算。</p></div></details>
-        <details><summary><h3>国内可以直接调用 Suno API 吗？</h3></summary><div class="s-ans"><p>可以。AnyAIGC 面向国内网络优化，通常无需额外代理即可调用，企业用户可以联系客服确认发票方案。</p></div></details>
+        <details><summary><h3>国内可以直接调用 Suno API 吗？</h3></summary><div class="s-ans"><p>可以。AnyAIGC 面向国内网络优化，通常无需额外代理即可调用，企业可以对公转账并开具增值税发票。</p></div></details>
+        <details><summary><h3>AnyAIGC 能开发票吗？支持增值税专票吗？</h3></summary><div class="s-ans"><p>能。AnyAIGC 可以按实际充值金额开具增值税普通发票和增值税专用发票，开票信息提交给客服即可。</p></div></details>
+        <details><summary><h3>企业可以对公转账和签合同吗？</h3></summary><div class="s-ans"><p>可以。支持企业对公转账充值，也可以签订服务合同，并提供专属客服和技术对接。企业采购请<a href="https://anyaigc.ai/customersupport">联系 AnyAIGC 客服</a>。</p></div></details>
         <details><summary><h3>生成的音乐可以商用吗？</h3></summary><div class="s-ans"><p>商用权利取决于 Suno 的最新授权条款和你的具体使用场景。正式商用发布前请查阅 Suno 官方条款，有疑问可以联系 AnyAIGC 客服。</p></div></details>
         <details><summary><h3>支持哪些曲风和语言？</h3></summary><div class="s-ans"><p>覆盖流行、摇滚、电子、Lo-fi、说唱、民谣、电影配乐等主流曲风，支持中文、英文、日文、韩文等多种语言的歌词与人声。</p></div></details>
       </div>

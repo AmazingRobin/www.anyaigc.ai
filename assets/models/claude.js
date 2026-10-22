@@ -1,4 +1,4 @@
-// Claude Opus 5.5 专题页交互：导航阴影、滚动渐显、代码语言切换、代码复制
+// Claude 系列专题页共用交互：导航阴影、滚动渐显、代码语言切换、代码复制
 (function () {
   document.documentElement.classList.remove('no-js');
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;

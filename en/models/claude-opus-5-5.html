@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Claude Opus 5.5 API Pricing: 88% Off List Price | AnyAIGC</title>
-<meta name="description" content="claude-opus-5-5 API via Anthropic-compatible /v1/messages: $0.4765/1M input, $2.382/1M output, ~12% of list price. Unlimited concurrency, Claude Code ready.">
-<meta name="keywords" content="Claude Opus 5.5 API,claude-opus-5-5,Claude Opus 5.5 API pricing,Claude API price,cheap Claude API,Claude Code API,Opus 5.5 API key,AnyAIGC">
+<meta name="description" content="Enterprise-ready Claude Opus 5.5 API: Anthropic-compatible /v1/messages, $0.4765/1M input, $2.382/1M output, ~12% of list price, contracts and invoicing.">
+<meta name="keywords" content="Claude Opus 5.5 API,claude-opus-5-5,Claude Opus 5.5 API pricing,Claude API price,cheap Claude API,Claude Code API,Opus 5.5 API key,Claude API for business,Claude API enterprise,AnyAIGC">
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
 <meta name="theme-color" content="#faf9f5">
 <link rel="canonical" href="https://www.anyaigc.ai/en/models/claude-opus-5-5">
@@ -19,17 +19,17 @@
 <meta property="og:locale:alternate" content="zh_CN">
 <meta property="og:url" content="https://www.anyaigc.ai/en/models/claude-opus-5-5">
 <meta property="og:title" content="Claude Opus 5.5 API at 88% Off List Price | AnyAIGC">
-<meta property="og:description" content="Native Anthropic /v1/messages API. $0.4765/1M input, $2.382/1M output, unlimited concurrency, works with Claude Code.">
+<meta property="og:description" content="Native Anthropic /v1/messages API. $0.4765/1M input, $2.382/1M output, unlimited concurrency, works with Claude Code. Contracts, bank transfer and invoices for teams.">
 <meta property="og:image" content="https://www.anyaigc.ai/assets/og/claude-opus-5-5-en.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="AnyAIGC Claude Opus 5.5 API: about 12% of Anthropic's list price">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Claude Opus 5.5 API at 88% Off List Price | AnyAIGC">
-<meta name="twitter:description" content="Native Anthropic /v1/messages API. $0.4765/1M input, $2.382/1M output, unlimited concurrency, works with Claude Code.">
+<meta name="twitter:description" content="Native Anthropic /v1/messages API. $0.4765/1M input, $2.382/1M output, unlimited concurrency, works with Claude Code. Contracts, bank transfer and invoices for teams.">
 <meta name="twitter:image" content="https://www.anyaigc.ai/assets/og/claude-opus-5-5-en.png">
 <link rel="stylesheet" href="/assets/models/scrollbar.css?v=20261022b">
-<link rel="stylesheet" href="/assets/models/claude-opus-5-5.css?v=20261022b">
+<link rel="stylesheet" href="/assets/models/claude.css?v=20261022f">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -66,7 +66,8 @@
       "itemListElement": [
         {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.anyaigc.ai/"},
         {"@type": "ListItem", "position": 2, "name": "Models", "item": "https://www.anyaigc.ai/en/models/"},
-        {"@type": "ListItem", "position": 3, "name": "Claude Opus 5.5 API", "item": "https://www.anyaigc.ai/en/models/claude-opus-5-5"}
+        {"@type": "ListItem", "position": 3, "name": "Claude", "item": "https://www.anyaigc.ai/en/models/claude"},
+        {"@type": "ListItem", "position": 4, "name": "Claude Opus 5.5 API", "item": "https://www.anyaigc.ai/en/models/claude-opus-5-5"}
       ]
     },
     {
@@ -103,12 +104,14 @@
         {"@type": "Question", "name": "How much does the Claude Opus 5.5 API cost?", "acceptedAnswer": {"@type": "Answer", "text": "On AnyAIGC, claude-opus-5-5 is billed per token: $0.4765 per million input tokens, $2.382 per million output tokens, $0.5956 for 5-minute cache writes, $0.953 for 1-hour cache writes, and $0.0238 for cache hits. Anthropic's list price is $4 input and $20 output, so AnyAIGC comes in at about 11.9% of list price."}},
         {"@type": "Question", "name": "What is the Claude Opus 5.5 model ID?", "acceptedAnswer": {"@type": "Answer", "text": "The model ID is claude-opus-5-5. Put it in the model field of your request body."}},
         {"@type": "Question", "name": "Is the AnyAIGC Claude API compatible with Anthropic's official API?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The endpoint is https://anyaigc.ai/v1/messages and the request body follows the Anthropic Messages format (model, max_tokens, system, messages, tools, cache_control, and so on). Authenticate with Authorization: Bearer followed by your API key. With the official SDK, just set the base URL to https://anyaigc.ai."}},
-        {"@type": "Question", "name": "Can I use Claude Opus 5.5 in Claude Code?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. In the env block of ~/.claude/settings.json, set ANTHROPIC_BASE_URL to https://anyaigc.ai, ANTHROPIC_AUTH_TOKEN to your API key, and ANTHROPIC_MODEL to claude-opus-5-5, then run claude. You can also install and configure everything with one command: curl -fsSL https://www.anyaigc.ai/install.sh | bash. When you create your token, pick the Claude Code group, which supports tool calling."}},
+        {"@type": "Question", "name": "Can I use Claude Opus 5.5 in Claude Code?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. In the env block of ~/.claude/settings.json, set ANTHROPIC_BASE_URL to https://anyaigc.ai, ANTHROPIC_AUTH_TOKEN to your API key, and ANTHROPIC_MODEL to claude-opus-5-5, then run claude. You can also install and configure everything with one command: curl -fsSL https://www.anyaigc.ai/install.sh | bash."}},
         {"@type": "Question", "name": "How is prompt caching billed?", "acceptedAnswer": {"@type": "Answer", "text": "Add cache_control to a content block to enable caching. The first write is billed at the cache write rate ($0.5956 for 5 minutes or $0.953 for 1 hour, per million tokens). After that, cached tokens cost only $0.0238 per million, about 5% of the regular input price. Caching works best for long system prompts, large codebase context, and multi-turn agent tasks."}},
         {"@type": "Question", "name": "Are there concurrency or rate limits?", "acceptedAnswer": {"@type": "Answer", "text": "AnyAIGC sets no concurrency limit on claude-opus-5-5. Every account gets this by default, so it works well for batch jobs and running multiple agents in parallel."}},
         {"@type": "Question", "name": "What is Claude Opus 5.5 good at?", "acceptedAnswer": {"@type": "Answer", "text": "Anthropic positions Opus 5.5 as a hybrid reasoning model for serious coding and AI agents. It is a strong fit for large codebase refactors, multi-step agent tasks, long-document analysis, and complex reasoning. According to Anthropic's published results, it scores 66.4% on Terminal-Bench 4.0."}},
-        {"@type": "Question", "name": "Can I call the Claude Opus 5.5 API from mainland China?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. AnyAIGC is optimized for networks in mainland China, so you can usually call https://anyaigc.ai/v1/messages without an extra proxy. Billing is in USD, and business customers can contact support about invoicing options."}},
+        {"@type": "Question", "name": "Can I call the Claude Opus 5.5 API from mainland China?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. AnyAIGC is optimized for networks in mainland China, so you can usually call https://anyaigc.ai/v1/messages without an extra proxy. Billing is in USD, and companies can pay by bank transfer and get VAT invoices."}},
         {"@type": "Question", "name": "How do I get a Claude Opus 5.5 API key?", "acceptedAnswer": {"@type": "Answer", "text": "Sign up at anyaigc.ai, add credit, and create a token in the console. The same key works for Claude Opus 5.5 and 300+ other models on the platform."}},
+        {"@type": "Question", "name": "Can AnyAIGC issue invoices, including VAT special invoices?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. AnyAIGC issues invoices for the amount you top up, including Chinese VAT general invoices and VAT special invoices. Send your billing details to support to request one."}},
+        {"@type": "Question", "name": "Can my company pay by bank transfer and sign a contract?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Companies can top up by corporate bank transfer and sign a service agreement, and get a dedicated support and technical contact. Contact AnyAIGC support to get started."}},
         {"@type": "Question", "name": "Is my data used for training?", "acceptedAnswer": {"@type": "Answer", "text": "Requests are encrypted in transit over HTTPS. See the AnyAIGC Privacy Policy for data handling details. The model's own data policy is governed by Anthropic's official terms."}}
       ]
     }
@@ -126,6 +129,7 @@
         <li><a class="o-pill" href="/en/models/">Models</a></li>
         <li><a class="o-pill" href="https://anyaigc.ai/pricing">Model Catalog</a></li>
         <li><a class="o-pill" href="#pricing">Pricing</a></li>
+        <li><a class="o-pill" href="#enterprise">Enterprise</a></li>
         <li><a class="o-pill" href="https://docs.anyaigc.ai" target="_blank" rel="noopener">API Docs</a></li>
       </ul>
     </nav>
@@ -146,11 +150,12 @@
         <ol class="o-crumbs">
           <li><a href="/">Home</a></li>
           <li><a href="/en/models/">Models</a></li>
+          <li><a href="/en/models/claude">Claude</a></li>
           <li aria-current="page">Claude Opus 5.5 API</li>
         </ol>
       </nav>
       <h1 class="o-title" id="hero-title">
-        <svg class="o-mark" viewBox="0 0 24 24" fill="#d97757" aria-hidden="true" focusable="false"><path d="M11.376 24L10.776 23.544L10.44 22.8L10.776 21.312L11.16 19.392L11.472 17.856L11.76 15.96L11.928 15.336L11.904 15.288L11.784 15.312L10.344 17.28L8.16 20.232L6.432 22.056L6.024 22.224L5.304 21.864L5.376 21.192L5.784 20.616L8.16 17.568L9.6 15.672L10.536 14.592L10.512 14.448H10.464L4.128 18.576L3 18.72L2.496 18.264L2.568 17.52L2.808 17.28L4.704 15.96L9.432 13.32L9.504 13.08L9.432 12.96H9.192L8.4 12.912L5.712 12.84L3.384 12.744L1.104 12.624L0.528 12.504L0 11.784L0.048 11.424L0.528 11.112L1.224 11.16L2.736 11.28L5.016 11.424L6.672 11.52L9.12 11.784H9.504L9.552 11.616L9.432 11.52L9.336 11.424L6.96 9.84L4.416 8.16L3.072 7.176L2.352 6.672L1.992 6.216L1.848 5.208L2.496 4.488L3.384 4.56L3.6 4.608L4.488 5.304L6.384 6.768L8.88 8.616L9.24 8.904L9.408 8.808V8.736L9.24 8.472L7.896 6.024L6.456 3.528L5.808 2.496L5.64 1.872C5.576 1.656 5.544 1.416 5.544 1.152L6.288 0.144001L6.696 0L7.704 0.144001L8.112 0.504001L8.736 1.92L9.72 4.152L11.28 7.176L11.736 8.088L11.976 8.904L12.072 9.168H12.24V9.024L12.36 7.296L12.6 5.208L12.84 2.52L12.912 1.752L13.296 0.840001L14.04 0.360001L14.616 0.624001L15.096 1.32L15.024 1.752L14.76 3.6L14.184 6.504L13.824 8.472H14.04L14.28 8.208L15.264 6.912L16.92 4.848L17.64 4.032L18.504 3.12L19.056 2.688H20.088L20.832 3.816L20.496 4.992L19.44 6.336L18.552 7.464L17.28 9.168L16.512 10.536L16.584 10.632H16.752L19.608 10.008L21.168 9.744L22.992 9.432L23.832 9.816L23.928 10.2L23.592 11.016L21.624 11.496L19.32 11.952L15.888 12.768L15.84 12.792L15.888 12.864L17.424 13.008L18.096 13.056H19.728L22.752 13.272L23.544 13.8L24 14.424L23.928 14.928L22.704 15.528L21.072 15.144L17.232 14.232L15.936 13.92H15.744V14.016L16.848 15.096L18.84 16.896L21.36 19.224L21.48 19.8L21.168 20.28L20.832 20.232L18.624 18.552L17.76 17.808L15.84 16.2H15.72V16.368L16.152 17.016L18.504 20.544L18.624 21.624L18.456 21.96L17.832 22.176L17.184 22.056L15.792 20.136L14.376 17.952L13.224 16.008L13.104 16.104L12.408 23.352L12.096 23.712L11.376 24Z"/></svg>
+        <svg class="o-mark" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4.709 15.955l4.72-2.647.08-.23-.08-.128H9.2l-.79-.048-2.698-.073-2.339-.097-2.266-.122-.571-.121L0 11.784l.055-.352.48-.321.686.06 1.52.103 2.278.158 1.652.097 2.449.255h.389l.055-.157-.134-.098-.103-.097-2.358-1.596-2.552-1.688-1.336-.972-.724-.491-.364-.462-.158-1.008.656-.722.881.06.225.061.893.686 1.908 1.476 2.491 1.833.365.304.145-.103.019-.073-.164-.274-1.355-2.446-1.446-2.49-.644-1.032-.17-.619a2.97 2.97 0 01-.104-.729L6.283.134 6.696 0l.996.134.42.364.62 1.414 1.002 2.229 1.555 3.03.456.898.243.832.091.255h.158V9.01l.128-1.706.237-2.095.23-2.695.08-.76.376-.91.747-.492.584.28.48.685-.067.444-.286 1.851-.559 2.903-.364 1.942h.212l.243-.242.985-1.306 1.652-2.064.73-.82.85-.904.547-.431h1.033l.76 1.129-.34 1.166-1.064 1.347-.881 1.142-1.264 1.7-.79 1.36.073.11.188-.02 2.856-.606 1.543-.28 1.841-.315.833.388.091.395-.328.807-1.969.486-2.309.462-3.439.813-.042.03.049.061 1.549.146.662.036h1.622l3.02.225.79.522.474.638-.079.485-1.215.62-1.64-.389-3.829-.91-1.312-.329h-.182v.11l1.093 1.068 2.006 1.81 2.509 2.33.127.578-.322.455-.34-.049-2.205-1.657-.851-.747-1.926-1.62h-.128v.17l.444.649 2.345 3.521.122 1.08-.17.353-.608.213-.668-.122-1.374-1.925-1.415-2.167-1.143-1.943-.14.08-.674 7.254-.316.37-.729.28-.607-.461-.322-.747.322-1.476.389-1.924.315-1.53.286-1.9.17-.632-.012-.042-.14.018-1.434 1.967-2.18 2.945-1.726 1.845-.414.164-.717-.37.067-.662.401-.589 2.388-3.036 1.44-1.882.93-1.086-.006-.158h-.055L4.132 18.56l-1.13.146-.487-.456.061-.746.231-.243 1.908-1.312-.006.006z" fill="#D97757" fill-rule="nonzero"></path></svg>
         <span>Claude Opus 5.5 API</span>
       </h1>
       <p class="o-sub">A hybrid reasoning model built for serious coding and AI agents. Call claude-opus-5-5 through the native Anthropic API on AnyAIGC from $0.4765 per million input tokens, about 12% of Anthropic's list price.</p>
@@ -164,6 +169,7 @@
         <li>Price <strong>~11.9% of list</strong></li>
         <li>Concurrency <strong>Unlimited</strong></li>
         <li>Tools <strong>Works with Claude Code</strong></li>
+        <li>Business <strong>Contracts · invoices</strong></li>
       </ul>
     </div>
   </section>
@@ -384,7 +390,25 @@ curl https://anyaigc.ai/v1/messages \
   }
 }</code></pre>
       </figure>
-      <p class="o-note">When you create your token, choose the Claude Code group, which supports tool calling, instead of the default group. For full setup steps and common errors, see the <a href="https://docs.anyaigc.ai/tutorials/plugins-7010249" target="_blank" rel="noopener">Claude Code setup guide</a>.</p>
+      <p class="o-note">For full setup steps and common errors, see the <a href="https://docs.anyaigc.ai/tutorials/plugins-7010249" target="_blank" rel="noopener">Claude Code setup guide</a>.</p>
+    </div>
+  </section>
+
+  <!-- Enterprise -->
+  <section class="o-section" id="enterprise" aria-labelledby="ent-title">
+    <div class="o-wrap o-col">
+      <h2 class="o-h2 o-reveal" id="ent-title">Claude Opus 5.5 API for teams and enterprises</h2>
+      <p class="o-lead o-reveal">Buy through a standard business process, with support for finance, legal and engineering.</p>
+      <ul class="o-cards">
+        <li class="o-card o-reveal"><strong>Invoices</strong><h3>Including China VAT invoices</h3><p>Get invoices for every top-up, including Chinese VAT general and special invoices for companies in mainland China.</p></li>
+        <li class="o-card o-reveal"><strong>Bank transfer</strong><h3>Pay from a company account</h3><p>Top up by corporate bank transfer, so nobody has to pay on a personal card and expense it.</p></li>
+        <li class="o-card o-reveal"><strong>Contracts</strong><h3>Fits procurement and legal review</h3><p>Sign a service agreement with AnyAIGC to meet your internal purchasing requirements.</p></li>
+        <li class="o-card o-reveal"><strong>Dedicated support</strong><h3>Account and technical contacts</h3><p>Work with a dedicated support contact and technical engineer for onboarding, migration and troubleshooting.</p></li>
+      </ul>
+      <div class="o-price-cta o-reveal">
+        <a class="o-btn o-btn-dark" href="https://anyaigc.ai/customersupport">Talk to sales</a>
+        <a class="o-btn o-btn-light" href="https://anyaigc.ai/register?aff=oOK7&channel=c_wpduopc9">Start with a free account</a>
+      </div>
     </div>
   </section>
 
@@ -401,6 +425,27 @@ curl https://anyaigc.ai/v1/messages \
     </div>
   </section>
 
+  <!-- FAMILY -->
+  <!-- Model family -->
+  <section class="o-section" id="family" aria-labelledby="family-title">
+    <div class="o-wrap o-col">
+      <h2 class="o-h2 o-reveal" id="family-title">Other Claude models</h2>
+      <p class="o-lead o-reveal">The same API key works for every Claude model below. Pick by task difficulty and budget, or see the <a href="/en/models/claude">Claude overview and price comparison</a>.</p>
+      <ul class="o-family o-reveal">
+        <li><a href="/en/models/claude-opus-5-5" aria-current="page"><span class="o-tag">Latest</span><b>Claude Opus 5.5</b><span>Current Opus for coding and agents · Input $0.4765 / 1M</span></a></li>
+        <li><a href="/en/models/claude-sonnet-5-5"><span class="o-tag">Latest</span><b>Claude Sonnet 5.5</b><span>Faster, cheaper everyday coding and documents · Input $0.2382 / 1M</span></a></li>
+        <li><a href="/en/models/claude-haiku-5-5"><span class="o-tag">Latest</span><b>Claude Haiku 5.5</b><span>Fast and low-cost, for volume work and sub-agents · Input $0.0119 / 1M</span></a></li>
+        <li><a href="/en/models/claude-fable-5-1"><span class="o-tag">Latest</span><b>Claude Fable 5.1</b><span>Mythos-level, for the hardest long-running tasks · Input $2.3820 / 1M</span></a></li>
+        <li><a href="/en/models/claude-opus-5"><b>Claude Opus 5</b><span>Near Fable 5 intelligence at half the price (legacy) · Input $0.5956 / 1M</span></a></li>
+        <li><a href="/en/models/claude-fable-5"><b>Claude Fable 5</b><span>Mythos-class legacy model for long-horizon agent work · Input $2.3820 / 1M</span></a></li>
+        <li><a href="/en/models/claude-sonnet-5"><b>Claude Sonnet 5</b><span>Close to Opus 4.8, a value pick for everyday agents · Input $0.2382 / 1M</span></a></li>
+        <li><a href="/en/models/claude-opus-4-8"><b>Claude Opus 4.8</b><span>Final 4.x Opus with more efficient tool calling · Input $0.5956 / 1M</span></a></li>
+        <li><a href="/en/models/claude-opus-4-7"><b>Claude Opus 4.7</b><span>Big jump on hard coding, sharper high-res vision · Input $0.5956 / 1M</span></a></li>
+        <li><a href="/en/models/claude-opus-4-6"><b>Claude Opus 4.6</b><span>Legacy Opus with 1M context, still live · Input $0.5956 / 1M</span></a></li>
+      </ul>
+    </div>
+  </section>
+
   <!-- FAQ -->
   <section class="o-section" id="faq" aria-labelledby="faq-title">
     <div class="o-wrap o-col">
@@ -409,12 +454,14 @@ curl https://anyaigc.ai/v1/messages \
         <details open><summary><h3>How much does the Claude Opus 5.5 API cost?</h3></summary><div class="o-ans"><p>On AnyAIGC, <code>claude-opus-5-5</code> is billed per token: $0.4765 per million input tokens, $2.382 per million output tokens, $0.5956 for 5-minute cache writes, $0.953 for 1-hour cache writes, and $0.0238 for cache hits. Anthropic's list price is $4 input and $20 output, so AnyAIGC comes in at about 11.9% of list price.</p></div></details>
         <details><summary><h3>What is the Claude Opus 5.5 model ID?</h3></summary><div class="o-ans"><p>The model ID is <code>claude-opus-5-5</code>. Put it in the <code>model</code> field of your request body.</p></div></details>
         <details><summary><h3>Is the AnyAIGC Claude API compatible with Anthropic's official API?</h3></summary><div class="o-ans"><p>Yes. The endpoint is <code>https://anyaigc.ai/v1/messages</code> and the request body follows the Anthropic Messages format (model, max_tokens, system, messages, tools, cache_control, and so on). Authenticate with <code>Authorization: Bearer</code> followed by your API key. With the official SDK, just set the base URL to <code>https://anyaigc.ai</code>.</p></div></details>
-        <details><summary><h3>Can I use Claude Opus 5.5 in Claude Code?</h3></summary><div class="o-ans"><p>Yes. In the env block of <code>~/.claude/settings.json</code>, set <code>ANTHROPIC_BASE_URL</code> to <code>https://anyaigc.ai</code>, <code>ANTHROPIC_AUTH_TOKEN</code> to your API key, and <code>ANTHROPIC_MODEL</code> to <code>claude-opus-5-5</code>, then run <code>claude</code>. You can also install and configure everything with one command: <code>curl -fsSL https://www.anyaigc.ai/install.sh | bash</code>. When you create your token, pick the Claude Code group, which supports tool calling.</p></div></details>
+        <details><summary><h3>Can I use Claude Opus 5.5 in Claude Code?</h3></summary><div class="o-ans"><p>Yes. In the env block of <code>~/.claude/settings.json</code>, set <code>ANTHROPIC_BASE_URL</code> to <code>https://anyaigc.ai</code>, <code>ANTHROPIC_AUTH_TOKEN</code> to your API key, and <code>ANTHROPIC_MODEL</code> to <code>claude-opus-5-5</code>, then run <code>claude</code>. You can also install and configure everything with one command: <code>curl -fsSL https://www.anyaigc.ai/install.sh | bash</code>.</p></div></details>
         <details><summary><h3>How is prompt caching billed?</h3></summary><div class="o-ans"><p>Add <code>cache_control</code> to a content block to enable caching. The first write is billed at the cache write rate ($0.5956 for 5 minutes or $0.953 for 1 hour, per million tokens). After that, cached tokens cost only $0.0238 per million, about 5% of the regular input price. Caching works best for long system prompts, large codebase context, and multi-turn agent tasks.</p></div></details>
         <details><summary><h3>Are there concurrency or rate limits?</h3></summary><div class="o-ans"><p>AnyAIGC sets no concurrency limit on <code>claude-opus-5-5</code>. Every account gets this by default, so it works well for batch jobs and running multiple agents in parallel.</p></div></details>
         <details><summary><h3>What is Claude Opus 5.5 good at?</h3></summary><div class="o-ans"><p>Anthropic positions Opus 5.5 as a hybrid reasoning model for serious coding and AI agents. It is a strong fit for large codebase refactors, multi-step agent tasks, long-document analysis, and complex reasoning. According to Anthropic's published results, it scores 66.4% on Terminal-Bench 4.0.</p></div></details>
-        <details><summary><h3>Can I call the Claude Opus 5.5 API from mainland China?</h3></summary><div class="o-ans"><p>Yes. AnyAIGC is optimized for networks in mainland China, so you can usually call <code>https://anyaigc.ai/v1/messages</code> without an extra proxy. Billing is in USD, and business customers can contact support about invoicing options.</p></div></details>
+        <details><summary><h3>Can I call the Claude Opus 5.5 API from mainland China?</h3></summary><div class="o-ans"><p>Yes. AnyAIGC is optimized for networks in mainland China, so you can usually call <code>https://anyaigc.ai/v1/messages</code> without an extra proxy. Billing is in USD, and companies can pay by bank transfer and get VAT invoices.</p></div></details>
         <details><summary><h3>How do I get a Claude Opus 5.5 API key?</h3></summary><div class="o-ans"><p>Sign up at <a href="https://anyaigc.ai/register?aff=oOK7&channel=c_wpduopc9">anyaigc.ai</a>, add credit, and create a token in the console. The same key works for Claude Opus 5.5 and 300+ other models on the platform.</p></div></details>
+        <details><summary><h3>Can AnyAIGC issue invoices, including VAT special invoices?</h3></summary><div class="o-ans"><p>Yes. AnyAIGC issues invoices for the amount you top up, including Chinese VAT general invoices and VAT special invoices. Send your billing details to support to request one.</p></div></details>
+        <details><summary><h3>Can my company pay by bank transfer and sign a contract?</h3></summary><div class="o-ans"><p>Yes. Companies can top up by corporate bank transfer and sign a service agreement, and get a dedicated support and technical contact. <a href="https://anyaigc.ai/customersupport">Contact AnyAIGC support</a> to get started.</p></div></details>
         <details><summary><h3>Is my data used for training?</h3></summary><div class="o-ans"><p>Requests are encrypted in transit over HTTPS. See the AnyAIGC <a href="/privacy">Privacy Policy</a> for data handling details. The model's own data policy is governed by Anthropic's official terms.</p></div></details>
       </div>
     </div>
@@ -423,7 +470,7 @@ curl https://anyaigc.ai/v1/messages \
   <!-- Final CTA -->
   <section class="o-final" aria-labelledby="final-title">
     <div class="o-wrap">
-      <svg class="o-mark" viewBox="0 0 24 24" fill="#d97757" aria-hidden="true" focusable="false"><path d="M11.376 24L10.776 23.544L10.44 22.8L10.776 21.312L11.16 19.392L11.472 17.856L11.76 15.96L11.928 15.336L11.904 15.288L11.784 15.312L10.344 17.28L8.16 20.232L6.432 22.056L6.024 22.224L5.304 21.864L5.376 21.192L5.784 20.616L8.16 17.568L9.6 15.672L10.536 14.592L10.512 14.448H10.464L4.128 18.576L3 18.72L2.496 18.264L2.568 17.52L2.808 17.28L4.704 15.96L9.432 13.32L9.504 13.08L9.432 12.96H9.192L8.4 12.912L5.712 12.84L3.384 12.744L1.104 12.624L0.528 12.504L0 11.784L0.048 11.424L0.528 11.112L1.224 11.16L2.736 11.28L5.016 11.424L6.672 11.52L9.12 11.784H9.504L9.552 11.616L9.432 11.52L9.336 11.424L6.96 9.84L4.416 8.16L3.072 7.176L2.352 6.672L1.992 6.216L1.848 5.208L2.496 4.488L3.384 4.56L3.6 4.608L4.488 5.304L6.384 6.768L8.88 8.616L9.24 8.904L9.408 8.808V8.736L9.24 8.472L7.896 6.024L6.456 3.528L5.808 2.496L5.64 1.872C5.576 1.656 5.544 1.416 5.544 1.152L6.288 0.144001L6.696 0L7.704 0.144001L8.112 0.504001L8.736 1.92L9.72 4.152L11.28 7.176L11.736 8.088L11.976 8.904L12.072 9.168H12.24V9.024L12.36 7.296L12.6 5.208L12.84 2.52L12.912 1.752L13.296 0.840001L14.04 0.360001L14.616 0.624001L15.096 1.32L15.024 1.752L14.76 3.6L14.184 6.504L13.824 8.472H14.04L14.28 8.208L15.264 6.912L16.92 4.848L17.64 4.032L18.504 3.12L19.056 2.688H20.088L20.832 3.816L20.496 4.992L19.44 6.336L18.552 7.464L17.28 9.168L16.512 10.536L16.584 10.632H16.752L19.608 10.008L21.168 9.744L22.992 9.432L23.832 9.816L23.928 10.2L23.592 11.016L21.624 11.496L19.32 11.952L15.888 12.768L15.84 12.792L15.888 12.864L17.424 13.008L18.096 13.056H19.728L22.752 13.272L23.544 13.8L24 14.424L23.928 14.928L22.704 15.528L21.072 15.144L17.232 14.232L15.936 13.92H15.744V14.016L16.848 15.096L18.84 16.896L21.36 19.224L21.48 19.8L21.168 20.28L20.832 20.232L18.624 18.552L17.76 17.808L15.84 16.2H15.72V16.368L16.152 17.016L18.504 20.544L18.624 21.624L18.456 21.96L17.832 22.176L17.184 22.056L15.792 20.136L14.376 17.952L13.224 16.008L13.104 16.104L12.408 23.352L12.096 23.712L11.376 24Z"/></svg>
+      <svg class="o-mark" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4.709 15.955l4.72-2.647.08-.23-.08-.128H9.2l-.79-.048-2.698-.073-2.339-.097-2.266-.122-.571-.121L0 11.784l.055-.352.48-.321.686.06 1.52.103 2.278.158 1.652.097 2.449.255h.389l.055-.157-.134-.098-.103-.097-2.358-1.596-2.552-1.688-1.336-.972-.724-.491-.364-.462-.158-1.008.656-.722.881.06.225.061.893.686 1.908 1.476 2.491 1.833.365.304.145-.103.019-.073-.164-.274-1.355-2.446-1.446-2.49-.644-1.032-.17-.619a2.97 2.97 0 01-.104-.729L6.283.134 6.696 0l.996.134.42.364.62 1.414 1.002 2.229 1.555 3.03.456.898.243.832.091.255h.158V9.01l.128-1.706.237-2.095.23-2.695.08-.76.376-.91.747-.492.584.28.48.685-.067.444-.286 1.851-.559 2.903-.364 1.942h.212l.243-.242.985-1.306 1.652-2.064.73-.82.85-.904.547-.431h1.033l.76 1.129-.34 1.166-1.064 1.347-.881 1.142-1.264 1.7-.79 1.36.073.11.188-.02 2.856-.606 1.543-.28 1.841-.315.833.388.091.395-.328.807-1.969.486-2.309.462-3.439.813-.042.03.049.061 1.549.146.662.036h1.622l3.02.225.79.522.474.638-.079.485-1.215.62-1.64-.389-3.829-.91-1.312-.329h-.182v.11l1.093 1.068 2.006 1.81 2.509 2.33.127.578-.322.455-.34-.049-2.205-1.657-.851-.747-1.926-1.62h-.128v.17l.444.649 2.345 3.521.122 1.08-.17.353-.608.213-.668-.122-1.374-1.925-1.415-2.167-1.143-1.943-.14.08-.674 7.254-.316.37-.729.28-.607-.461-.322-.747.322-1.476.389-1.924.315-1.53.286-1.9.17-.632-.012-.042-.14.018-1.434 1.967-2.18 2.945-1.726 1.845-.414.164-.717-.37.067-.662.401-.589 2.388-3.036 1.44-1.882.93-1.086-.006-.158h-.055L4.132 18.56l-1.13.146-.487-.456.061-.746.231-.243 1.908-1.312-.006.006z" fill="#D97757" fill-rule="nonzero"></path></svg>
       <h2 id="final-title">Run Opus 5.5 at 12% of list price</h2>
       <p>Sign up, create an API key, and you can be calling claude-opus-5-5 from your code or Claude Code in minutes.</p>
       <div class="o-cta">
@@ -479,6 +526,6 @@ curl https://anyaigc.ai/v1/messages \
   </div>
 </footer>
 
-<script src="/assets/models/claude-opus-5-5.js?v=20261022b" defer></script>
+<script src="/assets/models/claude.js?v=20261022e" defer></script>
 </body>
 </html>
