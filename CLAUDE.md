@@ -43,6 +43,32 @@ AnyAIGC 的目标客户包括企业，**所有专题页（中英文）都必须�
 6. **keywords**：加「<模型> API 企业」「<模型> API 发票」/「<Model> API for business」
 7. 不要再用「企业用户可联系客服确认发票方案」这类含糊说法，直接写支持对公转账和增值税发票。
 
+## 支付方式（每个专题页必须有）
+
+支持的支付方式：**微信支付、支付宝、USDT、信用卡**，企业另有对公转账。英文写 WeChat Pay / Alipay / USDT / Credit card / Bank transfer。
+
+- 企业接入版块里放一行支付方式徽标（`.pay-row`，样式在 `scrollbar.css`），FAQ 加一条「支持哪些支付方式？」（可见内容和 JSON-LD 同步）。
+- 新页面写完后运行 `python scripts/payments.py` 自动补上，脚本重复运行结果不变。缺了 `check_topics.py` 会报错。
+
+## 信任与保障（每个专题页必须有）
+
+用户 2026-10-24 确认属实、可以写的信任信息，**只写这些，不要自行扩展**：
+
+| 项 | 中文写法 | 英文写法 |
+| :--- | :--- | :--- |
+| 试用 | 新用户注册送 200 万 tokens 试用额度 | 2M free tokens for new accounts |
+| 充值 | $1 起充 | Top up from $1 |
+| 退款 | 未使用余额可退款，无手续费 | Unused balance refundable, no fee |
+| 渠道 | 官方模型渠道，不掺假不降智（不用低配/逆向模型冒充） | Official model channels, no substitutes |
+| 数据 | 除法律法规要求外，不对输入输出做持久化存储、不用于训练（与隐私政策 1.2 一致，链接 /privacy） | No persistent storage of prompts/outputs, no training |
+| 账单 | 控制台可查每次调用的 tokens 与扣费明细，可给每个 Key 设额度上限 | Per-request usage log, per-key spend caps |
+| 客服 | 7×24 客服，链接 https://anyaigc.ai/customersupport（不写具体微信号/Telegram） | 24/7 support |
+
+不要写：SLA/可用率、企业专属分组/线路、令牌分组、用户数/成立年限/官方合作关系（没有确认的数字一律不写）。
+
+- 版块 `section#trust`（「为什么可以放心用 AnyAIGC」），放在企业接入之后，6 项清单（`.trust-list`，样式在 `scrollbar.css`）+「先注册领取 200 万 tokens」按钮；FAQ 加 3 条：免费试用额度 / 余额退款 / 是否掺假与数据安全。
+- 新页面写完后运行 `python scripts/trust.py` 自动补上（重复运行结果不变，改文案后重跑会整体替换）。缺了 `check_topics.py` 会报错。
+
 ## 工具
 
 - 本地预览：`python scripts/preview.py`（后台运行），不要用 `python -m http.server`。

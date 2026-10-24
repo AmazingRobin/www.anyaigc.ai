@@ -122,6 +122,9 @@
 @media (max-width:640px){
   .p-nav-inner{height:64px}
   .p-nav-cta .p-btn-outline{display:none}
+  .p-nav-cta{gap:6px}
+  .p-nav-cta .o-btn{min-height:34px;padding:7px 14px;font-size:14px}
+  .p-nav-cta .o-pill{padding:0 10px}
   .p-sub-links{display:none}
   .p-hero{padding:56px 0}
   .p-h1{font-size:40px;line-height:1.08}

@@ -12,7 +12,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ICON_DIR = os.path.join(ROOT, 'assets', 'icons')
 VERSION = '1.97.0'
 CDN = 'https://registry.npmmirror.com/@lobehub/icons-static-svg/{v}/files/icons/{id}.svg'
-ICONS = ['claude-color', 'claude', 'anthropic', 'suno', 'claudecode-color']
+ICONS = ['claude-color', 'claude', 'anthropic', 'suno', 'claudecode-color', 'openai', 'codex', 'codex-color']
 NL = chr(10)
 
 

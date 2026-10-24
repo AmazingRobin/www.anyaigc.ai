@@ -23,6 +23,20 @@ def width(text):
     return sum(2 if ord(c) > 0x2e7f else 1 for c in text)
 
 
+def faq_questions(html):
+    # 从 JSON-LD 里取出所有 FAQ 问题（兼容单行和缩进两种 JSON 写法）
+    out = []
+    for m in re.findall(r'<script type="application/ld\+json">(.*?)</script>', html, re.S):
+        try:
+            data = json.loads(m)
+        except ValueError:
+            continue
+        for g in data.get('@graph', [data]):
+            if g.get('@type') == 'FAQPage':
+                out += [q for q in g.get('mainEntity', []) if q.get('@type') == 'Question']
+    return out
+
+
 def local_exists(url):
     u = url.split('#')[0].split('?')[0]
     if u in ('', '/'):
@@ -79,9 +93,22 @@ def check_enterprise(tag, lang, html):
     if d and not any(k in d.group(1).lower() for k in key):
         errors.append(f'{tag} meta description 未提及企业开票/对公转账')
     faq_key = ('专票', '对公转账') if lang == 'zh' else ('VAT special invoice', 'bank transfer')
+    questions = ' | '.join(q['name'] for q in faq_questions(html))
     for k in faq_key:
-        if not re.search(r'"@type": "Question", "name": "[^"]*' + re.escape(k), html, re.I):
+        if k.lower() not in questions.lower():
             errors.append(f'{tag} FAQ 缺少关于「{k}」的问题')
+    if not any(k in questions for k in ('支付方式', 'payment methods', 'Payment methods')):
+        errors.append(f'{tag} FAQ 缺少「支持哪些支付方式」的问题')
+    if 'class="pay-row' not in body:
+        errors.append(f'{tag} 企业接入版块缺少支付方式行（scripts/payments.py）')
+    if 'id="trust"' not in html or 'class="trust-list"' not in html:
+        errors.append(f'{tag} 缺少「信任与保障」版块（scripts/trust.py）')
+    for k in (('试用额度', '退款') if lang == 'zh' else ('trial credit', 'refund')):
+        if k.lower() not in questions.lower():
+            errors.append(f'{tag} FAQ 缺少关于「{k}」的问题（scripts/trust.py）')
+    # 只拦截 SLA / 可用率承诺本身；基准成绩里的 99.9% 之类不算
+    if re.search(r'\bSLA\b|可用率|可用性\s*\d|uptime|99\.9+\s*%\s*(?:可用|在线|uptime|availability)', re.sub(r'<script\b.*?</script>', '', html, flags=re.S), re.I):
+        errors.append(f'{tag} 不能写 SLA / 可用率承诺')
     if re.search(r'联系客服确认发票方案|contact support about invoicing', html, re.I):
         errors.append(f'{tag} 仍有含糊的开票说法，应改为明确支持对公转账和增值税发票')
 
@@ -152,7 +179,7 @@ def check(lang, slug):
 
     if slug != 'index':
         faq_visible = len(re.findall(r'<details', s))
-        faq_ld = s.count('"@type": "Question"')
+        faq_ld = len(faq_questions(s))
         if faq_visible != faq_ld:
             errors.append(f'{tag} 可见 FAQ {faq_visible} 条，JSON-LD FAQ {faq_ld} 条，必须一致')
 
@@ -170,7 +197,7 @@ def check(lang, slug):
             errors.append(f'{tag} 注册链接应为 {REGISTER}，实际 {r}')
     # 只看可见文字和 JSON-LD 文本，忽略标签属性（如 class="s-group"、scope="rowgroup"）
     body = re.sub(r'<script\b.*?</script>|<style\b.*?</style>', ' ', s, flags=re.S)
-    visible = re.sub(r'<[^>]+>', ' ', body) + ' '.join(re.findall(r'"(?:name|text)": "([^"]*)"', s))
+    visible = re.sub(r'<[^>]+>', ' ', body) + ' '.join(q['name'] + ' ' + q['acceptedAnswer']['text'] for q in faq_questions(s))
     if re.search(r'分组|\bgroups?\b', visible, re.I):
         errors.append(f'{tag} 页面不能出现令牌分组信息（分组/group）')
     if '500+' in s:

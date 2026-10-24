@@ -37,3 +37,22 @@ html::-webkit-scrollbar-track{background:var(--sb-track)}
 /* 文本选中色 */
 ::selection{background:rgba(228,95,69,.28)}
 :root[data-scrollbar="dark"] ::selection{background:rgba(254,60,125,.35);color:#fff}
+
+/* 支付方式徽标行（所有专题页企业接入版块共用）。颜色跟随所在页面文字色，深色/浅色页面都适用 */
+.pay-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px 14px;margin:28px auto 0;font-size:14px}
+.pay-label{opacity:.72}
+.pay-list{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:0;padding:0;list-style:none}
+.pay-list li{padding:5px 12px;border-radius:999px;border:1px solid currentColor;line-height:1.4;font-weight:500;opacity:.88}
+.o-section .pay-row{justify-content:flex-start}
+.o-section .pay-list{justify-content:flex-start}
+
+/* 信任清单（所有专题页「为什么可以放心用」版块共用）。颜色跟随页面文字色 */
+.trust-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px 32px;max-width:1080px;margin:0 auto;padding:0;list-style:none;text-align:left}
+.trust-list li{padding:22px 0 0;border-top:1px solid currentColor;border-top-color:color-mix(in srgb,currentColor 18%,transparent)}
+.trust-list h3{margin:0 0 8px;font-size:18px;line-height:1.35;font-weight:600}
+.trust-list p{margin:0;font-size:15px;line-height:1.65;opacity:.72}
+.trust-list a{color:inherit;text-decoration:underline;text-underline-offset:3px}
+.o-col .trust-list{grid-template-columns:repeat(2,minmax(0,1fr))}
+#trust .o-price-cta,#trust .o-cta,#trust .s-price-cta{margin-top:36px}
+@media (max-width:900px){.trust-list{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:640px){.trust-list,.o-col .trust-list{grid-template-columns:1fr;gap:20px}}
