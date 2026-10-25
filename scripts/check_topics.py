@@ -225,7 +225,7 @@ def main():
             if f'<loc>{page_url(lang, slug)}</loc>' not in sitemap:
                 errors.append(f'[sitemap.xml] 未加入 {page_url(lang, slug)}')
         # 卡片 + 分类标题里链接的系列总览页（如 Claude 系列标题链接到 /models/claude）
-        cards = len(re.findall(r'<li class="af-model[ "]', hub)) + len(re.findall(r'<h3 class="af-section-head"[^>]*><a href="/' + lang + r'/models/', hub))
+        cards = len(re.findall(r'<li class="af-model[ "]', hub)) + len(re.findall(r'<h3 class="af-section-head"[^>]*><a [^>]*href="/' + lang + r'/models/', hub))
         m = re.search(r'"numberOfItems": (\d+)', hub)
         if m and int(m.group(1)) != len(slugs[lang]) - 1:
             errors.append(f'[{lang}/models/index.html] numberOfItems={m.group(1)}，实际专题数 {len(slugs[lang]) - 1}')

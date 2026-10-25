@@ -26,7 +26,7 @@
 <meta name="twitter:description" content="Capabilities, pricing and integration guides for popular AI model APIs. One API key for 300+ models.">
 <meta name="twitter:image" content="https://www.anyaigc.ai/assets/og/models-en.png">
 <link rel="stylesheet" href="/assets/models/scrollbar.css?v=20261024b">
-<link rel="stylesheet" href="/assets/models/hub.css?v=20261022">
+<link rel="stylesheet" href="/assets/models/hub.css?v=20261025">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -38,6 +38,7 @@
       "name": "AI Model API Guides - AnyAIGC",
       "description": "Capabilities, pricing, rate limits and integration guides for popular AI model APIs.",
       "inLanguage": "en",
+      "dateModified": "2026-10-25",
       "isPartOf": {
         "@type": "WebSite",
         "@id": "https://www.anyaigc.ai/#website",
@@ -74,7 +75,7 @@
       "@id": "https://www.anyaigc.ai/en/models/#list",
       "name": "AnyAIGC Model Guides",
       "itemListOrder": "https://schema.org/ItemListUnordered",
-      "numberOfItems": 22,
+      "numberOfItems": 29,
       "itemListElement": [
         {
           "@type": "ListItem",
@@ -207,6 +208,48 @@
           "position": 22,
           "name": "Claude Opus 4.6 API",
           "url": "https://www.anyaigc.ai/en/models/claude-opus-4-6"
+        },
+        {
+          "@type": "ListItem",
+          "position": 23,
+          "name": "Jev API (all models)",
+          "url": "https://www.anyaigc.ai/en/models/jev"
+        },
+        {
+          "@type": "ListItem",
+          "position": 24,
+          "name": "jev-1.14.0 API",
+          "url": "https://www.anyaigc.ai/en/models/jev-1.14.0"
+        },
+        {
+          "@type": "ListItem",
+          "position": 25,
+          "name": "jev-1.13.0 API",
+          "url": "https://www.anyaigc.ai/en/models/jev-1.13.0"
+        },
+        {
+          "@type": "ListItem",
+          "position": 26,
+          "name": "Gemini 4 Argon API",
+          "url": "https://www.anyaigc.ai/en/models/gemini-4-argon"
+        },
+        {
+          "@type": "ListItem",
+          "position": 27,
+          "name": "Gemini 3.8 Flash API",
+          "url": "https://www.anyaigc.ai/en/models/gemini-3.8-flash"
+        },
+        {
+          "@type": "ListItem",
+          "position": 28,
+          "name": "Gemini 3.1 Pro Preview API",
+          "url": "https://www.anyaigc.ai/en/models/gemini-3.1-pro-preview"
+        },
+        {
+          "@type": "ListItem",
+          "position": 29,
+          "name": "Gemini 3.7 Flash API",
+          "url": "https://www.anyaigc.ai/en/models/gemini-3.7-flash"
         }
       ]
     }
@@ -259,11 +302,13 @@
       <ul class="af-filter" aria-label="Jump to category">
         <li><a href="#cat-gpt">GPT models</a></li>
         <li><a href="#cat-claude">Claude models</a></li>
+        <li><a href="#cat-gemini">Gemini models</a></li>
+        <li><a href="#cat-jev">Jev models</a></li>
         <li><a href="#cat-audio">Audio &amp; Music</a></li>
       </ul>
 
       <!-- GPT -->
-      <h3 class="af-section-head" id="cat-gpt" style="font-size:16px;margin:24px 0 12px"><a href="/en/models/gpt">GPT models</a> <span style="font-weight:400;color:#6c615c">· overview and price comparison →</span></h3>
+      <h3 class="af-section-head" id="cat-gpt" style="font-size:16px;margin:24px 0 12px"><a class="af-cat-link" href="/en/models/gpt"><span class="af-cat-name">GPT models</span><span class="af-cat-more">overview and price comparison <span class="af-cat-arrow" aria-hidden="true">→</span></span></a></h3>
       <ul class="af-models">
         <li class="af-model">
           <div class="af-model-head">
@@ -439,7 +484,7 @@
       </ul>
       <!-- /GPT -->
 
-      <h3 class="af-section-head" id="cat-claude" style="font-size:16px;margin:24px 0 12px"><a href="/en/models/claude">Claude models</a> <span style="font-weight:400;color:#6c615c">· overview and price comparison →</span></h3>
+      <h3 class="af-section-head" id="cat-claude" style="font-size:16px;margin:24px 0 12px"><a class="af-cat-link" href="/en/models/claude"><span class="af-cat-name">Claude models</span><span class="af-cat-more">overview and price comparison <span class="af-cat-arrow" aria-hidden="true">→</span></span></a></h3>
       <ul class="af-models">
         <li class="af-model">
           <div class="af-model-head">
@@ -632,6 +677,131 @@
           </div>
         </li>
       </ul>
+
+      <!-- Gemini -->
+      <h3 class="af-section-head" id="cat-gemini" style="font-size:16px;margin:24px 0 12px">Gemini models</h3>
+      <ul class="af-models">
+        <li class="af-model">
+          <div class="af-model-head">
+            <span class="af-model-logo" style="background:#ffffff;border:1px solid #e1e6ec" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true" focusable="false"><path d="M20.616 10.835a14.147 14.147 0 01-4.45-3.001 14.111 14.111 0 01-3.678-6.452.503.503 0 00-.975 0 14.134 14.134 0 01-3.679 6.452 14.155 14.155 0 01-4.45 3.001c-.65.28-1.318.505-2.002.678a.502.502 0 000 .975c.684.172 1.35.397 2.002.677a14.147 14.147 0 014.45 3.001 14.112 14.112 0 013.679 6.453.502.502 0 00.975 0c.172-.685.397-1.351.677-2.003a14.145 14.145 0 013.001-4.45 14.113 14.113 0 016.453-3.678.503.503 0 000-.975 13.245 13.245 0 01-2.003-.678z" fill="#3186FF"></path><path d="M20.616 10.835a14.147 14.147 0 01-4.45-3.001 14.111 14.111 0 01-3.678-6.452.503.503 0 00-.975 0 14.134 14.134 0 01-3.679 6.452 14.155 14.155 0 01-4.45 3.001c-.65.28-1.318.505-2.002.678a.502.502 0 000 .975c.684.172 1.35.397 2.002.677a14.147 14.147 0 014.45 3.001 14.112 14.112 0 013.679 6.453.502.502 0 00.975 0c.172-.685.397-1.351.677-2.003a14.145 14.145 0 013.001-4.45 14.113 14.113 0 016.453-3.678.503.503 0 000-.975 13.245 13.245 0 01-2.003-.678z" fill="url(#gm1-0)"></path><path d="M20.616 10.835a14.147 14.147 0 01-4.45-3.001 14.111 14.111 0 01-3.678-6.452.503.503 0 00-.975 0 14.134 14.134 0 01-3.679 6.452 14.155 14.155 0 01-4.45 3.001c-.65.28-1.318.505-2.002.678a.502.502 0 000 .975c.684.172 1.35.397 2.002.677a14.147 14.147 0 014.45 3.001 14.112 14.112 0 013.679 6.453.502.502 0 00.975 0c.172-.685.397-1.351.677-2.003a14.145 14.145 0 013.001-4.45 14.113 14.113 0 016.453-3.678.503.503 0 000-.975 13.245 13.245 0 01-2.003-.678z" fill="url(#gm1-1)"></path><path d="M20.616 10.835a14.147 14.147 0 01-4.45-3.001 14.111 14.111 0 01-3.678-6.452.503.503 0 00-.975 0 14.134 14.134 0 01-3.679 6.452 14.155 14.155 0 01-4.45 3.001c-.65.28-1.318.505-2.002.678a.502.502 0 000 .975c.684.172 1.35.397 2.002.677a14.147 14.147 0 014.45 3.001 14.112 14.112 0 013.679 6.453.502.502 0 00.975 0c.172-.685.397-1.351.677-2.003a14.145 14.145 0 013.001-4.45 14.113 14.113 0 016.453-3.678.503.503 0 000-.975 13.245 13.245 0 01-2.003-.678z" fill="url(#gm1-2)"></path><defs><linearGradient gradientUnits="userSpaceOnUse" id="gm1-0" x1="7" x2="11" y1="15.5" y2="12"><stop stop-color="#08B962"></stop><stop offset="1" stop-color="#08B962" stop-opacity="0"></stop></linearGradient><linearGradient gradientUnits="userSpaceOnUse" id="gm1-1" x1="8" x2="11.5" y1="5.5" y2="11"><stop stop-color="#F94543"></stop><stop offset="1" stop-color="#F94543" stop-opacity="0"></stop></linearGradient><linearGradient gradientUnits="userSpaceOnUse" id="gm1-2" x1="3.5" x2="17.5" y1="13.5" y2="12"><stop stop-color="#FABC12"></stop><stop offset=".46" stop-color="#FABC12" stop-opacity="0"></stop></linearGradient></defs></svg></span>
+            <div>
+              <h3><a href="/en/models/gemini-4-argon">Gemini 4 Argon API</a></h3>
+              <span class="af-model-cat">Google · gemini-4-argon</span>
+            </div>
+          </div>
+          <p>Google's new flagship reasoning model with a 1M context, built for complex coding, finance, legal and long-horizon agents.</p>
+          <ul class="af-tags">
+            <li>Flagship reasoning</li>
+            <li>1M context</li>
+            <li>~90% off</li>
+          </ul>
+          <div class="af-model-foot">
+            <span><strong>$0.1985</strong> / 1M input</span>
+            <span class="af-model-go" aria-hidden="true">View page →</span>
+          </div>
+        </li>
+        <li class="af-model">
+          <div class="af-model-head">
+            <span class="af-model-logo" style="background:#ffffff;border:1px solid #e1e6ec" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true" focusable="false"><path d="M20.616 10.835a14.147 14.147 0 01-4.45-3.001 14.111 14.111 0 01-3.678-6.452.503.503 0 00-.975 0 14.134 14.134 0 01-3.679 6.452 14.155 14.155 0 01-4.45 3.001c-.65.28-1.318.505-2.002.678a.502.502 0 000 .975c.684.172 1.35.397 2.002.677a14.147 14.147 0 014.45 3.001 14.112 14.112 0 013.679 6.453.502.502 0 00.975 0c.172-.685.397-1.351.677-2.003a14.145 14.145 0 013.001-4.45 14.113 14.113 0 016.453-3.678.503.503 0 000-.975 13.245 13.245 0 01-2.003-.678z" fill="#3186FF"></path><path d="M20.616 10.835a14.147 14.147 0 01-4.45-3.001 14.111 14.111 0 01-3.678-6.452.503.503 0 00-.975 0 14.134 14.134 0 01-3.679 6.452 14.155 14.155 0 01-4.45 3.001c-.65.28-1.318.505-2.002.678a.502.502 0 000 .975c.684.172 1.35.397 2.002.677a14.147 14.147 0 014.45 3.001 14.112 14.112 0 013.679 6.453.502.502 0 00.975 0c.172-.685.397-1.351.677-2.003a14.145 14.145 0 013.001-4.45 14.113 14.113 0 016.453-3.678.503.503 0 000-.975 13.245 13.245 0 01-2.003-.678z" fill="url(#gm2-0)"></path><path d="M20.616 10.835a14.147 14.147 0 01-4.45-3.001 14.111 14.111 0 01-3.678-6.452.503.503 0 00-.975 0 14.134 14.134 0 01-3.679 6.452 14.155 14.155 0 01-4.45 3.001c-.65.28-1.318.505-2.002.678a.502.502 0 000 .975c.684.172 1.35.397 2.002.677a14.147 14.147 0 014.45 3.001 14.112 14.112 0 013.679 6.453.502.502 0 00.975 0c.172-.685.397-1.351.677-2.003a14.145 14.145 0 013.001-4.45 14.113 14.113 0 016.453-3.678.503.503 0 000-.975 13.245 13.245 0 01-2.003-.678z" fill="url(#gm2-1)"></path><path d="M20.616 10.835a14.147 14.147 0 01-4.45-3.001 14.111 14.111 0 01-3.678-6.452.503.503 0 00-.975 0 14.134 14.134 0 01-3.679 6.452 14.155 14.155 0 01-4.45 3.001c-.65.28-1.318.505-2.002.678a.502.502 0 000 .975c.684.172 1.35.397 2.002.677a14.147 14.147 0 014.45 3.001 14.112 14.112 0 013.679 6.453.502.502 0 00.975 0c.172-.685.397-1.351.677-2.003a14.145 14.145 0 013.001-4.45 14.113 14.113 0 016.453-3.678.503.503 0 000-.975 13.245 13.245 0 01-2.003-.678z" fill="url(#gm2-2)"></path><defs><linearGradient gradientUnits="userSpaceOnUse" id="gm2-0" x1="7" x2="11" y1="15.5" y2="12"><stop stop-color="#08B962"></stop><stop offset="1" stop-color="#08B962" stop-opacity="0"></stop></linearGradient><linearGradient gradientUnits="userSpaceOnUse" id="gm2-1" x1="8" x2="11.5" y1="5.5" y2="11"><stop stop-color="#F94543"></stop><stop offset="1" stop-color="#F94543" stop-opacity="0"></stop></linearGradient><linearGradient gradientUnits="userSpaceOnUse" id="gm2-2" x1="3.5" x2="17.5" y1="13.5" y2="12"><stop stop-color="#FABC12"></stop><stop offset=".46" stop-color="#FABC12" stop-opacity="0"></stop></linearGradient></defs></svg></span>
+            <div>
+              <h3><a href="/en/models/gemini-3.8-flash">Gemini 3.8 Flash API</a></h3>
+              <span class="af-model-cat">Google · gemini-3.8-flash</span>
+            </div>
+          </div>
+          <p>Google's most capable Flash model: fast and low-cost, made for long-horizon coding, agents and production scale.</p>
+          <ul class="af-tags">
+            <li>Flash</li>
+            <li>1M context</li>
+            <li>Low cost</li>
+          </ul>
+          <div class="af-model-foot">
+            <span><strong>$0.0744</strong> / 1M input</span>
+            <span class="af-model-go" aria-hidden="true">View page →</span>
+          </div>
+        </li>
+        <li class="af-model">
+          <div class="af-model-head">
+            <span class="af-model-logo" style="background:#ffffff;border:1px solid #e1e6ec" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true" focusable="false"><path d="M20.616 10.835a14.147 14.147 0 01-4.45-3.001 14.111 14.111 0 01-3.678-6.452.503.503 0 00-.975 0 14.134 14.134 0 01-3.679 6.452 14.155 14.155 0 01-4.45 3.001c-.65.28-1.318.505-2.002.678a.502.502 0 000 .975c.684.172 1.35.397 2.002.677a14.147 14.147 0 014.45 3.001 14.112 14.112 0 013.679 6.453.502.502 0 00.975 0c.172-.685.397-1.351.677-2.003a14.145 14.145 0 013.001-4.45 14.113 14.113 0 016.453-3.678.503.503 0 000-.975 13.245 13.245 0 01-2.003-.678z" fill="#3186FF"></path><path d="M20.616 10.835a14.147 14.147 0 01-4.45-3.001 14.111 14.111 0 01-3.678-6.452.503.503 0 00-.975 0 14.134 14.134 0 01-3.679 6.452 14.155 14.155 0 01-4.45 3.001c-.65.28-1.318.505-2.002.678a.502.502 0 000 .975c.684.172 1.35.397 2.002.677a14.147 14.147 0 014.45 3.001 14.112 14.112 0 013.679 6.453.502.502 0 00.975 0c.172-.685.397-1.351.677-2.003a14.145 14.145 0 013.001-4.45 14.113 14.113 0 016.453-3.678.503.503 0 000-.975 13.245 13.245 0 01-2.003-.678z" fill="url(#gm3-0)"></path><path d="M20.616 10.835a14.147 14.147 0 01-4.45-3.001 14.111 14.111 0 01-3.678-6.452.503.503 0 00-.975 0 14.134 14.134 0 01-3.679 6.452 14.155 14.155 0 01-4.45 3.001c-.65.28-1.318.505-2.002.678a.502.502 0 000 .975c.684.172 1.35.397 2.002.677a14.147 14.147 0 014.45 3.001 14.112 14.112 0 013.679 6.453.502.502 0 00.975 0c.172-.685.397-1.351.677-2.003a14.145 14.145 0 013.001-4.45 14.113 14.113 0 016.453-3.678.503.503 0 000-.975 13.245 13.245 0 01-2.003-.678z" fill="url(#gm3-1)"></path><path d="M20.616 10.835a14.147 14.147 0 01-4.45-3.001 14.111 14.111 0 01-3.678-6.452.503.503 0 00-.975 0 14.134 14.134 0 01-3.679 6.452 14.155 14.155 0 01-4.45 3.001c-.65.28-1.318.505-2.002.678a.502.502 0 000 .975c.684.172 1.35.397 2.002.677a14.147 14.147 0 014.45 3.001 14.112 14.112 0 013.679 6.453.502.502 0 00.975 0c.172-.685.397-1.351.677-2.003a14.145 14.145 0 013.001-4.45 14.113 14.113 0 016.453-3.678.503.503 0 000-.975 13.245 13.245 0 01-2.003-.678z" fill="url(#gm3-2)"></path><defs><linearGradient gradientUnits="userSpaceOnUse" id="gm3-0" x1="7" x2="11" y1="15.5" y2="12"><stop stop-color="#08B962"></stop><stop offset="1" stop-color="#08B962" stop-opacity="0"></stop></linearGradient><linearGradient gradientUnits="userSpaceOnUse" id="gm3-1" x1="8" x2="11.5" y1="5.5" y2="11"><stop stop-color="#F94543"></stop><stop offset="1" stop-color="#F94543" stop-opacity="0"></stop></linearGradient><linearGradient gradientUnits="userSpaceOnUse" id="gm3-2" x1="3.5" x2="17.5" y1="13.5" y2="12"><stop stop-color="#FABC12"></stop><stop offset=".46" stop-color="#FABC12" stop-opacity="0"></stop></linearGradient></defs></svg></span>
+            <div>
+              <h3><a href="/en/models/gemini-3.1-pro-preview">Gemini 3.1 Pro Preview API</a></h3>
+              <span class="af-model-cat">Google · gemini-3.1-pro-preview</span>
+            </div>
+          </div>
+          <p>Gemini 3 Pro in preview, strong at complex reasoning and cross-modal tasks, priced in two tiers around 200K tokens.</p>
+          <ul class="af-tags">
+            <li>Preview</li>
+            <li>1M context</li>
+            <li>Tiered pricing</li>
+          </ul>
+          <div class="af-model-foot">
+            <span><strong>$0.1985</strong> / 1M input</span>
+            <span class="af-model-go" aria-hidden="true">View page →</span>
+          </div>
+        </li>
+        <li class="af-model">
+          <div class="af-model-head">
+            <span class="af-model-logo" style="background:#ffffff;border:1px solid #e1e6ec" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true" focusable="false"><path d="M20.616 10.835a14.147 14.147 0 01-4.45-3.001 14.111 14.111 0 01-3.678-6.452.503.503 0 00-.975 0 14.134 14.134 0 01-3.679 6.452 14.155 14.155 0 01-4.45 3.001c-.65.28-1.318.505-2.002.678a.502.502 0 000 .975c.684.172 1.35.397 2.002.677a14.147 14.147 0 014.45 3.001 14.112 14.112 0 013.679 6.453.502.502 0 00.975 0c.172-.685.397-1.351.677-2.003a14.145 14.145 0 013.001-4.45 14.113 14.113 0 016.453-3.678.503.503 0 000-.975 13.245 13.245 0 01-2.003-.678z" fill="#3186FF"></path><path d="M20.616 10.835a14.147 14.147 0 01-4.45-3.001 14.111 14.111 0 01-3.678-6.452.503.503 0 00-.975 0 14.134 14.134 0 01-3.679 6.452 14.155 14.155 0 01-4.45 3.001c-.65.28-1.318.505-2.002.678a.502.502 0 000 .975c.684.172 1.35.397 2.002.677a14.147 14.147 0 014.45 3.001 14.112 14.112 0 013.679 6.453.502.502 0 00.975 0c.172-.685.397-1.351.677-2.003a14.145 14.145 0 013.001-4.45 14.113 14.113 0 016.453-3.678.503.503 0 000-.975 13.245 13.245 0 01-2.003-.678z" fill="url(#gm4-0)"></path><path d="M20.616 10.835a14.147 14.147 0 01-4.45-3.001 14.111 14.111 0 01-3.678-6.452.503.503 0 00-.975 0 14.134 14.134 0 01-3.679 6.452 14.155 14.155 0 01-4.45 3.001c-.65.28-1.318.505-2.002.678a.502.502 0 000 .975c.684.172 1.35.397 2.002.677a14.147 14.147 0 014.45 3.001 14.112 14.112 0 013.679 6.453.502.502 0 00.975 0c.172-.685.397-1.351.677-2.003a14.145 14.145 0 013.001-4.45 14.113 14.113 0 016.453-3.678.503.503 0 000-.975 13.245 13.245 0 01-2.003-.678z" fill="url(#gm4-1)"></path><path d="M20.616 10.835a14.147 14.147 0 01-4.45-3.001 14.111 14.111 0 01-3.678-6.452.503.503 0 00-.975 0 14.134 14.134 0 01-3.679 6.452 14.155 14.155 0 01-4.45 3.001c-.65.28-1.318.505-2.002.678a.502.502 0 000 .975c.684.172 1.35.397 2.002.677a14.147 14.147 0 014.45 3.001 14.112 14.112 0 013.679 6.453.502.502 0 00.975 0c.172-.685.397-1.351.677-2.003a14.145 14.145 0 013.001-4.45 14.113 14.113 0 016.453-3.678.503.503 0 000-.975 13.245 13.245 0 01-2.003-.678z" fill="url(#gm4-2)"></path><defs><linearGradient gradientUnits="userSpaceOnUse" id="gm4-0" x1="7" x2="11" y1="15.5" y2="12"><stop stop-color="#08B962"></stop><stop offset="1" stop-color="#08B962" stop-opacity="0"></stop></linearGradient><linearGradient gradientUnits="userSpaceOnUse" id="gm4-1" x1="8" x2="11.5" y1="5.5" y2="11"><stop stop-color="#F94543"></stop><stop offset="1" stop-color="#F94543" stop-opacity="0"></stop></linearGradient><linearGradient gradientUnits="userSpaceOnUse" id="gm4-2" x1="3.5" x2="17.5" y1="13.5" y2="12"><stop stop-color="#FABC12"></stop><stop offset=".46" stop-color="#FABC12" stop-opacity="0"></stop></linearGradient></defs></svg></span>
+            <div>
+              <h3><a href="/en/models/gemini-3.7-flash">Gemini 3.7 Flash API</a></h3>
+              <span class="af-model-cat">Google · gemini-3.7-flash</span>
+            </div>
+          </div>
+          <p>The previous Flash workhorse. Google has replaced it with 3.8 Flash, and existing code keeps working.</p>
+          <ul class="af-tags">
+            <li>Flash</li>
+            <li>Deprecated</li>
+            <li>Legacy code</li>
+          </ul>
+          <div class="af-model-foot">
+            <span><strong>$0.0744</strong> / 1M input</span>
+            <span class="af-model-go" aria-hidden="true">View page →</span>
+          </div>
+        </li>
+      </ul>
+
+      <!-- Jev -->
+      <h3 class="af-section-head" id="cat-jev" style="font-size:16px;margin:24px 0 12px"><a class="af-cat-link" href="/en/models/jev"><span class="af-cat-name">Jev models</span><span class="af-cat-more">overview and price comparison <span class="af-cat-arrow" aria-hidden="true">→</span></span></a></h3>
+      <ul class="af-models">
+        <li class="af-model">
+          <div class="af-model-head">
+            <span class="af-model-logo" style="background:#F386A1;border:1px solid #1E1E1E;border-radius:0" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24" fill="#1E1E1E" aria-hidden="true" focusable="false"><path d="M16.512 2.928L16.512 7.067 20.242 9.487 20.243 18.652 12 24 7.489 21.073 7.489 16.82 3.756 14.399 3.756 5.35 4.111 5.118 12 0ZM9.697 20.65L11.998 22.144 18.032 18.227 15.732 16.735ZM12.779 10.332L12.779 14.4 9.046 16.822 9.046 19.216 14.953 15.383 14.953 8.921ZM16.512 15.384L18.684 16.794 18.684 10.332 16.512 8.922ZM5.966 13.976L8.268 15.47 10.569 13.976 8.268 12.485ZM5.316 6.193L5.316 12.544 7.487 11.134 7.487 7.066 11.221 4.643 11.221 2.36 5.316 6.193ZM9.047 11.132L11.22 12.542 11.22 10.332 9.049 8.921 9.049 11.132ZM9.697 7.487L12 8.981 14.3 7.488 12 5.994ZM12.78 4.643L14.953 6.054 14.953 3.774 12.78 2.359Z"></path></svg></span>
+            <div>
+              <h3><a href="/en/models/jev-1.14.0">jev-1.14.0 API</a></h3>
+              <span class="af-model-cat">TypeSafe · jev-1.14.0</span>
+            </div>
+          </div>
+          <p>TypeSafe's latest System One decision model: 256k context, better multilingual support, experimental image input with box grounding, free output.</p>
+          <ul class="af-tags">
+            <li>Decision model</li>
+            <li>256k context</li>
+            <li>Free output</li>
+          </ul>
+          <div class="af-model-foot">
+            <span><strong>$0.0227</strong> / 1M input</span>
+            <span class="af-model-go" aria-hidden="true">View guide →</span>
+          </div>
+        </li>
+        <li class="af-model">
+          <div class="af-model-head">
+            <span class="af-model-logo" style="background:#F386A1;border:1px solid #1E1E1E;border-radius:0" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24" fill="#1E1E1E" aria-hidden="true" focusable="false"><path d="M16.512 2.928L16.512 7.067 20.242 9.487 20.243 18.652 12 24 7.489 21.073 7.489 16.82 3.756 14.399 3.756 5.35 4.111 5.118 12 0ZM9.697 20.65L11.998 22.144 18.032 18.227 15.732 16.735ZM12.779 10.332L12.779 14.4 9.046 16.822 9.046 19.216 14.953 15.383 14.953 8.921ZM16.512 15.384L18.684 16.794 18.684 10.332 16.512 8.922ZM5.966 13.976L8.268 15.47 10.569 13.976 8.268 12.485ZM5.316 6.193L5.316 12.544 7.487 11.134 7.487 7.066 11.221 4.643 11.221 2.36 5.316 6.193ZM9.047 11.132L11.22 12.542 11.22 10.332 9.049 8.921 9.049 11.132ZM9.697 7.487L12 8.981 14.3 7.488 12 5.994ZM12.78 4.643L14.953 6.054 14.953 3.774 12.78 2.359Z"></path></svg></span>
+            <div>
+              <h3><a href="/en/models/jev-1.13.0">jev-1.13.0 API</a></h3>
+              <span class="af-model-cat">TypeSafe · jev-1.13.0</span>
+            </div>
+          </div>
+          <p>The first public System One model from TypeSafe. Returns typed classifications, scores, and decisions with probabilities. 32k context, unlimited concurrency.</p>
+          <ul class="af-tags">
+            <li>First release</li>
+            <li>32k context</li>
+            <li>Unlimited RPM</li>
+          </ul>
+          <div class="af-model-foot">
+            <span><strong>$0.0227</strong> / 1M input</span>
+            <span class="af-model-go" aria-hidden="true">View guide →</span>
+          </div>
+        </li>
+      </ul>
+      <!-- /Jev -->
 
       <h3 class="af-section-head" id="cat-audio" style="font-size:16px;margin:24px 0 12px">Audio &amp; Music</h3>
       <!-- Adding a guide: copy an li into the ul for its category, then update the JSON-LD ItemList, sitemap.xml, and the Chinese version (/zh/models/) to match. Every new page must load /assets/models/scrollbar.css first in its head. -->

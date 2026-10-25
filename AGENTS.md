@@ -25,7 +25,7 @@ scripts/preview.py        本地预览（模拟 Cloudflare clean URL）
 scripts/check_topics.py   专题页自检
 ```
 
-同一厂商的系列模型共用一套样式和脚本：Claude 用 `assets/models/claude.css`、`claude.js`（总览页另加 `claude-hub.css`）；GPT 用 `assets/models/gpt.css`、`gpt.js`（OpenAI 深色风格，总览页 `/models/gpt` 也用它）。GPT 分享图用 `python scripts/og_gpt.py` 生成。GPT-6 系列在 Chat Completions 上的工具调用有限制，代码示例里工具调用一律走 `/v1/responses`；gpt-5.5-pro 只支持 Responses API。系列页面底部有「同系列模型」列表（`section#family`，放在 FAQ 前），新增或下线一个系列模型时，要同步更新该系列所有页面的列表、专题首页对应分类、sitemap。旧版模型（官方标为 Legacy）首屏加 `.o-notice` 提示并链接到替代型号，FAQ 加一条「停用了吗」。
+同一厂商的系列模型共用一套样式和脚本：Claude 用 `assets/models/claude.css`、`claude.js`（总览页另加 `claude-hub.css`）；GPT 用 `assets/models/gpt.css`、`gpt.js`（OpenAI 深色风格，总览页 `/models/gpt` 也用它）。GPT 分享图用 `python scripts/og_gpt.py` 生成。GPT-6 系列在 Chat Completions 上的工具调用有限制，代码示例里工具调用一律走 `/v1/responses`；gpt-5.5-pro 只支持 Responses API。Jev（TypeSafe）系列共用 `assets/models/jev.css`、`jev.js`，分享图用 `python scripts/og_jev.py` 生成；Jev 走 `POST /v1/systemone`，不是 OpenAI 兼容接口。系列页面底部有「同系列模型」列表（`section#family`，放在 FAQ 前），新增或下线一个系列模型时，要同步更新该系列所有页面的列表、专题首页对应分类、sitemap。旧版模型（官方标为 Legacy）首屏加 `.o-notice` 提示并链接到替代型号，FAQ 加一条「停用了吗」。
 
 `<slug>` 用小写短横线，和模型官方名对齐，例如 `suno`、`gpt-5`、`claude-opus-4-5`。中英文用同一个 slug。
 

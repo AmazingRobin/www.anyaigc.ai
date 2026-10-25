@@ -35,6 +35,15 @@ a:focus-visible,button:focus-visible{outline:3px solid rgba(255,211,138,.6);outl
 .af-section-head-spaced{margin-top:40px}
 .af-section-head h2{margin:0 0 6px;font-size:24px;line-height:1.35}
 .af-section-head p{margin:0;color:var(--af-muted);font-size:14px;line-height:1.7}
+/* 分类标题：系列名 + 「全系总览」链接，整行可点，不用浏览器默认蓝色下划线 */
+.af-cat-link{display:inline-flex;align-items:baseline;flex-wrap:wrap;gap:4px 10px;color:var(--af-ink);text-decoration:none}
+.af-cat-name{font-weight:700}
+.af-cat-more{display:inline-flex;align-items:baseline;gap:4px;padding-left:10px;border-left:1px solid var(--af-line);font-size:14px;font-weight:500;color:var(--af-muted);transition:color .2s ease}
+.af-cat-arrow{display:inline-block;transition:transform .2s ease}
+.af-cat-link:hover .af-cat-more,.af-cat-link:focus-visible .af-cat-more{color:var(--af-coral-dark)}
+.af-cat-link:hover .af-cat-arrow,.af-cat-link:focus-visible .af-cat-arrow{transform:translateX(3px)}
+.af-cat-link:focus-visible{border-radius:4px}
+@media (prefers-reduced-motion:reduce){.af-cat-arrow{transition:none}.af-cat-link:hover .af-cat-arrow{transform:none}}
 .af-filter{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 18px;padding:0;list-style:none}
 .af-filter a{display:inline-block;padding:6px 12px;border-radius:999px;border:1px solid var(--af-line);background:#fff;font-size:13px;font-weight:600;color:var(--af-ink);text-decoration:none}
 .af-filter a:hover{border-color:#d8b9ac}
