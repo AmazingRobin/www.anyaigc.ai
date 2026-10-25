@@ -418,17 +418,59 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/gemini-3.1-pro-preview"/>
   </url>
   <url>
-    <loc>https://www.anyaigc.ai/zh/models/gemini-3.7-flash</loc>
+    <loc>https://www.anyaigc.ai/zh/models/gpt-image</loc>
     <lastmod>2026-10-25</lastmod>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/gemini-3.7-flash"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/gemini-3.7-flash"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/gemini-3.7-flash"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/gpt-image"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/gpt-image"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/gpt-image"/>
   </url>
   <url>
-    <loc>https://www.anyaigc.ai/en/models/gemini-3.7-flash</loc>
+    <loc>https://www.anyaigc.ai/en/models/gpt-image</loc>
     <lastmod>2026-10-25</lastmod>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/gemini-3.7-flash"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/gemini-3.7-flash"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/gemini-3.7-flash"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/gpt-image"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/gpt-image"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/gpt-image"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/zh/models/gpt-image-2.5-sunburst</loc>
+    <lastmod>2026-10-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/gpt-image-2.5-sunburst"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/gpt-image-2.5-sunburst"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/gpt-image-2.5-sunburst"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/en/models/gpt-image-2.5-sunburst</loc>
+    <lastmod>2026-10-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/gpt-image-2.5-sunburst"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/gpt-image-2.5-sunburst"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/gpt-image-2.5-sunburst"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/zh/models/gpt-image-2.5-flare</loc>
+    <lastmod>2026-10-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/gpt-image-2.5-flare"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/gpt-image-2.5-flare"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/gpt-image-2.5-flare"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/en/models/gpt-image-2.5-flare</loc>
+    <lastmod>2026-10-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/gpt-image-2.5-flare"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/gpt-image-2.5-flare"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/gpt-image-2.5-flare"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/zh/models/gpt-image-2</loc>
+    <lastmod>2026-10-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/gpt-image-2"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/gpt-image-2"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/gpt-image-2"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/en/models/gpt-image-2</loc>
+    <lastmod>2026-10-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/gpt-image-2"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/gpt-image-2"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/gpt-image-2"/>
   </url>
 </urlset>
