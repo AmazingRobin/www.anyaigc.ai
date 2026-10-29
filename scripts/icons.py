@@ -12,9 +12,9 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ICON_DIR = os.path.join(ROOT, 'assets', 'icons')
 VERSION = '1.97.0'
 CDN = 'https://registry.npmmirror.com/@lobehub/icons-static-svg/{v}/files/icons/{id}.svg'
-ICONS = ['claude-color', 'claude', 'anthropic', 'suno', 'claudecode-color', 'openai', 'codex', 'codex-color', 'typesafeai', 'gemini-color', 'gemini', 'nanobanana-color', 'kimi-color', 'kimi', 'moonshot']
+ICONS = ['claude-color', 'claude', 'anthropic', 'suno', 'claudecode-color', 'openai', 'codex', 'codex-color', 'typesafeai', 'gemini-color', 'gemini', 'nanobanana-color', 'kimi-color', 'kimi', 'moonshot', 'bytedance-color']
 # 个别图标只在更新的版本里有，单独指定版本（其余图标仍用 VERSION）
-ICON_VERSION = {'typesafeai': '1.98.0', 'nanobanana-color': '1.98.0'}
+ICON_VERSION = {'typesafeai': '1.98.0', 'nanobanana-color': '1.98.0', 'bytedance-color': '1.98.0'}
 NL = chr(10)
 
 

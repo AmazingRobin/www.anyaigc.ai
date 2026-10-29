@@ -7,14 +7,14 @@
   </url>
   <url>
     <loc>https://www.anyaigc.ai/zh/models/</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-28</lastmod>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/"/>
   </url>
   <url>
     <loc>https://www.anyaigc.ai/en/models/</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-28</lastmod>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/"/>
@@ -584,5 +584,89 @@
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/kimi-k2.6"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/kimi-k2.6"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/kimi-k2.6"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/zh/models/seedream</loc>
+    <lastmod>2026-10-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/seedream"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/seedream"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/seedream"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/en/models/seedream</loc>
+    <lastmod>2026-10-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/seedream"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/seedream"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/seedream"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/zh/models/seedream-5.0-pro</loc>
+    <lastmod>2026-10-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/seedream-5.0-pro"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/seedream-5.0-pro"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/seedream-5.0-pro"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/en/models/seedream-5.0-pro</loc>
+    <lastmod>2026-10-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/seedream-5.0-pro"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/seedream-5.0-pro"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/seedream-5.0-pro"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/zh/models/seedream-5.0-lite</loc>
+    <lastmod>2026-10-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/seedream-5.0-lite"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/seedream-5.0-lite"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/seedream-5.0-lite"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/en/models/seedream-5.0-lite</loc>
+    <lastmod>2026-10-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/seedream-5.0-lite"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/seedream-5.0-lite"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/seedream-5.0-lite"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/zh/models/seedream-4.5</loc>
+    <lastmod>2026-10-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/seedream-4.5"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/seedream-4.5"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/seedream-4.5"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/en/models/seedream-4.5</loc>
+    <lastmod>2026-10-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/seedream-4.5"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/seedream-4.5"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/seedream-4.5"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/zh/models/seedream-4.0</loc>
+    <lastmod>2026-10-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/seedream-4.0"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/seedream-4.0"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/seedream-4.0"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/en/models/seedream-4.0</loc>
+    <lastmod>2026-10-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/seedream-4.0"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/seedream-4.0"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/seedream-4.0"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/zh/models/seedream-3.0</loc>
+    <lastmod>2026-10-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/seedream-3.0"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/seedream-3.0"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/seedream-3.0"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/en/models/seedream-3.0</loc>
+    <lastmod>2026-10-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/seedream-3.0"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/seedream-3.0"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/seedream-3.0"/>
   </url>
 </urlset>
