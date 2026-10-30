@@ -29,7 +29,7 @@
 <meta name="twitter:description" content="kimi-k2.6 输入 $0.3847/1M、输出 $1.5980/1M，约 Moonshot 官方价 4 折。SWE-Bench Verified 80.2，思考与非思考可切换，可接入 Claude Code，支持对公转账与增值税专票。">
 <meta name="twitter:image" content="https://www.anyaigc.ai/assets/og/kimi-k2.6-zh.png">
 <link rel="stylesheet" href="/assets/models/scrollbar.css?v=20261024b">
-<link rel="stylesheet" href="/assets/models/kimi.css?v=20261026">
+<link rel="stylesheet" href="/assets/models/kimi.css?v=20261030">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -66,7 +66,7 @@
       "mainEntity": {
         "@id": "https://www.anyaigc.ai/zh/models/kimi-k2.6#product"
       },
-      "dateModified": "2026-10-26"
+      "dateModified": "2026-10-30"
     },
     {
       "@type": "BreadcrumbList",
@@ -487,20 +487,20 @@
     <div class="o-wrap k-wide">
       <span class="k-kicker o-reveal">选型</span>
       <h2 class="o-h2 o-reveal" id="compare-title">Kimi K2.6、K2.7 Code 和 K3 怎么选</h2>
-      <p class="o-lead o-reveal">通用任务和需要关掉思考时用 K2.6，专心写代码用 K2.7 Code，最难的任务交给 K3。</p>
+      <p class="o-lead o-reveal">通用任务和需要关掉思考时用 K2.6，专心写代码用 K2.7 Code，最难的任务交给 K3.1 Pro。</p>
       <div class="o-table-wrap o-reveal">
         <table class="o-table">
-          <caption class="o-sr">Kimi K2.6、K2.7 Code、K3 对比，价格为 AnyAIGC 每百万 tokens 美元</caption>
+          <caption class="o-sr">Kimi K2.6、K2.7 Code、K3.1 Pro 对比，价格为 AnyAIGC 每百万 tokens 美元</caption>
           <thead>
-            <tr><th scope="col">对比项</th><th scope="col" class="o-num o-hl">K2.6</th><th scope="col" class="o-num">K2.7 Code</th><th scope="col" class="o-num">K3</th></tr>
+            <tr><th scope="col">对比项</th><th scope="col" class="o-num o-hl">K2.6</th><th scope="col" class="o-num">K2.7 Code</th><th scope="col" class="o-num">K3.1 Pro</th></tr>
           </thead>
           <tbody>
-            <tr><th scope="row">定位</th><td class="o-num o-hl">通用多模态 Agent</td><td class="o-num">编程 Agent</td><td class="o-num">旗舰通用</td></tr>
+            <tr><th scope="row">定位</th><td class="o-num o-hl">通用多模态 Agent</td><td class="o-num">编程 Agent</td><td class="o-num">最新旗舰</td></tr>
             <tr><th scope="row">上下文</th><td class="o-num o-hl">256K</td><td class="o-num">256K</td><td class="o-num">1M</td></tr>
             <tr><th scope="row">思考模式</th><td class="o-num o-hl">可开可关</td><td class="o-num">始终开启</td><td class="o-num">始终开启</td></tr>
-            <tr><th scope="row">AnyAIGC 输入<small>每百万 tokens</small></th><td class="o-num o-hl">$0.3847</td><td class="o-num">$0.3847</td><td class="o-num">$1.2150</td></tr>
-            <tr><th scope="row">AnyAIGC 输出<small>每百万 tokens</small></th><td class="o-num o-hl">$1.5980</td><td class="o-num">$1.5980</td><td class="o-num">$6.0750</td></tr>
-            <tr><th scope="row">缓存命中<small>每百万 tokens</small></th><td class="o-num o-hl">$0.0651</td><td class="o-num">$0.0770</td><td class="o-num">$0.1215</td></tr>
+            <tr><th scope="row">AnyAIGC 输入<small>每百万 tokens</small></th><td class="o-num o-hl">$0.3847</td><td class="o-num">$0.3847</td><td class="o-num">$0.8100</td></tr>
+            <tr><th scope="row">AnyAIGC 输出<small>每百万 tokens</small></th><td class="o-num o-hl">$1.5980</td><td class="o-num">$1.5980</td><td class="o-num">$4.0500</td></tr>
+            <tr><th scope="row">缓存命中<small>每百万 tokens</small></th><td class="o-num o-hl">$0.0651</td><td class="o-num">$0.0770</td><td class="o-num">$0.0810</td></tr>
           </tbody>
         </table>
       </div>
@@ -704,8 +704,9 @@ stream = client.chat.completions.create(
       <h2 class="o-h2 o-reveal" id="family-title">Kimi 系列其他模型</h2>
       <p class="o-lead o-reveal">同一个 API Key 可以调用下面所有 Kimi 模型，按任务难度和预算选择。</p>
       <ul class="o-family o-reveal">
-        <li><a href="/zh/models/kimi"><b>Kimi 全系总览</b><span>K3、K2.7 Code、K2.6 价格对比与选型</span></a></li>
-        <li><a href="/zh/models/kimi-k3"><span class="o-tag">旗舰</span><b>Kimi K3</b><span>2.8T 参数开放权重，1M 上下文 · 输入 $1.2150 / 1M</span></a></li>
+        <li><a href="/zh/models/kimi"><b>Kimi 全系总览</b><span>K3.1 Pro、K3、K2.7 Code、K2.6 价格对比与选型</span></a></li>
+        <li><a href="/zh/models/kimi-k3.1-pro"><span class="o-tag">最新</span><b>Kimi K3.1 Pro</b><span>K3.1 系列首款，1M 上下文 · 输入 $0.8100 / 1M</span></a></li>
+        <li><a href="/zh/models/kimi-k3"><b>Kimi K3</b><span>2.8T 参数开放权重，1M 上下文 · 输入 $1.2150 / 1M</span></a></li>
         <li><a href="/zh/models/kimi-k2.7-code"><span class="o-tag">编程</span><b>Kimi K2.7 Code</b><span>K2.6 的编程强化版，强制思考 · 输入 $0.3847 / 1M</span></a></li>
         <li><a href="/zh/models/kimi-k2.6" aria-current="page"><b>Kimi K2.6</b><span>通用多模态 Agent，可关闭思考 · 输入 $0.3847 / 1M</span></a></li>
       </ul>
@@ -798,6 +799,6 @@ stream = client.chat.completions.create(
   </div>
 </footer>
 
-<script src="/assets/models/kimi.js?v=20261026" defer></script>
+<script src="/assets/models/kimi.js?v=20261030" defer></script>
 </body>
 </html>

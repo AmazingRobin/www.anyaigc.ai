@@ -20,9 +20,13 @@ ENT = {'zh': '对公 · 专票', 'en': 'Contracts · invoices'}
 # 每个页面：标题前半、蓝色关键词、一句卖点、价格标签、其余标签
 PAGES = {
     'kimi': ('Kimi', 'API',
-             {'zh': 'K3、K2.7 Code、K2.6 一个 Key 调用，约官方 4 折', 'en': 'K3, K2.7 Code and K2.6 with one key, ~60% off'},
+             {'zh': 'K3.1 Pro、K3、K2.7 Code、K2.6 一个 Key 调用', 'en': 'K3.1 Pro, K3, K2.7 Code, K2.6 with one key'},
              {'zh': f'${PRICE["kimi-k2.6"][0]} / 1M 输入起', 'en': f'From ${PRICE["kimi-k2.6"][0]} / 1M input'},
              {'zh': ['Claude Code', '并发不限'], 'en': ['Claude Code', 'Unlimited RPM']}),
+    'kimi-k3.1-pro': ('Kimi K3.1', 'Pro',
+                      {'zh': 'Kimi K3.1 系列首款，约官方价 4 折', 'en': 'The first Kimi K3.1 model, ~60% off'},
+                      {'zh': f'${PRICE["kimi-k3.1-pro"][0]} / 1M 输入', 'en': f'${PRICE["kimi-k3.1-pro"][0]} / 1M input'},
+                      {'zh': ['1M 上下文', '并发不限'], 'en': ['1M context', 'Unlimited RPM']}),
     'kimi-k3': ('Kimi', 'K3',
                 {'zh': '2.8T 参数开放权重模型，约官方价 4 折', 'en': '2.8T-parameter open-weight model, ~60% off'},
                 {'zh': f'${PRICE["kimi-k3"][0]} / 1M 输入', 'en': f'${PRICE["kimi-k3"][0]} / 1M input'},

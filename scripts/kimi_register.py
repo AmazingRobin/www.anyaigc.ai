@@ -17,6 +17,8 @@ LOGO = logo(cls='', size=26)
 # slug -> (中文名, 中文简介, 中文标签, 英文名, 英文简介, 英文标签)
 CARDS = {
     'kimi': ('Kimi API（全系总览）', '', [], 'Kimi API (overview)', '', []),
+    'kimi-k3.1-pro': ('Kimi K3.1 Pro API', 'Kimi K3.1 系列首款，1M 上下文，代码、3D 创作和金融研究比 K3 更强，单价更低。', ['最新', '1M 上下文', '约官方 4 折'],
+                      'Kimi K3.1 Pro API', 'The first K3.1 model, with 1M context and gains over K3 in coding, 3D and finance, at a lower price.', ['Latest', '1M context', 'About 60% off']),
     'kimi-k3': ('Kimi K3 API', 'Moonshot 开源的 2.8T 参数模型，1M 上下文，面向长程编程、知识工作和深度推理。', ['1M 上下文', '长程编程', '约官方 4 折'],
                 'Kimi K3 API', "Moonshot's 2.8T-parameter open-weight model with 1M context for long-horizon coding and reasoning.", ['1M context', 'Long-horizon coding', 'About 60% off']),
     'kimi-k2.7-code': ('Kimi K2.7 Code API', '基于 K2.6 的编程向 Agent 模型，编程成功率更高，可直接接入 Claude Code。', ['编程 Agent', 'Claude Code', '256K'],
@@ -24,7 +26,7 @@ CARDS = {
     'kimi-k2.6': ('Kimi K2.6 API', '开源原生多模态 Agent 模型，思考与非思考可切换，兼顾编码与通用对话。', ['多模态', '思考可关', '256K'],
                   'Kimi K2.6 API', 'An open multimodal agent model with switchable thinking, for coding and general tasks.', ['Multimodal', 'Optional thinking', '256K']),
 }
-ORDER = ['kimi-k3', 'kimi-k2.7-code', 'kimi-k2.6']
+ORDER = ['kimi-k3.1-pro', 'kimi-k3', 'kimi-k2.7-code', 'kimi-k2.6']
 CAT = {'zh': ('Kimi 系列', '全系总览与价格对比', '查看专题 →', '/ 1M 输入'),
        'en': ('Kimi models', 'overview and price comparison', 'View guide →', '/ 1M input')}
 

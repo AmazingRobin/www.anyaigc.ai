@@ -29,7 +29,7 @@
 <meta name="twitter:description" content="kimi-k2.7-code 输入 $0.3847/1M、输出 $1.5980/1M，约 Moonshot 官方价 4 折。Kimi Code Bench v2 比 K2.6 提升 21.8%，可接入 Claude Code，支持对公转账与增值税专票。">
 <meta name="twitter:image" content="https://www.anyaigc.ai/assets/og/kimi-k2.7-code-zh.png">
 <link rel="stylesheet" href="/assets/models/scrollbar.css?v=20261024b">
-<link rel="stylesheet" href="/assets/models/kimi.css?v=20261026">
+<link rel="stylesheet" href="/assets/models/kimi.css?v=20261030">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -66,7 +66,7 @@
       "mainEntity": {
         "@id": "https://www.anyaigc.ai/zh/models/kimi-k2.7-code#product"
       },
-      "dateModified": "2026-10-26"
+      "dateModified": "2026-10-30"
     },
     {
       "@type": "BreadcrumbList",
@@ -194,10 +194,10 @@
         },
         {
           "@type": "Question",
-          "name": "Kimi K2.7 Code 和 Kimi K3 怎么选？",
+          "name": "Kimi K2.7 Code 和 Kimi K3.1 Pro 怎么选？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "K2.7 Code 是 1T 参数的编程模型，上下文 256K，AnyAIGC 输入 $0.3847、输出 $1.5980，适合日常编码和高频 Agent 调用；Kimi K3 是 2.8T 参数的旗舰级模型，有 1M 上下文，输入 $1.2150、输出 $6.0750，适合大仓库和最难的任务。两者共用同一个 Key。"
+            "text": "K2.7 Code 是 1T 参数的编程模型，上下文 256K，AnyAIGC 输入 $0.3847、输出 $1.5980，适合日常编码和高频 Agent 调用；Kimi K3.1 Pro 是最新一代 3T 级模型，有 1M 上下文，输入 $0.8100、输出 $4.0500，适合大仓库和最难的任务。两者共用同一个 Key。"
           }
         },
         {
@@ -331,7 +331,7 @@
         <p class="k-ask-q">跑一遍测试，定位 test_checkout 失败的原因并修好<span class="k-caret"></span></p>
         <div class="k-ask-bar"><span class="k-chip">Coding Agent</span><span class="k-chip">交错思考</span><span class="k-chip">256K</span><span class="k-send"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#000000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg></span></div>
       </div>
-      <p class="k-lead-sub"><code>kimi-k2.7-code</code> 输入 $0.3847 / 百万 tokens、输出 $1.5980 / 百万 tokens，约为 K3 的三分之一，OpenAI 兼容接口和 Claude Code 都能直接用。</p>
+      <p class="k-lead-sub"><code>kimi-k2.7-code</code> 输入 $0.3847 / 百万 tokens、输出 $1.5980 / 百万 tokens，约为 K3.1 Pro 的一半，OpenAI 兼容接口和 Claude Code 都能直接用。</p>
       <div class="o-cta">
         <a class="o-btn o-btn-dark" href="https://anyaigc.ai/register?aff=oOK7&channel=c_wpduopc9">获取 API Key</a>
         <a class="o-btn o-btn-light" href="#pricing">查看价格<span class="k-arrow" aria-hidden="true">→</span></a>
@@ -478,24 +478,24 @@
     <div class="o-wrap k-wide">
       <span class="k-kicker o-reveal">选型</span>
       <h2 class="o-h2 o-reveal" id="compare-title">Kimi K2.7 Code、K2.6 和 K3 怎么选</h2>
-      <p class="o-lead o-reveal">写代码优先 K2.7 Code，需要关闭思考用 K2.6，大仓库和最难的任务交给 K3。</p>
+      <p class="o-lead o-reveal">写代码优先 K2.7 Code，需要关闭思考用 K2.6，大仓库和最难的任务交给 K3.1 Pro。</p>
       <div class="o-table-wrap o-reveal">
         <table class="o-table">
-          <caption class="o-sr">Kimi K2.7 Code、K2.6、K3 对比，价格为 AnyAIGC 每百万 tokens 美元</caption>
+          <caption class="o-sr">Kimi K2.7 Code、K2.6、K3.1 Pro 对比，价格为 AnyAIGC 每百万 tokens 美元</caption>
           <thead>
-            <tr><th scope="col">对比项</th><th scope="col" class="o-num o-hl">K2.7 Code</th><th scope="col" class="o-num">K2.6</th><th scope="col" class="o-num">K3</th></tr>
+            <tr><th scope="col">对比项</th><th scope="col" class="o-num o-hl">K2.7 Code</th><th scope="col" class="o-num">K2.6</th><th scope="col" class="o-num">K3.1 Pro</th></tr>
           </thead>
           <tbody>
-            <tr><th scope="row">定位</th><td class="o-num o-hl">编程 Agent</td><td class="o-num">通用多模态 Agent</td><td class="o-num">旗舰通用</td></tr>
+            <tr><th scope="row">定位</th><td class="o-num o-hl">编程 Agent</td><td class="o-num">通用多模态 Agent</td><td class="o-num">最新旗舰</td></tr>
             <tr><th scope="row">上下文</th><td class="o-num o-hl">256K</td><td class="o-num">256K</td><td class="o-num">1M</td></tr>
             <tr><th scope="row">思考模式</th><td class="o-num o-hl">始终开启</td><td class="o-num">可开可关</td><td class="o-num">始终开启</td></tr>
-            <tr><th scope="row">AnyAIGC 输入<small>每百万 tokens</small></th><td class="o-num o-hl">$0.3847</td><td class="o-num">$0.3847</td><td class="o-num">$1.2150</td></tr>
-            <tr><th scope="row">AnyAIGC 输出<small>每百万 tokens</small></th><td class="o-num o-hl">$1.5980</td><td class="o-num">$1.5980</td><td class="o-num">$6.0750</td></tr>
-            <tr><th scope="row">缓存命中<small>每百万 tokens</small></th><td class="o-num o-hl">$0.0770</td><td class="o-num">$0.0651</td><td class="o-num">$0.1215</td></tr>
+            <tr><th scope="row">AnyAIGC 输入<small>每百万 tokens</small></th><td class="o-num o-hl">$0.3847</td><td class="o-num">$0.3847</td><td class="o-num">$0.8100</td></tr>
+            <tr><th scope="row">AnyAIGC 输出<small>每百万 tokens</small></th><td class="o-num o-hl">$1.5980</td><td class="o-num">$1.5980</td><td class="o-num">$4.0500</td></tr>
+            <tr><th scope="row">缓存命中<small>每百万 tokens</small></th><td class="o-num o-hl">$0.0770</td><td class="o-num">$0.0651</td><td class="o-num">$0.0810</td></tr>
           </tbody>
         </table>
       </div>
-      <p class="o-note">参数来自 Moonshot AI 公开资料，价格为 AnyAIGC 当前价格，实时价格以模型广场为准。详见 <a href="/zh/models/kimi-k3">Kimi K3 API</a>。</p>
+      <p class="o-note">参数来自 Moonshot AI 公开资料，价格为 AnyAIGC 当前价格，实时价格以模型广场为准。详见 <a href="/zh/models/kimi-k3.1-pro">Kimi K3.1 Pro API</a>。</p>
     </div>
   </section>
 
@@ -505,7 +505,7 @@
       <span class="k-kicker o-reveal">使用场景</span>
       <h2 class="o-h2 o-reveal" id="uses-title">Kimi K2.7 Code 适合做什么</h2>
       <ul class="k-uses">
-        <li class="o-reveal"><span class="k-k">01 · Claude Code</span><h3>终端里的编程搭档</h3><p>把 Claude Code 的模型换成 K2.7 Code，读代码、改 bug、写测试，单价约为 K3 的三分之一。</p></li>
+        <li class="o-reveal"><span class="k-k">01 · Claude Code</span><h3>终端里的编程搭档</h3><p>把 Claude Code 的模型换成 K2.7 Code，读代码、改 bug、写测试，单价约为 K3.1 Pro 的一半。</p></li>
         <li class="o-reveal"><span class="k-k">02 · CI</span><h3>自动修复和代码审查</h3><p>在流水线里自动审查 PR、修复失败的测试、生成变更说明。AnyAIGC 不限并发，适合大批量并行。</p></li>
         <li class="o-reveal"><span class="k-k">03 · 前端</span><h3>设计稿到组件</h3><p>上传设计稿或页面截图，生成 React、Vue 或原生 HTML/CSS 组件，再按渲染结果迭代。</p></li>
         <li class="o-reveal"><span class="k-k">04 · 机器学习工程</span><h3>实验脚本和数据处理</h3><p>MLS Bench Lite 比 K2.6 提升约 31%，适合写训练脚本、数据清洗和评测代码。</p></li>
@@ -637,7 +637,7 @@ stream = client.chat.completions.create(
     <div class="o-wrap o-col">
       <span class="k-kicker o-reveal">Claude Code</span>
       <h2 class="o-h2 o-reveal" id="cc-title">在 Claude Code 中使用 Kimi K2.7 Code</h2>
-      <p class="o-lead o-reveal">把 Claude Code 的模型换成 Kimi K2.7 Code：专为编程训练，价格约为 K3 的三分之一。</p>
+      <p class="o-lead o-reveal">把 Claude Code 的模型换成 Kimi K2.7 Code：专为编程训练，价格约为 K3.1 Pro 的一半。</p>
       <ol class="o-steps o-reveal">
         <li><strong>安装 Claude Code</strong>：按官方方式安装（如 <code>npm install -g @anthropic-ai/claude-code</code>）。</li>
         <li><strong>写入配置</strong>：编辑 <code>~/.claude/settings.json</code>，把下面的 env 加进去，<code>ANTHROPIC_AUTH_TOKEN</code> 换成你在 AnyAIGC 创建的 Key。</li>
@@ -657,7 +657,7 @@ stream = client.chat.completions.create(
   }
 }</code></pre>
       </figure>
-      <p class="k-callout o-reveal"><strong>遇到大仓库：</strong>K2.7 Code 的上下文是 256K。项目特别大、需要一次读完更多代码时，可以把配置里的模型换成 <code>kimi-k3</code>（1M 上下文）。</p>
+      <p class="k-callout o-reveal"><strong>遇到大仓库：</strong>K2.7 Code 的上下文是 256K。项目特别大、需要一次读完更多代码时，可以把配置里的模型换成 <code>kimi-k3.1-pro</code>（1M 上下文）。</p>
       <p class="o-note">完整步骤和常见报错见 <a href="https://docs.anyaigc.ai/tutorials/plugins-7010249" target="_blank" rel="noopener">Claude Code 安装与使用教程</a>，教程里的模型名换成 <code>kimi-k2.7-code</code> 即可。</p>
     </div>
   </section>
@@ -707,8 +707,9 @@ stream = client.chat.completions.create(
       <h2 class="o-h2 o-reveal" id="family-title">Kimi 系列其他模型</h2>
       <p class="o-lead o-reveal">同一个 API Key 可以调用下面所有 Kimi 模型，按任务难度和预算选择。</p>
       <ul class="o-family o-reveal">
-        <li><a href="/zh/models/kimi"><b>Kimi 全系总览</b><span>K3、K2.7 Code、K2.6 价格对比与选型</span></a></li>
-        <li><a href="/zh/models/kimi-k3"><span class="o-tag">旗舰</span><b>Kimi K3</b><span>2.8T 参数开放权重，1M 上下文 · 输入 $1.2150 / 1M</span></a></li>
+        <li><a href="/zh/models/kimi"><b>Kimi 全系总览</b><span>K3.1 Pro、K3、K2.7 Code、K2.6 价格对比与选型</span></a></li>
+        <li><a href="/zh/models/kimi-k3.1-pro"><span class="o-tag">最新</span><b>Kimi K3.1 Pro</b><span>K3.1 系列首款，1M 上下文 · 输入 $0.8100 / 1M</span></a></li>
+        <li><a href="/zh/models/kimi-k3"><b>Kimi K3</b><span>2.8T 参数开放权重，1M 上下文 · 输入 $1.2150 / 1M</span></a></li>
         <li><a href="/zh/models/kimi-k2.7-code" aria-current="page"><span class="o-tag">编程</span><b>Kimi K2.7 Code</b><span>K2.6 的编程强化版，强制思考 · 输入 $0.3847 / 1M</span></a></li>
         <li><a href="/zh/models/kimi-k2.6"><b>Kimi K2.6</b><span>通用多模态 Agent，可关闭思考 · 输入 $0.3847 / 1M</span></a></li>
       </ul>
@@ -727,7 +728,7 @@ stream = client.chat.completions.create(
         <details><summary><h3>Kimi K2.7 Code 能关闭思考模式吗？</h3></summary><div class="o-ans"><p>不能。官方说明 K2.7 Code 强制开启思考和保留思考（preserve thinking），不支持非思考模式。需要快速、非思考的响应可以用 <code>kimi-k2.6</code>。官方推荐参数为 <code>temperature=1.0</code>、<code>top_p=0.95</code>。</p></div></details>
         <details><summary><h3>Kimi K2.7 Code 支持工具调用吗？</h3></summary><div class="o-ans"><p>支持。K2.7 Code 支持交错思考（interleaved thinking）和多步工具调用，适合 Coding Agent。多轮和工具调用时，需要把返回的完整 assistant 消息（含 <code>reasoning_content</code> 和 <code>tool_calls</code>）原样放回下一次请求。</p></div></details>
         <details><summary><h3>可以在 Claude Code 里使用 Kimi K2.7 Code 吗？</h3></summary><div class="o-ans"><p>可以。在 <code>~/.claude/settings.json</code> 的 env 中设置 <code>ANTHROPIC_BASE_URL</code> 为 <code>https://anyaigc.ai</code>、<code>ANTHROPIC_AUTH_TOKEN</code> 为你的 API Key、<code>ANTHROPIC_MODEL</code> 为 <code>kimi-k2.7-code</code>，然后运行 <code>claude</code> 即可。</p></div></details>
-        <details><summary><h3>Kimi K2.7 Code 和 Kimi K3 怎么选？</h3></summary><div class="o-ans"><p>K2.7 Code 是 1T 参数的编程模型，上下文 256K，AnyAIGC 输入 $0.3847、输出 $1.5980，适合日常编码和高频 Agent 调用；<a href="/zh/models/kimi-k3">Kimi K3</a> 是 2.8T 参数的旗舰级模型，有 1M 上下文，输入 $1.2150、输出 $6.0750，适合大仓库和最难的任务。两者共用同一个 Key。</p></div></details>
+        <details><summary><h3>Kimi K2.7 Code 和 Kimi K3.1 Pro 怎么选？</h3></summary><div class="o-ans"><p>K2.7 Code 是 1T 参数的编程模型，上下文 256K，AnyAIGC 输入 $0.3847、输出 $1.5980，适合日常编码和高频 Agent 调用；<a href="/zh/models/kimi-k3.1-pro">Kimi K3.1 Pro</a> 是最新一代 3T 级模型，有 1M 上下文，输入 $0.8100、输出 $4.0500，适合大仓库和最难的任务。两者共用同一个 Key。</p></div></details>
         <details><summary><h3>并发和速率有限制吗？</h3></summary><div class="o-ans"><p>AnyAIGC 对 <code>kimi-k2.7-code</code> 不设并发限制，所有用户默认享有，适合批量任务、CI 流水线和多 Agent 并行。Moonshot 官方平台按充值等级限制并发、RPM、TPM 和 TPD，通过 AnyAIGC 调用不受这些等级限制。</p></div></details>
         <details><summary><h3>国内可以直接调用 Kimi K2.7 Code API 吗？</h3></summary><div class="o-ans"><p>可以。AnyAIGC 面向国内网络优化，通常无需额外代理即可调用 <code>https://anyaigc.ai</code>，按美元价格计费，支持微信支付、支付宝、USDT 和信用卡，企业可对公转账并开具增值税发票。</p></div></details>
         <details><summary><h3>如何获取 Kimi K2.7 Code API Key？</h3></summary><div class="o-ans"><p>在 <a href="https://anyaigc.ai/register?aff=oOK7&channel=c_wpduopc9">anyaigc.ai</a> 注册并充值，进入控制台创建令牌即可。同一个 Key 可以调用 Kimi 全系以及平台上 300+ 其他模型，不需要单独注册 Moonshot 开放平台账号。</p></div></details>
@@ -801,6 +802,6 @@ stream = client.chat.completions.create(
   </div>
 </footer>
 
-<script src="/assets/models/kimi.js?v=20261026" defer></script>
+<script src="/assets/models/kimi.js?v=20261030" defer></script>
 </body>
 </html>

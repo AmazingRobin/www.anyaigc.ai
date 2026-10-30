@@ -29,7 +29,7 @@
 <meta name="twitter:description" content="kimi-k2.6 at $0.3847/1M input and $1.5980/1M output, about 40% of Moonshot official prices. SWE-Bench Verified 80.2, thinking on or off, works in Claude Code.">
 <meta name="twitter:image" content="https://www.anyaigc.ai/assets/og/kimi-k2.6-en.png">
 <link rel="stylesheet" href="/assets/models/scrollbar.css?v=20261024b">
-<link rel="stylesheet" href="/assets/models/kimi.css?v=20261026">
+<link rel="stylesheet" href="/assets/models/kimi.css?v=20261030">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -66,7 +66,7 @@
       "mainEntity": {
         "@id": "https://www.anyaigc.ai/en/models/kimi-k2.6#product"
       },
-      "dateModified": "2026-10-26"
+      "dateModified": "2026-10-30"
     },
     {
       "@type": "BreadcrumbList",
@@ -487,20 +487,20 @@
     <div class="o-wrap k-wide">
       <span class="k-kicker o-reveal">Compare</span>
       <h2 class="o-h2 o-reveal" id="compare-title">Kimi K2.6 vs K2.7 Code vs K3</h2>
-      <p class="o-lead o-reveal">Use K2.6 for general tasks or when thinking should be off, K2.7 Code for focused coding, and K3 for the hardest tasks.</p>
+      <p class="o-lead o-reveal">Use K2.6 for general tasks or when thinking should be off, K2.7 Code for focused coding, and K3.1 Pro for the hardest tasks.</p>
       <div class="o-table-wrap o-reveal">
         <table class="o-table">
-          <caption class="o-sr">Kimi K2.6, K2.7 Code and K3 compared; prices are AnyAIGC USD per 1M tokens</caption>
+          <caption class="o-sr">Kimi K2.6, K2.7 Code and K3.1 Pro compared; prices are AnyAIGC USD per 1M tokens</caption>
           <thead>
-            <tr><th scope="col">Spec</th><th scope="col" class="o-num o-hl">K2.6</th><th scope="col" class="o-num">K2.7 Code</th><th scope="col" class="o-num">K3</th></tr>
+            <tr><th scope="col">Spec</th><th scope="col" class="o-num o-hl">K2.6</th><th scope="col" class="o-num">K2.7 Code</th><th scope="col" class="o-num">K3.1 Pro</th></tr>
           </thead>
           <tbody>
-            <tr><th scope="row">Role</th><td class="o-num o-hl">General multimodal agent</td><td class="o-num">Coding agent</td><td class="o-num">Flagship general</td></tr>
+            <tr><th scope="row">Role</th><td class="o-num o-hl">General multimodal agent</td><td class="o-num">Coding agent</td><td class="o-num">Latest flagship</td></tr>
             <tr><th scope="row">Context</th><td class="o-num o-hl">256K</td><td class="o-num">256K</td><td class="o-num">1M</td></tr>
             <tr><th scope="row">Thinking</th><td class="o-num o-hl">On or off</td><td class="o-num">Always on</td><td class="o-num">Always on</td></tr>
-            <tr><th scope="row">AnyAIGC input<small>per 1M tokens</small></th><td class="o-num o-hl">$0.3847</td><td class="o-num">$0.3847</td><td class="o-num">$1.2150</td></tr>
-            <tr><th scope="row">AnyAIGC output<small>per 1M tokens</small></th><td class="o-num o-hl">$1.5980</td><td class="o-num">$1.5980</td><td class="o-num">$6.0750</td></tr>
-            <tr><th scope="row">Cache hit<small>per 1M tokens</small></th><td class="o-num o-hl">$0.0651</td><td class="o-num">$0.0770</td><td class="o-num">$0.1215</td></tr>
+            <tr><th scope="row">AnyAIGC input<small>per 1M tokens</small></th><td class="o-num o-hl">$0.3847</td><td class="o-num">$0.3847</td><td class="o-num">$0.8100</td></tr>
+            <tr><th scope="row">AnyAIGC output<small>per 1M tokens</small></th><td class="o-num o-hl">$1.5980</td><td class="o-num">$1.5980</td><td class="o-num">$4.0500</td></tr>
+            <tr><th scope="row">Cache hit<small>per 1M tokens</small></th><td class="o-num o-hl">$0.0651</td><td class="o-num">$0.0770</td><td class="o-num">$0.0810</td></tr>
           </tbody>
         </table>
       </div>
@@ -704,8 +704,9 @@ stream = client.chat.completions.create(
       <h2 class="o-h2 o-reveal" id="family-title">Other Kimi models</h2>
       <p class="o-lead o-reveal">One API key calls every Kimi model below. Pick by task difficulty and budget.</p>
       <ul class="o-family o-reveal">
-        <li><a href="/en/models/kimi"><b>Kimi overview</b><span>K3, K2.7 Code and K2.6 pricing compared</span></a></li>
-        <li><a href="/en/models/kimi-k3"><span class="o-tag">Flagship</span><b>Kimi K3</b><span>2.8T-parameter open weights, 1M context · input $1.2150 / 1M</span></a></li>
+        <li><a href="/en/models/kimi"><b>Kimi overview</b><span>K3.1 Pro, K3, K2.7 Code and K2.6 pricing compared</span></a></li>
+        <li><a href="/en/models/kimi-k3.1-pro"><span class="o-tag">Latest</span><b>Kimi K3.1 Pro</b><span>First K3.1 series model, 1M context · input $0.8100 / 1M</span></a></li>
+        <li><a href="/en/models/kimi-k3"><b>Kimi K3</b><span>2.8T-parameter open weights, 1M context · input $1.2150 / 1M</span></a></li>
         <li><a href="/en/models/kimi-k2.7-code"><span class="o-tag">Coding</span><b>Kimi K2.7 Code</b><span>Coding-tuned K2.6, always thinks · input $0.3847 / 1M</span></a></li>
         <li><a href="/en/models/kimi-k2.6" aria-current="page"><b>Kimi K2.6</b><span>General multimodal agent, thinking optional · input $0.3847 / 1M</span></a></li>
       </ul>
@@ -798,6 +799,6 @@ stream = client.chat.completions.create(
   </div>
 </footer>
 
-<script src="/assets/models/kimi.js?v=20261026" defer></script>
+<script src="/assets/models/kimi.js?v=20261030" defer></script>
 </body>
 </html>

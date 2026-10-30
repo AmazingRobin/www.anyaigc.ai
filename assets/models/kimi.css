@@ -1,5 +1,5 @@
 /*
- * Kimi 系列专题页共用样式（kimi 总览、kimi-k3、kimi-k2.7-code、kimi-k2.6），页面由 scripts/kimi_pages.py 生成。
+ * Kimi 系列专题页共用样式（kimi 总览、kimi-k3.1-pro、kimi-k3、kimi-k2.7-code、kimi-k2.6），页面由 scripts/kimi_pages.py 生成。
  * 视觉参考 www.moonshot.cn：纯黑底 #000、#121212 卡片、白色透明度分层（.84 / .56 / .42）、.12 细线边框、
  * 16px 卡片圆角、描边胶囊按钮（悬停出现箭头）、轻字重大标题、慢速 expo-out 渐显。
  * 唯一的强调色是 Kimi 蓝 #1783FF（logo 圆点、主按钮、关键数字、滚动条）。
@@ -161,7 +161,7 @@ main{display:block}
 .k-caps p{margin-top:10px;font-size:15px;line-height:1.65;color:var(--k-fg-3)}
 
 /* 总览页：型号卡 */
-.k-models{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:44px;list-style:none}
+.k-models{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:44px;list-style:none}
 .k-model a{color:#fff;position:relative;display:flex;flex-direction:column;height:100%;padding:26px 24px 24px;border-radius:16px;background:var(--k-surface);border:1px solid var(--k-line);text-decoration:none;transition:transform .2s var(--k-ease),border-color .2s}
 .k-model a:hover{transform:translateY(-4px);border-color:rgba(255,255,255,.3)}
 .k-model-id{font-family:var(--k-mono);font-size:13px;color:var(--k-fg-4)}
@@ -206,7 +206,7 @@ thead .o-hl{color:var(--k-blue-text)!important}
 .k-chart{margin-top:40px;padding:28px 28px 24px;border-radius:16px;background:var(--k-surface);border:1px solid var(--k-line)}
 .k-chart-title{font-size:15px;font-weight:500;color:var(--k-fg-2)}
 .k-bars{display:grid;gap:14px;margin-top:22px;list-style:none}
-.k-bar{display:grid;grid-template-columns:150px minmax(0,1fr) 56px;align-items:center;gap:16px;font-size:15px}
+.k-bar{display:grid;grid-template-columns:minmax(150px,220px) minmax(0,1fr) 56px;align-items:center;gap:16px;font-size:15px}
 .k-bar-label{color:var(--k-fg-3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .k-bar.is-me .k-bar-label{color:#fff;font-weight:500}
 .k-bar-track{position:relative;height:10px;border-radius:999px;background:#323232;overflow:hidden}
@@ -314,14 +314,13 @@ html:not(.no-js) .o-reveal:not(.is-in){opacity:0;transform:translateY(30px)}
   .k-hide-md{display:none}
   .k-caps{grid-template-columns:repeat(2,minmax(0,1fr))}
   .o-billing{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .k-models{grid-template-columns:1fr}
 }
 @media (max-width:900px){
   .o-nav-left{display:none}
   .k-hero-art{width:70vw;right:-20%;top:120px}
   .k-spec{grid-template-columns:repeat(2,minmax(0,1fr))}
   .o-costs{grid-template-columns:1fr}
-  .k-uses,.o-cards,.o-family{grid-template-columns:1fr}
+  .k-uses,.o-cards,.o-family,.k-models{grid-template-columns:1fr}
   .o-section{padding:72px 0}
   .o-section.k-band,.o-section+.o-section.k-band,.o-section.k-band+.o-section{padding-top:72px}
   .o-final{padding:112px 0}
@@ -341,7 +340,10 @@ html:not(.no-js) .o-reveal:not(.is-in){opacity:0;transform:translateY(30px)}
   .k-spec dd{font-size:18px}
   .o-table{font-size:14px}
   .o-table th,.o-table td{padding:12px 12px}
-  .k-bar{grid-template-columns:92px minmax(0,1fr) 46px;gap:10px;font-size:13.5px}
+  .k-bar{grid-template-columns:minmax(0,1fr) 46px;grid-template-areas:"l v" "t t";gap:6px 10px;font-size:13.5px}
+  .k-bar-label{grid-area:l;white-space:normal}
+  .k-bar-val{grid-area:v}
+  .k-bar-track{grid-area:t}
   .k-chart{padding:20px 16px}
   .o-btn{min-height:46px;padding:12px 20px;font-size:15px}
   .o-foot-cols{gap:32px}

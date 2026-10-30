@@ -7,28 +7,28 @@
   </url>
   <url>
     <loc>https://www.anyaigc.ai/zh/models/</loc>
-    <lastmod>2026-10-28</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/"/>
   </url>
   <url>
     <loc>https://www.anyaigc.ai/en/models/</loc>
-    <lastmod>2026-10-28</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/"/>
   </url>
   <url>
     <loc>https://www.anyaigc.ai/zh/models/suno</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-10-29</lastmod>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/suno"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/suno"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/suno"/>
   </url>
   <url>
     <loc>https://www.anyaigc.ai/en/models/suno</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-10-29</lastmod>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/suno"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/suno"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/suno"/>
@@ -668,5 +668,75 @@
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/seedream-3.0"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/seedream-3.0"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/seedream-3.0"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/zh/models/kimi-k3.1-pro</loc>
+    <lastmod>2026-10-30</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/kimi-k3.1-pro"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/kimi-k3.1-pro"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/kimi-k3.1-pro"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/en/models/kimi-k3.1-pro</loc>
+    <lastmod>2026-10-30</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/kimi-k3.1-pro"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/kimi-k3.1-pro"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/kimi-k3.1-pro"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/zh/models/glm</loc>
+    <lastmod>2026-10-30</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/glm"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/glm"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/glm"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/en/models/glm</loc>
+    <lastmod>2026-10-30</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/glm"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/glm"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/glm"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/zh/models/glm-5.3</loc>
+    <lastmod>2026-10-30</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/glm-5.3"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/glm-5.3"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/glm-5.3"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/en/models/glm-5.3</loc>
+    <lastmod>2026-10-30</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/glm-5.3"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/glm-5.3"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/glm-5.3"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/zh/models/glm-5.3-flash</loc>
+    <lastmod>2026-10-30</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/glm-5.3-flash"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/glm-5.3-flash"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/glm-5.3-flash"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/en/models/glm-5.3-flash</loc>
+    <lastmod>2026-10-30</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/glm-5.3-flash"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/glm-5.3-flash"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/glm-5.3-flash"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/zh/models/glm-5.2</loc>
+    <lastmod>2026-10-30</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/glm-5.2"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/glm-5.2"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/glm-5.2"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/en/models/glm-5.2</loc>
+    <lastmod>2026-10-30</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/glm-5.2"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/glm-5.2"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/glm-5.2"/>
   </url>
 </urlset>
