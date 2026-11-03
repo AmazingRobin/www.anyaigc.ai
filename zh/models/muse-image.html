@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="no-js">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Muse Image API 价格与接入｜Meta 生图 ¥0.04 / 张 - AnyAIGC</title>
+<meta name="description" content="Muse Image API（muse-image）是 Meta 超级智能实验室的生图模型，按张计费 ¥0.04 / 张，会自己联网检索、写代码作图，支持精准改图与多图合成，并发不限，支持对公转账与增值税专票。">
+<meta name="keywords" content="Muse Image API,Muse Image API 价格,muse-image,Meta Muse Image,Meta 生图 API,Muse Image 接入,Muse Image API Key,Muse Image API 企业,Muse Image API 发票,AnyAIGC">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="theme-color" content="#ffffff">
+<link rel="canonical" href="https://www.anyaigc.ai/zh/models/muse-image">
+<link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/muse-image">
+<link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/muse-image">
+<link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/muse-image">
+<link rel="icon" href="/favicon.ico">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AnyAIGC">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:url" content="https://www.anyaigc.ai/zh/models/muse-image">
+<meta property="og:title" content="Muse Image API 价格与接入｜Meta 生图 ¥0.04 / 张 - AnyAIGC">
+<meta property="og:description" content="Meta Muse Image API：¥0.04 / 张，指令遵循、精准改图、多图合成，内置联网检索，并发不限。">
+<meta property="og:image" content="https://www.anyaigc.ai/assets/og/muse-image-zh.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="AnyAIGC Muse Image API 价格与接入">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Muse Image API 价格与接入｜Meta 生图 ¥0.04 / 张 - AnyAIGC">
+<meta name="twitter:description" content="Meta Muse Image API：¥0.04 / 张，指令遵循、精准改图、多图合成，内置联网检索，并发不限。">
+<meta name="twitter:image" content="https://www.anyaigc.ai/assets/og/muse-image-zh.png">
+<link rel="stylesheet" href="/assets/models/scrollbar.css?v=20261024b">
+<link rel="stylesheet" href="/assets/models/muse-image.css?v=20261103">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.anyaigc.ai/#org",
+      "name": "AnyAIGC",
+      "url": "https://anyaigc.ai",
+      "logo": "https://www.anyaigc.ai/logo.webp"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.anyaigc.ai/#website",
+      "url": "https://www.anyaigc.ai/",
+      "name": "AnyAIGC",
+      "publisher": {
+        "@id": "https://www.anyaigc.ai/#org"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.anyaigc.ai/zh/models/muse-image#webpage",
+      "url": "https://www.anyaigc.ai/zh/models/muse-image",
+      "name": "Muse Image API 价格与接入｜Meta 生图 ¥0.04 / 张 - AnyAIGC",
+      "description": "Muse Image API（muse-image）是 Meta 超级智能实验室的生图模型，按张计费 ¥0.04 / 张，会自己联网检索、写代码作图，支持精准改图与多图合成，并发不限，支持对公转账与增值税专票。",
+      "inLanguage": "zh-CN",
+      "isPartOf": {
+        "@id": "https://www.anyaigc.ai/#website"
+      },
+      "breadcrumb": {
+        "@id": "https://www.anyaigc.ai/zh/models/muse-image#breadcrumb"
+      },
+      "mainEntity": {
+        "@id": "https://www.anyaigc.ai/zh/models/muse-image#product"
+      },
+      "dateModified": "2026-11-03"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.anyaigc.ai/zh/models/muse-image#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "首页",
+          "item": "https://www.anyaigc.ai/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "模型专题",
+          "item": "https://www.anyaigc.ai/zh/models/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Muse Image",
+          "item": "https://www.anyaigc.ai/zh/models/muse-image"
+        }
+      ]
+    },
+    {
+      "@type": "Product",
+      "@id": "https://www.anyaigc.ai/zh/models/muse-image#product",
+      "name": "Muse Image API（AnyAIGC）",
+      "description": "通过 AnyAIGC 调用 Meta Muse Image（muse-image）图像生成与编辑模型，按张计费，OpenAI 兼容 /v1/images/generations。",
+      "category": "图像生成 API",
+      "sku": "muse-image",
+      "image": "https://www.anyaigc.ai/assets/og/muse-image-zh.png",
+      "brand": {
+        "@type": "Brand",
+        "name": "AnyAIGC"
+      },
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "CNY",
+        "lowPrice": "0.04",
+        "highPrice": "0.04",
+        "offerCount": 1,
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.anyaigc.ai/zh/models/muse-image#pricing",
+        "offers": [
+          {
+            "@type": "Offer",
+            "name": "Muse Image（每张）",
+            "price": "0.04",
+            "priceCurrency": "CNY"
+          }
+        ]
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.anyaigc.ai/zh/models/muse-image#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Muse Image API 多少钱？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "AnyAIGC 上 Muse Image（muse-image）每张 ¥0.04，按次计费，不按 token 算；Meta 官方价约 ¥0.07 / 张（$0.01）。一次请求生成 n 张就按 n 张计费，按成功生成计费，实时价格以模型广场为准。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Muse Image 是什么？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Muse Image 是 Meta 超级智能实验室在 2026 年 7 月发布的图像生成与编辑模型。它在生成前会按需联网检索、写代码作图，并在生成过程中自我修正，擅长指令遵循、精准编辑和多图合成。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "怎么控制尺寸和比例？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "用 size 传 \"宽x高\"，例如 \"1024x1536\"。按 Meta 官方文档，这个值只决定宽高比，实际像素由模型自己决定，返回尺寸不会和数字完全一致；宽高比超过 16:1 会报错。不传则用默认比例。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "一次能生成几张？输出什么格式？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "n 可填 1–10，默认 1，data 里每张图一条。output_format 支持 webp（默认）、png、jpeg；response_format 默认返回 base64，填 url 返回临时链接。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "能改图和多图合成吗？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "能。Muse Image 用同一个模型做生成和编辑：传入一张图加指令只改指定部分，传入多张图可以把不同图里的元素合成到一个场景。AnyAIGC 模型广场显示 muse-image 同时支持图片编辑接口 /v1/images/edits，字段以 AnyAIGC 接口文档为准。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "联网检索和写代码要额外付费吗？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "不用。按 Meta 官方说明，检索和代码工具是模型内置能力，包含在每张图的价格里。在 AnyAIGC 上同样按张计费，每张 ¥0.04，不另外收工具费用。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "并发有限制吗？国内能直接调用吗？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "AnyAIGC 对 Muse Image 不设并发限制，所有用户默认享有。接口地址是 https://anyaigc.ai，国内网络可以直接调用，不需要 Meta 开发者账号；同一个 Key 还能调用平台上 300+ 其他模型。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "AnyAIGC 能开发票吗？支持增值税专票吗？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "能。AnyAIGC 可以按实际充值金额开具增值税普通发票和增值税专用发票，开票信息提交给客服即可。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "企业可以对公转账和签合同吗？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "可以。支持企业对公转账充值，也可以签订服务合同，并提供专属客服和技术对接。企业采购请联系 AnyAIGC 客服。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "支持哪些支付方式？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "支持微信支付、支付宝、USDT 和信用卡充值，企业还可以对公转账，并开具增值税普通发票或专用发票。余额按美元计价，对平台所有模型通用。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "新用户有免费试用额度吗？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "有。新用户注册后赠送 200 万 tokens 的试用额度，可以先测试效果再决定是否充值。最低 1 美元起充。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "余额可以退款吗？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "可以。未使用的余额可以申请退款，不收取手续费。具体流程请联系客服。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "会不会用低配模型冒充？我的数据安全吗？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "请求走官方模型渠道，不用低配或逆向模型冒充。除法律法规要求外，我们不会对你的输入输出内容做持久化存储，也不会用于训练模型；控制台可以查看每次调用的 tokens 与扣费明细。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "生成的图片可以商用吗？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "图片的使用权和内容政策以 Meta 官方条款为准。AnyAIGC 只提供 API 调用通道，不额外限制你对生成结果的使用。"
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="o-skip" href="#main">跳到主要内容</a>
+
+<header class="o-nav">
+  <div class="o-wrap o-nav-inner">
+    <a class="o-brand" href="/" aria-label="AnyAIGC 首页">AnyAIGC</a>
+    <nav aria-label="主导航">
+      <ul class="o-nav-left">
+        <li><a class="o-pill" href="/zh/models/">模型专题</a></li>
+        <li class="mi-hide-sm"><a class="o-pill" href="https://anyaigc.ai/pricing">模型广场</a></li>
+        <li><a class="o-pill" href="#pricing">价格</a></li>
+        <li><a class="o-pill" href="#enterprise">企业接入</a></li>
+        <li class="mi-hide-md"><a class="o-pill" href="https://docs.anyaigc.ai" target="_blank" rel="noopener">API 文档</a></li>
+      </ul>
+    </nav>
+    <ul class="o-nav-right">
+      <li><a class="o-pill" href="/en/models/muse-image" hreflang="en" lang="en">English</a></li>
+      <li class="mi-hide-sm"><a class="o-pill" href="https://anyaigc.ai/console">登录</a></li>
+      <li><a class="o-btn o-btn-dark mi-nav-cta" href="https://anyaigc.ai/register?aff=oOK7&channel=c_wpduopc9">免费注册</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="main">
+  <!-- Hero -->
+  <section class="mi-hero" aria-labelledby="hero-title">
+    <div class="o-wrap">
+      <nav aria-label="面包屑">
+        <ol class="o-crumbs">
+          <li><a href="/">首页</a></li><li><a href="/zh/models/">模型专题</a></li><li aria-current="page">Muse Image</li>
+        </ol>
+      </nav>
+      <p class="mi-badge">Featured</p>
+      <p class="mi-kicker"><svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true" focusable="false"><path d="M6.897 4h-.024l-.031 2.615h.022c1.715 0 3.046 1.357 5.94 6.246l.175.297.012.02 1.62-2.438-.012-.019a48.763 48.763 0 00-1.098-1.716 28.01 28.01 0 00-1.175-1.629C10.413 4.932 8.812 4 6.896 4z" fill="url(#mt1-0)"></path><path d="M6.873 4C4.95 4.01 3.247 5.258 2.02 7.17a4.352 4.352 0 00-.01.017l2.254 1.231.011-.017c.718-1.083 1.61-1.774 2.568-1.785h.021L6.896 4h-.023z" fill="url(#mt1-1)"></path><path d="M2.019 7.17l-.011.017C1.2 8.447.598 9.995.274 11.664l-.005.022 2.534.6.004-.022c.27-1.467.786-2.828 1.456-3.845l.011-.017L2.02 7.17z" fill="url(#mt1-2)"></path><path d="M2.807 12.264l-2.533-.6-.005.022c-.177.918-.267 1.851-.269 2.786v.023l2.598.233v-.023a12.591 12.591 0 01.21-2.44z" fill="url(#mt1-3)"></path><path d="M2.677 15.537a5.462 5.462 0 01-.079-.813v-.022L0 14.468v.024a8.89 8.89 0 00.146 1.652l2.535-.585a4.106 4.106 0 01-.004-.022z" fill="url(#mt1-4)"></path><path d="M3.27 16.89c-.284-.31-.484-.756-.589-1.328l-.004-.021-2.535.585.004.021c.192 1.01.568 1.85 1.106 2.487l.014.017 2.018-1.745a2.106 2.106 0 01-.015-.016z" fill="url(#mt1-5)"></path><path d="M10.78 9.654c-1.528 2.35-2.454 3.825-2.454 3.825-2.035 3.2-2.739 3.917-3.871 3.917a1.545 1.545 0 01-1.186-.508l-2.017 1.744.014.017C2.01 19.518 3.058 20 4.356 20c1.963 0 3.374-.928 5.884-5.33l1.766-3.13a41.283 41.283 0 00-1.227-1.886z" fill="#0082FB"></path><path d="M13.502 5.946l-.016.016c-.4.43-.786.908-1.16 1.416.378.483.768 1.024 1.175 1.63.48-.743.928-1.345 1.367-1.807l.016-.016-1.382-1.24z" fill="url(#mt1-6)"></path><path d="M20.918 5.713C19.853 4.633 18.583 4 17.225 4c-1.432 0-2.637.787-3.723 1.944l-.016.016 1.382 1.24.016-.017c.715-.747 1.408-1.12 2.176-1.12.826 0 1.6.39 2.27 1.075l.015.016 1.589-1.425-.016-.016z" fill="#0082FB"></path><path d="M23.998 14.125c-.06-3.467-1.27-6.566-3.064-8.396l-.016-.016-1.588 1.424.015.016c1.35 1.392 2.277 3.98 2.361 6.971v.023h2.292v-.022z" fill="url(#mt1-7)"></path><path d="M23.998 14.15v-.023h-2.292v.022c.004.14.006.282.006.424 0 .815-.121 1.474-.368 1.95l-.011.022 1.708 1.782.013-.02c.62-.96.946-2.293.946-3.91 0-.083 0-.165-.002-.247z" fill="url(#mt1-8)"></path><path d="M21.344 16.52l-.011.02c-.214.402-.519.67-.917.787l.778 2.462a3.493 3.493 0 00.438-.182 3.558 3.558 0 001.366-1.218l.044-.065.012-.02-1.71-1.784z" fill="url(#mt1-9)"></path><path d="M19.92 17.393c-.262 0-.492-.039-.718-.14l-.798 2.522c.449.153.927.222 1.46.222.492 0 .943-.073 1.352-.215l-.78-2.462c-.167.05-.341.075-.517.073z" fill="url(#mt1-10)"></path><path d="M18.323 16.534l-.014-.017-1.836 1.914.016.017c.637.682 1.246 1.105 1.937 1.337l.797-2.52c-.291-.125-.573-.353-.9-.731z" fill="url(#mt1-11)"></path><path d="M18.309 16.515c-.55-.642-1.232-1.712-2.303-3.44l-1.396-2.336-.011-.02-1.62 2.438.012.02.989 1.668c.959 1.61 1.74 2.774 2.493 3.585l.016.016 1.834-1.914a2.353 2.353 0 01-.014-.017z" fill="url(#mt1-12)"></path><defs><linearGradient id="mt1-0" x1="75.897%" x2="26.312%" y1="89.199%" y2="12.194%"><stop offset=".06%" stop-color="#0867DF"></stop><stop offset="45.39%" stop-color="#0668E1"></stop><stop offset="85.91%" stop-color="#0064E0"></stop></linearGradient><linearGradient id="mt1-1" x1="21.67%" x2="97.068%" y1="75.874%" y2="23.985%"><stop offset="13.23%" stop-color="#0064DF"></stop><stop offset="99.88%" stop-color="#0064E0"></stop></linearGradient><linearGradient id="mt1-2" x1="38.263%" x2="60.895%" y1="89.127%" y2="16.131%"><stop offset="1.47%" stop-color="#0072EC"></stop><stop offset="68.81%" stop-color="#0064DF"></stop></linearGradient><linearGradient id="mt1-3" x1="47.032%" x2="52.15%" y1="90.19%" y2="15.745%"><stop offset="7.31%" stop-color="#007CF6"></stop><stop offset="99.43%" stop-color="#0072EC"></stop></linearGradient><linearGradient id="mt1-4" x1="52.155%" x2="47.591%" y1="58.301%" y2="37.004%"><stop offset="7.31%" stop-color="#007FF9"></stop><stop offset="100%" stop-color="#007CF6"></stop></linearGradient><linearGradient id="mt1-5" x1="37.689%" x2="61.961%" y1="12.502%" y2="63.624%"><stop offset="7.31%" stop-color="#007FF9"></stop><stop offset="100%" stop-color="#0082FB"></stop></linearGradient><linearGradient id="mt1-6" x1="34.808%" x2="62.313%" y1="68.859%" y2="23.174%"><stop offset="27.99%" stop-color="#007FF8"></stop><stop offset="91.41%" stop-color="#0082FB"></stop></linearGradient><linearGradient id="mt1-7" x1="43.762%" x2="57.602%" y1="6.235%" y2="98.514%"><stop offset="0%" stop-color="#0082FB"></stop><stop offset="99.95%" stop-color="#0081FA"></stop></linearGradient><linearGradient id="mt1-8" x1="60.055%" x2="39.88%" y1="4.661%" y2="69.077%"><stop offset="6.19%" stop-color="#0081FA"></stop><stop offset="100%" stop-color="#0080F9"></stop></linearGradient><linearGradient id="mt1-9" x1="30.282%" x2="61.081%" y1="59.32%" y2="33.244%"><stop offset="0%" stop-color="#027AF3"></stop><stop offset="100%" stop-color="#0080F9"></stop></linearGradient><linearGradient id="mt1-10" x1="20.433%" x2="82.112%" y1="50.001%" y2="50.001%"><stop offset="0%" stop-color="#0377EF"></stop><stop offset="99.94%" stop-color="#0279F1"></stop></linearGradient><linearGradient id="mt1-11" x1="40.303%" x2="72.394%" y1="35.298%" y2="57.811%"><stop offset=".19%" stop-color="#0471E9"></stop><stop offset="100%" stop-color="#0377EF"></stop></linearGradient><linearGradient id="mt1-12" x1="32.254%" x2="68.003%" y1="19.719%" y2="84.908%"><stop offset="27.65%" stop-color="#0867DF"></stop><stop offset="100%" stop-color="#0471E9"></stop></linearGradient></defs></svg><span>Meta 超级智能实验室 · 2026 年 7 月发布</span></p>
+      <h1 class="mi-h1" id="hero-title">Muse Image API</h1>
+      <p class="mi-lead">Meta 第一款由超级智能实验室开发的生图模型。它会先联网查资料、写代码画图表，再生成并自我修正。在 AnyAIGC 上按张计费 <strong>¥0.04 / 张</strong>，并发不限。</p>
+      <div class="o-cta">
+        <a class="o-btn o-btn-dark" href="https://anyaigc.ai/register?aff=oOK7&channel=c_wpduopc9">获取 API Key</a>
+        <a class="o-btn o-btn-light" href="#pricing">查看价格</a>
+      </div>
+      <ul class="o-facts" aria-label="核心信息"><li>模型名 <strong><code>muse-image</code></strong></li><li>单价 <strong>¥0.04 / 张</strong></li><li>一次 <strong>1–10 张</strong></li><li>并发 <strong>不限</strong></li><li>企业 <strong>对公 · 专票</strong></li></ul>
+    </div>
+    <div class="mi-strip" role="region" aria-label="Muse Image 官方示例图" tabindex="0">
+      <div class="mi-track">
+        <ul><li><img src="/assets/models/muse-image/poster-state-tech.webp?v=20261103" width="960" height="1280" alt="Muse Image 官方示例图 1" fetchpriority="high" decoding="async"></li><li><img src="/assets/models/muse-image/matcha-ad.webp?v=20261103" width="1280" height="1280" alt="Muse Image 官方示例图 2" fetchpriority="high" decoding="async"></li><li><img src="/assets/models/muse-image/fashion-mondrian.webp?v=20261103" width="960" height="1280" alt="Muse Image 官方示例图 3" fetchpriority="high" decoding="async"></li><li><img src="/assets/models/muse-image/polaroid-big-sur.webp?v=20261103" width="1280" height="1280" alt="Muse Image 官方示例图 4" loading="lazy" decoding="async"></li><li><img src="/assets/models/muse-image/patches.webp?v=20261103" width="1280" height="853" alt="Muse Image 官方示例图 5" loading="lazy" decoding="async"></li><li><img src="/assets/models/muse-image/poster-agra.webp?v=20261103" width="960" height="1280" alt="Muse Image 官方示例图 6" loading="lazy" decoding="async"></li><li><img src="/assets/models/muse-image/book-cover.webp?v=20261103" width="853" height="1280" alt="Muse Image 官方示例图 7" loading="lazy" decoding="async"></li><li><img src="/assets/models/muse-image/lemon-still.webp?v=20261103" width="1280" height="853" alt="Muse Image 官方示例图 8" loading="lazy" decoding="async"></li></ul>
+        <ul aria-hidden="true"><li><img src="/assets/models/muse-image/poster-state-tech.webp?v=20261103" width="960" height="1280" alt="" loading="lazy" decoding="async"></li><li><img src="/assets/models/muse-image/matcha-ad.webp?v=20261103" width="1280" height="1280" alt="" loading="lazy" decoding="async"></li><li><img src="/assets/models/muse-image/fashion-mondrian.webp?v=20261103" width="960" height="1280" alt="" loading="lazy" decoding="async"></li><li><img src="/assets/models/muse-image/polaroid-big-sur.webp?v=20261103" width="1280" height="1280" alt="" loading="lazy" decoding="async"></li><li><img src="/assets/models/muse-image/patches.webp?v=20261103" width="1280" height="853" alt="" loading="lazy" decoding="async"></li><li><img src="/assets/models/muse-image/poster-agra.webp?v=20261103" width="960" height="1280" alt="" loading="lazy" decoding="async"></li><li><img src="/assets/models/muse-image/book-cover.webp?v=20261103" width="853" height="1280" alt="" loading="lazy" decoding="async"></li><li><img src="/assets/models/muse-image/lemon-still.webp?v=20261103" width="1280" height="853" alt="" loading="lazy" decoding="async"></li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="o-section" id="about" aria-labelledby="about-title">
+    <div class="o-wrap">
+      <h2 class="o-h2 o-reveal" id="about-title">Muse Image 是什么</h2>
+      <div class="mi-about">
+        <div class="mi-prose o-reveal">
+          <p>Muse Image 是 Meta 超级智能实验室（Meta Superintelligence Labs）在 2026 年 7 月发布的图像生成模型，和 Muse Spark 同属 Muse 系列。官方的定位是三件事：忠实遵循指令、精准编辑、从多张参考图合成画面。</p>
+          <p>它和一般的「提示词进、图片出」不同：生成前会按需调用搜索和代码工具，比如查真实的地标、商品和时事，或者先写代码算出准确的图表、二维码，再据此出图；生成过程中还会检查草稿并自我修正。按 Meta 官方博客，Muse Image 在 Arena 的文生图、单图编辑、多图编辑三项人类偏好排名中均位列第 2（2026-07-05 数据）。</p>
+          <p>在 AnyAIGC 上，模型名是 <code>muse-image</code>，走 OpenAI 兼容的 <code>/v1/images/generations</code>，每张 ¥0.04，比 Meta 官方的 ¥0.07 / 张更低。</p>
+        </div>
+        <dl class="mi-spec o-reveal"><div><dt>模型名</dt><dd><code>muse-image</code></dd></div><div><dt>接口</dt><dd>/v1/images/generations</dd></div><div><dt>单次张数</dt><dd>1–10 张（n）</dd></div><div><dt>尺寸</dt><dd>size 决定宽高比</dd></div><div><dt>输出格式</dt><dd>webp / png / jpeg</dd></div><div><dt>内置工具</dt><dd>联网检索 · 图片检索 · 代码</dd></div></dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="o-section mi-band" id="features" aria-labelledby="features-title">
+    <div class="o-wrap">
+      <h2 class="o-h2 o-reveal" id="features-title">Muse Image 能做什么</h2>
+      <ul class="mi-features">
+        <li class="mi-feature o-reveal"><div class="mi-feature-img"><img src="/assets/models/muse-image/poster-state-tech.webp?v=20261103" width="960" height="1280" alt="复古橄榄球海报，手写标题与票根小字都清晰可读" loading="lazy" decoding="async"></div><div class="mi-feature-body"><h3>指令遵循与文字排版</h3><p>标题、小字、日期和票价都能按提示词准确写进画面，适合海报、封面和包装。</p></div></li>
+        <li class="mi-feature o-reveal"><div class="mi-feature-img mi-pair"><figure><img src="/assets/models/muse-image/fog-before.webp?v=20261103" width="1280" height="853" alt="把雾气散开，露出下方山谷（原图）" loading="lazy" decoding="async"><figcaption>原图</figcaption></figure><figure><img src="/assets/models/muse-image/fog-after.webp?v=20261103" width="1280" height="853" alt="把雾气散开，露出下方山谷（修改后）" loading="lazy" decoding="async"><figcaption>修改后</figcaption></figure></div><div class="mi-feature-body"><h3>精准改图</h3><p>只改你要求的部分。示例指令：「把雾散开，露出下面美丽的山谷」，车、路牌和构图保持不变。</p></div></li>
+        <li class="mi-feature o-reveal"><div class="mi-feature-img mi-pair"><figure><img src="/assets/models/muse-image/room-before.webp?v=20261103" width="1280" height="952" alt="把客厅改成日式侘寂风（原图）" loading="lazy" decoding="async"><figcaption>原图</figcaption></figure><figure><img src="/assets/models/muse-image/room-japandi.webp?v=20261103" width="1280" height="952" alt="把客厅改成日式侘寂风（修改后）" loading="lazy" decoding="async"><figcaption>修改后</figcaption></figure></div><div class="mi-feature-body"><h3>多轮迭代</h3><p>在对话里一轮轮修改，前后保持一致。示例：先把客厅改成 Japandi 风，再把原图里的台灯和柜子放回来。</p></div></li>
+        <li class="mi-feature o-reveal"><div class="mi-feature-img"><img src="/assets/models/muse-image/picnic.webp?v=20261103" width="1280" height="853" alt="参考两张宠物照片合成的猫狗野餐图" loading="lazy" decoding="async"></div><div class="mi-feature-body"><h3>多图合成</h3><p>把多张参考图里的人物、物品、服装、风格和场景组合到一张图里，可以在提示词里穿插图片。</p></div></li>
+        <li class="mi-feature o-reveal"><div class="mi-feature-img"><img src="/assets/models/muse-image/infographic-moon.webp?v=20261103" width="1280" height="1280" alt="月球形成大碰撞假说信息图" loading="lazy" decoding="async"></div><div class="mi-feature-body"><h3>联网检索事实</h3><p>先搜索科学资料和参考图，再生成信息图，知识密集或涉及时事的提示词更准确。</p></div></li>
+        <li class="mi-feature o-reveal"><div class="mi-feature-img"><img src="/assets/models/muse-image/qr-manhwa.webp?v=20261103" width="1280" height="853" alt="韩漫风格场景里一张可扫描的二维码海报" loading="lazy" decoding="async"></div><div class="mi-feature-body"><h3>写代码作图</h3><p>训练中学会写代码生成准确的图表和二维码，再把结果画进图里。示例里的二维码指向 meta.ai，可以扫描。</p></div></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="o-section" id="gallery" aria-labelledby="gallery-title">
+    <div class="o-wrap">
+      <h2 class="o-h2 o-reveal" id="gallery-title">Muse Image 官方示例</h2>
+      <p class="o-lead o-reveal">以下图片由 Muse Image 生成，来自 Meta 官方博客，说明为官方示例的指令（节选翻译）。</p>
+      <ul class="mi-gallery">
+        <li class="mi-shot o-reveal"><figure><img src="/assets/models/muse-image/room-before-after.webp?v=20261103" width="1280" height="640" alt="「把我的第一张图和最后一张做成前后对比图」" loading="lazy" decoding="async"><figcaption><b>多轮编辑</b>「把我的第一张图和最后一张做成前后对比图」</figcaption></figure></li>
+        <li class="mi-shot o-reveal"><figure><img src="/assets/models/muse-image/cafe-front.webp?v=20261103" width="1280" height="853" alt="「画出这家咖啡馆的门面，从橱窗里能看到那张裱起来的照片」" loading="lazy" decoding="async"><figcaption><b>多轮编辑</b>「画出这家咖啡馆的门面，从橱窗里能看到那张裱起来的照片」</figcaption></figure></li>
+        <li class="mi-shot o-reveal"><figure><img src="/assets/models/muse-image/cafe-menu.webp?v=20261103" width="1280" height="853" alt="「设计这家店的纸质菜单，用店名，加一道配猫狗小插画的“野餐特餐”」" loading="lazy" decoding="async"><figcaption><b>多轮编辑</b>「设计这家店的纸质菜单，用店名，加一道配猫狗小插画的“野餐特餐”」</figcaption></figure></li>
+        <li class="mi-shot o-reveal"><figure><img src="/assets/models/muse-image/fractals-poster.webp?v=20261103" width="1280" height="606" alt="先用 Python 算出 Julia 集和谢尔宾斯基三角，再排成瑞士风海报" loading="lazy" decoding="async"><figcaption><b>写代码作图</b>先用 Python 算出 Julia 集和谢尔宾斯基三角，再排成瑞士风海报</figcaption></figure></li>
+        <li class="mi-shot o-reveal"><figure><img src="/assets/models/muse-image/magazine-gauss.webp?v=20261103" width="1280" height="1280" alt="杂志版面里的求和公式漏了除号，模型自己发现并改成 S = n(n+1)/2" loading="lazy" decoding="async"><figcaption><b>自我修正</b>杂志版面里的求和公式漏了除号，模型自己发现并改成 S = n(n+1)/2</figcaption></figure></li>
+        <li class="mi-shot o-reveal"><figure><img src="/assets/models/muse-image/bedroom-vintage.webp?v=20261103" width="1280" height="720" alt="在二手平台检索复古家具，用搜到的物品重新布置卧室" loading="lazy" decoding="async"><figcaption><b>联网检索</b>在二手平台检索复古家具，用搜到的物品重新布置卧室</figcaption></figure></li>
+        <li class="mi-shot o-reveal"><figure><img src="/assets/models/muse-image/matcha-ad.webp?v=20261103" width="1280" height="1280" alt="草莓抹茶拿铁广告，英文与日文小字" loading="lazy" decoding="async"><figcaption><b>文生图</b>草莓抹茶拿铁广告，英文与日文小字</figcaption></figure></li>
+        <li class="mi-shot o-reveal"><figure><img src="/assets/models/muse-image/polaroid-big-sur.webp?v=20261103" width="1280" height="1280" alt="老式拍立得，手写「Big Sur – Aug ’83」" loading="lazy" decoding="async"><figcaption><b>文生图</b>老式拍立得，手写「Big Sur – Aug ’83」</figcaption></figure></li>
+        <li class="mi-shot o-reveal"><figure><img src="/assets/models/muse-image/poster-agra.webp?v=20261103" width="960" height="1280" alt="阿格拉泰姬陵蓝色线描旅行海报" loading="lazy" decoding="async"><figcaption><b>文生图</b>阿格拉泰姬陵蓝色线描旅行海报</figcaption></figure></li>
+        <li class="mi-shot o-reveal"><figure><img src="/assets/models/muse-image/fashion-mondrian.webp?v=20261103" width="960" height="1280" alt="蒙德里安色块风格时装大片" loading="lazy" decoding="async"><figcaption><b>文生图</b>蒙德里安色块风格时装大片</figcaption></figure></li>
+        <li class="mi-shot o-reveal"><figure><img src="/assets/models/muse-image/patches.webp?v=20261103" width="1280" height="853" alt="六枚刺绣徽章，文字清晰" loading="lazy" decoding="async"><figcaption><b>文生图</b>六枚刺绣徽章，文字清晰</figcaption></figure></li>
+        <li class="mi-shot o-reveal"><figure><img src="/assets/models/muse-image/book-cover.webp?v=20261103" width="853" height="1280" alt="极简书封《The Salt Tide》" loading="lazy" decoding="async"><figcaption><b>文生图</b>极简书封《The Salt Tide》</figcaption></figure></li>
+      </ul>
+      <p class="o-note">示例图来自 Meta 官方博客，由 Muse Image 生成，版权归 Meta 所有。 <a href="https://ai.meta.com/blog/introducing-muse-image-muse-video-msl/" target="_blank" rel="noopener">查看来源</a></p>
+    </div>
+  </section>
+
+  <section class="o-section" id="pricing" aria-labelledby="pricing-title">
+    <div class="o-wrap">
+      <h2 class="o-h2 o-reveal" id="pricing-title">Muse Image API 价格</h2>
+      <p class="o-lead o-reveal">固定单价，每张 ¥0.04，不按 token 算。</p>
+      <ul class="o-billing o-reveal" aria-label="Muse Image API 价格"><li><strong>按张计费</strong>固定单价，不按 token 算</li><li><strong>产出</strong>一次 1–10 张，按实际返回张数计</li><li><strong>并发不限</strong>所有用户默认享有</li><li><strong>余额通用</strong>同一余额可调用 300+ 模型</li></ul>
+      <div class="o-table-wrap o-reveal">
+        <table class="o-table">
+          <caption class="o-sr">Muse Image API 价格（人民币）</caption>
+          <thead><tr><th scope="col">功能</th><th scope="col">模型名</th><th scope="col">计费方式</th><th scope="col" class="o-num">AnyAIGC 单价</th><th scope="col" class="o-num">Meta 官方价</th></tr></thead>
+          <tbody>
+            <tr class="mi-group"><th scope="rowgroup" colspan="5">图像生成</th></tr>
+            <tr><th scope="row">文生图<small>按提示词生成</small></th><td><code>muse-image</code></td><td>按张</td><td class="o-num o-hl">¥0.04 / 张</td><td class="o-num mi-off">¥0.07</td></tr>
+            <tr><th scope="row">图片编辑 / 多图合成<small>带参考图</small></th><td><code>muse-image</code></td><td>按张</td><td class="o-num o-hl">¥0.04 / 张</td><td class="o-num mi-off">¥0.07</td></tr>
+          </tbody>
+          <tbody>
+            <tr class="mi-group"><th scope="rowgroup" colspan="5">内置工具</th></tr>
+            <tr><th scope="row">联网检索、图片检索与代码工具不另收费</th><td><code>muse-image</code></td><td>—</td><td class="o-num o-hl">免费</td><td class="o-num">免费</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="o-note">单价为模型广场显示的价格（$0.00596 / 张），按 1 美元 ≈ ¥6.689 换算成人民币；Meta 官方价 $0.01 / 张，按同一汇率约 ¥0.07 / 张。按成功生成计费，实时价格以<a href="https://anyaigc.ai/pricing">模型广场</a>为准。</p>
+      <h3 class="mi-h3 o-reveal">成本示例</h3>
+      <p class="o-note">按上表单价直接相加，不含其他费用。</p>
+      <ul class="o-costs">
+        <li class="o-cost o-reveal">
+          <h4>100 张活动海报</h4>
+          <p class="o-cost-calc">100 × ¥0.04</p>
+          <p class="o-cost-total">¥4</p>
+          <p class="o-cost-off">一次 1 张</p>
+        </li>
+        <li class="o-cost o-reveal">
+          <h4>1,000 张商品场景图</h4>
+          <p class="o-cost-calc">1,000 × ¥0.04</p>
+          <p class="o-cost-total">¥40</p>
+          <p class="o-cost-off">批量出图</p>
+        </li>
+        <li class="o-cost o-reveal">
+          <h4>一次出 10 张挑选</h4>
+          <p class="o-cost-calc">10 × ¥0.04</p>
+          <p class="o-cost-total">¥0.40</p>
+          <p class="o-cost-off">n = 10</p>
+        </li>
+      </ul>
+      <div class="o-price-cta o-reveal">
+        <a class="o-btn o-btn-dark" href="https://anyaigc.ai/register?aff=oOK7&channel=c_wpduopc9">获取 API Key</a>
+        <a class="o-btn o-btn-light" href="https://anyaigc.ai/pricing">在模型广场查看</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="o-section mi-band" id="use-cases" aria-labelledby="use-cases-title">
+    <div class="o-wrap">
+      <h2 class="o-h2 o-reveal" id="use-cases-title">Muse Image API 使用场景</h2>
+      <ul class="mi-uses">
+        <li class="o-reveal"><span class="mi-k">电商</span><h3>商品图与场景图</h3><p>上传商品照片换背景、换场景，或把多件商品组合进同一张生活方式图。</p></li>
+        <li class="o-reveal"><span class="mi-k">营销</span><h3>海报与广告图</h3><p>标题、卖点、价格和小字直接写进画面，适合活动海报、社媒配图和 banner。</p></li>
+        <li class="o-reveal"><span class="mi-k">内容</span><h3>信息图与科普图</h3><p>模型会先查资料再画，适合时事图解、知识卡片和数据可视化。</p></li>
+        <li class="o-reveal"><span class="mi-k">设计</span><h3>方案迭代</h3><p>在同一个对话里多轮修改，保留满意的部分，只改需要调整的地方。</p></li>
+        <li class="o-reveal"><span class="mi-k">家居</span><h3>空间改造效果图</h3><p>拍一张房间照片，换成指定风格，或放进指定的家具。</p></li>
+        <li class="o-reveal"><span class="mi-k">游戏</span><h3>角色与分镜</h3><p>用参考图锁定角色形象，连续生成动作分镜和表情差分。</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="o-section" id="why" aria-labelledby="why-title">
+    <div class="o-wrap">
+      <h2 class="o-h2 o-reveal" id="why-title">为什么通过 AnyAIGC 调用</h2>
+      <ul class="mi-why">
+        <li class="o-reveal"><h3>一个 Key，300+ 模型</h3><p>Muse Image、GPT Image、Nano Banana、Seedream 共用一个 API Key 和余额。</p></li>
+        <li class="o-reveal"><h3>国内直连</h3><p>接口地址 <code>https://anyaigc.ai</code>，国内网络可直接调用，不需要 Meta 开发者账号。</p></li>
+        <li class="o-reveal"><h3>固定价格</h3><p>每张 ¥0.04，低于 Meta 官方价，账单按张可查。</p></li>
+        <li class="o-reveal"><h3>并发不限</h3><p>所有用户默认不限并发，批量出图不用排队申请。</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="o-section mi-band" id="quickstart" aria-labelledby="quickstart-title">
+    <div class="o-wrap">
+      <h2 class="o-h2 o-reveal" id="quickstart-title">快速接入 Muse Image API</h2>
+      <ol class="o-steps o-reveal"><li><a href="https://anyaigc.ai/register?aff=oOK7&channel=c_wpduopc9">注册 AnyAIGC</a>，新用户送 200 万 tokens 试用额度，最低 $1 起充。</li><li>在<a href="https://anyaigc.ai/console">控制台</a>创建 API Key，保存到环境变量 <code>ANYAIGC_API_KEY</code>。</li><li>向 <code>POST https://anyaigc.ai/v1/images/generations</code> 发请求（OpenAI 兼容格式），<code>model</code> 填 <code>muse-image</code>。</li></ol>
+      <ul class="o-tabs" role="tablist" aria-label="代码示例">
+        <li role="presentation"><button type="button" role="tab" id="tab-py" aria-controls="panel-py" aria-selected="true">Python</button></li>
+        <li role="presentation"><button type="button" role="tab" id="tab-curl" aria-controls="panel-curl" aria-selected="false">cURL</button></li>
+        <li role="presentation"><button type="button" role="tab" id="tab-sdk" aria-controls="panel-sdk" aria-selected="false">OpenAI SDK</button></li>
+      </ul>
+      <figure class="o-code" id="panel-py" role="tabpanel" aria-labelledby="tab-py">
+        <figcaption><b>Python · muse-image 文生图</b><button class="o-copy" type="button" aria-controls="code-py" data-done="已复制">复制</button></figcaption>
+<pre id="code-py"><code><span class="k">import</span> base64
+<span class="k">import</span> os
+<span class="k">import</span> requests
+
+API_KEY = os.environ[<span class="s">"ANYAIGC_API_KEY"</span>]
+resp = requests.post(
+    <span class="s">"https://anyaigc.ai/v1/images/generations"</span>,
+    headers={<span class="s">"Authorization"</span>: <span class="s">"Bearer "</span> + API_KEY},
+    json={
+        <span class="s">"model"</span>: <span class="s">"muse-image"</span>,
+        <span class="s">"prompt"</span>: <span class="s">"一张复古旅行海报，标题“杭州 · 西湖”，水彩风格，留白干净，底部一行小字“EST. 2026”"</span>,
+        <span class="s">"size"</span>: <span class="s">"1024x1536"</span>,  <span class="c"># 只决定宽高比，实际像素由模型决定</span>
+        <span class="s">"n"</span>: 1,  <span class="c"># 一次 1–10 张，按张计费</span>
+        <span class="s">"output_format"</span>: <span class="s">"png"</span>,  <span class="c"># webp（默认）/ png / jpeg</span>
+    },
+    timeout=300,
+)
+resp.raise_for_status()
+<span class="k">for</span> i, item <span class="k">in</span> <span class="k">enumerate</span>(resp.json()[<span class="s">"data"</span>], 1):
+    <span class="k">if</span> item.get(<span class="s">"b64_json"</span>):  <span class="c"># 默认返回 base64</span>
+        <span class="k">with</span> open(f<span class="s">"muse_{i}.png"</span>, <span class="s">"wb"</span>) <span class="k">as</span> f:
+            f.write(base64.b64decode(item[<span class="s">"b64_json"</span>]))
+        <span class="k">print</span>(<span class="s">"saved"</span>, f<span class="s">"muse_{i}.png"</span>)
+    else:  <span class="c"># response_format 填 url 时返回临时链接</span>
+        <span class="k">print</span>(item[<span class="s">"url"</span>])</code></pre>
+      </figure>
+      <figure class="o-code" id="panel-curl" role="tabpanel" aria-labelledby="tab-curl">
+        <figcaption><b>cURL · 返回图片链接</b><button class="o-copy" type="button" aria-controls="code-curl" data-done="已复制">复制</button></figcaption>
+<pre id="code-curl"><code>curl https://anyaigc.ai/v1/images/generations \
+  -H <span class="s">"Authorization: Bearer $ANYAIGC_API_KEY"</span> \
+  -H <span class="s">"Content-Type: application/json"</span> \
+  -d '{
+    <span class="s">"model"</span>: <span class="s">"muse-image"</span>,
+    <span class="s">"prompt"</span>: <span class="s">"一张复古旅行海报，标题“杭州 · 西湖”，水彩风格，留白干净，底部一行小字“EST. 2026”"</span>,
+    <span class="s">"size"</span>: <span class="s">"1024x1536"</span>,
+    <span class="s">"n"</span>: 1,
+    <span class="s">"response_format"</span>: <span class="s">"url"</span>
+  }'</code></pre>
+      </figure>
+      <figure class="o-code" id="panel-sdk" role="tabpanel" aria-labelledby="tab-sdk">
+        <figcaption><b>Python · OpenAI SDK 一次 2 张</b><button class="o-copy" type="button" aria-controls="code-sdk" data-done="已复制">复制</button></figcaption>
+<pre id="code-sdk"><code><span class="k">import</span> base64
+<span class="k">import</span> os
+<span class="k">from</span> openai <span class="k">import</span> OpenAI
+
+<span class="c"># OpenAI SDK 直接可用，只改 base_url 和 model</span>
+client = OpenAI(api_key=os.environ[<span class="s">"ANYAIGC_API_KEY"</span>], base_url=<span class="s">"https://anyaigc.ai/v1"</span>)
+img = client.images.generate(
+    model=<span class="s">"muse-image"</span>,
+    prompt=<span class="s">"一张复古旅行海报，标题“杭州 · 西湖”，水彩风格，留白干净，底部一行小字“EST. 2026”"</span>,
+    size=<span class="s">"1536x1024"</span>,
+    n=2,
+)
+<span class="k">for</span> i, d <span class="k">in</span> <span class="k">enumerate</span>(img.data, 1):
+    <span class="k">with</span> open(f<span class="s">"muse_{i}.webp"</span>, <span class="s">"wb"</span>) <span class="k">as</span> f:
+        f.write(base64.b64decode(d.b64_json))</code></pre>
+      </figure>
+      <p class="o-note">请求头用 <code>Authorization: Bearer &lt;API Key&gt;</code>。返回体是 <code>{"created": ..., "data": [{"b64_json": ...}]}</code>；<code>response_format</code> 填 <code>url</code> 时返回临时链接，请及时下载。参数说明参考 <a href="https://dev.meta.ai/docs/image-generation" target="_blank" rel="noopener">Meta 官方文档</a>，调用地址和 Key 以 AnyAIGC 为准。</p>
+    </div>
+  </section>
+
+  <section class="o-section" id="enterprise" aria-labelledby="ent-title">
+    <div class="o-wrap o-col">
+      <h2 class="o-h2 o-reveal" id="ent-title">企业接入 Muse Image API</h2>
+      <p class="o-lead o-reveal">电商公司、设计团队和内容平台可以直接走企业流程采购，财务、法务和技术对接都有对应支持。</p>
+      <ul class="o-cards">
+        <li class="o-card o-reveal"><strong>增值税发票</strong><h3>普票、专票都能开</h3><p>按实际充值金额开具增值税普通发票或增值税专用发票，方便企业报销和抵扣。</p></li>
+        <li class="o-card o-reveal"><strong>对公转账</strong><h3>公司账户直接付款</h3><p>支持企业对公转账充值，无需个人垫付，账目清晰。</p></li>
+        <li class="o-card o-reveal"><strong>签订合同</strong><h3>满足采购与法务流程</h3><p>可与 AnyAIGC 签订服务合同，适配企业内部的采购审批要求。</p></li>
+        <li class="o-card o-reveal"><strong>专属对接</strong><h3>客服与技术支持</h3><p>提供专属客服和技术对接，协助完成接入、迁移和日常问题排查。</p></li>
+      </ul>
+      <div class="pay-row o-reveal" role="group" aria-label="支持的支付方式"><span class="pay-label">支持的支付方式</span><ul class="pay-list"><li>微信支付</li><li>支付宝</li><li>USDT</li><li>信用卡</li><li>对公转账</li></ul></div>
+      <div class="o-price-cta o-reveal">
+        <a class="o-btn o-btn-dark" href="https://anyaigc.ai/customersupport">联系企业客服</a>
+        <a class="o-btn o-btn-light" href="https://anyaigc.ai/register?aff=oOK7&channel=c_wpduopc9">先注册试用</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST -->
+  <section class="o-section" id="trust" aria-labelledby="trust-title">
+    <div class="o-wrap o-col">
+      <h2 class="o-h2 o-reveal" id="trust-title">为什么可以放心用 AnyAIGC</h2>
+      <p class="o-lead o-reveal">试用、充值、退款、数据和账单，这些开发者最关心的问题，我们都写清楚了。</p>
+      <ul class="trust-list">
+        <li class="o-reveal"><h3>注册送 200 万 tokens</h3><p>新用户注册即送试用额度，先测效果再充值。</p></li>
+        <li class="o-reveal"><h3>$1 起充，余额可退</h3><p>最低 1 美元起充，未使用余额可申请退款，不收手续费。</p></li>
+        <li class="o-reveal"><h3>官方渠道，不掺假不降智</h3><p>请求走官方模型渠道，不用低配或逆向模型冒充。</p></li>
+        <li class="o-reveal"><h3>内容不留存、不训练</h3><p>除法律法规要求外，不对你的输入输出做持久化存储，也不用于训练。详见<a href="/privacy">隐私政策</a>。</p></li>
+        <li class="o-reveal"><h3>账单透明，可设额度</h3><p>控制台可查每次调用的 tokens 与扣费明细，可给每个 API Key 设置额度上限。</p></li>
+        <li class="o-reveal"><h3>7×24 客服</h3><p>随时<a href="https://anyaigc.ai/customersupport">联系客服</a>，接入、计费和故障问题都有人响应。</p></li>
+      </ul>
+      <div class="o-price-cta o-reveal"><a class="o-btn o-btn-dark" href="https://anyaigc.ai/register?aff=oOK7&channel=c_wpduopc9">先注册领取 200 万 tokens</a></div>
+    </div>
+  </section>
+  <!-- /TRUST -->
+
+  <!-- FAQ -->
+  <section class="o-section" id="faq" aria-labelledby="faq-title">
+    <div class="o-wrap o-col">
+      <h2 class="o-h2 o-reveal" id="faq-title">Muse Image API 常见问题</h2>
+      <div class="o-faq">
+        <details open><summary><h3>Muse Image API 多少钱？</h3></summary><div class="o-ans"><p>AnyAIGC 上 Muse Image（<code>muse-image</code>）每张 ¥0.04，按次计费，不按 token 算；Meta 官方价约 ¥0.07 / 张（$0.01）。一次请求生成 n 张就按 n 张计费，按成功生成计费，实时价格以模型广场为准。</p></div></details>
+        <details><summary><h3>Muse Image 是什么？</h3></summary><div class="o-ans"><p>Muse Image 是 Meta 超级智能实验室在 2026 年 7 月发布的图像生成与编辑模型。它在生成前会按需联网检索、写代码作图，并在生成过程中自我修正，擅长指令遵循、精准编辑和多图合成。</p></div></details>
+        <details><summary><h3>怎么控制尺寸和比例？</h3></summary><div class="o-ans"><p>用 <code>size</code> 传 <code>"宽x高"</code>，例如 <code>"1024x1536"</code>。按 Meta 官方文档，这个值只决定宽高比，实际像素由模型自己决定，返回尺寸不会和数字完全一致；宽高比超过 16:1 会报错。不传则用默认比例。</p></div></details>
+        <details><summary><h3>一次能生成几张？输出什么格式？</h3></summary><div class="o-ans"><p><code>n</code> 可填 1–10，默认 1，<code>data</code> 里每张图一条。<code>output_format</code> 支持 <code>webp</code>（默认）、<code>png</code>、<code>jpeg</code>；<code>response_format</code> 默认返回 base64，填 <code>url</code> 返回临时链接。</p></div></details>
+        <details><summary><h3>能改图和多图合成吗？</h3></summary><div class="o-ans"><p>能。Muse Image 用同一个模型做生成和编辑：传入一张图加指令只改指定部分，传入多张图可以把不同图里的元素合成到一个场景。AnyAIGC 模型广场显示 muse-image 同时支持图片编辑接口 <code>/v1/images/edits</code>，字段以 AnyAIGC 接口文档为准。</p></div></details>
+        <details><summary><h3>联网检索和写代码要额外付费吗？</h3></summary><div class="o-ans"><p>不用。按 Meta 官方说明，检索和代码工具是模型内置能力，包含在每张图的价格里。在 AnyAIGC 上同样按张计费，每张 ¥0.04，不另外收工具费用。</p></div></details>
+        <details><summary><h3>并发有限制吗？国内能直接调用吗？</h3></summary><div class="o-ans"><p>AnyAIGC 对 Muse Image 不设并发限制，所有用户默认享有。接口地址是 <code>https://anyaigc.ai</code>，国内网络可以直接调用，不需要 Meta 开发者账号；同一个 Key 还能调用平台上 300+ 其他模型。</p></div></details>
+        <details><summary><h3>AnyAIGC 能开发票吗？支持增值税专票吗？</h3></summary><div class="o-ans"><p>能。AnyAIGC 可以按实际充值金额开具增值税普通发票和增值税专用发票，开票信息提交给客服即可。</p></div></details>
+        <details><summary><h3>企业可以对公转账和签合同吗？</h3></summary><div class="o-ans"><p>可以。支持企业对公转账充值，也可以签订服务合同，并提供专属客服和技术对接。企业采购请<a href="https://anyaigc.ai/customersupport">联系 AnyAIGC 客服</a>。</p></div></details>
+        <details><summary><h3>支持哪些支付方式？</h3></summary><div class="o-ans"><p>支持微信支付、支付宝、USDT 和信用卡充值，企业还可以对公转账，并开具增值税普通发票或专用发票。余额按美元计价，对平台所有模型通用。</p></div></details>
+        <details><summary><h3>新用户有免费试用额度吗？</h3></summary><div class="o-ans"><p>有。新用户注册后赠送 200 万 tokens 的试用额度，可以先测试效果再决定是否充值。最低 1 美元起充。</p></div></details>
+        <details><summary><h3>余额可以退款吗？</h3></summary><div class="o-ans"><p>可以。未使用的余额可以申请退款，不收取手续费。具体流程请联系客服。</p></div></details>
+        <details><summary><h3>会不会用低配模型冒充？我的数据安全吗？</h3></summary><div class="o-ans"><p>请求走官方模型渠道，不用低配或逆向模型冒充。除法律法规要求外，我们不会对你的输入输出内容做持久化存储，也不会用于训练模型；控制台可以查看每次调用的 tokens 与扣费明细。</p></div></details>
+        <details><summary><h3>生成的图片可以商用吗？</h3></summary><div class="o-ans"><p>图片的使用权和内容政策以 Meta 官方条款为准。AnyAIGC 只提供 API 调用通道，不额外限制你对生成结果的使用。</p></div></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- 结尾 CTA -->
+  <section class="o-final" aria-labelledby="final-title">
+    <div class="o-wrap">
+      <svg class="mi-final-logo" viewBox="0 0 24 24" width="52" height="52" fill="#ffffff" fill-rule="evenodd" aria-hidden="true" focusable="false"><path d="M6.897 4c1.915 0 3.516.932 5.43 3.376l.282-.373c.19-.246.383-.484.58-.71l.313-.35C14.588 4.788 15.792 4 17.225 4c1.273 0 2.469.557 3.491 1.516l.218.213c1.73 1.765 2.917 4.71 3.053 8.026l.011.392.002.25c0 1.501-.28 2.759-.818 3.7l-.14.23-.108.153c-.301.42-.664.758-1.086 1.009l-.265.142-.087.04a3.493 3.493 0 01-.302.118 4.117 4.117 0 01-1.33.208c-.524 0-.996-.067-1.438-.215-.614-.204-1.163-.56-1.726-1.116l-.227-.235c-.753-.812-1.534-1.976-2.493-3.586l-1.43-2.41-.544-.895-1.766 3.13-.343.592C7.597 19.156 6.227 20 4.356 20c-1.21 0-2.205-.42-2.936-1.182l-.168-.184c-.484-.573-.837-1.311-1.043-2.189l-.067-.32a8.69 8.69 0 01-.136-1.288L0 14.468c.002-.745.06-1.49.174-2.23l.1-.573c.298-1.53.828-2.958 1.536-4.157l.209-.34c1.177-1.83 2.789-3.053 4.615-3.16L6.897 4zm-.033 2.615l-.201.01c-.83.083-1.606.673-2.252 1.577l-.138.199-.01.018c-.67 1.017-1.185 2.378-1.456 3.845l-.004.022a12.591 12.591 0 00-.207 2.254l.002.188c.004.18.017.36.04.54l.043.291c.092.503.257.908.486 1.208l.117.137c.303.323.698.492 1.17.492 1.1 0 1.796-.676 3.696-3.641l2.175-3.4.454-.701-.139-.198C9.11 7.3 8.084 6.616 6.864 6.616zm10.196-.552l-.176.007c-.635.048-1.223.359-1.82.933l-.196.198c-.439.462-.887 1.064-1.367 1.807l.266.398c.18.274.362.56.55.858l.293.475 1.396 2.335.695 1.114c.583.926 1.03 1.6 1.408 2.082l.213.262c.282.326.529.54.777.673l.102.05c.227.1.457.138.718.138.176.002.35-.023.518-.073.338-.104.61-.32.813-.637l.095-.163.077-.162c.194-.459.29-1.06.29-1.785l-.006-.449c-.08-2.871-.938-5.372-2.2-6.798l-.176-.189c-.67-.683-1.444-1.074-2.27-1.074z"></path></svg>
+      <h2 id="final-title">现在开始调用 Muse Image</h2>
+      <p>注册即送 200 万 tokens 试用额度，每张 ¥0.04，并发不限。</p>
+      <div class="o-cta">
+        <a class="o-btn o-btn-dark" href="https://anyaigc.ai/register?aff=oOK7&channel=c_wpduopc9">免费注册 AnyAIGC</a>
+        <a class="o-btn o-btn-light" href="https://docs.anyaigc.ai" target="_blank" rel="noopener">阅读 API 文档</a>
+      </div>
+      <ul class="o-related" aria-label="更多">
+        <li><a class="o-pill" href="/zh/models/">全部模型专题</a></li>
+        <li><a class="o-pill" href="https://anyaigc.ai/pricing">模型广场</a></li>
+        <li><a class="o-pill" href="/en/models/muse-image" hreflang="en" lang="en">Muse Image API in English</a></li>
+      </ul>
+    </div>
+  </section>
+</main>
+<footer class="o-foot">
+  <div class="o-wrap">
+    <div class="o-foot-top">
+      <div class="o-foot-brand">
+        <a class="o-brand" href="/">AnyAIGC</a>
+        <p>国内外大模型 API 中转平台。一个 Base URL、一个 API Key，统一调用 300+ 模型。</p>
+      </div>
+      <div class="o-foot-cols">
+        <div class="o-foot-col">
+          <h2>产品</h2>
+          <ul>
+            <li><a href="/zh/models/">模型专题</a></li>
+            <li><a href="https://anyaigc.ai/pricing">模型广场</a></li>
+            <li><a href="https://anyaigc.ai/console">控制台</a></li>
+          </ul>
+        </div>
+        <div class="o-foot-col">
+          <h2>资源</h2>
+          <ul>
+            <li><a href="https://docs.anyaigc.ai" target="_blank" rel="noopener">API 文档 ↗</a></li>
+            <li><a href="https://dev.meta.ai/docs/image-generation" target="_blank" rel="noopener">Meta 官方文档 ↗</a></li>
+            <li><a href="https://anyaigc.ai/customersupport">联系我们</a></li>
+          </ul>
+        </div>
+        <div class="o-foot-col">
+          <h2>条款</h2>
+          <ul>
+            <li><a href="/privacy">隐私政策</a></li>
+            <li><a href="/terms">服务条款</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="o-foot-bottom">
+      <p><svg viewBox="0 0 24 24" width="16" height="16" fill="#ffffff" fill-rule="evenodd" aria-hidden="true" focusable="false"><path d="M6.897 4c1.915 0 3.516.932 5.43 3.376l.282-.373c.19-.246.383-.484.58-.71l.313-.35C14.588 4.788 15.792 4 17.225 4c1.273 0 2.469.557 3.491 1.516l.218.213c1.73 1.765 2.917 4.71 3.053 8.026l.011.392.002.25c0 1.501-.28 2.759-.818 3.7l-.14.23-.108.153c-.301.42-.664.758-1.086 1.009l-.265.142-.087.04a3.493 3.493 0 01-.302.118 4.117 4.117 0 01-1.33.208c-.524 0-.996-.067-1.438-.215-.614-.204-1.163-.56-1.726-1.116l-.227-.235c-.753-.812-1.534-1.976-2.493-3.586l-1.43-2.41-.544-.895-1.766 3.13-.343.592C7.597 19.156 6.227 20 4.356 20c-1.21 0-2.205-.42-2.936-1.182l-.168-.184c-.484-.573-.837-1.311-1.043-2.189l-.067-.32a8.69 8.69 0 01-.136-1.288L0 14.468c.002-.745.06-1.49.174-2.23l.1-.573c.298-1.53.828-2.958 1.536-4.157l.209-.34c1.177-1.83 2.789-3.053 4.615-3.16L6.897 4zm-.033 2.615l-.201.01c-.83.083-1.606.673-2.252 1.577l-.138.199-.01.018c-.67 1.017-1.185 2.378-1.456 3.845l-.004.022a12.591 12.591 0 00-.207 2.254l.002.188c.004.18.017.36.04.54l.043.291c.092.503.257.908.486 1.208l.117.137c.303.323.698.492 1.17.492 1.1 0 1.796-.676 3.696-3.641l2.175-3.4.454-.701-.139-.198C9.11 7.3 8.084 6.616 6.864 6.616zm10.196-.552l-.176.007c-.635.048-1.223.359-1.82.933l-.196.198c-.439.462-.887 1.064-1.367 1.807l.266.398c.18.274.362.56.55.858l.293.475 1.396 2.335.695 1.114c.583.926 1.03 1.6 1.408 2.082l.213.262c.282.326.529.54.777.673l.102.05c.227.1.457.138.718.138.176.002.35-.023.518-.073.338-.104.61-.32.813-.637l.095-.163.077-.162c.194-.459.29-1.06.29-1.785l-.006-.449c-.08-2.871-.938-5.372-2.2-6.798l-.176-.189c-.67-.683-1.444-1.074-2.27-1.074z"></path></svg><span>&copy; 2026 AnyAIGC。Muse、Meta 是 Meta Platforms, Inc. 的商标。AnyAIGC 是独立的 API 服务商，与 Meta 无隶属或合作关系。页面示例图片来自 Meta 官方博客，版权归 Meta 所有；模型参数引自 Meta Model API 公开文档。</span></p>
+      <a class="o-pill" href="/en/models/muse-image" hreflang="en" lang="en">English</a>
+    </div>
+  </div>
+</footer>
+<script src="/assets/models/muse-image.js?v=20261103" defer></script>
+</body>
+</html>
