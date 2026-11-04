@@ -851,4 +851,60 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/muse-video"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/muse-video"/>
   </url>
+  <url>
+    <loc>https://www.anyaigc.ai/zh/models/grok-image</loc>
+    <lastmod>2026-11-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/grok-image"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/grok-image"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/grok-image"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/en/models/grok-image</loc>
+    <lastmod>2026-11-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/grok-image"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/grok-image"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/grok-image"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/zh/models/grok-imagine-image-2.0</loc>
+    <lastmod>2026-11-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/grok-imagine-image-2.0"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/grok-imagine-image-2.0"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/grok-imagine-image-2.0"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/en/models/grok-imagine-image-2.0</loc>
+    <lastmod>2026-11-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/grok-imagine-image-2.0"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/grok-imagine-image-2.0"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/grok-imagine-image-2.0"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/zh/models/grok-imagine-image</loc>
+    <lastmod>2026-11-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/grok-imagine-image"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/grok-imagine-image"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/grok-imagine-image"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/en/models/grok-imagine-image</loc>
+    <lastmod>2026-11-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/grok-imagine-image"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/grok-imagine-image"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/grok-imagine-image"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/zh/models/grok-imagine-image-quality</loc>
+    <lastmod>2026-11-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/grok-imagine-image-quality"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/grok-imagine-image-quality"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/grok-imagine-image-quality"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/en/models/grok-imagine-image-quality</loc>
+    <lastmod>2026-11-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/grok-imagine-image-quality"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/grok-imagine-image-quality"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/grok-imagine-image-quality"/>
+  </url>
 </urlset>
