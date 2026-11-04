@@ -1,0 +1,35 @@
+/*
+ * Grok Video 系列专题页的视频组件（在 grok-image.css 之后引入，其余样式与 Grok Image 页共用）。
+ * 视觉参考 x.ai/api/imagine、x.ai/news/grok-imagine-video-1-5：白底、16px 圆角视频卡片、黑色胶囊标签。
+ * 示例视频来自 xAI 官方页面（assets/models/grok-video/），960 宽 H.264。
+ */
+video{display:block;width:100%;height:auto;background:#141414}
+.gv-hero{margin:48px auto 0;max-width:1100px}
+.gv-hero video{aspect-ratio:16/9;border-radius:16px;object-fit:cover}
+.gv-hero figcaption{margin-top:10px;font-size:14px;color:var(--gk-muted)}
+.gk-hero{padding-bottom:24px}
+.gv-frame video{width:100%;height:100%;object-fit:cover}
+
+/* 改视频对比：原视频 + 两个结果 */
+.gv-trio{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:14px;list-style:none}
+.gv-trio video{aspect-ratio:16/9;border-radius:16px;object-fit:cover}
+.gv-trio figcaption{padding:8px 4px 0;font-size:14px;line-height:1.5;color:var(--gk-ink-2)}
+.gv-trio figcaption b{display:inline-block;margin-right:8px;padding:1px 10px;border-radius:9999px;background:var(--gk-ink);color:#fff;font-size:12px;font-weight:600}
+.gv-trio li:first-child figcaption b{background:var(--gk-pill);color:var(--gk-ink-2)}
+
+/* 示例视频 */
+.gv-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-top:36px;list-style:none}
+.gv-shot video{aspect-ratio:16/9;border-radius:16px;object-fit:cover}
+.gv-shot figcaption{padding:10px 4px 0;font-size:14px;line-height:1.55;color:var(--gk-ink-2)}
+.gv-shot figcaption b{display:block;margin-bottom:2px;color:var(--gk-ink);font-weight:600}
+
+/* 价格表分组行里的输入费用说明 */
+.o-table .gk-group .gv-in{display:block;margin-top:2px;font-size:12.5px;font-weight:400;color:var(--gk-muted)}
+
+/* 模型对比表（总览页） */
+.gv-compare{min-width:760px}
+.gv-compare td{font-size:14.5px;color:var(--gk-ink-2)}
+.gv-yes{color:var(--gk-ink);font-weight:600}
+
+@media (max-width:900px){.gv-trio{grid-template-columns:1fr 1fr}.gv-trio li:first-child{grid-column:span 2}}
+@media (max-width:640px){.gv-gallery,.gv-trio{grid-template-columns:1fr}.gv-trio li:first-child{grid-column:auto}}

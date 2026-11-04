@@ -12,6 +12,7 @@ from seedream_layout import hl  # noqa: E402  极简代码高亮（字符串 / �
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 NL = '\n'
 GROK = None  # 运行时读取 assets/icons/grok.svg 的 path
+JS = ASSET  # 页脚引入的脚本名；Grok Video 页改成 grok-video
 
 
 def load_icon():
@@ -488,7 +489,7 @@ def footer(lang, slug, docs):
     </div>
   </div>
 </footer>
-<script src="/assets/models/{ASSET}.js?v={VER}" defer></script>
+<script src="/assets/models/{JS}.js?v={VER}" defer></script>
 </body>
 </html>
 '''
