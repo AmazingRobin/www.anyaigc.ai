@@ -1,0 +1,17 @@
+/*
+ * Muse Video 专题页的视频组件（在 muse-image.css 之后引入，其余样式共用 Muse Image 页）。
+ * 视频来自 Meta 官方博客，1280×720，统一 16px 圆角、16:9。
+ */
+video{display:block;width:100%;height:auto;background:#0f1a24}
+.mv-hero-video{margin:44px 0 0}
+.mv-hero-video video{aspect-ratio:16/9;border-radius:16px;object-fit:cover}
+.mv-hero-video figcaption{margin-top:10px;font-size:14px;color:var(--mi-muted)}
+.mv-frame{aspect-ratio:16/9}
+.mv-frame video{width:100%;height:100%;object-fit:cover}
+.mv-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-top:40px;list-style:none}
+.mv-shot video{aspect-ratio:16/9;border-radius:16px;object-fit:cover}
+.mv-shot figcaption{padding:10px 4px 0;font-size:14px;line-height:1.55;color:var(--mi-ink-2)}
+.mv-shot figcaption b{display:block;margin-bottom:2px;color:var(--mi-ink);font-weight:600}
+.mv-round{max-width:420px}
+.mv-round .o-table{min-width:0}
+@media (max-width:640px){.mv-gallery{grid-template-columns:1fr}.mv-round{max-width:none}}

@@ -31,6 +31,9 @@ CNY = f'{float(USD) * RATE:.2f}'  # 0.04
 OFFICIAL_CNY = f'{float(OFFICIAL) * RATE:.2f}'  # 0.07，中文页官方价也按同一汇率换算成人民币，方便对比
 META_BLOG = 'https://ai.meta.com/blog/introducing-muse-image-muse-video-msl/'
 META_DOC = 'https://dev.meta.ai/docs/image-generation'
+NAME = 'Muse Image'
+SIBLING = '<li><a class="o-pill" href="/{lang}/models/muse-video">Muse Video API</a></li>\n        '  # 结尾区链到同系列 Muse Video
+ASSET = 'muse-image'  # 样式与脚本：/assets/models/<ASSET>.css / .js
 
 # 示例图：文件名 -> (宽, 高)
 IMG = {
@@ -386,7 +389,7 @@ def page_url(lang):
 def head(lang, c):
     me, zh, en = page_url(lang), page_url('zh'), page_url('en')
     og_img = f'{SITE}/assets/og/{SLUG}-{lang}.png'
-    crumbs = [(c['home'], f'{SITE}/'), (c['hub'], f'{SITE}/{lang}/models/'), ('Muse Image', me)]
+    crumbs = [(c['home'], f'{SITE}/'), (c['hub'], f'{SITE}/{lang}/models/'), (NAME, me)]
     cur = c['currency']
     graph = [
         {'@type': 'Organization', '@id': f'{SITE}/#org', 'name': 'AnyAIGC', 'url': 'https://anyaigc.ai', 'logo': f'{SITE}/logo.webp'},
@@ -436,7 +439,7 @@ def head(lang, c):
 <meta name="twitter:description" content="{e(c['og_desc'])}">
 <meta name="twitter:image" content="{og_img}">
 <link rel="stylesheet" href="/assets/models/scrollbar.css?v=20261024b">
-<link rel="stylesheet" href="/assets/models/muse-image.css?v={VER}">
+<link rel="stylesheet" href="/assets/models/{ASSET}.css?v={VER}">
 <script type="application/ld+json">
 {ld}
 </script>
@@ -482,7 +485,7 @@ def hero(lang, c):
     <div class="o-wrap">
       <nav aria-label="{c['crumbs']}">
         <ol class="o-crumbs">
-          <li><a href="/">{c['home']}</a></li><li><a href="/{lang}/models/">{c['hub']}</a></li><li aria-current="page">Muse Image</li>
+          <li><a href="/">{c['home']}</a></li><li><a href="/{lang}/models/">{c['hub']}</a></li><li aria-current="page">{NAME}</li>
         </ol>
       </nav>
       <p class="mi-badge">{c['badge']}</p>
@@ -658,7 +661,7 @@ def final(lang, c):
       </div>
       <ul class="o-related" aria-label="{c['more']}">
         <li><a class="o-pill" href="/{lang}/models/">{c['all_hub']}</a></li>
-        <li><a class="o-pill" href="{PRICING}">{c['market']}</a></li>
+        {SIBLING.format(lang=lang) if SLUG == 'muse-image' else ''}<li><a class="o-pill" href="{PRICING}">{c['market']}</a></li>
         <li><a class="o-pill" href="/{o}/models/{SLUG}" hreflang="{c['other_lang']}" lang="{c['other_lang']}">{c['in_other']}</a></li>
       </ul>
     </div>
@@ -709,7 +712,7 @@ def footer(lang, c):
     </div>
   </div>
 </footer>
-<script src="/assets/models/muse-image.js?v={VER}" defer></script>
+<script src="/assets/models/{ASSET}.js?v={VER}" defer></script>
 </body>
 </html>
 '''
