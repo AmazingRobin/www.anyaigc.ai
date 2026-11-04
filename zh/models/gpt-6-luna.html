@@ -29,7 +29,7 @@
 <meta name="twitter:description" content="gpt-6-luna 输入 $0.0135/1M、输出 $0.0675/1M，约官方价 1.3 折，并发不限，支持对公转账与增值税专票。">
 <meta name="twitter:image" content="https://www.anyaigc.ai/assets/og/gpt-6-luna-zh.png">
 <link rel="stylesheet" href="/assets/models/scrollbar.css?v=20261024b">
-<link rel="stylesheet" href="/assets/models/gpt.css?v=20261024p">
+<link rel="stylesheet" href="/assets/models/gpt.css?v=20261104">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -165,7 +165,7 @@
           "name": "GPT-6 Luna 是最便宜的 GPT 模型吗？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "在 OpenAI 当前的 GPT-6 三档（Astra、Sol、Luna）里，Luna 的官方价最低，OpenAI 称它是“最快、最具成本效益”的一档。在 AnyAIGC 上它的输入价是 GPT-6.1 Sol 的约七分之一、GPT-6 Astra 的约三十七分之一。实时价格以 AnyAIGC 模型广场为准。"
+            "text": "在 OpenAI 当前的 GPT-6 各档（Astra、Sol、Terra、Luna）里，Luna 的官方价最低，OpenAI 称它是“最快、最具成本效益”的一档。在 AnyAIGC 上它的输入价是 GPT-6.1 Sol 的约七分之一、GPT-6 Astra 的约三十七分之一。实时价格以 AnyAIGC 模型广场为准。"
           }
         },
         {
@@ -350,7 +350,7 @@
   <section class="o-section" id="pricing" aria-labelledby="pricing-title">
     <div class="o-wrap g-wide">
       <h2 class="o-h2 o-reveal" id="pricing-title">GPT-6 Luna API 价格</h2>
-      <p class="o-lead o-reveal">按 token 计费，固定单价，没有订阅和月费。输入、输出、缓存输入每一项都约为 OpenAI 官方价的 13.5%。下面三张卡是 GPT-6 当前三档模型在 AnyAIGC 的价格。</p>
+      <p class="o-lead o-reveal">按 token 计费，固定单价，没有订阅和月费。输入、输出、缓存输入每一项都约为 OpenAI 官方价的 13.5%。下面三张卡是 GPT-6 的 Astra、Sol、Luna 三档在 AnyAIGC 的价格，Terra 档见 <a href="/zh/models/gpt-6.1-terra">GPT-6.1 Terra</a>。</p>
 
       <ul class="g-tri" aria-label="GPT-6 系列三档模型价格">
         <li class="o-reveal">
@@ -694,10 +694,11 @@ requires_openai_auth = <span class="k">true</span></code></pre>
       <ul class="o-family o-reveal">
         <li><a href="/zh/models/gpt-6-astra"><span class="o-tag">最新</span><b>GPT-6 Astra</b><span>OpenAI 旗舰，最难的任务 · 输入 $0.4964 / 1M</span></a></li>
         <li><a href="/zh/models/gpt-6.1-sol"><span class="o-tag">最新</span><b>GPT-6.1 Sol</b><span>接近 Astra，价格五分之一 · 输入 $0.0993 / 1M</span></a></li>
-        <li><a href="/zh/models/gpt-6-luna" aria-current="page"><span class="o-tag">最新</span><b>GPT-6 Luna</b><span>GPT-6 最低价档，高频批量任务 · 输入 $0.0135 / 1M</span></a></li>
+        <li><a href="/zh/models/gpt-6.1-terra"><span class="o-tag">最新</span><b>GPT-6.1 Terra</b><span>识图与电脑操作，速度快 · 输入 $0.0496 / 1M</span></a></li>
+        <li><a href="/zh/models/gpt-6-luna" aria-current="page"><span class="o-tag">最新</span><b>GPT-6 Luna</b><span>最快最省，高频批量任务 · 输入 $0.0135 / 1M</span></a></li>
         <li><a href="/zh/models/gpt-6-sol"><b>GPT-6 Sol</b><span>GPT-6 首版 Sol，已有 6.1 · 输入 $0.0993 / 1M</span></a></li>
         <li><a href="/zh/models/gpt-5.6-sol"><b>GPT-5.6 Sol</b><span>GPT-5.6 旗舰，推广价 · 输入 $0.2482 / 1M</span></a></li>
-        <li><a href="/zh/models/gpt-5.6-terra"><b>GPT-5.6 Terra</b><span>日常均衡档，比肩 GPT-5.5 · 输入 $0.0993 / 1M</span></a></li>
+        <li><a href="/zh/models/gpt-5.6-terra"><b>GPT-5.6 Terra</b><span>5.6 均衡档，已有 6.1 Terra · 输入 $0.0993 / 1M</span></a></li>
         <li><a href="/zh/models/gpt-5.6-luna"><b>GPT-5.6 Luna</b><span>5.6 代低价档，大批量任务 · 输入 $0.0270 / 1M</span></a></li>
         <li><a href="/zh/models/gpt-5.5"><b>GPT-5.5</b><span>上代旗舰，API 仍可调用 · 输入 $0.2482 / 1M</span></a></li>
         <li><a href="/zh/models/gpt-5.5-pro"><b>GPT-5.5 Pro</b><span>高算力深度推理，仅 Responses · 输入 $17.8200 / 1M</span></a></li>
@@ -712,7 +713,7 @@ requires_openai_auth = <span class="k">true</span></code></pre>
       <div class="o-faq">
         <details open><summary><h3>GPT-6 Luna API 多少钱？</h3></summary><div class="o-ans"><p>AnyAIGC 上 <code>gpt-6-luna</code> 按 token 计费：输入 $0.0135/百万 tokens，输出 $0.0675/百万 tokens，缓存输入 $0.0014/百万 tokens。OpenAI 官方价为输入 $0.10、输出 $0.50、缓存输入 $0.01，AnyAIGC 约为官方价的 13.5%（约 1.3 折）。单次请求输入超过 272K tokens 时，整次请求的输入和缓存按 2 倍、输出按 1.5 倍计费。</p></div></details>
         <details><summary><h3>GPT-6 Luna 和 GPT-5.6 Luna 有什么区别？</h3></summary><div class="o-ans"><p>GPT-6 Luna 是 GPT-5.6 Luna 的下一代。官方价从输入 $0.20、输出 $1.20 降到 $0.10 / $0.50，输入减半、输出降低约 58%。按 OpenAI 公布的数据，max 推理强度下它在 AutomationBench 上得分 20.7%，GPT-5.6 Luna 为 17.0%；在 high 推理强度下比上一代高 5.4 个百分点，每项任务成本降低 58%。知识截止日期为 2026-05-18。在 AnyAIGC 上，GPT-6 Luna 输入 $0.0135、输出 $0.0675，GPT-5.6 Luna 输入 $0.0270、输出 $0.1620（每百万 tokens）。</p></div></details>
-        <details><summary><h3>GPT-6 Luna 是最便宜的 GPT 模型吗？</h3></summary><div class="o-ans"><p>在 OpenAI 当前的 GPT-6 三档（Astra、Sol、Luna）里，Luna 的官方价最低，OpenAI 称它是“最快、最具成本效益”的一档。在 AnyAIGC 上它的输入价是 GPT-6.1 Sol 的约七分之一、GPT-6 Astra 的约三十七分之一。实时价格以 AnyAIGC 模型广场为准。</p></div></details>
+        <details><summary><h3>GPT-6 Luna 是最便宜的 GPT 模型吗？</h3></summary><div class="o-ans"><p>在 OpenAI 当前的 GPT-6 各档（Astra、Sol、Terra、Luna）里，Luna 的官方价最低，OpenAI 称它是“最快、最具成本效益”的一档。在 AnyAIGC 上它的输入价是 GPT-6.1 Sol 的约七分之一、GPT-6 Astra 的约三十七分之一。实时价格以 AnyAIGC 模型广场为准。</p></div></details>
         <details><summary><h3>GPT-6 Luna 和 GPT-6.1 Sol 怎么选？</h3></summary><div class="o-ans"><p>OpenAI 把 Luna 定位为范围明确的任务、分诊和高频自动化，把 Sol 定位为需要兼顾时间和成本的复杂任务。分类、抽取、摘要、批量改写这类调用量大、单次难度不高的任务先用 GPT-6 Luna；多文件编码、计算机使用和长链路 Agent 任务换用 <a href="/zh/models/gpt-6.1-sol">GPT-6.1 Sol</a>。</p></div></details>
         <details><summary><h3>用 Chat Completions 还是 Responses API？可以调用工具吗？</h3></summary><div class="o-ans"><p>两个接口都能用。普通对话、流式输出用 <code>https://anyaigc.ai/v1/chat/completions</code> 即可。按 OpenAI 的说明，<code>gpt-6-luna</code> 在 Chat Completions 上只有 <code>reasoning_effort</code> 设为 <code>none</code> 时才支持函数调用；其他推理强度下调用函数，或使用内置工具时，请用 <code>https://anyaigc.ai/v1/responses</code>，推理强度写在 <code>reasoning.effort</code> 里。</p></div></details>
         <details><summary><h3>可以在 Codex 里使用 GPT-6 Luna 吗？</h3></summary><div class="o-ans"><p>可以。运行 <code>curl -fsSL https://www.anyaigc.ai/install.sh | bash -s codex</code> 一键安装（Windows 用 <code>irm https://www.anyaigc.ai/install.ps1 | iex</code>），脚本默认写入 <code>gpt-5.5</code>，装好后把 <code>~/.codex/config.toml</code> 里的 <code>model</code> 改为 <code>gpt-6-luna</code>。也可以手动配置：在 <code>~/.codex/config.toml</code> 里把 <code>base_url</code> 设为 <code>https://anyaigc.ai/v1</code>、<code>wire_api</code> 设为 <code>responses</code>、<code>model</code> 设为 <code>gpt-6-luna</code>，并在 <code>~/.codex/auth.json</code> 写入 <code>OPENAI_API_KEY</code>。</p></div></details>

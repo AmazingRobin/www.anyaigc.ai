@@ -11,12 +11,14 @@ BRAND = 'AnyAIGC'  # 区分大小写
 
 # 每个页面一句卖点 + 3 个标签
 SUBS = {
-    'gpt':           ({'zh': 'OpenAI 全系 9 个型号，一个 API Key 调用', 'en': 'Every OpenAI GPT model, one API key'},
-                      {'zh': ['9 个型号', '约官方 0.5 折起', '对公 · 专票'], 'en': ['9 models', 'Up to 95% off', 'Contracts · invoices']}),
+    'gpt':           ({'zh': 'OpenAI 全系 10 个型号，一个 API Key 调用', 'en': 'Every OpenAI GPT model, one API key'},
+                      {'zh': ['10 个型号', '约官方 0.5 折起', '对公 · 专票'], 'en': ['10 models', 'Up to 95% off', 'Contracts · invoices']}),
     'gpt-6-astra':   ({'zh': 'OpenAI 旗舰模型，约官方价 0.5 折', 'en': "OpenAI's flagship model at 95% off"},
                       {'zh': ['最高智能', 'Codex', '并发不限'], 'en': ['Top tier', 'Codex', 'Unlimited concurrency']}),
     'gpt-6.1-sol':   ({'zh': '接近 Astra 的智能，约官方价 0.5 折', 'en': 'Near-Astra intelligence at 95% off'},
                       {'zh': ['Responses API', 'Codex', '并发不限'], 'en': ['Responses API', 'Codex', 'Unlimited concurrency']}),
+    'gpt-6.1-terra': ({'zh': '识图与电脑操作，约官方价 0.5 折', 'en': 'Vision and computer use at 95% off'},
+                      {'zh': ['Computer Use', '视觉推理', '并发不限'], 'en': ['Computer use', 'Visual reasoning', 'Unlimited concurrency']}),
     'gpt-6-luna':    ({'zh': '高频批量任务，速度快、成本低', 'en': 'Fast, low-cost, built for volume'},
                       {'zh': ['约 1.3 折', '高频批量', '并发不限'], 'en': ['86% off', 'High volume', 'Unlimited concurrency']}),
     'gpt-6-sol':     ({'zh': '官方价比 GPT-5.6 Sol 低 50%', 'en': '50% below GPT-5.6 Sol list price'},

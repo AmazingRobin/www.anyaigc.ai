@@ -22,6 +22,10 @@ PAGES = {
                          {'zh': 'Google 称最智能的 Flash，快且便宜', 'en': "Google's most intelligent Flash model"},
                          {'zh': '$0.0744 / 1M 输入', 'en': '$0.0744 / 1M input'},
                          {'zh': ['1M 上下文', '并发不限', '对公 · 专票'], 'en': ['1M context', 'Unlimited RPM', 'Contracts · invoices']}),
+    'gemini-3.8-flash-tts': ('Gemini 3.8', 'Flash TTS',
+                             {'zh': '语音合成，30 种音色、双人对话', 'en': 'Text to speech with 30 voices and two speakers'},
+                             {'zh': '¥1.2 / 1M 输入 · 官方 3.6 折', 'en': '36% of Google list price'},
+                             {'zh': ['130+ 语言', '并发不限', '对公 · 专票'], 'en': ['130+ languages', 'Unlimited RPM', 'Contracts · invoices']}),
     'gemini-3.1-pro-preview': ('Gemini 3.1', 'Pro',
                                {'zh': 'Gemini 3 代 Pro 预览版，复杂推理与多模态', 'en': 'Gemini 3 Pro preview for complex reasoning'},
                                {'zh': '$0.1985 / 1M 输入', 'en': '$0.1985 / 1M input'},
@@ -71,7 +75,7 @@ def main():
             if not os.path.exists(os.path.join(ROOT, lang, 'models', slug + '.html')):
                 continue
             chips = f'<span class="d">{price[lang]}</span>' + ''.join(f'<span>{t}</span>' for t in tags[lang])
-            fs = '120' if len(name + key) <= 14 else '108'
+            fs = '120' if len(name + key) <= 14 else ('108' if len(name + key) <= 17 else '92')
             small = logo.replace('lobe-icons-gemini-', 'sm-')
             html = (TPL.replace('@LOGO', logo).replace('@SMALL', small).replace('@BRAND', BRAND).replace('@NAME', name)
                     .replace('@KEY', key).replace('@SUB', sub[lang]).replace('@CHIPS', chips).replace('@FS', fs))

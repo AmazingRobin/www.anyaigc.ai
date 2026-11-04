@@ -29,7 +29,7 @@
 <meta name="twitter:description" content="gpt-6-astra at $0.4964/1M input and $2.4810/1M output, 95% off list price, unlimited concurrency, contracts and invoices.">
 <meta name="twitter:image" content="https://www.anyaigc.ai/assets/og/gpt-6-astra-en.png">
 <link rel="stylesheet" href="/assets/models/scrollbar.css?v=20261024b">
-<link rel="stylesheet" href="/assets/models/gpt.css?v=20261024p">
+<link rel="stylesheet" href="/assets/models/gpt.css?v=20261104">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -173,7 +173,7 @@
           "name": "Why is there no GPT-6.1 Astra?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "As of now, OpenAI has not released a GPT-6.1 Astra. GPT-6.1 only upgraded the Sol tier. OpenAI's current API lineup is gpt-6-astra, gpt-6.1-sol and gpt-6-luna, so the Astra tier is still gpt-6-astra. OpenAI's model catalog says: if you're not sure where to start, use GPT-6 Astra."
+            "text": "As of now, OpenAI has not released a GPT-6.1 Astra. GPT-6.1 has so far upgraded the Sol and Terra tiers. OpenAI's current GPT-6 API lineup is gpt-6-astra, gpt-6.1-sol, gpt-6.1-terra and gpt-6-luna, so the Astra tier is still gpt-6-astra. OpenAI's model catalog says: if you're not sure where to start, use GPT-6 Astra."
           }
         },
         {
@@ -358,7 +358,7 @@
   <section class="o-section" id="pricing" aria-labelledby="pricing-title">
     <div class="o-wrap g-wide">
       <h2 class="o-h2 o-reveal" id="pricing-title">GPT-6 Astra API pricing</h2>
-      <p class="o-lead o-reveal">Per-token billing at fixed rates, with no subscription or monthly fee. Input, output and cached input are each about 5% of OpenAI's list price. The three cards show the current GPT-6 lineup on AnyAIGC.</p>
+      <p class="o-lead o-reveal">Per-token billing at fixed rates, with no subscription or monthly fee. Input, output and cached input are each about 5% of OpenAI's list price. The three cards show the GPT-6 Astra, Sol and Luna tiers on AnyAIGC; for the Terra tier, see <a href="/en/models/gpt-6.1-terra">GPT-6.1 Terra</a>.</p>
 
       <ul class="g-tri" aria-label="GPT-6 lineup pricing">
         <li class="o-reveal">
@@ -722,10 +722,11 @@ requires_openai_auth = <span class="k">true</span></code></pre>
       <ul class="o-family o-reveal">
         <li><a href="/en/models/gpt-6-astra" aria-current="page"><span class="o-tag">Latest</span><b>GPT-6 Astra</b><span>OpenAI's flagship for the hardest work · Input $0.4964 / 1M</span></a></li>
         <li><a href="/en/models/gpt-6.1-sol"><span class="o-tag">Latest</span><b>GPT-6.1 Sol</b><span>Near-Astra at one fifth of the price · Input $0.0993 / 1M</span></a></li>
-        <li><a href="/en/models/gpt-6-luna"><span class="o-tag">Latest</span><b>GPT-6 Luna</b><span>Lowest-priced GPT-6, high-volume tasks · Input $0.0135 / 1M</span></a></li>
+        <li><a href="/en/models/gpt-6.1-terra"><span class="o-tag">Latest</span><b>GPT-6.1 Terra</b><span>Fast vision, computer use and writing · Input $0.0496 / 1M</span></a></li>
+        <li><a href="/en/models/gpt-6-luna"><span class="o-tag">Latest</span><b>GPT-6 Luna</b><span>Fastest, lowest cost, high-volume tasks · Input $0.0135 / 1M</span></a></li>
         <li><a href="/en/models/gpt-6-sol"><b>GPT-6 Sol</b><span>First GPT-6 Sol, now succeeded by 6.1 · Input $0.0993 / 1M</span></a></li>
         <li><a href="/en/models/gpt-5.6-sol"><b>GPT-5.6 Sol</b><span>GPT-5.6 flagship at promo price · Input $0.2482 / 1M</span></a></li>
-        <li><a href="/en/models/gpt-5.6-terra"><b>GPT-5.6 Terra</b><span>Balanced everyday tier, GPT-5.5 level · Input $0.0993 / 1M</span></a></li>
+        <li><a href="/en/models/gpt-5.6-terra"><b>GPT-5.6 Terra</b><span>GPT-5.6 balanced tier, now 6.1 Terra · Input $0.0993 / 1M</span></a></li>
         <li><a href="/en/models/gpt-5.6-luna"><b>GPT-5.6 Luna</b><span>Low-cost GPT-5.6 tier for volume · Input $0.0270 / 1M</span></a></li>
         <li><a href="/en/models/gpt-5.5"><b>GPT-5.5</b><span>Previous flagship, still live in the API · Input $0.2482 / 1M</span></a></li>
         <li><a href="/en/models/gpt-5.5-pro"><b>GPT-5.5 Pro</b><span>More compute, deeper answers, Responses only · Input $17.8200 / 1M</span></a></li>
@@ -741,7 +742,7 @@ requires_openai_auth = <span class="k">true</span></code></pre>
         <details open><summary><h3>How much does the GPT-6 Astra API cost?</h3></summary><div class="o-ans"><p>On AnyAIGC, <code>gpt-6-astra</code> is billed per token: $0.4964 per 1M input tokens, $2.4810 per 1M output tokens and $0.0496 per 1M cached input tokens. OpenAI's list price is $10.00 input, $50.00 output and $1.00 cached input, so AnyAIGC is about 5% of list (95% off). When a request has more than 272K input tokens, the whole request is billed at 2x input and cache rates and 1.5x output.</p></div></details>
         <details><summary><h3>What is the GPT-6 Astra model ID?</h3></summary><div class="o-ans"><p>The model ID is <code>gpt-6-astra</code>. Put it in the <code>model</code> field of your request. OpenAI has not published a dated snapshot for it.</p></div></details>
         <details><summary><h3>GPT-6 Astra vs GPT-6.1 Sol: which should I use?</h3></summary><div class="o-ans"><p>OpenAI says GPT-6.1 Sol comes close to GPT-6 Astra on agentic coding, computer use and professional work, at one fifth of Astra's standard price. In OpenAI's results Astra still leads on Terminal-Bench Science (68.1% vs 57.0%), at about $23.80 per task against $5.47 for GPT-6.1 Sol (both at list price). Start with <a href="/en/models/gpt-6.1-sol">GPT-6.1 Sol</a> for everyday coding and agent work, and use GPT-6 Astra for the hardest reasoning, research and long end-to-end tasks. On AnyAIGC, GPT-6 Astra is $0.4964 input and $2.4810 output, and GPT-6.1 Sol is $0.0993 input and $0.4964 output per 1M tokens.</p></div></details>
-        <details><summary><h3>Why is there no GPT-6.1 Astra?</h3></summary><div class="o-ans"><p>As of now, OpenAI has not released a GPT-6.1 Astra. GPT-6.1 only upgraded the Sol tier. OpenAI's current API lineup is <code>gpt-6-astra</code>, <code>gpt-6.1-sol</code> and <code>gpt-6-luna</code>, so the Astra tier is still <code>gpt-6-astra</code>. OpenAI's model catalog says: if you're not sure where to start, use GPT-6 Astra.</p></div></details>
+        <details><summary><h3>Why is there no GPT-6.1 Astra?</h3></summary><div class="o-ans"><p>As of now, OpenAI has not released a GPT-6.1 Astra. GPT-6.1 has so far upgraded the Sol and Terra tiers. OpenAI's current GPT-6 API lineup is <code>gpt-6-astra</code>, <code>gpt-6.1-sol</code>, <code>gpt-6.1-terra</code> and <code>gpt-6-luna</code>, so the Astra tier is still <code>gpt-6-astra</code>. OpenAI's model catalog says: if you're not sure where to start, use GPT-6 Astra.</p></div></details>
         <details><summary><h3>Chat Completions or Responses API? Can I use tools?</h3></summary><div class="o-ans"><p>Both endpoints work. For plain chat and streaming, use <code>https://anyaigc.ai/v1/chat/completions</code>. OpenAI's model page does not state a tool-calling restriction for <code>gpt-6-astra</code> on Chat Completions, but GPT-6.1 Sol from the same generation does not support tool calling there, so we recommend <code>https://anyaigc.ai/v1/responses</code> for function calling and built-in tools, with the effort in <code>reasoning.effort</code>.</p></div></details>
         <details><summary><h3>Can I use GPT-6 Astra in Codex?</h3></summary><div class="o-ans"><p>Yes. Run <code>curl -fsSL https://www.anyaigc.ai/install.sh | bash -s codex</code> to install and configure it (on Windows, <code>irm https://www.anyaigc.ai/install.ps1 | iex</code>). The installer defaults to <code>gpt-5.5</code>, so change <code>model</code> in <code>~/.codex/config.toml</code> to <code>gpt-6-astra</code> afterwards. Or edit <code>~/.codex/config.toml</code> yourself: set <code>base_url</code> to <code>https://anyaigc.ai/v1</code>, <code>wire_api</code> to <code>responses</code> and <code>model</code> to <code>gpt-6-astra</code>, then put <code>OPENAI_API_KEY</code> in <code>~/.codex/auth.json</code>.</p></div></details>
         <details><summary><h3>Are there concurrency or rate limits?</h3></summary><div class="o-ans"><p>AnyAIGC sets no concurrency limit on <code>gpt-6-astra</code>. Every account gets this by default, so batch jobs and parallel agents run without queuing.</p></div></details>

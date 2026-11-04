@@ -329,6 +329,12 @@ html:not(.no-js) .o-reveal.is-in .g-bar-fill{transform:scaleX(1)}
 html:not(.no-js) .o-reveal{opacity:0;transform:translateY(16px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
 html:not(.no-js) .o-reveal.is-in{opacity:1;transform:none}
 
+/* 总览页 4 张型号卡：桌面 2×2 */
+@media (min-width:901px){
+  .g-tri.is-four{grid-template-columns:repeat(2,minmax(0,1fr));max-width:720px}
+  .g-tri.is-four .g-tier{min-height:400px}
+}
+
 /* ---------- 响应式 ---------- */
 @media (max-width:1100px){
   .o-nav-left{display:none}

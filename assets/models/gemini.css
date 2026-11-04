@@ -1,5 +1,5 @@
 /*
- * Gemini 系列专题页共用样式（gemini-4-argon、gemini-3.8-flash、gemini-3.7-flash、gemini-3.1-pro-preview）
+ * Gemini 系列专题页共用样式（gemini-4-argon、gemini-3.8-flash、gemini-3.8-flash-tts、gemini-3.7-flash、gemini-3.1-pro-preview）
  * 视觉参考 deepmind.google/models/gemini：纯白底、#121317 正文、#f8f9fc 无阴影圆角卡片、黑色胶囊主按钮、
  * Gemini 渐变（#217bfe → #078efb → #ac87eb → #ee4d5d）只用在标题关键词、细线和光晕上。
  * 结构类沿用 o-*（scripts/payments.py、scripts/trust.py 插入的版块用这些类名），Gemini 专属组件用 gm-*。
@@ -294,6 +294,15 @@ thead .o-hl{color:var(--gm-blue-deep)}
 /* ---------- 滚动渐显 ---------- */
 .o-reveal{transition:opacity .7s var(--gm-ease),transform .7s var(--gm-ease)}
 html:not(.no-js) .o-reveal:not(.is-in){opacity:0;transform:translateY(18px)}
+
+/* ---------- 音色列表（TTS 页） ---------- */
+.gm-voices{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;margin-top:36px;list-style:none}
+.gm-voices li{display:flex;flex-direction:column;gap:2px;padding:14px 16px;border-radius:16px;background:#fff;border:1px solid var(--gm-line-soft);min-width:0}
+.gm-voices b{font-size:16px;font-weight:500;overflow-wrap:anywhere}
+.gm-voices span{font-size:13.5px;color:var(--gm-ink-3)}
+@media (max-width:1100px){.gm-voices{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media (max-width:900px){.gm-voices{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:640px){.gm-voices{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.gm-voices li{padding:12px 14px}}
 
 /* ---------- 响应式 ---------- */
 @media (max-width:1100px){
