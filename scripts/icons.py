@@ -109,6 +109,14 @@ def update_pages():
             if f.startswith('gemini'):
                 s = re.sub(r'<svg class="gm-mark gm-mono"(?:(?!</svg>).)*?</svg>', GEMINI_FOOT, s, flags=re.S)
                 s = re.sub(r'<svg class="gm-mark"(?:(?!</svg>).)*?</svg>', gemini_color(), s, flags=re.S)
+            # Seedance uses the existing pinned ByteDance color icon (lobe-icons 1.98.0).
+            if f == 'seedance.html' or f.startswith('doubao-seedance-'):
+                s = re.sub(r'(<p class="sd-eyebrow">\s*)' + ANY_SVG,
+                           lambda m: m.group(1) + svg('bytedance-color', size=22), s, flags=re.S)
+                s = re.sub(r'(<section class="o-final">\s*<div class="o-wrap">\s*)' + ANY_SVG,
+                           lambda m: m.group(1) + svg('bytedance-color', size=48), s, flags=re.S)
+            s = re.sub(r'(<span class="af-model-logo sd-lobe"[^>]*>\s*)' + ANY_SVG,
+                       lambda m: m.group(1) + svg('bytedance-color', size=26), s, flags=re.S)
             # 专题首页 Gemini 卡片
             s = re.sub(r'(<span class="af-model-logo" style="' + GEMINI_CARD_BG + r'" aria-hidden="true">)' + ANY_SVG + '(</span>)',
                        (lambda f: lambda m: m.group(1) + f() + m.group(2))(gemini_color(cls='', size=26)), s, flags=re.S)

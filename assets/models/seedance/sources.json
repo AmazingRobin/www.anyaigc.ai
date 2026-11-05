@@ -1,0 +1,32 @@
+[
+  {
+    "page": "https://seed.bytedance.com/zh/seedance2_0",
+    "retrieved": "2026-11-05",
+    "source_video": "https://v26-magicarena-v.365yg.com/84986d642ffc236c39b5d535aa86bc32/7c596d3c/video/tos/cn/tos-cn-v-13c08f/ow7XNSzPVCAZaEEpCjFfABgBCXxA1NEL9ADf72/?a=611830&ch=0&cr=0&dr=0&er=0&lr=default&cd=0%7C0%7C0%7C0&br=2723&bt=2723&cs=0&ds=3&ft=7ubAHfXEBBkq8ZmoEarWU_vjVQWw&mime_type=video_mp4&qs=13&rc=ajVleHk5cndvOTczNGllM0BpajVleHk5cndvOTczNGllM0AzM28yMmRrbjNhLS1kXy9zYSMzM28yMmRrbjNhLS1kXy9zcw%3D%3D&btag=40000e00008000&dy_q=1770875442&l=20260212134538DCD5D5DD0148D91D5FFB",
+    "source_poster": "https://p11-sign.douyinpic.com/tos-cn-p-13c08f/oMXT1or1plDeB7neAILaGuEGte2EmurIB3CUaQ~tplv-noop.image?dy_q=1770875442&l=20260212134538DCD5D5DD0148D91D5FFB&x-expires=2086235452&x-signature=xs%2FKEGQIPaV%2Bn0HexdiTIJRl60w%3D",
+    "local_video": "seedance-2-0-official.mp4",
+    "local_poster": "seedance-2-0-official.webp",
+    "width": 1280,
+    "height": 720,
+    "duration_seconds": 10.083333,
+    "copyright": "ByteDance",
+    "processing": "MP4 faststart remux; original video and audio retained.",
+    "poster_time_seconds": 0.5,
+    "sha256": "a7095b27194718ffccc2f5344c02b3aee89650b7f2e100786523368d007445b7"
+  },
+  {
+    "page": "https://seed.bytedance.com/zh/seedance2_5",
+    "retrieved": "2026-11-05",
+    "source_video": "https://v11-magicarena-v.365yg.com/c6e9b689a4589f73d6ad1880b68b84e9/7d1b7713/video/tos/cn/tos-cn-v-13c08f/36b925103fc641f4b6efd10e1232ca47/?a=611830&ch=0&cr=0&dr=0&er=0&lr=default&cd=0%7C0%7C0%7C0&br=10939&bt=10939&cs=0&ds=3&ft=7ubAHfXEBBkq8Zmo-3ALk_vjVQWw&mime_type=video_mp4&qs=13&rc=ajpqOjprbztxPDczNGllM0BpajpqOjprbztxPDczNGllM0BtYnAucWduMjRhLS1kXy9zYSNtYnAucWduMjRhLS1kXy9zcw%3D%3D&btag=80000e00018000&dy_q=1783591925&l=202607091812042D9F5CEA2B002AC2FF19",
+    "source_poster": "https://p3-sign.douyinpic.com/tos-cn-p-13c08f/oIpECIcrgSlQAEOHe9qf714BWkJUzs7HqDkRAP~tplv-noop.image?dy_q=1783591925&l=202607091812042D9F5CEA2B002AC2FF19&x-expires=2098951955&x-signature=ocNIBaeGTbp7LOpN%2BV47JFO7qY8%3D",
+    "local_video": "seedance-2-5-official.mp4",
+    "local_poster": "seedance-2-5-official.webp",
+    "width": 1280,
+    "height": 720,
+    "duration_seconds": 30.041667,
+    "copyright": "ByteDance",
+    "processing": "Full-length H.264 CRF 24 / AAC 128 kbps transcode; MP4 faststart.",
+    "poster_time_seconds": 2,
+    "sha256": "d2c7f7b76df45c4a8845b742859c3a805af857ac3236b318ebf42a9c76a7f720"
+  }
+]

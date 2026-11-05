@@ -14,12 +14,16 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, '.playwright-mcp', 'og', 'gpt-image')
 CLI = os.path.expanduser('~/.claude/skills/playwright/scripts/playwright_cli.sh')
 LOGO = re.search(r' d="([^"]+)"', io.open(os.path.join(ROOT, 'assets/icons/openai.svg'), encoding='utf-8').read()).group(1)
-T2, T25 = TOKEN['2']['out'], TOKEN['2.5']['out']
+T2, T25, T26 = TOKEN['2']['out'], TOKEN['2.5']['out'], TOKEN['2.6']['out']
 
 # slug -> (标题, {语言: 卖点}, {语言: 标签}, 右侧图片)
 DATA = {
     'gpt-image': ('GPT Image API', {'zh': f'OpenAI 全系图像模型，按张 {cny("2")} 起', 'en': f'Every OpenAI image model, from ${CALL["2"]} / image'},
                   {'zh': ['按 token / 按张', '生成 · 编辑', '对公 · 专票'], 'en': ['Token or per image', 'Generate · edit', 'Contracts · invoices']}, ('polyglot-collage', 'matcha-poster')),
+    'gpt-image-2.6-sunburst': ('GPT Image 2.6 Sunburst', {'zh': f'多轮编辑更一致，图片输出 ${T26} / 1M', 'en': f'Steadier multi-round edits, ${T26} / 1M output'},
+                               {'zh': ['最新', 'GIF · SVG', '对公 · 专票'], 'en': ['New', 'GIF · SVG', 'Contracts · invoices']}, ('i26-knight-1', 'i26-knight-3')),
+    'gpt-image-2.6-flare': ('GPT Image 2.6 Flare', {'zh': f'出图提速 50%，图片输出 ${T26} / 1M', 'en': f'50% faster images, ${T26} / 1M output'},
+                            {'zh': ['最新', 'GIF 动图', '并发不限'], 'en': ['New', 'Animated GIFs', 'Unlimited concurrency']}, ('i26-chibi-up', 'i26-owl')),
     'gpt-image-2.5-sunburst': ('GPT Image 2.5 Sunburst', {'zh': f'编辑精度最高，图片输出 ${T25} / 1M', 'en': f'Highest editing precision, ${T25} / 1M output'},
                                {'zh': ['约 6 折', 'max 质量', '并发不限'], 'en': ['41% off', 'max quality', 'Unlimited concurrency']}, ('korean-hanok-ad', 'high-fashion')),
     'gpt-image-2.5-flare': ('GPT Image 2.5 Flare', {'zh': f'速度最快，图片输出 ${T25} / 1M', 'en': f'Fastest high-quality model, ${T25} / 1M output'},

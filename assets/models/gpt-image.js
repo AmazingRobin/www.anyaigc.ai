@@ -22,6 +22,25 @@
     items.forEach(function (el) { el.classList.add('is-in'); });
   }
 
+  // 示例动画：进入视口才播放，离开就暂停；“减少动态”时不自动播放，改为显示控制条
+  var loops = document.querySelectorAll('video[data-gi-loop]');
+  if (loops.length) {
+    if (reduce || !('IntersectionObserver' in window)) {
+      loops.forEach(function (v) { v.setAttribute('controls', ''); });
+    } else {
+      var vio = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          var v = e.target;
+          if (e.isIntersecting) {
+            if (v.preload === 'none') v.preload = 'auto';
+            var p = v.play(); if (p && p.catch) p.catch(function () {});
+          } else v.pause();
+        });
+      }, { rootMargin: '120px 0px' });
+      loops.forEach(function (v) { vio.observe(v); });
+    }
+  }
+
   // 代码示例切换：所有面板都写在 HTML 里，无 JS 时全部可见
   document.querySelectorAll('[role="tablist"]').forEach(function (list) {
     var tabs = list.querySelectorAll('[role="tab"]');

@@ -5,12 +5,42 @@ import json
 import os
 import re
 import sys
+from html.parser import HTMLParser
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = 'https://www.anyaigc.ai'
 LANGS = {'zh': 'zh-CN', 'en': 'en'}
 REGISTER = 'https://anyaigc.ai/register?aff=oOK7&channel=c_wpduopc9'
 errors, warns = [], []
+
+
+class SectionParser(HTMLParser):
+    """Parse section tags so damaged opening tags cannot pass a text search."""
+
+    def __init__(self):
+        super().__init__()
+        self.depth = 0
+        self.unmatched_closing = []
+
+    def handle_starttag(self, tag, attrs):
+        if tag == 'section':
+            self.depth += 1
+
+    def handle_endtag(self, tag):
+        if tag == 'section':
+            if self.depth:
+                self.depth -= 1
+            else:
+                self.unmatched_closing.append(self.getpos()[0])
+
+
+def check_sections(tag, source):
+    parser = SectionParser()
+    parser.feed(source)
+    for line in parser.unmatched_closing:
+        errors.append(f'{tag} 第 {line} 行 </section> 缺少对应的开始标签')
+    if parser.depth:
+        errors.append(f'{tag} 有 {parser.depth} 个 <section> 未闭合')
 
 
 def read(rel):
@@ -122,6 +152,7 @@ def check(lang, slug):
     s = read(rel)
     tag = f'[{rel}]'
     me, other = page_url(lang, slug), page_url('en' if lang == 'zh' else 'zh', slug)
+    check_sections(tag, s)
 
     if not re.search(rf'<html lang="{LANGS[lang]}"', s):
         errors.append(f'{tag} <html lang> 应为 {LANGS[lang]}')

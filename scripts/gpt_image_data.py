@@ -2,8 +2,8 @@
 # 价格来源：AnyAIGC 模型广场（https://anyaigc.ai/pricing?keyword=gpt-image-2，2026-10-25 最低价）
 # 官方价与 token 数来源：developers.openai.com 模型页与 image-generation 指南计算器（2026-10-25 读取）
 
-DATE = '2026-10-25'
-VER = '20261025'
+DATE = '2026-11-05'
+VER = '20261105'
 SITE = 'https://www.anyaigc.ai'
 REG = 'https://anyaigc.ai/register?aff=oOK7&channel=c_wpduopc9'
 PRICING = 'https://anyaigc.ai/pricing'
@@ -15,20 +15,25 @@ DOCS_EDIT_25 = 'https://docs.anyaigc.ai/reference/v1/images/edits?leaf=c%3A17907
 OFFICIAL_POST = {'zh': 'https://openai.com/zh-Hans-CN/index/introducing-chatgpt-images-2-0/',
                  'en': 'https://openai.com/index/introducing-chatgpt-images-2-0/'}
 OFFICIAL_GUIDE = 'https://developers.openai.com/api/docs/guides/image-generation'
+# GPT Image 2.6 发布页（只有英文版，中文地址返回同一篇英文）
+POST_26 = 'https://openai.com/index/introducing-images-2-6/'
 
 # 按 token 计费的价格（USD / 每 100 万 tokens）
 TOKEN = {
     '2':   dict(text_in='0.3971', img_in='0.6354', out='2.3830', text_cache='0.1588', img_cache='0.2541'),
     '2.5': dict(text_in='2.9700', img_in='4.7520', out='17.8200', text_cache='1.1880', img_cache='1.9010'),
+    # 2.6：模型广场最低价（Openai-Gpt-1 分组，2026-11-05 读取详情弹窗），Sunburst 与 Flare 相同
+    '2.6': dict(text_in='3.9710', img_in='6.3530', out='23.8240', text_cache='1.5880', img_cache='2.5410'),
 }
 # OpenAI 官方价（GPT Image 2 与 2.5 的 token 单价相同）
 OFFICIAL = dict(text_in='5.00', img_in='8.00', out='30.00', text_cache='1.25', img_cache='2.00')
 # 按次计费（USD / 张，固定价，不随尺寸和质量变化；最低价对应 1K 出图）
-CALL = {'2': '0.0119', '2.5': '0.0159'}
+CALL = {'2': '0.0119', '2.5': '0.0159', '2.6': '0.0199'}
 # 英文页 2K/4K 按张价格（USD / 张，模型基础价 × 支持 2K/4K 的最低倍率，2026-10-25 读取 /api/pricing）
-CALL_4K = {'2': '0.0149', '2.5': '0.0199'}
+CALL_4K = {'2': '0.0149', '2.5': '0.0199', '2.6': '0.0199'}
 # 中文页按张计费显示人民币（元 / 张，用户提供）：1K 与 2K/4K 两档
-CALL_CNY = {'2': {'1k': '0.08', '4k': '0.1'}, '2.5': {'1k': '0.1', '4k': '0.13'}}
+# 2.6-c：1K / 2K / 4K 统一 ¥0.13（用户 2026-11-05 确认）
+CALL_CNY = {'2': {'1k': '0.08', '4k': '0.1'}, '2.5': {'1k': '0.1', '4k': '0.13'}, '2.6': {'1k': '0.13', '4k': '0.13'}}
 
 
 def cny(base, tier='1k'):
@@ -39,6 +44,14 @@ def cny(base, tier='1k'):
 TOKENS_25 = {
     'low':    {'1024x1024': 196, '1536x1024': 158, '1024x1536': 158, '2048x2048': 397, '2048x1152': 157, '3840x2160': 371},
     'medium': {'1024x1024': 439, '1536x1024': 343, '1024x1536': 343, '2048x2048': 892, '2048x1152': 367, '3840x2160': 865},
+    'high':   {'1024x1024': 1756, '1536x1024': 1372, '1024x1536': 1372, '2048x2048': 3568, '2048x1152': 1413, '3840x2160': 3336},
+    'xhigh':  {'1024x1024': 3122, '1536x1024': 2459, '1024x1536': 2459, '2048x2048': 6343, '2048x1152': 2511, '3840x2160': 5930},
+    'max':    {'1024x1024': 7024, '1536x1024': 5488, '1024x1536': 5488, '2048x2048': 14272, '2048x1152': 5650, '3840x2160': 13342},
+}
+# OpenAI 官方计算器：GPT Image 2.6（Sunburst 与 Flare 共用）每张图的图片输出 tokens（2026-11-05 读取）
+TOKENS_26 = {
+    'low':    {'1024x1024': 823, '1536x1024': 664, '1024x1536': 664, '2048x2048': 1667, '2048x1152': 659, '3840x2160': 1558},
+    'medium': {'1024x1024': 1449, '1536x1024': 1132, '1024x1536': 1132, '2048x2048': 2944, '2048x1152': 1211, '3840x2160': 2855},
     'high':   {'1024x1024': 1756, '1536x1024': 1372, '1024x1536': 1372, '2048x2048': 3568, '2048x1152': 1413, '3840x2160': 3336},
     'xhigh':  {'1024x1024': 3122, '1536x1024': 2459, '1024x1536': 2459, '2048x2048': 6343, '2048x1152': 2511, '3840x2160': 5930},
     'max':    {'1024x1024': 7024, '1536x1024': 5488, '1024x1536': 5488, '2048x2048': 14272, '2048x1152': 5650, '3840x2160': 13342},
@@ -54,18 +67,23 @@ SIZES = ['1024x1024', '1536x1024', '1024x1536', '2048x2048', '2048x1152', '3840x
 
 # 页面顺序（总览页在前）
 # -c 按张计费版不单独做页面，在对应的按 token 型号页价格版块里说明（C_OF）
-SLUGS = ['gpt-image', 'gpt-image-2.5-sunburst', 'gpt-image-2.5-flare', 'gpt-image-2']
-C_OF = {'gpt-image-2.5-sunburst': ['gpt-image-2.5-sunburst-c'], 'gpt-image-2.5-flare': ['gpt-image-2.5-flare-c'],
+SLUGS = ['gpt-image', 'gpt-image-2.6-sunburst', 'gpt-image-2.6-flare', 'gpt-image-2.5-sunburst', 'gpt-image-2.5-flare', 'gpt-image-2']
+C_OF = {'gpt-image-2.6-sunburst': ['gpt-image-2.6-sunburst-c'], 'gpt-image-2.6-flare': ['gpt-image-2.6-flare-c'],
+        'gpt-image-2.5-sunburst': ['gpt-image-2.5-sunburst-c'], 'gpt-image-2.5-flare': ['gpt-image-2.5-flare-c'],
         'gpt-image-2': ['gpt-image-2-c']}
 
 # 模型：id、展示名、基座（2 / 2.5）、计费方式（token / call）
 MODELS = {
+    'gpt-image-2.6-sunburst':   dict(name='GPT Image 2.6 Sunburst', base='2.6', kind='token'),
+    'gpt-image-2.6-flare':      dict(name='GPT Image 2.6 Flare', base='2.6', kind='token'),
     'gpt-image-2.5-sunburst':   dict(name='GPT Image 2.5 Sunburst', base='2.5', kind='token', snap='gpt-image-2.5-sunburst-2026-09-08'),
     'gpt-image-2.5-flare':      dict(name='GPT Image 2.5 Flare', base='2.5', kind='token', snap='gpt-image-2.5-flare-2026-09-08'),
     'gpt-image-2':              dict(name='GPT Image 2', base='2', kind='token', snap='gpt-image-2-2026-04-21'),
     'gpt-image-2.5-sunburst-c': dict(name='GPT Image 2.5 Sunburst-C', base='2.5', kind='call', of='gpt-image-2.5-sunburst'),
     'gpt-image-2.5-flare-c':    dict(name='GPT Image 2.5 Flare-C', base='2.5', kind='call', of='gpt-image-2.5-flare'),
     'gpt-image-2-c':            dict(name='GPT Image 2-C', base='2', kind='call', of='gpt-image-2'),
+    'gpt-image-2.6-sunburst-c': dict(name='GPT Image 2.6 Sunburst-C', base='2.6', kind='call', of='gpt-image-2.6-sunburst'),
+    'gpt-image-2.6-flare-c':    dict(name='GPT Image 2.6 Flare-C', base='2.6', kind='call', of='gpt-image-2.6-flare'),
 }
 
 # 示例图（OpenAI《ChatGPT 图像 2.0 现已上线》发布页，由 ChatGPT 图像 2.0 生成）：文件名 -> (宽, 高, 中文标题, 中文说明, 英文标题, 英文说明)
@@ -95,6 +113,29 @@ IMG = {
     'wolf-magazine':        (800, 1067, '杂志跨页', '北美灰狼科普信息图', 'Magazine spread', 'Wildlife infographic about North American wolves'),
 }
 
+# 2.6 示例图（OpenAI《Introducing Images 2.6》发布页，含合作方作品）：文件名 -> (宽, 高, 中文标题, 中文说明, 英文标题, 英文说明)
+IMG.update({
+    'i26-markup-before':  (1200, 800, '标注改图 · 原图', '在客厅照片上圈出要改的地方（fal）', 'Markup · input', 'Red markup on a living room photo (fal)'),
+    'i26-markup-after':   (1200, 800, '标注改图 · 结果', '换成蓝色靠垫、移走绿植和地毯、落地灯挪到右侧', 'Markup · result', 'Blue cushion, plant and rug removed, lamp moved right'),
+    'i26-knight-1':       (1200, 679, '多轮编辑 · 第 1 轮', '悬崖上的红发骑士（Higgsfield）', 'Edit round 1', 'A red-haired knight on a cliff (Higgsfield)'),
+    'i26-knight-2':       (1200, 679, '多轮编辑 · 第 2 轮', '背景换成雾中城堡，人物不变', 'Edit round 2', 'New castle in the mist, same knight'),
+    'i26-knight-3':       (1200, 679, '多轮编辑 · 第 3 轮', '盔甲换成红金配色，姿势和场景保留', 'Edit round 3', 'Red-and-gold armor, pose and scene kept'),
+    'i26-chibi-down':     (512, 512, 'GIF 动图', '看着股价下跌哭出来的 Q 版上班族（OpenArt）', 'GIF animation', 'A chibi office worker crying at a falling chart (OpenArt)'),
+    'i26-chibi-up':       (512, 512, 'GIF 动图', '股价上涨时撒钞票庆祝（OpenArt）', 'GIF animation', 'The same character celebrating a rising chart (OpenArt)'),
+    'i26-owl-sketch':     (914, 914, '手绘草图', '画在横线纸上的猫头鹰', 'Hand-drawn sketch', 'An owl drawn in pen on lined paper'),
+    'i26-owl':            (512, 512, '草图变动画', '由手绘草图生成的猫头鹰 GIF', 'Sketch to animation', 'The owl sketch turned into a GIF'),
+    'i26-glass-whale':    (1200, 675, '奇幻场景', '漂浮在雪山之上的彩色玻璃鲸鱼（Picsart）', 'Fantasy scene', 'A glass whale above misty mountains (Picsart)'),
+    'i26-product-world':  (1200, 675, '产品视觉', '带标题文字的产品演示画面（Sable）', 'Product visual', 'A presentation visual with a headline (Sable)'),
+    'i26-speed':          (1200, 676, '出图速度', '同一则旅行广告，2.5 Flare 与 2.6 Flare 的耗时对比（8 倍速回放）', 'Generation speed', 'The same travel ad from 2.5 Flare and 2.6 Flare, timed (8x playback)'),
+})
+
+IMG.update({
+    'i26-gif-montage': (1200, 300, 'GIF 合集', '用 GPT Image 2.6 生成的一组动画', 'GIF montage', 'A set of animations made with GPT Image 2.6'),
+    'i26-monty':       (960, 608, '产品内动画', 'Town 办公助手里的角色 Monty，作为“正在输入”提示', 'In-product animation', 'Monty, a character in the Town assistant, as a typing indicator'),
+})
+# 有同名 mp4 的示例图按静音循环动画输出（来自 OpenAI 发布页的 Vimeo 视频，转码为 H.264，去掉音轨）
+ANIM = {'i26-gif-montage', 'i26-chibi-down', 'i26-chibi-up', 'i26-owl', 'i26-monty', 'i26-speed'}
+
 
 def money(x, nd=4):
     """美元金额，保留 nd 位小数"""
@@ -105,6 +146,11 @@ def cost_25(quality, size):
     """GPT Image 2.5 单张图片输出费用：(AnyAIGC, 官方)"""
     t = TOKENS_25[quality][size]
     return t * float(TOKEN['2.5']['out']) / 1e6, t * float(OFFICIAL['out']) / 1e6
+
+
+def cost_26(quality, size):
+    """GPT Image 2.6 单张图片输出费用（AnyAIGC，不与官方对比）"""
+    return TOKENS_26[quality][size] * float(TOKEN['2.6']['out']) / 1e6
 
 
 def cost_2(quality, size):

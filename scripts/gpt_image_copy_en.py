@@ -3,8 +3,9 @@
 from gpt_image_data import (TOKEN, OFFICIAL, CALL, CALL_4K, C_OF, MODELS, TOKENS_25, OFFICIAL_IMG_2, PRICING, SUPPORT,
                             DOCS_GEN_2, DOCS_EDIT_2, DOCS_GEN_25, DOCS_EDIT_25, OFFICIAL_GUIDE, money, cost_25, cost_2, save)
 import gpt_image_layout as G
+import gpt_image_26_copy as C26
 
-T2, T25 = TOKEN['2'], TOKEN['2.5']
+T2, T25, T26 = TOKEN['2'], TOKEN['2.5'], TOKEN['2.6']
 S2 = save(T2['out'], OFFICIAL['out'])     # 92
 S25 = save(T25['out'], OFFICIAL['out'])   # 41
 
@@ -13,9 +14,11 @@ SIZE_RULES = ('the longest edge is at most 3840px, both sides are multiples of 1
 CONC = 'Unlimited concurrency'
 
 FAMILY = [
-    ('gpt-image', 'Overview', 'GPT Image lineup', 'Compare prices across the 3 models'),
-    ('gpt-image-2.5-sunburst', 'New', 'GPT Image 2.5 Sunburst', f'Top editing precision · ${T25["out"]} / 1M output'),
-    ('gpt-image-2.5-flare', 'New', 'GPT Image 2.5 Flare', f'Fastest, built for volume · ${T25["out"]} / 1M output'),
+    ('gpt-image', 'Overview', 'GPT Image lineup', 'Compare prices across the 5 models'),
+    ('gpt-image-2.6-sunburst', 'New', 'GPT Image 2.6 Sunburst', f'More detail, steadier edits · ${T26["out"]} / 1M output'),
+    ('gpt-image-2.6-flare', 'New', 'GPT Image 2.6 Flare', f'Faster, with GIF and SVG · ${T26["out"]} / 1M output'),
+    ('gpt-image-2.5-sunburst', '', 'GPT Image 2.5 Sunburst', f'Released September 2026 · ${T25["out"]} / 1M output'),
+    ('gpt-image-2.5-flare', '', 'GPT Image 2.5 Flare', f'Released September 2026 · ${T25["out"]} / 1M output'),
     ('gpt-image-2', '', 'GPT Image 2', f'Released April 2026 · ${T2["out"]} / 1M output'),
 ]
 
@@ -159,28 +162,36 @@ def build(slug):
     if slug == 'gpt-image':
         return hub()
     m = MODELS[slug]
+    if m['base'] == '2.6':
+        return C26.build('en', slug)
     return token_page(slug, m)
 
 
 # ---------------------------------------------------------------- hub page
 def hub():
     tok = []
-    for s in ['gpt-image-2.5-sunburst', 'gpt-image-2.5-flare', 'gpt-image-2']:
+    for s in ['gpt-image-2.6-sunburst', 'gpt-image-2.6-flare', 'gpt-image-2.5-sunburst', 'gpt-image-2.5-flare', 'gpt-image-2']:
         b = MODELS[s]['base']
         t = TOKEN[b]
+        sv = '-' if b == '2.6' else f'{save(t["out"], OFFICIAL["out"])}%'
         tok.append(f'<th scope="row"><a href="/en/models/{s}">{MODELS[s]["name"]}</a><small><code>{s}</code></small></th>'
-                   f'<td class="o-num">${t["text_in"]}</td><td class="o-num">${t["img_in"]}</td><td class="o-num o-hl">${t["out"]}</td><td class="o-num o-save">{save(t["out"], OFFICIAL["out"])}%</td>')
+                   f'<td class="o-num">${t["text_in"]}</td><td class="o-num">${t["img_in"]}</td><td class="o-num o-hl">${t["out"]}</td><td class="o-num o-save">{sv}</td>')
     call = []
+    for s in ['gpt-image-2.6-sunburst-c', 'gpt-image-2.6-flare-c']:
+        call.append(f'<th scope="row"><a href="/en/models/{MODELS[s]["of"]}#per-image">{MODELS[s]["name"]}</a><small><code>{s}</code></small></th>'
+                    f'<td class="o-num" colspan="2">1K/2K/4K ${CALL["2.6"]}</td><td class="o-num o-hl">${CALL["2.6"]} / image</td><td class="o-num">-</td>')
     for s in ['gpt-image-2.5-sunburst-c', 'gpt-image-2.5-flare-c', 'gpt-image-2-c']:
         b = MODELS[s]['base']
         call.append(f'<th scope="row"><a href="/en/models/{MODELS[s]["of"]}#per-image">{MODELS[s]["name"]}</a><small><code>{s}</code></small></th>'
                     f'<td class="o-num" colspan="2">1K ${CALL[b]} · 2K/4K ${CALL_4K[b]}</td><td class="o-num o-hl">from ${CALL[b]} / image</td><td class="o-num">-</td>')
     tables = G.table('GPT Image pricing (USD)', [('Model', False), ('Text input / 1M', True), ('Image input / 1M', True), ('Image output', True), ('Off list', True)],
-                     [(f'Token-billed · OpenAI list: text input ${OFFICIAL["text_in"]}, image input ${OFFICIAL["img_in"]}, image output ${OFFICIAL["out"]} / 1M', tok), ('Per image (-c versions)', call)])
+                     [(f'Token-billed · 2.5 and gpt-image-2 vs OpenAI list: text input ${OFFICIAL["text_in"]}, image input ${OFFICIAL["img_in"]}, image output ${OFFICIAL["out"]} / 1M', tok), ('Per image (-c versions)', call)])
     models_html = ''
     cards = [
-        ('gpt-image-2.5-sunburst', 'is-red', 'Top editing precision', "OpenAI's most capable image generation and editing model. Use it for retouching, commercial posters and edits where detail matters.", f'${T25["out"]}', 'image output / 1M tokens'),
-        ('gpt-image-2.5-flare', 'is-blue', 'Fastest', "OpenAI's fastest high-quality image model, for everyday generation, bulk jobs and product features that need quick responses.", f'${T25["out"]}', 'image output / 1M tokens'),
+        ('gpt-image-2.6-sunburst', 'is-red', 'New · More detail', 'The detail-focused GPT Image 2.6 model. Characters, products and brand details stay consistent across edits, with new GIF, SVG and markup support.', f'${T26["out"]}', 'image output / 1M tokens'),
+        ('gpt-image-2.6-flare', 'is-blue', 'New · Faster', 'The fast GPT Image 2.6 model. Low-quality images in as little as six seconds, for in-app generation and animated GIFs.', f'${T26["out"]}', 'image output / 1M tokens'),
+        ('gpt-image-2.5-sunburst', '', 'Precise editing', "OpenAI's most capable image generation and editing model. Use it for retouching, commercial posters and edits where detail matters.", f'${T25["out"]}', 'image output / 1M tokens'),
+        ('gpt-image-2.5-flare', '', 'Fast', "OpenAI's fastest high-quality image model, for everyday generation, bulk jobs and product features that need quick responses.", f'${T25["out"]}', 'image output / 1M tokens'),
         ('gpt-image-2', '', 'Previous generation', f'Released April 2026, the model behind ChatGPT Images 2.0. The lowest token rates in the lineup, about {S2}% off list.', f'${T2["out"]}', 'image output / 1M tokens'),
     ]
     for s, cls, tag, p, price, unit in cards:
@@ -188,6 +199,8 @@ def hub():
                         f'<h3>{MODELS[s]["name"]}</h3><code>{s}</code><p>{p}</p>'
                         f'<span class="gi-model-price"><strong>{price}</strong>{unit}</span><span class="gi-model-go">View guide →</span></a></li>\n')
     choose = G.table('Which GPT Image model to use', [('If you need', False), ('Use', False), ('Why', False)], [(None, [
+        '<th scope="row">GIFs, SVG icons, markup edits</th><td><a href="/en/models/gpt-image-2.6-flare">2.6 Flare</a> / <a href="/en/models/gpt-image-2.6-sunburst">2.6 Sunburst</a></td><td>Only 2.6 supports GIF and SVG output and markup-guided edits</td>',
+        '<th scope="row">Consistent characters or products across edits</th><td><a href="/en/models/gpt-image-2.6-sunburst">2.6 Sunburst</a></td><td>OpenAI says it keeps edits more consistent at medium and high quality</td>',
         '<th scope="row">Retouching, edits, commercial posters</th><td><a href="/en/models/gpt-image-2.5-sunburst">2.5 Sunburst</a></td><td>OpenAI positions it as the most precise editor, with xhigh and max quality</td>',
         '<th scope="row">Real-time generation in your product, bulk jobs</th><td><a href="/en/models/gpt-image-2.5-flare">2.5 Flare</a></td><td>Rated Very fast by OpenAI, same price as Sunburst</td>',
         f'<th scope="row">Existing gpt-image-2 integrations, lowest cost</th><td><a href="/en/models/gpt-image-2">GPT Image 2</a></td><td>Token rates about {S2}% off list, the lowest in the lineup</td>',
@@ -197,9 +210,9 @@ def hub():
     a25 = cost_25('high', '1024x1024')
     faqs = [
         ('How much does the GPT Image API cost?',
-         f'Token-billed models: GPT Image 2.5 Sunburst and Flare cost ${T25["text_in"]} for text input, ${T25["img_in"]} for image input and ${T25["out"]} for image output per 1M tokens, about {S25}% off list. GPT Image 2 costs ${T2["text_in"]}, ${T2["img_in"]} and ${T2["out"]}, about {S2}% off list. Per-image -c versions: gpt-image-2.5-sunburst-c and gpt-image-2.5-flare-c are ${CALL["2.5"]} per 1K image and ${CALL_4K["2.5"]} per 2K/4K image; gpt-image-2-c is ${CALL["2"]} and ${CALL_4K["2"]}. See the model catalog for live prices.'),
+         f'Token-billed models: GPT Image 2.6 Sunburst and Flare cost ${T26["text_in"]} for text input, ${T26["img_in"]} for image input and ${T26["out"]} for image output per 1M tokens. GPT Image 2.5 Sunburst and Flare cost ${T25["text_in"]} for text input, ${T25["img_in"]} for image input and ${T25["out"]} for image output per 1M tokens, about {S25}% off list. GPT Image 2 costs ${T2["text_in"]}, ${T2["img_in"]} and ${T2["out"]}, about {S2}% off list. Per-image -c versions: gpt-image-2.6-sunburst-c and gpt-image-2.6-flare-c are ${CALL["2.6"]} per image at 1K, 2K or 4K; gpt-image-2.5-sunburst-c and gpt-image-2.5-flare-c are ${CALL["2.5"]} per 1K image and ${CALL_4K["2.5"]} per 2K/4K image; gpt-image-2-c is ${CALL["2"]} and ${CALL_4K["2"]}. See the model catalog for live prices.'),
         ('What is the difference between Sunburst, Flare and GPT Image 2?',
-         'Sunburst and Flare make up GPT Image 2.5, released by OpenAI in September 2026. OpenAI positions Sunburst as the model with the highest editing precision and Flare as the fastest high-quality model for everyday work. They share the same official token rates and both add xhigh and max quality levels. GPT Image 2 is the previous generation, released in April 2026, with low, medium, high and auto quality.'),
+         'GPT Image 2.6, released by OpenAI in November 2026, is the newest generation. It also comes as Sunburst (more detail, steadier multi-round edits) and Flare (faster), and adds GIF and SVG output, markup-guided edits and a complexity setting. Sunburst and Flare in GPT Image 2.5 were released in September 2026. OpenAI positions Sunburst as the model with the highest editing precision and Flare as the fastest high-quality model for everyday work. They share the same official token rates and both add xhigh and max quality levels. GPT Image 2 is the previous generation, released in April 2026, with low, medium, high and auto quality.'),
         ('Token billing or per-image billing (-c): which should I pick?',
          f'With token billing, cost depends on size and quality: small low-quality images are very cheap, and cost rises with quality and resolution. The -c versions charge a flat price per image at any quality (1K and 2K/4K tiers), but return one image per request and do not support <code>n</code>, <code>mask</code> or transparent backgrounds. At 1024×1024 and high quality, GPT Image 2.5 costs about {money(a25[0])} per image with token billing versus ${CALL["2.5"]} on -c.'),
         ('Which endpoints are supported? Can I edit images?',
@@ -210,29 +223,29 @@ def hub():
     ]
     curl, py = code_gen('gpt-image-2.5-flare')
     return dict(
-        title='GPT Image API pricing | gpt-image-2 and 2.5 models - AnyAIGC',
-        desc=f'GPT Image API for gpt-image-2.5 Sunburst, Flare and gpt-image-2: up to {S2}% off list, ${CALL["2"]} per image, unlimited concurrency. Bank transfer and VAT invoices.',
-        og_desc=f'One key for every GPT Image model: 2.5 Sunburst, 2.5 Flare and gpt-image-2, plus per-image versions from ${CALL["2"]} / image, with unlimited concurrency.',
-        og_alt='AnyAIGC GPT Image API: gpt-image-2 and GPT Image 2.5',
-        keywords='GPT Image API,gpt-image-2 API,gpt-image-2.5 API,gpt-image-2 API pricing,GPT Image API pricing,gpt-image-2.5-sunburst,gpt-image-2.5-flare,cheap GPT Image API,OpenAI image API alternative,GPT Image API for business,GPT Image API invoice,AnyAIGC',
+        title='GPT Image API pricing | gpt-image-2 to 2.6 models - AnyAIGC',
+        desc=f'GPT Image API for 2.6 and 2.5 Sunburst and Flare plus gpt-image-2: up to {S2}% off list, ${CALL["2"]} per image, unlimited concurrency. Bank transfer and VAT invoices.',
+        og_desc=f'One key for every GPT Image model: 2.6 and 2.5 Sunburst and Flare plus gpt-image-2, plus per-image versions from ${CALL["2"]} / image, with unlimited concurrency.',
+        og_alt='AnyAIGC GPT Image API: gpt-image-2 to GPT Image 2.6',
+        keywords='GPT Image API,gpt-image-2 API,gpt-image-2.5 API,gpt-image-2.6 API,gpt-image-2.6-sunburst,gpt-image-2.6-flare,gpt-image-2 API pricing,GPT Image API pricing,gpt-image-2.5-sunburst,gpt-image-2.5-flare,cheap GPT Image API,OpenAI image API alternative,GPT Image API for business,GPT Image API invoice,AnyAIGC',
         crumb='GPT Image', product='GPT Image API (AnyAIGC)', sku='gpt-image',
-        product_desc='Access the OpenAI GPT Image lineup through AnyAIGC: gpt-image-2.5-sunburst, gpt-image-2.5-flare, gpt-image-2 and per-image versions, compatible with /v1/images/generations and /v1/images/edits.',
-        offers=[('GPT Image 2.5 image output (per 1M tokens)', T25['out']), ('GPT Image 2 image output (per 1M tokens)', T2['out']),
-                ('gpt-image-2.5 -c versions (per 1K image)', CALL['2.5']), ('gpt-image-2-c (per 1K image)', CALL['2'])],
-        eyebrow='OpenAI · GPT Image', h1='GPT Image API<small>gpt-image-2 and the GPT Image 2.5 lineup</small>',
+        product_desc='Access the OpenAI GPT Image lineup through AnyAIGC: gpt-image-2.6-sunburst, gpt-image-2.6-flare, gpt-image-2.5-sunburst, gpt-image-2.5-flare, gpt-image-2 and per-image versions, compatible with /v1/images/generations and /v1/images/edits.',
+        offers=[('GPT Image 2.6 image output (per 1M tokens)', T26['out']), ('GPT Image 2.5 image output (per 1M tokens)', T25['out']), ('GPT Image 2 image output (per 1M tokens)', T2['out']),
+                ('gpt-image-2.5 -c versions (per 1K image)', CALL['2.5']), ('gpt-image-2-c (per 1K image)', CALL['2']), ('gpt-image-2.6 -c versions (per image)', CALL['2.6'])],
+        eyebrow='OpenAI · GPT Image', h1='GPT Image API<small>gpt-image-2 through GPT Image 2.6</small>',
         lead=f'One API key for every OpenAI GPT Image model, <strong>from ${CALL["2"]} per image</strong>.',
         lead_sub=f'Text rendering, photoreal portraits, multilingual layouts and multi-image edits, all through the API. Token billing goes as low as {S2}% off list, or pick a -c version with a flat price per image.',
-        facts=[('Models', '3 + per-image'), ('Endpoints', '/v1/images/generations · edits'), ('Max size', '3840×2160'), ('Concurrency', 'Unlimited'), ('Enterprise', 'Contracts · invoices')],
+        facts=[('Models', '5 + per-image'), ('Endpoints', '/v1/images/generations · edits'), ('Max size', '3840×2160'), ('Concurrency', 'Unlimited'), ('Enterprise', 'Contracts · invoices')],
         hero_imgs=('polyglot-collage', 'matcha-poster', 'candid-coast'),
         about_h2='Pick a GPT Image model',
         about_ps=[],
         models_html=models_html, choose=choose,
         gallery=['chinese-comic', 'matcha-poster', 'typography-poster', 'aliens-cafe', 'cantor-infographic', 'korean-hanok-ad', 'candid-flash', 'merch-grid', 'miami-comic'],
         gallery_h2='What GPT Image can make', gallery_lead='Every image below was generated with ChatGPT Images 2.0, which runs on gpt-image-2. Chinese typography, magazine infographics, photoreal shots and consistent comics all come out in one pass.',
-        price_h2='GPT Image API pricing', price_lead='The 3 models are billed per token, so cost varies with size and quality. Each also has a per-image -c version with a flat price.',
+        price_h2='GPT Image API pricing', price_lead='The 5 models are billed per token, so cost varies with size and quality. Each also has a per-image -c version with a flat price.',
         billing_label='Billing at a glance', billing=[('Two billing modes', 'Per token or flat per image'), ('One key', 'Works for the whole lineup'), (CONC, 'On by default for every account'), ('One balance', 'Works across 300+ models')],
         price_tables=tables + '      <h3 class="gi-h3 o-reveal">Choose by use case</h3>\n' + choose,
-        price_note=f'Prices in USD. Token rates are the lowest listed in the model catalog; custom sizes, transparent backgrounds and similar options may cost more. -c prices: gpt-image-2.5-sunburst-c and flare-c ${CALL["2.5"]} per 1K image and ${CALL_4K["2.5"]} per 2K/4K image; gpt-image-2-c ${CALL["2"]} and ${CALL_4K["2"]}. See the <a href="{PRICING}">model catalog</a> for live prices.',
+        price_note=f'Prices in USD. Token rates are the lowest listed in the model catalog; custom sizes, transparent backgrounds and similar options may cost more. -c prices: gpt-image-2.6-sunburst-c and flare-c ${CALL["2.6"]} per image at 1K, 2K or 4K; gpt-image-2.5-sunburst-c and flare-c ${CALL["2.5"]} per 1K image and ${CALL_4K["2.5"]} per 2K/4K image; gpt-image-2-c ${CALL["2"]} and ${CALL_4K["2"]}. See the <a href="{PRICING}">model catalog</a> for live prices.',
         costs_h3='Cost examples', costs_lead="Calculated from the rates above and output tokens from OpenAI's official calculator, excluding prompt text tokens.",
         costs=[(h, c, t, o) for h, c, t, o in [token_costs_25()[0], token_costs_2()[0], call_costs('2', 'gpt-image-2-c')[0]]],
         uses_h2='Where teams use it',
@@ -244,7 +257,7 @@ def hub():
         codes=[('py', 'Python', 'POST /v1/images/generations', py), ('curl', 'cURL', 'POST /v1/images/generations', curl),
                ('edit', 'Image edits', 'POST /v1/images/edits', code_edit('gpt-image-2.5-sunburst'))],
         qs_h2='Get started with the GPT Image API in three steps',
-        callout='To switch models, change only the <code>model</code> field: <code>gpt-image-2.5-sunburst</code>, <code>gpt-image-2.5-flare</code>, <code>gpt-image-2</code>, or a per-image <code>-c</code> version. Do not send <code>n</code> or <code>mask</code> to -c versions.',
+        callout='To switch models, change only the <code>model</code> field: <code>gpt-image-2.6-sunburst</code>, <code>gpt-image-2.6-flare</code>, <code>gpt-image-2.5-sunburst</code>, <code>gpt-image-2.5-flare</code>, <code>gpt-image-2</code>, or a per-image <code>-c</code> version. Do not send <code>n</code> or <code>mask</code> to -c versions.',
         qs_note=f'The output format field is <code>format</code> (png / jpeg / webp), and the response returns <code>data[0].url</code>. Pass <code>response_format=b64_json</code> to get base64 instead. See the <a href="{DOCS_GEN_25}" target="_blank" rel="noopener">generations docs</a> and <a href="{DOCS_EDIT_25}" target="_blank" rel="noopener">edits docs</a> for every parameter.',
         family_h2='All GPT Image models', family_lead='Same API key; switch models by changing the model field.',
         faq_h2='GPT Image API FAQ', faqs=faqs,
@@ -324,7 +337,7 @@ def token_page(slug, m):
         diff = ('Can I still use gpt-image-2? Should I switch to GPT Image 2.5?',
                 f'Yes, it still works. OpenAI\'s guide recommends GPT Image 2.5 for new integrations, but there is no deprecation notice for gpt-image-2 and it runs normally on AnyAIGC. GPT Image 2.5 adds xhigh and max quality; gpt-image-2 wins on price, with image output at ${T2["out"]} per 1M tokens on AnyAIGC versus ${T25["out"]} for 2.5. Switching only means changing the <code>model</code> field, so you can run the same prompts against <a href="/en/models/gpt-image-2.5-flare">2.5 Flare</a> and compare.')
         default_q = 'medium'
-    notice = None if is25 else '<span><strong>A newer version is available:</strong> OpenAI has released GPT Image 2.5 and recommends it for new integrations. gpt-image-2 still works and has no deprecation notice. For new projects, take a look at <a href="/en/models/gpt-image-2.5-flare">GPT Image 2.5 Flare</a>.</span>'
+    notice = (f'<span><strong>A newer version is available:</strong> OpenAI released GPT Image 2.6 in November 2026, adding GIF and SVG output and markup-guided edits. {name} still works and has no deprecation notice. For new projects, take a look at <a href="/en/models/{slug.replace("2.5", "2.6")}">{name.replace("2.5", "2.6")}</a>.</span>') if is25 else '<span><strong>A newer version is available:</strong> OpenAI has since released GPT Image 2.5 and 2.6. gpt-image-2 still works and has no deprecation notice. For new projects, take a look at <a href="/en/models/gpt-image-2.6-flare">GPT Image 2.6 Flare</a>.</span>'
     a1, o1 = (cost_25('medium', '1024x1024') if is25 else cost_2('medium', '1024x1024'))
     faqs = [
         (f'How much does the {name} API cost?',

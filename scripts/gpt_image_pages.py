@@ -25,6 +25,9 @@ def page(lang, slug):
         out += G.section('models', c['about_h2'], f'      <ul class="gi-models">{NL}{c["models_html"]}      </ul>{NL}', c.get('models_lead', ''))
     else:
         out += G.about(c)
+        if c.get('caps'):
+            out += G.caps(c)
+        out += G.gif_show(lang, c)
     out += G.pricing(lang, c)
     out += G.gallery(lang, c)
     out += G.uses(lang, c)

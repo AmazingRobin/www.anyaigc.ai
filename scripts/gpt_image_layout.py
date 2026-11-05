@@ -3,8 +3,8 @@ import html
 import json
 import re
 
-from gpt_image_data import (cny, DATE, VER, SITE, REG, PRICING, SUPPORT, IMG, MODELS, SLUGS, TOKEN, OFFICIAL, CALL, CALL_4K,
-                            TOKENS_25, OFFICIAL_IMG_2, OFFICIAL_POST, money, cost_25, cost_2, save)
+from gpt_image_data import (cny, DATE, VER, SITE, REG, PRICING, SUPPORT, IMG, ANIM, MODELS, SLUGS, TOKEN, OFFICIAL, CALL, CALL_4K,
+                            TOKENS_25, TOKENS_26, OFFICIAL_IMG_2, OFFICIAL_POST, money, cost_25, cost_26, cost_2, save)
 
 NL = '\n'
 
@@ -73,12 +73,20 @@ def shapes():
     return '<span class="gi-shapes" aria-hidden="true"><i></i><i></i><i></i></span>'
 
 
-def img(name, lang, cls='', eager=False, sizes=None):
+def img(name, lang, cls='', eager=False, sizes=None, still=False):
     w, h, zt, zd, et, ed = IMG[name]
-    alt = f'{zt}：{zd}（ChatGPT 图像 2.0 生成）' if lang == 'zh' else f'{et}: {ed} (generated with ChatGPT Images 2.0)'
+    if name.startswith('i26-'):
+        alt = f'{zt}：{zd}（GPT Image 2.6 示例）' if lang == 'zh' else f'{et}: {ed} (GPT Image 2.6 sample)'
+    else:
+        alt = f'{zt}：{zd}（ChatGPT 图像 2.0 生成）' if lang == 'zh' else f'{et}: {ed} (generated with ChatGPT Images 2.0)'
+    c = f' class="{cls}"' if cls else ''
+    if name in ANIM and not still:
+        # 静音循环动画：屏幕外和“减少动态”时由 gpt-image.js 暂停；poster 是首帧，无 JS 时也能看到画面
+        pre = 'auto' if eager else 'none'
+        return (f'<video{c} src="/assets/models/gpt-image/{name}.mp4?v={VER}" poster="/assets/models/gpt-image/{name}.webp?v={VER}" '
+                f'width="{w}" height="{h}" muted loop playsinline preload="{pre}" aria-label="{html.escape(alt, quote=True)}" data-gi-loop></video>')
     load = ' fetchpriority="high"' if eager else ' loading="lazy"'
     sz = f' sizes="{sizes}"' if sizes else ''
-    c = f' class="{cls}"' if cls else ''
     return f'<img{c} src="/assets/models/gpt-image/{name}.webp" width="{w}" height="{h}" alt="{html.escape(alt, quote=True)}"{load} decoding="async"{sz}>'
 
 
@@ -250,7 +258,7 @@ def hero(lang, slug, c):
           <figure>{img(b, lang, eager=True, sizes="(max-width: 900px) 50vw, 300px")}</figure>
           <figure>{img(d, lang, sizes="(max-width: 900px) 50vw, 300px")}</figure>
         </div>
-        <p class="gi-credit">{t['credit']} <a href="{OFFICIAL_POST[lang]}" target="_blank" rel="noopener">{t['credit_link']} ↗</a></p>
+        <p class="gi-credit">{c.get('credit', t['credit'])} <a href="{c.get('credit_url', OFFICIAL_POST[lang])}" target="_blank" rel="noopener">{t['credit_link']} ↗</a></p>
       </div>
     </div>
   </section>
@@ -281,14 +289,29 @@ def gallery(lang, c):
         tt, dd = (zt, zd) if lang == 'zh' else (et, ed)
         figs.append(f'        <figure>{img(n, lang, sizes="(max-width: 640px) 50vw, 340px")}<figcaption><b>{tt}</b>{dd}</figcaption></figure>')
     inner = (f'      <div class="gi-gallery">{NL}' + NL.join(figs) + f'{NL}      </div>{NL}'
-             f'      <p class="gi-credit">{t["credit"]} <a href="{OFFICIAL_POST[lang]}" target="_blank" rel="noopener">{t["credit_link"]} ↗</a></p>{NL}')
+             f'      <p class="gi-credit">{c.get("credit", t["credit"])} <a href="{c.get("credit_url", OFFICIAL_POST[lang])}" target="_blank" rel="noopener">{t["credit_link"]} ↗</a></p>{NL}')
     return section('gallery', c['gallery_h2'], inner, c['gallery_lead'], band=True)
 
 
 def uses(lang, c):
-    lis = ''.join(f'        <li class="o-reveal"><figure>{img(n, lang, sizes="(max-width: 640px) 100vw, 500px")}</figure><span class="gi-k">{k}</span><h3>{h}</h3><p>{p}</p></li>{NL}'
+    lis = ''.join(f'        <li class="o-reveal"><figure>{img(n, lang, sizes="(max-width: 640px) 100vw, 500px", still=True)}</figure><span class="gi-k">{k}</span><h3>{h}</h3><p>{p}</p></li>{NL}'
                   for k, h, p, n in c['uses'])
     return section('use-cases', c['uses_h2'], f'      <ul class="gi-uses">{NL}{lis}      </ul>{NL}', c.get('uses_lead', ''))
+
+
+def gif_show(lang, c):
+    """GIF 动图展示：横幅合集 + 3 个小动画 + 参数说明"""
+    g = c.get('gif')
+    if not g:
+        return ''
+    t = L[lang]
+    tiles = ''.join(f'        <figure class="o-reveal">{img(n, lang, sizes="(max-width: 640px) 33vw, 300px")}<figcaption>{cap}</figcaption></figure>{NL}' for n, cap in g['tiles'])
+    params = ''.join(f'<li><code>{k}</code><span>{v}</span></li>' for k, v in g['params'])
+    inner = (f'      <figure class="gi-gif-banner o-reveal">{img("i26-gif-montage", lang, sizes="(max-width: 1200px) 100vw, 1120px")}</figure>{NL}'
+             f'      <div class="gi-gif-grid">{NL}{tiles}      </div>{NL}'
+             f'      <ul class="gi-gif-params o-reveal" aria-label="{g["params_label"]}">{params}</ul>{NL}'
+             f'      <p class="gi-credit">{c.get("credit", t["credit"])} <a href="{c.get("credit_url", OFFICIAL_POST[lang])}" target="_blank" rel="noopener">{t["credit_link"]} ↗</a></p>{NL}')
+    return section('gif', g['h2'], inner, g['lead'])
 
 
 def caps(c):
@@ -364,6 +387,30 @@ def token_rows(lang, base):
     return rows
 
 
+def token_rows_plain(lang, base):
+    """按 token 计费的单价行，只列 AnyAIGC 价格（GPT Image 2.6 页不与官方价对比）"""
+    z = lang == 'zh'
+    names = [('text_in', '文本输入' if z else 'Text input', '提示词' if z else 'Prompt text'),
+             ('img_in', '图片输入' if z else 'Image input', '编辑时上传的参考图和标注层' if z else 'Reference images and markup layers'),
+             ('out', '图片输出' if z else 'Image output', '生成的图片、GIF 和 SVG 参考图' if z else 'Generated images, GIFs and SVG reference images'),
+             ('text_cache', '文本缓存输入' if z else 'Cached text input', '上游返回缓存用量时' if z else 'When upstream reports cache usage'),
+             ('img_cache', '图片缓存输入' if z else 'Cached image input', '上游返回缓存用量时' if z else 'When upstream reports cache usage')]
+    return [f'<th scope="row">{n}<small>{sub}</small></th><td class="o-num o-hl">${TOKEN[base][k]}</td>' for k, n, sub in names]
+
+
+def per_image_26(lang):
+    """GPT Image 2.6 每张图片输出费用估算（只列 AnyAIGC 价格）"""
+    z = lang == 'zh'
+    sizes = ['1024x1024', '1536x1024', '2048x2048', '3840x2160']
+    rows = []
+    for q in ['low', 'medium', 'high', 'xhigh', 'max']:
+        cells = ''.join(f'<td class="o-num"><span class="o-hl">{money(cost_26(q, s))}</span><small>{TOKENS_26[q][s]:,} tokens</small></td>' for s in sizes)
+        rows.append(f'<th scope="row"><code>{q}</code></th>{cells}')
+    head = [('质量' if z else 'Quality', False)] + [(s.replace('x', '×'), True) for s in sizes]
+    cap = 'GPT Image 2.6 每张图片输出费用估算（美元），按 OpenAI 官方计算器的输出 tokens' if z else "Estimated image output cost per image for GPT Image 2.6 (USD), using output tokens from OpenAI's calculator"
+    return table(cap, head, [(None, rows)])
+
+
 def per_image_25(lang):
     z = lang == 'zh'
     sizes = ['1024x1024', '1536x1024', '2048x2048', '3840x2160']
@@ -398,6 +445,18 @@ def call_vs(lang, base):
     """按次版与按 token 版、官方价的单张对比（1024×1024）"""
     z = lang == 'zh'
     fixed = float(CALL[base])
+    if base == '2.6':
+        rows = []
+        for q in ['low', 'medium', 'high', 'xhigh', 'max']:
+            a = cost_26(q, '1024x1024')
+            # 中文页按张价是人民币，不直接比大小，只列出两种计费的数字
+            verdict = '' if z else (('Per-image is cheaper' if fixed < a else 'Token-billed is cheaper'))
+            rows.append(f'<th scope="row"><code>{q}</code></th><td class="o-num o-hl">{cny(base) if z else '$' + CALL[base]}</td><td class="o-num">{money(a)}</td>'
+                        + ('' if z else f'<td>{verdict}</td>'))
+        head = [('质量' if z else 'Quality', False), ('按张版' if z else 'Per image', True), ('按 token 版（美元）' if z else 'Token-billed', True)]
+        if not z:
+            head.append(('Verdict', False))
+        return table('1024×1024 单张图片费用对比' if z else 'Cost per 1024×1024 image (USD)', head, [(None, rows)])
     qs = ['low', 'medium', 'high', 'xhigh', 'max'] if base == '2.5' else ['low', 'medium', 'high']
     rows = []
     for q in qs:
@@ -419,6 +478,22 @@ def call_block(lang, slugs):
     p4 = cny(base, '4k') if z else '$' + CALL_4K[base]
     ids = '、'.join(f'<code>{s}</code>' for s in slugs) if z else ', '.join(f'<code>{s}</code>' for s in slugs)
     unit = '张' if z else 'image'
+    if base == '2.6':
+        price = table('按张计费版价格' if z else 'Per-image pricing',
+                      [('模型' if z else 'Model', False), ('1K / 2K / 4K 出图' if z else '1K / 2K / 4K output', True)],
+                      [(None, [f'<th scope="row"><code>{s}</code></th><td class="o-num o-hl">{p1} / {unit}</td>' for s in slugs])])
+        if z:
+            head = (f'      <h3 class="gi-h3 o-reveal" id="per-image">按张计费：{ids}</h3>{NL}'
+                    f'      <p class="o-note">AnyAIGC 平台还提供按张计费的版本，接口和调用方式相同，只把 <code>model</code> 换成带 <code>-c</code> 的 ID。'
+                    f'每张固定 {p1}，1K、2K、4K 出图同价，质量档位不影响单价。每次请求出 1 张，不支持 <code>n</code>、<code>mask</code> 参数，也不支持透明背景。</p>{NL}')
+            vs = f'      <p class="o-note">和按 token 计费比：以 1024×1024 为例，按张版为人民币价格，按 token 版为美元价格，只算图片输出 tokens。</p>{NL}'
+        else:
+            head = (f'      <h3 class="gi-h3 o-reveal" id="per-image">Per-image billing: {ids}</h3>{NL}'
+                    f'      <p class="o-note">AnyAIGC also offers a per-image version with the same endpoints. Just switch <code>model</code> to the <code>-c</code> ID. '
+                    f'Each image costs a flat {p1} at 1K, 2K or 4K and at any quality level. '
+                    f'Each request returns one image, and <code>n</code>, <code>mask</code> and transparent backgrounds are not supported.</p>{NL}')
+            vs = f'      <p class="o-note">Compared with token billing at 1024×1024, counting image output tokens only.</p>{NL}'
+        return head + price + vs + call_vs(lang, base)
     price = table('按张计费版价格' if z else 'Per-image pricing',
                   [('模型' if z else 'Model', False), ('1K 出图' if z else '1K output', True), ('2K / 4K 出图' if z else '2K / 4K output', True)],
                   [(None, [f'<th scope="row"><code>{s}</code></th><td class="o-num o-hl">{p1} / {unit}</td><td class="o-num o-hl">{p4} / {unit}</td>' for s in slugs])])

@@ -2,8 +2,9 @@
 from gpt_image_data import (TOKEN, OFFICIAL, CALL, MODELS, TOKENS_25, OFFICIAL_IMG_2, PRICING, SUPPORT,
                             DOCS_GEN_2, DOCS_EDIT_2, DOCS_GEN_25, DOCS_EDIT_25, OFFICIAL_GUIDE, CALL_CNY, C_OF, cny, money, cost_25, cost_2, save)
 import gpt_image_layout as G
+import gpt_image_26_copy as C26
 
-T2, T25 = TOKEN['2'], TOKEN['2.5']
+T2, T25, T26 = TOKEN['2'], TOKEN['2.5'], TOKEN['2.6']
 S2 = save(T2['out'], OFFICIAL['out'])     # 92
 S25 = save(T25['out'], OFFICIAL['out'])   # 41
 
@@ -11,9 +12,11 @@ SIZE_RULES = '最长边不超过 3840px，宽高都是 16 的倍数，长短边�
 CONC = '并发不限'
 
 FAMILY = [
-    ('gpt-image', '总览', 'GPT Image 全系', '3 个型号的价格对比与选型'),
-    ('gpt-image-2.5-sunburst', '最新', 'GPT Image 2.5 Sunburst', f'编辑精度最高的旗舰 · 输出 ${T25["out"]} / 1M'),
-    ('gpt-image-2.5-flare', '最新', 'GPT Image 2.5 Flare', f'速度最快，日常批量出图 · 输出 ${T25["out"]} / 1M'),
+    ('gpt-image', '总览', 'GPT Image 全系', '5 个型号的价格对比与选型'),
+    ('gpt-image-2.6-sunburst', '最新', 'GPT Image 2.6 Sunburst', f'细节更强、多轮编辑更一致 · 输出 ${T26["out"]} / 1M'),
+    ('gpt-image-2.6-flare', '最新', 'GPT Image 2.6 Flare', f'出图更快，支持 GIF / SVG · 输出 ${T26["out"]} / 1M'),
+    ('gpt-image-2.5-sunburst', '', 'GPT Image 2.5 Sunburst', f'2026 年 9 月发布 · 输出 ${T25["out"]} / 1M'),
+    ('gpt-image-2.5-flare', '', 'GPT Image 2.5 Flare', f'2026 年 9 月发布 · 输出 ${T25["out"]} / 1M'),
     ('gpt-image-2', '', 'GPT Image 2', f'2026 年 4 月发布 · 输出 ${T2["out"]} / 1M'),
 ]
 
@@ -156,28 +159,36 @@ def build(slug):
     if slug == 'gpt-image':
         return hub()
     m = MODELS[slug]
+    if m['base'] == '2.6':
+        return C26.build('zh', slug)
     return token_page(slug, m)
 
 
 # ---------------------------------------------------------------- 总览页
 def hub():
     tok = []
-    for s in ['gpt-image-2.5-sunburst', 'gpt-image-2.5-flare', 'gpt-image-2']:
+    for s in ['gpt-image-2.6-sunburst', 'gpt-image-2.6-flare', 'gpt-image-2.5-sunburst', 'gpt-image-2.5-flare', 'gpt-image-2']:
         b = MODELS[s]['base']
         t = TOKEN[b]
+        sv = '-' if b == '2.6' else f'{save(t["out"], OFFICIAL["out"])}%'
         tok.append(f'<th scope="row"><a href="/zh/models/{s}">{MODELS[s]["name"]}</a><small><code>{s}</code></small></th>'
-                   f'<td class="o-num">${t["text_in"]}</td><td class="o-num">${t["img_in"]}</td><td class="o-num o-hl">${t["out"]}</td><td class="o-num o-save">{save(t["out"], OFFICIAL["out"])}%</td>')
+                   f'<td class="o-num">${t["text_in"]}</td><td class="o-num">${t["img_in"]}</td><td class="o-num o-hl">${t["out"]}</td><td class="o-num o-save">{sv}</td>')
     call = []
+    for s in ['gpt-image-2.6-sunburst-c', 'gpt-image-2.6-flare-c']:
+        call.append(f'<th scope="row"><a href="/zh/models/{MODELS[s]["of"]}#per-image">{MODELS[s]["name"]}</a><small><code>{s}</code></small></th>'
+                    f'<td class="o-num" colspan="2">1K/2K/4K {cny("2.6")} / 张</td><td class="o-num o-hl">{cny("2.6")} / 张</td><td class="o-num">-</td>')
     for s in ['gpt-image-2.5-sunburst-c', 'gpt-image-2.5-flare-c', 'gpt-image-2-c']:
         b = MODELS[s]['base']
         call.append(f'<th scope="row"><a href="/zh/models/{MODELS[s]["of"]}#per-image">{MODELS[s]["name"]}</a><small><code>{s}</code></small></th>'
                     f'<td class="o-num" colspan="2">1K {cny(b)} / 张 · 2K/4K {cny(b, "4k")} / 张</td><td class="o-num o-hl">{cny(b)} / 张起</td><td class="o-num">-</td>')
     tables = G.table('GPT Image 全系价格', [('模型', False), ('文本输入 / 1M', True), ('图片输入 / 1M', True), ('图片输出', True), ('比官方省', True)],
-                     [('按 token 计费 · 官方价：文本输入 $5.00、图片输入 $8.00、图片输出 $30.00 / 1M', tok), ('按张计费（-c 版，人民币）', call)])
+                     [('按 token 计费 · 2.5 与 gpt-image-2 对比官方价：文本输入 $5.00、图片输入 $8.00、图片输出 $30.00 / 1M', tok), ('按张计费（-c 版，人民币）', call)])
     models_html = ''
     cards = [
-        ('gpt-image-2.5-sunburst', 'is-red', '编辑精度最高', 'OpenAI 目前能力最强的图像生成与编辑模型，适合精修、商业海报和对细节要求高的改图。', f'${T25["out"]}', '图片输出 / 1M tokens'),
-        ('gpt-image-2.5-flare', 'is-blue', '速度最快', 'OpenAI 最快的高质量图像模型，适合日常出图、批量生成和需要快速返回的产品功能。', f'${T25["out"]}', '图片输出 / 1M tokens'),
+        ('gpt-image-2.6-sunburst', 'is-red', '最新 · 细节更强', 'GPT Image 2.6 精细版，多轮编辑时人物、产品和品牌细节更一致，新增 GIF、SVG 和标注改图。', f'${T26["out"]}', '图片输出 / 1M tokens'),
+        ('gpt-image-2.6-flare', 'is-blue', '最新 · 更快', 'GPT Image 2.6 快速版，low 质量最快约 6 秒出图，适合产品内实时出图和 GIF 动图。', f'${T26["out"]}', '图片输出 / 1M tokens'),
+        ('gpt-image-2.5-sunburst', '', '编辑精度高', 'OpenAI 目前能力最强的图像生成与编辑模型，适合精修、商业海报和对细节要求高的改图。', f'${T25["out"]}', '图片输出 / 1M tokens'),
+        ('gpt-image-2.5-flare', '', '速度快', 'OpenAI 最快的高质量图像模型，适合日常出图、批量生成和需要快速返回的产品功能。', f'${T25["out"]}', '图片输出 / 1M tokens'),
         ('gpt-image-2', '', '上一代主力', '2026 年 4 月发布，ChatGPT 图像 2.0 背后的模型。按 token 计费单价全系最低，约官方价 0.8 折。', f'${T2["out"]}', '图片输出 / 1M tokens'),
     ]
     for s, cls, tag, p, price, unit in cards:
@@ -185,6 +196,8 @@ def hub():
                         f'<h3>{MODELS[s]["name"]}</h3><code>{s}</code><p>{p}</p>'
                         f'<span class="gi-model-price"><strong>{price}</strong>{unit}</span><span class="gi-model-go">查看专题 →</span></a></li>\n')
     choose = G.table('GPT Image 型号怎么选', [('需求', False), ('推荐型号', False), ('原因', False)], [(None, [
+        '<th scope="row">GIF 动图、SVG 图标、标注改图</th><td><a href="/zh/models/gpt-image-2.6-flare">2.6 Flare</a> / <a href="/zh/models/gpt-image-2.6-sunburst">2.6 Sunburst</a></td><td>只有 2.6 支持 GIF、SVG 输出和 markup 标注改图</td>',
+        '<th scope="row">角色、产品多轮修改要一致</th><td><a href="/zh/models/gpt-image-2.6-sunburst">2.6 Sunburst</a></td><td>官方说明 medium、high 质量下多轮编辑一致性更强</td>',
         '<th scope="row">精修、改图、商业海报</th><td><a href="/zh/models/gpt-image-2.5-sunburst">2.5 Sunburst</a></td><td>官方定位为编辑精度最高的型号，支持 xhigh / max 质量</td>',
         '<th scope="row">产品内实时出图、批量生成</th><td><a href="/zh/models/gpt-image-2.5-flare">2.5 Flare</a></td><td>官方标注速度 Very fast，单价与 Sunburst 相同</td>',
         '<th scope="row">已有 gpt-image-2 集成、成本优先</th><td><a href="/zh/models/gpt-image-2">GPT Image 2</a></td><td>按 token 单价约官方 0.8 折，全系最低</td>',
@@ -194,9 +207,9 @@ def hub():
     a25 = cost_25('high', '1024x1024')
     faqs = [
         ('GPT Image API 多少钱？',
-         f'按 token 计费的型号：GPT Image 2.5 Sunburst 与 Flare 文本输入 ${T25["text_in"]}、图片输入 ${T25["img_in"]}、图片输出 ${T25["out"]}（每百万 tokens），约官方价 6 折；GPT Image 2 文本输入 ${T2["text_in"]}、图片输入 ${T2["img_in"]}、图片输出 ${T2["out"]}，约官方价 0.8 折。按张计费的 -c 版：gpt-image-2.5-sunburst-c 与 gpt-image-2.5-flare-c 1K 出图每张 {cny("2.5")}、2K/4K 每张 {cny("2.5", "4k")}；gpt-image-2-c 1K 每张 {cny("2")}、2K/4K 每张 {cny("2", "4k")}。实时价格以模型广场为准。'),
+         f'按 token 计费的型号：GPT Image 2.6 Sunburst 与 Flare 文本输入 ${T26["text_in"]}、图片输入 ${T26["img_in"]}、图片输出 ${T26["out"]}（每百万 tokens）；GPT Image 2.5 Sunburst 与 Flare 文本输入 ${T25["text_in"]}、图片输入 ${T25["img_in"]}、图片输出 ${T25["out"]}（每百万 tokens），约官方价 6 折；GPT Image 2 文本输入 ${T2["text_in"]}、图片输入 ${T2["img_in"]}、图片输出 ${T2["out"]}，约官方价 0.8 折。按张计费的 -c 版：gpt-image-2.6-sunburst-c 与 gpt-image-2.6-flare-c 每张 {cny("2.6")}（1K/2K/4K 同价）；gpt-image-2.5-sunburst-c 与 gpt-image-2.5-flare-c 1K 出图每张 {cny("2.5")}、2K/4K 每张 {cny("2.5", "4k")}；gpt-image-2-c 1K 每张 {cny("2")}、2K/4K 每张 {cny("2", "4k")}。实时价格以模型广场为准。'),
         ('Sunburst、Flare 和 GPT Image 2 有什么区别？',
-         'Sunburst 和 Flare 是 OpenAI 2026 年 9 月发布的 GPT Image 2.5 系列。OpenAI 把 Sunburst 定位为编辑精度最高的型号，Flare 是速度最快的高质量日常出图型号，两者官方 token 单价相同，都新增了 xhigh 和 max 两档质量。GPT Image 2 是 2026 年 4 月发布的上一代，质量档位为 low、medium、high、auto。'),
+         'GPT Image 2.6 是 OpenAI 2026 年 11 月发布的最新一代，同样分为 Sunburst（细节更强、多轮编辑更一致）和 Flare（出图更快），并新增 GIF、SVG 输出、标注改图和 complexity 参数。2.5 的 Sunburst 和 Flare 是 OpenAI 2026 年 9 月发布的上一代。OpenAI 把 Sunburst 定位为编辑精度最高的型号，Flare 是速度最快的高质量日常出图型号，两者官方 token 单价相同，都新增了 xhigh 和 max 两档质量。GPT Image 2 是 2026 年 4 月发布的上一代，质量档位为 low、medium、high、auto。'),
         ('按 token 计费和按张计费（-c 版）怎么选？',
          f'按 token 计费的费用随尺寸和质量变化：低质量小图很便宜，质量越高、尺寸越大越贵。-c 版每张固定价（1K、2K/4K 两档），不受质量档位影响，但一次只出 1 张，不支持 n 和 mask 参数，也不支持透明背景。以 1024×1024、high 质量为例，2.5 按 token 计费每张约 {money(a25[0])}，-c 版每张 {cny("2.5")}。'),
         ('支持哪些接口？可以改图吗？',
@@ -207,28 +220,28 @@ def hub():
     ]
     curl, py = code_gen('gpt-image-2.5-flare')
     return dict(
-        title='GPT Image API 价格与接入｜gpt-image-2 与 2.5 全系 - AnyAIGC',
-        desc=f'GPT Image API 全系：gpt-image-2.5 Sunburst、Flare 与 gpt-image-2，按 token 计费最低约官方价 0.8 折，按张计费 {cny("2")} 起，并发不限，支持对公转账与增值税专票。',
-        og_desc=f'一个 Key 调用 GPT Image 全系：2.5 Sunburst、2.5 Flare、gpt-image-2，另有按张计费版，{cny("2")} / 张起，并发不限。',
-        og_alt='AnyAIGC GPT Image API：gpt-image-2 与 2.5 全系',
-        keywords='GPT Image API,gpt-image-2 API,gpt-image-2.5 API,GPT Image 2 价格,gpt-image-2.5-sunburst,gpt-image-2.5-flare,OpenAI 图像生成 API,GPT Image API 中转,GPT Image API 企业,GPT Image API 发票,AnyAIGC',
+        title='GPT Image API 价格与接入｜gpt-image-2 到 2.6 全系 - AnyAIGC',
+        desc=f'GPT Image API 全系：gpt-image-2.6、2.5 的 Sunburst 与 Flare 及 gpt-image-2，按 token 计费最低约官方价 0.8 折，按张计费 {cny("2")} 起，并发不限，支持对公转账与专票。',
+        og_desc=f'一个 Key 调用 GPT Image 全系：2.6 与 2.5 的 Sunburst、Flare，以及 gpt-image-2，另有按张计费版，{cny("2")} / 张起，并发不限。',
+        og_alt='AnyAIGC GPT Image API：gpt-image-2 到 2.6 全系',
+        keywords='GPT Image API,gpt-image-2 API,gpt-image-2.5 API,gpt-image-2.6 API,gpt-image-2.6-sunburst,gpt-image-2.6-flare,GPT Image 2 价格,gpt-image-2.5-sunburst,gpt-image-2.5-flare,OpenAI 图像生成 API,GPT Image API 中转,GPT Image API 企业,GPT Image API 发票,AnyAIGC',
         crumb='GPT Image', product='GPT Image API（AnyAIGC）', sku='gpt-image',
-        product_desc='通过 AnyAIGC 调用 OpenAI GPT Image 全系图像模型：gpt-image-2.5-sunburst、gpt-image-2.5-flare、gpt-image-2 及按张计费版，兼容 /v1/images/generations 与 /v1/images/edits。',
-        offers=[('GPT Image 2.5 图片输出（每 100 万 tokens）', T25['out']), ('GPT Image 2 图片输出（每 100 万 tokens）', T2['out'])],
-        eyebrow='OpenAI · GPT Image 系列', h1='GPT Image API<small>gpt-image-2 与 GPT Image 2.5 全系</small>',
+        product_desc='通过 AnyAIGC 调用 OpenAI GPT Image 全系图像模型：gpt-image-2.6-sunburst、gpt-image-2.6-flare、gpt-image-2.5-sunburst、gpt-image-2.5-flare、gpt-image-2 及按张计费版，兼容 /v1/images/generations 与 /v1/images/edits。',
+        offers=[('GPT Image 2.6 图片输出（每 100 万 tokens）', T26['out']), ('GPT Image 2.5 图片输出（每 100 万 tokens）', T25['out']), ('GPT Image 2 图片输出（每 100 万 tokens）', T2['out'])],
+        eyebrow='OpenAI · GPT Image 系列', h1='GPT Image API<small>gpt-image-2 到 GPT Image 2.6 全系</small>',
         lead=f'一个 API Key 调用 OpenAI 全部 GPT Image 型号，<strong>按张 {cny("2")} 起</strong>。',
         lead_sub='文字渲染、写实人像、多语言排版和多图编辑都能直接走 API。按 token 计费最低约官方价 0.8 折，也可以选每张固定价的 -c 版。',
-        facts=[('型号', '3 个 + 按张版'), ('接口', '/v1/images/generations · edits'), ('最大尺寸', '3840×2160'), ('并发', '不限'), ('企业', '对公 · 专票')],
+        facts=[('型号', '5 个 + 按张版'), ('接口', '/v1/images/generations · edits'), ('最大尺寸', '3840×2160'), ('并发', '不限'), ('企业', '对公 · 专票')],
         hero_imgs=('polyglot-collage', 'matcha-poster', 'candid-coast'),
         about_h2='选一个 GPT Image 型号',
         about_ps=[],
         models_html=models_html, choose=choose,
         gallery=['chinese-comic', 'matcha-poster', 'typography-poster', 'aliens-cafe', 'cantor-infographic', 'korean-hanok-ad', 'candid-flash', 'merch-grid', 'miami-comic'],
         gallery_h2='GPT Image 能画出什么', gallery_lead='下面的图都由 ChatGPT 图像 2.0 生成，背后就是 gpt-image-2。中文排版、杂志信息图、写实摄影和连续漫画都能一次成图。',
-        price_h2='GPT Image API 价格', price_lead='3 个型号按 token 计费，费用随尺寸和质量浮动；每个型号另有按张计费的 -c 版，每张固定价。',
+        price_h2='GPT Image API 价格', price_lead='5 个型号按 token 计费，费用随尺寸和质量浮动；每个型号另有按张计费的 -c 版，每张固定价。',
         billing_label='计费要点', billing=[('两种计费', '按 token 或按张固定价'), ('一个 Key', '全系共用'), (CONC, '所有用户默认享有'), ('余额通用', '同一余额可调用 300+ 模型')],
         price_tables=tables + '      <h3 class="gi-h3 o-reveal">按需求选型号</h3>\n' + choose,
-        price_note=f'按 token 计费单位为 USD，为模型广场最低价，自定义尺寸、透明背景等能力的单价可能更高；-c 版为人民币按张价格：2.5 系列 1K 每张 {cny("2.5")}、2K/4K 每张 {cny("2.5", "4k")}，gpt-image-2-c 1K 每张 {cny("2")}、2K/4K 每张 {cny("2", "4k")}。实时价格以<a href="{PRICING}">模型广场</a>为准。',
+        price_note=f'按 token 计费单位为 USD，为模型广场最低价，自定义尺寸、透明背景等能力的单价可能更高；-c 版为人民币按张价格：2.6 系列每张 {cny("2.6")}（1K/2K/4K 同价），2.5 系列 1K 每张 {cny("2.5")}、2K/4K 每张 {cny("2.5", "4k")}，gpt-image-2-c 1K 每张 {cny("2")}、2K/4K 每张 {cny("2", "4k")}。实时价格以<a href="{PRICING}">模型广场</a>为准。',
         costs_h3='成本示例', costs_lead='按上表单价和 OpenAI 官方计算器的输出 tokens 计算，不含提示词文本 tokens。',
         costs=[(h, c, t, o) for h, c, t, o in [token_costs_25()[0], token_costs_2()[0], call_costs('2', 'gpt-image-2-c')[0]]],
         uses_h2='用在哪里',
@@ -240,7 +253,7 @@ def hub():
         codes=[('py', 'Python', 'POST /v1/images/generations', py), ('curl', 'cURL', 'POST /v1/images/generations', curl),
                ('edit', '图片编辑', 'POST /v1/images/edits', code_edit('gpt-image-2.5-sunburst'))],
         qs_h2='三步接入 GPT Image API',
-        callout='换型号只改 <code>model</code> 字段：<code>gpt-image-2.5-sunburst</code>、<code>gpt-image-2.5-flare</code>、<code>gpt-image-2</code>，或按张计费的 <code>-c</code> 版。-c 版不要传 <code>n</code> 和 <code>mask</code>。',
+        callout='换型号只改 <code>model</code> 字段：<code>gpt-image-2.6-sunburst</code>、<code>gpt-image-2.6-flare</code>、<code>gpt-image-2.5-sunburst</code>、<code>gpt-image-2.5-flare</code>、<code>gpt-image-2</code>，或按张计费的 <code>-c</code> 版。-c 版不要传 <code>n</code> 和 <code>mask</code>。',
         qs_note=f'图片格式字段是 <code>format</code>（png / jpeg / webp），返回 <code>data[0].url</code>；传 <code>response_format=b64_json</code> 可以拿 base64。完整参数见 <a href="{DOCS_GEN_25}" target="_blank" rel="noopener">生成接口文档</a> 与 <a href="{DOCS_EDIT_25}" target="_blank" rel="noopener">编辑接口文档</a>。',
         family_h2='GPT Image 全部型号', family_lead='同一个 API Key，换型号只改 model 字段。',
         faq_h2='GPT Image API 常见问题', faqs=faqs,
@@ -320,7 +333,7 @@ def token_page(slug, m):
         diff = ('gpt-image-2 还能用吗？要不要换 GPT Image 2.5？',
                 f'能用。OpenAI 官方指南建议新集成优先使用 GPT Image 2.5，但 gpt-image-2 目前没有停用公告，在 AnyAIGC 上照常调用。2.5 多了 xhigh 和 max 质量档；gpt-image-2 的优势是便宜，在 AnyAIGC 上图片输出 ${T2["out"]} / 百万 tokens，2.5 为 ${T25["out"]}。换型号只改 <code>model</code> 字段，可以先拿同一批提示词对比 <a href="/zh/models/gpt-image-2.5-flare">2.5 Flare</a>。')
         default_q = 'medium'
-    notice = None if is25 else '<span><strong>已有更新版本：</strong>OpenAI 已推出 GPT Image 2.5，官方建议新集成优先使用。gpt-image-2 目前仍可正常调用，没有停用公告。新项目可以看看 <a href="/zh/models/gpt-image-2.5-flare">GPT Image 2.5 Flare</a>。</span>'
+    notice = (f'<span><strong>已有更新版本：</strong>OpenAI 已于 2026 年 11 月推出 GPT Image 2.6，新增 GIF、SVG 输出和标注改图。{name} 目前仍可正常调用，没有停用公告。新项目可以看看 <a href="/zh/models/{slug.replace("2.5", "2.6")}">{name.replace("2.5", "2.6")}</a>。</span>') if is25 else '<span><strong>已有更新版本：</strong>OpenAI 已推出 GPT Image 2.5 和 2.6。gpt-image-2 目前仍可正常调用，没有停用公告。新项目可以看看 <a href="/zh/models/gpt-image-2.6-flare">GPT Image 2.6 Flare</a>。</span>'
     a1, o1 = (cost_25('medium', '1024x1024') if is25 else cost_2('medium', '1024x1024'))
     faqs = [
         (f'{name} API 多少钱？',

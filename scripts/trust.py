@@ -110,10 +110,13 @@ def main():
             s = re.sub(r'  <!-- TRUST -->.*?<!-- /TRUST -->\n\n', '', s, flags=re.S)
             # 放在企业接入版块之后
             sec = s.index('id="enterprise"')
-            end = s.index('</section>', sec) + len('</section>') + 1
+            end = s.index('</section>', sec) + len('</section>')
             while s[end:end + 1] == NL:
                 end += 1
-            s = s[:end] + section(lang, style) + s[end:]
+            before = s[:end]
+            if not before.endswith(NL):
+                before += NL
+            s = before + section(lang, style) + s[end:]
             s = add_faq(s, lang, STYLES[style]['ans'])
             if s != o:
                 io.open(p, 'w', encoding='utf-8', newline=NL).write(s)
