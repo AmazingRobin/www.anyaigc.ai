@@ -1061,4 +1061,130 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/gpt-image-2.6-flare"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/gpt-image-2.6-flare"/>
   </url>
+  <url>
+    <loc>https://www.anyaigc.ai/zh/models/grok-4.x</loc>
+    <lastmod>2026-11-05</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/grok-4.x"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/grok-4.x"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/grok-4.x"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/en/models/grok-4.x</loc>
+    <lastmod>2026-11-05</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/grok-4.x"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/grok-4.x"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/grok-4.x"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/zh/models/grok-4.7</loc>
+    <lastmod>2026-11-05</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/grok-4.7"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/grok-4.7"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/grok-4.7"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/en/models/grok-4.7</loc>
+    <lastmod>2026-11-05</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/grok-4.7"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/grok-4.7"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/grok-4.7"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/zh/models/grok-4.6</loc>
+    <lastmod>2026-11-05</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/grok-4.6"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/grok-4.6"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/grok-4.6"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/en/models/grok-4.6</loc>
+    <lastmod>2026-11-05</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/grok-4.6"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/grok-4.6"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/grok-4.6"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/zh/models/grok-4.5</loc>
+    <lastmod>2026-11-05</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/grok-4.5"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/grok-4.5"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/grok-4.5"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/en/models/grok-4.5</loc>
+    <lastmod>2026-11-05</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/grok-4.5"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/grok-4.5"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/grok-4.5"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/zh/models/grok-4.3</loc>
+    <lastmod>2026-11-05</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/grok-4.3"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/grok-4.3"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/grok-4.3"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/en/models/grok-4.3</loc>
+    <lastmod>2026-11-05</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/grok-4.3"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/grok-4.3"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/grok-4.3"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/zh/models/grok-4</loc>
+    <lastmod>2026-11-05</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/grok-4"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/grok-4"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/grok-4"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/en/models/grok-4</loc>
+    <lastmod>2026-11-05</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/grok-4"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/grok-4"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/grok-4"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/zh/models/grok-4-20-reasoning</loc>
+    <lastmod>2026-11-05</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/grok-4-20-reasoning"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/grok-4-20-reasoning"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/grok-4-20-reasoning"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/en/models/grok-4-20-reasoning</loc>
+    <lastmod>2026-11-05</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/grok-4-20-reasoning"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/grok-4-20-reasoning"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/grok-4-20-reasoning"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/zh/models/grok-4-20-non-reasoning</loc>
+    <lastmod>2026-11-05</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/grok-4-20-non-reasoning"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/grok-4-20-non-reasoning"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/grok-4-20-non-reasoning"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/en/models/grok-4-20-non-reasoning</loc>
+    <lastmod>2026-11-05</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/grok-4-20-non-reasoning"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/grok-4-20-non-reasoning"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/grok-4-20-non-reasoning"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/zh/models/grok-build-0.1</loc>
+    <lastmod>2026-11-05</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/grok-build-0.1"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/grok-build-0.1"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/grok-build-0.1"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/en/models/grok-build-0.1</loc>
+    <lastmod>2026-11-05</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/grok-build-0.1"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/grok-build-0.1"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/grok-build-0.1"/>
+  </url>
 </urlset>

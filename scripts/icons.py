@@ -93,6 +93,14 @@ def update_pages():
             s = re.sub(r'(<div class="p-hero-art"[^>]*>\s*)<svg\b.*?</svg>', lambda m: m.group(1) + CLAUDE_HERO_ART, s, flags=re.S)
             # Suno 专题页首屏标题
             s = re.sub(r'<svg class="s-logo".*?</svg>', SUNO_HERO, s, flags=re.S)
+            # Grok text family uses the existing pinned lobe-icons grok asset.
+            if f == 'grok-4.x.html' or f.startswith(('grok-4', 'grok-build-')):
+                s = re.sub(r'<svg class="gt-mark"[^>]*fill="#0a0a0a".*?</svg>',
+                           lambda _: svg('grok', cls='gt-mark', fill='#0a0a0a'), s, flags=re.S)
+                s = re.sub(r'<svg class="gt-mark"[^>]*fill="#ffffff".*?</svg>',
+                           lambda _: svg('grok', cls='gt-mark', fill='#ffffff'), s, flags=re.S)
+            s = re.sub(r'<svg class="gt-card-mark".*?</svg>',
+                       lambda _: svg('grok', cls='gt-card-mark', size=24, fill='#ffffff'), s, flags=re.S)
             # 专题首页卡片
             s = re.sub(r'(<span class="af-model-logo" style="background:#faf9f5;border:1px solid #e8e6dc" aria-hidden="true">)<svg\b.*?</svg>(</span>)',
                        lambda m: m.group(1) + CLAUDE_CARD + m.group(2), s, flags=re.S)
