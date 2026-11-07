@@ -1,0 +1,79 @@
+{
+  "source": "https://anyaigc.ai/pricing?provider=Qwen",
+  "captured": "2026-11-07",
+  "method": "Opened each of the 18 model drawers, waited for the model heading and price table, read drawer text.",
+  "models": [
+    {
+      "model": "qwen-image-3.0",
+      "text": "qwen-image-3.0\n\n图像\nQwen\n基本信息\n模型的详细描述和基本特性\n\n指令理解清晰：支持最大 4.5k token 输入，复杂图文指令一次生成到位。 文字渲染稳定：10px 小字、12 国语言、20+ 字体清晰可辨，信息图和界面直接可用。 批量产出趁手：海报、网页、界面等日常任务可批量生成，成本更优，适合持续创作。 Qwen-Image-3.0 Standard 不只在追求生成效果，更在追求日常创作里的顺手与省心——让图像生成成为可持续的内容生产力。\n\n绘画\nAPI端点\n模型支持的接口端点信息\nPOST\nimages-generations\n/v1/images/generations\n分组价格\n不同用户分组的价格信息\n分组\t计费类型\t价格\n\nAlibaba-image-2\n\t\n按张计费\n\t\n$0.00159\n/ 张（基价）\n实际：输出×18；参考图×2/张"
+    },
+    {
+      "model": "qwen-image-3.0-pro",
+      "text": "qwen-image-3.0-pro\n\n图像\nQwen\n基本信息\n模型的详细描述和基本特性\n\n内容丰实：支持最大 4.5k token 输入，支持图中图密集信息排版，让报纸、分镜、菜单、试卷等复杂版面一次生成。 细节真实：支持 10px 小字精准渲染，微表情、毛孔、发丝等细节生动还原，逼近真实摄影的质感。 知识厚实：支持 12 国语言、多种字体原生渲染，主流网页、游戏、直播等界面仿真，外部知识全纳入。 Qwen-Image-3.0-Pro 不只是在追求\"好看\"，更在追求“好用”——让图像生成真正成为可落地的生产力工具。\n\n绘画\nAPI端点\n模型支持的接口端点信息\nPOST\nimages-generations\n/v1/images/generations\n分组价格\n不同用户分组的价格信息\n分组\t计费类型\t价格\n\nAlibaba-image-2\n\t\n按张计费\n\t\n$0.00159\n/ 张（基价）\n实际：输出 1K×25 / 2K×50；参考图×2/张（面积≤225万为 1k）"
+    },
+    {
+      "model": "wan2.7-image-pro",
+      "text": "wan2.7-image-pro\n\n图像\nQwen\n基本信息\n模型的详细描述和基本特性\n\nThe Wan 2.7 flagship image generation and editing model, supporting text-to-image, text-to-image-set, image-to-image-set, image editing, multi-reference generation, and interactive editing, with stronger performance in text rendering, subject consistency, and complex instruction following.\n\n绘画\nAPI端点\n模型支持的接口端点信息\nPOST\nimages-generations\n/v1/images/generations\n分组价格\n不同用户分组的价格信息\n分组\t计费类型\t价格\n\nAlibaba-image-1\n\t\n按张计费\n\t\n$0.0645\n/ 张\n\n\nAlibaba-image-2\n\t\n按张计费\n\t\n$0.0794\n/ 张"
+    },
+    {
+      "model": "qwen-image-2.0-2026-03-03",
+      "text": "qwen-image-2.0-2026-03-03\n\n图像\nQwen\n基本信息\n模型的详细描述和基本特性\n\nAn accelerated model in the Qwen-Image-2.0 series that unifies image generation and image editing. Features professional text rendering with up to 1k token instruction support, finer realism for detailed photorealistic scenes, and stronger semantic adherence. The accelerated variant achieves the optimal balance between model quality and performance.\n\n绘画\nAPI端点\n模型支持的接口端点信息\nPOST\nimages-generations\n/v1/images/generations\n分组价格\n不同用户分组的价格信息\n分组\t计费类型\t价格\n\nAlibaba-image-1\n\t\n按张计费\n\t\n$0.0258\n/ 张\n\n\nAlibaba-image-2\n\t\n按张计费\n\t\n$0.0318\n/ 张"
+    },
+    {
+      "model": "z-image-turbo",
+      "text": "z-image-turbo\n\n图像\nQwen\n基本信息\n模型的详细描述和基本特性\n\nZ-Image-Turbo is a high-efficiency image generation model ranked #1 among open-source text-to-image models on Artificial Analysis benchmarks. With just 6 billion parameters and 8-step inference, it produces photorealistic images on par with large-scale commercial models, excelling in bilingual (Chinese and English) text rendering, complex semantic understanding, and diverse subject generation.\n\n绘画\nAPI端点\n模型支持的接口端点信息\nPOST\ndall-e-3\n/v1/images/generations\n分组价格\n不同用户分组的价格信息\n分组\t计费类型\t价格\n\nAlibaba-1\n\t\n按次计费\n\t\n$0.0101\n/ 次\n\n\nAlibaba-2\n\t\n按次计费\n\t\n$0.0152\n/ 次\n\n\nAlibaba-3\n\t\n按次计费\n\t\n$0.0223\n/ 次"
+    },
+    {
+      "model": "qwen-image-max",
+      "text": "qwen-image-max\n\n图像\nQwen\n基本信息\n模型的详细描述和基本特性\n\nThe Qwen image generation Max series delivers excellent results across a wide range of generation tasks. Compared to the Plus series, it significantly reduces the AI-generated look of images, enhancing realism with more lifelike human textures, finer natural details, and improved text rendering.\n\n绘画\nAPI端点\n模型支持的接口端点信息\nPOST\ndall-e-3\n/v1/images/generations\n分组价格\n不同用户分组的价格信息\n分组\t计费类型\t价格\n\nAlibaba-image-1\n\t\n按次计费\n\t\n$0.0658\n/ 次"
+    },
+    {
+      "model": "qwen-image-max-2025-12-30",
+      "text": "qwen-image-max-2025-12-30\n\n图像\nQwen\n基本信息\n模型的详细描述和基本特性\n\nThe Qwen image generation Max series delivers excellent results across a wide range of generation tasks. Compared to the Plus series, it significantly reduces the AI-generated look of images, enhancing realism with more lifelike human textures, finer natural details, and improved text rendering.\n\n绘画\nAPI端点\n模型支持的接口端点信息\nPOST\ndall-e-3\n/v1/images/generations\n分组价格\n不同用户分组的价格信息\n分组\t计费类型\t价格\n\nAlibaba-image-1\n\t\n按次计费\n\t\n$0.0658\n/ 次"
+    },
+    {
+      "model": "wan3.0-video",
+      "text": "wan3.0-video\n\n音视频\nQwen\n基本信息\n模型的详细描述和基本特性\n\n万相3.0是 all-in-one 视频生成模型，统一支持参考、编辑、复刻、驱动等多种创作功能，四模态全能参考，最长支持30秒视频生成，可解析文件、网页及复杂图片。生产级角色一致性保持，音画真实，带来身临其境的视听冲击力。\n\n异步\n视频\n首尾帧\nAPI端点\n模型支持的接口端点信息\nPOST\nWan video generation\n/alibailian/api/v1/services/aigc/video-generation/video-synthesis\n分组价格\n不同用户分组的价格信息\n分组\t计费类型\t价格\n\nAlibaba-video-1\n\t\n按视频时间计费\n\t\n分辨率\t价格（按秒计费）\n480P\t$0.0439 / 秒\n720P\t$0.0878 / 秒\n1080P\t$0.1755 / 秒\n\n\nAlibaba-video-2\n\t\n按视频时间计费\n\t\n分辨率\t价格（按秒计费）\n480P\t$0.0473 / 秒\n720P\t$0.0945 / 秒\n1080P\t$0.1890 / 秒"
+    },
+    {
+      "model": "happyhorse-1.1-r2v",
+      "text": "happyhorse-1.1-r2v\n\n音视频\nQwen\n基本信息\n模型的详细描述和基本特性\n\nHappyHorse-1.1-R2V支持参考生视频，进一步提升主体、场景风格与画面一致性的稳定保持。模型最多支持9张参考图片输入，能够更精准理解并延续创作意图，在人物、场景、风格和镜头表现上带来更强的可控性与表现力。\n\n视频\n参考生视频\nAPI端点\n模型支持的接口端点信息\nPOST\nhappyhorse视频\n/alibailian/api/v1/services/aigc/video-generation/video-synthesis\n分组价格\n不同用户分组的价格信息\n分组\t计费类型\t价格\n\nAlibaba-video-1\n\t\n按视频时间计费\n\t\n分辨率\t价格（按秒计费）\n720P\t$0.1161 / 秒\n1080P\t$0.1549 / 秒\n\n\nAlibaba-video-2\n\t\n按视频时间计费\n\t\n分辨率\t价格（按秒计费）\n720P\t$0.1251 / 秒\n1080P\t$0.1668 / 秒"
+    },
+    {
+      "model": "wan2.6-i2v",
+      "text": "wan2.6-i2v\n\n音视频\nQwen\n基本信息\n模型的详细描述和基本特性\n\nWan 2.6. Adds multi-shot narrative capability, with support for automatic dubbing and custom audio file input.\n\n异步\n视频\n首帧\nAPI端点\n模型支持的接口端点信息\nPOST\nWan video generation\n/alibailian/api/v1/services/aigc/video-generation/video-synthesis\n分组价格\n不同用户分组的价格信息\n分组\t计费类型\t价格\n\nAlibaba-1\n\t\n按视频时间计费\n\t\n分辨率\t时长\t价格\n720P\t5s\t$0.2904\n720P\t10s\t$0.5808\n720P\t15s\t$0.8712\n1080P\t5s\t$0.4840\n1080P\t10s\t$0.9680\n1080P\t15s\t$1.452\n\n\nAlibaba-2\n\t\n按视频时间计费\n\t\n分辨率\t时长\t价格\n720P\t5s\t$0.4353\n720P\t10s\t$0.8706\n720P\t15s\t$1.306\n1080P\t5s\t$0.7255\n1080P\t10s\t$1.451\n1080P\t15s\t$2.176\n\n\nAlibaba-3\n\t\n按视频时间计费\n\t\n分辨率\t时长\t价格\n720P\t5s\t$0.6387\n720P\t10s\t$1.277\n720P\t15s\t$1.916\n1080P\t5s\t$1.065\n1080P\t10s\t$2.129\n1080P\t15s\t$3.194"
+    },
+    {
+      "model": "happyhorse-1.0-t2v",
+      "text": "happyhorse-1.0-t2v\n\n音视频\nQwen\n基本信息\n模型的详细描述和基本特性\n\nHappyHorse-1.0-T2V supports text-to-video generation with highly faithful dynamic scene rendering, precise understanding of text semantics, and smooth, natural, detail-rich, high-quality video output.\n\n视频\nAPI端点\n模型支持的接口端点信息\nPOST\nHappyhorse video\n/alibailian/api/v1/services/aigc/video-generation/video-synthesis\n分组价格\n不同用户分组的价格信息\n分组\t计费类型\t价格\n\nAlibaba-video-1\n\t\n按视频时间计费\n\t\n分辨率\t价格（按秒计费）\n720P\t$0.1161 / 秒\n1080P\t$0.2065 / 秒\n\n\nAlibaba-video-2\n\t\n按视频时间计费\n\t\n分辨率\t价格（按秒计费）\n720P\t$0.1251 / 秒\n1080P\t$0.2224 / 秒"
+    },
+    {
+      "model": "happyhorse-1.1-t2v",
+      "text": "happyhorse-1.1-t2v\n\n音视频\nQwen\n基本信息\n模型的详细描述和基本特性\n\nHappyHorse-1.1-T2V支持文生视频，进一步提升文本语义理解、镜头调度与动态生成表现。模型能够更精准地还原创作意图，在人物动作、场景氛围、视觉美感和物理运动上生成更流畅自然、细节丰富且一致性更高的高质量视频。\n\n视频\nAPI端点\n模型支持的接口端点信息\nPOST\nhappyhorse视频\n/alibailian/api/v1/services/aigc/video-generation/video-synthesis\n分组价格\n不同用户分组的价格信息\n分组\t计费类型\t价格\n\nAlibaba-video-1\n\t\n按视频时间计费\n\t\n分辨率\t价格（按秒计费）\n720P\t$0.1161 / 秒\n1080P\t$0.1549 / 秒\n\n\nAlibaba-video-2\n\t\n按视频时间计费\n\t\n分辨率\t价格（按秒计费）\n720P\t$0.1251 / 秒\n1080P\t$0.1668 / 秒"
+    },
+    {
+      "model": "happyhorse-1.1-i2v",
+      "text": "happyhorse-1.1-i2v\n\n音视频\nQwen\n基本信息\n模型的详细描述和基本特性\n\nHappyHorse-1.1-I2V支持图生视频，进一步提升画面质感、动态表现与跨片段一致性。模型能够更精准地理解输入图像并延续创作意图，在人物皮肤质感、ID跨片段保持、动作流畅度、文字渲染稳定性以及音画同步上带来显著改善，输出更真实自然、细节丰富且一致性更高的高质量视频。\n\n视频\nAPI端点\n模型支持的接口端点信息\nPOST\nhappyhorse视频\n/alibailian/api/v1/services/aigc/video-generation/video-synthesis\n分组价格\n不同用户分组的价格信息\n分组\t计费类型\t价格\n\nAlibaba-video-1\n\t\n按视频时间计费\n\t\n分辨率\t价格（按秒计费）\n720P\t$0.1161 / 秒\n1080P\t$0.1549 / 秒\n\n\nAlibaba-video-2\n\t\n按视频时间计费\n\t\n分辨率\t价格（按秒计费）\n720P\t$0.1251 / 秒\n1080P\t$0.1668 / 秒"
+    },
+    {
+      "model": "happyhorse-1.0-video-edit",
+      "text": "happyhorse-1.0-video-edit\n\n音视频\nQwen\n基本信息\n模型的详细描述和基本特性\n\nHappyHorse-1.0-Video-Edit supports video editing via natural-language instructions, with up to 5 reference images for local or global editing of video elements, accurate replication of video motion, and stronger expressive capabilities.\n\n视频\nAPI端点\n模型支持的接口端点信息\nPOST\nHappyhorse video\n/alibailian/api/v1/services/aigc/video-generation/video-synthesis\n分组价格\n不同用户分组的价格信息\n分组\t计费类型\t价格\n\nAlibaba-video-1\n\t\n按视频时间计费\n\t\n分辨率\t价格（按秒计费）\n720P\t$0.1161 / 秒\n1080P\t$0.2065 / 秒\n\n\nAlibaba-video-2\n\t\n按视频时间计费\n\t\n分辨率\t价格（按秒计费）\n720P\t$0.1251 / 秒\n1080P\t$0.2224 / 秒"
+    },
+    {
+      "model": "happyhorse-1.0-r2v",
+      "text": "happyhorse-1.0-r2v\n\n音视频\nQwen\n基本信息\n模型的详细描述和基本特性\n\nHappyHorse-1.0-R2V supports reference-to-video generation with more stable subject and scene referencing, up to 9 reference images, precise preservation of creative intent, and stronger expressive capabilities.\n\n视频\n参考生视频\nAPI端点\n模型支持的接口端点信息\nPOST\nHappyhorse video\n/alibailian/api/v1/services/aigc/video-generation/video-synthesis\n分组价格\n不同用户分组的价格信息\n分组\t计费类型\t价格\n\nAlibaba-video-1\n\t\n按视频时间计费\n\t\n分辨率\t价格（按秒计费）\n720P\t$0.1161 / 秒\n1080P\t$0.2065 / 秒\n\n\nAlibaba-video-2\n\t\n按视频时间计费\n\t\n分辨率\t价格（按秒计费）\n720P\t$0.1251 / 秒\n1080P\t$0.2224 / 秒"
+    },
+    {
+      "model": "happyhorse-1.0-i2v",
+      "text": "happyhorse-1.0-i2v\n\n音视频\nQwen\n基本信息\n模型的详细描述和基本特性\n\nHappyHorse-1.0-I2V supports image-to-video generation with highly faithful dynamic scene rendering, precise text semantic understanding, and high-quality output that is smooth, natural, and detail-rich.\n\n视频\nAPI端点\n模型支持的接口端点信息\nPOST\nHappyhorse video\n/alibailian/api/v1/services/aigc/video-generation/video-synthesis\n分组价格\n不同用户分组的价格信息\n分组\t计费类型\t价格\n\nAlibaba-video-1\n\t\n按视频时间计费\n\t\n分辨率\t价格（按秒计费）\n720P\t$0.1161 / 秒\n1080P\t$0.2065 / 秒\n\n\nAlibaba-video-2\n\t\n按视频时间计费\n\t\n分辨率\t价格（按秒计费）\n720P\t$0.1251 / 秒\n1080P\t$0.2224 / 秒"
+    },
+    {
+      "model": "qwen3.8-omni-flash-realtime",
+      "text": "qwen3.8-omni-flash-realtime\n\n音视频\nQwen\n基本信息\n模型的详细描述和基本特性\n\nQwen3.8-Omni-Flash-Realtime 通过多种实时协议提供音视频双工交互，面向智能硬件、机器人与实时交互 Agent。支持多通道音频输入与多种通道布局，视频表征可在细粒度与聚合之间按精度与开销选择，支持 60+ 语言音频输入和 30+ 语言语音输出；工具侧支持 Function Call 与 MCP 服务接入，具备工具发现、调用审批与结果续轮的完整事件链。可以在高速实时响应的同时，编排复杂业务逻辑和支持上百个工具的调用，同时拥有生动、多样的声音生成能力。\n\n音频\nAPI端点\n模型支持的接口端点信息\nWS\nrealtime\n/v1/realtime\n分组价格\n不同用户分组的价格信息\n分组\t计费类型\t价格\n\nAlibaba-3\n\t\n按量计费\n\t\n档位\t价格\n输入：音频\t$1.3810 / 1M tokens\n输入：文本/图片/视频\t$0.3416 / 1M tokens\n输出：文本\t$1.0400 / 1M tokens\n输出：音频\t$2.7770 / 1M tokens\n* 语音输出时，音频和对应文本按各自的输出价分别计费"
+    },
+    {
+      "model": "wan2.5-i2v-preview",
+      "text": "wan2.5-i2v-preview\n\n音视频\nQwen\n基本信息\n模型的详细描述和基本特性\n\nwan2.5-i2v-preview is an AI model provided by Alibaba Cloud Bailian.\n\n异步\n视频\n首帧\nAPI端点\n模型支持的接口端点信息\nPOST\nWan video generation\n/alibailian/api/v1/services/aigc/video-generation/video-synthesis\n分组价格\n不同用户分组的价格信息\n分组\t计费类型\t价格\n\nAlibaba-1\n\t\n按视频时间计费\n\t\n分辨率\t时长\t价格\n480P\t5s\t$0.1452\n480P\t10s\t$0.2904\n720P\t5s\t$0.2904\n720P\t10s\t$0.5808\n1080P\t5s\t$0.4840\n1080P\t10s\t$0.9680\n\n\nAlibaba-2\n\t\n按视频时间计费\n\t\n分辨率\t时长\t价格\n480P\t5s\t$0.2177\n480P\t10s\t$0.4353\n720P\t5s\t$0.4353\n720P\t10s\t$0.8706\n1080P\t5s\t$0.7255\n1080P\t10s\t$1.451\n\n\nAlibaba-3\n\t\n按视频时间计费\n\t\n分辨率\t时长\t价格\n480P\t5s\t$0.3193\n480P\t10s\t$0.6387\n720P\t5s\t$0.6387\n720P\t10s\t$1.277\n1080P\t5s\t$1.065\n1080P\t10s\t$2.129"
+    }
+  ]
+}
