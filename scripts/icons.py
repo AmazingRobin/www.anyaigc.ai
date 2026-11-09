@@ -12,7 +12,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ICON_DIR = os.path.join(ROOT, 'assets', 'icons')
 VERSION = '1.97.0'
 CDN = 'https://registry.npmmirror.com/@lobehub/icons-static-svg/{v}/files/icons/{id}.svg'
-ICONS = ['claude-color', 'claude', 'anthropic', 'suno', 'claudecode-color', 'openai', 'codex', 'codex-color', 'typesafeai', 'gemini-color', 'gemini', 'nanobanana-color', 'kimi-color', 'kimi', 'moonshot', 'bytedance-color', 'zhipu-color', 'zhipu', 'deepseek-color', 'deepseek', 'meta-color', 'meta', 'grok', 'xai', 'kling', 'qwen']
+ICONS = ['claude-color', 'claude', 'anthropic', 'suno', 'claudecode-color', 'openai', 'codex', 'codex-color', 'typesafeai', 'gemini-color', 'gemini', 'nanobanana-color', 'kimi-color', 'kimi', 'moonshot', 'bytedance-color', 'zhipu-color', 'zhipu', 'deepseek-color', 'deepseek', 'meta-color', 'meta', 'grok', 'xai', 'kling', 'qwen', 'minimax-color']
 # 个别图标只在更新的版本里有，单独指定版本（其余图标仍用 VERSION）
 ICON_VERSION = {'typesafeai': '1.98.0', 'nanobanana-color': '1.98.0', 'bytedance-color': '1.98.0'}
 NL = chr(10)
@@ -77,6 +77,18 @@ def gemini_color(cls='gm-mark', size=None):
     return one
 
 
+def refresh_minimax(match):
+    """Refresh pinned paths while preserving each page's unique gradient ID."""
+    old = match.group(0)
+    opening = re.match(r'<svg\b[^>]*>', old).group(0)
+    gradient = re.search(r'<linearGradient id="([^"]+)"', old).group(1)
+    raw = io.open(os.path.join(ICON_DIR, 'minimax-color.svg'), encoding='utf-8').read()
+    body = re.search(r'<svg[^>]*>(.*)</svg>', raw, re.S).group(1)
+    body = re.sub(r'<title>.*?</title>', '', body, flags=re.S)
+    body = body.replace('lobe-icons-minimax-_R_0_', gradient)
+    return opening + body + '</svg>'
+
+
 def update_pages():
     changed = []
     for lang in ('zh', 'en'):
@@ -87,6 +99,9 @@ def update_pages():
             p = os.path.join(d, f)
             s = io.open(p, encoding='utf-8').read()
             o = s
+            # MiniMax topic and hub logos retain a unique gradient per instance.
+            s = re.sub(r'<svg\b(?:(?!</svg>).)*?<linearGradient id="(?:mm-gradient-|minimax-hub-)[^"]+"(?:(?!</svg>).)*?</svg>',
+                       refresh_minimax, s, flags=re.S)
             # Claude 星芒：专题页首屏/结尾（o-mark）
             s = re.sub(r'<svg class="o-mark"[^>]*>.*?</svg>', CLAUDE, s, flags=re.S)
             # 总览页首屏大图

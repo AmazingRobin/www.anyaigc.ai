@@ -6,13 +6,13 @@
     <lastmod>2026-10-21</lastmod>
   </url>
   <url>
-    <loc>https://www.anyaigc.ai/zh/models/</loc><lastmod>2026-11-07</lastmod>
+    <loc>https://www.anyaigc.ai/zh/models/</loc><lastmod>2026-11-09</lastmod>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/"/>
   </url>
   <url>
-    <loc>https://www.anyaigc.ai/en/models/</loc><lastmod>2026-11-07</lastmod>
+    <loc>https://www.anyaigc.ai/en/models/</loc><lastmod>2026-11-09</lastmod>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/"/>
@@ -1575,4 +1575,186 @@
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/wan2.5-i2v-preview"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/wan2.5-i2v-preview"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/wan2.5-i2v-preview"/>
-  </url></urlset>
+  </url>  <url>
+    <loc>https://www.anyaigc.ai/zh/models/minimax</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/minimax"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/minimax"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/minimax"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/en/models/minimax</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/minimax"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/minimax"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/minimax"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/zh/models/minimax-m3.1-flash</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/minimax-m3.1-flash"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/minimax-m3.1-flash"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/minimax-m3.1-flash"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/en/models/minimax-m3.1-flash</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/minimax-m3.1-flash"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/minimax-m3.1-flash"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/minimax-m3.1-flash"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/zh/models/minimax-m3</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/minimax-m3"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/minimax-m3"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/minimax-m3"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/en/models/minimax-m3</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/minimax-m3"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/minimax-m3"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/minimax-m3"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/zh/models/minimax-m2.7</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/minimax-m2.7"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/minimax-m2.7"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/minimax-m2.7"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/en/models/minimax-m2.7</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/minimax-m2.7"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/minimax-m2.7"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/minimax-m2.7"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/zh/models/minimax-m2.5</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/minimax-m2.5"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/minimax-m2.5"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/minimax-m2.5"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/en/models/minimax-m2.5</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/minimax-m2.5"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/minimax-m2.5"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/minimax-m2.5"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/zh/models/minimax-h3</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/minimax-h3"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/minimax-h3"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/minimax-h3"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/en/models/minimax-h3</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/minimax-h3"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/minimax-h3"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/minimax-h3"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/zh/models/speech-2.8-hd</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/speech-2.8-hd"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/speech-2.8-hd"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/speech-2.8-hd"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/en/models/speech-2.8-hd</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/speech-2.8-hd"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/speech-2.8-hd"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/speech-2.8-hd"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/zh/models/speech-2.8-turbo</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/speech-2.8-turbo"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/speech-2.8-turbo"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/speech-2.8-turbo"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/en/models/speech-2.8-turbo</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/speech-2.8-turbo"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/speech-2.8-turbo"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/speech-2.8-turbo"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/zh/models/speech-2.6-hd</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/speech-2.6-hd"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/speech-2.6-hd"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/speech-2.6-hd"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/en/models/speech-2.6-hd</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/speech-2.6-hd"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/speech-2.6-hd"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/speech-2.6-hd"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/zh/models/speech-2.6-turbo</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/speech-2.6-turbo"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/speech-2.6-turbo"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/speech-2.6-turbo"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/en/models/speech-2.6-turbo</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/speech-2.6-turbo"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/speech-2.6-turbo"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/speech-2.6-turbo"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/zh/models/speech-02-hd</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/speech-02-hd"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/speech-02-hd"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/speech-02-hd"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/en/models/speech-02-hd</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/speech-02-hd"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/speech-02-hd"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/speech-02-hd"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/zh/models/speech-02-turbo</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/speech-02-turbo"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/speech-02-turbo"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/speech-02-turbo"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/en/models/speech-02-turbo</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/speech-02-turbo"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/speech-02-turbo"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/speech-02-turbo"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/zh/models/minimax-voice-design</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/minimax-voice-design"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/minimax-voice-design"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/minimax-voice-design"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/en/models/minimax-voice-design</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/minimax-voice-design"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/minimax-voice-design"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/minimax-voice-design"/>
+  </url>
+</urlset>
