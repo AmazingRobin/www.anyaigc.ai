@@ -149,7 +149,7 @@ def enhance(s,lang,slug):
     s=s[:faq.start()]+faqhtml+s[faq.end():]
     js=re.search(r'<script type="application/ld\+json">(.*?)</script>',s,re.S); data=json.loads(js[1])
     for node in data['@graph']:
-        if node['@type']=='WebPage':node.update(name=title,description=desc,dateModified=DATE)
+        if node['@type']=='WebPage':node.update(name=title,description=desc,dateModified='2026-11-09' if kind=='video' else DATE)
         if node['@type']=='Product':
             currency=display_currency(m,lang)
             offers=[{'@type':'Offer','name':r[lang],'price':display_amount(r['amount'],m,lang),'priceCurrency':currency,'priceSpecification':{'@type':'UnitPriceSpecification','price':display_amount(r['amount'],m,lang),'priceCurrency':currency,'unitText':UNITS[r['unit']][not zh]}} for r in m['rates']]
@@ -158,21 +158,22 @@ def enhance(s,lang,slug):
         if node['@type']=='FAQPage':node['mainEntity']=[{'@type':'Question','name':q,'acceptedAnswer':{'@type':'Answer','text':text(a)}} for q,a in values]
     s=s[:js.start(1)]+'\n'+json.dumps(data,ensure_ascii=False,indent=2)+'\n'+s[js.end(1):]
     theme='qwen-image' if kind=='image' else 'wan'
-    theme_version='20261107h' if theme=='wan' else VERSION
+    theme_version='20261109' if theme=='wan' else VERSION
     s=s.replace('</head>',f'<link rel="stylesheet" href="/assets/models/qwen-media.css?v=20261107g"><link rel="stylesheet" href="/assets/models/{theme}.css?v={theme_version}"></head>')
     s=re.sub(r'/assets/models/qwen\.js\?v=[^" ]+','/assets/models/qwen.js?v=20261107f',s)
     s=s.replace('<header class="q-nav">',f'<a class="qm-skip" href="#main">{t(lang,"跳到主要内容","Skip to main content")}</a><header class="q-nav">',1)
     art=''
     if slug.startswith('qwen-image-3.0'):
         art=f'<figure class="qm-hero-art"><img src="/assets/models/qwen-media/qwen-image-3-layout.webp" width="1600" height="904" alt="{t(lang,"Qwen Image 3.0 官方复杂排版示例","Official Qwen Image 3.0 complex-layout example")}" fetchpriority="high"><figcaption><a href="https://qwen.ai/blog?id=qwen-image-3.0" target="_blank" rel="noopener">{t(lang,"Qwen Image 3.0 官方示例","Official Qwen Image 3.0 example")} ↗</a></figcaption></figure>'
-    elif slug=='wan3.0-video':
-        s=s.replace('class="qm-page qm-video"','class="qm-page qm-video qm-wan3"',1)
+    elif kind=='video':
+        s=s.replace('class="qm-page qm-video"','class="qm-page qm-video qm-video-background"',1)
         hero=re.search('<section class="q-hero qm-hero">.*?</section>',s,re.S)
-        content=re.sub(r'<p class="q-crumb">.*?</p>','',hero[0],count=1,flags=re.S)
-        content=content.replace('<section class="q-hero qm-hero"><div class="q-wrap">',f'''<section class="q-hero qm-hero wan-hero" aria-label="{t(lang,'Wan 3.0 视频生成 API','Wan 3.0 video generation API')}">
+        content=hero[0]
+        content=content.replace('<section class="q-hero qm-hero"><div class="q-wrap">',f'''<section class="q-hero qm-hero wan-hero" aria-label="{e(m['name'])} API">
 <div class="wan-hero-backdrop" aria-hidden="true"><video id="wan-hero-video" class="wan-hero-video" autoplay muted loop playsinline preload="auto" poster="/assets/models/qwen-media/wan3-poster.webp" tabindex="-1"><source src="/assets/models/qwen-media/wan3-sparring.mp4" type="video/mp4"></video></div>
 <div class="q-wrap wan-hero-content">''',1)
-        controls=f'''<div class="q-wrap wan-hero-meta"><a href="https://modelstudio.console.alibabacloud.com/model-releases/wan3.0-video" target="_blank" rel="noopener">{t(lang,'万相 3.0 官方演示 · 废墟对练','Official Wan 3.0 demo · Sparring in the ruins')} ↗</a><button class="wan-hero-toggle" type="button" aria-controls="wan-hero-video" data-play-label="{t(lang,'播放背景视频','Play background video')}" data-pause-label="{t(lang,'暂停背景视频','Pause background video')}" hidden><span data-video-toggle-label>{t(lang,'暂停背景视频','Pause background video')}</span></button></div>'''
+        source_label=t(lang,'万相 3.0 官方演示 · 废墟对练','Official Wan 3.0 demo · Sparring in the ruins') if slug=='wan3.0-video' else t(lang,'背景素材：Wan 3.0 官方演示','Background footage: official Wan 3.0 demo')
+        controls=f'''<div class="q-wrap wan-hero-meta"><a href="https://modelstudio.console.alibabacloud.com/model-releases/wan3.0-video" target="_blank" rel="noopener">{source_label} ↗</a><button class="wan-hero-toggle" type="button" aria-controls="wan-hero-video" data-play-label="{t(lang,'播放背景视频','Play background video')}" data-pause-label="{t(lang,'暂停背景视频','Pause background video')}" hidden><span data-video-toggle-label>{t(lang,'暂停背景视频','Pause background video')}</span></button></div>'''
         content=content.replace('</div></section>','</div>'+controls+'</section>',1)
         s=s[:hero.start()]+content+s[hero.end():]
         s=s.replace('</body>','<script src="/assets/models/wan-hero.js?v=20261107" defer></script></body>',1)

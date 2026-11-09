@@ -5,6 +5,7 @@ import json
 import os
 import re
 import sys
+from decimal import Decimal, InvalidOperation
 from html.parser import HTMLParser
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -147,6 +148,39 @@ def page_url(lang, slug):
     return f'{SITE}/{lang}/models/' + ('' if slug == 'index' else slug)
 
 
+def check_aggregate_offers(tag, data):
+    """Catch omitted price bounds, including nested JSON-LD offers."""
+    if isinstance(data, list):
+        for node in data:
+            check_aggregate_offers(tag, node)
+        return
+    if not isinstance(data, dict):
+        return
+    node_types = data.get('@type', [])
+    if isinstance(node_types, str):
+        node_types = [node_types]
+    if 'AggregateOffer' in node_types:
+        bounds = {}
+        for field in ('lowPrice', 'highPrice'):
+            value = data.get(field)
+            if value is None or value == '':
+                errors.append(f'{tag} AggregateOffer 缺少 {field}（offers 中）')
+                continue
+            try:
+                amount = Decimal(str(value))
+            except InvalidOperation:
+                errors.append(f'{tag} AggregateOffer.{field} 不是有效价格：{value!r}')
+                continue
+            if not amount.is_finite() or amount < 0:
+                errors.append(f'{tag} AggregateOffer.{field} 必须是非负有限数字')
+                continue
+            bounds[field] = amount
+        if len(bounds) == 2 and bounds['highPrice'] < bounds['lowPrice']:
+            errors.append(f'{tag} AggregateOffer.highPrice 不能小于 lowPrice')
+    for value in data.values():
+        check_aggregate_offers(tag, value)
+
+
 def check(lang, slug):
     rel = f'{lang}/models/{slug}.html'
     s = read(rel)
@@ -201,6 +235,7 @@ def check(lang, slug):
         except ValueError as e:
             errors.append(f'{tag} JSON-LD 解析失败：{e}')
             continue
+        check_aggregate_offers(tag, data)
         for g in data.get('@graph', [data]):
             types.append(g.get('@type'))
     need = ['BreadcrumbList'] + (['ItemList'] if slug == 'index' else ['Product', 'FAQPage'])

@@ -3,27 +3,29 @@
 .qm-video,.qm-realtime{--q-blue:#4e46fa;--q-ink:#08090b;--q-tint:#f7f8fc;background:#f7f8fc;color:#08090b}.qm-video .q-nav,.qm-realtime .q-nav{background:rgba(10,12,17,.96);border-color:#252731;color:#fff}.qm-video .q-nav .q-brand,.qm-realtime .q-nav .q-brand{color:#fff}.qm-video .q-hero,.qm-realtime .q-hero{position:relative;color:#fff;background:radial-gradient(ellipse at 85% 10%,#232b55,transparent 55%),linear-gradient(145deg,#08090b,#111520);isolation:isolate}.qm-video .q-hero:before,.qm-realtime .q-hero:before{content:"";position:absolute;inset:22px 24px;border:1px solid #ffffff1f;pointer-events:none;z-index:-1;background:linear-gradient(90deg,transparent 49.9%,#ffffff08 50%,transparent 50.1%)}.qm-video .q-crumb,.qm-realtime .q-crumb{color:#a6aaba}.qm-video .q-sub,.qm-realtime .q-sub{color:#b8becb}.qm-video .q-eyebrow,.qm-realtime .q-eyebrow{color:#33d8e0}.qm-video .q-eyebrow .q-logo,.qm-realtime .q-eyebrow .q-logo{filter:brightness(0) invert(1)}.qm-video .q-facts li,.qm-realtime .q-facts li{background:#ffffff07;color:#d6dbea;border-color:#ffffff30}.qm-video .q-hero .q-btn,.qm-realtime .q-hero .q-btn{background:transparent;color:#fff;border-color:#ffffff70}.qm-video .q-primary,.qm-realtime .q-primary,.qm-video .q-top-cta,.qm-realtime .q-top-cta{background:linear-gradient(100deg,#2855f9,#8051ff)!important;border:0!important}.qm-video .q-section,.qm-realtime .q-section{background:#fff}.qm-video .q-tint,.qm-realtime .q-tint{background:#f7f8fc}.qm-video .qm-hero-art{border:1px solid #ffffff30;background:#08090b}.qm-video .qm-hero-art figcaption{background:#0e1119;color:#bdc5d8}.qm-video .q-hero ::selection,.qm-realtime .q-hero ::selection{background:#434e8b;color:#fff}
 @media(max-width:1100px){.qm-video h1,.qm-realtime h1{font-size:64px}}@media(max-width:900px){.qm-video h1,.qm-realtime h1{font-size:50px}.qm-video .q-hero:before,.qm-realtime .q-hero:before{inset:16px 14px}}@media(max-width:640px){.qm-video h1,.qm-realtime h1{font-size:39px}.qm-video .q-hero:before,.qm-realtime .q-hero:before{inset:12px 8px}}
 
-/* Wan 3.0: edge-to-edge, muted background footage beneath the hero and navigation. */
-.qm-wan3 .q-nav{position:fixed;inset:0 0 auto;background:linear-gradient(180deg,#07090c99,#07090c33);backdrop-filter:none;border-color:#ffffff26;transition:background .25s,backdrop-filter .25s}
-.qm-wan3 .q-nav.is-scrolled{background:rgba(10,12,17,.94);backdrop-filter:blur(16px)}
-.qm-wan3 .wan-hero{position:relative;display:flex;flex-direction:column;justify-content:flex-end;min-height:100vh;min-height:100svh;padding:140px 0 112px;overflow:hidden;background:#08090b;isolation:isolate}
-.qm-wan3 .wan-hero:before{inset:94px 24px 24px;z-index:1;background:none;border-color:#ffffff26}
+/* Qwen video guides: edge-to-edge, muted background footage beneath the hero and navigation. */
+.qm-video-background .q-nav{position:fixed;inset:0 0 auto;background:linear-gradient(180deg,#07090c99,#07090c33);backdrop-filter:none;border-color:#ffffff26;transition:background .25s,backdrop-filter .25s}
+.qm-video-background .q-nav.is-scrolled{background:rgba(10,12,17,.94);backdrop-filter:blur(16px)}
+.qm-video-background .wan-hero{position:relative;display:flex;flex-direction:column;justify-content:flex-end;min-height:100vh;min-height:100svh;padding:140px 0 112px;overflow:hidden;background:#08090b;isolation:isolate}
+.qm-video-background .wan-hero:before{inset:94px 24px 24px;z-index:1;background:none;border-color:#ffffff26}
 .wan-hero-backdrop{position:absolute;inset:0;z-index:0;background:#08090b url('/assets/models/qwen-media/wan3-poster.webp') center/cover no-repeat;pointer-events:none}
 .wan-hero-backdrop:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,8,14,.84),rgba(5,8,14,.38) 60%,rgba(5,8,14,.14)),linear-gradient(180deg,rgba(5,8,14,.2),transparent 35%,rgba(5,8,14,.75))}
 .wan-hero-video{display:block;position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;pointer-events:none}
-.qm-wan3 .wan-hero-content{position:relative;z-index:2;margin-top:auto}
-.qm-wan3 .wan-hero .q-eyebrow{margin-top:0;margin-bottom:20px}
-.qm-wan3 .wan-hero h1{font-size:clamp(52px,6.5vw,94px);max-width:1100px;margin-bottom:24px}
-.qm-wan3 .wan-hero .qm-tagline{font-size:clamp(24px,2.6vw,36px);max-width:900px}
-.qm-wan3 .wan-hero .q-sub{color:#e2e5eb;max-width:780px;line-height:1.7}
-.qm-wan3 .wan-hero .qm-entry-price{margin-top:22px}
-.qm-wan3 .wan-hero .q-facts{margin:22px 0 26px}
-.qm-wan3 .wan-hero-content>p:last-child{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:0}
-.qm-wan3 .wan-hero-meta{position:absolute;inset:auto 0 36px;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:20px;font-size:12px;color:#e0e4ed}
+.qm-video-background .wan-hero-content{position:relative;z-index:2;margin-top:auto}
+.qm-video-background .wan-hero .q-eyebrow{margin-top:0;margin-bottom:20px}
+.qm-video-background .wan-hero h1{font-size:clamp(52px,6.5vw,94px);max-width:1100px;margin-bottom:24px}
+.qm-video-background .wan-hero .qm-tagline{font-size:clamp(24px,2.6vw,36px);max-width:900px}
+.qm-video-background .wan-hero .q-sub{color:#e2e5eb;max-width:780px;line-height:1.7}
+.qm-video-background .wan-hero .qm-entry-price{margin-top:22px}
+.qm-video-background .wan-hero .q-facts{margin:22px 0 26px}
+.qm-video-background .wan-hero-content>p:last-child{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:0}
+.qm-video-background .wan-hero-meta{position:absolute;inset:auto 0 36px;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:20px;font-size:12px;color:#e0e4ed}
 .wan-hero-meta>a{max-width:70%;text-decoration:none;text-underline-offset:4px}.wan-hero-meta>a:hover{text-decoration:underline}
 .wan-hero-toggle{flex:none;border:1px solid #ffffff66;border-radius:100px;background:#08090b66;color:#fff;padding:10px 18px;font:inherit;font-size:13px;line-height:1.5;cursor:pointer;backdrop-filter:blur(10px)}
 .wan-hero-toggle:hover{background:#ffffff26}.wan-hero-toggle[hidden]{display:none}
-@media(max-width:1100px){.qm-wan3 .wan-hero{padding-top:120px}.qm-wan3 .wan-hero h1{font-size:66px}}
-@media(max-width:900px){.qm-wan3 .wan-hero:before{inset:92px 14px 18px}.qm-wan3 .wan-hero h1{font-size:56px}.qm-wan3 .wan-hero .qm-tagline{font-size:28px}}
-@media(max-width:640px){.qm-wan3 .wan-hero{padding:100px 0 120px}.qm-wan3 .wan-hero:before{inset:78px 8px 12px}.qm-wan3 .wan-hero h1{font-size:42px;line-height:1.1;margin-bottom:20px}.qm-wan3 .wan-hero .qm-tagline{font-size:24px}.qm-wan3 .wan-hero .q-eyebrow{margin-top:0}.qm-wan3 .wan-hero .q-sub{font-size:16px}.qm-wan3 .wan-hero-meta{bottom:28px;gap:12px;align-items:flex-end;font-size:11px}.wan-hero-meta>a{max-width:55%;line-height:1.7}.wan-hero-toggle{padding:9px 12px;font-size:12px}}
-@media(prefers-reduced-motion:reduce){.wan-hero-video{visibility:hidden}.wan-hero-video.is-user-playing{visibility:visible}.qm-wan3 .q-nav{transition:none}}
+@media(max-width:1100px){.qm-video-background .wan-hero{padding-top:120px}.qm-video-background .wan-hero h1{font-size:66px}}
+@media(max-width:900px){.qm-video-background .wan-hero:before{inset:92px 14px 18px}.qm-video-background .wan-hero h1{font-size:56px}.qm-video-background .wan-hero .qm-tagline{font-size:28px}}
+@media(max-width:640px){.qm-video-background .wan-hero{padding:100px 0 120px}.qm-video-background .wan-hero:before{inset:78px 8px 12px}.qm-video-background .wan-hero h1{font-size:42px;line-height:1.1;margin-bottom:20px}.qm-video-background .wan-hero .qm-tagline{font-size:24px}.qm-video-background .wan-hero .q-eyebrow{margin-top:0}.qm-video-background .wan-hero .q-sub{font-size:16px}.qm-video-background .wan-hero-meta{bottom:28px;gap:12px;align-items:flex-end;font-size:11px}.wan-hero-meta>a{max-width:55%;line-height:1.7}.wan-hero-toggle{padding:9px 12px;font-size:12px}}
+@media(prefers-reduced-motion:reduce){.wan-hero-video{visibility:hidden}.wan-hero-video.is-user-playing{visibility:visible}.qm-video-background .q-nav{transition:none}}
+
+@media(max-width:640px){.qm-video-background .wan-hero h1{font-size:36px}.qm-video-background .wan-hero .qm-tagline{font-size:22px}.qm-video-background .wan-hero .q-sub{font-size:15px}.qm-video-background .wan-hero{padding-top:96px}}

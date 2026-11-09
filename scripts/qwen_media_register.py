@@ -40,11 +40,12 @@ def hub(lang):
 def sitemap():
     p=ROOT/'sitemap.xml';s=p.read_text(encoding='utf-8')
     for slug in [m['slug'] for m in MODELS]+['']:
+        modified='2026-11-09' if any(m['slug']==slug and m['kind']=='video' for m in MODELS) else DATE
         for lang in ['zh','en']:
             loc=f'{SITE}/{lang}/models/{slug}'
             pat=r'<url>\s*<loc>'+re.escape(loc)+r'</loc>.*?</url>'
             block=f'''<url>
-    <loc>{loc}</loc><lastmod>{DATE}</lastmod>
+    <loc>{loc}</loc><lastmod>{modified}</lastmod>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="{SITE}/zh/models/{slug}"/>
     <xhtml:link rel="alternate" hreflang="en" href="{SITE}/en/models/{slug}"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="{SITE}/en/models/{slug}"/>
@@ -54,5 +55,5 @@ def sitemap():
     p.write_text(s,encoding='utf-8',newline='\n')
 
 if __name__=='__main__':
-    for lang in ('zh','en'):hub(lang)
+    for lang in ('zh','en'): hub(lang)
     sitemap()

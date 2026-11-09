@@ -69,15 +69,20 @@ Locally hosted official assets (user authorized downloading official media):
 - `assets/models/qwen-media/wan3-sparring.mp4` from
   https://cloud.video.taobao.com/vod/UGklRMIJjB0OlrhM7lboEFtt9X802PMOTp23mEFiE88.mp4
 
-Only the corresponding model pages display those examples, with a source link;
-they are not represented as AnyAIGC test outputs. The Qwen mark is the existing
+Image examples are shown on their corresponding model pages. Video guides
+reuse the official Wan 3.0 clip as decorative background footage, with a
+visible source link explicitly identifying Wan 3.0 on other models' pages;
+it is not represented as their output or as an AnyAIGC test. The Qwen mark is the existing
 pinned lobe-icons asset. No remote fonts, scripts, or runtime media are required.
 
-Wan 3.0 uses the locally hosted demo as an edge-to-edge hero background with
-muted autoplay, inline playback, and looping. Its breadcrumb is omitted at
-the user's request. A pause/play button is available; reduced-motion users
-see the poster until they explicitly start playback. Other media heroes
-retain their existing layout.
+All ten video-generation models use the locally hosted demo as an edge-to-edge
+hero background with muted autoplay, inline playback, and looping. The user
+extended the Wan 3.0 treatment to the remaining video pages on 2026-11-09.
+All Qwen topic-page visible breadcrumbs are omitted at the user's request
+(including conversation, image, video, and real-time guides, in both languages).
+Structured BreadcrumbList metadata is retained. A pause/play button is available;
+reduced-motion users see the poster until they explicitly start playback.
+Image and real-time Omni heroes retain their existing layout.
 
 ## Rebuild
 
