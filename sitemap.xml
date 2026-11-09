@@ -1757,4 +1757,74 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/minimax-voice-design"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/minimax-voice-design"/>
   </url>
+  <url>
+    <loc>https://www.anyaigc.ai/zh/models/mimo</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/mimo"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/mimo"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/mimo"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/en/models/mimo</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/mimo"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/mimo"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/mimo"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/zh/models/mimo-v2.6-pro</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/mimo-v2.6-pro"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/mimo-v2.6-pro"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/mimo-v2.6-pro"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/en/models/mimo-v2.6-pro</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/mimo-v2.6-pro"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/mimo-v2.6-pro"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/mimo-v2.6-pro"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/zh/models/mimo-v2.6-flash</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/mimo-v2.6-flash"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/mimo-v2.6-flash"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/mimo-v2.6-flash"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/en/models/mimo-v2.6-flash</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/mimo-v2.6-flash"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/mimo-v2.6-flash"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/mimo-v2.6-flash"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/zh/models/mimo-v2.5-pro</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/mimo-v2.5-pro"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/mimo-v2.5-pro"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/mimo-v2.5-pro"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/en/models/mimo-v2.5-pro</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/mimo-v2.5-pro"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/mimo-v2.5-pro"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/mimo-v2.5-pro"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/zh/models/mimo-v2.5</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/mimo-v2.5"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/mimo-v2.5"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/mimo-v2.5"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/en/models/mimo-v2.5</loc>
+    <lastmod>2026-11-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/mimo-v2.5"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/mimo-v2.5"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/mimo-v2.5"/>
+  </url>
 </urlset>
