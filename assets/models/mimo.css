@@ -30,7 +30,7 @@ img,video{display:block;max-width:100%;height:auto}
 a{color:inherit}
 code{font-family:var(--mi-mono);font-size:.92em}
 ::selection{background:rgba(255,103,0,.22);color:var(--mi-ink)}
-.mi-final ::selection,.mi-footer ::selection,.mi-code ::selection,.mi-bar ::selection,.mi-btn-dark::selection{background:rgba(255,154,87,.45);color:#fff}
+.mi-final ::selection,.mi-footer ::selection,.mi-code ::selection,.mi-bar ::selection,.mi-btn-dark::selection,.mi-tabs button[aria-selected="true"]::selection,.mi-tag-deal::selection,.mi-deal b::selection,.mi-savings strong::selection,.mi-notice strong::selection{background:rgba(255,154,87,.45);color:#fff}
 .mi-wrap{width:min(1260px,100% - 48px);margin:0 auto}
 .mi-skip{position:absolute;left:-9999px;top:8px;z-index:100;background:#000;color:#fff;padding:8px 14px;border-radius:999px}
 .mi-skip:focus{left:16px}
@@ -165,6 +165,7 @@ code{font-family:var(--mi-mono);font-size:.92em}
 .mi-table tbody tr:last-child th,.mi-table tbody tr:last-child td{border-bottom:1px solid var(--mi-line)}
 .mi-table tbody:last-child tr:last-child th,.mi-table tbody:last-child tr:last-child td{border-bottom:0}
 .mi-row-head th{background:var(--mi-card);font-size:16px}
+.mi-row-id{display:none}
 .mi-table td code{background:var(--mi-tone);padding:2px 8px;border-radius:6px}
 .mi-table strong{font-variant-numeric:tabular-nums;font-size:16px}
 .mi-official{color:var(--mi-ink3);font-variant-numeric:tabular-nums}
@@ -307,9 +308,11 @@ code{font-family:var(--mi-mono);font-size:.92em}
   .mi-table{min-width:0;font-size:14px}
   .mi-table:not(.mi-table-diff) thead th:nth-child(2),.mi-table:not(.mi-table-diff) td:nth-child(2){display:none}
   .mi-table th,.mi-table td{padding:12px 14px}
+  .mi-row-id{display:block;margin-top:6px;font-size:12px;font-weight:400;color:var(--mi-ink2)}
   .mi-table strong{font-size:15px}
   .mi-table-diff{min-width:0}
   .mi-table-diff code{word-break:break-all;font-size:12px}
+  .mi-table-diff th,.mi-table-diff td{overflow-wrap:anywhere;padding:10px 10px}
   .mi-final{padding:80px 0}
 }
 @media (prefers-reduced-motion:reduce){

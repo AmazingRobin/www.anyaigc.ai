@@ -20,7 +20,7 @@ SITE = "https://www.anyaigc.ai"
 REG = "https://anyaigc.ai/register?aff=oOK7&channel=c_wpduopc9"
 SUPPORT = "https://anyaigc.ai/customersupport"
 CONSOLE = "https://anyaigc.ai/console"
-VER = "20261109"
+VER = "20261109c"
 MEDIA = "/assets/models/mimo/"
 LOGO = (ROOT / "assets/icons/xiaomimimo.svg").read_text(encoding="utf-8")
 PRO = MODEL_BY_SLUG["mimo-v2.6-pro"]
@@ -50,6 +50,12 @@ def doc(lang):
 def money(value):
     text = format(Decimal(value).normalize(), "f")
     return text
+
+
+def usd(value):
+    """Dollar total without rounding, padded to at least two decimals."""
+    whole, _, frac = money(value).partition(".")
+    return whole + "." + frac.ljust(2, "0")
 
 
 def mark(fill="#1a1a1a", cls="mi-mark", size=28):
@@ -94,18 +100,18 @@ def metadata(lang, model):
     if model is None:
         name = "Xiaomi MiMo"
         title = pick(lang, "小米 MiMo API 价格与接入｜官方4折，V2.6 Pro/Flash - AnyAIGC",
-       "Xiaomi MiMo API Pricing | ~60% Off Official - AnyAIGC")
+       "Xiaomi MiMo API Pricing | About 60% Off Official - AnyAIGC")
         desc = pick(lang,
       "小米 MiMo API 价格与接入：MiMo-V2.6-Pro、V2.6-Flash 约官方 4 折，输入 $0.0563/百万 tokens 起，1M 上下文、全模态输入，并发不限，支持对公转账、合同与增值税专票。",
-      "Xiaomi MiMo API at ~40% of the official price: MiMo-V2.6-Flash from $0.0563/1M input tokens, 1M context, unlimited concurrency, bank transfer and VAT invoices.")
+      "Xiaomi MiMo API at about 60% off official pricing: MiMo-V2.6-Flash from $0.0563/1M input tokens, 1M context, unlimited concurrency, contracts and VAT invoices.")
     elif not model["legacy"]:
         name = model["name"]
         p, o = price_of(model, "input"), price_of(model, "output")
         title = pick(lang, f"{name} API 价格与接入｜官方4折，1M 上下文 - AnyAIGC",
-       f"{name} API Pricing | ~60% Off Official - AnyAIGC")
+       f"{name} API Pricing | About 60% Off Official - AnyAIGC")
         desc = pick(lang,
       f"{name} API 价格与接入：约官方 4 折，输入 ${p['amount']}/百万 tokens（官方 ${p['official']}），输出 ${o['amount']}，1M 上下文、全模态输入，并发不限，支持对公转账、合同与增值税专票。",
-      f"{name} API at ~40% of the official price: ${p['amount']}/1M input tokens (official ${p['official']}), 1M context, unlimited concurrency, VAT invoices and contracts.")
+      f"{name} API at about 60% off official pricing: ${p['amount']}/1M input tokens (official ${p['official']}), 1M context, unlimited concurrency, VAT invoices.")
     else:
         name = model["name"]
         succ = MODEL_BY_SLUG[model["successor"]]
@@ -114,7 +120,7 @@ def metadata(lang, model):
        f"{name} API Pricing | Retirement & Migration - AnyAIGC")
         desc = pick(lang,
       f"{name} API 价格：输入 ${p['amount']}/百万 tokens。小米官方已于 2026-10-21 停用该型号，本页说明如何迁移到约官方 4 折的 {succ['name']}。并发不限，支持对公转账与增值税专票。",
-      f"{name} API: ${p['amount']}/1M input tokens. Xiaomi retired it on 2026-10-21; move to {succ['name']} at ~40% of the official price. VAT invoices available.")
+      f"{name} API: ${p['amount']}/1M input tokens. Xiaomi retired it on 2026-10-21; move to {succ['name']} at about 60% off. Unlimited concurrency, VAT invoices.")
     assert (width(title) <= 64 if lang == "zh" else len(title) <= 65), (lang, title)
     assert (60 <= len(desc) <= 120 if lang == "zh" else 120 <= len(desc) <= 160), (lang, len(desc), desc)
     return name, title, desc
@@ -168,7 +174,7 @@ def model_faq(lang, model):
       f"使用 OpenAI 兼容的 POST https://anyaigc.ai/v1/chat/completions，请求头 Authorization: Bearer <API Key>，model 填 {model['id']}。已有 OpenAI SDK 项目只需改 base_url 为 https://anyaigc.ai/v1。",
       f"Use the OpenAI-compatible POST https://anyaigc.ai/v1/chat/completions with Authorization: Bearer <API Key> and model set to {model['id']}. Existing OpenAI SDK projects only need base_url set to https://anyaigc.ai/v1.")
     items = [(pick(lang, f"{name} API 多少钱？是官方 4 折吗？" if not model["legacy"] else f"{name} API 多少钱？",
-     f"How much does the {name} API cost? Is it really ~60% off?" if not model["legacy"] else f"How much does the {name} API cost?"),
+     f"How much does the {name} API cost? Is it really 60% off?" if not model["legacy"] else f"How much does the {name} API cost?"),
        price_answer(lang, model))]
     if model["legacy"]:
         succ = MODEL_BY_SLUG[model["successor"]]
@@ -190,16 +196,16 @@ def model_faq(lang, model):
      (pick(lang, "应该使用哪个 API 接口？", "Which API endpoint should I use?"), endpoint),
      (pick(lang, f"{name} 和 {other['name']} 怎么选？", f"{name} or {other['name']}: which should I use?"),
       pick(lang, f"V2.6-Pro 面向长程、复杂的 Agent、编程与科研任务；V2.6-Flash 面向高频调用和规模化办公任务，价格约为 Pro 的三分之一。两者都是约官方 4 折，建议用自己的任务各测一轮。",
-    "V2.6-Pro targets long-horizon agent, coding and research work; V2.6-Flash targets high-volume, at-scale office workloads at about a third of Pro's price. Both are about 40% of the official price, so test each on your own tasks.")),
+    "V2.6-Pro targets long-horizon agent, coding and research work; V2.6-Flash targets high-volume office workloads at about a third of Pro's price. Both are about 40% of the official price, so test each on your own tasks.")),
  ]
     return items + common_faq(lang)
 
 
 def overview_faq(lang):
     return [
- (pick(lang, "小米 MiMo API 多少钱？官方 4 折怎么算？", "How much is the Xiaomi MiMo API, and how is ~60% off calculated?"),
+ (pick(lang, "小米 MiMo API 多少钱？官方 4 折怎么算？", "How much is the Xiaomi MiMo API, and how is the 60% discount calculated?"),
          pick(lang, "MiMo-V2.6-Pro 输入 $0.1749、输出 $0.3497（官方 $0.435、$0.87）；MiMo-V2.6-Flash 输入 $0.0563、输出 $0.1126（官方 $0.14、$0.28），单位 USD/百万 tokens，约为小米 MiMo 开放平台美元按量价的 40%。实时价格以模型广场为准。",
-       "MiMo-V2.6-Pro is $0.1749 input and $0.3497 output (official $0.435 and $0.87); MiMo-V2.6-Flash is $0.0563 and $0.1126 (official $0.14 and $0.28), in USD per 1M tokens. That is about 40% of Xiaomi MiMo's official pay-as-you-go USD price. See the catalog for current rates.")),
+       "MiMo-V2.6-Pro is $0.1749 input and $0.3497 output (official $0.435 and $0.87); MiMo-V2.6-Flash is $0.0563 and $0.1126 (official $0.14 and $0.28), in USD per 1M tokens. You pay about 40% of Xiaomi MiMo's official pay-as-you-go USD price, that is, about 60% off. See the catalog for current rates.")),
         (pick(lang, "4 个 MiMo 模型怎么选？", "How do I choose among the four MiMo models?"),
          pick(lang, "复杂、长程的 Agent、编程与科研任务选 MiMo-V2.6-Pro；高频调用和规模化办公选 MiMo-V2.6-Flash。MiMo-V2.5-Pro 与 MiMo-V2.5 已被小米官方停用，新项目请使用 V2.6 系列。",
        "Choose MiMo-V2.6-Pro for complex, long-horizon agent, coding and research work, and MiMo-V2.6-Flash for high-volume office workloads. Xiaomi has retired MiMo-V2.5-Pro and MiMo-V2.5, so new projects should use V2.6.")),
@@ -251,7 +257,7 @@ def head(lang, slug, model, faqs):
   "offers": {"@type": "AggregateOffer", "priceCurrency": "USD", "lowPrice": str(min(amounts)), "highPrice": str(max(amounts)),
       "offerCount": len(offers), "url": me + "#pricing", "offers": offers}},
         {"@type": "FAQPage", "@id": me + "#faq", "mainEntity": [
-     {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": txt(a)}} for q, a in faqs]},
+     {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in faqs]},
     ]}
     locale, alternate = ("zh_CN", "en_US") if lang == "zh" else ("en_US", "zh_CN")
     return f'''<!DOCTYPE html>
@@ -304,14 +310,14 @@ def breadcrumb_items(lang, model):
 def topbar(lang, model):
     if model and model["legacy"]:
         succ = MODEL_BY_SLUG[model["successor"]]
-        text = pick(lang, f"小米官方已于 2026.10.21 停用 {model['id']}，替代型号 {succ['id']} 在 AnyAIGC 约官方 4 折。",
-      f"Xiaomi retired {model['id']} on 2026-10-21. Its replacement {succ['id']} is about 40% of the official price on AnyAIGC.")
+        text = pick(lang, f"小米官方已于 2026-10-21 停用 {model['id']}，替代型号 {succ['id']} 在 AnyAIGC 约官方 4 折。",
+      f"Xiaomi retired {model['id']} on 2026-10-21. Its replacement {succ['id']} is about 60% off the official price on AnyAIGC.")
         link = (f"/{lang}/models/{succ['slug']}", pick(lang, "查看替代型号", "See the replacement"))
     else:
         text = pick(lang, "MiMo-V2.6-Pro / V2.6-Flash 约官方 4 折，新用户注册送 200 万 tokens。",
-      "MiMo-V2.6-Pro and V2.6-Flash at about 40% of the official price. 2M free tokens for new accounts.")
+      "MiMo-V2.6-Pro and V2.6-Flash at about 60% off Xiaomi's list price. 2M free tokens for new accounts.")
         link = ("#pricing", pick(lang, "查看价格", "See pricing"))
-    return (f'<div class="mi-bar"><p>{h(text)} <a href="{h(link[0])}">{h(link[1])} <span aria-hidden="true">→</span></a></p></div>\n')
+    return (f'<div class="mi-bar"><p>{h(text)}{pick(lang, "", " ")}<a href="{h(link[0])}">{h(link[1])} <span aria-hidden="true">→</span></a></p></div>\n')
 
 
 def nav(lang, slug):
@@ -344,17 +350,17 @@ def hero(lang, model):
     notice = ""
     if model is None:
         title = '<span class="mi-h1-main">Xiaomi MiMo API</span>'
-        sub = pick(lang, "官方 4 折，接入 V2.6 全模态旗舰", "V2.6 omni-modal models, ~60% off official")
+        sub = pick(lang, "官方 4 折，接入 V2.6 全模态旗舰", "V2.6 omni-modal models at about 60% off")
         lead = pick(lang, "一个 AnyAIGC API Key 调用 MiMo-V2.6-Pro、V2.6-Flash 等 4 个模型，OpenAI 兼容接口，并发不限。V2.6-Flash 输入 <strong>$0.0563 / 百万 tokens</strong>（官方 $0.14）。",
-      "Call MiMo-V2.6-Pro, V2.6-Flash and two earlier models with one AnyAIGC API key over an OpenAI-compatible endpoint with unlimited concurrency. V2.6-Flash input is <strong>$0.0563 / 1M tokens</strong> (official $0.14).")
+      "Call MiMo-V2.6-Pro, V2.6-Flash and two earlier models with one AnyAIGC API key. The endpoint is OpenAI-compatible, and concurrency is unlimited. V2.6-Flash input is <strong>$0.0563 / 1M tokens</strong> (official $0.14).")
         dl = deal_chip(lang, FLASH, overview=True)
     else:
         title = f'<span class="mi-h1-main">{h(model["name"])} API</span>'
         sub = model["tagline_" + lang]
         p = price_of(model, "input")
-        lead = h(model["desc_" + lang]) + pick(lang, f'输入 <strong>${p["amount"]} / 百万 tokens</strong>', f' Input from <strong>${p["amount"]} / 1M tokens</strong>')
+        lead = h(model["desc_" + lang]) + pick(lang, f'输入 <strong>${p["amount"]} / 百万 tokens</strong>', f' Input is <strong>${p["amount"]} / 1M tokens</strong>')
         if p["official"]:
-            lead += pick(lang, f'，官方 ${p["official"]}。', f', official ${p["official"]}.')
+            lead += pick(lang, f'，官方 ${p["official"]}。', f' (Xiaomi list price: ${p["official"]}).')
         else:
             lead += pick(lang, "。", ".")
         dl = deal_chip(lang, model)
@@ -363,7 +369,7 @@ def hero(lang, model):
             notice = (f'<p class="mi-notice o-notice" role="note"><strong>{pick(lang, "官方已停用", "Retired by Xiaomi")}</strong>'
         + h(pick(lang, f"小米官方已于 2026-10-21 停用 {model['id']}，替代型号为 {succ['name']}（约官方 4 折）。",
           f"Xiaomi retired {model['id']} on 2026-10-21. The replacement is {succ['name']}, about 40% of the official price."))
-        + f' <a href="/{lang}/models/{succ["slug"]}">{pick(lang, "查看", "View")} {h(succ["name"])} →</a></p>')
+        + pick(lang, "", " ") + f'<a href="/{lang}/models/{succ["slug"]}">{pick(lang, "查看", "View")} {h(succ["name"])} →</a></p>')
     facts = [pick(lang, "并发不限", "Unlimited concurrency"), pick(lang, "OpenAI 兼容", "OpenAI compatible"),
       pick(lang, "300+ 模型 · 一个 Key", "300+ models · one key"), pick(lang, "对公 · 专票", "Contracts · invoices"),
       pick(lang, "注册送 200 万 tokens", "2M free tokens")]
@@ -419,7 +425,7 @@ def model_card(lang, model):
 
 def models_section(lang):
     body = '<div class="mi-models">' + "".join(model_card(lang, m) for m in MODELS) + "</div>"
-    return section("models", pick(lang, "模型阵容", "MODELS"), pick(lang, "旗舰系列，一个 Key 全部接入", "The MiMo lineup, one key for all"),
+    return section("models", pick(lang, "模型阵容", "MODELS"), pick(lang, "MiMo 全系模型，一个 Key 全部接入", "The MiMo lineup, one key for all"),
      pick(lang, "V2.6 是小米 MiMo 当前的旗舰系列；V2.5 两个型号已被官方停用，页面保留价格与迁移说明。",
           "V2.6 is Xiaomi MiMo's current flagship series. The two V2.5 models are retired; their pages keep pricing and migration notes."),
      body)
@@ -460,9 +466,9 @@ def cost_card(lang, model, million_in, million_out, cached=Decimal(0)):
         calc = f"{money(million_in)} × ${p['input']} + {money(million_out)} × ${p['output']}"
     compare = ""
     if official is not None:
-        compare = f'<p class="mi-cost-official">{h(pick(lang, "官方同用量", "Same usage at official price"))} <s>${money(official)}</s></p>'
+        compare = f'<p class="mi-cost-official">{h(pick(lang, "官方同用量", "Same usage at official price"))} <s>${usd(official)}</s></p>'
     return (f'<article class="mi-cost"><h3>{h(model["name"])}</h3><p class="mi-cost-use">{h(heading)}</p>'
-     f'<p><code>{h(calc)}</code></p><strong>${money(total)}</strong>{compare}</article>')
+     f'<p><code>{h(calc)}</code></p><strong>${usd(total)}</strong>{compare}</article>')
 
 
 def pricing_section(lang, model):
@@ -471,7 +477,7 @@ def pricing_section(lang, model):
     for item in source:
         badge = (f' <span class="mi-tag mi-tag-deal">{h(deal(lang))}</span>' if not item["legacy"]
    else f' <span class="mi-tag mi-tag-old">{h(pick(lang, "官方已停用", "Retired by Xiaomi"))}</span>')
-        rows.append(f'<tbody><tr class="mi-row-head"><th colspan="4" scope="rowgroup">{h(item["name"])}{badge}</th></tr>')
+        rows.append(f'<tbody><tr class="mi-row-head"><th colspan="4" scope="rowgroup">{h(item["name"])}{badge}<code class="mi-row-id">{h(item["id"])}</code></th></tr>')
         for p in item["prices"]:
             official = f'<s>${h(p["official"])}</s>' if p["official"] else h(pick(lang, "已停用", "Retired"))
             rows.append(f'<tr><th scope="row">{h(label(lang, p["key"]))}</th><td><code>{h(item["id"])}</code></td>'
@@ -491,7 +497,7 @@ def pricing_section(lang, model):
       + ("V2.6-Flash 同样约官方 4 折。" if model is None else ""),
  f"{current['name']} is ${pi['amount']} input and ${po['amount']} output, versus ${pi['official']} and ${po['official']} from Xiaomi — about {share}% of the official price."
       + (" V2.6-Flash is also about 40% of official." if model is None else "")))
-     + f' <a href="{OFFICIAL_PRICE_URL}" rel="noopener">{pick(lang, "官方价格来源", "Official price source")} ↗</a></p></div>')
+     + pick(lang, "", " ") + f'<a href="{OFFICIAL_PRICE_URL}" rel="noopener">{pick(lang, "官方价格来源", "Official price source")} ↗</a></p></div>')
     billing = ('<ul class="mi-billing">'
         f'<li><strong>{pick(lang, "按 token 计费", "Per-token billing")}</strong>{pick(lang, "输入、输出、缓存命中分别计价。", "Input, output and cache hits are priced separately.")}</li>'
         f'<li><strong>{pick(lang, "并发不限", "Unlimited concurrency")}</strong>{pick(lang, "不设固定 RPM 上限，所有用户默认享有。", "No fixed RPM cap, for every account.")}</li>'
@@ -510,6 +516,10 @@ def pricing_section(lang, model):
      + f'<a class="mi-text-link" href="{PRICING_URL}">{pick(lang, "在模型广场查看", "View in the model catalog")} ↗</a></div>')
     title = pick(lang, f"{model['name']} API 价格" if model else "MiMo API 价格", f"{model['name']} API pricing" if model else "MiMo API pricing")
     lead = pick(lang, "直接对照小米官方价，每一项单价都写在表里。", "Every rate side by side with Xiaomi's official price.")
+    if model and model["legacy"]:
+        lead = pick(lang, "小米官方已停用该型号，下表为 AnyAIGC 当前单价。", "Xiaomi has retired this model; the table shows current AnyAIGC rates.")
+        note = pick(lang, "单位 USD/百万 tokens，按成功请求的实际 tokens 计费，实时价格以模型广场为准。",
+      "Prices are USD per 1M tokens, charged on the actual tokens of successful requests; see the model catalog for current rates.")
     return section("pricing", pick(lang, "价格", "PRICING"), title, lead, body, "mi-tone")
 
 
@@ -517,7 +527,7 @@ def pricing_section(lang, model):
 
 def bench_section(lang, model):
     if model is None or model is PRO:
-        adv = [(pick(lang, "综合智能指数 46", "Intelligence Index 46"), pick(lang, "Artificial Analysis 综合智能指数 46.32 分（官方数据）。", "46.32 on the Artificial Analysis Intelligence Index (official figure).")),
+        adv = [(pick(lang, "综合智能指数 46", "Intelligence Index 46"), pick(lang, "MiMo-V2.6-Pro 在 Artificial Analysis 综合智能指数上 46.32 分（小米官方数据）。", "MiMo-V2.6-Pro scores 46.32 on the Artificial Analysis Intelligence Index (Xiaomi's figure).")),
  (pick(lang, "原生全模态", "Native omni-modal"), pick(lang, "图像、视频、音频、文本联合输入与理解。", "Joint image, video, audio and text input and understanding.")),
         (pick(lang, "面向复杂任务", "Built for complex work"), pick(lang, "1M 上下文，适配多模态、多 Agent 协同任务。", "1M context for multimodal, multi-agent tasks.")),
         (pick(lang, "面向真实场景", "Real-world focus"), pick(lang, "重点优化代码、办公、设计、科研与网络安全。", "Tuned for coding, office, design, research and security."))]
@@ -567,8 +577,8 @@ def showcase_section(lang, model):
 def migration_section(lang, model):
     succ = MODEL_BY_SLUG[model["successor"]]
     sp, mp = price_of(succ, "input"), price_of(model, "input")
-    steps = [("2026-10-14 18:00", pick(lang, f"小米官方开始把 {model['id']} 的请求路由至 {succ['id']}，按新模型计价。", f"Xiaomi starts routing {model['id']} requests to {succ['id']} at the new model's price.")),
-      ("2026-10-21 10:00", pick(lang, f"{model['id']} 在小米官方平台正式下线，旧模型名报错。", f"{model['id']} is retired on Xiaomi's platform; the old name returns an error.")),
+    steps = [(pick(lang, "2026-10-14 18:00（UTC+8）", "2026-10-14 18:00 (UTC+8)"), pick(lang, f"小米官方开始把 {model['id']} 的请求路由至 {succ['id']}，按新模型计价。", f"Xiaomi began routing {model['id']} requests to {succ['id']} at the new model's price.")),
+      (pick(lang, "2026-10-21 10:00（UTC+8）", "2026-10-21 10:00 (UTC+8)"), pick(lang, f"{model['id']} 在小米官方平台正式下线，旧模型名报错。", f"{model['id']} was retired on Xiaomi's platform; the old name now returns an error.")),
       (pick(lang, "现在", "Now"), pick(lang, f"AnyAIGC 模型广场仍列出 {model['id']}；新项目建议改用 {succ['id']}。", f"The AnyAIGC catalog still lists {model['id']}; new projects should use {succ['id']}."))]
     timeline = "".join(f'<li><time>{h(t)}</time><p>{h(d)}</p></li>' for t, d in steps)
     if model["id"] == "mimo-v2.5-pro":
@@ -585,9 +595,9 @@ def migration_section(lang, model):
     save = int(((1 - Decimal(sp["amount"]) / Decimal(mp["amount"])) * 100).quantize(Decimal("1")))
     body = (f'<ol class="mi-timeline">{timeline}</ol>{table}'
      f'<div class="mi-savings"><strong>{h(pick(lang, "迁移即省", "Save by switching"))}</strong><p>'
-     + h(pick(lang, f"迁移只需把 model 改为 {succ['id']}。在 AnyAIGC 上，{succ['name']} 输入 ${sp['amount']}，比 {model['name']} 的 ${mp['amount']} 低约 {save}%，约官方 4 折。",
-       f"Change model to {succ['id']}. On AnyAIGC, {succ['name']} input is ${sp['amount']}, about {save}% below {model['name']}'s ${mp['amount']} and about 40% of the official price."))
-     + f' <a href="{DEPRECATE_URL}" rel="noopener">{pick(lang, "官方下线公告", "Xiaomi retirement notice")} ↗</a></p></div>'
+     + h(pick(lang, f"迁移只需把 model 改为 {succ['id']}。在 AnyAIGC 上，{succ['name']} 输入 ${sp['amount']}，比 {model['name']} 的 ${mp['amount']} 低约 {save}%。",
+       f"Change model to {succ['id']}. On AnyAIGC, {succ['name']} input is ${sp['amount']}, about {save}% less than {model['name']} (${mp['amount']})."))
+     + pick(lang, "", " ") + f'<a href="{DEPRECATE_URL}" rel="noopener">{pick(lang, "官方下线公告", "Xiaomi retirement notice")} ↗</a></p></div>'
      + '<div class="mi-actions mi-actions-left">' + button(pick(lang, f"查看 {succ['name']}", f"View {succ['name']}"), f"/{lang}/models/{succ['slug']}") + "</div>")
     return section("migration", pick(lang, "停用与迁移", "MIGRATION"), pick(lang, f"{model['name']} 停用说明与迁移", f"{model['name']} retirement and migration"),
      pick(lang, "以下时间与差异来自小米 MiMo 官方下线公告。", "Dates and differences are from Xiaomi MiMo's retirement notice."), body, "mi-tone")
@@ -608,6 +618,8 @@ def uses_section(lang, model):
        ("规模化办公", "Office work at scale", "用 MiMo-V2.6-Flash 承担高频、批量的日常任务。", "Use MiMo-V2.6-Flash for frequent, high-volume everyday tasks."),
 ("全模态输入", "Omni-modal input", "图像、视频、音频与文本可一起作为输入。", "Combine image, video, audio and text in one request.")],
     }[tier]
+    if model and model["id"] == "mimo-v2.5-pro":
+        scenes = scenes[:2] + [("长文本处理", "Long-form text work", "处理长文档摘要、改写与结构化抽取等纯文本任务。", "Summarize, rewrite and extract structure from long documents.")]
     cards = "".join(f'<article class="mi-card"><span class="mi-num">0{i}</span><h3>{h(pick(lang, a, b))}</h3><p>{h(pick(lang, c, d))}</p></article>'
       for i, (a, b, c, d) in enumerate(scenes, 1))
     return section("use-cases", pick(lang, "使用场景", "USE CASES"), pick(lang, "从一个具体任务开始", "Start with a concrete task"), "",
@@ -617,7 +629,7 @@ def uses_section(lang, model):
 def platform_section(lang):
     items = [("300+ 模型，一个 Key", "300+ models, one key", "统一 API Key 与余额，在 MiMo 与其他模型之间按任务切换。", "One API key and balance across MiMo and other models."),
       ("国内直连，并发不限", "Direct access, unlimited concurrency", "通过 AnyAIGC 域名从国内直接调用，不设固定 RPM 上限。", "Call AnyAIGC directly from mainland China with no fixed RPM cap."),
-      ("官方 4 折，单价透明", "~60% off, clear rates", "V2.6 系列约官方 4 折，控制台可查每次调用的 tokens 与扣费。", "V2.6 at about 40% of the official price, with per-request usage in the console."),
+      ("V2.6 官方 4 折，单价透明", "V2.6 at 60% off, clear rates", "V2.6 系列约官方 4 折，控制台可查每次调用的 tokens 与扣费。", "V2.6 at about 60% off the official price, with per-request usage in the console."),
       ("OpenAI 兼容", "OpenAI compatible", "现有 OpenAI SDK 项目改 base_url 与 model 即可接入。", "Point an existing OpenAI SDK project at the new base_url and model.")]
     cards = "".join(f'<article class="mi-card"><span class="mi-num">0{i}</span><h3>{h(pick(lang, a, b))}</h3><p>{h(pick(lang, c, d))}</p></article>'
       for i, (a, b, c, d) in enumerate(items, 1))
@@ -697,8 +709,8 @@ def quickstart_section(lang, model):
       pick(lang, "把 Key 写入环境变量 ANYAIGC_API_KEY。", "Put the key in the ANYAIGC_API_KEY environment variable."),
       pick(lang, f"请求 /v1/chat/completions，model 填 {item['id']}。", f"Call /v1/chat/completions with model {item['id']}.")]
     steps_html = "".join(f"<li><b>{i:02d}</b><span>{h(s)}</span></li>" for i, s in enumerate(steps, 1))
-    note = pick(lang, "返回 OpenAI 格式的 JSON，usage 里包含 prompt_tokens、completion_tokens 与缓存命中 tokens。深度思考开关等扩展参数的写法以 API 文档为准。",
-         "Responses use the OpenAI JSON format; usage includes prompt_tokens, completion_tokens and cached tokens. Follow the API docs for extension parameters such as the thinking switch.")
+    note = pick(lang, "返回 OpenAI 格式的 JSON：用量在 usage.prompt_tokens、usage.completion_tokens，缓存命中见 usage.prompt_tokens_details.cached_tokens。深度思考开关等扩展参数以 API 文档为准。",
+         "Responses use the OpenAI JSON format: usage reports prompt_tokens and completion_tokens, and cache hits appear in usage.prompt_tokens_details.cached_tokens. See the API docs for extension parameters such as the thinking switch.")
     body = (f'<ol class="mi-steps">{steps_html}</ol>'
             f'<div class="mi-endpoint"><code>POST https://anyaigc.ai/v1/chat/completions</code><a href="{doc(lang)}">{pick(lang, "阅读 API 文档", "Read the API reference")} ↗</a></div>'
      f'<div class="mi-tabs" aria-label="{pick(lang, "代码示例", "Code examples")}">{"".join(buttons)}</div>{"".join(panels)}<p class="mi-note">{h(note)}</p>')
@@ -709,7 +721,7 @@ def quickstart_section(lang, model):
 # ---------------------------------------------------------------- enterprise / trust / family / faq / footer
 
 def enterprise_section(lang, name):
-    cards = [(pick(lang, "增值税发票", "Invoices"), pick(lang, "普票、专票都能开：增值税普通发票、增值税专用发票按实际充值金额开具。", "Invoices for every top-up, including Chinese VAT general and special invoices.")),
+    cards = [(pick(lang, "增值税发票", "Invoices"), pick(lang, "增值税普通发票、增值税专用发票（专票）都能开，按实际充值金额开具。", "Invoices for every top-up, including Chinese VAT general and special invoices.")),
       (pick(lang, "对公转账", "Bank transfer"), pick(lang, "支持企业对公转账充值。", "Top up by corporate bank transfer.")),
       (pick(lang, "签订合同", "Contracts"), pick(lang, "可签订服务合同，配合采购与法务流程。", "Sign a service agreement for procurement and legal review.")),
       (pick(lang, "专属对接", "Dedicated support"), pick(lang, "专属客服和技术对接。", "Dedicated support and a technical contact."))]
@@ -718,7 +730,7 @@ def enterprise_section(lang, name):
     actions = ('<div class="mi-actions">' + button(pick(lang, "联系企业客服", "Talk to sales"), SUPPORT)
         + button(pick(lang, "先注册试用", "Start with a free account"), REG, "line") + "</div>")
     return section("enterprise", pick(lang, "企业接入", "ENTERPRISE"), pick(lang, f"企业接入 {name} API", f"{name} API for teams and enterprises"),
-            pick(lang, "研发、财务、法务和采购可以一起完成接入。", "Engineering, finance, legal and procurement can move together."),
+            pick(lang, "研发、财务、法务和采购可以一起完成接入。", "Everything engineering, finance, legal and procurement need to sign off."),
             f'<div class="mi-ents">{grid}</div>{pay}{actions}', "mi-tone")
 
 
@@ -751,6 +763,12 @@ def faq_section(lang, faqs, model):
 def final(lang, slug, model):
     other = "en" if lang == "zh" else "zh"
     name = model["name"] if model else "Xiaomi MiMo"
+    heading = pick(lang, f"把 {name} 接入你的下一个产品", f"Build your next product with {name}")
+    primary = button(pick(lang, "获取 API Key", "Get an API key"), REG, "light")
+    if model and model["legacy"]:
+        succ = MODEL_BY_SLUG[model["successor"]]
+        heading = pick(lang, f"迁移到 {succ['name']}", f"Move to {succ['name']}")
+        primary = button(pick(lang, f"查看 {succ['name']}", f"View {succ['name']}"), f"/{lang}/models/{succ['slug']}", "light")
     links = [(f"/{lang}/models/", pick(lang, "全部模型专题", "All model guides")), (PRICING_URL, pick(lang, "模型广场", "Model catalog")),
       (doc(lang), pick(lang, "API 文档", "API documentation")), (f"/{other}/models/{slug}", pick(lang, "English version", "中文版"))]
     link_html = "".join(f'<li><a href="{h(u)}"{" hreflang=" + chr(34) + pick(other, "zh-CN", "en") + chr(34) if u.startswith("/" + other) else ""}>{h(t)}</a></li>' for u, t in links)
@@ -760,9 +778,9 @@ def final(lang, slug, model):
     legal = pick(lang, "Xiaomi MiMo、MiMo 是小米公司的商标，AnyAIGC 是独立 API 服务商，与其无隶属关系。模型使用与商用条款以小米 MiMo 官方条款为准；页面中的官方评测图表与示例素材来自小米 MiMo 官方。",
    "Xiaomi MiMo and MiMo are trademarks of Xiaomi. AnyAIGC is an independent API provider and is not affiliated with Xiaomi. Model use and commercial terms follow Xiaomi MiMo's official terms; benchmark charts and demo media on this page are from Xiaomi MiMo.")
     return (f'<section class="mi-final" aria-labelledby="final-title"><div class="mi-wrap">{mark("#ffffff", "mi-final-mark", 56)}'
-     f'<h2 id="final-title">{h(pick(lang, f"把 {name} 接入你的下一个产品", f"Build your next product with {name}"))}</h2>'
+     f'<h2 id="final-title">{h(heading)}</h2>'
      f'<p>{h(pick(lang, "注册 AnyAIGC，新用户送 200 万 tokens，一个 API Key 调用 300+ 模型。", "Sign up for AnyAIGC, get 2M free tokens, and call 300+ models with one API key."))}</p>'
-     '<div class="mi-actions">' + button(pick(lang, "获取 API Key", "Get an API key"), REG, "light")
+     '<div class="mi-actions">' + primary
             + button(pick(lang, "查看模型广场", "Open the model catalog"), PRICING_URL, "ghost") + "</div>"
      f'<ul class="mi-final-links">{link_html}</ul></div></section></main>\n'
      '<footer class="mi-footer"><div class="mi-wrap"><a class="mi-brand" href="/">AnyAIGC</a>'

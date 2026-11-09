@@ -61,8 +61,8 @@ MODELS = [
  desc_en="The previous-generation Pro model for complex tasks, optimized for agent and coding work, with text-only input.",
  specs_zh=[("输入模态", "文本"), ("输出模态", "文本"), ("官方状态", "2026-10-21 停用"), ("官方替代", "mimo-v2.6-pro")],
         specs_en=[("Input", "Text"), ("Output", "Text"), ("Official status", "Retired 2026-10-21"), ("Replacement", "mimo-v2.6-pro")],
-        caps_zh=["Agent 任务", "编程", "工具调用", "流式输出"],
- caps_en=["Agent tasks", "Coding", "Tool calling", "Streaming"],
+        caps_zh=["Agent 任务", "编程", "工具调用"],
+ caps_en=["Agent tasks", "Coding", "Tool calling"],
         prices=[rate("input", "0.4404"), rate("output", "0.8809"), rate("cache", "0.0037")],
     ),
     dict(
@@ -73,8 +73,8 @@ MODELS = [
         desc_en="The previous-generation native omni-modal model, with text, image, video and audio understanding and agent capabilities.",
         specs_zh=[("输入模态", "文本、图像、视频、音频"), ("输出模态", "文本"), ("官方状态", "2026-10-21 停用"), ("官方替代", "mimo-v2.6-flash")],
         specs_en=[("Input", "Text, image, video, audio"), ("Output", "Text"), ("Official status", "Retired 2026-10-21"), ("Replacement", "mimo-v2.6-flash")],
-        caps_zh=["全模态理解", "Agent 任务", "工具调用", "流式输出"],
-        caps_en=["Omni-modal understanding", "Agent tasks", "Tool calling", "Streaming"],
+        caps_zh=["全模态理解", "Agent 任务", "工具调用"],
+        caps_en=["Omni-modal understanding", "Agent tasks", "Tool calling"],
         prices=[rate("input", "0.1418"), rate("output", "0.2835"), rate("cache", "0.0028")],
     ),
 ]
@@ -102,4 +102,4 @@ def deal(lang, model=None):
     """Short '官方 4 折' label for current models (and the overview)."""
     if model is not None and model["legacy"]:
         return ""
-    return "官方 4 折" if lang == "zh" else "~60% off official"
+    return "官方 4 折" if lang == "zh" else "About 60% off"

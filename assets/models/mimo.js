@@ -125,7 +125,7 @@
 
   // Reveal on scroll
   if (!reduce.matches && 'IntersectionObserver' in window) {
-    const targets = document.querySelectorAll('.mi-head, .mi-model, .mi-card, .mi-adv, .mi-show, .mi-cost, .mi-ent, .mi-figure, .trust-list li');
+    const targets = document.querySelectorAll('.mi-head, .mi-model, .mi-card, .mi-adv, .mi-show, .mi-cost, .mi-ent, .mi-figure, .trust-list li, .pay-row');
     const ro = new IntersectionObserver(entries => {
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-in'); ro.unobserve(e.target); } });
     }, { rootMargin: '0px 0px -8% 0px' });

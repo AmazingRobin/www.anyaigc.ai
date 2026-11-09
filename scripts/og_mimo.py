@@ -39,7 +39,7 @@ h1 small{display:block;margin-top:18px;font-size:34px;color:#333}
 """
 
 TEXT = {
-    "mimo": {"zh": ("Xiaomi MiMo API", "官方 4 折，接入 V2.6 全模态旗舰"), "en": ("Xiaomi MiMo API", "V2.6 omni-modal models, ~60% off")},
+    "mimo": {"zh": ("Xiaomi MiMo API", "官方 4 折，接入 V2.6 全模态旗舰"), "en": ("Xiaomi MiMo API", "V2.6 omni-modal models at 60% off")},
 }
 
 
@@ -53,7 +53,7 @@ def page(lang, slug):
     elif model["legacy"]:
         succ = MODEL_BY_SLUG[model["successor"]]
         title, sub = model["name"] + " API", ("官方已停用 · 迁移到 " + succ["name"]) if zh else ("Retired · move to " + succ["name"])
-        detail = f'{"替代型号约官方 4 折" if zh else "Replacement at ~40% of official"}'
+        detail = f'{"替代型号约官方 4 折" if zh else "Replacement at about 60% off"}'
         chip, cls = ("已停用" if zh else "Retired"), " old"
     else:
         p = model["prices"][0]

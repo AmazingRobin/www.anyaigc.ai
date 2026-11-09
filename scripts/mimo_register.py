@@ -26,7 +26,7 @@ COPY = {
     },
     "en": {
         "category": "Xiaomi MiMo models",
- "more": "V2.6 at ~40% of official · overview",
+ "more": "V2.6 at about 60% off · overview",
         "guide": "View guide →",
         "overview": "Xiaomi MiMo API (overview)",
     },
@@ -104,6 +104,7 @@ def hub(lang):
         )
         assert count == 1, "MiniMax filter insertion anchor is missing"
 
+    content = re.sub(r'("dateModified": ")[^"]+', lambda m: m.group(1) + CHECKED_DATE, content, count=1)
     match = re.search(r'<script type="application/ld\+json">\s*(.*?)\s*</script>', content, re.S)
     assert match, "Hub JSON-LD is missing"
     graph = json.loads(match.group(1))
