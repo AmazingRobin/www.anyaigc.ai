@@ -140,6 +140,14 @@ def update_pages():
                            lambda m: m.group(1) + svg('bytedance-color', size=48), s, flags=re.S)
             s = re.sub(r'(<span class="af-model-logo sd-lobe"[^>]*>\s*)' + ANY_SVG,
                        lambda m: m.group(1) + svg('bytedance-color', size=26), s, flags=re.S)
+            # Doubao Seed chat guides reuse the pinned ByteDance color icon.
+            if f.startswith('doubao-seed-'):
+                s = re.sub(r'(<p class="sd-eyebrow">\s*)' + ANY_SVG,
+                           lambda m: m.group(1) + svg('bytedance-color', size=22), s, flags=re.S)
+                s = re.sub(r'(<div class="sd-final-logo">\s*)' + ANY_SVG,
+                           lambda m: m.group(1) + svg('bytedance-color', size=52), s, flags=re.S)
+            s = re.sub(r'(<span class="af-model-logo db-lobe"[^>]*>\s*)' + ANY_SVG,
+                       lambda m: m.group(1) + svg('bytedance-color', size=26), s, flags=re.S)
             # 专题首页 Gemini 卡片
             s = re.sub(r'(<span class="af-model-logo" style="' + GEMINI_CARD_BG + r'" aria-hidden="true">)' + ANY_SVG + '(</span>)',
                        (lambda f: lambda m: m.group(1) + f() + m.group(2))(gemini_color(cls='', size=26)), s, flags=re.S)

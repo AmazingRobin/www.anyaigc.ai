@@ -11,10 +11,11 @@ BRAND = 'AnyAIGC'  # 品牌名区分大小写，不要转成全大写
 
 # 分享图副标题（每个模型一句卖点）。新增型号时在这里加一行；没写的从 og:title 自动截取
 SUBS = {
-    'claude':           {'zh': '全系 10 个型号，一个 API Key 调用', 'en': 'Every Claude model, one API key'},
+    'claude':           {'zh': '全系 11 个型号，一个 API Key 调用', 'en': 'Every Claude model, one API key'},
     'claude-opus-5-5':  {'zh': '原生 /v1/messages 接口 · 官方价约 1.2 折', 'en': 'Native /v1/messages API · 88% off list price'},
     'claude-sonnet-5-5': {'zh': '接近 Opus 5.5，官方价约 1.2 折', 'en': 'Near-Opus results at 88% off list price'},
     'claude-haiku-5-5': {'zh': '高并发、低成本任务和子 Agent 之选', 'en': 'High-volume, low-cost work and sub-agents'},
+    'claude-fable-5-2': {'zh': '新一代长任务 Agent 模型，官方约 2.4 折', 'en': 'Next-gen long-running agents, 76% off list price'},
     'claude-fable-5-1': {'zh': 'Mythos 级长任务模型，约 2.4 折', 'en': 'Mythos-level long-running agents, 76% off'},
     'claude-fable-5':   {'zh': 'Mythos 级模型，旧版仍可用', 'en': 'Mythos-class model, legacy but still live'},
     'claude-opus-5':    {'zh': '接近 Fable 5 的智能，约 1.2 折', 'en': 'Near-Fable 5 intelligence at 88% off'},
@@ -55,7 +56,7 @@ def main():
             if slug == 'claude':
                 # 系列总览页：标题固定为 Claude API，标签取全系卖点
                 n = f'claude-{lang}'
-                tags = ['10 个型号', '约官方 1.2 折起', '对公 · 专票'] if lang == 'zh' else ['10 models', 'Up to 88% off', 'Contracts · invoices']
+                tags = ['11 个型号', '约官方 1.2 折起', '对公 · 专票'] if lang == 'zh' else ['11 models', 'Up to 88% off', 'Contracts · invoices']
                 chips = '<span class="d">' + ('$0.0119 / 1M 起' if lang == 'zh' else 'From $0.0119 / 1M') + '</span>' + ''.join(f'<span>{t}</span>' for t in tags)
                 html = (TPL.replace('@BRAND', BRAND).replace('@STAR', star).replace('@NAME', 'Claude API')
                         .replace('@SUB', SUBS['claude'][lang]).replace('@CHIPS', chips).replace('@FS', '104'))
