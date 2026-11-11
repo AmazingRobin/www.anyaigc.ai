@@ -6,13 +6,13 @@
     <lastmod>2026-10-21</lastmod>
   </url>
   <url>
-    <loc>https://www.anyaigc.ai/zh/models/</loc><lastmod>2026-11-10</lastmod>
+    <loc>https://www.anyaigc.ai/zh/models/</loc><lastmod>2026-11-11</lastmod>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/"/>
   </url>
   <url>
-    <loc>https://www.anyaigc.ai/en/models/</loc><lastmod>2026-11-10</lastmod>
+    <loc>https://www.anyaigc.ai/en/models/</loc><lastmod>2026-11-11</lastmod>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/"/>
@@ -1994,5 +1994,187 @@
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/doubao-seed-1-6-vision"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/doubao-seed-1-6-vision"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/doubao-seed-1-6-vision"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/zh/models/llama</loc>
+    <lastmod>2026-11-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/llama"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/llama"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/llama"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/zh/models/llama-3.3-70b-instruct</loc>
+    <lastmod>2026-11-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/llama-3.3-70b-instruct"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/llama-3.3-70b-instruct"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/llama-3.3-70b-instruct"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/zh/models/llama-3.2-90b-vision-instruct</loc>
+    <lastmod>2026-11-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/llama-3.2-90b-vision-instruct"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/llama-3.2-90b-vision-instruct"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/llama-3.2-90b-vision-instruct"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/zh/models/llama-3.2-11b-vision-instruct</loc>
+    <lastmod>2026-11-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/llama-3.2-11b-vision-instruct"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/llama-3.2-11b-vision-instruct"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/llama-3.2-11b-vision-instruct"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/zh/models/llama-3.2-3b-instruct</loc>
+    <lastmod>2026-11-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/llama-3.2-3b-instruct"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/llama-3.2-3b-instruct"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/llama-3.2-3b-instruct"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/zh/models/llama-3.2-1b-instruct</loc>
+    <lastmod>2026-11-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/llama-3.2-1b-instruct"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/llama-3.2-1b-instruct"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/llama-3.2-1b-instruct"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/zh/models/llama-3.1-405b</loc>
+    <lastmod>2026-11-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/llama-3.1-405b"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/llama-3.1-405b"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/llama-3.1-405b"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/zh/models/llama-3.1-70b</loc>
+    <lastmod>2026-11-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/llama-3.1-70b"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/llama-3.1-70b"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/llama-3.1-70b"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/zh/models/llama-3.1-8b</loc>
+    <lastmod>2026-11-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/llama-3.1-8b"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/llama-3.1-8b"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/llama-3.1-8b"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/zh/models/llama-3-70b</loc>
+    <lastmod>2026-11-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/llama-3-70b"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/llama-3-70b"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/llama-3-70b"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/zh/models/llama-3-8b</loc>
+    <lastmod>2026-11-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/llama-3-8b"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/llama-3-8b"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/llama-3-8b"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/zh/models/llama-2-70b</loc>
+    <lastmod>2026-11-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/llama-2-70b"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/llama-2-70b"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/llama-2-70b"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/zh/models/llama-2-7b</loc>
+    <lastmod>2026-11-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/llama-2-7b"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/llama-2-7b"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/llama-2-7b"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/en/models/llama</loc>
+    <lastmod>2026-11-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/llama"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/llama"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/llama"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/en/models/llama-3.3-70b-instruct</loc>
+    <lastmod>2026-11-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/llama-3.3-70b-instruct"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/llama-3.3-70b-instruct"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/llama-3.3-70b-instruct"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/en/models/llama-3.2-90b-vision-instruct</loc>
+    <lastmod>2026-11-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/llama-3.2-90b-vision-instruct"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/llama-3.2-90b-vision-instruct"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/llama-3.2-90b-vision-instruct"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/en/models/llama-3.2-11b-vision-instruct</loc>
+    <lastmod>2026-11-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/llama-3.2-11b-vision-instruct"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/llama-3.2-11b-vision-instruct"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/llama-3.2-11b-vision-instruct"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/en/models/llama-3.2-3b-instruct</loc>
+    <lastmod>2026-11-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/llama-3.2-3b-instruct"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/llama-3.2-3b-instruct"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/llama-3.2-3b-instruct"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/en/models/llama-3.2-1b-instruct</loc>
+    <lastmod>2026-11-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/llama-3.2-1b-instruct"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/llama-3.2-1b-instruct"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/llama-3.2-1b-instruct"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/en/models/llama-3.1-405b</loc>
+    <lastmod>2026-11-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/llama-3.1-405b"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/llama-3.1-405b"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/llama-3.1-405b"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/en/models/llama-3.1-70b</loc>
+    <lastmod>2026-11-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/llama-3.1-70b"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/llama-3.1-70b"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/llama-3.1-70b"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/en/models/llama-3.1-8b</loc>
+    <lastmod>2026-11-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/llama-3.1-8b"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/llama-3.1-8b"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/llama-3.1-8b"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/en/models/llama-3-70b</loc>
+    <lastmod>2026-11-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/llama-3-70b"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/llama-3-70b"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/llama-3-70b"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/en/models/llama-3-8b</loc>
+    <lastmod>2026-11-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/llama-3-8b"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/llama-3-8b"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/llama-3-8b"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/en/models/llama-2-70b</loc>
+    <lastmod>2026-11-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/llama-2-70b"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/llama-2-70b"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/llama-2-70b"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/en/models/llama-2-7b</loc>
+    <lastmod>2026-11-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/llama-2-7b"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/llama-2-7b"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/llama-2-7b"/>
   </url>
 </urlset>
