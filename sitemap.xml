@@ -2177,4 +2177,18 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/llama-2-7b"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/llama-2-7b"/>
   </url>
+  <url>
+    <loc>https://www.anyaigc.ai/zh/models/midjourney</loc>
+    <lastmod>2026-11-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/midjourney"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/midjourney"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/midjourney"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/en/models/midjourney</loc>
+    <lastmod>2026-11-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/midjourney"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/midjourney"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/midjourney"/>
+  </url>
 </urlset>
