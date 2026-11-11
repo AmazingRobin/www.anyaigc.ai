@@ -45,6 +45,18 @@ def _payload(lang, model, kind):
             "ratio": "16:9",
             "resolution": "768P",
         }
+    if kind == "hailuo":
+        prompt = "海边日落，镜头缓慢推进，海浪轻拍礁石。" if zh else "A sunset over the sea, the camera slowly pushing in as waves wash over the rocks."
+        return "/tencent-vod/v1/aigc-video", {
+            "model_name": "Hailuo",
+            "model_version": "H3",
+            "prompt": prompt,
+            "output_config": {
+                "aspect_ratio": "16:9",
+                "duration": 6,
+                "resolution": "768P",
+            },
+        }
     if kind == "design":
         prompt = ("讲述悬疑故事的播音员，声音低沉富有磁性。" if zh else
                   "A suspense-story narrator with a deep, resonant voice.")
@@ -123,10 +135,57 @@ def _python(lang, path, payload, kind):
     )
 
 
+HAILUO_PY = """import json
+import os
+import time
+import urllib.request
+
+BASE = "__BASE__"
+HEADERS = {
+    "Authorization": "Bearer " + os.environ["ANYAIGC_API_KEY"],
+    "Content-Type": "application/json",
+}
+
+
+def call(method, path, payload=None):
+    data = json.dumps(payload, ensure_ascii=False).encode("utf-8") if payload else None
+    request = urllib.request.Request(BASE + path, data=data, headers=HEADERS, method=method)
+    with urllib.request.urlopen(request, timeout=120) as response:
+        return json.load(response)
+
+
+payload = __BODY__
+
+task_id = call("POST", "__PATH__", payload)["Response"]["TaskId"]
+print("task_id:", task_id)
+
+__COMMENT__
+for _ in range(90):
+    result = call("GET", f"/tencent-vod/v1/query/{task_id}")["Response"]
+    if result["Status"] == "FINISH":
+        break
+    time.sleep(10)
+else:
+    raise TimeoutError(task_id)
+
+print(json.dumps(result, ensure_ascii=False, indent=2))"""
+
+
+def _python_hailuo(lang, path, payload):
+    comment = ("# 每 10 秒查询一次，Status 为 FINISH 后打印完整结果（含视频地址）" if lang == "zh"
+               else "# Poll every 10 seconds; print the full result (with the video URL) once Status is FINISH")
+    return (HAILUO_PY.replace("__BASE__", BASE_URL).replace("__PATH__", path)
+            .replace("__BODY__", json.dumps(payload, ensure_ascii=False, indent=4))
+            .replace("__COMMENT__", comment))
+
+
 def examples(lang, model, kind):
     """Return [(label, source)] for static cURL and standard-library Python tabs."""
     if lang not in ("zh", "en"):
         raise ValueError(f"Unsupported example language: {lang}")
     path, payload = _payload(lang, model, kind)
+    if kind == "hailuo":
+        return [("cURL", _curl(lang, path, payload, kind)),
+                ("Python", _python_hailuo(lang, path, payload))]
     return [("cURL", _curl(lang, path, payload, kind)),
             ("Python", _python(lang, path, payload, kind))]

@@ -38,6 +38,10 @@ SUBTITLES = {
         "zh": "多模态参考，原生音画视频生成。",
         "en": "Multimodal video generation with native audio.",
     },
+    "hailuo": {
+        "zh": "海螺 H3 与 H3-Max 极速版，文生与首尾帧图生。",
+        "en": "Hailuo H3 and fast H3-Max for text and frame-to-video.",
+    },
     "speech": {
         "zh": "把文字转化为自然、生动的声音。",
         "en": "Turn your words into natural, expressive speech.",
@@ -134,7 +138,7 @@ def render(slug: str, lang: str, logo: str) -> str:
     model = MODEL_BY_SLUG.get(slug)
     kind = model["kind"] if model else "hub"
     title, title_class, heading_html = heading(model)
-    media = "hero-video.webp" if kind == "video" else "hero-text.webp"
+    media = "hero-video.webp" if kind in ("video", "hailuo") else "hero-text.webp"
     tags = card_tags(model, lang)
     chips = "".join(
         f'<span class="chip{" price" if index == 0 else ""}">{escape(tag)}</span>'

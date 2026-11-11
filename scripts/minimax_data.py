@@ -7,7 +7,7 @@ available routes can have different prices. Details record unresolved billing
 or endpoint gaps explicitly rather than inventing a contract.
 """
 
-CHECKED_DATE = "2026-11-09"
+CHECKED_DATE = "2026-11-11"
 PRICING_URL = "https://anyaigc.ai/pricing?provider=Minimax"
 OFFICIAL_URL = "https://www.minimax.cn/"
 DOC_CHAT = "https://docs.anyaigc.ai/reference/v1/chat/completions"
@@ -101,6 +101,29 @@ MODELS = [
         price_start="0.0750", price_unit_zh="秒（768P 输出）", price_unit_en="second of 768P output",
         output_zh="异步生成任务，输出 4–15 秒的视频。", output_en="An asynchronous task generates a video lasting 4–15 seconds.",
         resolution=["768P", "2K"], durations=list(range(4, 16)),
+    ),
+    # Hailuo H3 through the tencent-vod AIGC route (catalog id aigc-video-hailuo).
+    # Prices from the catalog detail view on 2026-11-11; docs leaf=399032083.
+    dict(
+        id="aigc-video-hailuo", slug="hailuo-h3", name="Hailuo H3",
+        kind="hailuo", category_zh="视频", category_en="Video",
+        desc_zh="海螺 H3 与 H3-Max 视频模型：H3 支持文生、首尾帧图生与多模态参考，H3-Max 为极速版，最长 15 秒。",
+        desc_en="Hailuo H3 and H3-Max video: H3 handles text, first/last-frame and multimodal reference input; H3-Max is the fast version. Up to 15 seconds.",
+        capabilities_zh=["H3 与 H3-Max 两个版本", "文生与首尾帧图生", "多模态参考（H3）", "768P / 2K / 480P"],
+        capabilities_en=["H3 and H3-Max versions", "Text and first/last-frame input", "Multimodal references (H3)", "768P / 2K / 480P"],
+        endpoints=["POST /tencent-vod/v1/aigc-video", "GET /tencent-vod/v1/query/{task_id}"],
+        doc="https://docs.anyaigc.ai/en/reference/tencent-vod/v1/aigc-video?leaf=399032083",
+        prices=[price("H3 768P 输出视频", "H3 768P output video", "0.0972", "秒", "second"),
+                price("H3 768P 输入视频", "H3 768P input video", "0.0972", "秒", "second"),
+                price("H3 2K 输出视频", "H3 2K output video", "0.1579", "秒", "second"),
+                price("H3 2K 输入视频", "H3 2K input video", "0.1579", "秒", "second"),
+                price("H3-Max 480P 输出视频", "H3-Max 480P output video", "0.0607", "秒", "second"),
+                price("H3-Max 768P 输出视频", "H3-Max 768P output video", "0.0972", "秒", "second"),
+                price("输入图片（前 5 张）", "Input images (first 5)", "0", "张", "image"),
+                price("输入图片（第 6 张起）", "Input images (from the 6th)", "0.0486", "张", "image")],
+        price_start="0.0607", price_unit_zh="秒（H3-Max 480P）", price_unit_en="second of H3-Max 480P",
+        output_zh="异步任务，一次生成一段视频：H3 4–15 秒，H3-Max 5–15 秒，按实际输出秒数计费。",
+        output_en="One asynchronous task produces one video: 4–15 seconds on H3, 5–15 on H3-Max, billed by actual output seconds.",
     ),
 ]
 

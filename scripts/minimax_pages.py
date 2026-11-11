@@ -72,17 +72,17 @@ def metadata(lang, model):
     if model is None:
         title = pick(lang, "MiniMax API 价格与接入｜对话视频语音 - AnyAIGC", "MiniMax API Pricing | Chat, video, speech - AnyAIGC")
     else:
-        title_zh = {"chat": "编程对话", "speech": "语音合成", "video": "视频生成", "voice-design": "音色设计"}[model["kind"]]
-        title_en = {"chat": "Coding", "speech": "Speech", "video": "Video", "voice-design": "Voice design"}[model["kind"]]
+        title_zh = {"chat": "编程对话", "speech": "语音合成", "video": "视频生成", "voice-design": "音色设计", "hailuo": "海螺视频生成"}[model["kind"]]
+        title_en = {"chat": "Coding", "speech": "Speech", "video": "Video", "voice-design": "Voice design", "hailuo": "Video generation"}[model["kind"]]
         title = pick(lang, f"{name} API 价格与接入｜{title_zh} - AnyAIGC", f"{name} API Pricing | {title_en} - AnyAIGC")
     if model is None:
         desc = pick(lang,
-                    "MiniMax API 全系价格与接入：12 个对话、视频与语音模型，文本输入 $0.0603/百万 tokens 起，覆盖编程、H3 视频和语音合成，并发不限，支持对公转账、合同与增值税专票。",
+                    "MiniMax API 全系价格与接入：13 个对话、视频与语音模型，文本输入 $0.0603/百万 tokens 起，覆盖编程、H3 视频和语音合成，并发不限，支持对公转账、合同与增值税专票。",
                     "MiniMax API pricing for chat, video and speech. Text from $0.0603/1M input tokens, unlimited concurrency, bank transfers and VAT invoices on AnyAIGC.")
     else:
         kind = model["kind"]
-        short_zh = {"chat": "对话、编程与应用开发", "speech": "文本转语音与配音工作流", "video": "768P/2K 视频与原生立体声音频", "voice-design": "文字描述设计音色与声音原型"}[kind]
-        short_en = {"chat": "1M input tokens for chat and coding", "speech": "10K characters for text-to-speech", "video": "second for 768P video with audio", "voice-design": "10K characters for voice design"}[kind]
+        short_zh = {"chat": "对话、编程与应用开发", "speech": "文本转语音与配音工作流", "video": "768P/2K 视频与原生立体声音频", "voice-design": "文字描述设计音色与声音原型", "hailuo": "海螺文生、首尾帧图生与多模态参考视频"}[kind]
+        short_en = {"chat": "1M input tokens for chat and coding", "speech": "10K characters for text-to-speech", "video": "second for 768P video with audio", "voice-design": "10K characters for voice design", "hailuo": "second (H3-Max 480P) for text, image and reference video"}[kind]
         desc = pick(lang,
                     f'{name} API 价格与接入：${model["price_start"]}/{model["price_unit_zh"]}，用于{short_zh}，提供请求示例与完整价格表，并发不限，支持对公转账、服务合同与增值税专票。',
                     f'{name} API: ${model["price_start"]}/{short_en}. Unlimited concurrency, bank transfers and VAT invoices on AnyAIGC.')
@@ -127,6 +127,9 @@ def faq_items(lang, model):
         elif kind == "video":
             detail_q = pick(lang, "H3 支持哪些时长、分辨率和参考素材？", "Which durations, resolutions and references does H3 support?")
             detail_a = pick(lang, "MiniMax-H3 支持 4–15 秒、768P 或 2K。content 必须包含且只包含一段非空文本；可提供首尾帧或参考图片、视频、音频，两种模式不能混用。纯文生视频需指定 ratio。", "MiniMax-H3 supports 4–15 seconds at 768P or 2K. The content array must contain exactly one non-empty text item. Use first/last frames or reference images, video and audio; do not mix those modes. Text-only generation requires ratio.")
+        elif kind == "hailuo":
+            detail_q = pick(lang, "H3 和 H3-Max 有什么区别？", "What is the difference between H3 and H3-Max?")
+            detail_a = pick(lang, "H3 支持 4–15 秒、768P 或 2K（传 1080P 按 768P 生成，传 4K 按 2K 生成），画幅 21:9、16:9、4:3、1:1、3:4、9:16，支持文生、首尾帧图生和多模态参考。H3-Max 是 H3 的极速版，支持 5–15 秒、480P 或 768P，只支持文生和首尾帧图生，不支持中间帧、多模态参考和输入视频。", "H3 runs 4–15 seconds at 768P or 2K (1080P requests render at 768P, 4K at 2K) in 21:9, 16:9, 4:3, 1:1, 3:4 or 9:16, with text, first/last-frame and multimodal reference input. H3-Max is the fast version: 5–15 seconds at 480P or 768P, text and first/last-frame input only, with no middle frames, multimodal references or input video.")
         elif kind == "voice-design":
             detail_q = pick(lang, "音色设计需要提交哪些内容？", "What should I provide for Voice Design?")
             detail_a = pick(lang, "prompt 描述想要的音色与表达方式，preview_text 提供试听用文本，voice_id 使用自定义唯一音色 ID。示例通过 MINIMAX_DESIGNED_VOICE_ID 环境变量读取该 ID。", "Describe the desired voice and delivery in prompt, provide sample text in preview_text, and choose a unique custom voice_id. The examples read that ID from MINIMAX_DESIGNED_VOICE_ID.")
@@ -147,8 +150,8 @@ def faq_items(lang, model):
     else:
         six = [
             (pick(lang, "MiniMax API 的起步价格是多少？", "What are the starting prices for MiniMax APIs?"), pick(lang, "M3.1 Flash 输入 $0.0603/百万 tokens；Speech Turbo 语音 $0.3176/万字符，HD 语音 $0.5559/万字符；H3 768P 输出视频 $0.0750/秒。各功能采用不同计费单位，完整价格见表格，实时价格以模型广场为准。", "M3.1 Flash input is $0.0603 per 1M tokens; Speech Turbo is $0.3176 and HD is $0.5559 per 10,000 characters; H3 768P output is $0.0750 per second. Units differ by service. See the full table and the catalog for current prices.")),
-            (pick(lang, "12 个模型如何选择？", "How should I choose among the 12 models?"), pick(lang, "对话与开发可选 M3.1 Flash、M3、M2.7 或 M2.5；视频选 H3；文本转语音按版本和 HD/Turbo 选择六个 Speech 型号；文字设计音色选 Voice Design。请先用自己的任务和音色做小规模测试。", "Choose M3.1 Flash, M3, M2.7 or M2.5 for chat and development; H3 for video; one of six Speech versions and HD/Turbo variants for narration; and Voice Design for text-guided voices. Test with your own workload and voice first.")),
-            (pick(lang, "这些模型使用同一个接口吗？", "Do these models share one endpoint?"), pick(lang, "使用同一个 AnyAIGC API Key 和域名，但端点按能力区分：对话用 /v1/chat/completions，H3 用 /minimax/v2/video_generation，语音用 /minimax/v1/t2a_v2 或 /minimax/v1/t2a_async_v2，音色设计用 /minimax/v1/voice_design。", "They share an AnyAIGC API key and domain. Chat uses /v1/chat/completions, H3 uses /minimax/v2/video_generation, speech uses /minimax/v1/t2a_v2 or /minimax/v1/t2a_async_v2, and Voice Design uses /minimax/v1/voice_design.")),
+            (pick(lang, "13 个模型如何选择？", "How should I choose among the 13 models?"), pick(lang, "对话与开发可选 M3.1 Flash、M3、M2.7 或 M2.5；视频选 MiniMax H3 或 Hailuo H3（含 H3-Max 极速版）；文本转语音按版本和 HD/Turbo 选择六个 Speech 型号；文字设计音色选 Voice Design。请先用自己的任务和音色做小规模测试。", "Choose M3.1 Flash, M3, M2.7 or M2.5 for chat and development; MiniMax H3 or Hailuo H3 (including the fast H3-Max) for video; one of six Speech versions and HD/Turbo variants for narration; and Voice Design for text-guided voices. Test with your own workload and voice first.")),
+            (pick(lang, "这些模型使用同一个接口吗？", "Do these models share one endpoint?"), pick(lang, "使用同一个 AnyAIGC API Key 和域名，但端点按能力区分：对话用 /v1/chat/completions，MiniMax H3 用 /minimax/v2/video_generation，Hailuo H3 用 /tencent-vod/v1/aigc-video，语音用 /minimax/v1/t2a_v2 或 /minimax/v1/t2a_async_v2，音色设计用 /minimax/v1/voice_design。", "They share an AnyAIGC API key and domain. Chat uses /v1/chat/completions, MiniMax H3 uses /minimax/v2/video_generation, Hailuo H3 uses /tencent-vod/v1/aigc-video, speech uses /minimax/v1/t2a_v2 or /minimax/v1/t2a_async_v2, and Voice Design uses /minimax/v1/voice_design.")),
             (pick(lang, "视频、语音和音色设计如何获取结果？", "How do I receive video, speech and voice-design results?"), pick(lang, "H3 创建请求先返回 task_id；同步语音返回音频相关 JSON。Voice Design 文档正文与响应示例的字段不一致，接入时保留原始响应并确认格式。各独立专题提供对应的最小请求。", "H3 creation returns a task_id first, while synchronous speech returns audio-related JSON. Voice Design has inconsistent result fields in its documentation; retain the full response and confirm the contract. Each guide includes a minimal request.")),
         ]
     discount = savings_detail(lang, model)
@@ -251,7 +254,7 @@ def nav(lang, slug, model):
 def hero(lang, slug, model):
     name = model["name"] if model else "MiniMax"
     kind = model["kind"] if model else "chat"
-    hero_media = {"chat": "hero-text", "video": "hero-video", "speech": "hero-speech", "voice-design": "hero-speech"}[kind]
+    hero_media = {"chat": "hero-text", "video": "hero-video", "speech": "hero-speech", "voice-design": "hero-speech", "hailuo": "hero-video"}[kind]
     media = (f'<video class="mm-hero-bg" muted loop playsinline preload="metadata" poster="/assets/models/minimax/{hero_media}.webp" aria-hidden="true">'
              f'<source src="/assets/models/minimax/{hero_media}.mp4" type="video/mp4"></video>')
     items = breadcrumb_items(lang, model)
@@ -266,7 +269,7 @@ def hero(lang, slug, model):
         eyebrow = model["id"] + " · " + model["category_" + lang]
     else:
         heading = "MiniMax API<br>" + pick(lang, "让创作，成为可能。", "Ideas into experiences.")
-        lead = pick(lang, "从对话与编程，到视频与声音。一个 AnyAIGC API Key 接入 12 个 MiniMax 模型，文本输入 <strong>$0.0603 / 百万 tokens 起</strong>。", "From conversation and code to video and voice. Access 12 MiniMax models with one AnyAIGC API key, with text input from <strong>$0.0603 / 1M tokens</strong>.")
+        lead = pick(lang, "从对话与编程，到视频与声音。一个 AnyAIGC API Key 接入 13 个 MiniMax 模型，文本输入 <strong>$0.0603 / 百万 tokens 起</strong>。", "From conversation and code to video and voice. Access 13 MiniMax models with one AnyAIGC API key, with text input from <strong>$0.0603 / 1M tokens</strong>.")
         eyebrow = pick(lang, "MINIMAX · 对话 / 视频 / 语音", "MINIMAX · CHAT / VIDEO / SPEECH")
     facts = [pick(lang, "并发不限", "Unlimited concurrency"), pick(lang, "300+ 模型 · 一个 Key", "300+ models · One key"), pick(lang, "对公 · 专票 · 合同", "Bank transfer · VAT · Contracts")]
     discount = savings_label(lang, model)
@@ -304,6 +307,7 @@ def capabilities(lang, model):
         "chat": [("把需求转成草案、解释或代码，再由应用组织后续步骤。", "Turn a request into a draft, explanation or code, then let your application organize the next steps."), ("围绕明确的输入构建工作流，工具执行与结果校验由应用负责。", "Build around explicit inputs; your application handles tool execution and validates results."), ("选择适合上下文与成本的型号，将资料和要求一并交给模型。", "Choose a model for your context and budget, and provide the relevant material alongside the request."), ("先用真实任务验证输出，再调整提示词和应用侧的处理逻辑。", "Evaluate on real tasks, then refine prompts and your application logic.")],
         "speech": [("将文章、课程或产品文本变成可试听的声音内容。", "Turn articles, lessons or product text into spoken content."), ("短文本可从同步接口开始，长流程再按异步文档设计任务处理。", "Start with synchronous speech for short text; use the asynchronous documentation for task-based workflows."), ("通过 voice_setting.voice_id 选择你可调用的音色。", "Use voice_setting.voice_id to select a voice available to your account."), ("把文稿、音色选择和结果验收串联进现有内容生产流程。", "Connect script preparation, voice selection and review to your content process.")],
         "video": [("从文字镜头描述开始，也可按文档提供首帧或尾帧。", "Begin with a written shot description, or provide first and last frames as documented."), ("支持图片、视频和音频作为参考；参考模式与首尾帧模式不能混用。", "Use image, video and audio references; reference mode cannot be mixed with first/last-frame mode."), ("按用途选择 768P 或 2K，MiniMax-H3 支持 4–15 秒时长。", "Choose 768P or 2K for your workflow. MiniMax-H3 supports a duration of 4–15 seconds."), ("生成带原生立体声音频的视频，适合需要画面与声音一起表达的片段。", "Generate video with native stereo audio for clips that need visuals and sound together.")],
+        "hailuo": [("model_version 填 H3 或 H3-Max：H3 画质与参考能力更全，H3-Max 是极速版。", "Set model_version to H3 or H3-Max: H3 has the fuller reference toolkit, H3-Max is the fast version."), ("纯文字描述镜头即可生成，也可以给首帧或首尾帧图片控制起止画面。", "Generate from a written shot description, or supply a first frame or first and last frames to set the start and end."), ("H3 可传入多张参考图和参考视频，前 5 张图片免费，第 6 张起按张计费。", "H3 accepts multiple reference images and video. The first 5 images are free; each image after that is billed."), ("H3 出 768P 或 2K，H3-Max 出 480P 或 768P，按实际输出秒数计费。", "H3 renders 768P or 2K, H3-Max 480P or 768P, billed by actual output seconds.")],
         "voice-design": [("用文字写出声音的音色、表达方式和角色设定。", "Describe the voice, delivery and character in plain language."), ("准备 preview_text，让声音原型有一致的试听文本。", "Supply preview_text so voice prototypes use a consistent sample script."), ("用自定义唯一 voice_id 标识设计，方便后续核对接入结果。", "Choose a unique custom voice_id to identify the design and verify the integration result."), ("返回字段在文档正文与示例中不一致，应用应先确认实际响应格式。", "The documentation and example disagree on result fields; confirm the actual response before integrating it.")],
         "overview": [("M 系列面向对话、编程、工具调用与资料处理。", "M-series models support conversation, coding, tool workflows and working with documents."), ("H3 支持 4–15 秒、768P/2K 视频和原生立体声音频。", "H3 supports 4–15-second video at 768P or 2K with native stereo audio."), ("六个 Speech 型号覆盖 2.8、2.6 与 02 版本的 HD/Turbo 选择。", "Six Speech models cover HD and Turbo variants across versions 2.8, 2.6 and 02."), ("Voice Design 从文字描述开始构建音色原型。", "Voice Design starts with a text description to create a voice prototype."), ("鉴权与余额统一，按任务切换模型与接口。", "Use the same authentication and balance while choosing the model and endpoint for each task."), ("从国内网络直接调用 AnyAIGC API，并按用途配置超时和重试。", "Call AnyAIGC directly from mainland China and configure timeouts and retries for your workload.")],
     }[kind]
@@ -331,6 +335,17 @@ def cost_examples(lang, model):
                 note = pick(lang, "按多次请求累计用量估算，不含缓存。", "An aggregate across multiple requests, excluding cache charges.")
                 if item["id"] == "MiniMax-M3":
                     note += pick(lang, "每次请求输入均不超过 512K，采用第一档价格。", " Every request stays at or below 512K input tokens and uses tier one.")
+            elif kind == "hailuo":
+                if n == 1:
+                    cost = Decimal(rates[4]["amount"]) * 10
+                    title = pick(lang, "10 秒 H3-Max 480P", "10-second H3-Max 480P")
+                    calc = f"10 × ${rates[4]['amount']}"
+                    note = pick(lang, "极速版文生视频，适合批量出草稿。", "Fast-version text-to-video, suited to batch drafts.")
+                else:
+                    cost = Decimal(rates[2]["amount"]) * 15 + Decimal(rates[7]["amount"]) * 2
+                    title = pick(lang, "15 秒 H3 2K + 7 张参考图", "15-second H3 2K + 7 reference images")
+                    calc = f"15 × ${rates[2]['amount']} + 2 × ${rates[7]['amount']}"
+                    note = pick(lang, "前 5 张参考图免费，第 6、7 张按张计费，不含输入视频。", "The first 5 images are free; images 6 and 7 are billed. No input video.")
             elif kind == "video":
                 seconds = 5 if n == 1 else 10
                 cost = Decimal(rates[0]["amount"]) * seconds
@@ -382,7 +397,7 @@ def pricing(lang, model):
 def quickstart(lang, model):
     item = model or MODELS[0]
     kind = item["kind"]
-    example_kind = {"chat": "text", "video": "video", "speech": "speech", "voice-design": "design"}[kind]
+    example_kind = {"chat": "text", "video": "video", "speech": "speech", "voice-design": "design", "hailuo": "hailuo"}[kind]
     tabs = examples(lang, item["id"], example_kind)
     panels = []
     buttons = []
@@ -390,7 +405,7 @@ def quickstart(lang, model):
         pid = f"mm-code-{example_kind}-{i}"
         buttons.append(f'<button type="button" data-panel="{pid}" aria-selected="{"true" if i == 0 else "false"}">{label}</button>')
         panels.append(f'<div class="mm-code-panel" id="{pid}"{"" if i == 0 else " hidden"}><div class="mm-code-head"><span>{label}</span><button class="mm-copy" type="button" data-copy="{pid}-source">{pick(lang, "复制", "Copy")}</button></div><pre><code id="{pid}-source">{h(code)}</code></pre></div>')
-    steps = ''.join(f'<li><b>{i:02d}</b><span>{h(t)}</span></li>' for i, t in enumerate([pick(lang, "注册 AnyAIGC 并创建 API Key。", "Sign up and create an API key."), pick(lang, "将 API Key 放进 ANYAIGC_API_KEY 环境变量。", "Set the ANYAIGC_API_KEY environment variable."), pick(lang, f"按文档使用 {item["id"]} 发起请求。", f"Send a request with {item["id"]} using the docs.")], 1))
+    steps = ''.join(f'<li><b>{i:02d}</b><span>{h(t)}</span></li>' for i, t in enumerate([pick(lang, "注册 AnyAIGC 并创建 API Key。", "Sign up and create an API key."), pick(lang, "将 API Key 放进 ANYAIGC_API_KEY 环境变量。", "Set the ANYAIGC_API_KEY environment variable."), (pick(lang, "提交 model_name=Hailuo 的任务，再轮询查询接口。", "Submit a task with model_name Hailuo, then poll the query endpoint.") if kind == "hailuo" else pick(lang, f"按文档使用 {item["id"]} 发起请求。", f"Send a request with {item["id"]} using the docs."))], 1))
     endpoints = ''.join(f'<li><code>{h(e)}</code></li>' for e in item["endpoints"])
     api_info = (f'<div class="mm-api-info"><ul class="mm-endpoints" aria-label="{pick(lang, "API 接口", "API endpoints")}">{endpoints}</ul>'
                 f'<a class="mm-doc-link" href="{h(doc_url(lang, item["doc"]))}">{pick(lang, "阅读对应 API 文档", "Read the API reference")} ↗</a></div>')
@@ -399,6 +414,8 @@ def quickstart(lang, model):
         body += f'<p class="mm-note">{pick(lang, "文档正文称返回 voice_id，响应示例却显示 data.task_id。示例仅打印完整 JSON，不假定返回字段；实际响应和计费文本范围请在正式接入前确认。", "The documentation describes voice_id, while its response example shows data.task_id. These examples print the full JSON without assuming a result field. Confirm the actual response and billable text before integration.")}</p>'
     elif kind == "speech":
         body += f'<p class="mm-note">{pick(lang, "MINIMAX_VOICE_ID 应设置为你可使用的音色 ID。此处展示同步请求；异步接口的完整参数、查询与下载流程请以当前文档为准。", "Set MINIMAX_VOICE_ID to a voice available to your account. The example uses synchronous synthesis; follow the current documentation for asynchronous parameters, retrieval and downloads.")}</p>'
+    elif kind == "hailuo":
+        body += f'<p class="mm-note">{pick(lang, "创建请求返回 Response.TaskId；用 GET /tencent-vod/v1/query/{task_id} 查询，Status 为 FINISH 时从结果的 Output.FileInfos[].FileUrl 下载视频（临时存储，有过期时间）。", "Creation returns Response.TaskId. Poll GET /tencent-vod/v1/query/{task_id}; when Status is FINISH, download the video from Output.FileInfos[].FileUrl (temporary storage with an expiry time).")} <a href="{h(doc_url(lang, "https://docs.anyaigc.ai/reference/tencent-vod/v1/query/%7Btask_id%7D?leaf=399032082"))}">{pick(lang, "查看任务查询文档", "See task-query documentation")} ↗</a></p>'
     elif kind == "video":
         body += f'<p class="mm-note">{pick(lang, "创建请求返回 task_id；本示例仅提交任务，不等待视频生成完成。", "Creation returns task_id. This example submits the task and does not wait for the finished video.")} <a href="{h(doc_url(lang, "https://docs.anyaigc.ai/reference/v1/minimax/v2/query/video_generation/%7Btask_id%7D?leaf=c%3A1791792620386"))}">{pick(lang, "查看任务查询文档", "See task-query documentation")} ↗</a></p>'
     return section("quickstart", pick(lang, "快速开始", "QUICKSTART"), pick(lang, f"接入 {item["name"]} API" if model else "三步开始调用 MiniMax", "Three steps to your first request"), pick(lang, "从最小请求开始，再把返回结果接入你的产品。", "Start with the smallest request, then connect the response to your product."), body)
@@ -413,6 +430,9 @@ def uses_section(lang, model):
         "video": [("分镜预演", "Shot exploration", "用镜头运动和场景描述生成短片段，先查看构图、节奏与声音的整体表现。", "Generate short clips from scene and camera descriptions to review composition, pacing and sound."),
                   ("参考素材创作", "Reference-led production", "结合有权使用的图片、视频或音频素材探索新镜头，并选择合适的参考模式。", "Explore new shots with image, video or audio references you are authorized to use, choosing the appropriate reference mode."),
                   ("短视频素材", "Short-form assets", "按目标展示场景选择画幅与 768P/2K 分辨率，将生成结果交给后续剪辑流程。", "Choose an aspect ratio and 768P or 2K resolution for your destination, then bring the generated clip into editing.")],
+        "hailuo": [("批量草稿", "Batch drafts", "先用 H3-Max 480P 快速出多个版本，挑出构图和节奏合适的方向。", "Run several fast H3-Max 480P takes first, then pick the composition and pacing that work."),
+                   ("首尾帧控制", "First and last frames", "给出起止画面，让产品展示、转场或角色动作落在预期的镜头上。", "Set the opening and closing frames so product shots, transitions or character moves land where you want."),
+                   ("参考素材成片", "Reference-led final cuts", "用 H3 结合有权使用的参考图和视频，生成 2K 成片交给剪辑。", "Combine H3 with reference images and video you are authorized to use, then hand a 2K clip to editing.")],
         "speech": [("有声书与长文", "Audiobooks and articles", "把文稿转成语音段落，使用一致的音色并逐段校对发音与节奏。", "Turn manuscripts into spoken sections, keeping a consistent voice and reviewing pronunciation and pacing."),
                    ("课程与讲解", "Lessons and explainers", "为教学内容、产品介绍或操作说明制作配音，随文字更新重复合成。", "Narrate educational material, product introductions or instructions, and regenerate speech when the script changes."),
                    ("应用语音交互", "Speech in applications", "把可用音色接入产品提示、助手回复和数字人配音等场景。", "Use available voices for product prompts, assistant responses and digital-human narration.")],
@@ -473,7 +493,7 @@ def render(lang, slug):
     faqs = faq_items(lang, model)
     content = head(lang, slug, model, faqs) + nav(lang, slug, model or MODELS[0]) + hero(lang, slug, model)
     if model is None:
-        content += section("models", pick(lang, "模型阵容", "MODELS"), "MiniMax", pick(lang, "12 个模型，覆盖对话、视频和语音。", "12 models across chat, video and speech."), f'<div class="mm-model-grid">{model_grid(lang, slug)}</div>')
+        content += section("models", pick(lang, "模型阵容", "MODELS"), "MiniMax", pick(lang, "13 个模型，覆盖对话、视频和语音。", "13 models across chat, video and speech."), f'<div class="mm-model-grid">{model_grid(lang, slug)}</div>')
     content += capabilities(lang, model) + pricing(lang, model) + uses_section(lang, model) + platform_section(lang) + quickstart(lang, model) + enterprise_section(lang, (model["name"] if model else "MiniMax")) + trust_section(lang) + family(lang, slug) + faq_section(lang, faqs) + final(lang, slug)
     docs = doc_url(lang, (model or MODELS[0])["doc"])
     content = content.replace('<ul class="mm-final-links">', f'<ul class="mm-final-links"><li><a href="{h(docs)}">{pick(lang, "API 文档", "API documentation")}</a></li>', 1)
