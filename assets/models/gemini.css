@@ -1,5 +1,5 @@
 /*
- * Gemini 系列专题页共用样式（gemini-4-argon、gemini-3.8-flash、gemini-3.8-flash-tts、gemini-3.7-flash、gemini-3.1-pro-preview）
+ * Gemini 系列专题页共用样式（gemini-4-carbon、gemini-4-argon、gemini-3.8-flash、gemini-3.8-flash-tts、gemini-3.7-flash、gemini-3.1-pro-preview）
  * 视觉参考 deepmind.google/models/gemini：纯白底、#121317 正文、#f8f9fc 无阴影圆角卡片、黑色胶囊主按钮、
  * Gemini 渐变（#217bfe → #078efb → #ac87eb → #ee4d5d）只用在标题关键词、细线和光晕上。
  * 结构类沿用 o-*（scripts/payments.py、scripts/trust.py 插入的版块用这些类名），Gemini 专属组件用 gm-*。

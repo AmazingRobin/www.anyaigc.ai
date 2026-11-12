@@ -66,7 +66,7 @@
       "mainEntity": {
         "@id": "https://www.anyaigc.ai/en/models/gemini-3.1-pro-preview#product"
       },
-      "dateModified": "2026-11-04"
+      "dateModified": "2026-11-12"
     },
     {
       "@type": "BreadcrumbList",
@@ -595,7 +595,7 @@ print(resp.usage)</code></pre>
       </figure>
 
       <p class="gm-callout o-reveal"><strong>Parameter notes:</strong> Gemini 3.1 Pro controls thinking with <code>thinkingLevel</code> (low / medium / high). The default is high, and minimal is not supported. Thinking tokens count as output, so leave room in <code>maxOutputTokens</code>, and drop to low when latency matters. Prompts over 200K tokens are billed at the higher tier.</p>
-      <p class="o-note">Full parameters are in the <a href="https://docs.anyaigc.ai/reference/gemini-v1beta/v1beta/models/gemini-2.5-pro%3AgenerateContent?leaf=g%3A305048984" target="_blank" rel="noopener">native Gemini API docs</a> and the <a href="https://docs.anyaigc.ai/reference/v1/chat/completions" target="_blank" rel="noopener">Chat Completions docs</a>. Swap the model name in the examples for <code>gemini-3.1-pro-preview</code>.</p>
+      <p class="o-note">Full parameters are in the <a href="https://docs.anyaigc.ai/reference/gemini-v1beta/v1beta/models/gemini-3.8-flash%3AgenerateContent?leaf=g%3A305048984" target="_blank" rel="noopener">native Gemini API docs</a> and the <a href="https://docs.anyaigc.ai/reference/v1/chat/completions?leaf=g%3A275101024" target="_blank" rel="noopener">Chat Completions docs</a>. Swap the model name in the examples for <code>gemini-3.1-pro-preview</code>.</p>
     </div>
   </section>
 
@@ -644,7 +644,8 @@ print(resp.usage)</code></pre>
       <h2 class="o-h2 o-reveal" id="family-title">Other Gemini models</h2>
       <p class="o-lead o-reveal">One API key calls every Gemini model below. Pick by task difficulty and budget.</p>
       <ul class="o-family o-reveal">
-        <li><a href="/en/models/gemini-4-argon"><span class="o-tag">Latest</span><b>Gemini 4 Argon</b><span>Google's flagship reasoning model · $0.1985 / 1M input</span></a></li>
+        <li><a href="/en/models/gemini-4-carbon"><span class="o-tag">Latest</span><b>Gemini 4 Carbon</b><span>Gemini 4 frontier model for long-horizon agents · $0.7147 / 1M input</span></a></li>
+        <li><a href="/en/models/gemini-4-argon"><b>Gemini 4 Argon</b><span>Google's flagship reasoning model · $0.1985 / 1M input</span></a></li>
         <li><a href="/en/models/gemini-3.8-flash"><b>Gemini 3.8 Flash</b><span>Google's most intelligent Flash, fast and low-cost · $0.0744 / 1M input</span></a></li>
         <li><a href="/en/models/gemini-3.8-flash-tts"><b>Gemini 3.8 Flash TTS</b><span>Text to speech, 30 voices, two speakers · $3.2163 / 1M audio output</span></a></li>
         <li><a href="/en/models/gemini-3.1-pro-preview" aria-current="page"><b>Gemini 3.1 Pro Preview</b><span>Gemini 3 Pro, preview · $0.1985 / 1M input</span></a></li>
