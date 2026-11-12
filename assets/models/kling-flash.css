@@ -1,0 +1,3 @@
+/* Kling Video V4 Flash page additions on top of kling.css and kling-image.css. */
+.k-table-wrap td:first-child{min-width:240px}
+@media(max-width:640px){.k-table-wrap td:first-child{min-width:200px}}

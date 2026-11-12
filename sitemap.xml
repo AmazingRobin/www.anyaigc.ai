@@ -6,13 +6,13 @@
     <lastmod>2026-10-21</lastmod>
   </url>
   <url>
-    <loc>https://www.anyaigc.ai/zh/models/</loc><lastmod>2026-11-11</lastmod>
+    <loc>https://www.anyaigc.ai/zh/models/</loc><lastmod>2026-11-12</lastmod>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/"/>
   </url>
   <url>
-    <loc>https://www.anyaigc.ai/en/models/</loc><lastmod>2026-11-11</lastmod>
+    <loc>https://www.anyaigc.ai/en/models/</loc><lastmod>2026-11-12</lastmod>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/"/>
@@ -1411,14 +1411,14 @@
   </url>
   <url>
     <loc>https://www.anyaigc.ai/zh/models/kling</loc>
-    <lastmod>2026-11-11</lastmod>
+    <lastmod>2026-11-12</lastmod>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/kling"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/kling"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/kling"/>
   </url>
   <url>
     <loc>https://www.anyaigc.ai/en/models/kling</loc>
-    <lastmod>2026-11-11</lastmod>
+    <lastmod>2026-11-12</lastmod>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/kling"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/kling"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/kling"/>
@@ -2344,5 +2344,19 @@
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/vidu-image-q2"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/vidu-image-q2"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/vidu-image-q2"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/zh/models/kling-video-v4-flash</loc>
+    <lastmod>2026-11-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/kling-video-v4-flash"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/kling-video-v4-flash"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/kling-video-v4-flash"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/en/models/kling-video-v4-flash</loc>
+    <lastmod>2026-11-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/kling-video-v4-flash"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/kling-video-v4-flash"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/kling-video-v4-flash"/>
   </url>
 </urlset>
