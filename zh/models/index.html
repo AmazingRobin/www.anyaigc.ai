@@ -38,7 +38,7 @@
       "name": "AI 模型 API 专题 - AnyAIGC",
       "description": "热门 AI 模型 API 的能力、价格、并发与接入方法。",
       "inLanguage": "zh-CN",
-      "dateModified": "2026-11-12",
+      "dateModified": "2026-11-13",
       "isPartOf": {
         "@type": "WebSite",
         "@id": "https://www.anyaigc.ai/#website",
@@ -75,7 +75,7 @@
       "@id": "https://www.anyaigc.ai/zh/models/#list",
       "name": "AnyAIGC 模型专题",
       "itemListOrder": "https://schema.org/ItemListUnordered",
-      "numberOfItems": 197,
+      "numberOfItems": 208,
       "itemListElement": [
         {
           "@type": "ListItem",
@@ -1258,6 +1258,72 @@
           "name": "Vidu Q2 Image API",
           "url": "https://www.anyaigc.ai/zh/models/vidu-image-q2",
           "position": 197
+        },
+        {
+          "@type": "ListItem",
+          "position": 198,
+          "name": "SparkDesk-v3.5 API",
+          "url": "https://www.anyaigc.ai/zh/models/sparkdesk-v3.5"
+        },
+        {
+          "@type": "ListItem",
+          "position": 199,
+          "name": "SparkDesk-v3.1 API",
+          "url": "https://www.anyaigc.ai/zh/models/sparkdesk-v3.1"
+        },
+        {
+          "@type": "ListItem",
+          "position": 200,
+          "name": "SparkDesk-v2.1 API",
+          "url": "https://www.anyaigc.ai/zh/models/sparkdesk-v2.1"
+        },
+        {
+          "@type": "ListItem",
+          "name": "Hy4 API",
+          "url": "https://www.anyaigc.ai/zh/models/hy4",
+          "position": 201
+        },
+        {
+          "@type": "ListItem",
+          "position": 202,
+          "name": "Eleven v4 API",
+          "url": "https://www.anyaigc.ai/zh/models/eleven-v4"
+        },
+        {
+          "@type": "ListItem",
+          "position": 203,
+          "name": "Eleven v4 Turbo API",
+          "url": "https://www.anyaigc.ai/zh/models/eleven-v4-turbo"
+        },
+        {
+          "@type": "ListItem",
+          "position": 204,
+          "name": "Eleven v3 API",
+          "url": "https://www.anyaigc.ai/zh/models/eleven-v3"
+        },
+        {
+          "@type": "ListItem",
+          "position": 205,
+          "name": "Eleven v3 Conversational API",
+          "url": "https://www.anyaigc.ai/zh/models/eleven-v3-conversational"
+        },
+        {
+          "@type": "ListItem",
+          "position": 206,
+          "name": "Eleven Multilingual v2 API",
+          "url": "https://www.anyaigc.ai/zh/models/eleven-multilingual-v2"
+        },
+        {
+          "@type": "ListItem",
+          "position": 207,
+          "name": "Eleven Flash v2.5 API",
+          "url": "https://www.anyaigc.ai/zh/models/eleven-flash-v2-5"
+        },
+        {
+          "@type": "ListItem",
+          "position": 208,
+          "name": "Eleven Flash v2 API",
+          "url": "https://www.anyaigc.ai/zh/models/eleven-flash-v2"
         }
       ]
     }
@@ -1327,6 +1393,8 @@
         <li><a href="#cat-minimax">MiniMax 系列</a></li>
         <li><a href="#cat-kimi">Kimi 系列</a></li>
         <li><a href="#cat-glm">GLM 系列</a></li>
+        <li><a href="#cat-sparkdesk">SparkDesk 系列</a></li>
+        <li><a href="#cat-hy4">腾讯混元</a></li>
         <li><a href="#cat-deepseek">DeepSeek 系列</a></li>
         <li><a href="#cat-qwen-image">千问 Qwen 图像模型</a></li><li><a href="#cat-qwen-video">Qwen 视频与实时音视频</a></li><li><a href="#cat-qwen">千问 Qwen 系列</a></li><li><a href="#cat-grok-text">Grok 文本 / 编程系列</a></li>
         <li><a href="#cat-jev">Jev 系列</a></li>
@@ -3245,6 +3313,25 @@
       </ul>
       <!-- /GLM -->
 
+      <!-- Hy4 -->
+      <h3 class="af-section-head" id="cat-hy4" style="font-size:16px;margin:24px 0 12px">腾讯混元</h3>
+      <ul class="af-models">
+        <li class="af-model">
+          <div class="af-model-head">
+            <span class="af-model-logo" style="background:#ffffff;border:1px solid #e6e6e6" aria-hidden="true"><svg class="hy-hub-mark" viewBox="0 0 24 24" width="26" height="26" aria-hidden="true" focusable="false"><circle cx="12" cy="12" fill="#0055E9" r="12"></circle><path d="M12 0c.518 0 1.028.033 1.528.096A6.188 6.188 0 0112.12 12.28l-.12.001c-2.99 0-5.242 2.179-5.554 5.11-.223 2.086.353 4.412 2.242 6.146C3.672 22.1 0 17.479 0 12 0 5.373 5.373 0 12 0z" fill="#A8DFF5"></path><path d="M5.286 5a2.438 2.438 0 01.682 3.38c-3.962 5.966-3.215 10.743 2.648 15.136C3.636 22.056 0 17.452 0 12c0-1.787.39-3.482 1.09-5.006.253-.435.525-.872.817-1.311A2.438 2.438 0 015.286 5z" fill="#0055E9"></path><path d="M12.98.04c.272.021.543.053.81.093.583.106 1.117.254 1.538.44 6.638 2.927 8.07 10.052 1.748 15.642a4.125 4.125 0 01-5.822-.358c-1.51-1.706-1.3-4.184.357-5.822.858-.848 3.108-1.223 4.045-2.441 1.257-1.634 2.122-6.009-2.523-7.506L12.98.039z" fill="#00BCFF"></path><path d="M13.528.096A6.187 6.187 0 0112 12.281a5.75 5.75 0 00-1.71.255c.147-.905.595-1.784 1.321-2.501.858-.848 3.108-1.223 4.045-2.441 1.27-1.651 2.14-6.104-2.676-7.554.184.014.367.033.548.056z" fill="#ECECEE"></path></svg></span>
+            <div><h3><a href="/zh/models/hy4">Hy4 API</a></h3><span class="af-model-cat">腾讯混元 Tencent Hunyuan · hy4</span></div>
+          </div>
+          <p>腾讯混元 Hy4 正式版，强化 Agent 与长程任务，首次支持图像理解，OpenAI 与 Anthropic 两种接口格式。</p>
+          <ul class="af-tags">
+            <li>约官方 6.75 折</li>
+            <li>图像理解</li>
+            <li>并发不限</li>
+          </ul>
+          <div class="af-model-foot"><span><strong>$0.5630</strong> / 1M 输入</span><span class="af-model-go" aria-hidden="true">查看专题 →</span></div>
+        </li>
+      </ul>
+      <!-- /Hy4 -->
+
       <h3 class="af-section-head" id="cat-deepseek" style="font-size:16px;margin:24px 0 12px"><a class="af-cat-link" href="/zh/models/deepseek"><span class="af-cat-name">DeepSeek 系列</span><span class="af-cat-more">全系总览与价格对比 <span class="af-cat-arrow" aria-hidden="true">→</span></span></a></h3>
       <!-- DeepSeek -->
       <ul class="af-models">
@@ -3363,6 +3450,69 @@
       </ul>
       <!-- /Grok Text -->
 
+      <h3 class="af-section-head" id="cat-sparkdesk" style="font-size:16px;margin:24px 0 12px">SparkDesk 系列</h3>
+      <!-- SparkDesk -->
+      <ul class="af-models">
+        <li class="af-model">
+          <div class="af-model-head">
+            <span class="af-model-logo" style="background:#f2f7ff;border:1px solid #bcd5ff" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true" focusable="false"><path d="M2 13.08C2 9.182 4.772 6.367 9.32 2.122c-.65 7.883 6.41 8.272 5.023 12.214-.99 2.815-4.244 1.949-4.59 1.342 0 0 1.212.347 1.385-.866.174-1.213-2.252-1.862-3.81-4.937-2.6 2.988-.954 9.008 4.2 9.008 4.764 0 6.583-4.937 4.894-8.099 0 0 4.071.693 4.418 3.811.346 3.119-3.638 8.533-9.095 8.403C6.288 22.868 2 18.84 2 13.08z" fill="#3DC8F9"></path><path d="M17.852 6.107L11.615 0c-.52 5.933.866 8.374 4.894 9.485 2.729.753 3.307 1.04 4.504 2.772-.338-2.407-.78-3.812-3.161-6.15z" fill="#EA0100"></path><path clip-rule="evenodd" d="M9.033 18.323c.709.354 1.542.56 2.495.56 4.764 0 6.583-4.937 4.894-8.099 0 0 4.071.693 4.418 3.811.156 1.403-.565 3.27-1.902 4.89-3.458 1.57-7.29.84-9.905-1.162z" fill="#1652D8" fill-rule="evenodd"></path></svg></span>
+            <div>
+              <h3><a href="/zh/models/sparkdesk-v3.5">SparkDesk-v3.5 API</a></h3>
+              <span class="af-model-cat">科大讯飞 · SparkDesk-v3.5</span>
+            </div>
+          </div>
+          <p>讯飞星火 Max 档（接口版本 v3.5），多轮对话、知识问答、逻辑推理和代码理解，输入输出同价。</p>
+          <ul class="af-tags">
+            <li>星火 Max</li>
+            <li>对话问答</li>
+            <li>并发不限</li>
+          </ul>
+          <div class="af-model-foot">
+            <span><strong>$13.1040</strong> / 1M 输入</span>
+            <span class="af-model-go" aria-hidden="true">查看专题 →</span>
+          </div>
+        </li>
+        <li class="af-model">
+          <div class="af-model-head">
+            <span class="af-model-logo" style="background:#f2f7ff;border:1px solid #bcd5ff" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true" focusable="false"><path d="M2 13.08C2 9.182 4.772 6.367 9.32 2.122c-.65 7.883 6.41 8.272 5.023 12.214-.99 2.815-4.244 1.949-4.59 1.342 0 0 1.212.347 1.385-.866.174-1.213-2.252-1.862-3.81-4.937-2.6 2.988-.954 9.008 4.2 9.008 4.764 0 6.583-4.937 4.894-8.099 0 0 4.071.693 4.418 3.811.346 3.119-3.638 8.533-9.095 8.403C6.288 22.868 2 18.84 2 13.08z" fill="#3DC8F9"></path><path d="M17.852 6.107L11.615 0c-.52 5.933.866 8.374 4.894 9.485 2.729.753 3.307 1.04 4.504 2.772-.338-2.407-.78-3.812-3.161-6.15z" fill="#EA0100"></path><path clip-rule="evenodd" d="M9.033 18.323c.709.354 1.542.56 2.495.56 4.764 0 6.583-4.937 4.894-8.099 0 0 4.071.693 4.418 3.811.156 1.403-.565 3.27-1.902 4.89-3.458 1.57-7.29.84-9.905-1.162z" fill="#1652D8" fill-rule="evenodd"></path></svg></span>
+            <div>
+              <h3><a href="/zh/models/sparkdesk-v3.1">SparkDesk-v3.1 API</a></h3>
+              <span class="af-model-cat">科大讯飞 · SparkDesk-v3.1</span>
+            </div>
+          </div>
+          <p>讯飞星火 Pro 档（接口版本 v3.1），对话、知识问答、数学解题和文案改写，输入输出同价。</p>
+          <ul class="af-tags">
+            <li>星火 Pro</li>
+            <li>对话问答</li>
+            <li>并发不限</li>
+          </ul>
+          <div class="af-model-foot">
+            <span><strong>$13.1040</strong> / 1M 输入</span>
+            <span class="af-model-go" aria-hidden="true">查看专题 →</span>
+          </div>
+        </li>
+        <li class="af-model">
+          <div class="af-model-head">
+            <span class="af-model-logo" style="background:#f2f7ff;border:1px solid #bcd5ff" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true" focusable="false"><path d="M2 13.08C2 9.182 4.772 6.367 9.32 2.122c-.65 7.883 6.41 8.272 5.023 12.214-.99 2.815-4.244 1.949-4.59 1.342 0 0 1.212.347 1.385-.866.174-1.213-2.252-1.862-3.81-4.937-2.6 2.988-.954 9.008 4.2 9.008 4.764 0 6.583-4.937 4.894-8.099 0 0 4.071.693 4.418 3.811.346 3.119-3.638 8.533-9.095 8.403C6.288 22.868 2 18.84 2 13.08z" fill="#3DC8F9"></path><path d="M17.852 6.107L11.615 0c-.52 5.933.866 8.374 4.894 9.485 2.729.753 3.307 1.04 4.504 2.772-.338-2.407-.78-3.812-3.161-6.15z" fill="#EA0100"></path><path clip-rule="evenodd" d="M9.033 18.323c.709.354 1.542.56 2.495.56 4.764 0 6.583-4.937 4.894-8.099 0 0 4.071.693 4.418 3.811.156 1.403-.565 3.27-1.902 4.89-3.458 1.57-7.29.84-9.905-1.162z" fill="#1652D8" fill-rule="evenodd"></path></svg></span>
+            <div>
+              <h3><a href="/zh/models/sparkdesk-v2.1">SparkDesk-v2.1 API</a></h3>
+              <span class="af-model-cat">科大讯飞 · SparkDesk-v2.1</span>
+            </div>
+          </div>
+          <p>讯飞星火早期的 2.x 版本（接口版本 v2.1），三款里单价最低，适合存量业务沿用。</p>
+          <ul class="af-tags">
+            <li>旧版</li>
+            <li>最低单价</li>
+            <li>并发不限</li>
+          </ul>
+          <div class="af-model-foot">
+            <span><strong>$8.7360</strong> / 1M 输入</span>
+            <span class="af-model-go" aria-hidden="true">查看专题 →</span>
+          </div>
+        </li>
+      </ul>
+      <!-- /SparkDesk -->
+
       <!-- Jev -->
       <h3 class="af-section-head" id="cat-jev" style="font-size:16px;margin:24px 0 12px"><a class="af-cat-link" href="/zh/models/jev"><span class="af-cat-name">Jev 系列</span><span class="af-cat-more">全系总览与价格对比 <span class="af-cat-arrow" aria-hidden="true">→</span></span></a></h3>
       <ul class="af-models">
@@ -3429,6 +3579,141 @@
             <span class="af-model-go" aria-hidden="true">查看专题 →</span>
           </div>
         </li>
+        <!-- Eleven -->
+        <li class="af-model">
+          <div class="af-model-head">
+            <span class="af-model-logo" style="background:#0c0a09" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24" fill="#ffffff" aria-hidden="true" focusable="false"><path d="M5 0h5v24H5V0zM14 0h5v24h-5V0z"></path></svg></span>
+            <div>
+              <h3><a href="/zh/models/eleven-v4">Eleven v4 API</a></h3>
+              <span class="af-model-cat">ElevenLabs · eleven_v4</span>
+            </div>
+          </div>
+          <p>ElevenLabs 旗舰语音合成模型，情感层次细腻，支持内联指令，90+ 种语言，适合有声书和专业配音。</p>
+          <ul class="af-tags">
+            <li>旗舰</li>
+            <li>90+ 种语言</li>
+            <li>并发不限</li>
+          </ul>
+          <div class="af-model-foot">
+            <span><strong>$0.6480</strong> / 万字符</span>
+            <span class="af-model-go" aria-hidden="true">查看专题 →</span>
+          </div>
+        </li>
+        <li class="af-model">
+          <div class="af-model-head">
+            <span class="af-model-logo" style="background:#0c0a09" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24" fill="#ffffff" aria-hidden="true" focusable="false"><path d="M5 0h5v24H5V0zM14 0h5v24h-5V0z"></path></svg></span>
+            <div>
+              <h3><a href="/zh/models/eleven-v4-turbo">Eleven v4 Turbo API</a></h3>
+              <span class="af-model-cat">ElevenLabs · eleven_v4_turbo</span>
+            </div>
+          </div>
+          <p>Eleven v4 的低延迟版本，官方标注中位推理延迟约 100ms，价格是 v4 的一半，适合语音助手。</p>
+          <ul class="af-tags">
+            <li>低延迟</li>
+            <li>语音助手</li>
+            <li>并发不限</li>
+          </ul>
+          <div class="af-model-foot">
+            <span><strong>$0.3240</strong> / 万字符</span>
+            <span class="af-model-go" aria-hidden="true">查看专题 →</span>
+          </div>
+        </li>
+        <li class="af-model">
+          <div class="af-model-head">
+            <span class="af-model-logo" style="background:#0c0a09" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24" fill="#ffffff" aria-hidden="true" focusable="false"><path d="M5 0h5v24H5V0zM14 0h5v24h-5V0z"></path></svg></span>
+            <div>
+              <h3><a href="/zh/models/eleven-v3">Eleven v3 API</a></h3>
+              <span class="af-model-cat">ElevenLabs · eleven_v3</span>
+            </div>
+          </div>
+          <p>戏剧表现力强，适合故事、短剧和角色配音，70+ 种语言，单次上限 5,000 字符。</p>
+          <ul class="af-tags">
+            <li>戏剧化</li>
+            <li>70+ 种语言</li>
+            <li>并发不限</li>
+          </ul>
+          <div class="af-model-foot">
+            <span><strong>$0.6480</strong> / 万字符</span>
+            <span class="af-model-go" aria-hidden="true">查看专题 →</span>
+          </div>
+        </li>
+        <li class="af-model">
+          <div class="af-model-head">
+            <span class="af-model-logo" style="background:#0c0a09" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24" fill="#ffffff" aria-hidden="true" focusable="false"><path d="M5 0h5v24H5V0zM14 0h5v24h-5V0z"></path></svg></span>
+            <div>
+              <h3><a href="/zh/models/eleven-v3-conversational">Eleven v3 Conversational API</a></h3>
+              <span class="af-model-cat">ElevenLabs · eleven_v3_conversational</span>
+            </div>
+          </div>
+          <p>v3 的对话版本，口语松弛自然，官方标注延迟约 165ms，价格是 v3 的一半。</p>
+          <ul class="af-tags">
+            <li>对话</li>
+            <li>口语自然</li>
+            <li>并发不限</li>
+          </ul>
+          <div class="af-model-foot">
+            <span><strong>$0.3240</strong> / 万字符</span>
+            <span class="af-model-go" aria-hidden="true">查看专题 →</span>
+          </div>
+        </li>
+        <li class="af-model">
+          <div class="af-model-head">
+            <span class="af-model-logo" style="background:#0c0a09" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24" fill="#ffffff" aria-hidden="true" focusable="false"><path d="M5 0h5v24H5V0zM14 0h5v24h-5V0z"></path></svg></span>
+            <div>
+              <h3><a href="/zh/models/eleven-multilingual-v2">Eleven Multilingual v2 API</a></h3>
+              <span class="af-model-cat">ElevenLabs · eleven_multilingual_v2</span>
+            </div>
+          </div>
+          <p>长篇文稿表现稳定，双语混读音色不容易崩坏，29 种语言，单次上限 10,000 字符。</p>
+          <ul class="af-tags">
+            <li>长文本</li>
+            <li>双语混读</li>
+            <li>并发不限</li>
+          </ul>
+          <div class="af-model-foot">
+            <span><strong>$0.6480</strong> / 万字符</span>
+            <span class="af-model-go" aria-hidden="true">查看专题 →</span>
+          </div>
+        </li>
+        <li class="af-model">
+          <div class="af-model-head">
+            <span class="af-model-logo" style="background:#0c0a09" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24" fill="#ffffff" aria-hidden="true" focusable="false"><path d="M5 0h5v24H5V0zM14 0h5v24h-5V0z"></path></svg></span>
+            <div>
+              <h3><a href="/zh/models/eleven-flash-v2-5">Eleven Flash v2.5 API</a></h3>
+              <span class="af-model-cat">ElevenLabs · eleven_flash_v2_5</span>
+            </div>
+          </div>
+          <p>轻量高速，单次上限 40,000 字符，32 种语言，适合超长文本和大批量字幕生成。</p>
+          <ul class="af-tags">
+            <li>超长文本</li>
+            <li>批量字幕</li>
+            <li>并发不限</li>
+          </ul>
+          <div class="af-model-foot">
+            <span><strong>$0.3240</strong> / 万字符</span>
+            <span class="af-model-go" aria-hidden="true">查看专题 →</span>
+          </div>
+        </li>
+        <li class="af-model">
+          <div class="af-model-head">
+            <span class="af-model-logo" style="background:#0c0a09" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24" fill="#ffffff" aria-hidden="true" focusable="false"><path d="M5 0h5v24H5V0zM14 0h5v24h-5V0z"></path></svg></span>
+            <div>
+              <h3><a href="/zh/models/eleven-flash-v2">Eleven Flash v2 API</a></h3>
+              <span class="af-model-cat">ElevenLabs · eleven_flash_v2</span>
+            </div>
+          </div>
+          <p>轻量高速播报模型，官方文档只列了英语，适合英文短句朗读和提示音。</p>
+          <ul class="af-tags">
+            <li>轻量高速</li>
+            <li>英语</li>
+            <li>并发不限</li>
+          </ul>
+          <div class="af-model-foot">
+            <span><strong>$0.3240</strong> / 万字符</span>
+            <span class="af-model-go" aria-hidden="true">查看专题 →</span>
+          </div>
+        </li>
+        <!-- /Eleven -->
       </ul>
 
       <div class="af-section-head af-section-head-spaced">
