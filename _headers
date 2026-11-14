@@ -9,3 +9,13 @@
 
 /sitemap.xml
   Content-Type: application/xml; charset=utf-8
+
+# 内部文档与脚本不应被收录
+/*.md
+  X-Robots-Tag: noindex, nofollow
+
+/scripts/*
+  X-Robots-Tag: noindex, nofollow
+
+/.spec-workflow/*
+  X-Robots-Tag: noindex, nofollow

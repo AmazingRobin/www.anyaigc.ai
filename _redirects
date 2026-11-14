@@ -32,3 +32,9 @@
 /zh/models/doubao-seed-1-6-vision-250815 /zh/models/doubao-seed-1-6-vision 301
 /en/models/doubao-seed-1-6-vision-250815 /en/models/doubao-seed-1-6-vision 301
 # End Doubao Seed snapshot redirects
+
+# Language roots -> model hubs (no zh/index.html or en/index.html)
+/zh /zh/models/ 301
+/zh/ /zh/models/ 301
+/en /en/models/ 301
+/en/ /en/models/ 301

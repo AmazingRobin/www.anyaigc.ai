@@ -14,6 +14,10 @@ BRAND = 'AnyAIGC'  # 区分大小写，不要转大写
 
 # 每个页面：标题前半、渐变关键词、一句卖点、价格标签、其余标签
 PAGES = {
+    'gemini-4-hydrogen': ('Gemini 4', 'Hydrogen',
+                          {'zh': '日常编码与 Agent 的快速模型，约官方 3.6 折', 'en': 'Fast model for everyday coding and agents, 64% off'},
+                          {'zh': '$0.5360 / 1M 输入', 'en': '$0.5360 / 1M input'},
+                          {'zh': ['1M 上下文', '并发不限', '对公 · 专票'], 'en': ['1M context', 'Unlimited RPM', 'Contracts · invoices']}),
     'gemini-4-carbon': ('Gemini 4', 'Carbon',
                         {'zh': '长周期 Agent 前沿模型，约官方 3.6 折', 'en': 'Frontier model for long-horizon agents, 64% off'},
                         {'zh': '$0.7147 / 1M 输入', 'en': '$0.7147 / 1M input'},
