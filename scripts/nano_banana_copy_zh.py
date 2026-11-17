@@ -374,7 +374,7 @@ def model_page(slug):
             LICENSE_FAQ,
         ]
         return dict(base,
-            title=f'Nano Banana 2 API 价格与接入｜gemini-3.1-flash-image - AnyAIGC',
+            title=f'Nano Banana 2 API 价格与接入｜{cny_min(slug)}/张起 - AnyAIGC',
             desc=f'Nano Banana 2 API（gemini-3.1-flash-image）按张计费，1K/2K {cny_min(slug)}、4K ¥0.19，支持 14 种比例和多图编辑，并发不限，支持对公转账与增值税专票。',
             og_desc=f'Google Nano Banana 2（Gemini 3.1 Flash Image）API：1K/2K {cny_min(slug)} / 张，4K ¥0.19，并发不限。',
             og_alt='AnyAIGC Nano Banana 2 API 价格与接入',

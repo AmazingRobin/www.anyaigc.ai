@@ -123,7 +123,7 @@ python scripts/related_models.py        # 11 「同类模型 API」版块
 python scripts/check_topics.py          # 12 自检，必须 0 错误
 ```
 
-提交内容改动之后，再运行 `python scripts/sitemap_lastmod.py` 并提交 `sitemap.xml`。它按页面正文最后一次变化的提交日期写 `lastmod`，所以必须在内容提交之后跑，只改版本号或结构化数据不会改动日期。
+最后运行 `python scripts/sitemap_lastmod.py`，把 `sitemap.xml` 和内容放进同一个提交。提交前后都可以跑：正文和最新提交不同的页面，或 git 还没见过的新页面，写今天的日期；正文和最新提交一致的页面，写最后一次改动它的提交日期。只改版本号、`<head>` 或结构化数据，不算正文变化，不会改动日期。脚本要逐个页面比对提交历史，全站大约需要 2 分钟。
 
 **顺序有依赖，不能打乱：** 第 3 步读第 1 步写好的标题；第 4 步读第 3 步的折扣，必须在它之后；第 5 步最后动标题，避免被前面的脚本改回去。Llama 的规格版块直接写在 `llama_pages.py` 里，不在上面的列表中。
 

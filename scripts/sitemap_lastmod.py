@@ -7,6 +7,10 @@ each URL is dated by the last commit that touched the page's *content*. The
 dateModified, asset version queries (?v=20261114) and inline CSS. A commit that
 only bumps a cache version therefore does not move the date.
 
+A page whose content differs from HEAD, or that git has never seen, is dated today,
+so the script can run before committing. A page whose content matches HEAD keeps the
+date of the commit that last changed it.
+
 An entry is updated only when its current lastmod is older than that content
 date. A newer lastmod is left alone and reported, never pulled backwards, and
 privacy.html / terms.html gain the <lastmod> they were missing.
@@ -15,8 +19,10 @@ Usage: PYTHONIOENCODING=utf-8 python scripts/sitemap_lastmod.py
 """
 import re
 import subprocess
+from datetime import date as _date
 from pathlib import Path
 
+TODAY = _date.today().isoformat()
 ROOT = Path(__file__).resolve().parent.parent
 SITE = "https://www.anyaigc.ai"
 SITEMAP = ROOT / "sitemap.xml"
@@ -61,6 +67,13 @@ def content_dates(paths):
     dates = {}
     for path in sorted(wanted):
         current = content_of((ROOT / path).read_text(encoding="utf-8"))
+        # Content not committed yet (a new file, or a body that differs from HEAD): the
+        # change is happening today. This lets the script run before the commit, so the
+        # content and sitemap.xml can go into one commit.
+        in_head = committed("HEAD", path)
+        if in_head is None or in_head != current:
+            dates[path] = TODAY
+            continue
         dates[path] = history[path][0][1] if history[path] else None
         for commit, date in history[path]:
             previous = committed(commit, path)
@@ -90,9 +103,7 @@ def main():
 
     def apply(match):
         nonlocal updated, kept, missing
-        loc, gap = match.group(1), match.group(2)
-        current = re.match(r"\s*<lastmod>([^<]*)</lastmod>", gap)
-        lastmod = current.group(1) if current else None
+        loc, lastmod = match.group(1), match.group(2)
         date = dates.get(repo_path(loc))
         if not date:
             missing += 1
@@ -107,7 +118,7 @@ def main():
         return f"<loc>{loc}</loc>\n    <lastmod>{date}</lastmod>\n    "
 
     new = re.sub(
-        r"<loc>([^<]+)</loc>(\s*)(?:<lastmod>[^<]*</lastmod>\s*)?",
+        r"<loc>([^<]+)</loc>(?:\s*<lastmod>([^<]*)</lastmod>\s*)?",
         apply, text)
     if new != text:
         SITEMAP.write_text(new, encoding="utf-8", newline="\n")
