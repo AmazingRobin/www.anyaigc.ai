@@ -96,11 +96,56 @@ PYTHONIOENCODING=utf-8 python scripts/check_topics.py
 - `check_topics.py` 必须 0 错误。它会检查 title/description、canonical、hreflang、OG、JSON-LD、FAQ 条数一致、站内链接、scrollbar.css 引入与滚动条品牌色变量、注册链接参数、企业接入版块/导航/description/FAQ、中英对称、专题首页与 sitemap 注册。
 - 用 Playwright 在 1440×900 和 390×844 截全页，确认：没有 JS 报错、手机端 `scrollWidth` 不超过视口、价格表在手机上可读。
 - 点一次语言切换链接，确认中英互跳正常。
+- 页面写完后，按下面「SEO 后处理脚本」的顺序补跑一遍，再跑 `check_topics.py`。新页的标题、同类模型版块会由这些脚本补上，不用手写。
 - 不要用 `python -m http.server` 预览，它不支持 clean URL，`/en/models/<slug>` 会 404。
 
 ### 8. 交付
 
 告诉用户改了哪些文件、需要他确认的事实（例如文档里没写清楚的返回字段）、本地预览地址。不要自动提交或推送。
+
+## SEO 后处理脚本（生成页面后必须按顺序补跑）
+
+各系列的生成器（`scripts/<系列>_pages.py` 等）输出的是原始页面。下面这些脚本在生成之后再改 HTML。**新增一个型号页，或重新生成某个系列之后，必须按下面的顺序补跑**，否则标题、规格版块、同类模型、结构化数据会回到生成器的旧写法。每个脚本重复运行都不会产生新改动，带 `--dry-run` 的只预演不写文件。
+
+```bash
+export PYTHONIOENCODING=utf-8
+python scripts/seo_titles.py            # 1  标题补卖点；快速开始 H2；Qwen 子页关键词和 FAQ；海外模型中文关键词
+python scripts/seo_overview_titles.py   # 2  系列总览页专用标题
+python scripts/seo_title_selling.py     # 3  中文标题写「约官方 X 折」（读页面里已有的折扣）
+python scripts/seo_titles_en_save.py    # 4  英文标题写 Save X%（折扣取自第 3 步的中文标题）
+python scripts/seo_title_names.py       # 5  标题去掉 Preview、补全日期
+python scripts/seo_unique.py            # 6  Qwen 对话页的规格版块
+python scripts/seo_unique_media.py      # 7  Speech、HappyHorse 的规格版块和 FAQ
+python scripts/seo_unique_specs.py      # 8  其余系列的规格版块（数据在 scripts/seo_specs_data.json）
+python scripts/seo_overview_faq.py      # 9  Qwen、Kling 总览页的价格 FAQ
+python scripts/seo_offers.py            # 10 JSON-LD 里去掉价格为 0 的免费项
+python scripts/related_models.py        # 11 「同类模型 API」版块
+python scripts/check_topics.py          # 12 自检，必须 0 错误
+```
+
+提交内容改动之后，再运行 `python scripts/sitemap_lastmod.py` 并提交 `sitemap.xml`。它按页面正文最后一次变化的提交日期写 `lastmod`，所以必须在内容提交之后跑，只改版本号或结构化数据不会改动日期。
+
+**顺序有依赖，不能打乱：** 第 3 步读第 1 步写好的标题；第 4 步读第 3 步的折扣，必须在它之后；第 5 步最后动标题，避免被前面的脚本改回去。Llama 的规格版块直接写在 `llama_pages.py` 里，不在上面的列表中。
+
+### 新型号要给这些脚本提供什么
+
+- **规格版块**：在 `scripts/seo_specs_data.json` 加一条记录（`slug`、`source` 官方链接、`facts_zh`、`facts_en`，可选 `compare_slug`/`compare_zh`/`compare_en`）。**事实只写在厂商官网读到的内容**，上下文、最大输出、参数规模这类数字必须有出处。读不到官方资料就不写，页面保持没有这个版块，不要凭记忆或第三方站点补。价格不用写，脚本从页面自己的价格表读。
+- **同类模型**：新厂商或新类别要在 `scripts/related_models.py` 的 `TARGETS` 里加一项，并在 `category()` 的前缀表里归类。
+- **折扣**：中文标题只在页面上已有「约官方 X 折」或「比官方便宜 X%」这类对比官方价的说法时才写折，否则保留起步价；只写「68 折」这种活动标签不算。
+- 厂商文档如果已把型号标为停用或旧版，事实里不写停用日期，先问用户 AnyAIGC 是否还在提供。
+
+### 标题卖点规则（脚本按此生成，手写标题要保持一致）
+
+- 中文：`<模型> API 价格与接入｜约官方 X 折 - AnyAIGC`；没有对比官方价的折扣就写起步价，例如 `｜$0.0304/百万 tokens 起`。系列总览页写「最低约官方 X 折」。不在标题里写「中转」，它只放在 meta keywords。
+- 英文：有折扣写 `Save X%`（不用「折」的说法），没有写 `From $X/1M tokens`。
+- 标题里用常见产品名：`Gemini 3.1 Pro`，不带 `Preview`；H1、正文和代码示例保留完整模型 ID，因为调用接口要用准确的名字。模型名本身就是原始 ID（如 `doubao-seed-2-1-pro`）的不缩短。
+- 英文标题 ≤ 65 字符（按转义后计），中文显示宽度 ≤ 64。放不下时脚本只压缩单位和空格（`/百万 tokens` → `/M`），不删价格。
+
+### 已知缺口（脚本没覆盖，重新生成会丢）
+
+- Qwen、万相、HappyHorse 页面的可见面包屑（`.q-crumb`）和可灵页面里的「Kling 系列总览」一层，是一次性补丁写入的，没有进生成器。重新生成这些系列后要补回，并让 `BreadcrumbList` JSON-LD 和可见内容一致。
+- 首页的「热门模型 API」版块和 `functions/[[path]].js`（拦截内部文件）是手写的。
+- 官方已下线或标为旧版的型号（豆包 Seed 1.6/1.8、MiMo V2.5、Kimi K2.6/K2.7 Code、Claude 的 Legacy 型号等）的页面写法，要先确认 AnyAIGC 是否还在提供再决定。
 
 ## 专题页规则
 

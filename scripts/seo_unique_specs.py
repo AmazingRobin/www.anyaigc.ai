@@ -24,19 +24,52 @@ def esc(text):
 
 
 def table_prices(page):
+    """(rows, tier, more_tiers). Tiered tables list their first tier only.
+
+    Rows with a single cell are tier headings ("输入 <= 200,000 tokens"). Mixing
+    two tiers would repeat labels like 输入/输出 with different prices, so only the
+    first tier is read and the caller is told that other tiers exist.
+
+    When the header names an "AnyAIGC" column, that column is the price. Some tables
+    put the vendor's list price first, and reading the first price cell would then
+    quote the official price as this page's price.
+    """
     i = page.find('id="pricing"')
     sec = page[i:page.find("</section>", i)] if i >= 0 else ""
-    rows = []
-    for tr in re.findall(r"<tr[^>]*>(.*?)</tr>", sec, re.S):
+
+    def text(cell):
+        return re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", " ", cell))).strip()
+
+    head_html = sec[:sec.find("</thead>")] if "</thead>" in sec else ""
+    heads = [text(h) for h in re.findall(r"<th[^>]*>(.*?)</th>", head_html, re.S)]
+    ours = next((k for k, h in enumerate(heads) if "AnyAIGC" in h), None)
+    body = sec[sec.find("</thead>"):] if "</thead>" in sec else sec
+
+    groups, current = [], None
+    for tr in re.findall(r"<tr[^>]*>(.*?)</tr>", body, re.S):
         raw = re.findall(r"<t[dh][^>]*>(.*?)</t[dh]>", tr, re.S)
-        # A label cell may carry a <small>/<span> note; keep only the label itself.
+        cells = [text(c) for c in raw]
+        if len(cells) == 1 and cells[0]:
+            current = [cells[0], []]
+            groups.append(current)
+            continue
         label = html.unescape(re.sub(r"<[^>]+>", "", re.split(r"<(?:small|span|br|em|p)\b", raw[0])[0])).strip() if raw else ""
-        cells = [html.unescape(re.sub(r"<[^>]+>", " ", c)).strip() for c in raw]
-        cells = [re.sub(r"\s+", " ", c) for c in cells]
-        price = next((c for c in cells if re.match(r"^[\$¥]\s?[0-9]", c)), None)
+        isprice = lambda c: re.match(r"^[\$¥]\s?[0-9]", c)
+        price = cells[ours] if ours is not None and len(cells) > ours and isprice(cells[ours]) else next((c for c in cells if isprice(c)), None)
+        if price:
+            # A cell can carry a trailing note ("$0.0035 官方 $0.0059"): keep the amount and unit only.
+            m = re.match(r"^([\$¥]\s?[0-9][0-9.,]*(?:\s*/\s*[^\s$¥]+(?:\s+tokens)?)?)", price)
+            price = m.group(1).strip() if m else price
         if price and label and label != price:
-            rows.append((label, price))
-    return rows[:4]
+            if current is None:
+                current = ["", []]
+                groups.append(current)
+            current[1].append((label, price))
+    groups = [g for g in groups if g[1]]
+    if not groups:
+        return [], "", False
+    tier, rows = groups[0]
+    return rows[:4], (tier if len(groups) > 1 else ""), len(groups) > 1
 
 
 def shell(page):
@@ -58,12 +91,16 @@ def section(lang, rec, page):
     zh = lang == "zh"
     facts = rec["facts_zh" if zh else "facts_en"]
     paras = [esc(f) for f in facts]
-    rows = table_prices(page)
+    rows, tier, more = table_prices(page)
     if rows:
         if zh:
-            paras.append("本页价格为：" + "、".join(f"{esc(a)} {esc(b)}" for a, b in rows) + "，与上方价格表一致。")
+            head = f"本页价格（{esc(tier)}）为：" if tier else "本页价格为："
+            tail = "，其余档位见上方价格表。" if more else "，与上方价格表一致。"
+            paras.append(head + "、".join(f"{esc(a)} {esc(b)}" for a, b in rows) + tail)
         else:
-            paras.append("This page lists " + ", ".join(f"{esc(a)} at {esc(b)}" for a, b in rows) + ", matching the pricing table above.")
+            head = f"This page lists ({esc(tier)}) " if tier else "This page lists "
+            tail = "; other tiers are in the pricing table above." if more else ", matching the pricing table above."
+            paras.append(head + ", ".join(f"{esc(a)} at {esc(b)}" for a, b in rows) + tail)
     other = rec.get("compare_slug") or ""
     text = rec.get("compare_zh" if zh else "compare_en") or ""
     if other and text and (ROOT / lang / "models" / f"{other}.html").is_file():

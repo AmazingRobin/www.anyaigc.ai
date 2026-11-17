@@ -176,17 +176,19 @@
    "Nano Banana 2 即 Gemini 3.1 Flash Image，Google 于 2026 年 2 月 26 日发布，定位是以 Flash 速度提供接近 Nano Banana Pro 的世界知识、画质和推理能力。",
    "支持多种宽高比，分辨率从 512px 到 4K。",
    "单个工作流中可保持最多 5 个角色的外观一致和最多 14 个物体的还原度。",
-   "可调用网页搜索的实时信息和图片做图像检索增强，能在图中生成清晰文字并翻译、本地化图内文字；发布时在 Gemini API 和 AI Studio 中为预览版。"
+   "可调用网页搜索的实时信息和图片做图像检索增强，能在图中生成清晰文字并翻译、本地化图内文字；发布时在 Gemini API 和 AI Studio 中为预览版。",
+   "官方文档中的模型代码是 gemini-3.1-flash-image，输入支持文本、图片、视频和 PDF，输出为图片和文本；输入上限 131,072 tokens，输出上限 32,768 tokens。"
   ],
   "facts_en": [
    "Nano Banana 2 is Gemini 3.1 Flash Image, released by Google on Feb 26, 2026, positioned as bringing Nano Banana Pro's world knowledge, quality and reasoning at Flash speed.",
    "It supports a range of aspect ratios and resolutions from 512px to 4K.",
    "It keeps the resemblance of up to five characters and the fidelity of up to 14 objects in a single workflow.",
-   "It uses real-time information and images from web search (image-search grounding), renders legible text and can translate or localize text inside an image; at launch it was in preview in the Gemini API and AI Studio."
+   "It uses real-time information and images from web search (image-search grounding), renders legible text and can translate or localize text inside an image; at launch it was in preview in the Gemini API and AI Studio.",
+   "Per Google's docs the model code is gemini-3.1-flash-image; it takes text, image, video and PDF input, returns image and text, and has a 131,072-token input limit and a 32,768-token output limit."
   ],
-  "compare_slug": "nano-banana-pro",
-  "compare_zh": "如果更看重最高的事实准确度和高保真效果，而不是生成速度，Google 建议选 Nano Banana Pro。",
-  "compare_en": "Google recommends Nano Banana Pro for high-fidelity tasks that need maximum factual accuracy, and Nano Banana 2 for fast generation."
+  "compare_slug": "nano-banana-2.1",
+  "compare_zh": "Google 称 2.1 在画质、提示词遵循、多轮角色一致性和文字渲染上有改进，速度和成本保持 Flash 级。",
+  "compare_en": "Google says 2.1 improves visual quality, prompt adherence, multi-turn character consistency and text rendering while keeping Flash-level speed and cost."
  },
  {
   "slug": "nano-banana-pro",
@@ -195,13 +197,15 @@
    "Nano Banana Pro 即 Gemini 3 Pro Image，基于 Gemini 3 Pro，Google 于 2025 年 11 月 20 日发布。",
    "可在图中生成多种语言的准确文字，支持局部编辑、调整镜头角度、焦点、调色和光照。",
    "最多可混合 14 张图片，并保持最多 5 个人物的外观一致；提供多种宽高比和 2K、4K 分辨率。",
-   "可连接 Google 搜索获取实时信息（如天气、体育）来生成信息图；生成的图片带 SynthID 水印。"
+   "可连接 Google 搜索获取实时信息（如天气、体育）来生成信息图；生成的图片带 SynthID 水印。",
+   "官方文档中的模型代码是 gemini-3-pro-image，输入支持图片和文本，输出为图片和文本；输入上限 65,536 tokens，输出上限 32,768 tokens。"
   ],
   "facts_en": [
    "Nano Banana Pro is Gemini 3 Pro Image, built on Gemini 3 Pro and released by Google on Nov 20, 2025.",
    "It renders accurate text in multiple languages and offers localized editing plus control over camera angle, focus, color grading and lighting.",
    "It can blend up to 14 images while keeping the resemblance of up to 5 people, with a range of aspect ratios and 2K and 4K resolution.",
-   "It can connect to Google Search for real-time information such as weather or sports when building infographics, and its images carry SynthID watermarks."
+   "It can connect to Google Search for real-time information such as weather or sports when building infographics, and its images carry SynthID watermarks.",
+   "Per Google's docs the model code is gemini-3-pro-image; it takes image and text input, returns image and text, and has a 65,536-token input limit and a 32,768-token output limit."
   ],
   "compare_slug": "nano-banana-2",
   "compare_zh": "如果更看重生成速度和快速迭代，或需要 512px 小图输出，可以选 Nano Banana 2。",
@@ -1595,5 +1599,548 @@
   "compare_slug": "gpt-6.1-sol",
   "compare_zh": "gpt-6.1-terra 完成任务的速度是 gpt-6.1-sol 的三倍以上，OpenAI 建议最复杂的编程任务仍用 gpt-6.1-sol。",
   "compare_en": "gpt-6.1-terra finishes tasks more than three times faster than gpt-6.1-sol, though OpenAI still recommends gpt-6.1-sol for the most complex coding."
+ },
+ {
+  "slug": "grok-4.7",
+  "source": "https://docs.x.ai/developers/grok-4-7",
+  "facts_zh": [
+   "grok-4.7 于 2026 年 9 月 21 日上线，官方称它是面向编程、智能体任务和知识工作的旗舰模型。",
+   "上下文窗口为 500,000 tokens，知识截止时间为 2026 年 5 月，输入支持文本和图像，输出为文本，没有文本输出上限。",
+   "推理强度可选 low、medium、high（默认）和 xhigh；支持函数调用、网页搜索、X 搜索和代码执行。",
+   "官方模型选择表把代码和对话都指向 grok-4.7。"
+  ],
+  "facts_en": [
+   "grok-4.7 launched on September 21, 2026, and the vendor describes it as its flagship for coding, agentic tasks and knowledge work.",
+   "It has a 500,000-token context window and a May 2026 knowledge cutoff, takes text and image input, returns text, and has no text output limit.",
+   "Reasoning effort can be low, medium, high (default) or xhigh, and it supports function calling, web search, X search and code execution.",
+   "The official model-selection table points both code and chat at grok-4.7."
+  ],
+  "compare_slug": "grok-4.6",
+  "compare_zh": "两者上下文都是 500,000 tokens，推理档位也相同；官方文档把代码和对话的首选写成 grok-4.7。",
+  "compare_en": "both have a 500,000-token context and the same reasoning levels, but the official docs name grok-4.7 as the first choice for code and chat."
+ },
+ {
+  "slug": "grok-4.6",
+  "source": "https://docs.x.ai/developers/release-notes",
+  "facts_zh": [
+   "grok-4.6 于 2026 年 8 月 12 日上线，官方称它是面向编程、智能体任务和知识工作的旗舰模型。",
+   "上下文窗口为 500,000 tokens，输入支持文本和图像，输出为文本，没有文本输出上限。",
+   "推理强度可选 low、medium、high（默认）和 xhigh。"
+  ],
+  "facts_en": [
+   "grok-4.6 launched on August 12, 2026, and the vendor described it as its flagship for coding, agentic tasks and knowledge work.",
+   "It has a 500,000-token context window, takes text and image input, returns text, and has no text output limit.",
+   "Reasoning effort can be low, medium, high (default) or xhigh."
+  ],
+  "compare_slug": "grok-4.7",
+  "compare_zh": "官方文档把代码和对话的首选写成 grok-4.7，它的知识截止时间为 2026 年 5 月。",
+  "compare_en": "the official docs name grok-4.7 as the first choice for code and chat, with a May 2026 knowledge cutoff."
+ },
+ {
+  "slug": "grok-4.5",
+  "source": "https://docs.x.ai/developers/release-notes",
+  "facts_zh": [
+   "grok-4.5 于 2026 年 7 月 8 日上线，官方定位是面向编程、智能体任务和知识工作的模型。",
+   "推理强度可选 low、medium、high，默认 high。",
+   "官方发布说明还写明，grok-4.5 已向欧盟用户的 API 控制台开放。"
+  ],
+  "facts_en": [
+   "grok-4.5 launched on July 8, 2026, positioned for coding, agentic tasks and knowledge work.",
+   "Reasoning effort can be low, medium or high, with high as the default.",
+   "The release notes also state that grok-4.5 is available in the API console for EU users."
+  ],
+  "compare_slug": "grok-4.6",
+  "compare_zh": "推理档位多了 xhigh，官方写明上下文窗口为 500,000 tokens。",
+  "compare_en": "its reasoning levels add xhigh, and the official notes state a 500,000-token context window."
+ },
+ {
+  "slug": "grok-build-0.1",
+  "source": "https://docs.x.ai/developers/release-notes",
+  "facts_zh": [
+   "grok-build-0.1 是专门为智能体编程工作流训练的编码模型，模型名就是 grok-build-0.1。",
+   "官方在 2026 年 5 月 19 日的发布说明中称它处于早期访问阶段。"
+  ],
+  "facts_en": [
+   "grok-build-0.1 is a coding model trained specifically for agentic coding workflows, and its model name is grok-build-0.1.",
+   "The vendor's May 19, 2026 release note describes it as in early access."
+  ],
+  "compare_slug": "grok-4.7",
+  "compare_zh": "上下文窗口 500,000 tokens，官方模型选择表把代码和对话都指向它。",
+  "compare_en": "it has a 500,000-token context window, and the official model-selection table points both code and chat at it."
+ },
+ {
+  "slug": "gpt-image-2",
+  "source": "https://developers.openai.com/api/docs/models/gpt-image-2",
+  "facts_zh": [
+   "OpenAI 把 GPT Image 2 定位为面向快速、高质量图像生成与编辑的先进图像模型，支持灵活的图像尺寸和高保真的图像输入。",
+   "输入支持文本和图像，输出为图像，不支持音频和视频。官方性能评级为“较高”，速度评级为“中等”。",
+   "官方页面列出的固定快照是 gpt-image-2-2026-04-21。"
+  ],
+  "facts_en": [
+   "OpenAI describes GPT Image 2 as its state-of-the-art image model for fast, high-quality generation and editing, with flexible image sizes and high-fidelity image inputs.",
+   "It takes text and image input and returns images; audio and video are not supported. The official ratings are higher performance and medium speed.",
+   "The pinned snapshot listed on the official page is gpt-image-2-2026-04-21."
+  ],
+  "compare_slug": "gpt-image-2.5-flare",
+  "compare_zh": "OpenAI 称 GPT-Image-2.5 Flare 生成质量更高，延迟比 GPT-Image-2 低 50%。",
+  "compare_en": "OpenAI says GPT-Image-2.5 Flare produces higher-quality images at 50% lower latency than GPT-Image-2."
+ },
+ {
+  "slug": "nano-banana-2.1",
+  "source": "https://aistudio.google.com/docs/models/gemini-nano-banana-2.1",
+  "facts_zh": [
+   "Google 官方文档中 Nano Banana 2.1 的模型代码是 gemini-nano-banana-2.1，是 Nano Banana 2（Gemini 3.1 Flash Image）的更新版，保持 Flash 级速度和成本。",
+   "官方列出的改进包括画质与真实感、提示词遵循、多轮对话中的角色一致性和文字渲染；输出分辨率为 1K、2K、4K，默认 1K。",
+   "支持最多 14 张参考图融合，其中最多 4 个角色保持一致、最多 10 个物体保持还原；支持 Google 搜索事实依据，思考等级可选 minimal、medium（默认）和 high。",
+   "输入支持文本、图片、视频和 PDF，输出为图片和文本；输入上限 131,072 tokens，输出上限 32,768 tokens。"
+  ],
+  "facts_en": [
+   "In Google's docs the model code for Nano Banana 2.1 is gemini-nano-banana-2.1. It updates Nano Banana 2 (Gemini 3.1 Flash Image) and keeps Flash-level speed and cost.",
+   "Google lists improvements in visual quality and realism, prompt adherence, multi-turn character consistency and text rendering; output is 1K, 2K or 4K, with 1K as the default.",
+   "It fuses up to 14 reference images, keeping up to 4 characters consistent and up to 10 objects faithful, supports grounding with Google Search, and offers thinking levels minimal, medium (default) and high.",
+   "Input can be text, image, video and PDF, and output is image and text, with a 131,072-token input limit and a 32,768-token output limit."
+  ],
+  "compare_slug": "nano-banana-pro",
+  "compare_zh": "Google 把 2.1 称为 Gemini 3 Pro Image（Nano Banana Pro）更高效的对应型号；Pro 的输入上限只有 65,536 tokens，且不支持视频输入。",
+  "compare_en": "Google calls 2.1 the more efficient counterpart to Gemini 3 Pro Image (Nano Banana Pro); Pro has a 65,536-token input limit and takes no video input."
+ },
+ {
+  "slug": "grok-4-20-reasoning",
+  "source": "https://docs.x.ai/developers/models/grok-4.20-reasoning",
+  "facts_zh": [
+   "官方文档把 Grok 4.20 描述为高性能模型，强调速度和智能体工具调用能力，对提示词的遵循严格。",
+   "官方规格表写明上下文窗口为 1,000,000 tokens，输入支持文本和图片，输出为文本，支持函数调用、结构化输出和推理。",
+   "官方发布说明显示，Grok 4.20 与 Grok 4.20 Multi-agent 于 2026 年 3 月 10 日上线。"
+  ],
+  "facts_en": [
+   "The official docs describe Grok 4.20 as a high-performance model with industry-leading speed and agentic tool calling, with strict prompt adherence.",
+   "The official spec table lists a 1,000,000-token context window, text and image input, text output, and support for function calling, structured outputs and reasoning.",
+   "The release notes show Grok 4.20 and Grok 4.20 Multi-agent going live on March 10, 2026."
+  ],
+  "compare_slug": "grok-4-20-non-reasoning",
+  "compare_zh": "官方把它列为 Grok 4.20 的推理版；两个版本的上下文窗口和输入输出类型相同，需要先思考再回答时选这个。",
+  "compare_en": "the official docs list this as the reasoning variant of Grok 4.20; both variants share the same context window and input and output types, so choose this one when you want the model to think before answering."
+ },
+ {
+  "slug": "grok-4-20-non-reasoning",
+  "source": "https://docs.x.ai/developers/models/grok-4.20-non-reasoning",
+  "facts_zh": [
+   "官方文档把它列为 Grok 4.20 的非推理版（Non-Reasoning），描述与推理版相同：高性能、速度快、擅长智能体工具调用。",
+   "官方规格表写明上下文窗口为 1,000,000 tokens，输入支持文本和图片，输出为文本，支持函数调用和结构化输出。",
+   "官方发布说明显示，Grok 4.20 于 2026 年 3 月 10 日上线。"
+  ],
+  "facts_en": [
+   "The official docs list this as the non-reasoning variant of Grok 4.20, with the same description as the reasoning variant: high performance, speed and agentic tool calling.",
+   "The official spec table lists a 1,000,000-token context window, text and image input, text output, and support for function calling and structured outputs.",
+   "The release notes show Grok 4.20 going live on March 10, 2026."
+  ],
+  "compare_slug": "grok-4-20-reasoning",
+  "compare_zh": "官方把另一个版本列为推理版；两者上下文窗口和输入输出类型相同，需要模型先思考再回答时选后者。",
+  "compare_en": "the official docs list the other variant as the reasoning model; both share the same context window and input and output types, so choose that one when you want the model to think before answering."
+ },
+ {
+  "slug": "grok-4.3",
+  "source": "https://docs.x.ai/developers/models/grok-4.3",
+  "facts_zh": [
+   "官方文档对 grok-4.3 的描述是：速度快、可靠，工具调用和指令遵循能力强。",
+   "官方规格表写明上下文窗口为 1,000,000 tokens，输入支持文本和图片，输出为文本，支持函数调用和结构化输出。",
+   "推理强度可配置，可选 none（完全不推理）、low、medium 和 high；官方别名是 grok-4.3-latest。"
+  ],
+  "facts_en": [
+   "The official docs describe grok-4.3 as a fast, reliable model with strong tool calling and instruction following.",
+   "The official spec table lists a 1,000,000-token context window, text and image input, text output, and support for function calling and structured outputs.",
+   "Reasoning is configurable with none (no reasoning at all), low, medium and high, and the official alias is grok-4.3-latest."
+  ],
+  "compare_slug": "grok-4.7",
+  "compare_zh": "官方模型选择表把代码和对话的首选写成 grok-4.7，它的上下文窗口为 500,000 tokens，推理档位多了 xhigh。",
+  "compare_en": "the official model-selection table names grok-4.7 as the first choice for code and chat; it has a 500,000-token context window and adds an xhigh reasoning level."
+ },
+ {
+  "slug": "grok-imagine-image-2.0",
+  "source": "https://docs.x.ai/developers/models/grok-imagine-image-2.0",
+  "facts_zh": [
+   "官方模型页写明 grok-imagine-image-2.0 输入支持文本和图片，输出为图片。",
+   "官方图像生成文档列出的分辨率为 1k（省略时默认）和 2k，单次请求用 n 参数可生成 1 到 10 张图。",
+   "画幅可选 1:1、16:9、9:16、4:3、3:4、3:2、2:3、2:1、1:2，省略时默认 auto，由模型按提示词挑选。",
+   "官方模型选择表把图片任务指向 Image 2.0。"
+  ],
+  "facts_en": [
+   "The official model page says grok-imagine-image-2.0 takes text and image input and returns images.",
+   "The official image generation docs list 1k (the default when omitted) and 2k resolutions, and the n parameter generates 1 to 10 images per request.",
+   "Aspect ratios include 1:1, 16:9, 9:16, 4:3, 3:4, 3:2, 2:3, 2:1 and 1:2, with auto as the default so the model picks a ratio from the prompt.",
+   "The official model-selection table points image tasks at Image 2.0."
+  ],
+  "compare_slug": "grok-imagine-image",
+  "compare_zh": "官方文档为 grok-imagine-image 列出了日期别名 grok-imagine-image-2026-03-02，需要固定到某个发布版本时看那一页。",
+  "compare_en": "the official docs list a dated alias, grok-imagine-image-2026-03-02, for grok-imagine-image, so look at that page when you need to pin a release."
+ },
+ {
+  "slug": "grok-imagine-image",
+  "source": "https://docs.x.ai/developers/models/grok-imagine-image",
+  "facts_zh": [
+   "官方模型页写明 grok-imagine-image 输入支持文本和图片，输出为图片。",
+   "官方列出的日期别名是 grok-imagine-image-2026-03-02，调用时可以固定到这个版本。",
+   "官方图像生成文档适用于 xAI 的图像模型：分辨率 1k（默认）和 2k，n 参数可一次生成 1 到 10 张。"
+  ],
+  "facts_en": [
+   "The official model page says grok-imagine-image takes text and image input and returns images.",
+   "The dated alias listed by the vendor is grok-imagine-image-2026-03-02, which you can call to pin this version.",
+   "The official image generation docs cover xAI's image models: 1k (default) and 2k resolutions, and the n parameter generates 1 to 10 images per call."
+  ],
+  "compare_slug": "grok-imagine-image-2.0",
+  "compare_zh": "官方模型选择表把图片任务首选指向 Image 2.0。",
+  "compare_en": "the official model-selection table points image tasks at Image 2.0 first."
+ },
+ {
+  "slug": "grok-imagine-video",
+  "source": "https://docs.x.ai/developers/models/grok-imagine-video",
+  "facts_zh": [
+   "官方模型页写明 grok-imagine-video 输入支持文本、图片和视频，输出为视频。",
+   "官方视频文档注明，grok-imagine-video 最高支持 720p；用参考图生成视频时时长最多 10 秒。",
+   "单段时长可设为 1 到 15 秒，默认 8 秒；视频编辑不能自定义时长，输出沿用原视频，原视频最长按 8.7 秒计。"
+  ],
+  "facts_en": [
+   "The official model page says grok-imagine-video takes text, image and video input and returns video.",
+   "The official video docs say grok-imagine-video goes up to 720p, and reference-to-video is limited to 10 seconds.",
+   "Duration can be set from 1 to 15 seconds with 8 as the default. Video editing cannot set a custom duration: the output keeps the original length, which is capped at 8.7 seconds."
+  ],
+  "compare_slug": "grok-imagine-video-1.5-preview",
+  "compare_zh": "官方文档称 1.5 对文生视频和图生视频原生渲染 1080p，并支持音色参考和指定首帧、关键帧、尾帧。",
+  "compare_en": "the official docs say 1.5 renders 1080p natively for text-to-video and image-to-video and adds voice references and pinned first, key or last frames."
+ },
+ {
+  "slug": "grok-imagine-video-1.5-preview",
+  "source": "https://docs.x.ai/developers/models/grok-imagine-video-1.5",
+  "facts_zh": [
+   "官方模型页的名称是 grok-imagine-video-1.5，grok-imagine-video-1.5-preview 和 grok-imagine-video-1.5-2026-05-30 都是它的别名。",
+   "输入支持文本、图片和音频，输出为视频；预设音色的音频输入不收费。",
+   "官方视频文档称它对文生视频和图生视频原生渲染 1080p，参考生视频最高 720p，并支持音色参考以及指定首帧、关键帧或尾帧。"
+  ],
+  "facts_en": [
+   "The official model page is named grok-imagine-video-1.5, and both grok-imagine-video-1.5-preview and grok-imagine-video-1.5-2026-05-30 are aliases of it.",
+   "It takes text, image and audio input and returns video; audio input with preset voices is free.",
+   "The official video docs say it renders 1080p natively for text-to-video and image-to-video, goes up to 720p for reference-to-video, and supports voice references plus pinned first, key or last frames."
+  ],
+  "compare_slug": "grok-imagine-video-1.5-lite",
+  "compare_zh": "官方文档称 lite 通过把 720p 放大来达到 1080p，而本型号是原生 1080p。",
+  "compare_en": "the official docs say lite reaches 1080p by upscaling 720p, while this model renders 1080p natively."
+ },
+ {
+  "slug": "grok-imagine-video-1.5-lite",
+  "source": "https://docs.x.ai/developers/model-capabilities/video/generation",
+  "facts_zh": [
+   "官方视频文档注明，grok-imagine-video-1.5-lite 在文生视频和图生视频上通过放大 720p 来达到 1080p。",
+   "官方视频接口的单段时长可设为 1 到 15 秒，默认 8 秒，画幅默认 16:9，另支持 9:16、1:1、4:3、3:4、3:2、2:3、21:9 和 5:2。",
+   "分辨率可选 480p（默认，处理更快）、720p 和 1080p。"
+  ],
+  "facts_en": [
+   "The official video docs say grok-imagine-video-1.5-lite reaches 1080p for text-to-video and image-to-video by upscaling 720p.",
+   "On the official video API, duration can be set from 1 to 15 seconds with 8 as the default, and the aspect ratio defaults to 16:9, with 9:16, 1:1, 4:3, 3:4, 3:2, 2:3, 21:9 and 5:2 also available.",
+   "Resolution can be 480p (the default, faster processing), 720p or 1080p."
+  ],
+  "compare_slug": "grok-imagine-video-1.5-preview",
+  "compare_zh": "官方文档称完整的 1.5 对文生视频和图生视频原生渲染 1080p，lite 是放大得到的。",
+  "compare_en": "the official docs say the full 1.5 renders 1080p natively for text-to-video and image-to-video, whereas lite upscales to it."
+ },
+ {
+  "slug": "gemini-4-carbon",
+  "source": "https://aistudio.google.com/docs/models/gemini-4-carbon",
+  "facts_zh": [
+   "Google 官方文档把 Gemini 4 Carbon 定位为最强的推理模型，面向复杂软件工程、数学和科学问题、高事实准确度和自主多步智能体。",
+   "上下文窗口为 1,048,576 tokens（输入和输出共用），默认同步输出上限 65,536 tokens，开启长解码后最高可到 1,048,576 tokens；输入支持文本、图片、视频、音频和 PDF，输出为文本。"
+  ],
+  "facts_en": [
+   "Google's docs position Gemini 4 Carbon as its most capable reasoning model, built for complex software engineering, math and science problems, high factual accuracy and autonomous multi-step agents.",
+   "The context window is 1,048,576 tokens (input and output combined), max output is 65,536 tokens by default and up to 1,048,576 with long decode; input can be text, image, video, audio and PDF, and output is text."
+  ],
+  "compare_slug": "gemini-4-argon",
+  "compare_zh": "官方称 Argon 在复杂编程、智能体、数学和科学任务上响应更快、每轮 token 花费更低。",
+  "compare_en": "Google says Argon answers faster and spends fewer tokens per turn across complex coding, agentic, math and science tasks."
+ },
+ {
+  "slug": "gemini-4-argon",
+  "source": "https://aistudio.google.com/docs/models/gemini-4-argon",
+  "facts_zh": [
+   "Google 官方文档把 Gemini 4 Argon 描述为高效的 Gemini 4 前沿推理模型：与 Carbon 相比，在复杂编程、智能体、数学和科学任务上响应更快、每轮 token 花费更低。",
+   "上下文窗口为 1,048,576 tokens（输入和输出共用），默认同步输出上限 65,536 tokens，开启长解码后最高可到 1,048,576 tokens；输入支持文本、图片、视频、音频和 PDF，输出为文本。"
+  ],
+  "facts_en": [
+   "Google's docs describe Gemini 4 Argon as the efficient Gemini 4 frontier reasoning model: compared with Carbon it answers faster and spends fewer tokens per turn across complex coding, agentic, math and science tasks.",
+   "The context window is 1,048,576 tokens (input and output combined), max output is 65,536 tokens by default and up to 1,048,576 with long decode; input can be text, image, video, audio and PDF, and output is text."
+  ],
+  "compare_slug": "gemini-4-carbon",
+  "compare_zh": "官方把 Carbon 定位为最强的推理模型，复杂软件工程和高事实准确度的任务选它。",
+  "compare_en": "Google positions Carbon as its most capable reasoning model, so choose it for complex software engineering and high factual accuracy."
+ },
+ {
+  "slug": "gemini-4-hydrogen",
+  "source": "https://aistudio.google.com/docs/models/gemini-4-hydrogen",
+  "facts_zh": [
+   "Google 官方文档把 Gemini 4 Hydrogen 描述为面向日常编程和智能体工作流、兼顾速度和效率的模型。",
+   "上下文窗口为 1,048,576 tokens（输入和输出共用），默认同步输出上限 65,536 tokens，开启长解码后最高可到 1,048,576 tokens；输入支持文本、图片、视频、音频和 PDF，输出为文本。"
+  ],
+  "facts_en": [
+   "Google's docs describe Gemini 4 Hydrogen as the model for everyday coding and agentic workflows, with speed and efficiency.",
+   "The context window is 1,048,576 tokens (input and output combined), max output is 65,536 tokens by default and up to 1,048,576 with long decode; input can be text, image, video, audio and PDF, and output is text."
+  ],
+  "compare_slug": "gemini-4-argon",
+  "compare_zh": "官方把 Argon 定位为更强的高效推理模型，复杂编程、数学和科学任务选它。",
+  "compare_en": "Google positions Argon as the stronger efficient reasoning model, so choose it for complex coding, math and science tasks."
+ },
+ {
+  "slug": "gemini-3.8-flash",
+  "source": "https://aistudio.google.com/docs/models/gemini-3.8-flash",
+  "facts_zh": [
+   "Google 官方文档把 Gemini 3.8 Flash 称为最智能的 Flash 模型，面向长周期软件工程、自主智能体和复杂的企业工作流，同时保持 Flash 的速度和成本效率。",
+   "输入上限 1,048,576 tokens，输出上限 65,536 tokens；输入支持文本、图片、视频、音频和 PDF，输出为文本。"
+  ],
+  "facts_en": [
+   "Google's docs call Gemini 3.8 Flash its most intelligent Flash model, engineered for long-horizon software engineering, autonomous agents and complex enterprise workflows, with the speed and cost efficiency of Flash.",
+   "The input limit is 1,048,576 tokens and the output limit is 65,536 tokens; input can be text, image, video, audio and PDF, and output is text."
+  ],
+  "compare_slug": "gemini-4-hydrogen",
+  "compare_zh": "官方称 Gemini 4 Hydrogen 面向日常编程和智能体工作流，开启长解码后输出最高可到 1,048,576 tokens。",
+  "compare_en": "Google positions Gemini 4 Hydrogen for everyday coding and agentic workflows, with output up to 1,048,576 tokens when long decode is on."
+ },
+ {
+  "slug": "gemini-3.8-flash-tts",
+  "source": "https://aistudio.google.com/docs/models/gemini-3.8-flash-tts",
+  "facts_zh": [
+   "Google 官方文档把 Gemini 3.8 Flash TTS 称为旗舰创意语音合成模型，强调录音棚级音色保真、富有表现力的演绎、地道的地区口音和长篇多轮对话的稳定性。",
+   "输入只支持文本，输出为音频；输入上限 8,192 tokens，输出上限 16,384 tokens（Gemini API 的服务限制）。"
+  ],
+  "facts_en": [
+   "Google's docs call Gemini 3.8 Flash TTS its flagship creative text-to-speech model, engineered for studio-grade voice fidelity, expressive acting, authentic regional accents and stable long-form multi-turn speech.",
+   "Input is text only and output is audio; the input limit is 8,192 tokens and the output limit is 16,384 tokens (the Gemini API serving limit)."
+  ]
+ },
+ {
+  "slug": "gemini-3.1-pro-preview",
+  "source": "https://aistudio.google.com/docs/models/gemini-3.1-pro-preview",
+  "facts_zh": [
+   "Google 官方文档称 Gemini 3.1 Pro Preview 改进了 Gemini 3 Pro 系列的表现和可靠性：思考更好、token 使用更高效、回答更有依据且事实一致，并针对软件工程和需要精确调用工具、可靠多步执行的智能体工作流做了优化。",
+   "输入上限 1,048,576 tokens，输出上限 65,536 tokens；输入支持文本、图片、视频、音频和 PDF，输出为文本。调用时的模型名是 gemini-3.1-pro-preview。"
+  ],
+  "facts_en": [
+   "Google's docs say Gemini 3.1 Pro Preview refines the performance and reliability of the Gemini 3 Pro series with better thinking, improved token efficiency and more grounded, factually consistent answers, optimized for software engineering and for agentic workflows that need precise tool use and reliable multi-step execution.",
+   "The input limit is 1,048,576 tokens and the output limit is 65,536 tokens; input can be text, image, video, audio and PDF, and output is text. The model name to call is gemini-3.1-pro-preview."
+  ],
+  "compare_slug": "gemini-4-argon",
+  "compare_zh": "官方称 Gemini 4 Argon 是高效的 Gemini 4 前沿推理模型，开启长解码后输出最高可到 1,048,576 tokens。",
+  "compare_en": "Google describes Gemini 4 Argon as the efficient Gemini 4 frontier reasoning model, with output up to 1,048,576 tokens when long decode is on."
+ },
+ {
+  "slug": "deepseek-v4-pro",
+  "source": "https://api-docs.deepseek.com/quick_start/pricing",
+  "facts_zh": [
+   "DeepSeek 官方发布说明写明 DeepSeek-V4-Pro 为 1.6T 总参数、49B 激活参数，并称它在开源模型中的智能体编程、世界知识和数学、STEM、编程推理上领先。",
+   "官方价格页列出的版本是 DeepSeek-V4-Pro-0813，上下文长度 1M，最大输出 384K，支持思考和非思考两种模式。",
+   "支持 JSON 输出、工具调用、Responses API 和 Anthropic API，不支持视觉输入；官方并发上限为 500。"
+  ],
+  "facts_en": [
+   "DeepSeek's release notes state that DeepSeek-V4-Pro has 1.6T total and 49B active parameters, and say it leads open models in agentic coding, world knowledge, and math, STEM and coding reasoning.",
+   "The official pricing page lists version DeepSeek-V4-Pro-0813 with a 1M context length and a 384K maximum output, supporting both thinking and non-thinking modes.",
+   "It supports JSON output, tool calls, the Responses API and the Anthropic API, does not support vision, and has an official concurrency limit of 500."
+  ],
+  "compare_slug": "deepseek-v4.1-flash",
+  "compare_zh": "官方价格页写明 V4.1 Flash 支持视觉输入，Pro 不支持；V4.1 Flash 的官方并发上限是 2500，Pro 是 500。",
+  "compare_en": "the official pricing page says V4.1 Flash supports vision and Pro does not, and V4.1 Flash has a concurrency limit of 2500 against 500 for Pro."
+ },
+ {
+  "slug": "deepseek-v4.1-flash",
+  "source": "https://api-docs.deepseek.com/quick_start/pricing",
+  "facts_zh": [
+   "官方价格页列出的版本是 DeepSeek-V4.1-Flash-1017，调用时官方建议使用的模型名是 deepseek-flash。",
+   "上下文长度 1M，最大输出 384K，支持思考（默认）和非思考两种模式，并支持视觉输入。",
+   "支持 JSON 输出、工具调用、Responses API 和 Anthropic API；官方并发上限为 2500。"
+  ],
+  "facts_en": [
+   "The official pricing page lists version DeepSeek-V4.1-Flash-1017, and the model name the vendor recommends for calls is deepseek-flash.",
+   "It has a 1M context length and a 384K maximum output, supports thinking (the default) and non-thinking modes, and supports vision input.",
+   "It supports JSON output, tool calls, the Responses API and the Anthropic API, with an official concurrency limit of 2500."
+  ],
+  "compare_slug": "deepseek-v4-pro",
+  "compare_zh": "官方发布说明称 V4-Pro 是 1.6T 总参数、49B 激活参数的更大型号，但价格页写明它不支持视觉输入。",
+  "compare_en": "the release notes describe V4-Pro as the larger 1.6T-total, 49B-active model, but the pricing page says it does not support vision input."
+ },
+ {
+  "slug": "deepseek-v4-flash",
+  "source": "https://api-docs.deepseek.com/news/news260424",
+  "facts_zh": [
+   "DeepSeek 官方发布说明写明 DeepSeek-V4-Flash 为 284B 总参数、13B 激活参数，定位是快速、高效、经济的选择。",
+   "官方称它的推理能力接近 V4-Pro，在简单智能体任务上与 V4-Pro 表现相当，参数更少、响应更快。",
+   "官方发布说明还写明，1M 上下文现在是 DeepSeek 所有官方服务的默认配置。"
+  ],
+  "facts_en": [
+   "DeepSeek's release notes state that DeepSeek-V4-Flash has 284B total and 13B active parameters, positioned as the fast, efficient and economical choice.",
+   "The vendor says its reasoning closely approaches V4-Pro and that it performs on par with V4-Pro on simple agent tasks, with a smaller size and faster responses.",
+   "The release notes also say a 1M context is now the default across all official DeepSeek services."
+  ],
+  "compare_slug": "deepseek-v4-pro",
+  "compare_zh": "官方发布说明称 V4-Pro 是 1.6T 总参数、49B 激活参数的更大型号，在智能体编程上是开源模型中最强的一档。",
+  "compare_en": "the release notes describe V4-Pro as the larger 1.6T-total, 49B-active model that leads open models in agentic coding."
+ },
+ {
+  "slug": "glm-5.3",
+  "source": "https://docs.z.ai/guides/llm/glm-5.3",
+  "facts_zh": [
+   "智谱官方文档把 GLM-5.3 称为最新旗舰模型，与 GLM-5.2 使用同一个基座模型，所有改进都来自后训练。",
+   "官方称它在 Z.ai Code Bench 上比 GLM-5.2 提升 50%，并在 Terminal Bench 3.0 等公开基准上达到开源模型中的最好水平。",
+   "目前只支持文本输入，上下文窗口 1M tokens，最大输出 128K tokens；推理始终开启，推理强度可选 low、high、max（默认 max），不再支持关闭推理。"
+  ],
+  "facts_en": [
+   "Z.ai's docs call GLM-5.3 its latest flagship model; it uses the same base model as GLM-5.2, with all improvements coming from post-training.",
+   "The vendor says it improves 50% over GLM-5.2 on Z.ai Code Bench and reaches state-of-the-art performance among open-source models on public benchmarks including Terminal Bench 3.0.",
+   "It currently takes text-only input, with a 1M-token context window and a 128K-token maximum output; reasoning is always on, with effort levels low, high and max (default max), and disabling reasoning is no longer supported."
+  ],
+  "compare_slug": "glm-5.2",
+  "compare_zh": "官方写明 GLM-5.3 不能关闭推理；如果你的请求带 thinking.type 为 disabled，换模型前要先改成 enabled，否则请求会失败。",
+  "compare_en": "the official docs say GLM-5.3 cannot turn reasoning off, so a request that sets thinking.type to disabled must be changed to enabled before switching models, or it will fail."
+ },
+ {
+  "slug": "glm-5.2",
+  "source": "https://docs.z.ai/guides/llm/glm-5.2",
+  "facts_zh": [
+   "智谱官方文档把 GLM-5.2 描述为面向长周期任务的旗舰模型，强调 1M tokens 上下文可以真正用起来。",
+   "官方称它经过数月针对长周期编程智能体场景的专项训练，覆盖大规模实现、自动化研究和性能优化等任务。",
+   "官方称 GLM-5.3 与它使用同一个基座模型，GLM-5.3 的改进来自后训练。"
+  ],
+  "facts_en": [
+   "Z.ai's docs describe GLM-5.2 as a flagship model built for long-horizon tasks, stressing that its 1M-token context is genuinely usable.",
+   "The vendor says it went through months of specialized training for long-horizon coding-agent scenarios, covering large-scale implementation, automated research and performance optimization.",
+   "The vendor states that GLM-5.3 uses the same base model, with its improvements coming from post-training."
+  ],
+  "compare_slug": "glm-5.3",
+  "compare_zh": "官方称 GLM-5.3 在 Z.ai Code Bench 上比 GLM-5.2 提升 50%，需要更强的编程和智能体能力时选它。",
+  "compare_en": "the vendor says GLM-5.3 improves 50% over GLM-5.2 on Z.ai Code Bench, so choose it when you need stronger coding and agent ability."
+ },
+ {
+  "slug": "glm-5.3-flash",
+  "source": "https://docs.z.ai/guides/vlm/glm-5.3-flash",
+  "facts_zh": [
+   "智谱官方文档称 GLM-5.3-Flash 是 GLM-5 系列第一个原生多模态模型，智能水平高于 GLM-5.2。",
+   "官方写明它有 3200 亿总参数、180 亿激活参数，是第一个结合稀疏注意力和线性注意力的开源前沿模型，相比 GLM-5.3 注意力计算减少 3.01 倍、KV 缓存减少 4.44 倍。",
+   "官方模型总览表列出的上下文为 1M tokens。"
+  ],
+  "facts_en": [
+   "Z.ai's docs call GLM-5.3-Flash the first native multimodal model in the GLM-5 series, with stronger intelligence than GLM-5.2.",
+   "The docs state 320B total and 18B active parameters, and describe it as the first open-source frontier model to combine sparse and linear attention, cutting attention computation by 3.01x and KV cache by 4.44x versus GLM-5.3.",
+   "The official model overview table lists a 1M-token context."
+  ],
+  "compare_slug": "glm-5.3",
+  "compare_zh": "官方文档里 GLM-5.3 目前只支持文本输入，需要图像等多模态输入时选 GLM-5.3-Flash。",
+  "compare_en": "the official docs say GLM-5.3 currently takes text-only input, so choose GLM-5.3-Flash when you need image and other multimodal input."
+ },
+ {
+  "slug": "kimi-k3.1-pro",
+  "source": "https://platform.kimi.com/docs/models",
+  "facts_zh": [
+   "Kimi 官方模型列表把 kimi-k3.1-pro 写作 Kimi K3.1 系列的首个模型，也是 Kimi 迄今能力最强的旗舰模型。",
+   "官方写明它有 3 万亿级参数，原生支持视觉理解，上下文窗口为 100 万 tokens，在代码、3D 创作、金融研究与建模方面有明显提升。",
+   "官方同时提供高速版 kimi-k3.1-pro-highspeed，速度约为普速版的 2 到 3 倍。"
+  ],
+  "facts_en": [
+   "Kimi's official model list describes kimi-k3.1-pro as the first model in the Kimi K3.1 series and its most capable flagship to date.",
+   "The vendor states it has trillion-scale (3 trillion) parameters, native vision understanding and a 1,000,000-token context window, with notable gains in code, 3D creation, and financial research and modeling.",
+   "A high-speed variant, kimi-k3.1-pro-highspeed, is offered at roughly 2 to 3 times the speed of the standard version."
+  ],
+  "compare_slug": "kimi-k3",
+  "compare_zh": "官方把 K3 列为上一代旗舰，参数 2.8 万亿；K3.1 Pro 在代码、3D 创作和金融研究上有明显提升。",
+  "compare_en": "the official list calls K3 the previous-generation flagship with 2.8 trillion parameters, while K3.1 Pro improves notably in code, 3D creation and financial research."
+ },
+ {
+  "slug": "kimi-k3",
+  "source": "https://platform.kimi.com/docs/models",
+  "facts_zh": [
+   "Kimi 官方模型列表把 kimi-k3 称为上一代旗舰模型，也是全球首个开源的 3 万亿级模型，参数为 2.8 万亿。",
+   "官方写明它原生支持视觉理解，上下文窗口为 100 万 tokens，面向长程编程、知识工作和深度推理等场景。"
+  ],
+  "facts_en": [
+   "Kimi's official model list calls kimi-k3 the previous-generation flagship and the world's first open-source trillion-scale model, with 2.8 trillion parameters.",
+   "The vendor states it has native vision understanding and a 1,000,000-token context window, designed for long-horizon coding, knowledge work and deep reasoning."
+  ],
+  "compare_slug": "kimi-k3.1-pro",
+  "compare_zh": "官方把 K3.1 Pro 称为目前能力最强的旗舰，并提供约 2 到 3 倍速度的高速版。",
+  "compare_en": "the vendor calls K3.1 Pro its most capable flagship and also offers a high-speed variant at about 2 to 3 times the speed."
+ },
+ {
+  "slug": "qwen3.8-omni-flash-realtime",
+  "source": "https://www.alibabacloud.com/help/en/model-studio/qwen3-8-omni-flash-realtime",
+  "facts_zh": [
+   "阿里云官方文档把 qwen3.8-omni-flash-realtime 描述为用于实时音频和视频交互的模型，输出文本和音频，支持多声道音频和工具调用。",
+   "输入支持文本、流式音频和视频（连续的图像帧）；通过 WebSocket、WebRTC 或 AOQ 接入，默认音色是 Tina。",
+   "官方写明最大总输入为 196,608 tokens，最大输出为 65,536 tokens；音频历史最多 100 轮、共 600 秒，视频历史最多 50 轮、共 240 秒。",
+   "语音输出按音频及其对应文本分别计费。"
+  ],
+  "facts_en": [
+   "Alibaba Cloud's docs describe qwen3.8-omni-flash-realtime as a model for real-time audio and video interaction, with text and audio output, multichannel audio and tool calling.",
+   "Input can be text, streaming audio and video (consecutive image frames); it is reached over WebSocket, WebRTC or AOQ, and the default voice is Tina.",
+   "The docs state a maximum total input of 196,608 tokens and a maximum output of 65,536 tokens, with audio history up to 100 turns and 600 seconds in total and video history up to 50 turns and 240 seconds in total.",
+   "For speech output, the audio and its corresponding text are billed at their respective output rates."
+  ],
+  "compare_slug": "qwen3.8-omni-flash",
+  "compare_zh": "官方文档里 qwen3.8-omni-flash 的上下文窗口为一百万 tokens；需要实时音视频交互、流式音频输入时选本型号。",
+  "compare_en": "the official docs give qwen3.8-omni-flash a 1,000,000-token context window; choose this model when you need real-time audio and video interaction with streaming audio input."
+ },
+ {
+  "slug": "minimax-h3",
+  "source": "https://platform.minimax.io/docs/guides/video-generation",
+  "facts_zh": [
+   "MiniMax 官方文档把 MiniMax-H3 描述为开放的通用多模态视频模型，能统一理解文本、图片、视频和音频输入，支持视频生成、参考创作和视频编辑。",
+   "官方列出的输出规格是 768P 和 2K，时长 4 到 15 秒，只接受整数秒；画幅支持常见比例或自适应。",
+   "请求使用多模态 content[] 结构，每个元素按类型区分，参考图片和参考视频通过 role 字段指定。",
+   "官方注明使用 MiniMax-H3 需要选择按量付费的 API。"
+  ],
+  "facts_en": [
+   "MiniMax's docs describe MiniMax-H3 as an open, general-purpose multimodal video model that understands text, image, video and audio input in a unified way, and supports video generation, reference-based creation and video editing.",
+   "The official output specification is 768P and 2K with a duration of 4 to 15 seconds, integer values only; common aspect ratios or adaptive are supported.",
+   "Requests use a multimodal content[] structure in which each element is distinguished by type, and reference images and videos are marked through the role field.",
+   "The docs note that using MiniMax-H3 requires the pay-as-you-go API."
+  ]
+ },
+ {
+  "slug": "muse-image",
+  "source": "https://dev.meta.ai/docs/image-generation",
+  "facts_zh": [
+   "Meta 官方开发者文档称，Muse Image 通过对话式接口生成和编辑图片：输入文本和参考图片交错排列，返回图片，并能在同一会话里逐轮继续修改。",
+   "编辑时只改你要求的部分，其余保持不变；一次请求可以传入多张参考图，后续轮次还可以加入新的参考图。",
+   "官方称它具有智能体特性：渲染前可以检索网页获取真实地点、产品、品牌的参考图和最新事实，也可以运行代码来排布信息图、图表等结构化图形。",
+   "单次的图片接口兼容 OpenAI Images API，把 base_url 指向 https://api.meta.ai/v1 即可使用 OpenAI 客户端；size 参数只决定画幅比例，不是精确像素，输出格式默认 webp，也可选 png 或 jpeg。"
+  ],
+  "facts_en": [
+   "Meta's official developer docs say Muse Image generates and edits images through a conversational interface: interleaved text and reference images go in, an image comes back, and you keep refining it turn by turn in the same conversation.",
+   "An edit changes only what you ask for and keeps the rest intact; a request can carry several reference images, and later turns can add new ones.",
+   "The vendor describes it as agentic: before rendering it can search the web for reference imagery and current facts about real places, products and brands, and it can run code to lay out infographics, charts and other structured graphics.",
+   "The single-shot image endpoints are compatible with the OpenAI Images API, so an OpenAI client works when base_url points at https://api.meta.ai/v1. The size parameter sets only the aspect ratio, not exact pixels, and the output format defaults to webp, with png and jpeg also available."
+  ]
+ },
+ {
+  "slug": "muse-video",
+  "source": "https://ai.meta.com/blog/introducing-muse-image-muse-video-msl/",
+  "facts_zh": [
+   "Meta 超级智能实验室在发布博客中说明，Muse Video 与 Muse Image 基于同一个预训练基座，是该实验室开发的首批媒体生成模型之一。",
+   "官方称它具有出色的画面保真度，并原生支持音频；博客发布时把它标为预览，并写明即将向创作者和 Meta AI 开放。"
+  ],
+  "facts_en": [
+   "In its launch post, Meta Superintelligence Labs says Muse Video is built on the same pretraining base as Muse Image and is one of the first media generation models the lab has developed.",
+   "The vendor says it delivers exceptional visual fidelity with native audio support; the post presented it as a preview and said it was coming soon to creators and Meta AI."
+  ]
+ },
+ {
+  "slug": "doubao-seed-2-0-lite",
+  "source": "https://docs.volcengine.com/docs/82379/1159178?lang=zh",
+  "facts_zh": [
+   "火山方舟文档把 Seed 2.0 Lite 定位为面向高频企业场景、兼顾性能与成本的均衡型模型，并称其综合能力超过上一代 Doubao-Seed-1.8。",
+   "官方模型列表写明上下文窗口为 256K，最大输入 224K，最大输出 128K。",
+   "官方称 2026 年 4 月发布的 260428 LTS 版本支持文本、图片、语音、视频四种模态的联合理解。"
+  ],
+  "facts_en": [
+   "Volcengine's docs position Seed 2.0 Lite as a balanced model for high-frequency enterprise scenarios that trades off performance and cost, and say its overall ability exceeds the previous Doubao-Seed-1.8.",
+   "The official model list gives a 256K context window, a 224K maximum input and a 128K maximum output.",
+   "The vendor says the 260428 LTS version released in April 2026 supports joint understanding of text, image, speech and video."
+  ],
+  "compare_slug": "doubao-seed-2-0-mini",
+  "compare_zh": "官方称 Mini 面向低时延、高并发和成本敏感场景，更看重快速响应时选它。",
+  "compare_en": "the vendor says Mini targets low-latency, high-concurrency and cost-sensitive scenarios, so choose it when fast responses matter most."
  }
 ]

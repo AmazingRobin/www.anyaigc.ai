@@ -95,7 +95,7 @@ def section(sid, kicker, title, lead, body, tone=""):
 
 def metadata(lang):
     p, o = price_of("input"), price_of("output")
-    title = pick(lang, "Hy4 API 价格与接入｜约官方 6.75 折，支持图像理解 - AnyAIGC",
+    title = pick(lang, "Hy4 API 价格与接入｜约官方 6.75 折 - AnyAIGC",
                  "Hy4 API Pricing | About 32% Off List Price - AnyAIGC")
     desc = pick(lang,
                 f"腾讯混元 Hy4 API 价格与接入：约官方 6.75 折，输入 ${p['amount']}/百万 tokens，输出 ${o['amount']}，支持图像理解与 Agent 任务，并发不限，支持对公转账、合同与增值税专票。",
@@ -389,7 +389,8 @@ def preview_section(lang):
     html = "".join(f'<article class="hy-adv"><span>{i:02d}</span><h3>{h(t)}</h3><p>{h(d)}</p></article>' for i, (t, d) in enumerate(items, 1))
     note = pick(lang, "以上数据来自腾讯混元官方发布页（2026-11-04），为官方自述，AnyAIGC 未独立复测。",
                 "These figures come from Tencent Hunyuan's release notes (2026-11-04) and are Tencent's own claims; AnyAIGC has not re-tested them.")
-    body = f'<div class="hy-advs">{html}</div><p class="hy-note">{h(note)} <a href="{OFFICIAL_URL}" rel="noopener">{pick(lang, "官方发布页", "Release notes")} ↗</a></p>'
+    flash = (f'<a href="/{lang}/models/hy4-flash">{pick(lang, "更省钱的 Hy4 flash，适合日常任务", "Hy4 flash: the lower-cost model for everyday work")} →</a>')
+    body = f'<div class="hy-advs">{html}</div><p class="hy-note">{h(note)} <a href="{OFFICIAL_URL}" rel="noopener">{pick(lang, "官方发布页", "Release notes")} ↗</a> {flash}</p>'
     return section("whats-new", pick(lang, "相比 PREVIEW", "VS PREVIEW"), pick(lang, "Hy4 正式版相比 preview 有什么新变化", "What is new in Hy4 compared with preview"), "", body)
 
 

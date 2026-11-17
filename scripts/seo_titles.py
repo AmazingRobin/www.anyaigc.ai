@@ -34,8 +34,21 @@ def zh_width(text):
 
 
 def model_name(page):
+    """Product name from the H1. Some pages put a subtitle in a second <span> inside the
+    H1 ("Hy4 API" + "腾讯混元新一代模型…"); only the first span is the name, otherwise
+    the subtitle gets glued onto it."""
     h1 = re.search(r"<h1[^>]*>(.*?)</h1>", page, re.S)
-    name = html.unescape(re.sub(r"<[^>]+>", "", h1.group(1))).strip() if h1 else ""
+    if not h1:
+        return ""
+    inner = h1.group(1)
+    # Subtitles come in three shapes: <small>…</small>, a second <span>, or a trailing
+    # text node. Cut at the first of them; keep the product name before it.
+    cut = re.search(r"<small\b|<span\b[^>]*class=\"[^\"]*(?:sub|j-nw)[^\"]*\"", inner)
+    if cut:
+        inner = inner[:cut.start()]
+    # A visually hidden " API" (class o-sr) is part of the name's reading, not its text.
+    inner = re.sub(r"<span\b[^>]*class=\"o-sr\"[^>]*>.*?</span>", "", inner, flags=re.S)
+    name = html.unescape(re.sub(r"<[^>]+>", "", inner)).strip()
     return re.sub(r"\s*API\s*$", "", name)
 
 
@@ -115,9 +128,15 @@ def fix_title(page, lang):
 
 def fix_quickstart(page, name):
     m = re.search(r'(<section[^>]*id="quickstart"[^>]*>.*?<h2[^>]*>)(.*?)(</h2>)', page, re.S)
-    if not m or "接入教程" in m.group(2) or not name:
+    if not m or not name:
         return page
-    return page[:m.start(2)] + f"{html.escape(name)} API 接入教程" + page[m.end(2):]
+    want = f"{html.escape(name)} API 接入教程"
+    if m.group(2) == want:
+        return page
+    # Replace both a missing heading and one an earlier run glued a subtitle onto.
+    if "接入教程" in m.group(2) and len(re.sub(r"<[^>]+>", "", m.group(2))) <= len(want) + 2:
+        return page
+    return page[:m.start(2)] + want + page[m.end(2):]
 
 
 def price_rows(page):
@@ -183,6 +202,17 @@ def fix_overseas_keywords(page, name):
     return page.replace('<meta name="robots"', tag + '<meta name="robots"', 1)
 
 
+def title_name(page):
+    """Product name as the page's own <title> writes it ("Gemini 3.1 Pro", "GPT-5.5").
+
+    Used for the quickstart heading, because H1 markup varies too much (subtitle in a
+    <small>, a second <span>, or glued text) to read a clean name from it."""
+    m = re.search(r"<title>(.*?)</title>", page, re.S)
+    if not m:
+        return ""
+    return re.split(r" API", html.unescape(m.group(1)), maxsplit=1)[0].strip()
+
+
 def main():
     stats = {"title": 0, "quickstart": 0, "qwen": 0, "overseas": 0, "files": 0}
     for lang in ("zh", "en"):
@@ -200,7 +230,7 @@ def main():
                     print(lang, slug, "->", title)
             if lang == "zh":
                 before = new
-                new = fix_quickstart(new, name)
+                new = fix_quickstart(new, title_name(new))
                 stats["quickstart"] += new != before
                 if slug.startswith(OVERSEAS) and not slug.startswith(("gpt-image", "grok-image", "grok-imagine", "grok-video")):
                     before = new

@@ -721,7 +721,8 @@ final = client.chat.completions.create(model=<span class="s">"glm-5.3"</span>, m
   </section>
 
   <!-- FAQ -->
-  <section class="o-section" id="faq" aria-labelledby="faq-title">
+  <section class="o-section" id="spec-unique" aria-labelledby="spec-unique-title"><div class="o-wrap o-col"><p class="o-kicker">规格</p><h2 class="o-h2" id="spec-unique-title">这个型号的规格与选型</h2><p>智谱官方文档把 GLM-5.3 称为最新旗舰模型，与 GLM-5.2 使用同一个基座模型，所有改进都来自后训练。</p><p>官方称它在 Z.ai Code Bench 上比 GLM-5.2 提升 50%，并在 Terminal Bench 3.0 等公开基准上达到开源模型中的最好水平。</p><p>目前只支持文本输入，上下文窗口 1M tokens，最大输出 128K tokens；推理始终开启，推理强度可选 low、high、max（默认 max），不再支持关闭推理。</p><p>本页价格为：输入 $0.9450、输出 $2.9700、缓存命中 $0.1758，与上方价格表一致。</p><p>对比 <a href="/zh/models/glm-5.2">glm-5.2</a>：官方写明 GLM-5.3 不能关闭推理；如果你的请求带 thinking.type 为 disabled，换模型前要先改成 enabled，否则请求会失败。</p><p class="spec-note">规格来自厂商官方资料（<a href="https://docs.z.ai/guides/llm/glm-5.3">docs.z.ai</a>）；价格以本页表格为准，模型广场的实时价格优先。</p></div></section>
+<section class="o-section" id="faq" aria-labelledby="faq-title">
     <div class="o-wrap o-col">
       <span class="g-kicker o-reveal">FAQ</span>
       <h2 class="o-h2 o-reveal" id="faq-title">GLM-5.3 API 常见问题</h2>

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-"""Chinese title selling points: "中转" for overseas models, plus the
-discount written as "约官方 X 折" whenever the page itself states a discount
+"""Chinese title selling points: the discount written as "约官方 X 折"
+whenever the page itself states a discount
 against the official price. Chinese readers parse 折 faster than a percentage.
 
 The discount is never computed from prices. It comes from a claim already on
@@ -107,12 +107,17 @@ def replace_title(page, old, new):
 
 
 def candidates(name, pct, point, overseas, overview):
-    """Title bodies, best first: keep the 中转 keyword and state the discount in 折."""
+    """Title bodies, best first: "<name> API 价格与接入｜<discount in 折>".
+
+    Overseas and domestic models share this wording. "中转" stays in the page
+    keywords (seo_titles.py) but not in the title: it was tried there and
+    replaced by "价格" after checking real Google results.
+    """
     best = f"最低约官方 {pct} 折" if overview else f"约官方 {pct} 折"
     if overseas:
-        # 中转 is the search term. A discount follows it when the page states one;
-        # otherwise keep whatever selling point the title already had (usually the
-        # starting price), because a bare "API 中转" tells the reader nothing.
+        # A discount leads when the page states one; otherwise keep whatever selling
+        # point the title already had (usually the starting price), because a bare
+        # "API 价格与接入" tells the reader nothing.
         tails = ([best] if pct else []) + ([point] if point and "中转" not in point else [])
         # A compact spelling of the same price, tried when the full tail is too long:
         # "输入 $0.1985/百万 tokens 起" -> "$0.1985/M 起". No information is dropped.
@@ -120,11 +125,11 @@ def candidates(name, pct, point, overseas, overview):
         # "¥0.08 / 秒起" -> "¥0.08/秒起", "8 个型号" -> "8 型号", "/百万 tokens" -> "/M".
         compact = [re.sub(r" / ", "/", re.sub(r"(\d+) 个型号", r"\1 型号", re.sub(r"/(?:百万|M) tokens", "/M", t))) for t in tails]
         tails = tails + [c for c in compact if c not in tails]
-        # "中转与接入" tells buyers this also covers integration, not just resale. When the
-        # tail is too long for it, the shorter "中转" form is tried before dropping the tail.
-        return ([f"{name} API 中转与接入｜{t}" for t in tails]
-                + [f"{name} API 中转｜{t}" for t in tails]
-                + [f"{name} API 中转与价格", f"{name} API 中转"])
+        # "价格与接入" says the page has both the price and the integration steps. When the
+        # tail is too long for it, the shorter "价格" form is tried before dropping the tail.
+        return ([f"{name} API 价格与接入｜{t}" for t in tails]
+                + [f"{name} API 价格｜{t}" for t in tails]
+                + [f"{name} API 价格与接入", f"{name} API 价格"])
     if not pct:
         return []
     return [f"{name} API 价格与接入｜{best}", f"{name} API 价格｜{best}", f"{name} API｜{best}"]
