@@ -4,8 +4,9 @@
 /install.sh
   Content-Type: text/plain; charset=utf-8
 
+# 所有资源地址都带 ?v= 版本号，改内容即换地址，可以长缓存
 /assets/*
-  Cache-Control: public, max-age=86400
+  Cache-Control: public, max-age=31536000, immutable
 
 /sitemap.xml
   Content-Type: application/xml; charset=utf-8
@@ -18,4 +19,14 @@
   X-Robots-Tag: noindex, nofollow
 
 /.spec-workflow/*
+  X-Robots-Tag: noindex, nofollow
+
+# 公开分发但不参与收录
+/install.sh
+  X-Robots-Tag: noindex, nofollow
+
+/install.ps1
+  X-Robots-Tag: noindex, nofollow
+
+/anyaigc-usd2rmb-chrome-v1.0.1.zip
   X-Robots-Tag: noindex, nofollow

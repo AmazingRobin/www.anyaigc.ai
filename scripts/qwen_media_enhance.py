@@ -170,13 +170,13 @@ def enhance(s,lang,slug):
         hero=re.search('<section class="q-hero qm-hero">.*?</section>',s,re.S)
         content=hero[0]
         content=content.replace('<section class="q-hero qm-hero"><div class="q-wrap">',f'''<section class="q-hero qm-hero wan-hero" aria-label="{e(m['name'])} API">
-<div class="wan-hero-backdrop" aria-hidden="true"><video id="wan-hero-video" class="wan-hero-video" autoplay muted loop playsinline preload="auto" poster="/assets/models/qwen-media/wan3-poster.webp" tabindex="-1"><source src="/assets/models/qwen-media/wan3-sparring.mp4" type="video/mp4"></video></div>
+<div class="wan-hero-backdrop" aria-hidden="true"><video id="wan-hero-video" class="wan-hero-video" muted loop playsinline preload="none" poster="/assets/models/qwen-media/wan3-poster.webp" tabindex="-1"><source data-src="/assets/models/qwen-media/wan3-sparring.mp4" type="video/mp4"></video></div>
 <div class="q-wrap wan-hero-content">''',1)
         source_label=t(lang,'万相 3.0 官方演示 · 废墟对练','Official Wan 3.0 demo · Sparring in the ruins') if slug=='wan3.0-video' else t(lang,'背景素材：Wan 3.0 官方演示','Background footage: official Wan 3.0 demo')
         controls=f'''<div class="q-wrap wan-hero-meta"><a href="https://modelstudio.console.alibabacloud.com/model-releases/wan3.0-video" target="_blank" rel="noopener">{source_label} ↗</a><button class="wan-hero-toggle" type="button" aria-controls="wan-hero-video" data-play-label="{t(lang,'播放背景视频','Play background video')}" data-pause-label="{t(lang,'暂停背景视频','Pause background video')}" hidden><span data-video-toggle-label>{t(lang,'暂停背景视频','Pause background video')}</span></button></div>'''
         content=content.replace('</div></section>','</div>'+controls+'</section>',1)
         s=s[:hero.start()]+content+s[hero.end():]
-        s=s.replace('</body>','<script src="/assets/models/wan-hero.js?v=20261107" defer></script></body>',1)
+        s=s.replace('</body>','<script src="/assets/models/wan-hero.js?v=20261114" defer></script></body>',1)
     if art:
         hero=re.search('<section class="q-hero qm-hero">.*?</section>',s,re.S)
         s=s[:hero.start()]+hero[0].replace('</div></section>',art+'</div></section>')+s[hero.end():]

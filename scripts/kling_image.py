@@ -288,7 +288,7 @@ def page(lang, fam):
     img = f"{SITE}/assets/og/{SLUG}-{lang}.png"
     crumb_urls = [f"{SITE}/", f"{SITE}/{lang}/models/", f"{SITE}/{lang}/models/kling", me]
     graph = {"@context": "https://schema.org", "@graph": [
-        {"@type": "Organization", "@id": f"{SITE}/#org", "name": "AnyAIGC", "url": "https://anyaigc.ai", "logo": f"{SITE}/logo.webp"},
+        {"@type": "Organization", "@id": f"{SITE}/#org", "name": "AnyAIGC", "url": "https://www.anyaigc.ai/", "logo": f"{SITE}/logo.webp"},
         {"@type": "WebSite", "@id": f"{SITE}/#website", "url": f"{SITE}/", "name": "AnyAIGC"},
         {"@type": "WebPage", "@id": me + "#webpage", "url": me, "name": t["title"], "description": t["desc"], "inLanguage": "zh-CN" if lang == "zh" else "en", "dateModified": DATE},
         {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": i, "name": n, "item": u} for i, (n, u) in enumerate(zip(t["crumbs"], crumb_urls), 1)]},

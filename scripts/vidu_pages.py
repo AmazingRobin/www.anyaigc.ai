@@ -192,7 +192,7 @@ def head(lang, slug, m, faqs):
     if m:
         crumbs.append((m["short"], me))
     graph = {"@context": "https://schema.org", "@graph": [
-        {"@type": "Organization", "@id": SITE + "/#org", "name": "AnyAIGC", "url": "https://anyaigc.ai", "logo": SITE + "/logo.webp"},
+        {"@type": "Organization", "@id": SITE + "/#org", "name": "AnyAIGC", "url": "https://www.anyaigc.ai/", "logo": SITE + "/logo.webp"},
         {"@type": "WebSite", "@id": SITE + "/#website", "name": "AnyAIGC", "url": SITE + "/", "publisher": {"@id": SITE + "/#org"}},
         {"@type": "WebPage", "@id": me + "#webpage", "url": me, "name": title, "description": desc, "inLanguage": pick(lang, "zh-CN", "en"),
          "dateModified": CHECKED_DATE, "isPartOf": {"@id": SITE + "/#website"}, "breadcrumb": {"@id": me + "#breadcrumb"}, "mainEntity": {"@id": me + "#product"}},

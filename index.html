@@ -96,6 +96,16 @@
 .af-section{max-width:1180px;margin:0 auto;padding:38px 20px 72px}
 .af-section-head{margin:0 0 16px}
 .af-section-head-spaced{margin-top:30px}
+.af-popular{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:18px}
+.af-popular a{display:flex;flex-direction:column;gap:4px;box-sizing:border-box;min-height:96px;background:var(--af-surface);border:1px solid var(--af-line);border-top:3px solid var(--af-coral);border-radius:8px;padding:16px 18px;text-decoration:none;transition:border-color .2s ease,transform .2s ease,box-shadow .2s ease}
+.af-popular a:nth-child(4n+2){border-top-color:var(--af-amber)}
+.af-popular a:nth-child(4n+3){border-top-color:#7e9a87}
+.af-popular a:nth-child(4n+4){border-top-color:#d98d72}
+.af-popular a:hover{transform:translateY(-2px);border-color:#d8b9ac;box-shadow:0 10px 24px rgba(77,48,38,.08)}
+.af-popular a:focus-visible{outline:3px solid rgba(228,95,69,.45);outline-offset:2px}
+.af-popular b{font-size:16px;color:var(--af-ink)}
+.af-pop-head{display:flex;align-items:center;gap:10px}.af-pop-head img{width:28px;height:28px;flex:none;object-fit:contain}.af-pop-all{margin:16px 0 0}.af-pop-all a{color:var(--af-coral-dark);font-weight:600;text-decoration:none;border-bottom:1px solid rgba(189,67,47,.35)}.af-pop-all a:hover{color:var(--af-coral);border-bottom-color:currentColor}.af-pop-all a:focus-visible{outline:3px solid rgba(228,95,69,.45);outline-offset:2px}
+.af-popular span{font-weight:400;color:var(--af-muted);font-size:13px;line-height:1.6}
 .af-section-head h2{margin:0 0 6px;font-size:24px;line-height:1.35;color:var(--af-ink)}
 .af-section-head p{margin:0;color:var(--af-muted);font-size:14px;line-height:1.7}
 .af-list,.af-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
@@ -183,7 +193,7 @@
 [data-lang-main="ja"] .af-step h4 .lang-ja,
 [data-lang-main="ko"] .af-step h4 .lang-ko{display:inline!important}
 @media (max-width:980px){
-  .af-grid,.af-tools{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .af-grid,.af-tools,.af-popular{grid-template-columns:repeat(2,minmax(0,1fr))}
   .af-topbar-inner{padding:12px 16px}
   .af-nav{gap:4px}
   .af-nav a{padding:6px 9px;font-size:13px}
@@ -193,7 +203,7 @@
   .af-section{padding:30px 16px 54px}
   .af-title{font-size:34px}
   .af-desc{font-size:16px}
-  .af-grid,.af-list,.af-steps,.af-tools{grid-template-columns:1fr}
+  .af-grid,.af-list,.af-steps,.af-tools,.af-popular{grid-template-columns:1fr}
   .af-card,.af-tool{min-height:0}
   .af-final-cta{align-items:flex-start;flex-direction:column}
 }
@@ -285,6 +295,26 @@
       <div class="af-item"><h4><span class="lang lang-zh">支持哪些开发工具？</span><span class="lang lang-en">Supported Tools</span><span class="lang lang-ja">対応ツール</span><span class="lang lang-ko">지원 도구</span></h4><p><span class="lang lang-zh">支持 Claude Code、Codex、OpenClaw、Hermes、Cursor、Dify、Cherry Studio、Chatbox、OpenWebUI 与 n8n。</span><span class="lang lang-en">Works with Claude Code, Codex, OpenClaw, Hermes, Cursor, Dify, Cherry Studio, Chatbox, OpenWebUI and n8n.</span><span class="lang lang-ja">Claude Code、Codex、OpenClaw、Hermes、Cursor、Dify、Cherry Studio、Chatbox、OpenWebUI、n8n に対応。</span><span class="lang lang-ko">Claude Code, Codex, OpenClaw, Hermes, Cursor, Dify, Cherry Studio, Chatbox, OpenWebUI 및 n8n을 지원합니다.</span></p></div>
     </div>
 
+    <div class="af-section-head af-section-head-spaced" id="popular">
+      <h2><span class="lang lang-zh">热门模型 API</span><span class="lang lang-en">Popular model APIs</span><span class="lang lang-ja">人気のモデル API</span><span class="lang lang-ko">인기 모델 API</span></h2>
+      <p><span class="lang lang-zh">每个系列都有独立的专题页，含价格表、接入示例和企业开票说明。</span><span class="lang lang-en">Each family has its own guide with pricing, a code example and enterprise billing.</span><span class="lang lang-ja">各シリーズに価格表、コード例、請求案内付きの専用ページがあります。</span><span class="lang lang-ko">각 시리즈마다 가격표, 코드 예시, 기업 결제 안내가 있는 전용 페이지가 있습니다.</span></p>
+    </div>
+    <div class="af-popular">
+      <a href="/zh/models/claude"><span class="af-pop-head"><img src="/assets/icons/claude-color.svg" width="28" height="28" alt="" loading="lazy" decoding="async"><b>Claude</b></span><span class="lang lang-zh">Anthropic 全系价格与接入</span><span class="lang lang-en">Anthropic family, pricing and access</span><span class="lang lang-ja">Anthropic シリーズの価格と接続</span><span class="lang lang-ko">Anthropic 시리즈 가격과 연동</span></a>
+      <a href="/zh/models/gpt"><span class="af-pop-head"><img src="/assets/icons/openai.svg" width="28" height="28" alt="" loading="lazy" decoding="async"><b>GPT</b></span><span class="lang lang-zh">OpenAI 对话模型价格对比</span><span class="lang lang-en">OpenAI chat models, price comparison</span><span class="lang lang-ja">OpenAI 対話モデルの価格比較</span><span class="lang lang-ko">OpenAI 대화 모델 가격 비교</span></a>
+      <a href="/zh/models/gemini-4-hydrogen"><span class="af-pop-head"><img src="/assets/icons/gemini-color.svg" width="28" height="28" alt="" loading="lazy" decoding="async"><b>Gemini</b></span><span class="lang lang-zh">Google Gemini 4 接入</span><span class="lang lang-en">Google Gemini 4 access</span><span class="lang lang-ja">Google Gemini 4 の接続</span><span class="lang lang-ko">Google Gemini 4 연동</span></a>
+      <a href="/zh/models/grok-4.x"><span class="af-pop-head"><img src="/assets/icons/grok.svg" width="28" height="28" alt="" loading="lazy" decoding="async"><b>Grok</b></span><span class="lang lang-zh">xAI Grok 文本系列</span><span class="lang lang-en">xAI Grok text models</span><span class="lang lang-ja">xAI Grok テキストシリーズ</span><span class="lang lang-ko">xAI Grok 텍스트 시리즈</span></a>
+      <a href="/zh/models/deepseek"><span class="af-pop-head"><img src="/assets/icons/deepseek-color.svg" width="28" height="28" alt="" loading="lazy" decoding="async"><b>DeepSeek</b></span><span class="lang lang-zh">DeepSeek 全系总览</span><span class="lang lang-en">DeepSeek family overview</span><span class="lang lang-ja">DeepSeek シリーズ一覧</span><span class="lang lang-ko">DeepSeek 시리즈 개요</span></a>
+      <a href="/zh/models/qwen"><span class="af-pop-head"><img src="/assets/icons/qwen.svg" width="28" height="28" alt="" loading="lazy" decoding="async"><b>Qwen</b></span><span class="lang lang-zh">通义千问对话模型总览</span><span class="lang lang-en">Qwen conversation models</span><span class="lang lang-ja">Qwen 対話モデル一覧</span><span class="lang lang-ko">Qwen 대화 모델 개요</span></a>
+      <a href="/zh/models/kimi"><span class="af-pop-head"><img src="/assets/icons/kimi-color.svg" width="28" height="28" alt="" loading="lazy" decoding="async"><b>Kimi</b></span><span class="lang lang-zh">月之暗面 Kimi 系列</span><span class="lang lang-en">Moonshot Kimi family</span><span class="lang lang-ja">Moonshot Kimi シリーズ</span><span class="lang lang-ko">Moonshot Kimi 시리즈</span></a>
+      <a href="/zh/models/glm"><span class="af-pop-head"><img src="/assets/icons/zhipu-color.svg" width="28" height="28" alt="" loading="lazy" decoding="async"><b>GLM</b></span><span class="lang lang-zh">智谱 GLM 系列</span><span class="lang lang-en">Zhipu GLM family</span><span class="lang lang-ja">Zhipu GLM シリーズ</span><span class="lang lang-ko">Zhipu GLM 시리즈</span></a>
+      <a href="/zh/models/kling"><span class="af-pop-head"><img src="/assets/icons/kling.svg" width="28" height="28" alt="" loading="lazy" decoding="async"><b>Kling</b></span><span class="lang lang-zh">可灵视频与图像系列</span><span class="lang lang-en">Kling video and image models</span><span class="lang lang-ja">Kling 動画・画像シリーズ</span><span class="lang lang-ko">Kling 영상·이미지 시리즈</span></a>
+      <a href="/zh/models/seedance"><span class="af-pop-head"><img src="/assets/icons/bytedance-color.svg" width="28" height="28" alt="" loading="lazy" decoding="async"><b>Seedance</b></span><span class="lang lang-zh">豆包视频生成系列</span><span class="lang lang-en">Doubao video generation</span><span class="lang lang-ja">Doubao 動画生成シリーズ</span><span class="lang lang-ko">Doubao 영상 생성 시리즈</span></a>
+      <a href="/zh/models/seedream"><span class="af-pop-head"><img src="/assets/icons/bytedance-color.svg" width="28" height="28" alt="" loading="lazy" decoding="async"><b>Seedream</b></span><span class="lang lang-zh">豆包图像生成系列</span><span class="lang lang-en">Doubao image generation</span><span class="lang lang-ja">Doubao 画像生成シリーズ</span><span class="lang lang-ko">Doubao 이미지 생성 시리즈</span></a>
+      <a href="/zh/models/minimax"><span class="af-pop-head"><img src="/assets/icons/minimax-color.svg" width="28" height="28" alt="" loading="lazy" decoding="async"><b>MiniMax</b></span><span class="lang lang-zh">对话、视频与语音合成</span><span class="lang lang-en">Chat, video and speech</span><span class="lang lang-ja">対話・動画・音声合成</span><span class="lang lang-ko">대화·영상·음성 합성</span></a>
+    </div>
+    <p class="af-pop-all"><a href="/zh/models/"><span class="lang lang-zh">查看全部 300+ 模型专题 →</span><span class="lang lang-en">Browse all 300+ model guides →</span><span class="lang lang-ja">300以上のモデルガイドを見る →</span><span class="lang lang-ko">300개 이상의 모델 가이드 보기 →</span></a></p>
+
     <div class="af-section-head af-section-head-spaced">
       <h2><span class="lang lang-zh">三步完成接入</span><span class="lang lang-en">Connect in Three Steps</span><span class="lang lang-ja">3ステップで接続</span><span class="lang lang-ko">세 단계로 연동</span></h2>
       <p><span class="lang lang-zh">创建 API Key 后，复制 Base URL 和真实模型 ID，即可开始验证调用。</span><span class="lang lang-en">Create an API Key, copy the Base URL and current model ID, then validate your first request.</span><span class="lang lang-ja">API Key を作成し、Base URL と現在のモデル ID をコピーして最初の呼び出しを確認します。</span><span class="lang lang-ko">API Key를 만든 뒤 Base URL과 현재 모델 ID를 복사해 첫 호출을 확인하세요.</span></p>
@@ -353,9 +383,9 @@ AnyAIGC 콘솔에서 생성한 API Key를 사용하세요.</pre>
   <footer class="af-sitefoot">
     <div class="af-sitefoot-inner">
       <div class="af-sitefoot-links">
-        <a href="privacy.html">隐私政策</a>
+        <a href="/privacy">隐私政策</a>
         <span class="af-sitefoot-sep">·</span>
-        <a href="terms.html">服务条款</a>
+        <a href="/terms">服务条款</a>
         <span class="af-sitefoot-sep">·</span>
         <a href="/zh/models/">模型专题</a>
         <span class="af-sitefoot-sep">·</span>

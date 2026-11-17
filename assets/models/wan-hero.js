@@ -2,17 +2,27 @@
   const video = document.querySelector('.wan-hero-video');
   const toggle = document.querySelector('.wan-hero-toggle');
   if (!video || !toggle) return;
+  const source = video.querySelector('source[data-src]');
   const label = toggle.querySelector('[data-video-toggle-label]');
   const motion = matchMedia('(prefers-reduced-motion: reduce)');
   const nav = document.querySelector('.q-nav');
 
-  // Set both properties for browsers that defer muted autoplay until script runs.
+  // Keep the file off the first load: the source lives in data-src until the
+  // page has finished loading, and nothing sets autoplay before that.
   video.defaultMuted = true;
   video.muted = true;
+  let started = false;
+  const attach = () => {
+    if (started || !source) return;
+    started = true;
+    source.src = source.dataset.src;
+    video.load();
+  };
   const syncButton = () => {
     label.textContent = video.paused ? toggle.dataset.playLabel : toggle.dataset.pauseLabel;
   };
   const play = () => {
+    attach();
     video.play().catch(() => {
       video.classList.remove('is-user-playing');
       syncButton();
@@ -32,13 +42,14 @@
     }
   });
   const applyMotionPreference = () => {
-    video.autoplay = !motion.matches;
     video.classList.remove('is-user-playing');
     if (motion.matches) video.pause();
     else play();
     syncButton();
   };
-  applyMotionPreference();
+  // Wait for the full page load so the video never competes with first paint.
+  if (document.readyState === 'complete') applyMotionPreference();
+  else window.addEventListener('load', applyMotionPreference);
   motion.addEventListener('change', applyMotionPreference);
   const syncNav = () => nav?.classList.toggle('is-scrolled', window.scrollY > 24);
   syncNav();

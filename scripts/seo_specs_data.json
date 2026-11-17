@@ -1,0 +1,1599 @@
+[
+ {
+  "slug": "minimax-m2.5",
+  "source": "https://www.minimax.io/news/minimax-m25",
+  "facts_zh": [
+   "MiniMax 于 2026 年 2 月 12 日发布 M2.5，官方定位为面向编程、智能体工具调用与搜索、办公等实际生产任务。",
+   "官方公布 M2.5 在 SWE-Bench Verified 上得分 80.2%。",
+   "官方称 M2.5 输出速度约 50 tokens/秒，高速版 M2.5-Lightning 约 100 tokens/秒；完成任务比 M2.1 快 37%。"
+  ],
+  "facts_en": [
+   "MiniMax released M2.5 on February 12, 2026, positioning it for real-world productivity: coding, agentic tool use and search, and office work.",
+   "MiniMax reports 80.2% on SWE-Bench Verified for M2.5.",
+   "MiniMax lists M2.5 at about 50 tokens per second (M2.5-Lightning at about 100), and says it finishes tasks 37% faster than M2.1."
+  ],
+  "compare_slug": "minimax-m2.7",
+  "compare_zh": "需要在大量复杂技能（Skills）下保持稳定遵循的智能体任务，可以选 M2.7。",
+  "compare_en": "Choose M2.7 for agent workloads that run many complex skills and need high skill adherence."
+ },
+ {
+  "slug": "minimax-m2.7",
+  "source": "https://www.minimax.io/news/minimax-m27-en",
+  "facts_zh": [
+   "M2.7 已在 MiniMax Agent 和 MiniMax API 开放平台全面上线，官方称其为首个深度参与自身迭代的模型。",
+   "官方称 M2.7 在同时使用 40 多个复杂技能时，技能遵循率保持在 97%。",
+   "M2.7 为纯文本输入输出模型，支持推理和工具调用，权重可自部署（官方参考配置为 4 张大显存 NVIDIA GPU、TP 4）。"
+  ],
+  "facts_en": [
+   "M2.7 is fully available on MiniMax Agent and the MiniMax API Platform; MiniMax calls it its first model deeply participating in its own evolution.",
+   "MiniMax reports a 97% skill adherence rate when M2.7 works with over 40 complex skills.",
+   "M2.7 is text-in, text-out with reasoning and tool calls, and can be self-hosted (reference setup: 4 high-memory NVIDIA GPUs with TP 4)."
+  ],
+  "compare_slug": "minimax-m3",
+  "compare_zh": "需要输入图片或视频、或需要 1M 上下文时，选原生多模态的 M3。",
+  "compare_en": "Choose M3 if you need image or video input or a 1M-token context window."
+ },
+ {
+  "slug": "minimax-m3",
+  "source": "https://www.minimax.io/models/text/m3",
+  "facts_zh": [
+   "M3 是原生多模态模型，支持文本、图片、视频输入，输出文本。",
+   "M3 上下文窗口最高 1M tokens，官方保证最低 512K tokens，采用 MiniMax 自研的 MSA 稀疏注意力架构。",
+   "M3 为开放权重模型，官方自部署参考配置为 8 张 B200（MXFP8）。"
+  ],
+  "facts_en": [
+   "M3 is natively multimodal: it accepts text, image and video input and returns text.",
+   "M3 has a context window of up to 1M tokens with a guaranteed minimum of 512K, built on MiniMax's proprietary Sparse Attention (MSA) architecture.",
+   "M3 is open-weight; MiniMax's self-hosting reference setup is 8 x B200 with MXFP8."
+  ],
+  "compare_slug": "minimax-m3.1-flash",
+  "compare_zh": "更看重输出速度、需要可调思考深度时，选更新的 M3.1-Flash。",
+  "compare_en": "Choose the newer M3.1-Flash for higher output speed and tunable thinking depth."
+ },
+ {
+  "slug": "minimax-m3.1-flash",
+  "source": "https://www.minimax.io/blog/minimax-m31f",
+  "facts_zh": [
+   "MiniMax 于 2026 年 10 月 19 日发布 M3.1-Flash，官方描述为支持 1M 上下文、思考深度可调的多模态编程模型。",
+   "官方称 M3.1-Flash 输出速度可达 200+ tokens/秒，P50 中位速度稳定在 170+ tokens/秒。",
+   "官方公布 M3.1-Flash 在 DeepSWE v1.1 得分 73.7%，OSWorld V2 得分 61.7，CyberGym 得分 82%。",
+   "支持文本、图片、视频输入，官方自部署参考配置为 4 张 B300。"
+  ],
+  "facts_en": [
+   "MiniMax released M3.1-Flash on October 19, 2026, describing it as a multimodal coding model with a 1M context window and tunable thinking depth.",
+   "MiniMax reports output speeds of 200+ tokens per second, with median (P50) speed consistently above 170 tokens per second.",
+   "MiniMax reports 73.7% on DeepSWE v1.1, 61.7 on OSWorld V2 and 82% on CyberGym for M3.1-Flash.",
+   "It accepts text, image and video input; the self-hosting reference setup is 4 x B300."
+  ],
+  "compare_slug": "minimax-m3",
+  "compare_zh": "需要官方保证最低 512K 上下文并采用 MSA 架构的旗舰版本时，可选 M3。",
+  "compare_en": "Choose M3 if you want the flagship model with a guaranteed 512K minimum context on the MSA architecture."
+ },
+ {
+  "slug": "doubao-seedance-2-0",
+  "source": "https://docs.volcengine.com/docs/ark/seedance-2-0?lang=zh",
+  "facts_zh": [
+   "火山方舟文档中 Seedance 2.0 的定位是追求最高生成质量。",
+   "输出时长 4–15 秒，分辨率支持 480p、720p、1080p（8bit），以及 4K（10bit），是 2.0 系列中唯一支持 1080p 和 4K 的型号。",
+   "可通过 generate_audio 参数同时生成音频，输出 MP4。"
+  ],
+  "facts_en": [
+   "Volcengine positions Seedance 2.0 for the highest generation quality.",
+   "Outputs 4–15 second videos at 480p, 720p, 1080p (8-bit) or 4K (10-bit); it is the only 2.0 model with 1080p and 4K.",
+   "Audio can be generated alongside video via the generate_audio parameter; output is MP4."
+  ],
+  "compare_slug": "doubao-seedance-2-0-fast",
+  "compare_zh": "只需要 480p 或 720p、更看重速度和成本时，选 doubao-seedance-2-0-fast。",
+  "compare_en": "Choose doubao-seedance-2-0-fast if 480p or 720p is enough and speed and cost matter more than peak quality."
+ },
+ {
+  "slug": "doubao-seedance-2-0-fast",
+  "source": "https://docs.volcengine.com/docs/ark/seedance-2-0?lang=zh",
+  "facts_zh": [
+   "火山方舟文档中 Seedance 2.0 Fast 的定位是兼顾成本与速度。",
+   "输出分辨率为 480p 和 720p（8bit），时长 4–15 秒，支持 21:9 到 9:16 的六种画幅。"
+  ],
+  "facts_en": [
+   "Volcengine positions Seedance 2.0 Fast to balance cost and speed.",
+   "Outputs 480p or 720p (8-bit), 4–15 seconds, in six aspect ratios from 21:9 to 9:16."
+  ],
+  "compare_slug": "doubao-seedance-2-0",
+  "compare_zh": "需要 1080p 或 4K 输出、追求最高画质时，选 doubao-seedance-2-0。",
+  "compare_en": "Choose doubao-seedance-2-0 when you need 1080p or 4K output and the highest quality."
+ },
+ {
+  "slug": "doubao-seedance-2-0-mini",
+  "source": "https://docs.volcengine.com/docs/ark/seedance-2-0?lang=zh",
+  "facts_zh": [
+   "火山方舟文档中 Seedance 2.0 mini 的定位是追求更低成本。",
+   "输出分辨率为 480p 和 720p（8bit），时长 4–15 秒，可通过 generate_audio 生成音频。"
+  ],
+  "facts_en": [
+   "Volcengine positions Seedance 2.0 mini for lower cost.",
+   "Outputs 480p or 720p (8-bit), 4–15 seconds, with optional audio via generate_audio."
+  ],
+  "compare_slug": "doubao-seedance-2-0-fast",
+  "compare_zh": "分辨率同为 720p 以内，但希望在成本和速度之间取平衡、质量更好一些时，选 doubao-seedance-2-0-fast。",
+  "compare_en": "Choose doubao-seedance-2-0-fast for the same 720p ceiling with a balance of speed and cost instead of the lowest cost."
+ },
+ {
+  "slug": "doubao-seedance-2-5",
+  "source": "https://docs.volcengine.com/docs/ark/seedance-2-5?lang=zh",
+  "facts_zh": [
+   "火山方舟文档写明 Seedance 2.5 单段视频时长 4–30 秒，也可设为 -1 由模型自动选择时长。",
+   "参考素材最多 30 张图片、10 段视频、10 段音频，多于 2.0 系列。",
+   "输出分辨率为 480p、720p（8bit）和 1080p（10bit），不支持 4K，可导出 MP4 或 MOV。",
+   "Seed 官网介绍单段时长提升到 30 秒，并支持两次视频延长，另有白模控制、绿幕编辑等编辑能力。"
+  ],
+  "facts_en": [
+   "Per Volcengine's docs, Seedance 2.5 supports clips run 4–30 seconds, or -1 to let the model pick the length.",
+   "Accepts up to 30 reference images, 10 videos and 10 audio clips, more than the 2.0 series.",
+   "Outputs 480p, 720p (8-bit) and 1080p (10-bit), no 4K, exported as MP4 or MOV.",
+   "ByteDance Seed says single clips now reach 30 seconds with up to two extensions, plus white-model control and green-screen editing."
+  ],
+  "compare_slug": "doubao-seedance-2-0",
+  "compare_zh": "需要 4K 输出，或 15 秒以内的片段就够用时，选 doubao-seedance-2-0。",
+  "compare_en": "Choose doubao-seedance-2-0 if you need 4K output or clips of 15 seconds or less are enough."
+ },
+ {
+  "slug": "sparkdesk-v3.5",
+  "source": "https://www.xfyun.cn/doc/spark/Web.html",
+  "facts_zh": [
+   "讯飞官方 WebSocket 文档中，v3.5 接口路径（wss://spark-api.xf-yun.com/v3.5/chat）对应 Spark Max，domain 参数为 generalv3.5。",
+   "官方文档写明 Max 的 max_tokens 取值为 1 到 8192，默认 4096。",
+   "官方文档写明 Max 支持联网搜索插件，并且和 Ultra 一样支持返回联网检索的信源标题和地址。"
+  ],
+  "facts_en": [
+   "In iFlytek's official WebSocket docs, the v3.5 endpoint (wss://spark-api.xf-yun.com/v3.5/chat) maps to Spark Max, with domain generalv3.5.",
+   "The docs set Max's max_tokens range at 1 to 8192, default 4096.",
+   "Per the docs, Max supports the web search plugin and, like Ultra, can return the titles and URLs of web sources it used."
+  ],
+  "compare_slug": "sparkdesk-v3.1",
+  "compare_zh": "如果用不到联网检索的信源标题和地址，可以选 sparkdesk-v3.1（Pro），它同样支持联网搜索，max_tokens 上限也是 8192。",
+  "compare_en": "If you don't need the web source titles and URLs, sparkdesk-v3.1 (Pro) also supports web search and has the same 8192 max_tokens cap."
+ },
+ {
+  "slug": "sparkdesk-v3.1",
+  "source": "https://www.xfyun.cn/doc/spark/Web.html",
+  "facts_zh": [
+   "讯飞官方 WebSocket 文档中，v3.1 接口路径（wss://spark-api.xf-yun.com/v3.1/chat）对应 Spark Pro，domain 参数为 generalv3。",
+   "官方文档写明 Pro 的 max_tokens 取值为 1 到 8192，默认 4096。",
+   "官方文档写明 Pro 支持联网搜索插件。返回信源标题和地址只有 Ultra、Max 支持。"
+  ],
+  "facts_en": [
+   "In iFlytek's official WebSocket docs, the v3.1 endpoint (wss://spark-api.xf-yun.com/v3.1/chat) maps to Spark Pro, with domain generalv3.",
+   "The docs set Pro's max_tokens range at 1 to 8192, default 4096.",
+   "Per the docs, Pro supports the web search plugin. Returning source titles and URLs is limited to Ultra and Max."
+  ],
+  "compare_slug": "sparkdesk-v3.5",
+  "compare_zh": "需要在联网搜索结果里返回信源标题和地址时选 sparkdesk-v3.5（Max），官方文档写明 Pro 不支持这项。",
+  "compare_en": "Choose sparkdesk-v3.5 (Max) if you need web search results to return source titles and URLs, which the docs list as unsupported on Pro."
+ },
+ {
+  "slug": "nano-banana-2",
+  "source": "https://blog.google/innovation-and-ai/technology/ai/nano-banana-2/",
+  "facts_zh": [
+   "Nano Banana 2 即 Gemini 3.1 Flash Image，Google 于 2026 年 2 月 26 日发布，定位是以 Flash 速度提供接近 Nano Banana Pro 的世界知识、画质和推理能力。",
+   "支持多种宽高比，分辨率从 512px 到 4K。",
+   "单个工作流中可保持最多 5 个角色的外观一致和最多 14 个物体的还原度。",
+   "可调用网页搜索的实时信息和图片做图像检索增强，能在图中生成清晰文字并翻译、本地化图内文字；发布时在 Gemini API 和 AI Studio 中为预览版。"
+  ],
+  "facts_en": [
+   "Nano Banana 2 is Gemini 3.1 Flash Image, released by Google on Feb 26, 2026, positioned as bringing Nano Banana Pro's world knowledge, quality and reasoning at Flash speed.",
+   "It supports a range of aspect ratios and resolutions from 512px to 4K.",
+   "It keeps the resemblance of up to five characters and the fidelity of up to 14 objects in a single workflow.",
+   "It uses real-time information and images from web search (image-search grounding), renders legible text and can translate or localize text inside an image; at launch it was in preview in the Gemini API and AI Studio."
+  ],
+  "compare_slug": "nano-banana-pro",
+  "compare_zh": "如果更看重最高的事实准确度和高保真效果，而不是生成速度，Google 建议选 Nano Banana Pro。",
+  "compare_en": "Google recommends Nano Banana Pro for high-fidelity tasks that need maximum factual accuracy, and Nano Banana 2 for fast generation."
+ },
+ {
+  "slug": "nano-banana-pro",
+  "source": "https://blog.google/innovation-and-ai/products/nano-banana-pro/",
+  "facts_zh": [
+   "Nano Banana Pro 即 Gemini 3 Pro Image，基于 Gemini 3 Pro，Google 于 2025 年 11 月 20 日发布。",
+   "可在图中生成多种语言的准确文字，支持局部编辑、调整镜头角度、焦点、调色和光照。",
+   "最多可混合 14 张图片，并保持最多 5 个人物的外观一致；提供多种宽高比和 2K、4K 分辨率。",
+   "可连接 Google 搜索获取实时信息（如天气、体育）来生成信息图；生成的图片带 SynthID 水印。"
+  ],
+  "facts_en": [
+   "Nano Banana Pro is Gemini 3 Pro Image, built on Gemini 3 Pro and released by Google on Nov 20, 2025.",
+   "It renders accurate text in multiple languages and offers localized editing plus control over camera angle, focus, color grading and lighting.",
+   "It can blend up to 14 images while keeping the resemblance of up to 5 people, with a range of aspect ratios and 2K and 4K resolution.",
+   "It can connect to Google Search for real-time information such as weather or sports when building infographics, and its images carry SynthID watermarks."
+  ],
+  "compare_slug": "nano-banana-2",
+  "compare_zh": "如果更看重生成速度和快速迭代，或需要 512px 小图输出，可以选 Nano Banana 2。",
+  "compare_en": "Choose Nano Banana 2 for faster generation and rapid iteration, or when you need outputs as small as 512px."
+ },
+ {
+  "slug": "eleven-v4",
+  "source": "https://elevenlabs.io/docs/overview/models",
+  "facts_zh": [
+   "Eleven v4 的模型 ID 是 eleven_v4，ElevenLabs 称其为情感表达最丰富的语音合成模型。",
+   "支持 90 多种语言，单次请求最多 10,000 个字符。",
+   "支持多人自然对话，以及高保真声音克隆。"
+  ],
+  "facts_en": [
+   "Eleven v4 uses the model ID eleven_v4, and ElevenLabs describes it as its most emotionally rich, expressive speech synthesis model.",
+   "It supports 90+ languages with a 10,000-character limit per request.",
+   "It supports natural multi-speaker dialogue and high-fidelity voice cloning."
+  ],
+  "compare_slug": "eleven-v4-turbo",
+  "compare_zh": "如果需要约 100ms 延迟的实时语音，选 Eleven v4 Turbo。",
+  "compare_en": "Choose Eleven v4 Turbo when you need real-time speech at about 100ms latency."
+ },
+ {
+  "slug": "eleven-v4-turbo",
+  "source": "https://elevenlabs.io/docs/overview/models",
+  "facts_zh": [
+   "Eleven v4 Turbo 的模型 ID 是 eleven_v4_turbo，官方定位是实时语音合成。",
+   "中位延迟约 100ms（不含应用和网络延迟），支持 90 多种语言。",
+   "支持多人自然对话，可用音频标签做细粒度控制；官方在语音 Agent 场景下推荐使用它。"
+  ],
+  "facts_en": [
+   "Eleven v4 Turbo uses the model ID eleven_v4_turbo and is positioned for real-time speech synthesis.",
+   "Median latency is about 100ms, excluding application and network latency, and it supports 90+ languages.",
+   "It supports natural multi-speaker dialogue and audio tags for fine-grained control, and ElevenLabs recommends it for voice agents."
+  ],
+  "compare_slug": "eleven-v4",
+  "compare_zh": "如果不需要实时输出，更看重情感表现和声音克隆，选 Eleven v4。",
+  "compare_en": "Choose Eleven v4 when real-time output is not needed and expressiveness or voice cloning matters more."
+ },
+ {
+  "slug": "eleven-v3",
+  "source": "https://elevenlabs.io/docs/overview/models",
+  "facts_zh": [
+   "Eleven v3 的模型 ID 是 eleven_v3，官方描述为接近真人、富有表现力的语音生成。",
+   "支持 70 多种语言，单次请求最多 5,000 个字符。",
+   "支持多人自然对话，官方已将其列为上一代模型。"
+  ],
+  "facts_en": [
+   "Eleven v3 uses the model ID eleven_v3, described as human-like and expressive speech generation.",
+   "It supports 70+ languages with a 5,000-character limit per request.",
+   "It supports natural multi-speaker dialogue and is listed by ElevenLabs as a previous-generation model."
+  ],
+  "compare_slug": "eleven-v4",
+  "compare_zh": "如果需要 90 多种语言或单次 10,000 字符，选新一代的 Eleven v4。",
+  "compare_en": "Choose the newer Eleven v4 for 90+ languages and a 10,000-character limit."
+ },
+ {
+  "slug": "eleven-v3-conversational",
+  "source": "https://elevenlabs.io/docs/overview/models",
+  "facts_zh": [
+   "Eleven v3 Conversational 的模型 ID 是 eleven_v3_conversational，面向实时语音合成。",
+   "中位延迟约 165ms（不含应用和网络延迟），支持 70 多种语言。",
+   "支持音频标签做细粒度控制，官方已将其列为上一代模型。"
+  ],
+  "facts_en": [
+   "Eleven v3 Conversational uses the model ID eleven_v3_conversational and targets real-time speech synthesis.",
+   "Median latency is about 165ms, excluding application and network latency, and it supports 70+ languages.",
+   "It supports audio tags for fine-grained control and is listed as a previous-generation model."
+  ],
+  "compare_slug": "eleven-v4-turbo",
+  "compare_zh": "如果想要更低的约 100ms 延迟和 90 多种语言，选 Eleven v4 Turbo。",
+  "compare_en": "Choose Eleven v4 Turbo for lower latency (about 100ms) and 90+ languages."
+ },
+ {
+  "slug": "eleven-multilingual-v2",
+  "source": "https://elevenlabs.io/docs/overview/models",
+  "facts_zh": [
+   "Eleven Multilingual v2 的模型 ID 是 eleven_multilingual_v2，官方描述为逼真、情感丰富的模型。",
+   "支持 29 种语言，单次请求最多 10,000 个字符。",
+   "官方称它在长篇生成上最稳定，目前列为上一代模型。"
+  ],
+  "facts_en": [
+   "Eleven Multilingual v2 uses the model ID eleven_multilingual_v2, described as a lifelike model with rich emotional expression.",
+   "It supports 29 languages with a 10,000-character limit per request.",
+   "ElevenLabs calls it the most stable on long-form generations; it is listed as previous generation."
+  ],
+  "compare_slug": "eleven-flash-v2-5",
+  "compare_zh": "如果需要约 100ms 低延迟或单次 40,000 字符，选 Eleven Flash v2.5。",
+  "compare_en": "Choose Eleven Flash v2.5 for about 100ms latency or a 40,000-character limit."
+ },
+ {
+  "slug": "eleven-flash-v2-5",
+  "source": "https://elevenlabs.io/docs/overview/models",
+  "facts_zh": [
+   "Eleven Flash v2.5 的模型 ID 是 eleven_flash_v2_5，官方定位是为实时场景优化的高速模型。",
+   "中位延迟约 100ms（不含应用和网络延迟），支持 32 种语言。",
+   "单次请求最多 40,000 个字符；数字默认不做规范化处理。"
+  ],
+  "facts_en": [
+   "Eleven Flash v2.5 uses the model ID eleven_flash_v2_5 and is positioned as an ultra-fast model optimized for real-time use.",
+   "Median latency is about 100ms, excluding application and network latency, and it supports 32 languages.",
+   "It accepts up to 40,000 characters per request; numbers are not normalized by default."
+  ],
+  "compare_slug": "eleven-flash-v2",
+  "compare_zh": "如果只做英文，可以选 Eleven Flash v2，但官方推荐大多数场景升级到 Flash v2.5。",
+  "compare_en": "Eleven Flash v2 covers English only; ElevenLabs recommends Flash v2.5 as the upgrade for most use cases."
+ },
+ {
+  "slug": "eleven-flash-v2",
+  "source": "https://elevenlabs.io/docs/overview/models",
+  "facts_zh": [
+   "Eleven Flash v2 的模型 ID 是 eleven_flash_v2，只支持英文。",
+   "中位延迟约 135ms（不含应用和网络延迟），单次请求最多 30,000 个字符，约 30 分钟音频。",
+   "官方推荐大多数场景升级到 Flash v2.5。"
+  ],
+  "facts_en": [
+   "Eleven Flash v2 uses the model ID eleven_flash_v2 and supports English only.",
+   "Median latency is about 135ms, excluding application and network latency, with up to 30,000 characters (about 30 minutes of audio) per request.",
+   "ElevenLabs recommends Flash v2.5 as the upgrade path for most use cases."
+  ],
+  "compare_slug": "eleven-flash-v2-5",
+  "compare_zh": "如果需要英文以外的语言（共 32 种）或更低的约 100ms 延迟，选 Eleven Flash v2.5。",
+  "compare_en": "Choose Eleven Flash v2.5 for 32 languages and lower latency of about 100ms."
+ },
+ {
+  "slug": "vidu-image-q2",
+  "source": "https://platform.vidu.com/docs/api-reference/image-generation",
+  "facts_zh": [
+   "Vidu 官方图片生成接口中，viduq2 支持文生图、图片编辑和参考生图，viduq1 只支持参考生图。",
+   "viduq2 可输入 0–7 张参考图，不传图时按提示词直接生成图片。",
+   "viduq2 输出分辨率可选 1080p、2K、4K，默认 1080p。",
+   "viduq2 支持 16:9、9:16、1:1、3:4、4:3、21:9、2:3、3:2 等比例，也可设为 auto 跟随第一张输入图。"
+  ],
+  "facts_en": [
+   "In Vidu's official image generation API, viduq2 supports text-to-image, image editing and reference-to-image, while viduq1 supports reference-to-image only.",
+   "viduq2 accepts 0 to 7 reference images; with no images it generates from the prompt alone.",
+   "viduq2 outputs at 1080p, 2K or 4K, with 1080p as the default.",
+   "viduq2 supports 16:9, 9:16, 1:1, 3:4, 4:3, 21:9, 2:3 and 3:2, plus auto to match the first input image."
+  ],
+  "compare_slug": "",
+  "compare_zh": "",
+  "compare_en": ""
+ },
+ {
+  "slug": "viduq2",
+  "source": "https://platform.vidu.com/docs/overview/model-map",
+  "facts_zh": [
+   "Vidu 官方对 viduq2 的定位是动态效果好、情绪表达强、细节更丰富。",
+   "在 Q2 系列中，viduq2 支持文生视频和参考生视频，模型对照表里没有标图生视频和首尾帧。",
+   "输出 540p、720p、1080p，24fps，时长 1–10 秒可选。"
+  ],
+  "facts_en": [
+   "Vidu describes viduq2 as having good dynamics, strong emotional expression and richer detail.",
+   "Within the Q2 series, viduq2 covers text-to-video and reference-to-video; the model map does not list image-to-video or first-and-last-frame for it.",
+   "Output is 540p, 720p or 1080p at 24fps, with durations selectable from 1 to 10 seconds."
+  ],
+  "compare_slug": "viduq2-pro",
+  "compare_zh": "需要图生视频、首尾帧或在参考生视频里做视频编辑时选 viduq2-pro，viduq2 是 Q2 系列里支持文生视频的型号。",
+  "compare_en": "Choose viduq2-pro if you need image-to-video, first-and-last-frame control or video editing in reference-to-video; viduq2 is the Q2 model with text-to-video."
+ },
+ {
+  "slug": "viduq2-pro",
+  "source": "https://platform.vidu.com/docs/overview/model-map",
+  "facts_zh": [
+   "Vidu 官方对 viduq2-pro 的定位是画面美感更好，并在参考生视频场景支持视频编辑。",
+   "viduq2-pro 支持图生视频、参考生视频和首尾帧，不支持文生视频。",
+   "输出 540p、720p、1080p，24fps，时长 1–10 秒可选。"
+  ],
+  "facts_en": [
+   "Vidu positions viduq2-pro as having better visual aesthetics, with video editing support in reference-to-video scenarios.",
+   "viduq2-pro supports image-to-video, reference-to-video and first-and-last-frame, but not text-to-video.",
+   "Output is 540p, 720p or 1080p at 24fps, with durations selectable from 1 to 10 seconds."
+  ],
+  "compare_slug": "viduq2-turbo",
+  "compare_zh": "更看重生成速度、且不需要参考生视频时选 viduq2-turbo，它同样支持图生视频和首尾帧。",
+  "compare_en": "Choose viduq2-turbo when generation speed matters more and you don't need reference-to-video; it also covers image-to-video and first-and-last-frame."
+ },
+ {
+  "slug": "viduq2-turbo",
+  "source": "https://platform.vidu.com/docs/overview/model-map",
+  "facts_zh": [
+   "Vidu 官方对 viduq2-turbo 的描述是新模型、速度快。",
+   "viduq2-turbo 支持图生视频和首尾帧，不支持参考生视频和文生视频。",
+   "输出 540p、720p、1080p，24fps，时长 1–10 秒可选。"
+  ],
+  "facts_en": [
+   "Vidu describes viduq2-turbo as a new model with fast generation.",
+   "viduq2-turbo supports image-to-video and first-and-last-frame, but not reference-to-video or text-to-video.",
+   "Output is 540p, 720p or 1080p at 24fps, with durations selectable from 1 to 10 seconds."
+  ],
+  "compare_slug": "viduq2-pro",
+  "compare_zh": "更看重画面美感，或需要参考生视频和视频编辑时选 viduq2-pro。",
+  "compare_en": "Choose viduq2-pro for better visual aesthetics or when you need reference-to-video and video editing."
+ },
+ {
+  "slug": "viduq3-pro",
+  "source": "https://platform.vidu.com/docs/overview/model-map",
+  "facts_zh": [
+   "viduq3-pro 支持音视频同步直出和智能切镜，官方描述为画面更生动、表现力更强、更有立体感。",
+   "支持文生视频、图生视频和首尾帧，模型对照表里没有标参考生视频。",
+   "输出 540p、720p、1080p，24fps，时长 1–16 秒可选，比 Q2 系列的 1–10 秒更长。"
+  ],
+  "facts_en": [
+   "viduq3-pro supports synchronized audio-video output and intelligent shot switching, and Vidu describes its output as more vivid, expressive and three-dimensional.",
+   "It supports text-to-video, image-to-video and first-and-last-frame; the model map does not list reference-to-video for it.",
+   "Output is 540p, 720p or 1080p at 24fps, with durations of 1 to 16 seconds, longer than the 1 to 10 seconds of the Q2 series."
+  ],
+  "compare_slug": "viduq3-turbo",
+  "compare_zh": "需要更快的生成速度，或需要参考生视频（对照表里 turbo 有、pro 没有）时选 viduq3-turbo。",
+  "compare_en": "Choose viduq3-turbo for faster generation or when you need reference-to-video, which the model map lists for turbo but not for pro."
+ },
+ {
+  "slug": "viduq3-turbo",
+  "source": "https://platform.vidu.com/docs/overview/model-map",
+  "facts_zh": [
+   "viduq3-turbo 支持音视频同步直出和智能切镜，官方标注生成速度快。",
+   "在 Q3 系列中，viduq3-turbo 是对照表里唯一同时支持文生视频、图生视频、参考生视频和首尾帧的型号。",
+   "输出 540p、720p、1080p，24fps，时长 1–16 秒可选。"
+  ],
+  "facts_en": [
+   "viduq3-turbo supports synchronized audio-video output and intelligent shot switching, and Vidu lists fast generation speed for it.",
+   "In the Q3 series, viduq3-turbo is the only model in the model map that supports text-to-video, image-to-video, reference-to-video and first-and-last-frame together.",
+   "Output is 540p, 720p or 1080p at 24fps, with durations of 1 to 16 seconds."
+  ],
+  "compare_slug": "viduq3-pro",
+  "compare_zh": "想要官方所说更生动、更有表现力和立体感的画面，且不需要参考生视频时选 viduq3-pro。",
+  "compare_en": "Choose viduq3-pro when you want the more vivid, expressive and three-dimensional output Vidu describes for pro, and don't need reference-to-video."
+ },
+ {
+  "slug": "viduq4-preview",
+  "source": "https://platform.vidu.com/docs/overview/model-map",
+  "facts_zh": [
+   "Vidu 官方把 viduq4-preview 定位为新一代音视频旗舰模型，目前是预览版。",
+   "输出分辨率支持 540p、720p、1080p、2K、4K，24fps；模型对照表写时长 1–16 秒可选，图生视频接口的 duration 参数为 3–16 秒，默认 5 秒。",
+   "支持图生视频和参考生视频；图生视频接口默认开启音视频直出（含对白和音效），并支持自动切镜。",
+   "图生视频只接受 1 张首帧图，提示词最长 20000 字符。"
+  ],
+  "facts_en": [
+   "Vidu positions viduq4-preview as its next-generation flagship for expressive audio and video, currently released as a preview.",
+   "It outputs 540p, 720p, 1080p, 2K or 4K at 24fps; the model map lists 1 to 16 second durations, while the image-to-video API accepts duration values of 3 to 16 seconds, with 5 as the default.",
+   "It supports image-to-video and reference-to-video; the image-to-video API turns on native audio (dialogue and sound effects) by default and supports automatic camera switching.",
+   "Image-to-video takes exactly one start-frame image, and prompts can be up to 20,000 characters."
+  ],
+  "compare_slug": "viduq3-turbo",
+  "compare_zh": "需要文生视频或首尾帧（对照表里 Q4 Preview 没有标这两项），且 1080p 够用时选 viduq3-turbo。",
+  "compare_en": "Choose viduq3-turbo if you need text-to-video or first-and-last-frame, which the model map does not list for Q4 Preview, and 1080p output is enough."
+ },
+ {
+  "slug": "mimo-v2.5",
+  "source": "https://mimo.mi.com/docs/zh-CN/updates/deprecate",
+  "facts_zh": [
+   "mimo-v2.5 于 2026-04-23 发布，原生支持图像、视频、音频、文本理解，上下文 1M。",
+   "切换到 mimo-v2.6-flash 后默认参数有变化：max_completion_tokens 默认值从 32,768 提高到 131,072，思考模式下不支持 temperature 和 top_p。"
+  ],
+  "facts_en": [
+   "mimo-v2.5 was released on 2026-04-23 with native understanding of images, video, audio and text, and a 1M context window.",
+   "Default parameters change on mimo-v2.6-flash: max_completion_tokens defaults to 131,072 instead of 32,768, and temperature and top_p are not supported in thinking mode."
+  ],
+  "compare_slug": "",
+  "compare_zh": "",
+  "compare_en": ""
+ },
+ {
+  "slug": "mimo-v2.5-pro",
+  "source": "https://mimo.mi.com/docs/zh-CN/updates/model",
+  "facts_zh": [
+   "mimo-v2.5-pro 于 2026-04-23 发布，总参数 1T，激活参数 42B，上下文 1M。",
+   "mimo-v2.5-pro 只支持文本输入。"
+  ],
+  "facts_en": [
+   "mimo-v2.5-pro was released on 2026-04-23 with 1T total parameters, 42B active parameters and a 1M context window.",
+   "mimo-v2.5-pro supports text only."
+  ],
+  "compare_slug": "",
+  "compare_zh": "",
+  "compare_en": ""
+ },
+ {
+  "slug": "mimo-v2.6-flash",
+  "source": "https://mimo.mi.com/docs/zh-CN/quick-start/summary/model",
+  "facts_zh": [
+   "mimo-v2.6-flash 于 2026-09-22 发布，是原生全模态模型，上下文窗口 1M，最大输出 128K。",
+   "小米官方把 mimo-v2.6-flash 定位为面向专业办公中高频调用与规模化任务的模型。",
+   "小米官方称 MiMo-V2.6-Flash 全面超越 MiMo-V2.5-Pro，模型权重已开源。",
+   "思考模式下不支持 temperature 和 top_p，max_completion_tokens 默认值为 131,072。"
+  ],
+  "facts_en": [
+   "mimo-v2.6-flash was released on 2026-09-22 as a native omni-modal model with a 1M context window and up to 128K output tokens.",
+   "Xiaomi positions mimo-v2.6-flash for high-frequency calls and large-scale tasks in professional office work.",
+   "Xiaomi states that MiMo-V2.6-Flash outperforms MiMo-V2.5-Pro across the board, and its weights are open-sourced.",
+   "In thinking mode temperature and top_p are not supported, and max_completion_tokens defaults to 131,072."
+  ],
+  "compare_slug": "mimo-v2.6-pro",
+  "compare_zh": "复杂项目、长程任务、网络安全或科研场景，小米官方推荐用万亿参数的 mimo-v2.6-pro。",
+  "compare_en": "For complex projects, long-horizon tasks, cybersecurity or research work, Xiaomi recommends the trillion-parameter mimo-v2.6-pro."
+ },
+ {
+  "slug": "mimo-v2.6-pro",
+  "source": "https://mimo.mi.com/docs/zh-CN/news/latest/v2-6",
+  "facts_zh": [
+   "mimo-v2.6-pro 于 2026-09-22 发布，是万亿参数的全模态旗舰推理模型，上下文窗口 1M，最大输出 128K。",
+   "小米官方推荐 mimo-v2.6-pro 用于复杂项目、长程任务、高价值工作、网络安全与科研。",
+   "在长程软件工程评测 DeepSWE v1.1 上，MiMo-V2.6-Pro 经强化学习训练后从 58.4 分提升到 72.6 分，模型权重已开源。"
+  ],
+  "facts_en": [
+   "mimo-v2.6-pro was released on 2026-09-22 as a trillion-parameter omni-modal flagship reasoning model with a 1M context window and up to 128K output tokens.",
+   "Xiaomi recommends mimo-v2.6-pro for complex projects, long-horizon tasks, high-value work, cybersecurity and research.",
+   "On the long-horizon software engineering benchmark DeepSWE v1.1, MiMo-V2.6-Pro rose from 58.4 to 72.6 after RL training, and its weights are open-sourced."
+  ],
+  "compare_slug": "mimo-v2.6-flash",
+  "compare_zh": "如果是专业办公里的高频调用和规模化任务，小米官方推荐成本更低的 mimo-v2.6-flash，上下文和最大输出相同。",
+  "compare_en": "For high-frequency calls and large-scale office tasks, Xiaomi recommends the lower-cost mimo-v2.6-flash, which has the same context window and max output."
+ },
+ {
+  "slug": "doubao-seed-1-6",
+  "source": "https://ark.volcengine.com/region:cn-beijing/docs/model-release-announcement-2025",
+  "facts_zh": [
+   "火山方舟 2025 模型发布公告称 doubao-seed-1-6-250615 是多模态深度思考模型，支持 thinking、non-thinking、auto 三种思考模式。",
+   "doubao-seed-1-6-251015 版本同时支持 thinking 和 non-thinking 两种思考模式。"
+  ],
+  "facts_en": [
+   "Volcengine Ark's 2025 release notes describe doubao-seed-1-6-250615 as a multimodal deep-thinking model with three thinking modes: thinking, non-thinking and auto.",
+   "The doubao-seed-1-6-251015 version supports two thinking modes, thinking and non-thinking."
+  ],
+  "compare_slug": "",
+  "compare_zh": "",
+  "compare_en": ""
+ },
+ {
+  "slug": "doubao-seed-1-6-flash",
+  "source": "https://ark.volcengine.com/region:cn-beijing/docs/model-release-announcement-2025",
+  "facts_zh": [
+   "火山方舟 2025 模型发布公告称 doubao-seed-1-6-flash 是推理速度优先的多模态深度思考模型，同时支持文本和视觉理解。",
+   "doubao-seed-1-6-flash-250828 版本的文本能力与 250715 版本基本一致，视觉能力有较大提升。"
+  ],
+  "facts_en": [
+   "Volcengine Ark's 2025 release notes describe doubao-seed-1-6-flash as a multimodal deep-thinking model built for inference speed, with both text and vision understanding.",
+   "The doubao-seed-1-6-flash-250828 version keeps text ability roughly the same as 250715 and improves vision ability."
+  ],
+  "compare_slug": "",
+  "compare_zh": "",
+  "compare_en": ""
+ },
+ {
+  "slug": "doubao-seed-1-6-thinking",
+  "source": "https://docs.volcengine.com/docs/82379/1350667?lang=zh",
+  "facts_zh": [
+   "火山方舟 2025 模型发布公告称 doubao-seed-1-6-thinking-250615 强化了思考能力，与 doubao-1-5-thinking-pro 相比，Coding、Math、逻辑推理等基础能力有提升。",
+   "doubao-seed-1-6-thinking-250715 版本的文本和视觉能力较 250615 版本有提升，综合能力领先开启 thinking 模式的 doubao-seed-1-6-250615。"
+  ],
+  "facts_en": [
+   "Volcengine Ark's 2025 release notes say doubao-seed-1-6-thinking-250615 strengthens reasoning and improves coding, math and logical reasoning over doubao-1-5-thinking-pro.",
+   "The 250715 version improves text and vision ability over 250615, and Volcengine says its overall ability exceeds doubao-seed-1-6-250615 with thinking mode on."
+  ],
+  "compare_slug": "",
+  "compare_zh": "",
+  "compare_en": ""
+ },
+ {
+  "slug": "doubao-seed-1-8",
+  "source": "https://docs.volcengine.com/docs/82379/1350667?lang=zh",
+  "facts_zh": [
+   "火山方舟 2025 模型发布公告称 doubao-seed-1-8-251228 是深度思考模型，主要升级为更强的 Agent 能力、多模态理解和更灵活的上下文管理。",
+   "火山方舟称 doubao-seed-2-0-lite 的综合能力超过上一代 Doubao-Seed-1.8。"
+  ],
+  "facts_en": [
+   "Volcengine Ark's 2025 release notes describe doubao-seed-1-8-251228 as a deep-thinking model with stronger agent ability, upgraded multimodal understanding and more flexible context management.",
+   "Volcengine says doubao-seed-2-0-lite outperforms the previous-generation Doubao-Seed-1.8 overall."
+  ],
+  "compare_slug": "",
+  "compare_zh": "",
+  "compare_en": ""
+ },
+ {
+  "slug": "doubao-seed-2-0-code-preview",
+  "source": "https://docs.volcengine.com/docs/82379/1330310",
+  "facts_zh": [
+   "火山方舟 2026 年 2 月发布 doubao-seed-2-0-code-preview-260215，类型为编程模型，面向企业级编程需求，在 Seed 2.0 的 Agent 和视觉理解能力基础上增强了代码能力，适合接入各类 AI 编程工具。",
+   "模型列表显示其上下文窗口 256K、最大输入 224K、最大输出 128K，能力项为深度思考、文本生成、多模态理解、工具调用，未列 GUI 任务处理和结构化输出。"
+  ],
+  "facts_en": [
+   "Volcengine Ark released doubao-seed-2-0-code-preview-260215 in February 2026 as a coding model for enterprise programming, adding stronger code ability on top of Seed 2.0's agent and vision skills, aimed at AI coding tools.",
+   "The Ark model list gives it a 256K context window, 224K max input and 128K max output, with deep thinking, text generation, multimodal understanding and tool calling; GUI tasks and structured output are not listed."
+  ],
+  "compare_slug": "doubao-seed-2-1-pro",
+  "compare_zh": "如果需要 GUI 任务处理、结构化输出或长期可用的编程模型，可选面向 Coding 与 Agent 的 Seed 2.1 Pro。",
+  "compare_en": "Seed 2.1 Pro targets coding and agent work, adds GUI tasks and structured output, and is not on the deprecation list."
+ },
+ {
+  "slug": "doubao-seed-2-0-mini",
+  "source": "https://docs.volcengine.com/docs/82379/1159178?lang=zh",
+  "facts_zh": [
+   "火山方舟 2026 年 2 月发布 doubao-seed-2-0-mini-260215，面向低时延、高并发与成本敏感场景，强调快速响应。",
+   "2026 年 4 月发布的 doubao-seed-2-0-mini-260428 为 LTS 版本，支持文本、图片、语音、视频四模态理解，精简了推理链路，并强化多语种及小语种处理。"
+  ],
+  "facts_en": [
+   "Volcengine Ark released doubao-seed-2-0-mini-260215 in February 2026 for low-latency, high-concurrency and cost-sensitive workloads.",
+   "The doubao-seed-2-0-mini-260428 version (April 2026) is an LTS release that understands text, images, audio and video, uses a shorter reasoning path, and improves handling of many languages, including less common ones."
+  ],
+  "compare_slug": "doubao-seed-2-0-lite",
+  "compare_zh": "同样 256K 上下文下需要更强综合能力和 GUI 闭环操作时，可选 Seed 2.0 Lite。",
+  "compare_en": "Choose Seed 2.0 Lite for stronger overall ability and GUI operation at the same 256K context."
+ },
+ {
+  "slug": "doubao-seed-2-0-pro",
+  "source": "https://docs.volcengine.com/docs/82379/1350667?lang=zh",
+  "facts_zh": [
+   "火山方舟 2026 年 2 月发布 doubao-seed-2-0-pro-260215，定位是旗舰级全能通用模型，面向 Agent 时代的复杂推理与长链路任务执行。",
+   "模型列表显示其上下文窗口 256K、最大输入 224K、最大输出 128K，支持深度思考、多模态理解、GUI 任务处理、工具调用和结构化输出。"
+  ],
+  "facts_en": [
+   "Volcengine Ark released doubao-seed-2-0-pro-260215 in February 2026 as its flagship general-purpose model for complex reasoning and long multi-step agent tasks.",
+   "The Ark model list gives it a 256K context window, 224K max input and 128K max output, with deep thinking, multimodal understanding, GUI tasks, tool calling and structured output."
+  ],
+  "compare_slug": "",
+  "compare_zh": "",
+  "compare_en": ""
+ },
+ {
+  "slug": "doubao-seed-2-1-pro",
+  "source": "https://docs.volcengine.com/docs/82379/1330310",
+  "facts_zh": [
+   "火山方舟 2026 年 6 月发布 doubao-seed-2-1-pro-260628，定位是面向 Coding 与 Agent 的新一代旗舰模型，在 Coding 工程交付、Agent 长链路任务执行和多模态理解三方面升级。",
+   "2026 年 9 月发布的 doubao-seed-2-1-pro-260915 上下文窗口为 1024K，最大输出 256K，最大思维链 256K；260628 版本上下文窗口为 256K。",
+   "两个版本都支持深度思考、多模态理解、GUI 任务处理、工具调用和结构化输出。"
+  ],
+  "facts_en": [
+   "Volcengine Ark released doubao-seed-2-1-pro-260628 in June 2026 as its new flagship for coding and agents, upgraded in coding delivery, long multi-step agent tasks and multimodal understanding.",
+   "The doubao-seed-2-1-pro-260915 version (September 2026) has a 1024K context window, 256K max output and 256K max reasoning; the 260628 version has a 256K context window.",
+   "Both versions support deep thinking, multimodal understanding, GUI tasks, tool calling and structured output."
+  ],
+  "compare_slug": "doubao-seed-2-1-turbo",
+  "compare_zh": "大批量线上调用、更看重成本和时延且 256K 上下文够用时，可选 Seed 2.1 Turbo。",
+  "compare_en": "Choose Seed 2.1 Turbo for high-volume production where cost and latency come first and a 256K context is enough."
+ },
+ {
+  "slug": "doubao-seed-2-1-turbo",
+  "source": "https://docs.volcengine.com/docs/82379/1159178?lang=zh",
+  "facts_zh": [
+   "火山方舟 2026 年 6 月发布 doubao-seed-2-1-turbo-260628，定位是面向规模化生产场景的低成本、低时延版本，官方称效果比肩 doubao-seed-2-1-pro。",
+   "模型列表显示其上下文窗口 256K、最大输入 256K、最大输出 256K，支持深度思考、多模态理解、GUI 任务处理、工具调用和结构化输出。",
+   "火山方舟建议将其用于大量线上调用的 Coding、Agent 与多模态理解任务，以及成本、吞吐优先的批量调用场景。"
+  ],
+  "facts_en": [
+   "Volcengine Ark released doubao-seed-2-1-turbo-260628 in June 2026 as a low-cost, low-latency version for production at scale, and says its quality is on par with doubao-seed-2-1-pro.",
+   "The Ark model list gives it a 256K context window, 256K max input and 256K max output, with deep thinking, multimodal understanding, GUI tasks, tool calling and structured output.",
+   "Volcengine recommends it for high-volume coding, agent and multimodal workloads, and for batch jobs where cost and throughput come first."
+  ],
+  "compare_slug": "doubao-seed-2-1-pro",
+  "compare_zh": "需要 1024K 上下文或处理最复杂的 Coding、Agent 任务时，可选 Seed 2.1 Pro（260915）。",
+  "compare_en": "Choose Seed 2.1 Pro (260915) when you need a 1024K context or the most complex coding and agent tasks."
+ },
+ {
+  "slug": "kling-video-v4",
+  "source": "https://klingai.com/document-api/guides/capability-map/video",
+  "facts_zh": [
+   "Kling 4.0（kling-4.0）可生成 3 到 30 秒的视频，输入支持文本、图片和视频。",
+   "宽高比支持 21:9、16:9、1:1、9:16、4:3、3:4 和自适应。",
+   "全能参考生视频最多支持 7 个主体，参考视频单段和总时长需在 3 到 30 秒之间。"
+  ],
+  "facts_en": [
+   "Kling 4.0 (kling-4.0) generates videos from 3 to 30 seconds and accepts text, image and video input.",
+   "Supported aspect ratios are 21:9, 16:9, 1:1, 9:16, 4:3, 3:4 and adaptive.",
+   "Omni reference generation accepts up to 7 subjects, and each reference video and their total length must be 3 to 30 seconds."
+  ],
+  "compare_slug": "",
+  "compare_zh": "",
+  "compare_en": ""
+ },
+ {
+  "slug": "kling-video-v4-flash",
+  "source": "https://klingai.com/document-api/api/video/4-0-flash/video-omni",
+  "facts_zh": [
+   "Kling 4.0 Flash（kling-4.0-flash）可生成 3 到 20 秒的视频，输出分辨率只有 720P，动态范围为 SDR。",
+   "宽高比支持 21:9、16:9、1:1、9:16、4:3、3:4 和自适应。",
+   "全能参考生视频最多支持 5 个参考视频和 7 个主体，参考视频单段和总时长需在 3 到 20 秒之间。",
+   "官方定位为轻量、成本更低，支持全能参考、视频编辑和多语言表达。"
+  ],
+  "facts_en": [
+   "Kling 4.0 Flash (kling-4.0-flash) generates videos from 3 to 20 seconds, with 720P SDR as the only output.",
+   "Supported aspect ratios are 21:9, 16:9, 1:1, 9:16, 4:3, 3:4 and adaptive.",
+   "Omni reference generation accepts up to 5 reference videos and 7 subjects, with each reference video and the total length between 3 and 20 seconds.",
+   "Kling describes it as a lighter, lower-cost model that supports omni reference, video editing and multilingual speech."
+  ],
+  "compare_slug": "",
+  "compare_zh": "",
+  "compare_en": ""
+ },
+ {
+  "slug": "kling-3.0-turbo",
+  "source": "https://klingai.com/document-api/api/video/3-0-turbo/text-to-video",
+  "facts_zh": [
+   "Kling 3.0 Turbo（kling-3.0-turbo）可生成 3 到 15 秒的视频，输入支持文本和图片，不支持视频输入。",
+   "输出分辨率支持 720P 和 1080P，默认 720P。",
+   "宽高比支持 16:9、1:1 和 9:16。",
+   "提示词可按固定格式生成多镜头视频，最多 6 个分镜。"
+  ],
+  "facts_en": [
+   "Kling 3.0 Turbo (kling-3.0-turbo) generates videos from 3 to 15 seconds and accepts text and image input, but not video.",
+   "Output resolution is 720P or 1080P, with 720P as the default.",
+   "Supported aspect ratios are 16:9, 1:1 and 9:16.",
+   "A fixed prompt format produces multi-shot videos with up to 6 shots."
+  ],
+  "compare_slug": "kling-video-v4",
+  "compare_zh": "3.0 Turbo 最长 15 秒、不接受视频输入，Kling Video V4 最长 30 秒并支持视频参考。",
+  "compare_en": "3.0 Turbo runs up to 15 seconds without video input, while Kling Video V4 runs up to 30 seconds and accepts video references."
+ },
+ {
+  "slug": "kling-omni-video",
+  "source": "https://klingai.com/document-api/api/video/o1/video-omni",
+  "facts_zh": [
+   "Kling O1（kling-video-o1）是官方所称的统一视频模型，输入支持文本、图片和视频。",
+   "生成时长为 3 到 10 秒，分辨率支持 720P 和 1080P。",
+   "最多添加 1 段参考视频，参考视频时长需在 3 到 10 秒之间。",
+   "只用首帧图且没有其他参考图和参考视频时，只能生成 5 秒或 10 秒的视频。"
+  ],
+  "facts_en": [
+   "Kling O1 (kling-video-o1) is what Kling calls a unified video model, accepting text, image and video input.",
+   "It generates 3 to 10 second videos at 720P or 1080P.",
+   "A request can include at most 1 reference video, which must be 3 to 10 seconds long.",
+   "With only a first-frame image and no other reference images or videos, the output must be 5 or 10 seconds."
+  ],
+  "compare_slug": "kling-video-v4",
+  "compare_zh": "O1 最多 1 段参考视频、最长 10 秒，Kling Video V4 最多 5 段参考视频、最长 30 秒。",
+  "compare_en": "O1 allows 1 reference video and up to 10 seconds; Kling Video V4 allows up to 5 reference videos and 30 seconds."
+ },
+ {
+  "slug": "kling-motion-control",
+  "source": "https://klingai.com/document-api/api/video/motion-control",
+  "facts_zh": [
+   "动作控制把参考视频里的动作迁移到形象参考图的人物上，官方提供 3.0 和 2.6 两个版本。",
+   "人物朝向与视频一致时，参考视频最长 30 秒；与图片一致时最长 10 秒；最短 3 秒。",
+   "参考视频不超过 100MB，宽高在 340 到 3850px 之间；形象图不超过 50MB。",
+   "输出分辨率支持 720P 和 1080P，默认 720P。"
+  ],
+  "facts_en": [
+   "Motion Control transfers motion from a reference video onto the character in a reference image, with 3.0 and 2.6 versions.",
+   "When the character follows the video's orientation the reference video can be up to 30 seconds; when it follows the image, up to 10 seconds; the minimum is 3 seconds.",
+   "The reference video can be up to 100MB with sides between 340 and 3850px, and the character image up to 50MB.",
+   "Output is 720P or 1080P, with 720P as the default."
+  ],
+  "compare_slug": "kling-avatar-image2video",
+  "compare_zh": "动作控制用参考视频驱动人物，数字人用音频驱动人像说话。",
+  "compare_en": "Motion Control drives a character with a reference video, while Avatar Image2Video drives a portrait with audio."
+ },
+ {
+  "slug": "kling-avatar-image2video",
+  "source": "https://klingai.com/document-api/api/video/avatar",
+  "facts_zh": [
+   "数字人接口用一张参考图和一段音频生成说话视频。",
+   "参考图支持 jpg、jpeg、png，不超过 10MB，宽高不小于 300px，宽高比在 1:2.5 到 2.5:1 之间。",
+   "音频支持 mp3、wav、m4a、aac，不超过 5MB，时长需在 2 到 300 秒之间。",
+   "提供 std 标准模式和 pro 专家模式两种生成模式。"
+  ],
+  "facts_en": [
+   "The Avatar API creates a talking video from one reference image and an audio track.",
+   "The image must be jpg, jpeg or png, up to 10MB, at least 300px per side, with an aspect ratio between 1:2.5 and 2.5:1.",
+   "Audio must be mp3, wav, m4a or aac, up to 5MB and 2 to 300 seconds long.",
+   "It offers two modes: std (standard) and pro (higher quality)."
+  ],
+  "compare_slug": "kling-advanced-lip-sync",
+  "compare_zh": "数字人从静态图出发、音频最长 300 秒，对口型作用于已有视频、音频最长 60 秒。",
+  "compare_en": "Avatar starts from a still image with up to 300 seconds of audio; Lip Sync works on an existing video with up to 60 seconds of audio."
+ },
+ {
+  "slug": "kling-advanced-lip-sync",
+  "source": "https://klingai.com/document-api/api/video/lip-sync",
+  "facts_zh": [
+   "对口型先通过人脸识别接口获得会话 ID 和人脸 ID，再提交对口型任务。",
+   "目前一次只支持指定单人对口型。",
+   "音频支持 mp3、wav、m4a、aac，不超过 5MB，时长需在 2 到 60 秒之间。",
+   "插入音频与该人脸可对口型的时间区间至少重合 2 秒，音频和原视频音量都可在 0 到 2 之间调节。"
+  ],
+  "facts_en": [
+   "Lip Sync first calls a face-detection endpoint to get a session ID and face ID, then submits the lip-sync task.",
+   "Only one person can be lip-synced per task.",
+   "Audio must be mp3, wav, m4a or aac, up to 5MB and 2 to 60 seconds long.",
+   "The inserted audio must overlap the face's lip-sync window by at least 2 seconds, and both new and original audio volume can be set from 0 to 2."
+  ],
+  "compare_slug": "kling-avatar-image2video",
+  "compare_zh": "对口型改已有视频里的人脸口型，数字人从一张静态图生成说话视频。",
+  "compare_en": "Lip Sync edits the mouth in an existing video, while Avatar generates a talking video from a still image."
+ },
+ {
+  "slug": "kling-audio",
+  "source": "https://klingai.com/document-api/api/video/audio-generation/text-to-audio",
+  "facts_zh": [
+   "文生音效的提示词不超过 200 个字符，生成时长在 3 到 10 秒之间，精确到 0.1 秒。",
+   "视频生音效只接受 MP4 或 MOV，文件不超过 100MB，视频时长在 3 到 20 秒之间。",
+   "语音合成文本最长 1000 个字符，音色语种支持中文和英文，语速范围 0.8 到 2.0。",
+   "生成的音频提供 MP3 和 WAV 两种格式，30 天后会被清理。"
+  ],
+  "facts_en": [
+   "Text-to-sound-effect prompts are limited to 200 characters, and output length is 3 to 10 seconds in 0.1-second steps.",
+   "Video-to-sound-effect accepts MP4 or MOV up to 100MB and 3 to 20 seconds long.",
+   "Text-to-speech accepts up to 1,000 characters, Chinese or English voices, and a speed from 0.8 to 2.0.",
+   "Generated audio is returned as MP3 and WAV and is deleted after 30 days."
+  ],
+  "compare_slug": "kling-custom-voices",
+  "compare_zh": "Kling Audio 用系统音色合成语音和音效，自定义音色从你上传的 5 到 30 秒人声创建新音色。",
+  "compare_en": "Kling Audio uses built-in voices for speech and effects, while Custom Voices builds a new voice from a 5 to 30 second recording you upload."
+ },
+ {
+  "slug": "kling-custom-voices",
+  "source": "https://klingai.com/document-api/api/video/4-0/voice-customization",
+  "facts_zh": [
+   "自定义音色可从上传的音视频文件或符合条件的历史作品中提取人声，二者只能传一个。",
+   "上传文件支持 mp3、wav、mp4、mov，人声需干净无杂音且只有一种人声，时长在 5 到 30 秒之间。",
+   "可用作素材的历史作品包括开启声音的 V2.6 视频、数字人 API 视频和对口型 API 视频。",
+   "音色名称最长 20 个字符，不再使用的音色可以通过 API 删除。"
+  ],
+  "facts_en": [
+   "Custom Voices extracts a voice from an uploaded audio or video file or from an eligible past generation; exactly one source must be given.",
+   "Uploads can be mp3, wav, mp4 or mov, with one clean voice and no noise, 5 to 30 seconds long.",
+   "Eligible past generations are V2.6 videos with sound on, Avatar API videos and Lip Sync API videos.",
+   "Voice names are limited to 20 characters, and unused voices can be deleted through the API."
+  ],
+  "compare_slug": "kling-audio",
+  "compare_zh": "自定义音色创建可复用的新音色，Kling Audio 直接用系统音色生成语音和音效。",
+  "compare_en": "Custom Voices creates a reusable new voice, while Kling Audio generates speech and effects with built-in voices."
+ },
+ {
+  "slug": "kling-custom-elements",
+  "source": "https://klingai.com/document-api/api/video/3-0-omni/elements",
+  "facts_zh": [
+   "主体管理接口用于创建可复用的主体，在生成视频时通过主体 ID 引用。",
+   "用图片创建主体时，图片支持 jpg、jpeg、png，不超过 10MB，宽高不小于 300px，宽高比在 1:2.5 到 2.5:1 之间。",
+   "主体名称不超过 20 个字符，描述不超过 100 个字符。",
+   "只能删除自定义主体。"
+  ],
+  "facts_en": [
+   "The subject management API creates reusable subjects that video generation can reference by ID.",
+   "Image-based subjects accept jpg, jpeg or png up to 10MB, at least 300px per side, with an aspect ratio between 1:2.5 and 2.5:1.",
+   "Subject names are limited to 20 characters and descriptions to 100 characters.",
+   "Only custom subjects can be deleted."
+  ],
+  "compare_slug": "kling-advanced-custom-elements",
+  "compare_zh": "这里写的是图片主体，视频主体需要 3 到 8 秒的 1080P 视频，只能用于 kling-video-o3 及之后的模型。",
+  "compare_en": "These facts cover image-based subjects; video-based subjects need a 3 to 8 second 1080P clip and only work with kling-video-o3 and later."
+ },
+ {
+  "slug": "kling-advanced-custom-elements",
+  "source": "https://klingai.com/document-api/api/video/3-0-omni/elements",
+  "facts_zh": [
+   "用视频创建主体时，视频只支持 MP4 或 MOV，时长在 3 到 8 秒之间，必须是 16:9 或 9:16 的 1080P 视频。",
+   "一次最多上传 1 段视频，大小不超过 200MB。",
+   "视频定制目前只支持写实风格的人形形象。",
+   "视频定制的主体只能用于 kling-video-o3 及之后的模型。"
+  ],
+  "facts_en": [
+   "Video-based subjects require an MP4 or MOV clip of 3 to 8 seconds at 1080P in 16:9 or 9:16.",
+   "Only one video up to 200MB can be uploaded per subject.",
+   "Video-based customization currently supports only realistic human characters.",
+   "Subjects built from video can only be used with kling-video-o3 and later models."
+  ],
+  "compare_slug": "kling-custom-elements",
+  "compare_zh": "高级主体用 3 到 8 秒视频创建写实人物，普通主体可以直接用图片创建。",
+  "compare_en": "Advanced subjects are built from a 3 to 8 second video of a realistic person, while standard subjects can be built from images."
+ },
+ {
+  "slug": "kling-multi-elements",
+  "source": "https://klingai.com/document-api/api/video/multi-elements",
+  "facts_zh": [
+   "多模态视频编辑要先初始化待编辑视频，替换或删除元素前需要在视频里标记选区。",
+   "输入视频只支持 MP4 和 MOV，时长需在 2 到 5 秒或 7 到 10 秒之间。",
+   "视频宽高需在 720 到 2160px 之间，帧率只支持 24、30 或 60fps。",
+   "初始化生成的会话 ID 有效期 24 小时，历史作品只能选 30 天内生成的视频。"
+  ],
+  "facts_en": [
+   "Multi-element video editing starts by initializing the source video, and replacing or removing elements requires marking a selection first.",
+   "Input must be MP4 or MOV, 2 to 5 seconds or 7 to 10 seconds long.",
+   "Video sides must be between 720 and 2160px, at 24, 30 or 60fps.",
+   "The session ID from initialization is valid for 24 hours, and past generations must be from the last 30 days."
+  ],
+  "compare_slug": "kling-motion-control",
+  "compare_zh": "多模态视频编辑修改已有视频中的元素，动作控制把参考视频的动作迁移到新人物上。",
+  "compare_en": "Multi Elements edits objects in an existing video, while Motion Control transfers a reference video's motion onto a new character."
+ },
+ {
+  "slug": "kling-effects",
+  "source": "https://klingai.com/document-api/api/effects/templates",
+  "facts_zh": [
+   "调用时通过 effect_scene 参数指定特效场景名称。",
+   "部分模板提供单独的 9:16 版本。"
+  ],
+  "facts_en": [
+   "Each call selects an effect by name with the effect_scene parameter.",
+   "Some templates have a separate 9:16 version."
+  ],
+  "compare_slug": "kling-video",
+  "compare_zh": "特效接口用预设模板加一张图出片，Kling Video 用提示词控制画面内容。",
+  "compare_en": "Effects produce a clip from a preset template and an image, while Kling Video is steered by your prompt."
+ },
+ {
+  "slug": "kling-image-3.0",
+  "source": "https://klingai.com/document-api/guides/capability-map/image",
+  "facts_zh": [
+   "3.0 Omni 支持系列组图生成，3.0 不支持。",
+   "参考主体和参考图片合计不超过 10 个。",
+   "正向和负向提示词各不超过 2500 个字符，图生图时不支持负向提示词。"
+  ],
+  "facts_en": [
+   "3.0 Omni can generate image series; 3.0 cannot.",
+   "Reference subjects and reference images combined are limited to 10.",
+   "Positive and negative prompts are each limited to 2,500 characters, and negative prompts are not supported for image-to-image."
+  ],
+  "compare_slug": "kling-custom-elements",
+  "compare_zh": "Kling Image 3.0 可以直接引用主体库中的主体，主体用主体管理接口创建。",
+  "compare_en": "Kling Image 3.0 can reference saved subjects, which are created with the subject management API."
+ },
+ {
+  "slug": "gpt-image-2.5-flare",
+  "source": "https://openai.com/index/introducing-chatgpt-images-2-5/",
+  "facts_zh": [
+   "OpenAI 将 GPT‑Image‑2.5 Flare 定位为大多数应用的默认选择。",
+   "与 GPT‑Image‑2 相比，GPT‑Image‑2.5 Flare 生成质量更高的图像，延迟低 50%。",
+   "OpenAI 列出的适用场景包括创作者与社交媒体内容、产品体验、视觉搜索、快速图像原型设计和大批量生成。",
+   "图像 2.5 系列可以处理更复杂的布局，包括透明背景。"
+  ],
+  "facts_en": [
+   "OpenAI positions GPT-Image-2.5 Flare as the default choice for most applications.",
+   "Compared with GPT-Image-2, GPT-Image-2.5 Flare produces higher-quality images at 50% lower latency.",
+   "OpenAI lists creator and social content, product experiences, visual search, rapid image prototyping, and high-volume generation as its use cases.",
+   "The Images 2.5 generation can handle more complex layouts, including transparent backgrounds."
+  ],
+  "compare_slug": "gpt-image-2.5-sunburst",
+  "compare_zh": "Flare 侧重速度和通用场景，Sunburst 生成时间更长，换取更高的精度和多轮编辑控制。",
+  "compare_en": "Flare is tuned for speed and general use, while Sunburst takes longer per image in exchange for more precision and finer control across edits."
+ },
+ {
+  "slug": "gpt-image-2.5-sunburst",
+  "source": "https://openai.com/index/introducing-chatgpt-images-2-5/",
+  "facts_zh": [
+   "GPT‑Image‑2.5 Sunburst 以更长的生成时间，为细致的创意工作提供更高的精准度。",
+   "OpenAI 称 Sunburst 面向高端视觉工作流，可在多次编辑中提供更精细的控制。",
+   "OpenAI 列出的适用场景包括可直接用于制作的营销活动素材和精修产品图。"
+  ],
+  "facts_en": [
+   "GPT-Image-2.5 Sunburst spends more generation time to deliver higher precision for detailed creative work.",
+   "OpenAI describes Sunburst as built for premium visual workflows, with finer control across multiple edits.",
+   "OpenAI lists production-ready campaign creative and polished product imagery as its use cases."
+  ],
+  "compare_slug": "gpt-image-2.5-flare",
+  "compare_zh": "Sunburst 比 Flare 生成更慢，但在多轮编辑中控制更精细；Flare 是大多数应用的默认选择。",
+  "compare_en": "Sunburst is slower than Flare but gives finer control across edits; Flare is the default for most applications."
+ },
+ {
+  "slug": "gpt-image-2.6-flare",
+  "source": "https://openai.com/index/introducing-images-2-6/",
+  "facts_zh": [
+   "图像质量设为低时，GPT‑Image‑2.6 Flare 最快约 6 秒生成一张图像。",
+   "OpenAI 称 Flare 改进了海报、产品图和其他专业视觉作品的版式布局。",
+   "图像 2.6 新增复杂度参数，控制模型在处理请求时投入多少规划；OpenAI 建议大多数编辑任务设为低。",
+   "图像 2.6 在 API 中支持图像标注，可指定修改的位置和内容，并可导出 SVG 文件。"
+  ],
+  "facts_en": [
+   "At low image quality, GPT-Image-2.6 Flare can generate an image in as little as six seconds.",
+   "OpenAI says Flare improves layouts for posters, product images, and other professional visuals.",
+   "Images 2.6 adds a complexity parameter that sets how much planning the model does per request; OpenAI recommends low for most edits.",
+   "Images 2.6 brings image annotation to the API for marking what to change and where, and supports SVG export."
+  ],
+  "compare_slug": "gpt-image-2.6-sunburst",
+  "compare_zh": "Flare 以低质量档出图最快约 6 秒，Sunburst 用中或高质量档，追求细节和多轮编辑一致性。",
+  "compare_en": "Flare can return an image in about six seconds at low quality, while Sunburst targets detail and multi-turn consistency at medium or high quality."
+ },
+ {
+  "slug": "gpt-image-2.6-sunburst",
+  "source": "https://openai.com/index/introducing-images-2-6/",
+  "facts_zh": [
+   "图像质量设为中或高时，GPT‑Image‑2.6 Sunburst 面向对细节和精度要求高的任务，生成质量更高的图像。",
+   "OpenAI 称 Sunburst 在多轮编辑中能更好地保持图像一致性。",
+   "图像 2.6 系列的生成速度比上一代快 50%，并可制作 GIF 动图。",
+   "图像 2.6 新增复杂度参数；场景元素或约束较多时，OpenAI 建议把复杂度设为中或高。"
+  ],
+  "facts_en": [
+   "At medium or high image quality, GPT-Image-2.6 Sunburst produces higher-quality images for tasks that need detail and precision.",
+   "OpenAI says Sunburst keeps images more consistent across multiple rounds of editing.",
+   "Images 2.6 generates images 50% faster than before and can create animated GIFs.",
+   "Images 2.6 adds a complexity parameter, and OpenAI suggests medium or high for scenes with many elements or constraints."
+  ],
+  "compare_slug": "gpt-image-2.6-flare",
+  "compare_zh": "Sunburst 用中或高质量档，侧重细节和多轮编辑一致性；Flare 侧重速度，低质量档最快约 6 秒出图。",
+  "compare_en": "Sunburst works at medium or high quality for detail and edit consistency, while Flare focuses on speed, returning images in about six seconds at low quality."
+ },
+ {
+  "slug": "seedream-3.0",
+  "source": "https://seed.bytedance.com/en/blog/seedream-3-0-text-to-image-model-technical-report-released",
+  "facts_zh": [
+   "Seedream 3.0 是中英双语的文生图基础模型。",
+   "Seedream 3.0 可直接输出原生 2K 图像，无需后处理，支持 512×512 到 2048×2048 的分辨率和多种宽高比。",
+   "Seedream 3.0 生成一张 1K 分辨率图像约需 3 秒。",
+   "Seedream 3.0 改进了小字号文字和多行文字排版的渲染。"
+  ],
+  "facts_en": [
+   "Seedream 3.0 is a bilingual (Chinese and English) text-to-image foundation model.",
+   "Seedream 3.0 outputs native 2K images without post-processing and supports resolutions from 512×512 to 2048×2048 across various aspect ratios.",
+   "Seedream 3.0 generates a 1K-resolution image end to end in about 3 seconds.",
+   "Seedream 3.0 improves rendering of small text and multi-line text layouts."
+  ],
+  "compare_slug": "seedream-4.0",
+  "compare_zh": "Seedream 3.0 只做文生图，最高 2048×2048；Seedream 4.0 支持图像编辑、最多 14 张参考图和最高 4K 输出。",
+  "compare_en": "Seedream 3.0 is text-to-image only and tops out at 2048×2048, while Seedream 4.0 adds editing, up to 14 reference images and output up to 4K."
+ },
+ {
+  "slug": "seedream-4.0",
+  "source": "https://docs.volcengine.com/docs/82379/1541523",
+  "facts_zh": [
+   "Seedream 4.0 用同一架构完成图像生成和图像编辑，支持多图输入和批量输出。",
+   "Seedream 4.0 最多接收 14 张参考图，组图模式下参考图与输出图合计最多 15 张。"
+  ],
+  "facts_en": [
+   "Seedream 4.0 handles image generation and image editing in one architecture, with multi-image input and batch output.",
+   "Seedream 4.0 accepts up to 14 reference images, and in image-set mode reference and output images total at most 15."
+  ],
+  "compare_slug": "seedream-4.5",
+  "compare_zh": "Seedream 4.0 提供 1K 档位；Seedream 4.5 只提供 2K 和 4K 档位，并加强了海报等密集文字排版。",
+  "compare_en": "Seedream 4.0 offers a 1K tier, while Seedream 4.5 offers only 2K and 4K and strengthens dense text layout for posters."
+ },
+ {
+  "slug": "seedream-4.5",
+  "source": "https://docs.volcengine.com/docs/82379/1541523",
+  "facts_zh": [
+   "Seedream 4.5 加强了海报等密集文字场景的排版渲染。",
+   "Seedream 4.5 能在多张输入图中识别并锁定主体，保持角色一致，并尽量保留原图的人脸、光影、色调和细节。",
+   "Seedream 4.5 的 size 参数可选 2K、4K，自定义像素总量范围为 2560×1440 到 4096×4096。",
+   "Seedream 4.5 最多接收 14 张参考图，组图模式下参考图与输出图合计最多 15 张。"
+  ],
+  "facts_en": [
+   "Seedream 4.5 strengthens layout and rendering of dense text such as posters.",
+   "Seedream 4.5 identifies and locks subjects across multiple input images to keep characters consistent, preserving faces, lighting, color tone and detail from the source.",
+   "Seedream 4.5 accepts size values of 2K or 4K, or a custom total pixel count between 2560×1440 and 4096×4096.",
+   "Seedream 4.5 accepts up to 14 reference images, and in image-set mode reference and output images total at most 15."
+  ],
+  "compare_slug": "seedream-5.0-lite",
+  "compare_zh": "Seedream 4.5 提供 2K 和 4K 档位；Seedream 5.0 lite 增加了 3K 档位和联网搜索。",
+  "compare_en": "Seedream 4.5 offers 2K and 4K tiers, while Seedream 5.0 lite adds a 3K tier and web search."
+ },
+ {
+  "slug": "seedream-5.0-lite",
+  "source": "https://docs.volcengine.com/docs/82379/1541523",
+  "facts_zh": [
+   "Seedream 5.0 lite 官方定位是具备深度思考和联网搜索能力的统一多模态图像生成模型。",
+   "Seedream 5.0 lite 支持 web_search 工具，可以生成和实时新闻、热点相关的图像。",
+   "Seedream 5.0 lite 的 size 参数可选 2K、3K、4K，自定义像素总量范围为 2560×1440 到 4096×4096。",
+   "Seedream 5.0 lite 最多接收 14 张参考图，组图模式下参考图与输出图合计最多 15 张。"
+  ],
+  "facts_en": [
+   "ByteDance positions Seedream 5.0 lite as a unified multimodal image generation model with deep thinking and online search.",
+   "Seedream 5.0 lite supports the web_search tool for images tied to real-time news and topics.",
+   "Seedream 5.0 lite accepts size values of 2K, 3K or 4K, or a custom total pixel count between 2560×1440 and 4096×4096.",
+   "Seedream 5.0 lite accepts up to 14 reference images, and in image-set mode reference and output images total at most 15."
+  ],
+  "compare_slug": "seedream-5.0-pro",
+  "compare_zh": "Seedream 5.0 lite 支持组图、14 张参考图和最高 4K；Seedream 5.0 pro 每次只出一张图，最多 10 张参考图，最高 2K。",
+  "compare_en": "Seedream 5.0 lite supports image sets, 14 reference images and up to 4K, while Seedream 5.0 pro outputs one image per call with up to 10 reference images at up to 2K."
+ },
+ {
+  "slug": "seedream-5.0-pro",
+  "source": "https://seed.bytedance.com/en/seedream5_0_pro",
+  "facts_zh": [
+   "Seedream 5.0 Pro 用于生成教育、专业等场景的高密度文字信息图。",
+   "Seedream 5.0 Pro 能响应空间标注和草图指引进行交互式编辑，并支持拆分图层，最多 16 层。",
+   "Seedream 5.0 Pro 原生支持十几种常用语言的提示词和图中文字。",
+   "Seedream 5.0 Pro 每次只生成一张图，最多接收 10 张参考图，size 可选 1K、1.5K、2K。"
+  ],
+  "facts_en": [
+   "Seedream 5.0 Pro targets text-dense infographics for education and professional use.",
+   "Seedream 5.0 Pro edits interactively from spatial annotations and sketches, and supports layer separation into up to 16 layers.",
+   "Seedream 5.0 Pro natively supports about a dozen widely used languages for prompts and in-image text.",
+   "Seedream 5.0 Pro outputs a single image per call, accepts up to 10 reference images, and offers size values of 1K, 1.5K or 2K."
+  ],
+  "compare_slug": "seedream-5.0-lite",
+  "compare_zh": "Seedream 5.0 Pro 最高 2K、不支持组图，但多了图层拆分和标注编辑；Seedream 5.0 lite 最高 4K，支持组图和联网搜索。",
+  "compare_en": "Seedream 5.0 Pro tops out at 2K without image sets but adds layer separation and annotation-based editing, while Seedream 5.0 lite reaches 4K with image sets and web search."
+ },
+ {
+  "slug": "qwen-image-2.0-2026-03-03",
+  "source": "https://www.alibabacloud.com/help/en/model-studio/qwen-image-api",
+  "facts_zh": [
+   "qwen-image-2.0-2026-03-03 是 qwen-image-2.0 的快照版本，能力与 qwen-image-2.0 相同，官方定位为兼顾质量与响应速度的千问加速系列图像生成与编辑模型。",
+   "输出图像总像素需在 512×512 到 2048×2048 之间，默认分辨率为 2048×2048。",
+   "每次可生成 1 到 6 张图像。",
+   "提示词最多可接收 1,300 个 token，qwen-image-2.0-pro 的上限是 800 个 token。"
+  ],
+  "facts_en": [
+   "qwen-image-2.0-2026-03-03 is a snapshot of qwen-image-2.0 with the same capabilities. Alibaba Cloud describes it as part of the Qwen accelerated series for image generation and editing, balancing quality and response speed.",
+   "Total output pixels must be between 512×512 and 2048×2048, and the default resolution is 2048×2048.",
+   "Each request can return 1 to 6 images.",
+   "Prompts can be up to 1,300 tokens, compared with 800 tokens for qwen-image-2.0-pro."
+  ],
+  "compare_slug": "qwen-image-3.0",
+  "compare_zh": "qwen-image-3.0 支持 1 到 3 张输入图做图生图和编辑，qwen-image-2.0-2026-03-03 的定位是兼顾质量与速度的加速系列。",
+  "compare_en": "qwen-image-3.0 accepts 1 to 3 input images for image-to-image and editing, while qwen-image-2.0-2026-03-03 belongs to the accelerated series that balances quality and speed."
+ },
+ {
+  "slug": "qwen-image-3.0",
+  "source": "https://www.alibabacloud.com/help/en/model-studio/qwen-image-generation-and-editing-api-reference",
+  "facts_zh": [
+   "qwen-image-3.0 是 Qwen-Image 3.0 的标准版，同时支持文生图和图生图/图像编辑。",
+   "图生图和编辑任务可输入 1 到 3 张图像。",
+   "输出总像素需在 512×512 到 2048×2048 之间，宽高比范围为 1:8 到 8:1，每次可生成 1 到 6 张。"
+  ],
+  "facts_en": [
+   "qwen-image-3.0 is the standard Qwen-Image 3.0 model and supports both text-to-image and image-to-image/image editing.",
+   "Image-to-image and editing tasks accept 1 to 3 input images.",
+   "Total output pixels must be between 512×512 and 2048×2048, the aspect ratio can range from 1:8 to 8:1, and each request returns 1 to 6 images."
+  ],
+  "compare_slug": "qwen-image-3.0-pro",
+  "compare_zh": "qwen-image-3.0-pro 是同一系列的旗舰版，qwen-image-3.0 是标准版，两者的分辨率范围和输入图数量一样。",
+  "compare_en": "qwen-image-3.0-pro is the flagship of the same series and qwen-image-3.0 is the standard model. Both share the same resolution range and input-image limit."
+ },
+ {
+  "slug": "qwen-image-3.0-pro",
+  "source": "https://www.alibabacloud.com/help/en/model-studio/text-to-image",
+  "facts_zh": [
+   "官方将 qwen-image-3.0-pro 定位为旗舰画质模型，支持智能提示词改写，擅长渲染与实物材质自然融合的中英文文字。",
+   "同时支持文生图和图生图/图像编辑，编辑任务可输入 1 到 3 张图像。",
+   "输出总像素需在 512×512 到 2048×2048 之间，宽高比范围为 1:8 到 8:1，每次可生成 1 到 6 张。"
+  ],
+  "facts_en": [
+   "Alibaba Cloud positions qwen-image-3.0-pro as its flagship-quality model. It supports intelligent prompt rewriting and renders Chinese and English text that blends naturally with physical materials.",
+   "It supports both text-to-image and image-to-image/editing, and editing accepts 1 to 3 input images.",
+   "Total output pixels must be between 512×512 and 2048×2048, the aspect ratio can range from 1:8 to 8:1, and each request returns 1 to 6 images."
+  ],
+  "compare_slug": "wan2.7-image-pro",
+  "compare_zh": "wan2.7-image-pro 的文生图最高可到 4K，并支持最多 9 张输入图，qwen-image-3.0-pro 最高 2048×2048、最多 3 张输入图。",
+  "compare_en": "wan2.7-image-pro reaches 4K for text-to-image and accepts up to 9 input images, while qwen-image-3.0-pro tops out at 2048×2048 with up to 3 input images."
+ },
+ {
+  "slug": "wan2.7-image-pro",
+  "source": "https://www.alibabacloud.com/help/en/model-studio/wan-image-generation-and-editing-api-reference",
+  "facts_zh": [
+   "文生图支持 1K、2K（默认）和 4K 规格，自定义尺寸范围为 768×768 到 4096×4096；图像编辑和组图场景最高 2K（2048×2048）。",
+   "标准模式每次输出 1 到 4 张；开启组图模式（enable_sequential）后最多 12 张，实际数量由模型决定。",
+   "可输入 0 到 9 张图像，单张不超过 20 MB，宽高在 240 到 8,000 像素之间；提示词最多 5,000 个字符。",
+   "思考模式默认开启，只在关闭组图模式且没有输入图像时生效，可提升出图质量，但会增加生成时间。"
+  ],
+  "facts_en": [
+   "Text-to-image supports 1K, 2K (default) and 4K, with custom sizes from 768×768 to 4096×4096. Editing and image sets are capped at 2K (2048×2048).",
+   "Standard mode returns 1 to 4 images. With image set mode (enable_sequential) enabled it returns up to 12, and the model decides the actual count.",
+   "It accepts 0 to 9 input images, each up to 20 MB with width and height between 240 and 8,000 pixels. Prompts can be up to 5,000 characters.",
+   "Thinking mode is on by default and applies only when image set mode is off and no image is provided. It improves output quality but takes longer."
+  ],
+  "compare_slug": "z-image-turbo",
+  "compare_zh": "z-image-turbo 每次固定输出 1 张、最高 2048×2048，wan2.7-image-pro 文生图可到 4K，组图模式最多 12 张。",
+  "compare_en": "z-image-turbo always returns 1 image at up to 2048×2048, while wan2.7-image-pro reaches 4K for text-to-image and up to 12 images in image set mode."
+ },
+ {
+  "slug": "z-image-turbo",
+  "source": "https://www.alibabacloud.com/help/en/model-studio/z-image-api-reference",
+  "facts_zh": [
+   "官方将 z-image-turbo 描述为快速、轻量的图像生成模型，支持渲染中英文文字。",
+   "输出分辨率范围为 512×512 到 2048×2048，推荐 1024×1024 到 1536×1536。",
+   "每次固定生成 1 张图像，提示词最多 800 个字符。",
+   "开启 prompt_extend 后，会同时返回图像、优化后的提示词和推理过程，但费用和响应时间都会增加。"
+  ],
+  "facts_en": [
+   "Alibaba Cloud describes z-image-turbo as a fast, lightweight image generation model that can render Chinese and English text.",
+   "Output resolution ranges from 512×512 to 2048×2048, with 1024×1024 to 1536×1536 recommended.",
+   "Each request returns exactly 1 image, and prompts can be up to 800 characters.",
+   "With prompt_extend enabled, it returns the image along with the optimized prompt and its reasoning, at higher cost and longer response time."
+  ],
+  "compare_slug": "qwen-image-3.0",
+  "compare_zh": "qwen-image-3.0 每次可生成 1 到 6 张并支持图像编辑，z-image-turbo 是只做文生图的轻量模型，每次固定 1 张。",
+  "compare_en": "qwen-image-3.0 returns 1 to 6 images and supports editing, while z-image-turbo is a lightweight text-to-image model that always returns 1 image."
+ },
+ {
+  "slug": "wan2.5-i2v-preview",
+  "source": "https://www.alibabacloud.com/help/en/model-studio/image-to-video-api-reference",
+  "facts_zh": [
+   "wan2.5-i2v-preview 支持 480P、720P、1080P 输出（默认 1080P），视频时长只能选 5 秒或 10 秒，30 fps，输出 MP4。",
+   "支持音画同步；没有传入音频时会自动生成配音，也可以传入 3 到 30 秒的 WAV/MP3 音频（不超过 15 MB），超出视频时长的部分会被截掉。",
+   "首帧图支持 JPEG、JPG、PNG（不支持透明通道）、BMP、WEBP，不超过 20 MB，宽高在 240 到 8000 像素之间；提示词最多 1,500 个字符。"
+  ],
+  "facts_en": [
+   "wan2.5-i2v-preview outputs 480P, 720P or 1080P (default 1080P) MP4 video at 30 fps, and duration is either 5 or 10 seconds.",
+   "It supports audio sync. Without an audio file it generates audio automatically. You can also pass a 3–30 second WAV or MP3 file up to 15 MB, and any audio beyond the video duration is truncated.",
+   "The first-frame image can be JPEG, JPG, PNG (no alpha channel), BMP or WEBP, up to 20 MB, with width and height between 240 and 8000 pixels. Prompts can be up to 1,500 characters."
+  ],
+  "compare_slug": "wan2.6-i2v",
+  "compare_zh": "wan2.6-i2v 时长可在 2 到 15 秒之间任选并支持多镜头，但不支持 480P，wan2.5-i2v-preview 只有 5 秒和 10 秒两档。",
+  "compare_en": "wan2.6-i2v accepts any duration from 2 to 15 seconds and supports multi-shot output but has no 480P option, while wan2.5-i2v-preview offers only 5 or 10 seconds."
+ },
+ {
+  "slug": "wan2.6-i2v",
+  "source": "https://www.alibabacloud.com/help/en/model-studio/image-to-video-api-reference",
+  "facts_zh": [
+   "wan2.6-i2v 支持 720P 和 1080P 输出（默认 1080P），时长可在 2 到 15 秒之间取整数，默认 5 秒。",
+   "可通过 audio 参数选择是否生成有声视频，也可以传入 3 到 30 秒的 WAV/MP3 音频（不超过 15 MB）。",
+   "开启 prompt_extend 时可用 shot_type 设为 multi 生成多镜头视频，shot_type 的优先级高于提示词。",
+   "首帧图不超过 20 MB，宽高在 240 到 8000 像素之间；提示词最多 1,500 个字符。"
+  ],
+  "facts_en": [
+   "wan2.6-i2v outputs 720P or 1080P (default 1080P), with an integer duration from 2 to 15 seconds (default 5).",
+   "The audio parameter controls whether the video has sound. You can also pass a 3–30 second WAV or MP3 file up to 15 MB.",
+   "With prompt_extend enabled, setting shot_type to multi produces a multi-shot video, and shot_type takes priority over the prompt.",
+   "The first-frame image can be up to 20 MB with width and height between 240 and 8000 pixels. Prompts can be up to 1,500 characters."
+  ],
+  "compare_slug": "wan3.0-video",
+  "compare_zh": "wan3.0-video 时长最长 30 秒并支持 480P，wan2.6-i2v 最长 15 秒，只支持 720P 和 1080P。",
+  "compare_en": "wan3.0-video runs up to 30 seconds and supports 480P, while wan2.6-i2v runs up to 15 seconds at 720P or 1080P only."
+ },
+ {
+  "slug": "wan3.0-video",
+  "source": "https://www.alibabacloud.com/help/en/model-studio/video-generation",
+  "facts_zh": [
+   "wan3.0-video 一个模型同时支持文生视频、首尾帧生视频和全能参考生成。",
+   "支持 480P、720P、1080P 输出，时长 2 到 30 秒，30 fps，输出 MP4。",
+   "支持生成音频和开关音频，并支持智能时长和自适应宽高比。"
+  ],
+  "facts_en": [
+   "wan3.0-video covers text-to-video, first/last-frame generation and all-in-one reference generation in one model.",
+   "It outputs 480P, 720P or 1080P MP4 video at 30 fps, with durations from 2 to 30 seconds.",
+   "It can generate audio or turn audio off, and supports smart duration and adaptive aspect ratio."
+  ],
+  "compare_slug": "wan2.5-i2v-preview",
+  "compare_zh": "wan2.5-i2v-preview 只做图生视频，时长只有 5 秒和 10 秒两档，wan3.0-video 支持 2 到 30 秒，还能做文生视频和首尾帧生成。",
+  "compare_en": "wan2.5-i2v-preview does image-to-video only, with 5 or 10 second clips, while wan3.0-video supports 2–30 seconds plus text-to-video and first/last-frame generation."
+ },
+ {
+  "slug": "claude-fable-5",
+  "source": "https://platform.claude.com/docs/en/models/fable-5/overview",
+  "facts_zh": [
+   "Claude Fable 5 于 2026 年 6 月 9 日发布。",
+   "上下文窗口为 100 万 tokens，单次最大输出为 12.8 万 tokens。",
+   "思考模式为自适应思考且始终开启，effort 默认值为 high。",
+   "可靠知识截止时间为 2026 年 1 月。"
+  ],
+  "facts_en": [
+   "Claude Fable 5 was released on June 9, 2026.2.",
+   "It has a 1M-token context window and up to 128K output tokens per request.",
+   "Thinking is adaptive and always on, with a default effort of high.",
+   "Its reliable knowledge cutoff is January 2026."
+  ],
+  "compare_slug": "claude-fable-5-1",
+  "compare_zh": "与 Claude Fable 5.1 相比，两者上下文和最大输出相同，但 Fable 5.1 的知识截止时间更新到 2026 年 6 月。",
+  "compare_en": "Compared with Claude Fable 5.1, the context window and max output are the same, but Fable 5.1 has a later knowledge cutoff (June 2026)."
+ },
+ {
+  "slug": "claude-fable-5-1",
+  "source": "https://platform.claude.com/docs/en/models/fable-5-1/overview",
+  "facts_zh": [
+   "Claude Fable 5.1 于 2026 年 9 月 1 日发布。",
+   "上下文窗口为 100 万 tokens，单次最大输出为 12.8 万 tokens。",
+   "思考模式为自适应思考且始终开启，effort 默认值为 high。",
+   "可靠知识截止时间为 2026 年 6 月。"
+  ],
+  "facts_en": [
+   "Claude Fable 5.1 was released on September 1, 2026.2 recommended.",
+   "It has a 1M-token context window and up to 128K output tokens.",
+   "Thinking is adaptive and always on, with a default effort of high.",
+   "Its reliable knowledge cutoff is June 2026."
+  ],
+  "compare_slug": "claude-fable-5-2",
+  "compare_zh": "Claude Fable 5.2 是 Fable 5.1 的后续型号，两者上下文、最大输出、默认 effort 和知识截止时间相同。",
+  "compare_en": "Claude Fable 5.2 succeeds Fable 5.1 with the same context window, max output, default effort and knowledge cutoff."
+ },
+ {
+  "slug": "claude-fable-5-2",
+  "source": "https://platform.claude.com/docs/en/models/fable-5-2/overview",
+  "facts_zh": [
+   "Anthropic 将 Claude Fable 5.2 定位为面向高难度推理和长时程智能体任务的模型，于 2026 年 11 月 9 日发布。",
+   "官方列出的典型用途包括持续数小时的智能体会话、多步骤深度研究，以及把分析一直做到成品文档、表格或演示文稿。",
+   "上下文窗口为 100 万 tokens，单次最大输出为 12.8 万 tokens，官方标注的相对延迟为“中等”。",
+   "思考模式为自适应思考且始终开启，effort 默认值为 high，可靠知识截止时间为 2026 年 6 月。"
+  ],
+  "facts_en": [
+   "Anthropic positions Claude Fable 5.2 for demanding reasoning and long-horizon agentic work; it was released on November 9, 2026.",
+   "Typical uses listed by Anthropic include agent sessions that run for hours, multistep deep research, and analysis carried through to a finished document, spreadsheet, or deck.",
+   "It has a 1M-token context window, up to 128K output tokens, and comparative latency rated Moderate.",
+   "Thinking is adaptive and always on, default effort is high, and the reliable knowledge cutoff is June 2026."
+  ],
+  "compare_slug": "claude-opus-5-5",
+  "compare_zh": "与 Claude Opus 5.5 相比，两者上下文、最大输出和相对延迟相同，但 Fable 5.2 的默认 effort 是 high，Opus 5.5 是 medium。",
+  "compare_en": "Compared with Claude Opus 5.5, context, max output and latency rating are the same, but Fable 5.2 defaults to high effort while Opus 5.5 defaults to medium."
+ },
+ {
+  "slug": "claude-haiku-5-5",
+  "source": "https://platform.claude.com/docs/en/models/haiku-5-5/overview",
+  "facts_zh": [
+   "Anthropic 将 Claude Haiku 5.5 定位为面向分类、路由、抽取和子代理等高并发、对延迟敏感的任务，于 2026 年 10 月 7 日发布。",
+   "官方标注的相对延迟为“最快”，是当前在售型号中最快的一档。",
+   "支持 100 万 tokens 上下文和最多 12.8 万 tokens 输出，支持自适应思考，effort 默认值为 medium。",
+   "它使用 Claude 4.7 起的新分词器，同样的文本比在 Claude Haiku 4.5 上多约 30% 的 tokens。"
+  ],
+  "facts_en": [
+   "Anthropic positions Claude Haiku 5.5 for high-volume, latency-sensitive work such as classification, routing, extraction, and subagent tasks; it was released on October 7, 2026.",
+   "Its comparative latency is rated Fastest in the current lineup.",
+   "It supports a 1M-token context window, up to 128K output tokens, and adaptive thinking with a default effort of medium.",
+   "It uses the newer tokenizer from Claude 4.7 onward, so the same text counts as roughly 30 percent more tokens than on Claude Haiku 4.5."
+  ],
+  "compare_slug": "claude-sonnet-5-5",
+  "compare_zh": "与 Claude Sonnet 5.5 相比，两者上下文和最大输出相同，Haiku 5.5 的相对延迟为“最快”（Sonnet 5.5 为“快”），默认 effort 为 medium（Sonnet 5.5 为 high）。",
+  "compare_en": "Compared with Claude Sonnet 5.5, context and max output are the same; Haiku 5.5 is rated Fastest (Sonnet 5.5 is Fast) and defaults to medium effort (Sonnet 5.5 defaults to high)."
+ },
+ {
+  "slug": "claude-opus-4-6",
+  "source": "https://platform.claude.com/docs/en/models/opus-4-6/overview",
+  "facts_zh": [
+   "Claude Opus 4.6 于 2026 年 2 月 5 日发布。",
+   "上下文窗口为 100 万 tokens，单次最大输出为 12.8 万 tokens。",
+   "支持自适应思考；旧的扩展思考（budget_tokens）方式在该型号上已标为弃用，effort 默认值为 high。",
+   "可靠知识截止时间为 2025 年 5 月，训练数据截止时间为 2025 年 8 月。"
+  ],
+  "facts_en": [
+   "Claude Opus 4.6 was released on February 5, 2026.5 recommended.",
+   "It has a 1M-token context window and up to 128K output tokens.",
+   "It supports adaptive thinking; the older extended thinking mode (budget_tokens) is deprecated on this model, and default effort is high.",
+   "Its reliable knowledge cutoff is May 2025 and its training data cutoff is August 2025."
+  ],
+  "compare_slug": "claude-opus-4-7",
+  "compare_zh": "与 Claude Opus 4.7 相比，两者上下文和最大输出相同，但 Opus 4.7 的知识截止时间更新到 2026 年 1 月，且改用了新分词器。",
+  "compare_en": "Compared with Claude Opus 4.7, context and max output are the same, but Opus 4.7 has a later knowledge cutoff (January 2026) and uses a newer tokenizer."
+ },
+ {
+  "slug": "claude-opus-4-7",
+  "source": "https://platform.claude.com/docs/en/models/opus-4-7/overview",
+  "facts_zh": [
+   "Claude Opus 4.7 于 2026 年 4 月 16 日发布。",
+   "当前的分词器从 Claude Opus 4.7 开始引入：100 万 tokens 约合 55.5 万个英文单词，而之前的型号约合 75 万个单词。",
+   "上下文窗口为 100 万 tokens，单次最大输出为 12.8 万 tokens，支持自适应思考，effort 默认值为 high。",
+   "可靠知识截止时间为 2026 年 1 月。"
+  ],
+  "facts_en": [
+   "Claude Opus 4.7 was released on April 16, 2026.5 recommended.",
+   "The current tokenizer was introduced with Claude Opus 4.7: 1M tokens is roughly 555k words, versus about 750k words on earlier models.",
+   "It has a 1M-token context window, up to 128K output tokens, and adaptive thinking with a default effort of high.",
+   "Its reliable knowledge cutoff is January 2026."
+  ],
+  "compare_slug": "claude-opus-4-6",
+  "compare_zh": "与 Claude Opus 4.6 相比，Opus 4.7 改用新分词器，知识截止时间从 2025 年 5 月更新到 2026 年 1 月。",
+  "compare_en": "Compared with Claude Opus 4.6, Opus 4.7 moves to the newer tokenizer and its knowledge cutoff advances from May 2025 to January 2026."
+ },
+ {
+  "slug": "claude-opus-4-8",
+  "source": "https://platform.claude.com/docs/en/models/opus-4-8/overview",
+  "facts_zh": [
+   "Claude Opus 4.8 于 2026 年 5 月 28 日发布。",
+   "上下文窗口为 100 万 tokens，同步 Messages API 单次最大输出为 12.8 万 tokens；在 Message Batches API 上加 output-300k-2026-03-24 beta 头可输出最多 30 万 tokens。",
+   "支持自适应思考，effort 默认值为 high。",
+   "可靠知识截止时间为 2026 年 1 月。"
+  ],
+  "facts_en": [
+   "Claude Opus 4.8 was released on May 28, 2026.5 recommended.",
+   "It has a 1M-token context window and up to 128K output tokens on the synchronous Messages API; on the Message Batches API it supports up to 300K output tokens with the output-300k-2026-03-24 beta header.",
+   "It supports adaptive thinking with a default effort of high.",
+   "Its reliable knowledge cutoff is January 2026."
+  ],
+  "compare_slug": "claude-opus-5",
+  "compare_zh": "与 Claude Opus 5 相比，两者上下文、最大输出和默认 effort 相同，但 Opus 5 的知识截止时间更新到 2026 年 5 月。",
+  "compare_en": "Compared with Claude Opus 5, context, max output and default effort are the same, but Opus 5 has a later knowledge cutoff (May 2026)."
+ },
+ {
+  "slug": "claude-opus-5",
+  "source": "https://platform.claude.com/docs/en/models/opus-5/overview",
+  "facts_zh": [
+   "Claude Opus 5 于 2026 年 7 月 24 日发布。",
+   "Anthropic 文档称 Claude Opus 5 面向复杂的智能体编程和企业工作，长时程智能体任务是其强项。",
+   "上下文窗口为 100 万 tokens，单次最大输出为 12.8 万 tokens，支持自适应思考，effort 默认值为 high。",
+   "可靠知识截止时间为 2026 年 5 月。"
+  ],
+  "facts_en": [
+   "Claude Opus 5 was released on July 24, 2026.5 recommended.",
+   "Anthropic's docs describe Claude Opus 5 as built for complex agentic coding and enterprise work, with particular strengths in long-horizon agentic tasks.",
+   "It has a 1M-token context window, up to 128K output tokens, and adaptive thinking with a default effort of high.",
+   "Its reliable knowledge cutoff is May 2026."
+  ],
+  "compare_slug": "claude-opus-5-5",
+  "compare_zh": "与 Claude Opus 5.5 相比，两者上下文和最大输出相同；Opus 5.5 的思考始终开启、默认 effort 为 medium，知识截止时间为 2026 年 6 月。",
+  "compare_en": "Compared with Claude Opus 5.5, context and max output are the same; Opus 5.5 keeps thinking always on, defaults to medium effort, and has a June 2026 knowledge cutoff."
+ },
+ {
+  "slug": "claude-opus-5-5",
+  "source": "https://platform.claude.com/docs/en/models/opus-5-5/overview",
+  "facts_zh": [
+   "Anthropic 将 Claude Opus 5.5 定位为面向长时间运行的智能体编程和知识工作，于 2026 年 9 月 22 日发布，是官方建议大多数场景首选的型号。",
+   "官方列出的典型用途包括连续数小时的自主编程智能体、大规模重构、复杂系统工程、以视觉为主的工作流和计算机操作（computer use）。",
+   "上下文窗口为 100 万 tokens，单次最大输出为 12.8 万 tokens，官方标注的相对延迟为“中等”。",
+   "思考模式为自适应思考且始终开启，effort 默认值为 medium，可靠知识截止时间为 2026 年 6 月。"
+  ],
+  "facts_en": [
+   "Anthropic positions Claude Opus 5.5 for long-running agentic coding and knowledge work; it was released on September 22, 2026, and is the model Anthropic suggests starting with for most workloads.",
+   "Typical uses listed by Anthropic include multihour autonomous coding agents, large-scale refactoring, complex systems engineering, vision-heavy workflows, and computer use.",
+   "It has a 1M-token context window, up to 128K output tokens, and comparative latency rated Moderate.",
+   "Thinking is adaptive and always on, default effort is medium, and the reliable knowledge cutoff is June 2026."
+  ],
+  "compare_slug": "claude-sonnet-5-5",
+  "compare_zh": "与 Claude Sonnet 5.5 相比，两者上下文和最大输出相同；Sonnet 5.5 的相对延迟为“快”（Opus 5.5 为“中等”），默认 effort 为 high。",
+  "compare_en": "Compared with Claude Sonnet 5.5, context and max output are the same; Sonnet 5.5 is rated Fast (Opus 5.5 is Moderate) and defaults to high effort."
+ },
+ {
+  "slug": "claude-sonnet-5",
+  "source": "https://platform.claude.com/docs/en/models/sonnet-5/overview",
+  "facts_zh": [
+   "Claude Sonnet 5 于 2026 年 6 月 30 日发布。",
+   "上下文窗口为 100 万 tokens，单次最大输出为 12.8 万 tokens。",
+   "支持自适应思考，effort 默认值为 high。",
+   "可靠知识截止时间为 2026 年 1 月。"
+  ],
+  "facts_en": [
+   "Claude Sonnet 5 was released on June 30, 2026.5 recommended.",
+   "It has a 1M-token context window and up to 128K output tokens.",
+   "It supports adaptive thinking with a default effort of high.",
+   "Its reliable knowledge cutoff is January 2026."
+  ],
+  "compare_slug": "claude-sonnet-5-5",
+  "compare_zh": "与 Claude Sonnet 5.5 相比，两者上下文、最大输出和默认 effort 相同，但 Sonnet 5.5 的知识截止时间更新到 2026 年 6 月。",
+  "compare_en": "Compared with Claude Sonnet 5.5, context, max output and default effort are the same, but Sonnet 5.5 has a later knowledge cutoff (June 2026)."
+ },
+ {
+  "slug": "claude-sonnet-5-5",
+  "source": "https://platform.claude.com/docs/en/models/sonnet-5-5/overview",
+  "facts_zh": [
+   "Claude Sonnet 5.5 于 2026 年 9 月 28 日发布，官方描述为“速度与智能的最佳组合”。",
+   "官方称它面向日常编程、智能体和企业工作负载，例如代码生成、数据分析、内容创作、视觉理解和智能体工具调用。",
+   "上下文窗口为 100 万 tokens，单次最大输出为 12.8 万 tokens，官方标注的相对延迟为“快”。",
+   "支持自适应思考，effort 默认值为 high，可靠知识截止时间为 2026 年 6 月。"
+  ],
+  "facts_en": [
+   "Claude Sonnet 5.5 was released on September 28, 2026; Anthropic describes it as the best combination of speed and intelligence.",
+   "Anthropic says it is built for everyday coding, agent, and enterprise workloads such as code generation, data analysis, content creation, visual understanding, and agentic tool use.",
+   "It has a 1M-token context window, up to 128K output tokens, and comparative latency rated Fast.",
+   "It supports adaptive thinking with a default effort of high, and its reliable knowledge cutoff is June 2026."
+  ],
+  "compare_slug": "claude-sonnet-5",
+  "compare_zh": "与 Claude Sonnet 5 相比，两者上下文、最大输出和默认 effort 相同，Sonnet 5.5 的知识截止时间从 2026 年 1 月更新到 2026 年 6 月。",
+  "compare_en": "Compared with Claude Sonnet 5, context, max output and default effort are the same, and Sonnet 5.5's knowledge cutoff moves from January 2026 to June 2026."
+ },
+ {
+  "slug": "gpt-5.5",
+  "source": "https://openai.com/index/introducing-gpt-5-5/",
+  "facts_zh": [
+   "OpenAI 表示 API 中的 gpt-5.5 支持最高 1M 上下文窗口，可通过 Responses API 和 Chat Completions API 调用。",
+   "OpenAI 称 GPT-5.5 在真实应用中的单 Token 延迟与 GPT-5.4 持平。",
+   "GPT-5.5 在 Terminal-Bench 2.0 上得分 82.7%，在 SWE-Bench Pro 上得分 58.6%。"
+  ],
+  "facts_en": [
+   "OpenAI says gpt-5.5 in the API supports a context window of up to 1M tokens and is available through the Responses and Chat Completions APIs.",
+   "OpenAI says GPT-5.5 matches GPT-5.4 on per-token latency in real-world serving.",
+   "GPT-5.5 scored 82.7% on Terminal-Bench 2.0 and 58.6% on SWE-Bench Pro."
+  ],
+  "compare_slug": "gpt-5.5-pro",
+  "compare_zh": "gpt-5.5 是这一代的标准模型，gpt-5.5-pro 是同代中定位为追求更高准确率的版本。",
+  "compare_en": "gpt-5.5 is the standard model of this generation, while gpt-5.5-pro is the version OpenAI positions for higher accuracy."
+ },
+ {
+  "slug": "gpt-5.5-pro",
+  "source": "https://openai.com/index/introducing-gpt-5-5/",
+  "facts_zh": [
+   "OpenAI 将 GPT-5.5 Pro 定位为专为极端复杂问题和极高准确率设计的模型。",
+   "OpenAI 在 API 中以 gpt-5.5-pro 提供该模型，用于需要更高准确性的场景。",
+   "早期测试者认为，GPT-5.5 Pro 的回答在全面性、结构、准确度和实用性上都优于 GPT-5.4 Pro，商业、法律、教育和数据科学领域尤为明显。"
+  ],
+  "facts_en": [
+   "OpenAI positions GPT-5.5 Pro for extremely complex problems where accuracy matters most.",
+   "OpenAI offers the model in the API as gpt-5.5-pro for use cases that need higher accuracy.",
+   "Early testers rated GPT-5.5 Pro answers above GPT-5.4 Pro on comprehensiveness, structure, accuracy and usefulness, especially in business, legal, education and data science."
+  ],
+  "compare_slug": "gpt-5.5",
+  "compare_zh": "相比 gpt-5.5，gpt-5.5-pro 面向更难、对准确率要求更高的任务。",
+  "compare_en": "Compared with gpt-5.5, gpt-5.5-pro targets harder tasks that need higher accuracy."
+ },
+ {
+  "slug": "gpt-5.6-sol",
+  "source": "https://openai.com/index/gpt-5-6/",
+  "facts_zh": [
+   "OpenAI 将 GPT-5.6 Sol 定位为 GPT-5.6 系列的旗舰模型。",
+   "GPT-5.6 提供比 xhigh 更高的 max 推理强度，以及默认并行协调 4 个智能体的 ultra 模式。",
+   "GPT-5.6 Sol 在 BrowseComp 上得分 92.2%，在 OSWorld 2.0 上得分 62.6%。"
+  ],
+  "facts_en": [
+   "OpenAI positions GPT-5.6 Sol as the flagship of the GPT-5.6 family.",
+   "GPT-5.6 adds a max reasoning effort above xhigh, plus an ultra mode that coordinates four parallel agents by default.",
+   "GPT-5.6 Sol scored 92.2% on BrowseComp and 62.6% on OSWorld 2.0."
+  ],
+  "compare_slug": "gpt-5.6-terra",
+  "compare_zh": "gpt-5.6-sol 是 GPT-5.6 的旗舰档，gpt-5.6-terra 是面向日常工作的均衡档。",
+  "compare_en": "gpt-5.6-sol is the flagship tier of GPT-5.6, while gpt-5.6-terra is the balanced tier for everyday work."
+ },
+ {
+  "slug": "gpt-5.6-terra",
+  "source": "https://openai.com/index/gpt-5-6/",
+  "facts_zh": [
+   "OpenAI 将 GPT-5.6 Terra 定位为适用于日常工作的均衡模型，性能与 GPT-5.5 相当。",
+   "在 OpenAI 的知识型工作评估中，GPT-5.6 Terra 的表现超过 GPT-5.5。"
+  ],
+  "facts_en": [
+   "OpenAI positions GPT-5.6 Terra as the balanced model for everyday work, with performance comparable to GPT-5.5.",
+   "In OpenAI's knowledge-work evaluations, GPT-5.6 Terra outperformed GPT-5.5."
+  ],
+  "compare_slug": "gpt-5.6-luna",
+  "compare_zh": "gpt-5.6-terra 是均衡档，gpt-5.6-luna 是同代中速度更快、成本更低的一档。",
+  "compare_en": "gpt-5.6-terra is the balanced tier, while gpt-5.6-luna is the faster, lower-cost tier of the same generation."
+ },
+ {
+  "slug": "gpt-5.6-luna",
+  "source": "https://openai.com/index/gpt-5-6/",
+  "facts_zh": [
+   "OpenAI 将 GPT-5.6 Luna 定位为 GPT-5.6 系列中速度更快、性价比更高的模型。",
+   "在知识型工作评估中，GPT-5.6 Luna 接近 GPT-5.5 的最佳表现。"
+  ],
+  "facts_en": [
+   "OpenAI positions GPT-5.6 Luna as the faster, most cost-effective model in the GPT-5.6 family.",
+   "In knowledge-work evaluations, GPT-5.6 Luna came close to GPT-5.5's best results."
+  ],
+  "compare_slug": "gpt-5.6-sol",
+  "compare_zh": "gpt-5.6-luna 偏向速度和成本，gpt-5.6-sol 是同代旗舰。",
+  "compare_en": "gpt-5.6-luna favors speed and cost, while gpt-5.6-sol is the flagship of the same generation."
+ },
+ {
+  "slug": "gpt-6-astra",
+  "source": "https://openai.com/index/gpt-6-astra/",
+  "facts_zh": [
+   "OpenAI 称 GPT-6 Astra 是其迄今综合表现最佳的模型，可通过 OpenAI API、Microsoft Azure 和 Amazon Bedrock 调用。",
+   "在 API 中，GPT-6 Astra 可使用快速模式，处理速度最高可达标准模式的 2 倍。",
+   "GPT-6 Astra 在 Terminal-Bench 4.0 上得分 57.9%，在 OSWorld 2.0 离线集上得分 72.6%。"
+  ],
+  "facts_en": [
+   "OpenAI describes GPT-6 Astra as its best overall model to date, available through the OpenAI API, Microsoft Azure and Amazon Bedrock.",
+   "GPT-6 Astra offers a fast mode in the API that runs up to 2x faster than standard mode.",
+   "GPT-6 Astra scored 57.9% on Terminal-Bench 4.0 and 72.6% on the OSWorld 2.0 offline set."
+  ],
+  "compare_slug": "gpt-6-sol",
+  "compare_zh": "gpt-6-astra 是 GPT-6 中综合能力最强的一档，gpt-6-sol 用相似方法训练，定位为更快、更实惠的模型。",
+  "compare_en": "gpt-6-astra is the most capable GPT-6 tier, while gpt-6-sol was trained with a similar approach and positioned as faster and more affordable."
+ },
+ {
+  "slug": "gpt-6-sol",
+  "source": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
+  "facts_zh": [
+   "OpenAI 用与 GPT-6 Astra 相似的方法训练 GPT-6 Sol，并将其定位为速度更快、价格更实惠的模型。",
+   "采用 max 推理强度时，GPT-6 Sol 在 DeepSWE v1.1 上得分 68.8%。",
+   "在 OpenAI 的内部事实准确性评估中，GPT-6 Sol 的错误数量约为上一代模型的一半。"
+  ],
+  "facts_en": [
+   "OpenAI trained GPT-6 Sol with an approach similar to GPT-6 Astra and positions it as a faster, more affordable model.",
+   "At max reasoning effort, GPT-6 Sol scored 68.8% on DeepSWE v1.1.",
+   "In OpenAI's internal factuality evaluation, GPT-6 Sol made roughly half as many errors as the previous generation."
+  ],
+  "compare_slug": "gpt-6-luna",
+  "compare_zh": "在 max 推理强度下，gpt-6-sol 在 DeepSWE v1.1 上得分 68.8%，高于 gpt-6-luna 的 66.6%。",
+  "compare_en": "At max reasoning effort, gpt-6-sol scored 68.8% on DeepSWE v1.1, above gpt-6-luna's 66.6%."
+ },
+ {
+  "slug": "gpt-6-luna",
+  "source": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
+  "facts_zh": [
+   "GPT-6 Luna 与 GPT-6 Sol 同时发布，API 模型标识为 gpt-6-luna。",
+   "采用 max 推理强度时，GPT-6 Luna 在 DeepSWE v1.1 上得分 66.6%，与采用 medium 推理强度的 Claude Opus 5 相当。",
+   "采用 max 推理强度时，GPT-6 Luna 在 OSWorld 2.0 离线集上的表现超过采用 medium 推理强度的 GPT-5.6 Sol。"
+  ],
+  "facts_en": [
+   "GPT-6 Luna launched alongside GPT-6 Sol and is available in the API as gpt-6-luna.",
+   "At max reasoning effort, GPT-6 Luna scored 66.6% on DeepSWE v1.1, on par with Claude Opus 5 at medium effort.",
+   "At max reasoning effort, GPT-6 Luna outperformed GPT-5.6 Sol at medium effort on the OSWorld 2.0 offline set."
+  ],
+  "compare_slug": "gpt-6-sol",
+  "compare_zh": "在 max 推理强度下，gpt-6-luna 在 DeepSWE v1.1 上得分 66.6%，略低于 gpt-6-sol 的 68.8%。",
+  "compare_en": "At max reasoning effort, gpt-6-luna scored 66.6% on DeepSWE v1.1, slightly below gpt-6-sol's 68.8%."
+ },
+ {
+  "slug": "gpt-6.1-sol",
+  "source": "https://openai.com/index/introducing-gpt-6-1-sol/",
+  "facts_zh": [
+   "OpenAI 将 GPT-6.1 Sol 定位为 GPT-6 Sol 的升级版，在智能体编程、计算机使用和专业工作上接近 GPT-6 Astra。",
+   "在 DeepSWE v1.1 上，GPT-6.1 Sol 达到与 GPT-6 Astra 相当的水平，比 GPT-6 Sol 的最高得分高 6.4 个百分点。",
+   "在低推理强度下，GPT-6.1 Sol 包含事实错误的回复比例从 GPT-6 Sol 的 11.4% 降至 7.7%。"
+  ],
+  "facts_en": [
+   "OpenAI positions GPT-6.1 Sol as an upgrade to GPT-6 Sol that comes close to GPT-6 Astra on agentic coding, computer use and professional work.",
+   "On DeepSWE v1.1, GPT-6.1 Sol matched GPT-6 Astra and beat GPT-6 Sol's top score by 6.4 points.",
+   "At low reasoning effort, the share of GPT-6.1 Sol responses with factual errors dropped to 7.7%, down from 11.4% for GPT-6 Sol."
+  ],
+  "compare_slug": "gpt-6.1-terra",
+  "compare_zh": "OpenAI 表示，最复杂的编程任务更适合 gpt-6.1-sol，gpt-6.1-terra 完成任务的速度是它的三倍以上。",
+  "compare_en": "OpenAI recommends gpt-6.1-sol for the most complex coding tasks, while gpt-6.1-terra finishes tasks more than three times faster."
+ },
+ {
+  "slug": "gpt-6.1-terra",
+  "source": "https://openai.com/index/introducing-gpt-6-1-terra/",
+  "facts_zh": [
+   "OpenAI 将 GPT-6.1 Terra 定位为快速、高效的模型，侧重视觉推理、计算机操作和写作。",
+   "OpenAI 称 GPT-6.1 Terra 完成任务的速度是 GPT-6 Astra 和 GPT-6.1 Sol 的三倍以上。",
+   "采用最高推理强度时，GPT-6.1 Terra 在 Terminal-Bench 4.0 上解决了 50.3% 的任务，GPT-5.6 Terra 公布的成绩为 21.5%。"
+  ],
+  "facts_en": [
+   "OpenAI positions GPT-6.1 Terra as a fast, efficient model focused on visual reasoning, computer use and writing.",
+   "OpenAI says GPT-6.1 Terra completes tasks more than three times faster than GPT-6 Astra and GPT-6.1 Sol.",
+   "At maximum reasoning effort, GPT-6.1 Terra solved 50.3% of Terminal-Bench 4.0 tasks, compared with GPT-5.6 Terra's published 21.5%."
+  ],
+  "compare_slug": "gpt-6.1-sol",
+  "compare_zh": "gpt-6.1-terra 完成任务的速度是 gpt-6.1-sol 的三倍以上，OpenAI 建议最复杂的编程任务仍用 gpt-6.1-sol。",
+  "compare_en": "gpt-6.1-terra finishes tasks more than three times faster than gpt-6.1-sol, though OpenAI still recommends gpt-6.1-sol for the most complex coding."
+ }
+]

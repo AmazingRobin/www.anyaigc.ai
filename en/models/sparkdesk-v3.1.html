@@ -28,7 +28,7 @@
 <meta name="twitter:title" content="SparkDesk-v3.1 API Pricing | iFlytek Spark Pro - AnyAIGC">
 <meta name="twitter:description" content="SparkDesk-v3.1 costs $13.1040/1M input and $13.1040/1M output. iFLYTEK Spark Pro tier (API version v3.1) for chat, knowledge Q&amp;A, reasoning and code understanding. OpenAI-compatible, unlimited RPM, with bank transfer and VAT special invoices.">
 <meta name="twitter:image" content="https://www.anyaigc.ai/assets/og/sparkdesk-v3.1-en.png">
-<link rel="stylesheet" href="/assets/models/scrollbar.css?v=20261024b">
+<link rel="stylesheet" href="/assets/models/scrollbar.css?v=20261115">
 <link rel="preload" as="image" href="/assets/models/sparkdesk/hero.webp" media="(min-width:641px)">
 <link rel="stylesheet" href="/assets/models/sparkdesk.css?v=20261113b">
 <script type="application/ld+json">
@@ -39,7 +39,7 @@
       "@type": "Organization",
       "@id": "https://www.anyaigc.ai/#org",
       "name": "AnyAIGC",
-      "url": "https://anyaigc.ai",
+      "url": "https://www.anyaigc.ai/",
       "logo": "https://www.anyaigc.ai/logo.webp"
     },
     {
@@ -581,7 +581,8 @@ stream = client.chat.completions.create(
   </section>
 
   <!-- FAQ -->
-  <section class="o-section" id="faq" aria-labelledby="faq-title">
+  <section class="o-section" id="spec-unique" aria-labelledby="spec-unique-title"><div class="o-wrap o-col"><p class="o-kicker">SPECS</p><h2 class="o-h2" id="spec-unique-title">Specs and how to choose it</h2><p>In iFlytek's official WebSocket docs, the v3.1 endpoint (wss://spark-api.xf-yun.com/v3.1/chat) maps to Spark Pro, with domain generalv3.</p><p>The docs set Pro's max_tokens range at 1 to 8192, default 4096.</p><p>Per the docs, Pro supports the web search plugin. Returning source titles and URLs is limited to Ultra and Max.</p><p>This page lists Input at $13.1040, Output at $13.1040, matching the pricing table above.</p><p>Choose <a href="/en/models/sparkdesk-v3.5">sparkdesk-v3.5</a> (Max) if you need web search results to return source titles and URLs, which the docs list as unsupported on Pro.</p><p class="spec-note">Specs come from the vendor's official documentation (<a href="https://www.xfyun.cn/doc/spark/Web.html">xfyun.cn</a>). The table on this page is the price, and the model catalog is authoritative for live rates.</p></div></section>
+<section class="o-section" id="faq" aria-labelledby="faq-title">
     <div class="o-wrap o-col">
       <span class="sp-kicker o-reveal">FAQ</span>
       <h2 class="o-h2 o-reveal" id="faq-title">SparkDesk-v3.1 API FAQ</h2>
@@ -622,7 +623,7 @@ stream = client.chat.completions.create(
       </ul>
     </div>
   </section>
-</main>
+<!-- related-models --><section class="rel-models" id="related" aria-labelledby="related-title"><div class="rel-wrap"><h2 id="related-title">Related model APIs</h2><p>The same AnyAIGC API key works with these language models. Compare pricing and capabilities.</p><ul class="rel-list"><li><a href="/en/models/doubao-seed-2-1-pro"><b>Doubao Seed API</b><span>View guide →</span></a></li><li><a href="/en/models/llama"><b>Llama API</b><span>View guide →</span></a></li><li><a href="/en/models/mimo"><b>Xiaomi MiMo API</b><span>View guide →</span></a></li><li><a href="/en/models/minimax"><b>MiniMax API</b><span>View guide →</span></a></li><li><a href="/en/models/hy4"><b>Hy4 API</b><span>View guide →</span></a></li><li><a href="/en/models/claude"><b>Claude API</b><span>View guide →</span></a></li></ul></div></section><!-- /related-models --></main>
 
 <footer class="o-foot">
   <div class="o-wrap">

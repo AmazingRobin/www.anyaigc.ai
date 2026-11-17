@@ -168,7 +168,7 @@ def head(lang, faqs):
     crumbs = [{"@type": "ListItem", "position": i, "name": n, "item": u}
               for i, (n, u) in enumerate(breadcrumb_items(lang), 1)]
     graph = {"@context": "https://schema.org", "@graph": [
-        {"@type": "Organization", "@id": SITE + "/#org", "name": "AnyAIGC", "url": "https://anyaigc.ai", "logo": SITE + "/logo.webp"},
+        {"@type": "Organization", "@id": SITE + "/#org", "name": "AnyAIGC", "url": "https://www.anyaigc.ai/", "logo": SITE + "/logo.webp"},
         {"@type": "WebSite", "@id": SITE + "/#website", "name": "AnyAIGC", "url": SITE + "/", "publisher": {"@id": SITE + "/#org"}},
         {"@type": "WebPage", "@id": me + "#webpage", "url": me, "name": title, "description": desc,
          "inLanguage": pick(lang, "zh-CN", "en"), "dateModified": CHECKED_DATE, "isPartOf": {"@id": SITE + "/#website"},

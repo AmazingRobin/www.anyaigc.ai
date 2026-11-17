@@ -56,3 +56,21 @@ html::-webkit-scrollbar-track{background:var(--sb-track)}
 #trust .o-price-cta,#trust .o-cta,#trust .s-price-cta{margin-top:36px}
 @media (max-width:900px){.trust-list{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:640px){.trust-list,.o-col .trust-list{grid-template-columns:1fr;gap:20px}}
+
+/* Cross-vendor related models (scripts/related_models.py) */
+.rel-models{padding:56px 0;border-top:1px solid rgba(127,127,127,.18)}
+.rel-wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+.rel-models h2{margin:0 0 8px;font-size:clamp(22px,2.4vw,30px);line-height:1.2}
+.rel-models p{margin:0 0 20px;opacity:.75}
+.rel-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:0;padding:0;list-style:none}
+.rel-list a{display:flex;flex-direction:column;gap:4px;padding:14px 16px;border:1px solid rgba(127,127,127,.25);border-radius:10px;color:inherit;text-decoration:none;transition:border-color .2s ease}
+.rel-list a:hover{border-color:currentColor}
+.rel-list a:focus-visible{outline:2px solid currentColor;outline-offset:2px}
+.rel-list span{font-size:13px;opacity:.65}
+@media (max-width:760px){.rel-list{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:460px){.rel-list{grid-template-columns:1fr}}
+
+/* Per-model specs section (scripts/seo_unique_specs.py) */
+#spec-unique p{max-width:860px;margin:0 0 14px;line-height:1.85}
+#spec-unique .spec-note{margin-bottom:0;font-size:14px;opacity:.7}
+#spec-unique a{text-decoration:underline;text-underline-offset:3px}

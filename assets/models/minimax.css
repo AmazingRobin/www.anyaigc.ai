@@ -275,3 +275,8 @@ p a,.mm-note a,.mm-answer a{text-decoration:underline;text-underline-offset:4px;
 }
 @media(max-width:380px){.mm-nav-inner{gap:10px;padding-inline:16px}.mm-nav-actions{gap:10px}.mm-brand{font-size:18px}.mm-nav-actions .mm-btn{padding-inline:11px}.mm-wrap{padding-inline:18px}.mm-hero h1{font-size:35px}.mm-facts{gap:7px 10px}.mm-facts li+li{padding-left:10px}.mm-table th,.mm-table td{padding-inline:7px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}.mm-btn:hover,.mm-model-card:hover{transform:none}}
+
+/* Per-model specs section (scripts/seo_unique_media.py) */
+#mm-unique p{max-width:860px;margin:0 0 14px;line-height:1.85}
+#mm-unique .mm-unique-note{margin-bottom:0;font-size:14px;opacity:.7}
+#mm-unique a{text-decoration:underline;text-underline-offset:3px}

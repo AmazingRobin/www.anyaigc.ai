@@ -318,7 +318,7 @@ def page(lang, fam):
     offers = [{"@type": "Offer", "name": f"{MODEL} · {r[0]}", "price": p, "priceCurrency": "USD", "url": me + "#pricing"}
               for r, p in zip(t["rows"], (P_STD, P_REF))]
     graph = {"@context": "https://schema.org", "@graph": [
-        {"@type": "Organization", "@id": f"{SITE}/#org", "name": "AnyAIGC", "url": "https://anyaigc.ai", "logo": f"{SITE}/logo.webp"},
+        {"@type": "Organization", "@id": f"{SITE}/#org", "name": "AnyAIGC", "url": "https://www.anyaigc.ai/", "logo": f"{SITE}/logo.webp"},
         {"@type": "WebSite", "@id": f"{SITE}/#website", "url": f"{SITE}/", "name": "AnyAIGC"},
         {"@type": "WebPage", "@id": me + "#webpage", "url": me, "name": t["title"], "description": t["desc"], "inLanguage": "zh-CN" if lang == "zh" else "en", "dateModified": DATE},
         {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": i, "name": n, "item": u} for i, (n, u) in enumerate(zip(t["crumbs"], crumb_urls), 1)]},

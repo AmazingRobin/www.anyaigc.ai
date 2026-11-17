@@ -392,7 +392,7 @@ def head(lang, c):
     crumbs = [(c['home'], f'{SITE}/'), (c['hub'], f'{SITE}/{lang}/models/'), (NAME, me)]
     cur = c['currency']
     graph = [
-        {'@type': 'Organization', '@id': f'{SITE}/#org', 'name': 'AnyAIGC', 'url': 'https://anyaigc.ai', 'logo': f'{SITE}/logo.webp'},
+        {'@type': 'Organization', '@id': f'{SITE}/#org', 'name': 'AnyAIGC', 'url': 'https://www.anyaigc.ai/', 'logo': f'{SITE}/logo.webp'},
         {'@type': 'WebSite', '@id': f'{SITE}/#website', 'url': f'{SITE}/', 'name': 'AnyAIGC', 'publisher': {'@id': f'{SITE}/#org'}},
         {'@type': 'WebPage', '@id': f'{me}#webpage', 'url': me, 'name': c['title'], 'description': c['desc'], 'inLanguage': c['lang'],
          'isPartOf': {'@id': f'{SITE}/#website'}, 'breadcrumb': {'@id': f'{me}#breadcrumb'}, 'mainEntity': {'@id': f'{me}#product'}, 'dateModified': DATE},

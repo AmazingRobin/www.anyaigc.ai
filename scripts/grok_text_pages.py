@@ -108,7 +108,7 @@ def page(lang, slug):
         crumbs.append(('Grok 4.x', url(lang, HUB)))
     crumbs.append((name, url(lang, slug)))
     graph = [
-        {'@type': 'Organization', '@id': f'{SITE}/#org', 'name': 'AnyAIGC', 'url': 'https://anyaigc.ai', 'logo': f'{SITE}/logo.webp'},
+        {'@type': 'Organization', '@id': f'{SITE}/#org', 'name': 'AnyAIGC', 'url': 'https://www.anyaigc.ai/', 'logo': f'{SITE}/logo.webp'},
         {'@type': 'WebSite', '@id': f'{SITE}/#website', 'name': 'AnyAIGC', 'url': f'{SITE}/', 'publisher': {'@id': f'{SITE}/#org'}},
         {'@type': 'WebPage', '@id': url(lang, slug) + '#webpage', 'url': url(lang, slug), 'name': title, 'description': desc, 'dateModified': DATE, 'inLanguage': 'zh-CN' if lang == 'zh' else 'en', 'isPartOf': {'@id': f'{SITE}/#website'}, 'breadcrumb': {'@id': url(lang, slug) + '#breadcrumb'}},
         {'@type': 'BreadcrumbList', '@id': url(lang, slug) + '#breadcrumb', 'itemListElement': [{'@type': 'ListItem', 'position': i + 1, 'name': n, 'item': u} for i, (n, u) in enumerate(crumbs)]},

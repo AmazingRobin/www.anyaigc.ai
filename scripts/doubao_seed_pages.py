@@ -141,7 +141,7 @@ def head(lang, slug, faq):
     lang_attr = tr(lang, 'zh-CN', 'en')
     crumbs = [(tr(lang, '首页', 'Home'), SITE + '/'), (tr(lang, '模型专题', 'Model guides'), f'{SITE}/{lang}/models/'), (n, me)]
     graph = [
-        {'@type': 'Organization', '@id': SITE + '/#org', 'name': 'AnyAIGC', 'url': 'https://anyaigc.ai', 'logo': SITE + '/logo.webp'},
+        {'@type': 'Organization', '@id': SITE + '/#org', 'name': 'AnyAIGC', 'url': 'https://www.anyaigc.ai/', 'logo': SITE + '/logo.webp'},
         {'@type': 'WebSite', '@id': SITE + '/#website', 'name': 'AnyAIGC', 'url': SITE + '/', 'publisher': {'@id': SITE + '/#org'}},
         {'@type': 'WebPage', '@id': me + '#webpage', 'url': me, 'name': title, 'description': desc, 'inLanguage': lang_attr, 'dateModified': DATE, 'isPartOf': {'@id': SITE + '/#website'}, 'breadcrumb': {'@id': me + '#breadcrumb'}, 'mainEntity': {'@id': me + '#product'}},
         {'@type': 'BreadcrumbList', '@id': me + '#breadcrumb', 'itemListElement': [{'@type': 'ListItem', 'position': i+1, 'name': label, 'item': url} for i, (label, url) in enumerate(crumbs)]},

@@ -6,6 +6,7 @@ from html import escape as e
 from pathlib import Path
 
 from llama_data import BY_ID, DATE, DOC, MODELS, PRICING, REGISTER, SLUGS, VERSION
+from llama_specs import ALTS, SPECS
 from payments import A as PAY_A, Q as PAY_Q, pay_row
 from trust import FAQ as TRUST_FAQ, HEAD as TRUST_HEAD, ITEMS as TRUST_ITEMS
 
@@ -161,13 +162,24 @@ def page(lang, slug):
     models = [model] if model else MODELS
     example = model or MODELS[0]
     start = model['input'] if model else '0.3375'
-    title = name + ((' API 价格与接入｜68折 - AnyAIGC' if discount(model) else ' API 价格与接入 - AnyAIGC') if zh else (' API Pricing & Access - AnyAIGC'))
-    # Keep long vision names inside the Chinese title display-width limit.
-    if len(title) + sum(ord(c)>0x2e7f for c in title) > 64 and zh:
-        title = name + ' API 价格｜68折 - AnyAIGC'
-    desc = t(f'{name} API 输入 ${start}/百万 tokens 起，提供对话与文本生成接入、完整价格表和代码示例。'+('部分型号68折，' if not model else ('68折，' if discount(model) else ''))+'并发不限，支持对公转账、合同与增值税专票。', f'{name} API from ${start}/1M input tokens. Chat, code examples, unlimited concurrency, no fixed RPM cap and VAT invoices.')
+    short = f'{float(start):.4f}'.rstrip('0')
+    short = short + '0' * max(0, 2 - len(short.split('.')[1]))
+    # Selling point is the starting input price; keep within title limits (zh width 64, en 65 chars).
+    def zh_w(x): return len(x) + sum(ord(c) > 0x2e7f for c in x)
+    if zh:
+        for title in (f'{name} API 价格与接入｜输入 ${short}/百万 tokens 起 - AnyAIGC',
+                      f'{name} API 价格｜输入 ${short}/百万 tokens 起 - AnyAIGC',
+                      f'{name} API 价格｜${short}/百万 tokens 起 - AnyAIGC',
+                      f'{name} API 价格与接入 - AnyAIGC'):
+            if zh_w(title) <= 64: break
+    else:
+        for title in (f'{name} API Pricing & Access: From ${short}/1M Tokens - AnyAIGC',
+                      f'{name} API Pricing: From ${short}/1M Tokens - AnyAIGC',
+                      f'{name} API Pricing & Access - AnyAIGC'):
+            if len(e(title)) <= 65: break  # check_topics counts the escaped &amp;
+    desc = t(f'{name} API 输入 ${start}/百万 tokens 起，提供对话与文本生成接入、完整价格表和代码示例。并发不限，支持对公转账、合同与增值税专票。', f'{name} API from ${start}/1M input tokens. Chat, code examples, unlimited concurrency, no fixed RPM cap and VAT invoices.')
     if not zh and model is None:
-        desc = 'Llama API from $0.3375/1M input tokens. Explore 12 models, save 32% on selected models, with unlimited concurrency and VAT invoices.'
+        desc = 'Llama API from $0.3375/1M input tokens. Compare 12 Llama models with full price tables, code examples, unlimited concurrency and VAT invoices.'
     questions = faq(lang, model)
     html = head(lang,slug,name,title,desc,models,questions)
     other = 'en' if zh else 'zh'
@@ -219,6 +231,24 @@ def page(lang, slug):
         hint = deal(lang,item) if item else t('12 个型号 · 价格与接入','12 models · pricing and access')
         family += f'<a href="/{lang}/models/{member}"'+(' aria-current="page"' if member==slug else '')+f'><span>{e(label)}</span><small>{e(hint)}</small></a>'
     html += section('family',t('同系列 Llama 模型','Explore the Llama family'),t('保留相同的接口结构，按任务选择模型。','Keep the same API structure and choose a model for your task.'),family+'</div>',True)
+    spec = SPECS.get(slug)
+    if spec:
+        alt, why_zh, why_en = ALTS[slug]
+        ctx = f'{spec["context"]:,}'
+        body = '<p>'+e(spec['trained_'+lang])+'</p>'
+        # Meta's cards give no release date for Llama 2, and the 3.2 text card's date is ambiguous.
+        if spec["release"]:
+            body += '<p>'+t(f'按 Meta 发布的模型卡，它的上下文窗口是 {ctx} tokens，于 {spec["release"]} 发布。',
+                            f'Meta\'s model card gives it a context window of {ctx} tokens and a release date of {spec["release"]}.')+'</p>'
+        else:
+            body += '<p>'+t(f'按 Meta 发布的模型卡，它的上下文窗口是 {ctx} tokens。',
+                            f'Meta\'s model card gives it a context window of {ctx} tokens.')+'</p>'
+        body += '<p>'+t(f'本页标价为每百万 tokens 输入 ${model["input"]}、输出 ${model["output"]}，与上方价格表是同一组数字。',
+                        f'This page lists ${model["input"]} per million input tokens and ${model["output"]} per million output tokens, the same figures as the pricing table above.')+'</p>'
+        body += '<p>'+t(f'拿它和 <a href="/{lang}/models/{alt}">{e(BY_ID[alt]["name"])}</a> 比较，{why_zh}，选后者更合适。',
+                        f'Set it next to <a href="/{lang}/models/{alt}">{e(BY_ID[alt]["name"])}</a> and choose that model instead {why_en}.')+'</p>'
+        body += '<p class="ll-note">'+t('以上规格来自 Meta 官方模型卡；价格以本页表格为准，模型广场的实时价格优先。','These specifications come from Meta\'s official model cards. The table on this page is the price, and the marketplace is authoritative for live rates.')+'</p>'
+        html += section('specs',t('这个型号的规格与选型','Specs and how to choose it'),t('参数规模、上下文窗口，以及和相邻型号怎么选。','Parameter count, context window, and how it compares with the nearest alternative.'),body)
     html += section('faq',name+t(' API 常见问题',' API FAQ'),t('价格、版本、接入与企业采购。','Pricing, versions, integration and enterprise purchasing.'),'<div class="ll-faq">'+''.join(f'<details><summary><h3>{e(q)}</h3></summary><div class="ll-answer"><p>{e(a)}</p></div></details>' for q,a in questions)+'</div>')
     html += '<section class="ll-final"><div class="ll-wrap">'+mark(52,'#ffffff')+f'<h2>{t("让下一个想法，用上 Llama。","Put Llama behind your next idea.")}</h2><p>{t("从一个 API Key 开始，按实际用量付费。","Start with one API key. Pay for what you use.")}</p><div class="ll-actions">'+button(t('获取 API Key','Get API key'))+'</div><div class="ll-final-links">'+f'<a href="/{lang}/models/">{t("全部模型专题","All model guides")}</a><a href="{PRICING}">{t("模型广场","Marketplace")}</a><a href="{DOC}">API {t("文档","reference")}</a><a href="/{other}/models/{slug}" hreflang="{"en" if zh else "zh-CN"}">{t("English 版本","中文版")}</a></div></div></section></main>\n'
     html += '<footer class="ll-footer"><div class="ll-wrap"><div class="ll-footer-top"><a class="ll-brand" href="/">AnyAIGC<span>× Llama</span></a><nav aria-label="'+t('页脚','Footer')+'">'+f'<a href="/{lang}/models/">{t("模型专题","Model guides")}</a><a href="https://anyaigc.ai/console">{t("控制台","Console")}</a><a href="/privacy">{t("隐私政策","Privacy")}</a><a href="/terms">{t("服务条款","Terms")}</a></nav></div><p>'+t('Llama 是 Meta 的商标，Ollama 是其各自权利人的商标。AnyAIGC 是独立 API 服务商，与 Meta 或 Ollama 无隶属关系。模型与输出的商用授权以 Meta 官方条款为准。','Llama is a trademark of Meta. Ollama is a trademark of its respective owner. AnyAIGC is an independent API provider and is not affiliated with Meta or Ollama. Commercial use of the models and outputs is subject to Meta’s official terms.')+'</p></div></footer>\n'+f'<script src="/assets/models/llama.js?v={VERSION}" defer></script>\n</body>\n</html>\n'
