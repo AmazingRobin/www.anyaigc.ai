@@ -17,7 +17,9 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, '.playwright-mcp', 'og')
 BRAND = 'AnyAIGC'  # 区分大小写，不要转大写
 
-ENT = {'zh': '对公 · 专票', 'en': 'Contracts · invoices'}
+ENT = {'zh': '对公 · 专票', 'en': 'Self-service invoices',
+       'ja': '請求書を自分で発行', 'ko': '인보이스 직접 발급', 'es': 'Facturas en consola', 'de': 'Rechnungen im Konto'}
+LANGS = ('zh', 'en', 'ja', 'ko', 'es', 'de')
 # 每个页面：标题前半、品牌蓝关键词、一句卖点、价格标签、其余标签
 PAGES = {
     'deepseek': ('DeepSeek', 'API',
@@ -38,10 +40,34 @@ PAGES = {
                           {'zh': ['工具调用', '并发不限'], 'en': ['Tool calling', 'Unlimited RPM']}),
 }
 
+EXTRA = {
+    'deepseek': dict(
+        sub={'ja': 'V4.1 Flash・V4 Pro・V4 Flash を1つのキーで', 'ko': 'V4.1 Flash·V4 Pro·V4 Flash를 키 하나로',
+             'es': 'V4.1 Flash, V4 Pro y V4 Flash con una sola clave', 'de': 'V4.1 Flash, V4 Pro und V4 Flash mit einem Schlüssel'},
+        tags={'ja': ['Claude Code', '同時実行数の上限なし'], 'ko': ['Claude Code', '동시 실행 제한 없음'],
+              'es': ['Claude Code', 'Sin límite de RPM'], 'de': ['Claude Code', 'Kein RPM-Limit']}),
+    'deepseek-v4.1-flash': dict(
+        sub={'ja': 'ネイティブのマルチモーダル。公式ピーク価格より約60%お得', 'ko': '네이티브 멀티모달, 공식 피크 가격 대비 약 60% 저렴',
+             'es': 'Multimodal nativo, un 60 % menos que el precio oficial en hora punta', 'de': 'Nativ multimodal, rund 60 % unter dem offiziellen Spitzenpreis'},
+        tags={'ja': ['画像理解', '100万コンテキスト'], 'ko': ['이미지 이해', '100만 컨텍스트'],
+              'es': ['Visión', 'Contexto de 1 M'], 'de': ['Bildverständnis', '1 Mio. Kontext']}),
+    'deepseek-v4-pro': dict(
+        sub={'ja': '1.6T のフラッグシップ。3段階の推論強度', 'ko': '1.6T 플래그십, 3단계 추론 강도',
+             'es': 'Modelo insignia de 1,6T con tres niveles de razonamiento', 'de': '1,6T-Flaggschiff mit drei Denkstufen'},
+        tags={'ja': ['思考モード', '100万コンテキスト'], 'ko': ['사고 모드', '100만 컨텍스트'],
+              'es': ['Razonamiento', 'Contexto de 1 M'], 'de': ['Denkmodus', '1 Mio. Kontext']}),
+    'deepseek-v4-flash': dict(
+        sub={'ja': '旧 Flash。引き続き利用可能、V4.1 Flash と同価格', 'ko': '이전 Flash, 계속 호출 가능, V4.1 Flash와 같은 가격',
+             'es': 'Flash anterior, al mismo precio que V4.1 Flash', 'de': 'Früheres Flash, zum selben Preis wie V4.1 Flash'},
+        tags={'ja': ['ツール呼び出し', '同時実行数の上限なし'], 'ko': ['도구 호출', '동시 실행 제한 없음'],
+              'es': ['Uso de herramientas', 'Sin límite de RPM'], 'de': ['Tool-Aufrufe', 'Kein RPM-Limit']}),
+}
+PRICE_FMT = {'ja': '{p} / 100万入力トークン', 'ko': '{p} / 100만 입력 토큰', 'es': '{p} / 1 M entrada', 'de': '{p} / 1 Mio. Eingabe'}
+
 TPL = '''<!doctype html><html><head><meta charset="utf-8"><style>
 *{box-sizing:border-box}
 html{overflow:hidden;background:#f9f8f8}
-body{margin:0;width:1200px;height:630px;background:#f9f8f8;color:#1e232c;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,"Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;position:relative;overflow:hidden}
+body{margin:0;width:1200px;height:630px;background:#f9f8f8;color:#1e232c;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,"Noto Sans SC","PingFang SC","Microsoft YaHei","Yu Gothic UI","Yu Gothic","Malgun Gothic",sans-serif;position:relative;overflow:hidden}
 .mist{position:absolute;inset:0;background:linear-gradient(180deg,rgba(156,193,231,.85) 0%,rgba(156,193,231,.35) 45%,rgba(249,248,248,0) 82%)}
 .blob{position:absolute;left:-120px;top:-160px;width:560px;height:460px;border-radius:50%;background:#679efe;opacity:.45;filter:blur(90px)}
 .blob2{position:absolute;right:40px;top:300px;width:420px;height:320px;border-radius:50%;background:#b7c8fe;opacity:.6;filter:blur(80px)}
@@ -56,12 +82,13 @@ h1{margin:92px 0 0;max-width:800px;font-size:@FSpx;line-height:1.02;font-weight:
 h1 span{color:#4d6bfe;font-weight:400}
 p{margin:28px 0 0;font-size:32px;line-height:1.3;font-weight:400;color:rgba(0,0,0,.66);max-width:740px}
 .r{position:absolute;left:80px;bottom:64px;display:flex;gap:12px}
-.r span{padding:12px 22px;border-radius:999px;background:rgba(255,255,255,.55);border:1.5px solid rgba(9,45,78,.18);font-size:24px;color:#1e232c}
+.r span{white-space:nowrap;padding:12px 22px;border-radius:999px;background:rgba(255,255,255,.55);border:1.5px solid rgba(9,45,78,.18);font-size:24px;color:#1e232c}
+.r.s span{font-size:21px;padding:11px 17px}
 .r .d{background:#1a1615;color:#fff;border-color:#1a1615}
 </style></head><body><div class="mist"></div><div class="blob"></div><div class="blob2"></div><div class="grid"></div>
 <div class="mark">@LOGO</div>
 <div class="c"><div class="b">@SMALL@BRAND<em>· DeepSeek</em></div><h1>@NAME<span>@KEY</span></h1><p>@SUB</p></div>
-<div class="r">@CHIPS</div></body></html>'''
+<div class="r @RC">@CHIPS</div></body></html>'''
 
 
 def chrome():
@@ -72,14 +99,20 @@ def chrome():
 def main():
     os.makedirs(OUT, exist_ok=True)
     names = []
-    for lang in ('zh', 'en'):
+    only = [a.split('=', 1)[1].split(',') for a in sys.argv[1:] if a.startswith('--langs=')]
+    for lang in (only[0] if only else LANGS):
         for slug, (name, key, sub, price, tags) in PAGES.items():
+            ex = EXTRA.get(slug if slug in EXTRA else 'deepseek', {})
+            if lang not in ('zh', 'en'):
+                sub = dict(sub); sub[lang] = ex['sub'][lang]
+                tags = dict(tags); tags[lang] = ex['tags'][lang]
+                price = dict(price); price[lang] = PRICE_FMT[lang].format(p=price['en'].replace('From ', '').split(' / ')[0])
             chips = f'<span class="d">{price[lang]}</span>' + ''.join(f'<span>{t}</span>' for t in tags[lang] + [ENT[lang]])
             fs = '112' if len(name + key) <= 12 else '92'
             # 总览页标题 "DeepSeek API" 中间要空格
             nm = name + ' ' if slug == 'deepseek' else name
             html = (TPL.replace('@LOGO', logo(cls='')).replace('@SMALL', logo(cls='')).replace('@BRAND', BRAND).replace('@NAME', nm)
-                    .replace('@KEY', key).replace('@SUB', sub[lang]).replace('@CHIPS', chips).replace('@FS', fs))
+                    .replace('@KEY', key).replace('@SUB', sub[lang]).replace('@CHIPS', chips).replace('@RC', '' if lang in ('zh', 'en') else 's').replace('@FS', fs))
             n = f'{slug}-{lang}'
             io.open(os.path.join(OUT, n + '.html'), 'w', encoding='utf-8').write(html)
             names.append(n)

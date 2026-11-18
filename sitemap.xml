@@ -786,6 +786,10 @@
     <lastmod>2026-11-17</lastmod>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/deepseek"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/deepseek"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.anyaigc.ai/ja/models/deepseek"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.anyaigc.ai/ko/models/deepseek"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.anyaigc.ai/es/models/deepseek"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.anyaigc.ai/de/models/deepseek"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/deepseek"/>
   </url>
   <url>
@@ -793,6 +797,54 @@
     <lastmod>2026-11-17</lastmod>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/deepseek"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/deepseek"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.anyaigc.ai/ja/models/deepseek"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.anyaigc.ai/ko/models/deepseek"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.anyaigc.ai/es/models/deepseek"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.anyaigc.ai/de/models/deepseek"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/deepseek"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/ja/models/deepseek</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/deepseek"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/deepseek"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.anyaigc.ai/ja/models/deepseek"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.anyaigc.ai/ko/models/deepseek"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.anyaigc.ai/es/models/deepseek"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.anyaigc.ai/de/models/deepseek"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/deepseek"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/ko/models/deepseek</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/deepseek"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/deepseek"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.anyaigc.ai/ja/models/deepseek"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.anyaigc.ai/ko/models/deepseek"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.anyaigc.ai/es/models/deepseek"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.anyaigc.ai/de/models/deepseek"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/deepseek"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/es/models/deepseek</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/deepseek"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/deepseek"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.anyaigc.ai/ja/models/deepseek"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.anyaigc.ai/ko/models/deepseek"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.anyaigc.ai/es/models/deepseek"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.anyaigc.ai/de/models/deepseek"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/deepseek"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/de/models/deepseek</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/deepseek"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/deepseek"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.anyaigc.ai/ja/models/deepseek"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.anyaigc.ai/ko/models/deepseek"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.anyaigc.ai/es/models/deepseek"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.anyaigc.ai/de/models/deepseek"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/deepseek"/>
   </url>
   <url>
@@ -800,6 +852,10 @@
     <lastmod>2026-11-17</lastmod>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/deepseek-v4.1-flash"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/deepseek-v4.1-flash"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.anyaigc.ai/ja/models/deepseek-v4.1-flash"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.anyaigc.ai/ko/models/deepseek-v4.1-flash"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.anyaigc.ai/es/models/deepseek-v4.1-flash"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.anyaigc.ai/de/models/deepseek-v4.1-flash"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/deepseek-v4.1-flash"/>
   </url>
   <url>
@@ -807,6 +863,54 @@
     <lastmod>2026-11-17</lastmod>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/deepseek-v4.1-flash"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/deepseek-v4.1-flash"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.anyaigc.ai/ja/models/deepseek-v4.1-flash"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.anyaigc.ai/ko/models/deepseek-v4.1-flash"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.anyaigc.ai/es/models/deepseek-v4.1-flash"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.anyaigc.ai/de/models/deepseek-v4.1-flash"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/deepseek-v4.1-flash"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/ja/models/deepseek-v4.1-flash</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/deepseek-v4.1-flash"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/deepseek-v4.1-flash"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.anyaigc.ai/ja/models/deepseek-v4.1-flash"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.anyaigc.ai/ko/models/deepseek-v4.1-flash"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.anyaigc.ai/es/models/deepseek-v4.1-flash"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.anyaigc.ai/de/models/deepseek-v4.1-flash"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/deepseek-v4.1-flash"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/ko/models/deepseek-v4.1-flash</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/deepseek-v4.1-flash"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/deepseek-v4.1-flash"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.anyaigc.ai/ja/models/deepseek-v4.1-flash"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.anyaigc.ai/ko/models/deepseek-v4.1-flash"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.anyaigc.ai/es/models/deepseek-v4.1-flash"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.anyaigc.ai/de/models/deepseek-v4.1-flash"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/deepseek-v4.1-flash"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/es/models/deepseek-v4.1-flash</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/deepseek-v4.1-flash"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/deepseek-v4.1-flash"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.anyaigc.ai/ja/models/deepseek-v4.1-flash"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.anyaigc.ai/ko/models/deepseek-v4.1-flash"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.anyaigc.ai/es/models/deepseek-v4.1-flash"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.anyaigc.ai/de/models/deepseek-v4.1-flash"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/deepseek-v4.1-flash"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/de/models/deepseek-v4.1-flash</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/deepseek-v4.1-flash"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/deepseek-v4.1-flash"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.anyaigc.ai/ja/models/deepseek-v4.1-flash"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.anyaigc.ai/ko/models/deepseek-v4.1-flash"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.anyaigc.ai/es/models/deepseek-v4.1-flash"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.anyaigc.ai/de/models/deepseek-v4.1-flash"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/deepseek-v4.1-flash"/>
   </url>
   <url>
@@ -814,6 +918,10 @@
     <lastmod>2026-11-17</lastmod>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/deepseek-v4-pro"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/deepseek-v4-pro"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.anyaigc.ai/ja/models/deepseek-v4-pro"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.anyaigc.ai/ko/models/deepseek-v4-pro"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.anyaigc.ai/es/models/deepseek-v4-pro"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.anyaigc.ai/de/models/deepseek-v4-pro"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/deepseek-v4-pro"/>
   </url>
   <url>
@@ -821,6 +929,54 @@
     <lastmod>2026-11-17</lastmod>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/deepseek-v4-pro"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/deepseek-v4-pro"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.anyaigc.ai/ja/models/deepseek-v4-pro"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.anyaigc.ai/ko/models/deepseek-v4-pro"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.anyaigc.ai/es/models/deepseek-v4-pro"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.anyaigc.ai/de/models/deepseek-v4-pro"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/deepseek-v4-pro"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/ja/models/deepseek-v4-pro</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/deepseek-v4-pro"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/deepseek-v4-pro"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.anyaigc.ai/ja/models/deepseek-v4-pro"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.anyaigc.ai/ko/models/deepseek-v4-pro"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.anyaigc.ai/es/models/deepseek-v4-pro"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.anyaigc.ai/de/models/deepseek-v4-pro"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/deepseek-v4-pro"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/ko/models/deepseek-v4-pro</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/deepseek-v4-pro"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/deepseek-v4-pro"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.anyaigc.ai/ja/models/deepseek-v4-pro"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.anyaigc.ai/ko/models/deepseek-v4-pro"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.anyaigc.ai/es/models/deepseek-v4-pro"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.anyaigc.ai/de/models/deepseek-v4-pro"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/deepseek-v4-pro"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/es/models/deepseek-v4-pro</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/deepseek-v4-pro"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/deepseek-v4-pro"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.anyaigc.ai/ja/models/deepseek-v4-pro"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.anyaigc.ai/ko/models/deepseek-v4-pro"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.anyaigc.ai/es/models/deepseek-v4-pro"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.anyaigc.ai/de/models/deepseek-v4-pro"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/deepseek-v4-pro"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/de/models/deepseek-v4-pro</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/deepseek-v4-pro"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/deepseek-v4-pro"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.anyaigc.ai/ja/models/deepseek-v4-pro"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.anyaigc.ai/ko/models/deepseek-v4-pro"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.anyaigc.ai/es/models/deepseek-v4-pro"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.anyaigc.ai/de/models/deepseek-v4-pro"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/deepseek-v4-pro"/>
   </url>
   <url>
@@ -828,6 +984,10 @@
     <lastmod>2026-11-17</lastmod>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/deepseek-v4-flash"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/deepseek-v4-flash"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.anyaigc.ai/ja/models/deepseek-v4-flash"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.anyaigc.ai/ko/models/deepseek-v4-flash"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.anyaigc.ai/es/models/deepseek-v4-flash"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.anyaigc.ai/de/models/deepseek-v4-flash"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/deepseek-v4-flash"/>
   </url>
   <url>
@@ -835,6 +995,54 @@
     <lastmod>2026-11-17</lastmod>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/deepseek-v4-flash"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/deepseek-v4-flash"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.anyaigc.ai/ja/models/deepseek-v4-flash"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.anyaigc.ai/ko/models/deepseek-v4-flash"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.anyaigc.ai/es/models/deepseek-v4-flash"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.anyaigc.ai/de/models/deepseek-v4-flash"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/deepseek-v4-flash"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/ja/models/deepseek-v4-flash</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/deepseek-v4-flash"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/deepseek-v4-flash"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.anyaigc.ai/ja/models/deepseek-v4-flash"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.anyaigc.ai/ko/models/deepseek-v4-flash"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.anyaigc.ai/es/models/deepseek-v4-flash"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.anyaigc.ai/de/models/deepseek-v4-flash"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/deepseek-v4-flash"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/ko/models/deepseek-v4-flash</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/deepseek-v4-flash"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/deepseek-v4-flash"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.anyaigc.ai/ja/models/deepseek-v4-flash"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.anyaigc.ai/ko/models/deepseek-v4-flash"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.anyaigc.ai/es/models/deepseek-v4-flash"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.anyaigc.ai/de/models/deepseek-v4-flash"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/deepseek-v4-flash"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/es/models/deepseek-v4-flash</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/deepseek-v4-flash"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/deepseek-v4-flash"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.anyaigc.ai/ja/models/deepseek-v4-flash"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.anyaigc.ai/ko/models/deepseek-v4-flash"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.anyaigc.ai/es/models/deepseek-v4-flash"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.anyaigc.ai/de/models/deepseek-v4-flash"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/deepseek-v4-flash"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/de/models/deepseek-v4-flash</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/deepseek-v4-flash"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/deepseek-v4-flash"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.anyaigc.ai/ja/models/deepseek-v4-flash"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.anyaigc.ai/ko/models/deepseek-v4-flash"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.anyaigc.ai/es/models/deepseek-v4-flash"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.anyaigc.ai/de/models/deepseek-v4-flash"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/deepseek-v4-flash"/>
   </url>
   <url>

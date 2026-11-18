@@ -10,7 +10,23 @@ from html.parser import HTMLParser
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = 'https://www.anyaigc.ai'
-LANGS = {'zh': 'zh-CN', 'en': 'en'}
+LANGS = {'zh': 'zh-CN', 'en': 'en', 'ja': 'ja', 'ko': 'ko', 'es': 'es', 'de': 'de'}
+CORE = ('zh', 'en')                 # 每个专题都必须有的语言
+NEW_LANGS = ('ja', 'ko', 'es', 'de')  # 按系列分批新增：页面存在才检查，存在就必须被 zh/en 页声明为 hreflang
+# 标题显示宽度上限、description 范围：日韩按显示宽度（全角计 2），西德按字符数
+TITLE_MAX = {'zh': 64, 'en': 65, 'ja': 64, 'ko': 64, 'es': 65, 'de': 65}
+DESC_RANGE = {'zh': (60, 120), 'en': (120, 160), 'ja': (60, 240), 'ko': (60, 240), 'es': (120, 160), 'de': (120, 160)}
+# 新语言页里必须出现的词（发票、支付方式、试用额度、退款）：用来确认企业/支付/信任版块和 FAQ 没有被漏掉
+LOCAL_KEYS = {
+    'ja': dict(invoice=('請求書', 'インボイス', '領収書'), pay=('支払い方法', '決済方法', '支払方法'),
+               trial=('無料', '試用', 'トライアル'), refund=('返金',)),
+    'ko': dict(invoice=('인보이스', '청구서', '영수증', '세금계산서'), pay=('결제 수단', '결제 방법', '결제수단'),
+               trial=('무료', '체험', '트라이얼'), refund=('환불',)),
+    'es': dict(invoice=('factura',), pay=('métodos de pago', 'formas de pago'),
+               trial=('gratis', 'prueba', 'gratuito'), refund=('reembolso', 'devol')),
+    'de': dict(invoice=('rechnung',), pay=('zahlungsmethoden', 'zahlungsarten'),
+               trial=('kostenlos', 'testguthaben', 'testen'), refund=('erstatt', 'rückerstattung')),
+}
 REGISTER = 'https://anyaigc.ai/register?aff=oOK7&channel=c_wpduopc9'
 errors, warns = [], []
 
@@ -101,8 +117,15 @@ def check_scrollbar(tag, html):
 
 ENT = {
     'zh': ('增值税', '专票', '对公转账', '合同', '专属'),
-    'en': ('VAT', 'bank transfer', 'contract', 'dedicated'),
+    # 非中文页面（2026-11-17 起）：发票在控制台自助开具，不写增值税/对公转账/合同
+    'en': ('invoice', 'dedicated'),
 }
+# 非中文页面不应再出现的中国开票/对公转账说法
+try:
+    OVERSEAS_DONE = json.load(io.open(os.path.join(ROOT, 'scripts', 'i18n', 'overseas_done.json'), encoding='utf-8'))
+except (OSError, ValueError):
+    OVERSEAS_DONE = []
+NON_ZH_FORBIDDEN = re.compile(r'\bVAT\b|bank transfer|wire transfer|corporate (?:bank|account)|special invoice|service agreement|sign a contract', re.I)
 
 
 def check_enterprise(tag, lang, html):
@@ -114,17 +137,32 @@ def check_enterprise(tag, lang, html):
     m = re.search(r'id="enterprise".*?</section>', html, re.S)
     body = m.group(0) if m else ''
     low = body.lower()
-    miss = [k for k in ENT[lang] if k.lower() not in low]
+    miss = [k for k in ENT.get(lang, ()) if k.lower() not in low]
     if m and miss:
         errors.append(f'{tag} 企业接入版块缺少要点：{", ".join(miss)}')
     if m and 'https://anyaigc.ai/customersupport' not in body:
         errors.append(f'{tag} 企业接入版块缺少联系客服按钮')
     d = re.search(r'<meta name="description" content="(.*?)"', html)
-    key = ('对公', '专票', '发票') if lang == 'zh' else ('invoic', 'bank transfer', 'contract')
+    questions = ' | '.join(q['name'] for q in faq_questions(html))
+    if lang in LOCAL_KEYS:
+        # 新语言页：按本地关键词检查发票、支付方式、试用额度、退款这四条 FAQ
+        lk = LOCAL_KEYS[lang]
+        low_q = questions.lower()
+        for name, words in lk.items():
+            if not any(w.lower() in low_q for w in words):
+                errors.append(f'{tag} FAQ 缺少关于「{name}」的问题（应含：{" / ".join(words)}）')
+        if d and not any(w.lower() in d.group(1).lower() for w in lk['invoice']):
+            warns.append(f'{tag} meta description 未提及发票')
+        if 'class="pay-row' not in body:
+            errors.append(f'{tag} 企业接入版块缺少支付方式行（scripts/payments.py）')
+        if 'id="trust"' not in html or 'class="trust-list"' not in html:
+            errors.append(f'{tag} 缺少「信任与保障」版块（scripts/trust.py）')
+        check_forbidden(tag, lang, html)
+        return
+    key = ('对公', '专票', '发票') if lang == 'zh' else ('invoic', 'bank transfer', 'contract')  # 未转换的 en 页沿用旧写法
     if d and not any(k in d.group(1).lower() for k in key):
         errors.append(f'{tag} meta description 未提及企业开票/对公转账')
-    faq_key = ('专票', '对公转账') if lang == 'zh' else ('VAT special invoice', 'bank transfer')
-    questions = ' | '.join(q['name'] for q in faq_questions(html))
+    faq_key = ('专票', '对公转账') if lang == 'zh' else ('invoice',)
     for k in faq_key:
         if k.lower() not in questions.lower():
             errors.append(f'{tag} FAQ 缺少关于「{k}」的问题')
@@ -137,11 +175,25 @@ def check_enterprise(tag, lang, html):
     for k in (('试用额度', '退款') if lang == 'zh' else ('trial credit', 'refund')):
         if k.lower() not in questions.lower():
             errors.append(f'{tag} FAQ 缺少关于「{k}」的问题（scripts/trust.py）')
+    check_forbidden(tag, lang, html)
+    if re.search(r'联系客服确认发票方案|contact support about invoicing', html, re.I):
+        errors.append(f'{tag} 仍有含糊的开票说法，应改为明确支持对公转账和增值税发票')
+
+
+def check_forbidden(tag, lang, html):
     # 只拦截 SLA / 可用率承诺本身；基准成绩里的 99.9% 之类不算
     if re.search(r'\bSLA\b|可用率|可用性\s*\d|uptime|99\.9+\s*%\s*(?:可用|在线|uptime|availability)', re.sub(r'<script\b.*?</script>', '', html, flags=re.S), re.I):
         errors.append(f'{tag} 不能写 SLA / 可用率承诺')
-    if re.search(r'联系客服确认发票方案|contact support about invoicing', html, re.I):
-        errors.append(f'{tag} 仍有含糊的开票说法，应改为明确支持对公转账和增值税发票')
+    # 非中文页面不写中国开票/对公转账说法。en 页面按系列分批转换：只检查 overseas_done.json 里登记过的前缀；新语言页一律检查
+    slug_m = re.search(r'/models/([^\]]+)\.html', tag)
+    slug = slug_m.group(1) if slug_m else ''
+    strict = lang != 'zh' and (lang != 'en' or any(slug.startswith(p) for p in OVERSEAS_DONE))
+    if strict:
+        vis = re.sub(r'<style\b.*?</style>', ' ', html, flags=re.S)
+        vis = re.sub(r'<(?!script)[^>]+>', ' ', vis)
+        m2 = NON_ZH_FORBIDDEN.search(vis)
+        if m2:
+            errors.append(f'{tag} 非中文页面不应出现中国开票/对公转账说法：{m2.group(0)}')
 
 
 def page_url(lang, slug):
@@ -185,7 +237,7 @@ def check(lang, slug):
     rel = f'{lang}/models/{slug}.html'
     s = read(rel)
     tag = f'[{rel}]'
-    me, other = page_url(lang, slug), page_url('en' if lang == 'zh' else 'zh', slug)
+    me = page_url(lang, slug)
     check_sections(tag, s)
 
     if not re.search(rf'<html lang="{LANGS[lang]}"', s):
@@ -194,16 +246,17 @@ def check(lang, slug):
     d = re.search(r'<meta name="description" content="(.*?)"', s)
     if not t:
         errors.append(f'{tag} 缺少 <title>')
-    elif lang == 'en' and len(t.group(1)) > 65:
-        warns.append(f'{tag} 英文 title {len(t.group(1))} 字符，建议 ≤ 65')
-    elif lang == 'zh' and width(t.group(1)) > 64:
-        warns.append(f'{tag} 中文 title 显示宽度 {width(t.group(1))}（汉字计 2），建议 ≤ 64')
+    else:
+        w = width(t.group(1)) if lang in ('zh', 'ja', 'ko') else len(t.group(1))
+        if w > TITLE_MAX[lang]:
+            warns.append(f'{tag} title 宽度 {w}，建议 ≤ {TITLE_MAX[lang]}')
     if not d:
         errors.append(f'{tag} 缺少 meta description')
-    elif lang == 'en' and not 120 <= len(d.group(1)) <= 160:
-        warns.append(f'{tag} 英文 description {len(d.group(1))} 字符，建议 120–160')
-    elif lang == 'zh' and not 60 <= len(d.group(1)) <= 120:
-        warns.append(f'{tag} 中文 description {len(d.group(1))} 字，建议 60–120')
+    else:
+        lo, hi = DESC_RANGE[lang]
+        w = width(d.group(1)) if lang in ('ja', 'ko') else len(d.group(1))
+        if not lo <= w <= hi:
+            warns.append(f'{tag} description 宽度 {w}，建议 {lo}–{hi}')
 
     if len(re.findall(r'<h1[\s>]', s)) != 1:
         errors.append(f'{tag} 必须且只能有一个 <h1>')
@@ -211,9 +264,16 @@ def check(lang, slug):
     if canon != [me]:
         errors.append(f'{tag} canonical 应为 {me}，实际 {canon}')
     hl = dict(re.findall(r'rel="alternate" hreflang="([^"]+)" href="([^"]+)"', s))
-    want = {'zh-CN': page_url('zh', slug), 'en': page_url('en', slug), 'x-default': page_url('en', slug)}
+    present = [l for l in LANGS if os.path.isfile(os.path.join(ROOT, l, 'models', slug + '.html'))]
+    want = {LANGS[l]: page_url(l, slug) for l in present}
+    want['x-default'] = page_url('en', slug)
+    if lang in NEW_LANGS:
+        want = {LANGS[l]: page_url(l, slug) for l in LANGS}      # 新语言页：六种语言全部声明
+        want['x-default'] = page_url('en', slug)
     if hl != want:
-        errors.append(f'{tag} hreflang 不完整或不对：{hl}')
+        miss = sorted(set(want) - set(hl))
+        extra = sorted(set(hl) - set(want))
+        errors.append(f'{tag} hreflang 不对：缺 {miss}，多 {extra}' if (miss or extra) else f'{tag} hreflang 地址不对：{hl}')
     for prop in ('og:title', 'og:description', 'og:image', 'og:url'):
         if f'property="{prop}"' not in s:
             errors.append(f'{tag} 缺少 {prop}')
@@ -244,7 +304,7 @@ def check(lang, slug):
             errors.append(f'{tag} JSON-LD 缺少 {n}')
 
     if slug != 'index':
-        faq_visible = len(re.findall(r'<details', s))
+        faq_visible = len(re.findall(r'<details(?![^>]*lang-menu)', s))
         faq_ld = len(faq_questions(s))
         if faq_visible != faq_ld:
             errors.append(f'{tag} 可见 FAQ {faq_visible} 条，JSON-LD FAQ {faq_ld} 条，必须一致')
@@ -256,8 +316,9 @@ def check(lang, slug):
         warns.append(f'{tag} 站内链接带 .html（Cloudflare 会 308 跳转）：{h}')
     if re.search(r'(?:href|src)="(?!/|https?:|#|mailto:|data:)[^"]+"', s):
         errors.append(f'{tag} 存在相对路径资源/链接，专题页必须用以 / 开头的绝对路径')
-    if not re.search(rf'href="/{"en" if lang == "zh" else "zh"}/models/{"" if slug == "index" else slug}"', s):
-        errors.append(f'{tag} 缺少切换到另一语言版本的链接')
+    for ol in LANGS:
+        if ol != lang and os.path.isfile(os.path.join(ROOT, ol, 'models', slug + '.html'))                 and not re.search(rf'href="/{ol}/models/{"" if slug == "index" else slug}"', s):
+            errors.append(f'{tag} 缺少切换到 {ol} 版本的链接')
     for r in re.findall(r'https://anyaigc\.ai/register[^"\s<]*', s):
         if r.replace('&amp;', '&') != REGISTER:
             errors.append(f'{tag} 注册链接应为 {REGISTER}，实际 {r}')
@@ -277,19 +338,30 @@ def main():
         slugs[lang] = sorted(f[:-5] for f in os.listdir(d) if f.endswith('.html')) if os.path.isdir(d) else []
     for s in set(slugs['zh']) ^ set(slugs['en']):
         errors.append(f'中英文不对称：{s}.html 只存在于一种语言')
+    for lang in NEW_LANGS:
+        for s in set(slugs[lang]) - set(slugs['en']):
+            errors.append(f'{lang}/models/{s}.html 没有对应的英文页（新语言以英文页为源）')
     sitemap = read('sitemap.xml')
     for lang in LANGS:
-        hub = read(f'{lang}/models/index.html')
+        if not slugs[lang]:
+            continue
+        hub_path = os.path.join(ROOT, lang, 'models', 'index.html')
+        hub = read(f'{lang}/models/index.html') if os.path.isfile(hub_path) else None
+        if hub is None:
+            warns.append(f'[{lang}/models/] 还没有专题首页（新语言按系列分批上线，最后统一补）')
         for slug in slugs[lang]:
             check(lang, slug)
             if slug == 'index':
                 continue
-            if f'href="/{lang}/models/{slug}"' not in hub:
-                errors.append(f'[{lang}/models/index.html] 专题首页未加入 {slug} 的卡片')
-            if f'"{page_url(lang, slug)}"' not in hub:
-                errors.append(f'[{lang}/models/index.html] JSON-LD ItemList 未加入 {slug}')
+            if hub is not None:
+                if f'href="/{lang}/models/{slug}"' not in hub:
+                    errors.append(f'[{lang}/models/index.html] 专题首页未加入 {slug} 的卡片')
+                if f'"{page_url(lang, slug)}"' not in hub:
+                    errors.append(f'[{lang}/models/index.html] JSON-LD ItemList 未加入 {slug}')
             if f'<loc>{page_url(lang, slug)}</loc>' not in sitemap:
                 errors.append(f'[sitemap.xml] 未加入 {page_url(lang, slug)}')
+        if hub is None:
+            continue
         # 卡片 + 分类标题里链接的系列总览页（如 Claude 系列标题链接到 /models/claude）
         cards = len(re.findall(r'<li class="af-model[ "]', hub)) + len(re.findall(r'<h3 class="af-section-head"[^>]*><a [^>]*href="/' + lang + r'/models/', hub))
         m = re.search(r'"numberOfItems": (\d+)', hub)

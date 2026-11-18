@@ -8,12 +8,12 @@ import re
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 NL = chr(10)
 METHODS = {'zh': ['微信支付', '支付宝', 'USDT', '信用卡', '对公转账'],
-           'en': ['WeChat Pay', 'Alipay', 'USDT', 'Credit card', 'Bank transfer']}
+           'en': ['WeChat Pay', 'Alipay', 'USDT', 'Credit card']}   # 非中文页面不写对公转账（2026-11-17）
 LABEL = {'zh': '支持的支付方式', 'en': 'Payment methods'}
 Q = {'zh': '支持哪些支付方式？',
      'en': 'Which payment methods are supported?'}
 A = {'zh': '支持微信支付、支付宝、USDT 和信用卡充值，企业还可以对公转账，并开具增值税普通发票或专用发票。余额按美元计价，对平台所有模型通用。',
-     'en': 'You can top up with WeChat Pay, Alipay, USDT or a credit card. Companies can also pay by bank transfer and get VAT general or special invoices. Your balance is in USD and works across every model on the platform.'}
+     'en': 'You can top up with WeChat Pay, Alipay, USDT or a credit card. Your balance is in USD and works across every model on the platform. Invoices can be issued in the console for the amount you topped up.'}
 
 
 def pay_row(lang, prefix):
