@@ -49,6 +49,7 @@ p{margin:24px 0 0;font-size:30px;line-height:1.35;color:#cfd5e6}
 .g div:nth-child(2){margin-top:-90px}
 .g img{width:100%;border-radius:4px}
 .n p{font-size:26px}
+.n .r{width:586px}
 .n .r span{font-size:18px;padding:7px 14px}
 </style></head><body class="@BC"><div class="scan"></div><div class="c"><div class="b"><svg viewBox="0 0 24 24" fill="#ffffff" fill-rule="evenodd">@LOGO</svg>AnyAIGC<i></i><span>Midjourney</span></div>
 <h1>Midjourney<br>API</h1><p>@SUB</p></div>

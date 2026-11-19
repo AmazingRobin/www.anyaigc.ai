@@ -13,7 +13,7 @@ import zlib
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-CSS_VERSION = "20261115"
+CSS_VERSION = "20261119"
 START, END = "<!-- related-models -->", "<!-- /related-models -->"
 
 # category -> [(family, target slug, display name)]
@@ -109,11 +109,23 @@ def block(lang, slug):
 def apply(path, lang):
     slug = path.stem
     text = path.read_text(encoding="utf-8")
-    new = re.sub(re.escape(START) + ".*?" + re.escape(END), "", text, flags=re.S)
-    anchor = "</main>" if "</main>" in new else "<footer"
-    if anchor not in new:
-        return "no-anchor"
-    new = new.replace(anchor, block(lang, slug) + anchor, 1)
+    new = re.sub(re.escape(START) + r"\n?.*?" + re.escape(END) + r"\n?", "", text, flags=re.S)
+    # 放在收尾 CTA（<section class="*-final">）前面；CTA 前面如果紧跟一条注释（<!-- Final CTA -->），插在注释前，注释仍然贴着 CTA
+    cta = re.search(r'<section class="[^"]*-final[^"]*"', new)
+    if cta:
+        pos = cta.start()
+        before = new[:pos].rstrip()
+        if before.endswith("-->"):
+            pos = before.rfind("<!--")
+        ls = new.rfind("\n", 0, pos) + 1
+        if new[ls:pos].strip() == "":
+            pos = ls
+        new = new[:pos] + block(lang, slug) + "\n" + new[pos:]
+    else:                                   # 没有收尾 CTA 的页面：保持原来的位置
+        anchor = "</main>" if "</main>" in new else "<footer"
+        if anchor not in new:
+            return "no-anchor"
+        new = new.replace(anchor, block(lang, slug) + anchor, 1)
     new = re.sub(r"scrollbar\.css\?v=[0-9a-z]+", f"scrollbar.css?v={CSS_VERSION}", new)
     if new == text:
         return "unchanged"

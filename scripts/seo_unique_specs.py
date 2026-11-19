@@ -82,7 +82,8 @@ def shell(page):
     #   其它版块用 <span class="d-kicker"> 的页面（DeepSeek 等）这里也用它，颜色才和其它版块一致。
     # 要先去掉本版块自己，否则重跑时会读到上一次生成的 o-kicker（它没有样式，显示成黑字）。
     rest = re.sub(r'<section class="[^"]*" id="' + SID + r'".*?</section>\n?', "", page, flags=re.S)
-    kicker = re.search(r'<(p|span)\s+class="([a-z]+-kicker)[^"]*"', rest)
+    # 只认"紧挨着 <h2> 的纯文字小标题"，页面顶部带图标的 hero 小标题（Grok Imagine、Muse）不算版块小标题
+    kicker = re.search(r'<(p|span)\s+class="([a-z]+-kicker)[^"]*"[^>]*>[^<]*</\1>\s*<h2', rest)
     kicker_tag, kicker_cls = (kicker.group(1), kicker.group(2)) if kicker else ("", "")
     h2 = re.search(r'id="faq".*?<h2( class="[^"]*")?', page, re.S)
     h2_cls = (h2.group(1) or "") if h2 else ""

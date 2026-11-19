@@ -238,6 +238,9 @@ def rewrite_text(src, rules=None):
 
 # 非中文页不写 China-access 卖点（记忆 en-no-china-access-claim）。这里只处理翻译源，/en/ 页面本身不动。
 CHINA_RULES = [
+    # 「无需海外信用卡」类说法（用户 2026-11-19 确认删除）：保留「无需 Google / xAI 账号」这类其它事实
+    (r'(Google (?:Cloud )?account) or (?:an? )?(?:overseas|foreign) credit card', lambda m: m.group(1)),
+    (r',? no (?:overseas|foreign) credit card(?: required| needed)?', ''),
     (r'Direct access from mainland China and unlimited concurrency\.', 'Unlimited concurrency.'),
     (r',? with direct access from mainland China(?: and consolidated invoicing for companies)?', ''),
     (r'\s*Direct access from mainland China\.', ''),

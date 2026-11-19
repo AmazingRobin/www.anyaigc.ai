@@ -28,7 +28,7 @@
 <meta name="twitter:title" content="Grok Imagine Video 1.5 API Pricing | from $0.0476/sec - AnyAIGC">
 <meta name="twitter:description" content="Grok Imagine Video 1.5 API: from $0.0476 / sec, native sound and dialogue, text and image to video, unlimited concurrency.">
 <meta name="twitter:image" content="https://www.anyaigc.ai/assets/og/grok-imagine-video-1.5-preview-en.png">
-<link rel="stylesheet" href="/assets/models/scrollbar.css?v=20261115">
+<link rel="stylesheet" href="/assets/models/scrollbar.css?v=20261119">
 <link rel="stylesheet" href="/assets/models/grok-image.css?v=20261104">
 <link rel="stylesheet" href="/assets/models/grok-video.css?v=20261104">
 <script type="application/ld+json">
@@ -192,7 +192,7 @@
           "name": "Do I need an xAI account?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "No xAI account needed. Sign up on AnyAIGC to get an API key, no overseas credit card required. The endpoint is https://anyaigc.ai, and the same key works with 300+ other models on the platform."
+            "text": "No xAI account needed. Sign up on AnyAIGC to get an API key. The endpoint is https://anyaigc.ai, and the same key works with 300+ other models on the platform."
           }
         },
         {
@@ -537,7 +537,7 @@ curl https://anyaigc.ai/v1/videos/&lt;request_id&gt; \
   </section>
 
   <!-- FAQ -->
-  <section class="o-section" id="spec-unique" aria-labelledby="spec-unique-title"><div class="o-wrap o-col"><p class="gk-kicker">SPECS</p><h2 class="o-h2" id="spec-unique-title">Specs and how to choose it</h2><p>The official model page is named grok-imagine-video-1.5, and both grok-imagine-video-1.5-preview and grok-imagine-video-1.5-2026-05-30 are aliases of it.</p><p>It takes text, image and audio input and returns video; audio input with preset voices is free.</p><p>The official video docs say it renders 1080p natively for text-to-video and image-to-video, goes up to 720p for reference-to-video, and supports voice references plus pinned first, key or last frames.</p><p>This page lists 480p at $0.0476 / sec, 720p at $0.0834 / sec, matching the pricing table above.</p><p>Compared with <a href="/en/models/grok-imagine-video-1.5-lite">grok-imagine-video-1.5-lite</a>: the official docs say lite reaches 1080p by upscaling 720p, while this model renders 1080p natively.</p><p class="spec-note">Specs come from the vendor's official documentation (<a href="https://docs.x.ai/developers/models/grok-imagine-video-1.5">docs.x.ai</a>). The table on this page is the price, and the model catalog is authoritative for live rates.</p></div></section>
+  <section class="o-section" id="spec-unique" aria-labelledby="spec-unique-title"><div class="o-wrap o-col"><h2 class="o-h2" id="spec-unique-title">Specs and how to choose it</h2><p>The official model page is named grok-imagine-video-1.5, and both grok-imagine-video-1.5-preview and grok-imagine-video-1.5-2026-05-30 are aliases of it.</p><p>It takes text, image and audio input and returns video; audio input with preset voices is free.</p><p>The official video docs say it renders 1080p natively for text-to-video and image-to-video, goes up to 720p for reference-to-video, and supports voice references plus pinned first, key or last frames.</p><p>This page lists 480p at $0.0476 / sec, 720p at $0.0834 / sec, matching the pricing table above.</p><p>Compared with <a href="/en/models/grok-imagine-video-1.5-lite">grok-imagine-video-1.5-lite</a>: the official docs say lite reaches 1080p by upscaling 720p, while this model renders 1080p natively.</p><p class="spec-note">Specs come from the vendor's official documentation (<a href="https://docs.x.ai/developers/models/grok-imagine-video-1.5">docs.x.ai</a>). The table on this page is the price, and the model catalog is authoritative for live rates.</p></div></section>
 <section class="o-section" id="faq" aria-labelledby="faq-title">
     <div class="o-wrap o-col">
       <h2 class="o-h2 o-reveal" id="faq-title">Grok Imagine Video 1.5 API FAQ</h2>
@@ -548,7 +548,7 @@ curl https://anyaigc.ai/v1/videos/&lt;request_id&gt; \
         <details><summary><h3>How long can a video be? Which resolutions and aspect ratios are supported?</h3></summary><div class="o-ans"><p><code>duration</code> takes 1–15 seconds and you pay for the actual length; <code>resolution</code> supports 480p and 720p; <code>aspect_ratio</code> supports 16:9, 9:16 and 1:1, and for image to video the frame follows the input image.</p></div></details>
         <details><summary><h3>Why don’t I get the video back right away?</h3></summary><div class="o-ans"><p>Video generation is asynchronous. Submitting returns a job ID; poll <code>GET /v1/videos/{request_id}</code> about every 10 seconds and read the video link once the job completes. Most jobs take tens of seconds to a few minutes. The link is temporary, so download and store the file promptly.</p></div></details>
         <details><summary><h3>Do the videos have sound?</h3></summary><div class="o-ans"><p>Yes. Grok Imagine generates picture and sound together, including sound effects, ambience and dialogue, so you don’t need a separate voiceover. Video 1.5 and 1.5 Lite support lip-synced speech.</p></div></details>
-        <details><summary><h3>Do I need an xAI account?</h3></summary><div class="o-ans"><p>No xAI account needed. Sign up on AnyAIGC to get an API key, no overseas credit card required. The endpoint is <code>https://anyaigc.ai</code>, and the same key works with 300+ other models on the platform.</p></div></details>
+        <details><summary><h3>Do I need an xAI account?</h3></summary><div class="o-ans"><p>No xAI account needed. Sign up on AnyAIGC to get an API key. The endpoint is <code>https://anyaigc.ai</code>, and the same key works with 300+ other models on the platform.</p></div></details>
         <details><summary><h3>Is there a concurrency limit?</h3></summary><div class="o-ans"><p>AnyAIGC sets no concurrency limit on the Grok Video models. Every account gets this by default, so batch jobs don’t need a quota request.</p></div></details>
         <details><summary><h3>Can AnyAIGC issue invoices, including VAT special invoices?</h3></summary><div class="o-ans"><p>Yes. AnyAIGC issues invoices for every top-up, including Chinese VAT general and special invoices based on the amount you actually top up. Send your billing details to support to get one.</p></div></details>
         <details><summary><h3>Which payment methods are supported?</h3></summary><div class="o-ans"><p>You can top up with WeChat Pay, Alipay, USDT or a credit card. Companies can also pay by bank transfer and get VAT general or special invoices. Your balance is in USD and works across every model on the platform.</p></div></details>
@@ -560,6 +560,7 @@ curl https://anyaigc.ai/v1/videos/&lt;request_id&gt; \
     </div>
   </section>
 
+<!-- related-models --><section class="rel-models" id="related" aria-labelledby="related-title"><div class="rel-wrap"><h2 id="related-title">Related model APIs</h2><p>The same AnyAIGC API key works with these video models. Compare pricing and capabilities.</p><ul class="rel-list"><li><a href="/en/models/kling"><b>Kling API</b><span>View guide →</span></a></li><li><a href="/en/models/vidu"><b>Vidu API</b><span>View guide →</span></a></li><li><a href="/en/models/wan3.0-video"><b>Wan 3.0 API</b><span>View guide →</span></a></li><li><a href="/en/models/happyhorse-1.1-t2v"><b>HappyHorse API</b><span>View guide →</span></a></li><li><a href="/en/models/hailuo-h3"><b>Hailuo H3 API</b><span>View guide →</span></a></li><li><a href="/en/models/muse-video"><b>Muse Video API</b><span>View guide →</span></a></li></ul></div></section><!-- /related-models -->
   <!-- 结尾 CTA -->
   <section class="o-final" aria-labelledby="final-title">
     <div class="o-wrap">
@@ -578,7 +579,7 @@ curl https://anyaigc.ai/v1/videos/&lt;request_id&gt; \
       </ul>
     </div>
   </section>
-<!-- related-models --><section class="rel-models" id="related" aria-labelledby="related-title"><div class="rel-wrap"><h2 id="related-title">Related model APIs</h2><p>The same AnyAIGC API key works with these video models. Compare pricing and capabilities.</p><ul class="rel-list"><li><a href="/en/models/kling"><b>Kling API</b><span>View guide →</span></a></li><li><a href="/en/models/vidu"><b>Vidu API</b><span>View guide →</span></a></li><li><a href="/en/models/wan3.0-video"><b>Wan 3.0 API</b><span>View guide →</span></a></li><li><a href="/en/models/happyhorse-1.1-t2v"><b>HappyHorse API</b><span>View guide →</span></a></li><li><a href="/en/models/hailuo-h3"><b>Hailuo H3 API</b><span>View guide →</span></a></li><li><a href="/en/models/muse-video"><b>Muse Video API</b><span>View guide →</span></a></li></ul></div></section><!-- /related-models --></main>
+</main>
 <footer class="o-foot">
   <div class="o-wrap">
     <div class="o-foot-top">

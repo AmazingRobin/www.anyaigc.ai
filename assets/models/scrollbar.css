@@ -71,6 +71,6 @@ html::-webkit-scrollbar-track{background:var(--sb-track)}
 @media (max-width:460px){.rel-list{grid-template-columns:1fr}}
 
 /* Per-model specs section (scripts/seo_unique_specs.py) */
-#spec-unique p{max-width:860px;margin:0 0 14px;line-height:1.85}
+#spec-unique p:not([class*="kicker"]){max-width:860px;margin:0 0 14px;line-height:1.85}
 #spec-unique .spec-note{margin-bottom:0;font-size:14px;opacity:.7}
 #spec-unique a{text-decoration:underline;text-underline-offset:3px}
