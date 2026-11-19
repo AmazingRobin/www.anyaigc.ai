@@ -77,14 +77,18 @@ def shell(page):
     m = re.search(r'<section class="([^"]+)" id="faq"[^>]*>\s*(<div class="[^"]+">)?', page)
     sec_cls = m.group(1) if m else "o-section"
     wrap = m.group(2) or ""
-    prefix = re.match(r"([a-z]+)-", sec_cls).group(1)
-    kicker = re.search(r'<p class="([a-z]+-kicker)[^"]*"', page)
-    kicker_cls = kicker.group(1) if kicker else f"{prefix}-kicker"
+    # 小标题只复制本页其它版块真正在用的写法（标签和 class 原样）：
+    #   其它版块没有小标题的页面（Claude、GPT、Doubao 等）这里也不加；
+    #   其它版块用 <span class="d-kicker"> 的页面（DeepSeek 等）这里也用它，颜色才和其它版块一致。
+    # 要先去掉本版块自己，否则重跑时会读到上一次生成的 o-kicker（它没有样式，显示成黑字）。
+    rest = re.sub(r'<section class="[^"]*" id="' + SID + r'".*?</section>\n?', "", page, flags=re.S)
+    kicker = re.search(r'<(p|span)\s+class="([a-z]+-kicker)[^"]*"', rest)
+    kicker_tag, kicker_cls = (kicker.group(1), kicker.group(2)) if kicker else ("", "")
     h2 = re.search(r'id="faq".*?<h2( class="[^"]*")?', page, re.S)
     h2_cls = (h2.group(1) or "") if h2 else ""
     if "gt-section gt-wrap" in sec_cls:
         wrap = ""
-    return sec_cls, wrap, kicker_cls, h2_cls.replace(" o-reveal", "")
+    return sec_cls, wrap, (kicker_tag, kicker_cls), h2_cls.replace(" o-reveal", "")
 
 
 def section(lang, rec, page):
@@ -120,7 +124,9 @@ def section(lang, rec, page):
     title = "这个型号的规格与选型" if zh else "Specs and how to choose it"
     kicker = "规格" if zh else "SPECS"
     body = "".join(f"<p>{p}</p>" for p in paras) + f'<p class="spec-note">{note}</p>'
-    inner = f'<p class="{kicker_cls}">{kicker}</p><h2{h2_cls} id="{SID}-title">{title}</h2>{body}'
+    k_tag, k_cls = kicker_cls
+    kicker_html = f'<{k_tag} class="{k_cls}">{kicker}</{k_tag}>' if k_cls else ""
+    inner = f'{kicker_html}<h2{h2_cls} id="{SID}-title">{title}</h2>{body}'
     if wrap:
         inner = f"{wrap}{inner}</div>"
     return f'<section class="{sec_cls}" id="{SID}" aria-labelledby="{SID}-title">{inner}</section>\n'

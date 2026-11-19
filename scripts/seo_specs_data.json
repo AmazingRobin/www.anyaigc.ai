@@ -1235,7 +1235,7 @@
    "可靠知识截止时间为 2026 年 1 月。"
   ],
   "facts_en": [
-   "Claude Fable 5 was released on June 9, 2026.2.",
+   "Claude Fable 5 was released on June 9, 2026.",
    "It has a 1M-token context window and up to 128K output tokens per request.",
    "Thinking is adaptive and always on, with a default effort of high.",
    "Its reliable knowledge cutoff is January 2026."
@@ -1254,7 +1254,7 @@
    "可靠知识截止时间为 2026 年 6 月。"
   ],
   "facts_en": [
-   "Claude Fable 5.1 was released on September 1, 2026.2 recommended.",
+   "Claude Fable 5.1 was released on September 1, 2026.",
    "It has a 1M-token context window and up to 128K output tokens.",
    "Thinking is adaptive and always on, with a default effort of high.",
    "Its reliable knowledge cutoff is June 2026."
@@ -1311,7 +1311,7 @@
    "可靠知识截止时间为 2025 年 5 月，训练数据截止时间为 2025 年 8 月。"
   ],
   "facts_en": [
-   "Claude Opus 4.6 was released on February 5, 2026.5 recommended.",
+   "Claude Opus 4.6 was released on February 5, 2026.",
    "It has a 1M-token context window and up to 128K output tokens.",
    "It supports adaptive thinking; the older extended thinking mode (budget_tokens) is deprecated on this model, and default effort is high.",
    "Its reliable knowledge cutoff is May 2025 and its training data cutoff is August 2025."
@@ -1330,7 +1330,7 @@
    "可靠知识截止时间为 2026 年 1 月。"
   ],
   "facts_en": [
-   "Claude Opus 4.7 was released on April 16, 2026.5 recommended.",
+   "Claude Opus 4.7 was released on April 16, 2026.",
    "The current tokenizer was introduced with Claude Opus 4.7: 1M tokens is roughly 555k words, versus about 750k words on earlier models.",
    "It has a 1M-token context window, up to 128K output tokens, and adaptive thinking with a default effort of high.",
    "Its reliable knowledge cutoff is January 2026."
@@ -1349,7 +1349,7 @@
    "可靠知识截止时间为 2026 年 1 月。"
   ],
   "facts_en": [
-   "Claude Opus 4.8 was released on May 28, 2026.5 recommended.",
+   "Claude Opus 4.8 was released on May 28, 2026.",
    "It has a 1M-token context window and up to 128K output tokens on the synchronous Messages API; on the Message Batches API it supports up to 300K output tokens with the output-300k-2026-03-24 beta header.",
    "It supports adaptive thinking with a default effort of high.",
    "Its reliable knowledge cutoff is January 2026."
@@ -1368,7 +1368,7 @@
    "可靠知识截止时间为 2026 年 5 月。"
   ],
   "facts_en": [
-   "Claude Opus 5 was released on July 24, 2026.5 recommended.",
+   "Claude Opus 5 was released on July 24, 2026.",
    "Anthropic's docs describe Claude Opus 5 as built for complex agentic coding and enterprise work, with particular strengths in long-horizon agentic tasks.",
    "It has a 1M-token context window, up to 128K output tokens, and adaptive thinking with a default effort of high.",
    "Its reliable knowledge cutoff is May 2026."
@@ -1406,7 +1406,7 @@
    "可靠知识截止时间为 2026 年 1 月。"
   ],
   "facts_en": [
-   "Claude Sonnet 5 was released on June 30, 2026.5 recommended.",
+   "Claude Sonnet 5 was released on June 30, 2026.",
    "It has a 1M-token context window and up to 128K output tokens.",
    "It supports adaptive thinking with a default effort of high.",
    "Its reliable knowledge cutoff is January 2026."

@@ -1,3 +1,7 @@
 [
- "deepseek"
+ "deepseek",
+ "claude",
+ "gemini",
+ "suno",
+ "midjourney"
 ]

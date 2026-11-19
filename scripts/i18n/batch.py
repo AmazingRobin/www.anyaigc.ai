@@ -26,7 +26,7 @@ def role_of(s):
 
 
 def page_units(slug):
-    src = io.open(os.path.join(ROOT, 'en', 'models', slug + '.html'), encoding='utf-8').read()
+    src = B.source(slug)
     spans = H.collect(src)
     out = []
     for i, s in enumerate(spans):
@@ -85,7 +85,8 @@ def merge(series, lang, slugs):
     d = os.path.join(DRAFT, series)
     items = json.load(io.open(os.path.join(d, 'union.json'), encoding='utf-8'))
     tr = {}
-    for f in sorted(glob.glob(os.path.join(d, 'out', f'{lang}-*.json'))):
+    allp = os.path.join(d, 'out', f'{lang}-all.json')
+    for f in ([allp] if os.path.exists(allp) else sorted(glob.glob(os.path.join(d, 'out', f'{lang}-*.json')))):
         for it in json.load(io.open(f, encoding='utf-8')):
             tr[it['id']] = it['text']
     miss = [i['id'] for i in items if i['id'] not in tr]
@@ -127,7 +128,11 @@ def validate(series, lang, only=None):
     errs, warns = [], []
     files = sorted(glob.glob(os.path.join(d, 'chunks', '*.json')))
     got = {}
-    outs = sorted(glob.glob(os.path.join(d, 'out', f'{lang}-*.json')))
+    allp = os.path.join(d, 'out', f'{lang}-all.json')
+    use_all = os.path.exists(allp)                       # 合并后的译文：按 union 整体校验，忽略其他分散文件
+    outs = [allp] if use_all else sorted(glob.glob(os.path.join(d, 'out', f'{lang}-*.json')))
+    if use_all:
+        files = [os.path.join(d, 'union.json')]
     if not outs:
         errs.append(f'{lang}: out/ 下没有译文文件')
     for of in outs:
@@ -191,6 +196,23 @@ if __name__ == '__main__':
         prepare(sys.argv[2], sys.argv[3:])
     elif cmd == 'merge':
         merge(sys.argv[2], sys.argv[3], sys.argv[4:])
+    elif cmd == 'tm-save':
+        # 把 out/<lang>-*.json 里的译文按「role + 0x1f + 原文」存进 tm-<lang>.json（与已有记忆库合并，新译文覆盖旧的）。
+        # 一个系列翻译完、复核完之后执行，之后源文有小改动时用 tm-fill 只补译变化的句子。
+        series, lang = sys.argv[2], sys.argv[3]
+        d = os.path.join(DRAFT, series)
+        items = {i['id']: i for i in json.load(io.open(os.path.join(d, 'union.json'), encoding='utf-8'))}
+        tmp = os.path.join(d, f'tm-{lang}.json')
+        tm = json.load(io.open(tmp, encoding='utf-8')) if os.path.exists(tmp) else {}
+        n = 0
+        for of in sorted(glob.glob(os.path.join(d, 'out', f'{lang}-*.json'))):
+            for it in json.load(io.open(of, encoding='utf-8')):
+                src = items.get(it['id'])
+                if src is not None:
+                    tm[src['role'] + chr(31) + src['text']] = it['text']
+                    n += 1
+        io.open(tmp, 'w', encoding='utf-8', newline='\n').write(json.dumps(tm, ensure_ascii=False, indent=1))
+        print(f'{series}/{lang}: 记忆库写入 {n} 条，共 {len(tm)} 条')
     elif cmd == 'tm-fill':
         # 用翻译记忆库（drafts/i18n/<series>/tm-<lang>.json，键 = role + 0x1f + 原文）按原文文本回填，
         # 写出 out/<lang>-tm.json（新编号），没覆盖的条目写入 delta-<lang>.json 等待补译。
@@ -198,8 +220,7 @@ if __name__ == '__main__':
         d = os.path.join(DRAFT, series)
         items = json.load(io.open(os.path.join(d, 'union.json'), encoding='utf-8'))
         tm = json.load(io.open(os.path.join(d, f'tm-{lang}.json'), encoding='utf-8'))
-        for old in glob.glob(os.path.join(d, 'out', f'{lang}-*.json')):
-            os.remove(old)
+        # 只覆盖自己的 <lang>-tm.json，绝不删除已翻译的块文件（2026-11-18 试渲染时误删了 Claude 全部译文）
         hit, miss = [], []
         for it in items:
             k = it['role'] + chr(31) + it['text']
@@ -209,6 +230,32 @@ if __name__ == '__main__':
         io.open(os.path.join(d, f'delta-{lang}.json'), 'w', encoding='utf-8', newline='\n').write(
             json.dumps(miss, ensure_ascii=False, indent=1))
         print(f'{series}/{lang}: 记忆库命中 {len(hit)} 条，待补译 {len(miss)} 条')
+    elif cmd == 'tm-chunks':
+        # 记忆库已覆盖的条目不用再翻译：按 delta-<lang>.json 重新分块，块更大以减少代理数量。
+        # 用法：batch.py tm-chunks <series> [每块字符数，默认 14000]
+        series = sys.argv[2]
+        limit = int(sys.argv[3]) if len(sys.argv) > 3 else 14000
+        d = os.path.join(DRAFT, series)
+        delta = json.load(io.open(os.path.join(d, 'delta-ja.json'), encoding='utf-8'))
+        for lang in ('ko', 'es', 'de'):
+            other = json.load(io.open(os.path.join(d, f'delta-{lang}.json'), encoding='utf-8'))
+            if [i['id'] for i in other] != [i['id'] for i in delta]:
+                raise SystemExit(f'各语言的记忆库覆盖不一致（{lang}），不能共用分块')
+        for old in glob.glob(os.path.join(d, 'chunks', '*.json')):
+            os.remove(old)
+        chunks, cur, size = [], [], 0
+        for it in delta:
+            if cur and size + len(it['text']) > limit:
+                chunks.append(cur)
+                cur, size = [], 0
+            cur.append(it)
+            size += len(it['text'])
+        if cur:
+            chunks.append(cur)
+        for i, c in enumerate(chunks):
+            io.open(os.path.join(d, 'chunks', f'{i:02d}.json'), 'w', encoding='utf-8', newline='\n').write(
+                json.dumps(c, ensure_ascii=False, indent=1))
+        print(f'{series}: 待翻译 {len(delta)} 条，{sum(len(i["text"]) for i in delta)} 字符，分 {len(chunks)} 块')
     elif cmd == 'render':
         # 合并译文并回填：每次都先 merge 再 build，保证编号和当前英文源页对得上
         series, lang, slugs = sys.argv[2], sys.argv[3], sys.argv[4:]

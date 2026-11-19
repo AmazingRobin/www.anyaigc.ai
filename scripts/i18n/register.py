@@ -64,7 +64,7 @@ def upgrade_page(lang, slug):
     orig = read(rel)
     langs = present(slug)
     other = 'en' if lang == 'zh' else 'zh'
-    s = B.convert_switches(orig, slug, lang, langs, L.LANGS[other]['hreflang'], drop_body=False)
+    s = B.convert_switches(orig, slug, lang, langs, L.LANGS[other]['hreflang'], drop_body=True)   # 正文里的单个语言链接（如 "X API in English"）有了语言菜单就不再需要
     links = NL.join(f'<link rel="alternate" hreflang="{L.LANGS[c]["hreflang"]}" href="{L.url(c, slug)}">' for c in langs)
     links += f'{NL}<link rel="alternate" hreflang="x-default" href="{L.url("en", slug)}">'
     s = re.sub(r'(?:<link rel="alternate" hreflang="[^"]*" href="[^"]*">\n?)+', lambda m: links + NL, s, count=1)

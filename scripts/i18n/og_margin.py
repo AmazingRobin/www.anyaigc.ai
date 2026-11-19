@@ -25,6 +25,16 @@ def rightmost(path, pad):
     return best + pad
 
 
+def subtitle_collides(path):
+    """副标题折行后会压到标签行：标签行上沿以上 30px 内（y 484-514）、图标左侧（x<900）不应有深色文字。"""
+    im = Image.open(path).convert('L')
+    for y in range(484, 514, 2):
+        for x in range(80, 900, 3):
+            if im.getpixel((x, y)) < 110:
+                return True
+    return False
+
+
 def main():
     args = [a for a in sys.argv[1:] if not a.startswith('--')]
     prefix = args[0] if args else ''
@@ -35,9 +45,9 @@ def main():
             continue
         pad = 22 if re.search(r'-(zh|en)\.png$', f) else 17      # 新语言图的标签内边距更小（og_deepseek.py 的 .r.s）
         r = rightmost(f, pad)
-        ok = r <= WIDTH - MARGIN
+        ok = r <= WIDTH - MARGIN and not subtitle_collides(f)
         bad += not ok
-        print(f'{os.path.basename(f):38s} {r:5d}  {"ok" if ok else "TOO CLOSE TO RIGHT EDGE"}')
+        print(f'{os.path.basename(f):38s} {r:5d}  {"ok" if ok else ("SUBTITLE OVERLAPS CHIPS" if subtitle_collides(f) else "TOO CLOSE TO RIGHT EDGE")}')
     print(f'超出右边距的图：{bad}')
     sys.exit(1 if bad else 0)
 

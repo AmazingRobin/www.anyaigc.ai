@@ -30,6 +30,8 @@ EXACT = {
     'Business <strong>Contracts · invoices</strong>': 'Business <strong>Self-service invoices</strong>',
     'Engineering teams and companies can buy through a standard business process, with support for finance, legal and engineering.':
         'Teams can top up, issue invoices themselves, and work with a dedicated support and technical contact.',
+    'Buy through a standard business process, with support for finance, legal and engineering.':
+        'Top up, issue invoices yourself, and work with a dedicated support and technical contact.',
     'Including China VAT invoices': 'Issue them yourself',
     'Get invoices for every top-up, including Chinese VAT general and special invoices for companies in mainland China.':
         'Issue an invoice in the console for the amount you actually topped up, whenever you need one.',
@@ -37,7 +39,22 @@ EXACT = {
 
 # 描述、关键词等里的短语（正则，对每个单元和结构化数据字符串都执行）
 RULES = [
+    (r'<strong>Contracts · invoices</strong>', '<strong>Self-service invoices</strong>'),
+    (r'(<strong>Invoices</strong>)contracts', r'\1self-service'),
+    (r', contracts, invoices\.', ', self-service invoices.'),
+    (r',? (?:bank transfer and (?:VAT )?[Ii]nvoices|(?:VAT )?invoices and bank transfer)\.', ', self-service invoices.'),
+    (r'Alipay, USDT or corporate bank transfer', 'Alipay or USDT'),
+    (r',Gemini API bank transfer(?=,)', ''),
+    (r'Issued for the actual amount paid, including Chinese VAT general and special invoices\.',
+     'Issue invoices yourself in the console for the amount you actually topped up.'),
+    (r'Invoices for every top-up, including Chinese VAT general and special invoices, based on the amount paid\.',
+     'Issue an invoice yourself in the console for each top-up, based on the amount paid.'),
+    (r'(?:with )?contracts and (?:invoices|Invoices|invoicing)\.', 'self-service invoices.'),
+    (r'Contracts, invoices\.', 'Self-service invoices.'),
+    (r',? (?:and )?companies can pay by bank transfer and get [^.]*\.', '.'),
+    (r'concurrency, contracts, bank transfer and invoices\.', 'concurrency and self-service invoices.'),
     (r'\s*Companies can pay by bank transfer and get [^.]*\.', ''),
+    (r'(?:Bank transfer, contracts, invoices|Contracts, bank transfer and invoices(?: for teams)?|Invoices and contracts(?: for teams)?)\.', 'Self-service invoices.'),
     (r'Invoices and contracts for teams\.', 'Self-service invoices.'),
     (r'Invoices and contracts\.', 'Self-service invoices.'),
     (r'Bank transfer, VAT invoices\.', 'Self-service invoices.'),
@@ -81,9 +98,18 @@ def find_section(root, src, sid):
 
 def climb_card(node):
     n = node
-    while n is not None and n.tag not in ('li', 'article'):
+    while n is not None:
+        if n.tag in ('li', 'article'):
+            return n
+        if n.tag == 'div' and n.parent is not None:
+            # Suno 等页面的卡片是 <div class="s-glass ...">：同一父元素下有 2 个以上同 class 的 div 才算卡片
+            m = re.search(r'class="([^"]*)"', n.attrs or '')
+            same = [k for k in n.parent.kids if k.tag == 'div' and re.search(r'class="([^"]*)"', k.attrs or '')
+                    and re.search(r'class="([^"]*)"', k.attrs).group(1) == (m.group(1) if m else None)]
+            if m and len(same) > 1:
+                return n
         n = n.parent
-    return n
+    return None
 
 
 def drop_cards(src):
@@ -174,7 +200,7 @@ def sync_faq(src):
     return src
 
 
-def rewrite_text(src):
+def rewrite_text(src, rules=None):
     """整句替换 + 短语规则，作用于所有翻译单元和 JSON-LD 字符串。"""
     repl = []
     for s in H.collect(src):
@@ -182,7 +208,7 @@ def rewrite_text(src):
             continue
         t = s.text
         new = EXACT.get(t, t)
-        for pat, rep in RULES:
+        for pat, rep in (rules or RULES):
             new = re.sub(pat, rep, new)
         if new != t:
             repl.append((s.s, s.e, new))
@@ -197,7 +223,7 @@ def rewrite_text(src):
             ch = False
             for p, v in paths:
                 new = v
-                for pat, rep in RULES:
+                for pat, rep in (rules or RULES):
                     new = re.sub(pat, rep, new)
                 if new != v:
                     H.set_path(data, p, new)
@@ -208,6 +234,43 @@ def rewrite_text(src):
                                   separators=None if multi else (', ', ': '))
                 out.append((n.so, n.ec, NL + text + NL if multi else text))
     return H.apply_spans(src, out)
+
+
+# 非中文页不写 China-access 卖点（记忆 en-no-china-access-claim）。这里只处理翻译源，/en/ 页面本身不动。
+CHINA_RULES = [
+    (r'Direct access from mainland China and unlimited concurrency\.', 'Unlimited concurrency.'),
+    (r',? with direct access from mainland China(?: and consolidated invoicing for companies)?', ''),
+    (r'\s*Direct access from mainland China\.', ''),
+    (r'Call AnyAIGC directly from mainland China', 'Call AnyAIGC directly'),
+    (r'directly through the AnyAIGC domain from mainland China', 'directly through the AnyAIGC domain'),
+    (r', and it works directly from mainland China\.', '.'),
+]
+
+
+def drop_mainland_faq(src):
+    """删掉「能否从中国大陆调用」那条 FAQ，并按剩余 FAQ 重建 JSON-LD。"""
+    root = H.parse(src)
+    sec = find_section(root, src, 'faq')
+    if sec is None:
+        return src
+    repl = []
+    for d in [n for n in H.walk(sec) if n.tag == 'details']:
+        summ = next((k for k in d.kids if k.tag == 'summary'), None)
+        if summ is not None and re.search(r'mainland China', inner_text(src, summ)):
+            repl.append(line_span(src, d) + ('',))
+    return sync_faq(H.apply_spans(src, repl)) if repl else src
+
+
+def strip_china_access(src):
+    """翻译源 = 英文页 + 去掉大陆可访问的卖点。"""
+    return sync_faq(rewrite_text(drop_mainland_faq(src), CHINA_RULES + TYPO_RULES))
+
+
+# 英文页里残缺的发布日期（scripts/seo_specs_data.json 的 facts_en 有串字：「2026.2.」「2026.5 recommended.」）。
+# 中文页是正常的，所以只在翻译源里清掉，不改 /en/ 页面和生成数据。
+TYPO_RULES = [
+    (r'(was released on [A-Z][a-z]+ \d{1,2}, 20\d\d)\.\d(?: recommended)?\.?', r'\1.'),
+]
 
 
 def drop_pay_row_item(src):

@@ -214,8 +214,15 @@ def dump(spans):
     return {'units': units, 'ld': ld}
 
 
-def extract(slug):
+def source(slug):
+    """翻译源 = 英文页去掉"中国大陆可访问"卖点（非中文页不写，见记忆 en-no-china-access-claim）。
+    extract / batch.prepare / build 三处都必须用它，单元编号才对得上。"""
     src = io.open(os.path.join(ROOT, 'en', 'models', slug + '.html'), encoding='utf-8').read()
+    return O.strip_china_access(src)
+
+
+def extract(slug):
+    src = source(slug)
     out = dump(H.collect(src))
     d = os.path.join(DRAFT, slug)
     os.makedirs(d, exist_ok=True)
@@ -224,22 +231,8 @@ def extract(slug):
     print(f'{slug}: {len(out["units"])} 个文本单元，{len(out["ld"])} 条结构化数据')
 
 
-def mainland_faq_ranges(src):
-    """英文源页里「能否从中国大陆调用」那条 FAQ 的整块区间。"""
-    root = H.parse(src)
-    sec = O.find_section(root, src, 'faq')
-    out = []
-    if sec is None:
-        return out
-    for d in [n for n in H.walk(sec) if n.tag == 'details']:
-        summ = next((k for k in d.kids if k.tag == 'summary'), None)
-        if summ is not None and re.search(r'mainland China', O.inner_text(src, summ)):
-            out.append(O.line_span(src, d))
-    return out
-
-
 def build(slug, lang):
-    src = io.open(os.path.join(ROOT, 'en', 'models', slug + '.html'), encoding='utf-8').read()
+    src = source(slug)
     spans = H.collect(src)
     base = dump(spans)
     tr = json.load(io.open(os.path.join(DRAFT, slug, lang + '.json'), encoding='utf-8'))
@@ -265,10 +258,6 @@ def build(slug, lang):
             if s.kind == 'attr':
                 text = text.replace('&', '&amp;').replace('"', '&quot;').replace('<', '&lt;')
             repl.append((s.s, s.e, text))
-    # 新语言页不写"能否从中国大陆调用"这类卖点（项目规则：非中文页不写 China-access），整条 FAQ 删除
-    drop = mainland_faq_ranges(src)
-    repl = [r for r in repl if not any(a <= r[0] and r[1] <= b for a, b in drop)]
-    repl += [(a, b, '') for a, b in drop]
     # FAQPage 按可见 FAQ 重建，保证两处一致
     page = O.sync_faq(localize(H.apply_spans(src, repl), slug, lang))
     dest = os.path.join(ROOT, lang, 'models', slug + '.html')

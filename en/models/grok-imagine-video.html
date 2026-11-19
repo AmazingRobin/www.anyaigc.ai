@@ -189,10 +189,10 @@
         },
         {
           "@type": "Question",
-          "name": "Do I need an xAI account? Does it work from mainland China?",
+          "name": "Do I need an xAI account?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "No xAI account needed. Sign up on AnyAIGC to get an API key, no overseas credit card required. The endpoint is https://anyaigc.ai, reachable directly from mainland China, and the same key works with 300+ other models on the platform."
+            "text": "No xAI account needed. Sign up on AnyAIGC to get an API key, no overseas credit card required. The endpoint is https://anyaigc.ai, and the same key works with 300+ other models on the platform."
           }
         },
         {
@@ -413,7 +413,7 @@
       <h2 class="o-h2 o-reveal" id="why-title">Why call it through AnyAIGC</h2>
       <ul class="gk-why">
         <li class="o-reveal"><h3>One key, 300+ models</h3><p>Grok Imagine, Sora, Veo, Kling and other video models share one API key and one balance with chat and image models.</p></li>
-        <li class="o-reveal"><h3>Direct access from China</h3><p>The endpoint <code>https://anyaigc.ai</code> works on mainland networks, no xAI account needed.</p></li>
+        <li class="o-reveal"><h3>No xAI account needed</h3><p>The endpoint <code>https://anyaigc.ai</code> needs no xAI account.</p></li>
         <li class="o-reveal"><h3>Below xAI list price</h3><p>Billed per second, with every tier about 40% below xAI’s list price and every charge visible in the console.</p></li>
         <li class="o-reveal"><h3>Unlimited concurrency</h3><p>Every account runs without a concurrency cap, so batch jobs don’t wait for approval.</p></li>
       </ul>
@@ -563,7 +563,7 @@ curl https://anyaigc.ai/v1/videos/edits \
         <details><summary><h3>Is grok-imagine-video being retired?</h3></summary><div class="o-ans"><p>Not at the moment. What xAI retired on November 2, 2026 was the image model <code>grok-imagine-image-quality</code>; the video models are not affected. xAI’s docs position the first-generation video model for editing and extending videos.</p></div></details>
         <details><summary><h3>Why don’t I get the video back right away?</h3></summary><div class="o-ans"><p>Video generation is asynchronous. Submitting returns a job ID; poll <code>GET /v1/videos/{request_id}</code> about every 10 seconds and read the video link once the job completes. Most jobs take tens of seconds to a few minutes. The link is temporary, so download and store the file promptly.</p></div></details>
         <details><summary><h3>Do the videos have sound?</h3></summary><div class="o-ans"><p>Yes. Grok Imagine generates picture and sound together, including sound effects, ambience and dialogue, so you don’t need a separate voiceover. Video 1.5 and 1.5 Lite support lip-synced speech.</p></div></details>
-        <details><summary><h3>Do I need an xAI account? Does it work from mainland China?</h3></summary><div class="o-ans"><p>No xAI account needed. Sign up on AnyAIGC to get an API key, no overseas credit card required. The endpoint is <code>https://anyaigc.ai</code>, reachable directly from mainland China, and the same key works with 300+ other models on the platform.</p></div></details>
+        <details><summary><h3>Do I need an xAI account?</h3></summary><div class="o-ans"><p>No xAI account needed. Sign up on AnyAIGC to get an API key, no overseas credit card required. The endpoint is <code>https://anyaigc.ai</code>, and the same key works with 300+ other models on the platform.</p></div></details>
         <details><summary><h3>Is there a concurrency limit?</h3></summary><div class="o-ans"><p>AnyAIGC sets no concurrency limit on the Grok Video models. Every account gets this by default, so batch jobs don’t need a quota request.</p></div></details>
         <details><summary><h3>Can AnyAIGC issue invoices, including VAT special invoices?</h3></summary><div class="o-ans"><p>Yes. AnyAIGC issues invoices for every top-up, including Chinese VAT general and special invoices based on the amount you actually top up. Send your billing details to support to get one.</p></div></details>
         <details><summary><h3>Which payment methods are supported?</h3></summary><div class="o-ans"><p>You can top up with WeChat Pay, Alipay, USDT or a credit card. Companies can also pay by bank transfer and get VAT general or special invoices. Your balance is in USD and works across every model on the platform.</p></div></details>

@@ -11,12 +11,20 @@
 <link rel="canonical" href="https://www.anyaigc.ai/zh/models/claude-haiku-5-5">
 <link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/claude-haiku-5-5">
 <link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/claude-haiku-5-5">
+<link rel="alternate" hreflang="ja" href="https://www.anyaigc.ai/ja/models/claude-haiku-5-5">
+<link rel="alternate" hreflang="ko" href="https://www.anyaigc.ai/ko/models/claude-haiku-5-5">
+<link rel="alternate" hreflang="es" href="https://www.anyaigc.ai/es/models/claude-haiku-5-5">
+<link rel="alternate" hreflang="de" href="https://www.anyaigc.ai/de/models/claude-haiku-5-5">
 <link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/claude-haiku-5-5">
 <link rel="icon" href="/favicon.ico">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="AnyAIGC">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:locale:alternate" content="ko_KR">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:locale:alternate" content="de_DE">
 <meta property="og:url" content="https://www.anyaigc.ai/zh/models/claude-haiku-5-5">
 <meta property="og:title" content="Claude Haiku 5.5 API 价格与接入｜约官方 1.2 折 - AnyAIGC">
 <meta property="og:description" content="兼容 Anthropic 原生 /v1/messages，claude-haiku-5-5 输入 $0.0119/1M、输出 $0.0596/1M，并发不限，适合批量分类、实时客服和子 Agent。支持对公转账、合同与增值税专票。">
@@ -29,6 +37,7 @@
 <meta name="twitter:description" content="兼容 Anthropic 原生 /v1/messages，claude-haiku-5-5 输入 $0.0119/1M、输出 $0.0596/1M，并发不限，适合批量分类、实时客服和子 Agent。支持对公转账、合同与增值税专票。">
 <meta name="twitter:image" content="https://www.anyaigc.ai/assets/og/claude-haiku-5-5-zh.png">
 <link rel="stylesheet" href="/assets/models/scrollbar.css?v=20261115">
+<link rel="stylesheet" href="/assets/models/lang-menu.css?v=20261117c">
 <link rel="stylesheet" href="/assets/models/claude.css?v=20261022f">
 <script type="application/ld+json">
 {
@@ -306,7 +315,7 @@
     </nav>
     <a class="o-brand" href="/" aria-label="AnyAIGC 首页">AnyAIGC</a>
     <ul class="o-nav-right">
-      <li><a class="o-pill" href="/en/models/claude-haiku-5-5" hreflang="en" lang="en">English</a></li>
+      <li><details class="lang-menu"><summary aria-label="Language: 中文">ZH</summary><ul class="lang-menu-list"><li><a href="/en/models/claude-haiku-5-5" hreflang="en" lang="en">English</a></li><li><a href="/ja/models/claude-haiku-5-5" hreflang="ja" lang="ja">日本語</a></li><li><a href="/ko/models/claude-haiku-5-5" hreflang="ko" lang="ko">한국어</a></li><li><a href="/es/models/claude-haiku-5-5" hreflang="es" lang="es">Español</a></li><li><a href="/de/models/claude-haiku-5-5" hreflang="de" lang="de">Deutsch</a></li></ul></details></li>
       <li><a class="o-pill" href="https://anyaigc.ai/console">登录</a></li>
       <li><a class="o-pill o-pill-dark" href="https://anyaigc.ai/register?aff=oOK7&channel=c_wpduopc9">免费注册</a></li>
     </ul>
@@ -640,7 +649,7 @@ curl https://anyaigc.ai/v1/messages \
   </section>
 
   <!-- FAQ -->
-  <section class="o-section" id="spec-unique" aria-labelledby="spec-unique-title"><div class="o-wrap o-col"><p class="o-kicker">规格</p><h2 class="o-h2" id="spec-unique-title">这个型号的规格与选型</h2><p>Anthropic 将 Claude Haiku 5.5 定位为面向分类、路由、抽取和子代理等高并发、对延迟敏感的任务，于 2026 年 10 月 7 日发布。</p><p>官方标注的相对延迟为“最快”，是当前在售型号中最快的一档。</p><p>支持 100 万 tokens 上下文和最多 12.8 万 tokens 输出，支持自适应思考，effort 默认值为 medium。</p><p>它使用 Claude 4.7 起的新分词器，同样的文本比在 Claude Haiku 4.5 上多约 30% 的 tokens。</p><p>本页价格为：输入 $0.0119、输出 $0.0596、5 分钟缓存写入 $0.0149、1 小时缓存写入 $0.0238，与上方价格表一致。</p><p>对比 <a href="/zh/models/claude-sonnet-5-5">claude-sonnet-5-5</a>：与 Claude Sonnet 5.5 相比，两者上下文和最大输出相同，Haiku 5.5 的相对延迟为“最快”（Sonnet 5.5 为“快”），默认 effort 为 medium（Sonnet 5.5 为 high）。</p><p class="spec-note">规格来自厂商官方资料（<a href="https://platform.claude.com/docs/en/models/haiku-5-5/overview">platform.claude.com</a>）；价格以本页表格为准，模型广场的实时价格优先。</p></div></section>
+  <section class="o-section" id="spec-unique" aria-labelledby="spec-unique-title"><div class="o-wrap o-col"><h2 class="o-h2" id="spec-unique-title">这个型号的规格与选型</h2><p>Anthropic 将 Claude Haiku 5.5 定位为面向分类、路由、抽取和子代理等高并发、对延迟敏感的任务，于 2026 年 10 月 7 日发布。</p><p>官方标注的相对延迟为“最快”，是当前在售型号中最快的一档。</p><p>支持 100 万 tokens 上下文和最多 12.8 万 tokens 输出，支持自适应思考，effort 默认值为 medium。</p><p>它使用 Claude 4.7 起的新分词器，同样的文本比在 Claude Haiku 4.5 上多约 30% 的 tokens。</p><p>本页价格为：输入 $0.0119、输出 $0.0596、5 分钟缓存写入 $0.0149、1 小时缓存写入 $0.0238，与上方价格表一致。</p><p>对比 <a href="/zh/models/claude-sonnet-5-5">claude-sonnet-5-5</a>：与 Claude Sonnet 5.5 相比，两者上下文和最大输出相同，Haiku 5.5 的相对延迟为“最快”（Sonnet 5.5 为“快”），默认 effort 为 medium（Sonnet 5.5 为 high）。</p><p class="spec-note">规格来自厂商官方资料（<a href="https://platform.claude.com/docs/en/models/haiku-5-5/overview">platform.claude.com</a>）；价格以本页表格为准，模型广场的实时价格优先。</p></div></section>
 <section class="o-section" id="faq" aria-labelledby="faq-title">
     <div class="o-wrap o-col">
       <h2 class="o-h2 o-reveal" id="faq-title">常见问题</h2>
@@ -678,7 +687,6 @@ curl https://anyaigc.ai/v1/messages \
       <ul class="o-related" aria-label="更多">
         <li><a class="o-pill" href="/zh/models/">全部模型专题</a></li>
         <li><a class="o-pill" href="https://anyaigc.ai/pricing">模型广场</a></li>
-        <li><a class="o-pill" href="/en/models/claude-haiku-5-5" hreflang="en" lang="en">Claude Haiku 5.5 API in English</a></li>
       </ul>
     </div>
   </section>
@@ -719,11 +727,12 @@ curl https://anyaigc.ai/v1/messages \
     </div>
     <div class="o-foot-bottom">
       <p>&copy; 2026 AnyAIGC。Claude 是 Anthropic 的商标。AnyAIGC 是独立的 API 服务商，与 Anthropic 无隶属或合作关系。</p>
-      <a class="o-pill" href="/en/models/claude-haiku-5-5" hreflang="en" lang="en">English</a>
+      <details class="lang-menu lang-menu--foot"><summary aria-label="Language: 中文">中文</summary><ul class="lang-menu-list"><li><a href="/en/models/claude-haiku-5-5" hreflang="en" lang="en">English</a></li><li><a href="/ja/models/claude-haiku-5-5" hreflang="ja" lang="ja">日本語</a></li><li><a href="/ko/models/claude-haiku-5-5" hreflang="ko" lang="ko">한국어</a></li><li><a href="/es/models/claude-haiku-5-5" hreflang="es" lang="es">Español</a></li><li><a href="/de/models/claude-haiku-5-5" hreflang="de" lang="de">Deutsch</a></li></ul></details>
     </div>
   </div>
 </footer>
 
 <script src="/assets/models/claude.js?v=20261022e" defer></script>
+<script defer src="/assets/models/lang-menu.js?v=20261117c"></script>
 </body>
 </html>

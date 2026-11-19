@@ -11,12 +11,20 @@
 <link rel="canonical" href="https://www.anyaigc.ai/zh/models/claude">
 <link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/claude">
 <link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/claude">
+<link rel="alternate" hreflang="ja" href="https://www.anyaigc.ai/ja/models/claude">
+<link rel="alternate" hreflang="ko" href="https://www.anyaigc.ai/ko/models/claude">
+<link rel="alternate" hreflang="es" href="https://www.anyaigc.ai/es/models/claude">
+<link rel="alternate" hreflang="de" href="https://www.anyaigc.ai/de/models/claude">
 <link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/claude">
 <link rel="icon" href="/favicon.ico">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="AnyAIGC">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:locale:alternate" content="ko_KR">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:locale:alternate" content="de_DE">
 <meta property="og:url" content="https://www.anyaigc.ai/zh/models/claude">
 <meta property="og:title" content="Claude API 价格与接入｜最低约官方 1.2 折 - AnyAIGC">
 <meta property="og:description" content="一个 Key 调用 Opus、Sonnet、Haiku、Fable 全系 Claude 模型。兼容 Anthropic /v1/messages，约官方价 1.2 折起，国内直连，支持对公转账与增值税专票。">
@@ -29,6 +37,7 @@
 <meta name="twitter:description" content="一个 Key 调用 Opus、Sonnet、Haiku、Fable 全系 Claude 模型。兼容 Anthropic /v1/messages，约官方价 1.2 折起，国内直连，支持对公转账与增值税专票。">
 <meta name="twitter:image" content="https://www.anyaigc.ai/assets/og/claude-zh.png">
 <link rel="stylesheet" href="/assets/models/scrollbar.css?v=20261115">
+<link rel="stylesheet" href="/assets/models/lang-menu.css?v=20261117c">
 <link rel="stylesheet" href="/assets/models/claude.css?v=20261022f">
 <link rel="stylesheet" href="/assets/models/claude-hub.css?v=20261024">
 <script type="application/ld+json">
@@ -422,7 +431,7 @@
         </ul>
       </nav>
       <div class="p-nav-cta">
-        <a class="o-pill" href="/en/models/claude" hreflang="en" lang="en">English</a>
+        <details class="lang-menu"><summary aria-label="Language: 中文">ZH</summary><ul class="lang-menu-list"><li><a href="/en/models/claude" hreflang="en" lang="en">English</a></li><li><a href="/ja/models/claude" hreflang="ja" lang="ja">日本語</a></li><li><a href="/ko/models/claude" hreflang="ko" lang="ko">한국어</a></li><li><a href="/es/models/claude" hreflang="es" lang="es">Español</a></li><li><a href="/de/models/claude" hreflang="de" lang="de">Deutsch</a></li></ul></details>
         <a class="o-btn p-btn-outline" href="https://anyaigc.ai/console">登录</a>
         <a class="o-btn o-btn-dark" href="https://anyaigc.ai/register?aff=oOK7&channel=c_wpduopc9">免费注册</a>
       </div>
@@ -789,7 +798,6 @@ print(message.content[<span class="k">0</span>].text)</code></pre>
         <li><a class="o-pill" href="https://anyaigc.ai/pricing">模型广场</a></li>
         <li><a class="o-pill" href="/zh/models/claude-opus-5-5">Claude Opus 5.5</a></li>
         <li><a class="o-pill" href="/zh/models/claude-sonnet-5-5">Claude Sonnet 5.5</a></li>
-        <li><a class="o-pill" href="/en/models/claude" hreflang="en" lang="en">Claude API in English</a></li>
       </ul>
     </div>
   </section>
@@ -831,11 +839,12 @@ print(message.content[<span class="k">0</span>].text)</code></pre>
     </div>
     <div class="o-foot-bottom">
       <p>&copy; 2026 AnyAIGC。Claude 是 Anthropic 的商标。AnyAIGC 是独立的 API 服务商，与 Anthropic 无隶属或合作关系。</p>
-      <a class="o-pill" href="/en/models/claude" hreflang="en" lang="en">English</a>
+      <details class="lang-menu lang-menu--foot"><summary aria-label="Language: 中文">中文</summary><ul class="lang-menu-list"><li><a href="/en/models/claude" hreflang="en" lang="en">English</a></li><li><a href="/ja/models/claude" hreflang="ja" lang="ja">日本語</a></li><li><a href="/ko/models/claude" hreflang="ko" lang="ko">한국어</a></li><li><a href="/es/models/claude" hreflang="es" lang="es">Español</a></li><li><a href="/de/models/claude" hreflang="de" lang="de">Deutsch</a></li></ul></details>
     </div>
   </div>
 </footer>
 
 <script src="/assets/models/claude.js?v=20261022e" defer></script>
+<script defer src="/assets/models/lang-menu.js?v=20261117c"></script>
 </body>
 </html>
