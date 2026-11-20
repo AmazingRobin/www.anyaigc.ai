@@ -16,7 +16,21 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, '.playwright-mcp', 'og')
 BRAND = 'AnyAIGC'  # 区分大小写，不要转大写
 
-ENT = {'zh': '对公 · 专票', 'en': 'Contracts · invoices'}
+NEW = ('ja', 'ko', 'es', 'de')
+LANGATTR = {'zh': 'zh-CN', 'en': 'en', 'ja': 'ja', 'ko': 'ko', 'es': 'es', 'de': 'de'}
+# 英文图用海外口径：自助开票（2026-11-17 起非中文口径）；中文图保持「对公 · 专票」
+ENT = {'zh': '对公 · 专票', 'en': 'Self-service invoices', 'ja': '請求書を自分で発行', 'ko': '인보이스 직접 발급',
+       'es': 'Facturas en consola', 'de': 'Rechnungen im Konto'}
+# 新语言标签词表，键是英文原文；缺词直接 KeyError，不回退英文
+TXT = {
+    'Claude Code': {'ja': 'Claude Code', 'ko': 'Claude Code', 'es': 'Claude Code', 'de': 'Claude Code'},
+    'Unlimited RPM': {'ja': '同時実行数の上限なし', 'ko': '동시 실행 제한 없음', 'es': 'Sin límite de RPM', 'de': 'Kein RPM-Limit'},
+    '1M context': {'ja': 'コンテキスト長1M', 'ko': '1M 컨텍스트', 'es': '1M de contexto', 'de': '1M Kontext'},
+    '256K context': {'ja': 'コンテキスト長256K', 'ko': '256K 컨텍스트', 'es': '256K de contexto', 'de': '256K Kontext'},
+    'Image input': {'ja': '画像入力', 'ko': '이미지 입력', 'es': 'Entrada de imágenes', 'de': 'Bildeingabe'},
+}
+PRICE_FMT = {'ja': '{p} / 1M 入力', 'ko': '{p} / 1M 입력', 'es': '{p} / 1M entrada', 'de': '{p} / 1M Eingabe'}
+PRICE_FROM = {'ja': '{p} / 1M 入力から', 'ko': '{p} / 1M 입력부터', 'es': 'Desde {p} / 1M entrada', 'de': 'Ab {p} / 1M Eingabe'}
 # 每个页面：标题前半、渐变关键词、一句卖点、价格标签、其余标签
 PAGES = {
     'glm': ('GLM', 'API',
@@ -37,7 +51,30 @@ PAGES = {
                 {'zh': ['1M 上下文', '并发不限'], 'en': ['1M context', 'Unlimited RPM']}),
 }
 
-TPL = '''<!doctype html><html><head><meta charset="utf-8"><style>
+SUB_I18N = {
+    'glm': {'ja': 'GLM-5.3、GLM-5.3-Flash、GLM-5.2 を1つのキーで', 'ko': 'GLM-5.3, GLM-5.3-Flash, GLM-5.2를 키 하나로',
+            'es': 'GLM-5.3, GLM-5.3-Flash y GLM-5.2 con una sola clave', 'de': 'GLM-5.3, GLM-5.3-Flash und GLM-5.2 mit einem Key'},
+    'glm-5.3': {'ja': 'Zhipuの最新フラッグシップ、約30%オフ', 'ko': 'Zhipu의 최신 플래그십, 약 30% 할인',
+                'es': 'El buque insignia más reciente de Zhipu, ~30 % menos', 'de': 'Zhipus neuestes Flaggschiff, rund 30 % Rabatt'},
+    'glm-5.3-flash': {'ja': 'ネイティブマルチモーダルで低コスト、約60%オフ', 'ko': '네이티브 멀티모달, 저렴한 가격, 약 60% 할인',
+                      'es': 'Multimodal nativo y de bajo coste, ~60 % menos', 'de': 'Nativ multimodal und günstig, rund 60 % Rabatt'},
+    'glm-5.2': {'ja': '長期タスク向けフラッグシップ、約30%オフ', 'ko': '장기 작업용 플래그십, 약 30% 할인',
+                'es': 'Buque insignia para tareas largas, ~30 % menos', 'de': 'Flaggschiff für lange Aufgaben, rund 30 % Rabatt'},
+}
+
+
+def loc(slug, lang, sub, price, tags):
+    """返回该语言的 (副标题, 价格标签, 其余标签)；新语言缺词直接报错，不回退英文。"""
+    if lang not in NEW:
+        return sub[lang], price[lang], tags[lang]
+    en = price['en']
+    p = '$' + en.replace('From ', '').split(' / ')[0].lstrip('$')
+    fmt = PRICE_FROM if en.startswith('From ') else PRICE_FMT
+    # 百分号前用不换行空格，避免 “60 %” 被折行拆开
+    return SUB_I18N[slug][lang].replace(' %', ' %'), fmt[lang].format(p=p), [TXT[t][lang] for t in tags['en']]
+
+
+TPL = '''<!doctype html><html lang="@LANG"><head><meta charset="utf-8"><style>
 *{box-sizing:border-box}
 html{overflow:hidden;background:#f7f8fa}
 body{margin:0;width:1200px;height:630px;background:#f7f8fa;color:#131212;font-family:-apple-system,"Segoe UI",Roboto,Arial,"PingFang SC","Microsoft YaHei",sans-serif;position:relative;overflow:hidden}
@@ -54,7 +91,11 @@ p{margin:28px 0 0;font-size:34px;line-height:1.3;font-weight:400;color:#41464f;m
 .r{position:absolute;left:80px;bottom:64px;display:flex;gap:12px}
 .r span{padding:12px 20px;border-radius:999px;background:rgba(255,255,255,.8);border:1.5px solid #fff;font-size:24px;color:#41464f}
 .r .d{background:#131212;color:#fff;border-color:#131212}
-</style></head><body><div class="glow"></div>
+body.n{font-family:Arial,"Yu Gothic UI","Yu Gothic","Malgun Gothic","Segoe UI",sans-serif}
+.n p{font-size:30px;max-width:790px}
+.k p{word-break:keep-all}
+.n .r span{font-size:21px;padding:11px 17px;white-space:nowrap}
+</style></head><body class="@BC"><div class="glow"></div>
 <div class="mark">@LOGO</div>
 <div class="c"><div class="b">@SMALL@BRAND<em>· Zhipu GLM</em></div><h1>@NAME<span>@KEY</span></h1><p>@SUB</p></div>
 <div class="r">@CHIPS</div></body></html>'''
@@ -68,16 +109,18 @@ def chrome():
 def main():
     os.makedirs(OUT, exist_ok=True)
     names = []
-    for lang in ('zh', 'en'):
+    only = [a.split('=', 1)[1].split(',') for a in sys.argv[1:] if a.startswith('--langs=')]
+    for lang in (only[0] if only else ('zh', 'en')):
         for slug, (name, key, sub, price, tags) in PAGES.items():
-            if not os.path.exists(os.path.join(ROOT, lang, 'models', slug + '.html')):
+            if not os.path.exists(os.path.join(ROOT, 'en' if lang in NEW else lang, 'models', slug + '.html')):
                 continue
-            chips = f'<span class="d">{price[lang]}</span>' + ''.join(f'<span>{t}</span>' for t in tags[lang] + [ENT[lang]])
+            sub_l, price_l, tags_l = loc(slug, lang, sub, price, tags)
+            chips = f'<span class="d">{price_l}</span>' + ''.join(f'<span>{t}</span>' for t in tags_l + [ENT[lang]])
             fs = '132' if len(name + key) <= 10 else '116'
             # 总览页标题 "GLM API" 中间要空格，型号页 "GLM-5.3" 不要
             nm = name + ' ' if slug == 'glm' else name
             html = (TPL.replace('@LOGO', logo(cls='')).replace('@SMALL', logo(cls='')).replace('@BRAND', BRAND).replace('@NAME', nm)
-                    .replace('@KEY', key).replace('@SUB', sub[lang]).replace('@CHIPS', chips).replace('@FS', fs))
+                    .replace('@KEY', key).replace('@SUB', sub_l).replace('@LANG', LANGATTR[lang]).replace('@BC', ('n' + (' k' if lang == 'ko' else '')) if lang in NEW else '').replace('@CHIPS', chips).replace('@FS', fs))
             n = f'{slug}-{lang}'
             io.open(os.path.join(OUT, n + '.html'), 'w', encoding='utf-8').write(html)
             names.append(n)
@@ -94,6 +137,7 @@ def main():
         from PIL import Image
         Image.open(png).crop((0, 0, 1200, 630)).save(png, optimize=True)
         print('png', os.path.relpath(png, ROOT), os.path.getsize(png) if os.path.exists(png) else 'MISSING')
+        os.remove(os.path.join(OUT, n + '.html'))
 
 
 if __name__ == '__main__':

@@ -65,7 +65,7 @@ def apply_rules(t, rules):
     return t
 
 
-KEYWORD_DROP = re.compile(r'^(?:OpenAI|Gemini) API China$')
+KEYWORD_DROP = re.compile(r'^(?:(?:OpenAI|Gemini) API China|GPT API 中转|OpenAI API 国内)$')
 META_KW = re.compile(r'(<meta name="keywords" content=")([^"]*)(")')
 
 

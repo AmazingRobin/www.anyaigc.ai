@@ -16,7 +16,21 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, '.playwright-mcp', 'og')
 BRAND = 'AnyAIGC'  # 区分大小写，不要转大写
 
-ENT = {'zh': '对公 · 专票', 'en': 'Contracts · invoices'}
+NEW = ('ja', 'ko', 'es', 'de')
+LANGATTR = {'zh': 'zh-CN', 'en': 'en', 'ja': 'ja', 'ko': 'ko', 'es': 'es', 'de': 'de'}
+# 英文图用海外口径：自助开票（2026-11-17 起非中文口径）；中文图保持「对公 · 专票」
+ENT = {'zh': '对公 · 专票', 'en': 'Self-service invoices', 'ja': '請求書を自分で発行', 'ko': '인보이스 직접 발급',
+       'es': 'Facturas en consola', 'de': 'Rechnungen im Konto'}
+# 新语言标签词表，键是英文原文；缺词直接 KeyError，不回退英文
+TXT = {
+    'Claude Code': {'ja': 'Claude Code', 'ko': 'Claude Code', 'es': 'Claude Code', 'de': 'Claude Code'},
+    'Unlimited RPM': {'ja': '同時実行数の上限なし', 'ko': '동시 실행 제한 없음', 'es': 'Sin límite de RPM', 'de': 'Kein RPM-Limit'},
+    '1M context': {'ja': 'コンテキスト長1M', 'ko': '1M 컨텍스트', 'es': '1M de contexto', 'de': '1M Kontext'},
+    '256K context': {'ja': 'コンテキスト長256K', 'ko': '256K 컨텍스트', 'es': '256K de contexto', 'de': '256K Kontext'},
+    'Image input': {'ja': '画像入力', 'ko': '이미지 입력', 'es': 'Entrada de imágenes', 'de': 'Bildeingabe'},
+}
+PRICE_FMT = {'ja': '{p} / 1M 入力', 'ko': '{p} / 1M 입력', 'es': '{p} / 1M entrada', 'de': '{p} / 1M Eingabe'}
+PRICE_FROM = {'ja': '{p} / 1M 入力から', 'ko': '{p} / 1M 입력부터', 'es': 'Desde {p} / 1M entrada', 'de': 'Ab {p} / 1M Eingabe'}
 # 每个页面：标题前半、蓝色关键词、一句卖点、价格标签、其余标签
 PAGES = {
     'kimi': ('Kimi', 'API',
@@ -41,7 +55,32 @@ PAGES = {
                   {'zh': ['256K 上下文', '并发不限'], 'en': ['256K context', 'Unlimited RPM']}),
 }
 
-TPL = '''<!doctype html><html><head><meta charset="utf-8"><style>
+SUB_I18N = {
+    'kimi': {'ja': 'K3.1 Pro、K3、K2.7 Code、K2.6 を1つのキーで', 'ko': 'K3.1 Pro, K3, K2.7 Code, K2.6을 키 하나로',
+             'es': 'K3.1 Pro, K3, K2.7 Code y K2.6 con una sola clave', 'de': 'K3.1 Pro, K3, K2.7 Code und K2.6 mit einem Key'},
+    'kimi-k3.1-pro': {'ja': 'Kimi K3.1 シリーズ第1弾、約60%オフ', 'ko': 'Kimi K3.1 시리즈 첫 모델, 약 60% 할인',
+                      'es': 'El primer modelo de Kimi K3.1, ~60 % menos', 'de': 'Das erste Kimi-K3.1-Modell, rund 60 % Rabatt'},
+    'kimi-k3': {'ja': '2.8Tパラメータのオープンウェイトモデル、約60%オフ', 'ko': '2.8T 파라미터 오픈 웨이트 모델, 약 60% 할인',
+                'es': 'Modelo de pesos abiertos de 2.8T parámetros, ~60 % menos', 'de': 'Open-Weight-Modell mit 2.8T Parametern, rund 60 % Rabatt'},
+    'kimi-k2.7-code': {'ja': 'Kimiのエージェント型コーディングモデル、約60%オフ', 'ko': 'Kimi의 에이전트형 코딩 모델, 약 60% 할인',
+                       'es': 'El modelo de programación agéntica de Kimi, ~60 % menos', 'de': 'Kimis agentisches Coding-Modell, rund 60 % Rabatt'},
+    'kimi-k2.6': {'ja': 'オープンなマルチモーダルエージェントモデル、約60%オフ', 'ko': '오픈 멀티모달 에이전트 모델, 약 60% 할인',
+                  'es': 'Modelo de agentes multimodal abierto, ~60 % menos', 'de': 'Offenes multimodales Agentenmodell, rund 60 % Rabatt'},
+}
+
+
+def loc(slug, lang, sub, price, tags):
+    """返回该语言的 (副标题, 价格标签, 其余标签)；新语言缺词直接报错，不回退英文。"""
+    if lang not in NEW:
+        return sub[lang], price[lang], tags[lang]
+    en = price['en']
+    p = '$' + en.replace('From ', '').split(' / ')[0].lstrip('$')
+    fmt = PRICE_FROM if en.startswith('From ') else PRICE_FMT
+    # 百分号前用不换行空格，避免 “60 %” 被折行拆开
+    return SUB_I18N[slug][lang].replace(' %', ' %'), fmt[lang].format(p=p), [TXT[t][lang] for t in tags['en']]
+
+
+TPL = '''<!doctype html><html lang="@LANG"><head><meta charset="utf-8"><style>
 *{box-sizing:border-box}
 html{overflow:hidden;background:#000}
 body{margin:0;width:1200px;height:630px;background:#000 radial-gradient(560px 420px at 1010px 80px,rgba(23,131,255,.42),rgba(23,131,255,.1) 55%,transparent 100%) no-repeat;color:#fff;font-family:-apple-system,"Segoe UI",Roboto,Arial,"PingFang SC","Microsoft YaHei",sans-serif;position:relative;overflow:hidden}
@@ -57,7 +96,11 @@ p{margin:28px 0 0;font-size:34px;line-height:1.3;font-weight:300;color:rgba(255,
 .r{position:absolute;left:80px;bottom:64px;display:flex;gap:12px}
 .r span{padding:12px 20px;border-radius:999px;border:1.5px solid rgba(255,255,255,.42);font-size:24px;color:rgba(255,255,255,.84)}
 .r .d{background:#1783ff;color:#fff;border-color:#1783ff}
-</style></head><body>
+body.n{font-family:Arial,"Yu Gothic UI","Yu Gothic","Malgun Gothic","Segoe UI",sans-serif}
+.n p{font-size:30px;max-width:790px}
+.k p{word-break:keep-all}
+.n .r span{font-size:21px;padding:11px 17px;white-space:nowrap}
+</style></head><body class="@BC">
 <div class="mark">@LOGO</div>
 <div class="c"><div class="b">@SMALL@BRAND<em>· Moonshot Kimi</em></div><h1>@NAME <span>@KEY</span></h1><p>@SUB</p></div>
 <div class="r">@CHIPS</div></body></html>'''
@@ -71,14 +114,16 @@ def chrome():
 def main():
     os.makedirs(OUT, exist_ok=True)
     names = []
-    for lang in ('zh', 'en'):
+    only = [a.split('=', 1)[1].split(',') for a in sys.argv[1:] if a.startswith('--langs=')]
+    for lang in (only[0] if only else ('zh', 'en')):
         for slug, (name, key, sub, price, tags) in PAGES.items():
-            if not os.path.exists(os.path.join(ROOT, lang, 'models', slug + '.html')):
+            if not os.path.exists(os.path.join(ROOT, 'en' if lang in NEW else lang, 'models', slug + '.html')):
                 continue
-            chips = f'<span class="d">{price[lang]}</span>' + ''.join(f'<span>{t}</span>' for t in tags[lang] + [ENT[lang]])
+            sub_l, price_l, tags_l = loc(slug, lang, sub, price, tags)
+            chips = f'<span class="d">{price_l}</span>' + ''.join(f'<span>{t}</span>' for t in tags_l + [ENT[lang]])
             fs = '132' if len(name + key) <= 10 else '116'
             html = (TPL.replace('@LOGO', logo(cls='')).replace('@SMALL', logo(cls='')).replace('@BRAND', BRAND).replace('@NAME', name)
-                    .replace('@KEY', key).replace('@SUB', sub[lang]).replace('@CHIPS', chips).replace('@FS', fs))
+                    .replace('@KEY', key).replace('@SUB', sub_l).replace('@LANG', LANGATTR[lang]).replace('@BC', ('n' + (' k' if lang == 'ko' else '')) if lang in NEW else '').replace('@CHIPS', chips).replace('@FS', fs))
             n = f'{slug}-{lang}'
             io.open(os.path.join(OUT, n + '.html'), 'w', encoding='utf-8').write(html)
             names.append(n)
@@ -95,6 +140,7 @@ def main():
         from PIL import Image
         Image.open(png).crop((0, 0, 1200, 630)).save(png, optimize=True)
         print('png', os.path.relpath(png, ROOT), os.path.getsize(png) if os.path.exists(png) else 'MISSING')
+        os.remove(os.path.join(OUT, n + '.html'))
 
 
 if __name__ == '__main__':

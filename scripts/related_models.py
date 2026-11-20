@@ -13,7 +13,7 @@ import zlib
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-CSS_VERSION = "20261119"
+CSS_VERSION = "20261125"
 START, END = "<!-- related-models -->", "<!-- /related-models -->"
 
 # category -> [(family, target slug, display name)]
@@ -90,7 +90,24 @@ COPY = {
 }
 
 
-def block(lang, slug):
+SEC_TOKEN = re.compile(r"^[a-z]+-(?:section|wrap)$")
+
+
+def faq_shell(text):
+    """本页 FAQ 版块的容器：section 上的 *-section / *-wrap class，以及紧挨着的内层容器 class。
+    「同类模型 API」沿用同一套容器，宽度和左右边距就和上一个版块（FAQ）自动一致；
+    各系列 FAQ 的内容列宽度从 668px 到 1248px 不等，没法写成一个固定宽度。
+    背景类（j-dark、p-band-white 这类）不沿用，免得把这个版块也染成深色。"""
+    m = re.search(r'<section class="([^"]+)"[^>]*\bid="faq"[^>]*>\s*(?:<div class="([^"]+)"[^>]*>)?', text)
+    if not m:
+        return "", ""
+    sec = [c for c in m.group(1).split() if SEC_TOKEN.match(c)]
+    # section 自己已经带 *-wrap（Grok 文本页）时，后面紧跟的 div 只是标题块，不是内容容器
+    wrap = "" if any(c.endswith("-wrap") for c in sec) else (m.group(2) or "")
+    return " ".join(sec), wrap
+
+
+def block(lang, slug, sec_cls="", wrap_cls=""):
     kind = category(slug)
     own = family(slug)
     pool = [t for t in TARGETS[kind] if t[0] != own and t[1] != slug]
@@ -100,10 +117,17 @@ def block(lang, slug):
     items = "".join(
         f'<li><a href="/{lang}/models/{target}"><b>{name} API</b><span>{c["go"]} →</span></a></li>'
         for _, target, name in picks)
-    return (f'{START}<section class="rel-models" id="related" aria-labelledby="related-title">'
-            f'<div class="rel-wrap"><h2 id="related-title">{c["h2"]}</h2>'
-            f'<p>{c["lead"].format(kind=c["kind"][kind])}</p><ul class="rel-list">{items}</ul>'
-            f'</div></section>{END}')
+    # rel-inner 包住标题、说明和列表：这样说明文字不会是容器的直接子元素，深色页的 ".o-wrap>p" 之类规则碰不到它
+    inner = (f'<div class="rel-inner"><h2 id="related-title">{c["h2"]}</h2>'
+             f'<p>{c["lead"].format(kind=c["kind"][kind])}</p><ul class="rel-list">{items}</ul></div>')
+    if wrap_cls:
+        body = f'<div class="{wrap_cls}">{inner}</div>'
+    elif sec_cls:
+        body = inner                      # section 自己就是内容列（Kling 等）
+    else:
+        body = f'<div class="rel-wrap">{inner}</div>'
+    return (f'{START}<section class="{("rel-models " + sec_cls).strip()}" id="related" aria-labelledby="related-title">'
+            f'{body}</section>{END}')
 
 
 def apply(path, lang):
@@ -111,6 +135,7 @@ def apply(path, lang):
     text = path.read_text(encoding="utf-8")
     new = re.sub(re.escape(START) + r"\n?.*?" + re.escape(END) + r"\n?", "", text, flags=re.S)
     # 放在收尾 CTA（<section class="*-final">）前面；CTA 前面如果紧跟一条注释（<!-- Final CTA -->），插在注释前，注释仍然贴着 CTA
+    sec_cls, wrap_cls = faq_shell(new)
     cta = re.search(r'<section class="[^"]*-final[^"]*"', new)
     if cta:
         pos = cta.start()
@@ -120,12 +145,12 @@ def apply(path, lang):
         ls = new.rfind("\n", 0, pos) + 1
         if new[ls:pos].strip() == "":
             pos = ls
-        new = new[:pos] + block(lang, slug) + "\n" + new[pos:]
+        new = new[:pos] + block(lang, slug, sec_cls, wrap_cls) + "\n" + new[pos:]
     else:                                   # 没有收尾 CTA 的页面：保持原来的位置
         anchor = "</main>" if "</main>" in new else "<footer"
         if anchor not in new:
             return "no-anchor"
-        new = new.replace(anchor, block(lang, slug) + anchor, 1)
+        new = new.replace(anchor, block(lang, slug, sec_cls, wrap_cls) + anchor, 1)
     new = re.sub(r"scrollbar\.css\?v=[0-9a-z]+", f"scrollbar.css?v={CSS_VERSION}", new)
     if new == text:
         return "unchanged"

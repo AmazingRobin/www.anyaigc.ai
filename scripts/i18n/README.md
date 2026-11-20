@@ -92,6 +92,15 @@ python scripts/i18n/batch.py tm-save <系列> <lang>     # 复核完成后把译
 - 补译零散缺失的句子：`todo/<lang>-<n>.json` → 译者写 `out/<lang>-todo-<n>.json` → `check_todo.py` 自检 → `consolidate.py` 合并成 `out/<lang>-all.json`（之后 validate / render 都只读它）。
 - **英文页的「能否从中国大陆调用」FAQ** 用 `python scripts/i18n/china_faq.py` 处理（2026-11-18 用户确认删除）：纯问题整条删，复合问题（并发/xAI 账号/取 key）只去掉中国相关部分，可见 FAQ 与 JSON-LD 同步。重复运行不变；系列重新生成英文页后要再跑一次。正文里的「mainland China」卖点（卡片标题、介绍句）用 `python scripts/i18n/china_body.py` 处理（2026-11-18 用户确认删除）：卡片换成不带中国说法的标题并保留其它事实，卡片数量不变，meta keywords 里的 "OpenAI/Gemini API China" 一并删掉；句子用 `overseas.CHINA_RULES` 删掉那一小段（新语言页翻译源用同一组规则）。重复运行不变，系列重新生成英文页后要再跑一次。
 - 英文页数据里的坏日期（`scripts/seo_specs_data.json` 的 `facts_en` 串字）已修；改完要跑 `python scripts/seo_unique_specs.py` 写回页面。
+- 页面排版自检（都需要 `python scripts/preview.py` 在 8765 端口运行，用无头 Chrome 量真实渲染结果）：
+  `kicker_probe.py`（「规格」小标题样式是否和同页其它版块一致）、`h2_probe.py`（标题样式）、
+  `width_scan.py <lang> --width=1440`（「同类模型 API」和 FAQ 的左边界/宽度是否对齐）、
+  `mobile_probe.py <lang>`（真实 390px：页面是否横向溢出、同类模型版块是否对齐）。
+  注意：无头 Chrome 的 `--window-size=390` 实际给 478px 宽，量手机宽度必须用 `mobile_probe.py` 里的 390px iframe。
+  Kling 的导航在手机上是自己内部横向滚动（`overflow:auto`），`mobile_probe.py` 会报 "nav right 446"，但页面本身没有溢出，不是问题。
+- 「同类模型 API」版块（`scripts/related_models.py`）沿用本页 FAQ 的 `*-section` / `*-wrap` 容器，所以宽度和上一个版块自动一致；
+  FAQ 列表自己带 max-width 的系列（Grok 文本、Llama、MiniMax、Suno、MiMo、Hy4、Jev）在 `assets/models/scrollbar.css` 里有单独的宽度规则。
+  `scrollbar.css` 的版本号现在是 20261123，改样式后要同步改 `related_models.py` 的 `CSS_VERSION` 和两个专题首页。
 - 分享图标签行：西语、德语文案长，标签必须 `white-space:nowrap` 并缩小字号；改文案后跑 `og_margin.py`。
 - `scripts/payments.py` 对 kling、seedance 总览这类 JSON-LD 压成一行的页面会报错，
   它已改成不写对公转账，但不要对全站直接重跑；对已转换系列用 `overseas.py` 即可。
@@ -111,8 +120,8 @@ python scripts/i18n/batch.py tm-save <系列> <lang>     # 复核完成后把译
 | :--- | :--- | :--- |
 | 试点 | DeepSeek（4 页） | 完成，用户已确认三项译法 |
 | 第 1 批 | Claude（12） | 完成 |
-| 第 1 批 | Gemini（6）、Suno（1）、Midjourney（1） | 完成，等用户确认 |
-| 第 2 批 | GPT（17）、Grok（17） | |
+| 第 1 批 | Gemini（6）、Suno（1）、Midjourney（1） | 完成 |
+| 第 2 批 | GPT（17）、Grok（17） | 完成，等用户确认 |
 | 第 3 批 | Doubao、Seedream、Seedance、Kimi、GLM、MiMo、MiniMax | |
 | 第 4 批 | Kling、Vidu、Viduq、Wan、HappyHorse、Muse、Hailuo | |
 | 第 5 批 | Qwen（30）、Llama、Eleven、Speech、Jev、Spark、Hy 等 | |

@@ -3,5 +3,14 @@
  "claude",
  "gemini",
  "suno",
- "midjourney"
+ "midjourney",
+ "gpt",
+ "grok",
+ "doubao",
+ "seedream",
+ "seedance",
+ "kimi",
+ "glm",
+ "mimo",
+ "minimax"
 ]

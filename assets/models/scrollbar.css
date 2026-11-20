@@ -57,11 +57,27 @@ html::-webkit-scrollbar-track{background:var(--sb-track)}
 @media (max-width:900px){.trust-list{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:640px){.trust-list,.o-col .trust-list{grid-template-columns:1fr;gap:20px}}
 
-/* Cross-vendor related models (scripts/related_models.py) */
-.rel-models{padding:56px 0;border-top:1px solid rgba(127,127,127,.18)}
+/* Cross-vendor related models (scripts/related_models.py)
+   外层容器（section 上的 *-section、内层的 *-wrap）沿用本页 FAQ 的写法，所以宽度、左右边距和上一个版块一致；
+   下面只管内部：标题、说明、卡片网格。rel-wrap 只用于页面没有 FAQ 容器可沿用的情况。 */
+/* 不画分隔线（多数系列的 FAQ 上方本来就没有线）。section 自己的上边框和上内边距去掉，间距由 .rel-inner 的 padding-top 提供。
+   用 id 选择器压过各系列的 .xx-section{border-top;padding-top}，不用 !important。 */
+#related.rel-models{border-top:0;padding-top:0}
+.rel-models:not([class*="-section"]){padding-bottom:56px}
 .rel-wrap{max-width:1180px;margin:0 auto;padding:0 24px}
-.rel-models h2{margin:0 0 8px;font-size:clamp(22px,2.4vw,30px);line-height:1.2}
-.rel-models p{margin:0 0 20px;opacity:.75}
+.rel-inner{display:block;width:100%;box-sizing:border-box;text-align:left;padding-top:64px}
+@media (max-width:640px){.rel-inner{padding-top:48px}}
+.rel-models h2{margin:0 0 8px;font-size:clamp(22px,2.4vw,30px);line-height:1.2;font-weight:600;letter-spacing:normal;color:inherit}
+.rel-models p{margin:0 0 20px;font-size:15px;line-height:1.6;color:inherit;opacity:.75;max-width:none}
+/* FAQ 列表自己带 max-width 的系列：同类模型模块用同样的宽度，和上一个版块对齐 */
+.rel-models.gt-section .rel-inner{max-width:850px}
+.rel-models.ll-section .rel-inner{max-width:940px}
+.rel-models.mm-section .rel-inner{max-width:900px}
+.rel-models.s-section .rel-inner{max-width:800px;margin:0 auto}
+.rel-models.o-section .o-wrap>.rel-inner{max-width:var(--j-col);margin:0 auto}   /* 只有 jev.css 定义了 --j-col；没定义的页面这条声明无效，不限宽 */
+.rel-models.mi-section .rel-inner,.rel-models.hy-section .rel-inner{max-width:900px;margin:0 auto}
+.rel-models.mi-section .rel-inner h2,.rel-models.mi-section .rel-inner p,.rel-models.hy-section .rel-inner h2,.rel-models.hy-section .rel-inner p{text-align:center}
+.rel-models:not([class*="-section"]) .o-wrap>.rel-inner{max-width:880px;margin:0 auto}
 .rel-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:0;padding:0;list-style:none}
 .rel-list a{display:flex;flex-direction:column;gap:4px;padding:14px 16px;border:1px solid rgba(127,127,127,.25);border-radius:10px;color:inherit;text-decoration:none;transition:border-color .2s ease}
 .rel-list a:hover{border-color:currentColor}

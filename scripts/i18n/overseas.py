@@ -15,7 +15,7 @@ import htmlseg as H
 NL = '\n'
 
 # 整张卡片/整个条目要删除：文本命中其一的 li/article 会被整体删除（限企业接入版块与支付方式行）
-DROP_LABELS = {'Bank transfer', 'Contracts'}
+DROP_LABELS = {'Bank transfer', 'Contracts', 'Service contracts'}
 # 整条 FAQ 要删除（问题文字匹配）
 DROP_FAQ = [r'bank transfer and sign a contract']
 
@@ -27,6 +27,18 @@ PAY_A = ('You can top up with WeChat Pay, Alipay, USDT or a credit card. Your ba
 
 # 整句精确替换（单元文本完全相等才替换）
 EXACT = {
+    'Bank transfer · VAT invoices': 'Self-service invoices',
+    'Bank transfer · VAT · Contracts': 'Self-service invoices',
+    'Chinese VAT invoices': 'Issue them yourself',
+    'VAT invoices': 'Self-service invoices',
+    'Invoices for each top-up, including Chinese VAT general and special invoices.':
+        'Issue an invoice in the console for the amount you actually topped up, whenever you need one.',
+    'Invoices for every top-up, including Chinese VAT general and special invoices.':
+        'Issue an invoice in the console for the amount you actually topped up, whenever you need one.',
+    'Chinese VAT general and special invoices are available.':
+        'Issue invoices yourself in the console for the amount you actually topped up.',
+    '<strong>Including VAT general and special invoices</strong><br>Issued for actual top-ups to support company expense and tax processes.':
+        '<strong>Self-service invoices</strong><br>Issue them in the console for the amount you actually topped up.',
     'Business <strong>Contracts · invoices</strong>': 'Business <strong>Self-service invoices</strong>',
     'Engineering teams and companies can buy through a standard business process, with support for finance, legal and engineering.':
         'Teams can top up, issue invoices themselves, and work with a dedicated support and technical contact.',
@@ -39,6 +51,18 @@ EXACT = {
 
 # 描述、关键词等里的短语（正则，对每个单元和结构化数据字符串都执行）
 RULES = [
+    # 修复：上面的规则把 "with bank transfer and VAT invoices." 改成 "with, self-service invoices." 会留下孤立的 "with,"
+    (r', with, self-service invoices[.]', ', with self-service invoices.'),
+    (r'VAT invoices and (?:corporate )?bank transfers?[.]', 'Self-service invoices.'),
+    (r'VAT invoices and contracts[.]', 'self-service invoices.'),
+    (r'Bank transfer, invoices[.]', 'Self-service invoices.'),
+    (r', bank transfers? and VAT invoices on AnyAIGC[.]', ', and self-service invoices on AnyAIGC.'),
+    (r', unlimited concurrency, bank transfer[.]', ', unlimited concurrency, self-service invoices.'),
+    (r', works in Claude Code, unlimited concurrency, bank transfer[.]', ', works in Claude Code, unlimited concurrency, self-service invoices.'),
+    (r'Bank transfer and Invoices[.]', 'Self-service invoices.'),
+    (r', bank transfers and VAT invoices via AnyAIGC[.]', ', and self-service invoices via AnyAIGC.'),
+    (r'Chinese VAT general and special invoices based on the actual top-up amount[.]',
+     'Issue invoices yourself in the console for the amount you actually topped up.'),
     (r'<strong>Contracts · invoices</strong>', '<strong>Self-service invoices</strong>'),
     (r'(<strong>Invoices</strong>)contracts', r'\1self-service'),
     (r', contracts, invoices\.', ', self-service invoices.'),
@@ -301,12 +325,47 @@ def lint(src, tag=''):
     return hits
 
 
-def apply(src):
+def renumber_cards(src):
+    """企业接入版块里带编号的卡片（gt-number / mi-num / mm-number 这类 "01" "04"）：删掉卡片后重新按 01、02… 排。
+    只处理 class 以 -num 或 -number 结尾、内容是两位数字的元素；已经连续的不动（重复运行结果不变）。"""
+    root = H.parse(src)
+    sec = find_section(root, src, 'enterprise')
+    if sec is None:
+        return src
+    repl, i = [], 0
+    for n in H.walk(sec):
+        if n.tag not in ('span', 'i', 'b', 'em', 'p', 'div') or n.ec is None or n.so is None:
+            continue
+        m = re.search(r'class="([^"]*)"', n.attrs or '')
+        if not m or not re.search(r'-(?:num|number)(?![a-z])', m.group(1)):
+            continue
+        txt = src[n.so:n.ec].strip()
+        if not re.fullmatch(r'[0-9]{2}', txt):
+            continue
+        i += 1
+        want = '%02d' % i
+        if txt != want:
+            repl.append((n.so, n.ec, want))
+    return H.apply_spans(src, repl) if repl else src
+
+
+def apply_once(src):
     s = drop_cards(src)
+    s = renumber_cards(s)
     s = drop_pay_row_item(s)
     s = rewrite_faq(s)
     s = rewrite_text(s)
     return sync_faq(s)
+
+
+def apply(src):
+    """反复应用直到结果不再变化：有些说法要两步才改干净（例如先去掉 VAT 再匹配 "Bank transfer and Invoices"）。"""
+    for _ in range(4):
+        out = apply_once(src)
+        if out == src:
+            break
+        src = out
+    return src
 
 
 def main():
