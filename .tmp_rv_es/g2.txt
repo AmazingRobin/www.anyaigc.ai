@@ -1,0 +1,228 @@
+gpt COST: Ejemplos de coste
+gpt COST: Consulta los tokens y el coste de cada petición en la consola y define una cuota para cada clave de API.
+gpt COST: GPT-5.5 Pro es caro. ¿Cómo puedo reducir los costes?
+gpt COST: Las peticiones van a los canales oficiales de los modelos, nunca a sustitutos más baratos o de ingeniería inversa. Salvo
+gpt COST: En los resultados de OpenAI, GPT-5.5 supera a GPT-5.4 por 7,6 puntos en Terminal-Bench 2.0. OpenAI también indica que, e
+gpt COST: Un modelo de bajo coste para alto volumen, con un 86 % menos que el precio de lista
+gpt COST: El 30 de julio de 2026, OpenAI redujo un 80 % los precios de la API de GPT-5.6 Luna, hasta $0,20 de entrada y $1,20 de s
+gpt COST: GPT-5.6 Luna se lanzó el <time datetime="2026-07-09">9 de julio de 2026</time> como el nivel de entrada de la familia GP
+gpt COST: El 30 de julio de 2026, OpenAI redujo de forma permanente un 80 % los precios de la API de GPT-5.6 Luna, de $1 de entrad
+gpt COST: Un modelo equilibrado para el trabajo diario, que combina inteligencia y coste.
+gpt COST: Según OpenAI, en Agents' Last Exam, su benchmark de trabajo profesional, Luna supera a Fable 5 con un coste estimado por
+gpt COST: Enrutamiento de tickets, moderación de contenido, extracción de campos y traducción de texto entre idiomas: muchas llama
+gpt COST: gpt-5.6-luna prioriza la velocidad y el coste, mientras que <a href="/en/models/gpt-5.6-sol">gpt-5.6-sol</a> es el model
+gpt COST: Pensado para cargas de trabajo de alto volumen y sensibles al coste.
+gpt COST: Según OpenAI, en el Artificial Analysis Coding Agent Index, GPT-5.6 Sol con nivel de razonamiento max obtiene 80, 2,8 pu
+gpt COST: OpenAI describe GPT-5.6 Terra como su modelo equilibrado para el trabajo diario, con un rendimiento competitivo con GPT-
+gpt COST: OpenAI lanzó la familia GPT-5.6 el <time datetime="2026-07-09">9 de julio de 2026</time> en tres niveles: Sol, Terra y L
+gpt COST: Según OpenAI, GPT-5.6 Terra y GPT-5.6 Luna superan a Fable 5 en Agents' Last Exam a aproximadamente una decimosexta part
+gpt COST: Fuente: las tablas de evaluación del <a href="https://openai.com/index/gpt-5-6/" target="_blank" rel="noopener">anuncio 
+gpt COST: Según OpenAI, Terra supera a GPT-5.5 en trabajo del conocimiento a menor coste. Una ventana de contexto de 1.050.000 tok
+gpt COST: gpt-5.6-terra es el nivel equilibrado, mientras que <a href="/en/models/gpt-5.6-luna">gpt-5.6-luna</a> es el nivel más r
+gpt COST: OpenAI describe Terra como competitivo con GPT-5.5 a menor coste y afirma que lo supera en trabajo del conocimiento. En 
+gpt COST: El precio de lista por token de Astra es cinco veces el de GPT-6.1 Sol, pero OpenAI indica que su coste estimado de API 
+gpt COST: Según los resultados de OpenAI, GPT-6 Luna cuesta $0,037 por tarea en AutomationBench con nivel max (precio de lista). O
+gpt COST: Fuente: <a href="https://openai.com/zh-Hans-CN/index/introducing-gpt-6-sol-and-luna/" target="_blank" rel="noopener">anu
+gpt COST: GPT-6 Luna es la siguiente generación después de GPT-5.6 Luna. El precio de lista baja de $0,20 de entrada y $1,20 de sa
+gpt COST: OpenAI posiciona Luna para tareas acotadas, triaje y automatizaciones frecuentes, y Sol para tareas complejas en las que
+gpt COST: GPT-6 Sol es el Sol anterior de la familia GPT-6. OpenAI afirma que supera a Claude Opus 5 en AutomationBench con el 9 %
+gpt COST: OpenAI lanzó GPT-6 Sol junto con GPT-6 Luna el <time datetime="2026-09-22">22 de septiembre de 2026</time>. OpenAI indic
+gpt COST: Equilibrio entre velocidad, coste e inteligencia para programación compleja y agentes.
+gpt COST: OpenAI indica que GPT-6 Sol con nivel xhigh supera a Claude Opus 5 con nivel max en AutomationBench, a unos $0,27 por ta
+gpt COST: Conecta sistemas para aprobaciones, entrada de datos e informes. En los resultados de OpenAI supera a Claude Opus 5 en A
+gpt COST: En los resultados de OpenAI, GPT-6.1 Sol más que duplica a GPT-6 Sol en Terminal-Bench Science. OpenAI cifra su coste me
+gpt COST: Fuente: <a href="https://openai.com/index/introducing-gpt-6-1-sol/" target="_blank" rel="noopener">anuncio de GPT-6.1 So
+gpt COST: Ejecuta tareas de varios pasos con uso del ordenador (computer use) y otras herramientas en la Responses API. Las cifras
+gpt COST: Procesa datos, ejecuta scripts de experimentos y resuelve derivaciones en una terminal. Las cifras de OpenAI sitúan su c
+gpt COST: Visión, uso del ordenador y redacción, con rapidez y a bajo coste.
+gpt COST: En AnyAIGC, Flare y Sunburst cuestan lo mismo. Con calidad low, una imagen cuesta una fracción de centavo, lo que va bie
+gpt COST: Ejecuta una misma plantilla de prompt en miles de imágenes y reduce costes con calidad medium.
+gpt COST: En AnyAIGC, Flare y <a href="/en/models/gpt-image-2.6-sunburst">2.6 Sunburst</a> cuestan lo mismo. Con facturación por t
+gpt COST: Low, medium o high controla cuánto planifica el modelo. Usa low para ediciones rápidas y high para diseños densos, sin c
+gpt COST: En AnyAIGC, Sunburst y <a href="/en/models/gpt-image-2.6-flare">2.6 Flare</a> cuestan lo mismo. En calidad low y medium,
+gpt COST: Desde entonces OpenAI ha lanzado GPT Image 2.5 (Sunburst y Flare), y su guía recomienda 2.5 para integraciones nuevas. g
+gpt COST: 04 · El coste primero
+gpt COST: Los 5 modelos se facturan por token, así que el coste varía según el tamaño y la calidad. Cada uno tiene además una vers
+gpt COST: Integraciones existentes de gpt-image-2, el coste más bajo
+gpt COST: Volúmenes enormes al menor coste unitario
+gpt COST: Con la facturación por token, el coste depende del tamaño y la calidad: las imágenes pequeñas de calidad low son muy bar
+gpt COST: Razonamiento visual, uso del ordenador (computer use) y redacción, rápido y de bajo coste.
+gpt COST: Son los cuatro niveles de capacidad de GPT-6 de OpenAI. Según OpenAI, Astra tiene la mayor inteligencia, para el razonam
+gpt COST: Terra es el nivel equilibrado de GPT-5.6. OpenAI lo describe como un modelo equilibrado para el trabajo diario, con un r
+grok TIER: grok-4-20-non-reasoning · Base tier · input ≤ 200,000 tokens · Input / 1M tokens => grok-4-20-non-reasoning · Nivel base · entrada ≤ 200.000 tokens · Entrada / 1M de tokens
+grok TIER: grok-4-20-non-reasoning · Base tier · input ≤ 200,000 tokens · Output / 1M tokens => grok-4-20-non-reasoning · Nivel base · entrada ≤ 200.000 tokens · Salida / 1M de tokens
+grok TIER: grok-4-20-non-reasoning · Long-input tier · 200,000 < input ≤ 500,000 tokens · Input / 1M tokens => grok-4-20-non-reasoning · Nivel de entrada larga · 200.000 < entrada ≤ 500.000 tokens · Entrada / 1M de tokens
+grok TIER: grok-4-20-non-reasoning · Long-input tier · 200,000 < input ≤ 500,000 tokens · Output / 1M tokens => grok-4-20-non-reasoning · Nivel de entrada larga · 200.000 < entrada ≤ 500.000 tokens · Salida / 1M de tokens
+grok COST: Usa un flujo de Chat Completions para conectar tus herramientas y evaluar el coste total a partir del uso real de las pe
+grok TIER: Operation / tier => Operación / nivel
+grok TIER: Grok 4.20 Non-Reasoning <span>Base tier · input ≤ 200,000 tokens</span> => Grok 4.20 Non-Reasoning <span>Nivel base · entrada ≤ 200.000 tokens</span>
+grok TIER: Grok 4.20 Non-Reasoning <span>Long-input tier · 200,000 &lt; input ≤ 500,000 tokens</span> => Grok 4.20 Non-Reasoning <span>Nivel de entrada larga · 200.000 &lt; entrada ≤ 500.000 tokens</span>
+grok COST: Ejemplos de coste · grok-4-20-non-reasoning
+grok TIER: Examples use the base input tier, without cache hits or additional tool charges. => Los ejemplos usan el nivel de entrada base, sin aciertos de caché ni cargos adicionales por herramientas.
+grok TIER: Turn supplied material into summaries, proposals, and report drafts, with sources and review for key facts. => Convierte el material que aportes en resúmenes, propuestas y borradores de informes, con fuentes y revisión de los datos clave.
+grok COST: Consulta los tokens y el coste de cada petición en la consola y define una cuota para cada clave de API.
+grok TIER: This page lists (Grok 4.20 Non-Reasoning Base tier · input ≤ 200,000 tokens) Input at $0.1241 / 1M tokens, Output at $0.2482 / 1M tokens; other tiers  => Esta página indica (Grok 4.20 Non-Reasoning, nivel base · entrada ≤ 200.000 tokens) entrada a $0,1241 / 1M de tokens y salida a $0,2482 / 1M de tokens; los demás niveles están en l
+grok COST: Las peticiones van a los canales oficiales de los modelos, nunca a sustitutos más baratos o de ingeniería inversa. Salvo
+grok TIER: grok-4-20-reasoning · Base tier · input ≤ 200,000 tokens · Input / 1M tokens => grok-4-20-reasoning · Nivel base · entrada ≤ 200.000 tokens · Entrada / 1M de tokens
+grok TIER: grok-4-20-reasoning · Base tier · input ≤ 200,000 tokens · Output / 1M tokens => grok-4-20-reasoning · Nivel base · entrada ≤ 200.000 tokens · Salida / 1M de tokens
+grok TIER: grok-4-20-reasoning · Long-input tier · 200,000 < input ≤ 500,000 tokens · Input / 1M tokens => grok-4-20-reasoning · Nivel de entrada larga · 200.000 < entrada ≤ 500.000 tokens · Entrada / 1M de tokens
+grok TIER: grok-4-20-reasoning · Long-input tier · 200,000 < input ≤ 500,000 tokens · Output / 1M tokens => grok-4-20-reasoning · Nivel de entrada larga · 200.000 < entrada ≤ 500.000 tokens · Salida / 1M de tokens
+grok TIER: Grok 4.20 Reasoning <span>Base tier · input ≤ 200,000 tokens</span> => Grok 4.20 Reasoning <span>Nivel base · entrada ≤ 200.000 tokens</span>
+grok TIER: Grok 4.20 Reasoning <span>Long-input tier · 200,000 &lt; input ≤ 500,000 tokens</span> => Grok 4.20 Reasoning <span>Nivel de entrada larga · 200.000 &lt; entrada ≤ 500.000 tokens</span>
+grok COST: Ejemplos de coste · grok-4-20-reasoning
+grok TIER: This page lists (Grok 4.20 Reasoning Base tier · input ≤ 200,000 tokens) Input at $0.1241 / 1M tokens, Output at $0.2482 / 1M tokens; other tiers are  => Esta página indica (Grok 4.20 Reasoning, nivel base · entrada ≤ 200.000 tokens) entrada a $0,1241 / 1M de tokens y salida a $0,2482 / 1M de tokens; los demás niveles están en la ta
+grok TIER: grok-4.3 · Base tier · input ≤ 200,000 tokens · Input / 1M tokens => grok-4.3 · Nivel base · entrada ≤ 200.000 tokens · Entrada / 1M de tokens
+grok TIER: grok-4.3 · Base tier · input ≤ 200,000 tokens · Output / 1M tokens => grok-4.3 · Nivel base · entrada ≤ 200.000 tokens · Salida / 1M de tokens
+grok TIER: grok-4.3 · Base tier · input ≤ 200,000 tokens · Cache-hit input / 1M tokens => grok-4.3 · Nivel base · entrada ≤ 200.000 tokens · Entrada con acierto de caché / 1M de tokens
+grok TIER: grok-4.3 · Long-input tier · 200,000 < input ≤ 500,000 tokens · Input / 1M tokens => grok-4.3 · Nivel de entrada larga · 200.000 < entrada ≤ 500.000 tokens · Entrada / 1M de tokens
+grok TIER: grok-4.3 · Long-input tier · 200,000 < input ≤ 500,000 tokens · Output / 1M tokens => grok-4.3 · Nivel de entrada larga · 200.000 < entrada ≤ 500.000 tokens · Salida / 1M de tokens
+grok TIER: Grok 4.3 <span>Base tier · input ≤ 200,000 tokens</span> => Grok 4.3 <span>Nivel base · entrada ≤ 200.000 tokens</span>
+grok TIER: Grok 4.3 <span>Long-input tier · 200,000 &lt; input ≤ 500,000 tokens</span> => Grok 4.3 <span>Nivel de entrada larga · 200.000 &lt; entrada ≤ 500.000 tokens</span>
+grok COST: Ejemplos de coste · grok-4.3
+grok TIER: This page lists (Grok 4.3 Base tier · input ≤ 200,000 tokens) Input at $0.1241 / 1M tokens, Output at $0.2482 / 1M tokens, Cache-hit input at $0.0199  => Esta página indica (Grok 4.3, nivel base · entrada ≤ 200.000 tokens) entrada a $0,1241 / 1M de tokens, salida a $0,2482 / 1M de tokens y entrada con acierto de caché a $0,0199 / 1M
+grok TIER: grok-4.5 · Base tier · input ≤ 200,000 tokens · Input / 1M tokens => grok-4.5 · Nivel base · entrada ≤ 200.000 tokens · Entrada / 1M de tokens
+grok TIER: grok-4.5 · Base tier · input ≤ 200,000 tokens · Output / 1M tokens => grok-4.5 · Nivel base · entrada ≤ 200.000 tokens · Salida / 1M de tokens
+grok TIER: grok-4.5 · Base tier · input ≤ 200,000 tokens · Cache-hit input / 1M tokens => grok-4.5 · Nivel base · entrada ≤ 200.000 tokens · Entrada con acierto de caché / 1M de tokens
+grok TIER: grok-4.5 · Long-input tier · 200,000 < input ≤ 500,000 tokens · Input / 1M tokens => grok-4.5 · Nivel de entrada larga · 200.000 < entrada ≤ 500.000 tokens · Entrada / 1M de tokens
+grok TIER: grok-4.5 · Long-input tier · 200,000 < input ≤ 500,000 tokens · Output / 1M tokens => grok-4.5 · Nivel de entrada larga · 200.000 < entrada ≤ 500.000 tokens · Salida / 1M de tokens
+grok TIER: Cache-hit input is $0.0298 per million tokens in the base tier. Actual cache hits depend on the usage reported for each request. => La entrada con acierto de caché cuesta $0,0298 por millón de tokens en el nivel base. Los aciertos de caché reales dependen del uso que se informe en cada petición.
+grok TIER: Grok 4.5 <span>Base tier · input ≤ 200,000 tokens</span> => Grok 4.5 <span>Nivel base · entrada ≤ 200.000 tokens</span>
+grok TIER: Grok 4.5 <span>Long-input tier · 200,000 &lt; input ≤ 500,000 tokens</span> => Grok 4.5 <span>Nivel de entrada larga · 200.000 &lt; entrada ≤ 500.000 tokens</span>
+grok COST: Ejemplos de coste · grok-4.5
+grok TIER: This page lists (Grok 4.5 Base tier · input ≤ 200,000 tokens) Input at $0.1985 / 1M tokens, Output at $0.5956 / 1M tokens, Cache-hit input at $0.0298  => Esta página indica (Grok 4.5, nivel base · entrada ≤ 200.000 tokens) entrada a $0,1985 / 1M de tokens, salida a $0,5956 / 1M de tokens y entrada con acierto de caché a $0,0298 / 1M
+grok TIER: grok-4.6 · Base tier · input ≤ 200,000 tokens · Input / 1M tokens => grok-4.6 · Nivel base · entrada ≤ 200.000 tokens · Entrada / 1M de tokens
+grok TIER: grok-4.6 · Base tier · input ≤ 200,000 tokens · Output / 1M tokens => grok-4.6 · Nivel base · entrada ≤ 200.000 tokens · Salida / 1M de tokens
+grok TIER: grok-4.6 · Base tier · input ≤ 200,000 tokens · Cache-hit input / 1M tokens => grok-4.6 · Nivel base · entrada ≤ 200.000 tokens · Entrada con acierto de caché / 1M de tokens
+grok TIER: grok-4.6 · Long-input tier · 200,000 < input ≤ 500,000 tokens · Input / 1M tokens => grok-4.6 · Nivel de entrada larga · 200.000 < entrada ≤ 500.000 tokens · Entrada / 1M de tokens
+grok TIER: grok-4.6 · Long-input tier · 200,000 < input ≤ 500,000 tokens · Output / 1M tokens => grok-4.6 · Nivel de entrada larga · 200.000 < entrada ≤ 500.000 tokens · Salida / 1M de tokens
+grok TIER: Grok 4.6 <span>Base tier · input ≤ 200,000 tokens</span> => Grok 4.6 <span>Nivel base · entrada ≤ 200.000 tokens</span>
+grok TIER: Grok 4.6 <span>Long-input tier · 200,000 &lt; input ≤ 500,000 tokens</span> => Grok 4.6 <span>Nivel de entrada larga · 200.000 &lt; entrada ≤ 500.000 tokens</span>
+grok COST: Ejemplos de coste · grok-4.6
+grok TIER: This page lists (Grok 4.6 Base tier · input ≤ 200,000 tokens) Input at $0.1985 / 1M tokens, Output at $0.5956 / 1M tokens, Cache-hit input at $0.0496  => Esta página indica (Grok 4.6, nivel base · entrada ≤ 200.000 tokens) entrada a $0,1985 / 1M de tokens, salida a $0,5956 / 1M de tokens y entrada con acierto de caché a $0,0496 / 1M
+grok TIER: grok-4.7 · Base tier · input ≤ 200,000 tokens · Input / 1M tokens => grok-4.7 · Nivel base · entrada ≤ 200.000 tokens · Entrada / 1M de tokens
+grok TIER: grok-4.7 · Base tier · input ≤ 200,000 tokens · Output / 1M tokens => grok-4.7 · Nivel base · entrada ≤ 200.000 tokens · Salida / 1M de tokens
+grok TIER: grok-4.7 · Base tier · input ≤ 200,000 tokens · Cache-hit input / 1M tokens => grok-4.7 · Nivel base · entrada ≤ 200.000 tokens · Entrada con acierto de caché / 1M de tokens
+grok TIER: grok-4.7 · Long-input tier · 200,000 < input ≤ 500,000 tokens · Input / 1M tokens => grok-4.7 · Nivel de entrada larga · 200.000 < entrada ≤ 500.000 tokens · Entrada / 1M de tokens
+grok TIER: grok-4.7 · Long-input tier · 200,000 < input ≤ 500,000 tokens · Output / 1M tokens => grok-4.7 · Nivel de entrada larga · 200.000 < entrada ≤ 500.000 tokens · Salida / 1M de tokens
+grok TIER: Connect research, analysis, and report drafting to your application. Official documentation lists a 500K-token context window. => Conecta la investigación, el análisis y la redacción de informes con tu aplicación. La documentación oficial indica una ventana de contexto de 500K tokens.
+grok TIER: Grok 4.7 <span>Base tier · input ≤ 200,000 tokens</span> => Grok 4.7 <span>Nivel base · entrada ≤ 200.000 tokens</span>
+grok TIER: Grok 4.7 <span>Long-input tier · 200,000 &lt; input ≤ 500,000 tokens</span> => Grok 4.7 <span>Nivel de entrada larga · 200.000 &lt; entrada ≤ 500.000 tokens</span>
+grok COST: Ejemplos de coste · grok-4.7
+grok TIER: This page lists (Grok 4.7 Base tier · input ≤ 200,000 tokens) Input at $0.1985 / 1M tokens, Output at $0.5956 / 1M tokens, Cache-hit input at $0.0496  => Esta página indica (Grok 4.7, nivel base · entrada ≤ 200.000 tokens) entrada a $0,1985 / 1M de tokens, salida a $0,5956 / 1M de tokens y entrada con acierto de caché a $0,0496 / 1M
+grok COST: Grok 4 admite comprensión de texto e imágenes mediante Chat Completions. Mantén una integración existente y compara mode
+grok TIER: Create explanations, summaries, and drafts from supplied information in an existing chat or content workflow. => Crea explicaciones, resúmenes y borradores a partir de la información que aportes, dentro de un flujo de chat o de contenido ya existente.
+grok COST: Ejemplos de coste · grok-4
+grok TIER: grok-build-0.1 · Base tier · input ≤ 200,000 tokens · Input / 1M tokens => grok-build-0.1 · Nivel base · entrada ≤ 200.000 tokens · Entrada / 1M de tokens
+grok TIER: grok-build-0.1 · Base tier · input ≤ 200,000 tokens · Output / 1M tokens => grok-build-0.1 · Nivel base · entrada ≤ 200.000 tokens · Salida / 1M de tokens
+grok TIER: grok-build-0.1 · Long-input tier · 200,000 < input ≤ 500,000 tokens · Input / 1M tokens => grok-build-0.1 · Nivel de entrada larga · 200.000 < entrada ≤ 500.000 tokens · Entrada / 1M de tokens
+grok TIER: grok-build-0.1 · Long-input tier · 200,000 < input ≤ 500,000 tokens · Output / 1M tokens => grok-build-0.1 · Nivel de entrada larga · 200.000 < entrada ≤ 500.000 tokens · Salida / 1M de tokens
+grok TIER: Grok Build 0.1 <span>Base tier · input ≤ 200,000 tokens</span> => Grok Build 0.1 <span>Nivel base · entrada ≤ 200.000 tokens</span>
+grok TIER: Grok Build 0.1 <span>Long-input tier · 200,000 &lt; input ≤ 500,000 tokens</span> => Grok Build 0.1 <span>Nivel de entrada larga · 200.000 &lt; entrada ≤ 500.000 tokens</span>
+grok COST: Ejemplos de coste · grok-build-0.1
+grok TIER: This page lists (Grok Build 0.1 Base tier · input ≤ 200,000 tokens) Input at $0.0993 / 1M tokens, Output at $0.1985 / 1M tokens; other tiers are in th => Esta página indica (Grok Build 0.1, nivel base · entrada ≤ 200.000 tokens) entrada a $0,0993 / 1M de tokens y salida a $0,1985 / 1M de tokens; los demás niveles están en la tabla d
+grok TIER: <strong>By resolution and quality</strong>2.0 and Quality are priced per tier => <strong>Por resolución y calidad</strong>2.0 y Quality tienen precio por nivel
+grok COST: Ejemplos de coste
+grok COST: Añade la generación de texto a imagen a tu app con un coste por imagen claro.
+grok TIER: Generate a few drafts to settle on a direction, then hand off to a designer. => Genera unos cuantos borradores para decidir una dirección y pásalos después a un diseñador.
+grok COST: Grok Imagine Video 1.5 Lite (<code>grok-imagine-video-1.5-lite</code>) es la versión ligera y de menor coste de Video 1.
+grok TIER: 1,000 six-second drafts => 1.000 borradores de seis segundos
+grok TIER: Drafts => Borradores
+grok COST: Añade la generación de texto a video a tu app con costes por segundo fáciles de prever.
+grok TIER: Billed per second, with every tier about 40% below xAI’s list price and every charge visible in the console. => Se factura por segundo, con cada nivel aproximadamente un 40 % por debajo del precio de lista de xAI y cada cargo visible en la consola.
+grok TIER: Lite is the lighter, cheaper version and adds 1080p, but it has no reference images or keyframes, and complex characters, multiple people, long contin => Lite es la versión más ligera y barata y añade 1080p, pero no admite imágenes de referencia ni fotogramas clave, y los personajes complejos, las escenas con varias personas, el mov
+grok TIER: xAI’s new-generation video model improves visuals, motion and dialogue over the first generation, with sound and lip sync generated together. On AnyAI => El modelo de video de nueva generación de xAI mejora la imagen, el movimiento y el diálogo respecto a la primera generación, y genera juntos el sonido y la sincronización labial. E
+grok TIER: Pick Video 1.5 (from $0.0476 / sec) when picture quality, complex motion and dialogue matter. Pick 1.5 Lite (from $0.0119 / sec) for volume, draft che => Elige Video 1.5 (desde $0,0476 / s) cuando importen la calidad de imagen, el movimiento complejo y el diálogo. Elige 1.5 Lite (desde $0,0119 / s) para volumen, borradores o escenas
+grok TIER: xAI’s first-generation video model generates picture and sound together, and can edit an uploaded video to change clothing or style. On AnyAIGC it sta => El modelo de video de primera generación de xAI genera imagen y sonido juntos, y puede editar un video subido para cambiar la ropa o el estilo. En AnyAIGC parte de <strong>$0,0298 
+grok TIER: <strong>Grok Imagine Video 1.5</strong> (<code>grok-imagine-video-1.5-preview</code>) leads the series on visuals, motion and dialogue, from $0.0476 / => <strong>Grok Imagine Video 1.5</strong> (<code>grok-imagine-video-1.5-preview</code>) es el que ofrece mejor imagen, movimiento y diálogo de la serie, desde $0,0476 / s, y encaja b
+grok TIER: xAI’s video models generate picture and sound together. One key covers the whole series, from <strong>$0.0119 / sec</strong>, every tier about 40% bel => Los modelos de video de xAI generan imagen y sonido a la vez. Una sola clave cubre toda la serie, desde <strong>$0,0119 / s</strong>, con todos los niveles aproximadamente un 40 % 
+grok TIER: A lighter, cheaper Video 1.5 for high-volume jobs and quick drafts. => Un Video 1.5 más ligero y barato para trabajos de gran volumen y borradores rápidos.
+grok TIER: 100 six-second drafts => 100 borradores de seis segundos
+doubao KW: doubao-seed-1-6-flash API,doubao-seed-1-6-flash API pricing,doubao-seed-1-6-flash API 企业,doubao-seed-1-6-flash API 发票,doubao-seed-1-6-flash API for business,Doubao Seed API,AnyAIGC => API de doubao-seed-1-6-flash,precio de la API de doubao-seed-1-6-flash,API de doubao-seed-1-6-flash para empresas,factura API de doubao-seed-1-6-flash,API de doubao-seed-1-6-flash para negocios,API de Doubao Seed,AnyAIGC
+doubao COST: Ejemplos de coste
+doubao TIER: Examples use first-tier text rates without cache hits or audio input; each request stays within the first input tier. => Los ejemplos usan las tarifas de texto del primer nivel, sin aciertos de caché ni entrada de audio; cada petición se mantiene dentro del primer nivel de entrada.
+doubao COST: Consulta los tokens y el coste de cada petición en la consola y define una cuota para cada clave de API.
+doubao COST: Las peticiones van a los canales oficiales de los modelos, nunca a sustitutos más baratos o de ingeniería inversa. Salvo
+doubao KW: doubao-seed-1-6-thinking API,doubao-seed-1-6-thinking API pricing,doubao-seed-1-6-thinking API 企业,doubao-seed-1-6-thinking API 发票,doubao-seed-1-6-thinking API for business,Doubao Seed API,AnyAIGC => API de doubao-seed-1-6-thinking,precio de la API de doubao-seed-1-6-thinking,API de doubao-seed-1-6-thinking para empresas,factura API de doubao-seed-1-6-thinking,API de doubao-seed-1-6-thinking para negocios,API de Doubao Seed,AnyAIGC
+doubao TIER: Draft code, explain implementations, and propose changes in business modules written in different languages. => Redacta código, explica implementaciones y propone cambios en módulos de negocio escritos en distintos lenguajes.
+doubao COST: La documentación de Volcengine presenta Seed 2.0 Lite como un modelo equilibrado para escenarios empresariales de alta f
+doubao COST: En comparación con <a href="/en/models/doubao-seed-2-0-mini">doubao-seed-2-0-mini</a>: según el proveedor, Mini está ori
+doubao COST: Volcengine Ark lanzó doubao-seed-2-0-mini-260215 en febrero de 2026 para cargas de trabajo de baja latencia, alta concur
+doubao COST: En comparación con <a href="/en/models/doubao-seed-2-1-turbo">doubao-seed-2-1-turbo</a>: elige Seed 2.1 Turbo para produ
+doubao COST: Volcengine Ark lanzó doubao-seed-2-1-turbo-260628 en junio de 2026 como una versión de bajo coste y baja latencia para p
+doubao COST: Volcengine lo recomienda para cargas de trabajo de código, agentes y multimodales de alto volumen, y para trabajos por l
+doubao TIER: A faster Seedance 2.0 variant for high-frequency drafts and batch video generation. => Una variante más rápida de Seedance 2.0 para borradores de alta frecuencia y generación de vídeo por lotes.
+doubao COST: Se supone el siguiente consumo de tokens facturados. No son presupuestos de vídeos de duración fija; el coste real depen
+doubao TIER: Short-form drafts, batch variants and high-frequency content. => Borradores de formato corto, variantes por lotes y contenido de alta frecuencia.
+doubao COST: Volcengine presenta Seedance 2.0 Fast como un equilibrio entre coste y velocidad.
+doubao TIER: Seedance 2.0 supports 480p, 720p, 1080p and 4K; the 4K tier is available now. Seedance 2.5 supports 480p, 720p and 1080p, with duration 4–30 or -1. Fa => Seedance 2.0 admite 480p, 720p, 1080p y 4K; el nivel 4K ya está disponible. Seedance 2.5 admite 480p, 720p y 1080p, con duration de 4–30 o -1. Fast y mini tienen niveles de precio 
+doubao COST: Menor coste de entrada
+doubao COST: Volcengine presenta Seedance 2.0 mini como la opción de menor coste.
+doubao COST: Elige <a href="/en/models/doubao-seedance-2-0-fast">doubao-seedance-2-0-fast</a> para el mismo límite de 720p con un equ
+doubao TIER: The Seedance 2.0 4K tier is available now: $4.860 without reference video or $2.916 with reference video, per 1M tokens. => El nivel 4K de Seedance 2.0 ya está disponible: $4,860 sin vídeo de referencia o $2,916 con vídeo de referencia, por 1M de tokens.
+doubao COST: Elige <a href="/en/models/doubao-seedance-2-0-fast">doubao-seedance-2-0-fast</a> si te bastan 480p o 720p y la velocidad
+b3rest TITLE 64: GLM-5.2 API Pricing &amp; Access | 1M Context, ~30% Off - AnyAIGC => API de GLM-5.2: precio &amp; acceso, aprox. 30 % menos | AnyAIGC
+b3rest KW: GLM-5.2 API,glm-5.2,GLM-5.2 API pricing,GLM-5.2 API key,GLM-5.2 Claude Code,GLM-5.2 1M context,GLM-5.2 disable thinking,Zhipu GLM-5.2,GLM API,GLM-5.2 API for business,GLM-5.2 API invoice,AnyAIGC => API de GLM-5.2,glm-5.2,precio API de GLM-5.2,clave de API GLM-5.2,GLM-5.2 Claude Code,GLM-5.2 contexto 1M,GLM-5.2 desactivar thinking,Zhipu GLM-5.2,API de GLM,API de GLM-5.2 para empresas,factura API de GLM-5.2,AnyAIGC
+b3rest COST: Ejemplos de coste
+b3rest COST: Multimodal nativo, bajo coste
+b3rest COST: Consulta los tokens y el coste de cada petición en la consola y define una cuota para cada clave de API.
+b3rest COST: Bajo coste
+b3rest COST: Las peticiones van a los canales oficiales de los modelos, nunca a sustitutos más baratos o de ingeniería inversa. Salvo
+b3rest TITLE 62: GLM-5.3-Flash API Pricing | Multimodal, ~60% Off - AnyAIGC => API de GLM-5.3-Flash: precio, multimodal, 60 % menos | AnyAIGC
+b3rest KW: GLM-5.3-Flash API,glm-5.3-flash,GLM-5.3-Flash API pricing,GLM-5.3-Flash API key,GLM-5.3-Flash multimodal,GLM-5.3-Flash image input,GLM-5.3-Flash Claude Code,GLM-5.3-Flash vs GLM-5.3,Zhipu Flash API,GLM API,GLM-5.3-Flash API for business,GLM-5.3-Flash API invoice,AnyAIGC => API de GLM-5.3-Flash,glm-5.3-flash,precio API de GLM-5.3-Flash,clave de API GLM-5.3-Flash,GLM-5.3-Flash multimodal,GLM-5.3-Flash entrada de imágenes,GLM-5.3-Flash Claude Code,GLM-5.3-Flash vs GLM-5.3,API de Zhipu Flash,API de GLM,API de GLM-5.3-Flash para empresas,factura API de GLM-5.3-Flash,AnyAIGC
+b3rest COST: Zhipu presenta GLM-5.3-Flash como el primer modelo GLM-5 nativamente multimodal, que ofrece más que GLM-5.2 a un coste m
+b3rest COST: Es un MoE con 320B de parámetros totales y 18B activos. Zhipu afirma que es el primer modelo de frontera con pesos abier
+b3rest COST: Contexto largo a bajo coste
+b3rest TITLE 64: GLM-5.3 API Pricing &amp; Access | 1M Context, ~30% Off - AnyAIGC => API de GLM-5.3: precio &amp; acceso, aprox. 30 % menos | AnyAIGC
+b3rest COST: Cambia Claude Code a Kimi K2.6. Es multimodal y de bajo coste, adecuado para programar a diario y corregir interfaces a 
+b3rest TIER: AnyAIGC does not cap concurrency for <code>kimi-k2.6</code>, and every user gets this by default. That suits batch jobs, CI pipelines and parallel age => AnyAIGC no limita la concurrencia de <code>kimi-k2.6</code> y todos los usuarios la tienen por defecto. Es adecuado para trabajos por lotes, pipelines de CI y agentes en paralelo. 
+b3rest TIER: AnyAIGC does not cap concurrency for <code>kimi-k2.7-code</code>, and every user gets this by default. That suits batch jobs, CI pipelines and paralle => AnyAIGC no limita la concurrencia de <code>kimi-k2.7-code</code>, y todos los usuarios la tienen por defecto. Es adecuado para trabajos por lotes, pipelines de CI y agentes en para
+b3rest TITLE 63: Kimi K3.1 Pro API Pricing &amp; Access | Save 60% - AnyAIGC => API de Kimi K3.1 Pro: precio &amp; acceso, 60 % menos | AnyAIGC
+b3rest TIER: AnyAIGC does not cap concurrency for <code>kimi-k3.1-pro</code>, and every user gets this by default. That suits batch jobs, CI pipelines and parallel => AnyAIGC no limita la concurrencia de <code>kimi-k3.1-pro</code>, y todos los usuarios la tienen por defecto. Es adecuado para trabajos por lotes, pipelines de CI y agentes en paral
+b3rest TIER: AnyAIGC does not cap concurrency for <code>kimi-k3</code>, and every user gets this by default. That suits batch jobs, CI pipelines and parallel agent => AnyAIGC no limita la concurrencia de <code>kimi-k3</code>, y todos los usuarios la tienen por defecto. Es adecuado para trabajos por lotes, pipelines de CI y agentes en paralelo. L
+b3rest TIER: Load whole financial reports, contracts or research packs into context to extract fields, build financial models and draft reports. Moonshot reports 6 => Carga informes financieros completos, contratos o paquetes de investigación en el contexto para extraer campos, construir modelos financieros y redactar informes. Moonshot reporta 
+b3rest TIER: AnyAIGC does not cap concurrency for Kimi models, and every user gets this by default. That suits batch jobs, CI pipelines and parallel agents. Moonsh => AnyAIGC no limita la concurrencia de los modelos Kimi, y todos los usuarios la tienen por defecto. Es adecuado para trabajos por lotes, pipelines de CI y agentes en paralelo. La pl
+b3rest TITLE 64: MiMo-V2.5-Pro API Pricing | Retirement &amp; Migration - AnyAIGC => API de MiMo-V2.5-Pro: precio, retirada &amp; migración | AnyAIGC
+b3rest TIER: Run summaries, table cleanup and email drafts at volume. => Genera resúmenes, limpia tablas y redacta borradores de correo a gran escala.
+b3rest TIER: Draft web pages, slide outlines and copy at a predictable cost. => Redacta páginas web, esquemas de presentaciones y textos con un coste predecible.
+b3rest COST: Redacta páginas web, esquemas de presentaciones y textos con un coste predecible.
+b3rest COST: Omnimodal, potente y eficiente a bajo coste
+b3rest COST: Inteligencia frente a coste por tarea (frontera de Pareto)
+b3rest COST: Inteligencia frente a coste por tarea (frontera de Pareto). Fuente: publicación del lanzamiento de Xiaomi MiMo V2.6.
+b3rest COST: Para llamadas de alta frecuencia y tareas de oficina a gran escala, Xiaomi recomienda <a href="/en/models/mimo-v2.6-flas
+b3rest TIER: Turn a request into a draft, explanation or code, then let your application organize the next steps. => Convierte una petición en un borrador, una explicación o código, y deja que tu aplicación organice los siguientes pasos.
+b3rest TIER: Break down requirements, draft code and explanations, and develop test ideas to validate in your own environment. => Desglosa requisitos, redacta código y explicaciones y plantea ideas de pruebas para validar en tu propio entorno.
+b3rest TIER: Combine request classification, structured drafts and tool execution, with permissions and result checks handled by your application. => Combina la clasificación de peticiones, borradores estructurados y ejecución de herramientas, con los permisos y la comprobación de resultados a cargo de tu aplicación.
+b3rest TIER: Prices are in USD, charged on successful submission. Current prices are shown in the model catalog. One request returns a model response; inputs above => Los precios están en USD y se cobran al enviar la petición con éxito. Los precios vigentes figuran en el catálogo de modelos. Una petición devuelve una respuesta del modelo; las en
+b3rest TIER: An aggregate across multiple requests, excluding cache charges. Every request stays at or below 512K input tokens and uses tier one. => Total acumulado de varias peticiones, sin contar los cargos de caché. Cada petición tiene como máximo 512K tokens de entrada y usa el primer nivel.
+b3rest TIER: An M-series language model for agent reasoning, tool calling, coding, and long-context tasks. Inputs up to 512K use the first price tier; inputs above => Un modelo de lenguaje de la serie M para razonamiento de agentes, llamada a herramientas, programación y tareas de contexto largo. Las entradas de hasta 512K usan el primer nivel d
+b3rest TIER: One request returns a model response; inputs above 512K tokens use the second price tier. => Una petición devuelve una respuesta del modelo; las entradas de más de 512K tokens usan el segundo nivel de precio.
+b3rest TIER: A faster Seedance 2.0 variant for high-frequency drafts and batch video generation. => Una variante más rápida de Seedance 2.0 para borradores de alta frecuencia y generación de vídeo por lotes.
+b3rest TIER: Rates vary by model, resolution and reference-video input. The table lists the lowest catalog rate for each resolution and reference-video input tier. => Las tarifas varían según el modelo, la resolución y el uso de vídeo de referencia. La tabla muestra la tarifa más baja del catálogo para cada resolución y nivel de entrada con víde
+b3rest COST: Se supone el siguiente consumo de tokens facturados. No son presupuestos de vídeos de duración fija; el coste real depen
+b3rest TIER: The Seedance 2.0 4K tier is available now: $4.860 without reference video or $2.916 with reference video, per 1M tokens. => El nivel 4K de Seedance 2.0 ya está disponible: $4,860 sin vídeo de referencia o $2,916 con vídeo de referencia, por 1M de tokens.
+b3rest TIER: Short-form drafts, batch variants and high-frequency content. => Borradores de formato corto, variantes por lotes y contenido de alta frecuencia.
+b3rest TIER: Seedance 2.0 supports 480p, 720p, 1080p and 4K; the 4K tier is available now. Seedance 2.5 supports 480p, 720p and 1080p, with duration 4–30 or -1. Fa => 
+b3rest TITLE 64: Seedream 3.0 API Pricing &amp; Access | $0.0101/Request - AnyAIGC => API de Seedream 3.0: precio &amp; acceso desde $0,0101 | AnyAIGC
+b3rest TIER: To migrate, change <code>model</code> to <code>doubao-seedream-4-0-250828</code> or another newer model, and switch <code>size</code> to tier values s => Para migrar, cambia <code>model</code> a <code>doubao-seedream-4-0-250828</code> o a otro modelo más reciente, y cambia <code>size</code> a valores por nivel como <code>2K</code>.
+b3rest TITLE 64: Seedream 4.0 API Pricing &amp; Access | From $0.0203 - AnyAIGC => API de Seedream 4.0: precio &amp; acceso desde $0,0203 | AnyAIGC
+b3rest TIER: Batch work from the 1K tier => Trabajo por lotes desde el nivel 1K
+b3rest TIER: Among the three models that support image sets, 4.0 is the only one with a <code>1K</code> tier, which suits batch jobs that do not need high resoluti => De los tres modelos que admiten conjuntos de imágenes, 4.0 es el único con un nivel <code>1K</code>, adecuado para trabajos por lotes que no necesitan alta resolución.
+b3rest TIER: Compared with <a href="/en/models/seedream-4.5">seedream-4.5</a>: Seedream 4.0 offers a 1K tier, while Seedream 4.5 offers only 2K and 4K and strength => En comparación con <a href="/en/models/seedream-4.5">seedream-4.5</a>: Seedream 4.0 ofrece un nivel 1K, mientras que Seedream 4.5 solo ofrece 2K y 4K y refuerza la maquetación de t
+b3rest TIER: 4.0 remains available, costs less than 4.5 (from $0.0203 / image) and offers a 1K tier. For new projects, try <a href="/en/models/seedream-5.0-lite">5 => 4.0 sigue disponible, cuesta menos que 4.5 (desde $0,0203 / imagen) y ofrece un nivel 1K. Para proyectos nuevos, prueba primero <a href="/en/models/seedream-5.0-lite">5.0 lite</a> 
+b3rest TITLE 62: Seedream 4.5 API Pricing | Posters from $0.0253 - AnyAIGC => API de Seedream 4.5: precio y carteles desde $0,0253 | AnyAIGC
+b3rest TIER: Compared with <a href="/en/models/seedream-5.0-lite">seedream-5.0-lite</a>: Seedream 4.5 offers 2K and 4K tiers, while Seedream 5.0 lite adds a 3K tie => En comparación con <a href="/en/models/seedream-5.0-lite">seedream-5.0-lite</a>: Seedream 4.5 ofrece los niveles de 2K y 4K, mientras que Seedream 5.0 lite añade un nivel de 3K y b
+b3rest TITLE 64: Seedream 5.0 Pro API Pricing | From $0.0441 per Image - AnyAIGC => API de Seedream 5.0 Pro: precio y acceso desde $0,0441 | AnyAIGC
+b3rest TIER: On AnyAIGC, Seedream 5.0 Pro (<code>doubao-seedream-5-0-pro-260628</code>) starts at $0.0441 / image. Prices vary by resolution, and omitting <code>si => En AnyAIGC, Seedream 5.0 Pro (<code>doubao-seedream-5-0-pro-260628</code>) parte de $0,0441 / imagen. El precio varía según la resolución, y si omites <code>size</code> puede cobra
+q1 KW: Qwen Flash API,Qwen Flash API pricing,qwen-flash,Qwen Flash API for business,AnyAIGC => API de Qwen Flash,precio API de Qwen Flash,qwen-flash,API de Qwen Flash para empresas,AnyAIGC
+q1 COST: El modelo de bajo coste: un contexto de 1.000.000 de tokens para trabajo de texto de alto volumen.
+q1 KW: Qwen Image 2.0 API,Qwen Image 2.0 API pricing,Qwen Image 2.0 API for business,AnyAIGC => API de Qwen Image 2.0,precio API de Qwen Image 2.0,API de Qwen Image 2.0 para empresas,AnyAIGC
+q1 COST: Consulta los tokens y el coste de cada petición en la consola y define una cuota para cada clave de API.
+q1 TITLE 63: Qwen Image 3.0 Pro API Pricing | Multilingual Text - AnyAIGC => API de Qwen Image 3.0 Pro: precio y texto multilingüe | AnyAIGC
+q1 TIER: Up to 2.25 million pixels falls in the 1K tier; the 2K output tier uses a higher billing multiplier. => Hasta 2,25 millones de píxeles entran en el nivel 1K; el nivel de salida 2K usa un multiplicador de facturación mayor.
+q1 TIER: Multiply the base rate by the applicable output and reference multipliers, then add the charges. Examples are estimates; the console bill is authorita => Multiplica la tarifa base por los multiplicadores de salida y de referencia que correspondan y suma los cargos. Los ejemplos son estimaciones; la factura de la consola es la refere
+q1 TITLE 63: Qwen Image Max 2025-12-30 API Pricing | $0.0658/request - AnyAIGC => Precio de Qwen Image Max 2025-12-30: $0,0658/petición | AnyAIGC
+q1 TITLE 62: Qwen Image Max API Pricing | From $0.0658/request - AnyAIGC => API de Qwen Image Max: precio desde $0,0658/petición | AnyAIGC
+q1 TITLE 62: Qwen Max API Pricing | From $1.0800/1M tokens, Save 32% - AnyAIGC => API de Qwen Max: precio desde $1,0800/1M, 32 % menos | AnyAIGC
+q1 TITLE 62: Qwen Plus 2025-12-01 API Pricing | From $0.2700/1M - AnyAIGC => API de Qwen Plus 2025-12-01: precio desde $0,2700/1M | AnyAIGC
+q1 TIER: Useful for frequent drafts and comparisons of composition and style. => Útil para borradores frecuentes y para comparar composición y estilo.
+q1 COST: Con prompt_extend activado, devuelve la imagen junto con el prompt optimizado y su razonamiento, con un coste mayor y un

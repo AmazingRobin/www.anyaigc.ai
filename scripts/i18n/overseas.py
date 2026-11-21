@@ -15,7 +15,7 @@ import htmlseg as H
 NL = '\n'
 
 # 整张卡片/整个条目要删除：文本命中其一的 li/article 会被整体删除（限企业接入版块与支付方式行）
-DROP_LABELS = {'Bank transfer', 'Contracts', 'Service contracts'}
+DROP_LABELS = {'Bank transfer', 'Contracts', 'Service contracts', 'Contract'}
 # 整条 FAQ 要删除（问题文字匹配）
 DROP_FAQ = [r'bank transfer and sign a contract']
 
@@ -27,6 +27,24 @@ PAY_A = ('You can top up with WeChat Pay, Alipay, USDT or a credit card. Your ba
 
 # 整句精确替换（单元文本完全相等才替换）
 EXACT = {
+    # 第 5 批（Kling / Vidu / Wan / HappyHorse）
+    'Ordinary and special invoices': 'Issue them yourself',
+    'Including VAT special invoices': 'Issue them yourself',
+    'VAT ordinary and VAT special invoices are available for the actual recharge amount.':
+        'Issue invoices yourself in the console for the amount you actually topped up.',
+    'Payment methods: WeChat Pay · Alipay · USDT · Credit card · Bank transfer':
+        'Payment methods: WeChat Pay · Alipay · USDT · Credit card',
+    'Payment methods：WeChat Pay · Alipay · USDT · Credit card · Bank transfer':
+        'Payment methods：WeChat Pay · Alipay · USDT · Credit card',
+    'WeChat Pay · Alipay · USDT · Credit card · Bank transfer': 'WeChat Pay · Alipay · USDT · Credit card',
+    'VAT ordinary and special invoices, contracts, dedicated customer support and technical integration help teams bring Kling into products and content workflows.':
+        'Self-service invoices, dedicated customer support and technical integration help teams bring Kling into products and content workflows.',
+    'VAT general and special invoices, corporate service agreements, and dedicated support with technical contact.':
+        'Self-service invoices, plus dedicated support with a technical contact.',
+    'VAT invoices, corporate service agreements, and dedicated support.':
+        'Self-service invoices and dedicated support.',
+    'VAT general and special invoices for the actual top-up amount.':
+        'Issue invoices yourself in the console for the amount you actually topped up.',
     'Bank transfer · VAT invoices': 'Self-service invoices',
     'Bank transfer · VAT · Contracts': 'Self-service invoices',
     'Chinese VAT invoices': 'Issue them yourself',
@@ -51,6 +69,10 @@ EXACT = {
 
 # 描述、关键词等里的短语（正则，对每个单元和结构化数据字符串都执行）
 RULES = [
+    # 第 5 批：Vidu 描述、Wan 描述
+    (r'Unlimited concurrency, VAT invoices, bank transfer and contracts on AnyAIGC[.]', 'Unlimited concurrency and self-service invoices on AnyAIGC.'),
+    (r'Unlimited concurrency, VAT invoices, contracts[.]', 'Unlimited concurrency and self-service invoices.'),
+    (r', bank transfers? and VAT invoices on AnyAIGC, for teams[.]', ', and self-service invoices on AnyAIGC, for teams.'),
     # 修复：上面的规则把 "with bank transfer and VAT invoices." 改成 "with, self-service invoices." 会留下孤立的 "with,"
     (r', with, self-service invoices[.]', ', with self-service invoices.'),
     (r'VAT invoices and (?:corporate )?bank transfers?[.]', 'Self-service invoices.'),

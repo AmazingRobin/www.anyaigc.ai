@@ -1,0 +1,1056 @@
+[0] k0 (title)
+EN: HappyHorse 1.0 I2V API Pricing | From $0.1161/second - AnyAIGC
+ES: API de HappyHorse 1.0 I2V: precio desde $0,1161/s | AnyAIGC
+
+[1] k1 (meta:description)
+EN: HappyHorse 1.0 I2V API: video creation from $0.1161 / second, no concurrency cap, and self-service invoices on AnyAIGC, with one key for 300+ models.
+ES: API de HappyHorse 1.0 I2V: vídeo desde $0,1161/segundo, concurrencia sin límite y facturas en autoservicio en AnyAIGC, con una clave para más de 300 modelos.
+
+[2] k2 (meta:keywords)
+EN: HappyHorse 1.0 I2V API,HappyHorse 1.0 I2V API pricing,HappyHorse 1.0 I2V API for business,AnyAIGC
+ES: API de HappyHorse 1.0 I2V,precio API de HappyHorse 1.0 I2V,API de HappyHorse 1.0 I2V para empresas,AnyAIGC
+
+[3] k3 (meta:og:title)
+EN: HappyHorse 1.0 I2V API Pricing | From $0.1161/second - AnyAIGC
+ES: API de HappyHorse 1.0 I2V: precio desde $0,1161/s | AnyAIGC
+
+[4] k4 (meta:og:description)
+EN: HappyHorse 1.0 I2V API: video creation from $0.1161 / second, no concurrency cap, and self-service invoices on AnyAIGC, with one key for 300+ models.
+ES: API de HappyHorse 1.0 I2V: vídeo desde $0,1161/segundo, concurrencia sin límite y facturas en autoservicio en AnyAIGC, con una clave para más de 300 modelos.
+
+[5] k5 (meta:og:image:alt)
+EN: HappyHorse 1.0 I2V API · AnyAIGC
+ES: API de HappyHorse 1.0 I2V · AnyAIGC
+
+[6] k6 (meta:twitter:title)
+EN: HappyHorse 1.0 I2V API Pricing | From $0.1161/second - AnyAIGC
+ES: API de HappyHorse 1.0 I2V: precio desde $0,1161/s | AnyAIGC
+
+[7] k7 (meta:twitter:description)
+EN: HappyHorse 1.0 I2V API: video creation from $0.1161 / second, no concurrency cap, and self-service invoices on AnyAIGC, with one key for 300+ models.
+ES: API de HappyHorse 1.0 I2V: vídeo desde $0,1161/segundo, concurrencia sin límite y facturas en autoservicio en AnyAIGC, con una clave para más de 300 modelos.
+
+[8] k8 (ld:name)
+EN: HappyHorse 1.0 I2V API Pricing | From $0.1161/second - AnyAIGC
+ES: API de HappyHorse 1.0 I2V: precio desde $0,1161/s | AnyAIGC
+
+[9] k9 (ld:description)
+EN: HappyHorse 1.0 I2V API: video creation from $0.1161 / second, no concurrency cap, and self-service invoices on AnyAIGC, with one key for 300+ models.
+ES: API de HappyHorse 1.0 I2V: vídeo desde $0,1161/segundo, concurrencia sin límite y facturas en autoservicio en AnyAIGC, con una clave para más de 300 modelos.
+
+[10] k10 (ld:name)
+EN: AnyAIGC
+ES: AnyAIGC
+
+[11] k11 (ld:name)
+EN: Model guides
+ES: Guías de modelos
+
+[12] k12 (ld:name)
+EN: HappyHorse 1.0 I2V
+ES: HappyHorse 1.0 I2V
+
+[13] k13 (ld:name)
+EN: HappyHorse 1.0 I2V API
+ES: API de HappyHorse 1.0 I2V
+
+[14] k14 (ld:name)
+EN: 720P video
+ES: Vídeo 720P
+
+[15] k15 (ld:name)
+EN: 1080P video
+ES: Vídeo 1080P
+
+[16] k16 (text)
+EN: Skip to main content
+ES: Saltar al contenido principal
+
+[17] k17 (text)
+EN: AnyAIGC
+ES: AnyAIGC
+
+[18] k18 (text)
+EN: Model guides
+ES: Guías de modelos
+
+[19] k19 (text)
+EN: Qwen
+ES: Qwen
+
+[20] k20 (text)
+EN: Model catalog
+ES: Catálogo de modelos
+
+[21] k21 (text)
+EN: Pricing
+ES: Precios
+
+[22] k22 (text)
+EN: Enterprise
+ES: Empresas
+
+[23] k23 (text)
+EN: Log in
+ES: Iniciar sesión
+
+[24] k24 (text)
+EN: Sign up
+ES: Registrarse
+
+[25] k25 (aria-label)
+EN: HappyHorse 1.0 I2V API
+ES: API de HappyHorse 1.0 I2V
+
+[26] k26 (aria-label)
+EN: breadcrumb
+ES: Ruta de navegación
+
+[27] k27 (text)
+EN: HappyHorse 1.0 I2V
+ES: HappyHorse 1.0 I2V
+
+[28] k28 (text)
+EN: {{0}} Qwen · Alibaba
+ES: {{0}} Qwen · Alibaba
+
+[29] k29 (text)
+EN: HappyHorse 1.0 I2V API
+ES: API de HappyHorse 1.0 I2V
+
+[30] k30 (text)
+EN: Image-to-video that carries your creative intent into motion.
+ES: De imagen a vídeo que da movimiento a tu intención creativa.
+
+[31] k31 (text)
+EN: HappyHorse 1.0 for image-to-video. Start from an image and carry its composition, subjects, and details into motion.
+ES: HappyHorse 1.0 de imagen a vídeo. Parte de una imagen y lleva su composición, sus sujetos y sus detalles al movimiento.
+
+[32] k32 (text)
+EN: $0.1161 / second
+ES: $0,1161 / segundo
+
+[33] k33 (text)
+EN: starting rate · see billing details below
+ES: tarifa inicial · consulta el detalle de facturación más abajo
+
+[34] k34 (text)
+EN: Video generation
+ES: Generación de vídeo
+
+[35] k35 (text)
+EN: Per second
+ES: Por segundo
+
+[36] k36 (text)
+EN: No concurrency cap
+ES: Concurrencia sin límite
+
+[37] k37 (text)
+EN: Contracts · invoices
+ES: Contratos · facturas
+
+[38] k38 (text)
+EN: Get an API key
+ES: Obtener clave de API
+
+[39] k39 (text)
+EN: View pricing
+ES: Ver precios
+
+[40] k40 (text)
+EN: Background footage: official Wan 3.0 demo ↗
+ES: Vídeo de fondo: demo oficial de Wan 3.0 ↗
+
+[41] k41 (data-play-label)
+EN: Play background video
+ES: Reproducir vídeo de fondo
+
+[42] k42 (data-pause-label)
+EN: Pause background video
+ES: Pausar vídeo de fondo
+
+[43] k43 (text)
+EN: Pause background video
+ES: Pausar vídeo de fondo
+
+[44] k44 (text)
+EN: 01 / Capabilities
+ES: 01 / Capacidades
+
+[45] k45 (text)
+EN: Designed for this kind of work
+ES: Diseñado para este tipo de trabajo
+
+[46] k46 (text)
+EN: Image-to-video
+ES: De imagen a vídeo
+
+[47] k47 (text)
+EN: Start from an image and carry its composition, subjects, and details into motion.
+ES: Parte de una imagen y lleva su composición, sus sujetos y sus detalles al movimiento.
+
+[48] k48 (text)
+EN: Choose a resolution and output duration before estimating cost.
+ES: Elige la resolución y la duración de salida antes de estimar el coste.
+
+[49] k49 (text)
+EN: Subjects and motion
+ES: Sujetos y movimiento
+
+[50] k50 (text)
+EN: Describe subject details, camera direction, and scene changes to guide the result.
+ES: Describe los detalles del sujeto, la dirección de cámara y los cambios de escena para guiar el resultado.
+
+[51] k51 (text)
+EN: 02 / Pricing
+ES: 02 / Precios
+
+[52] k52 (text)
+EN: HappyHorse 1.0 I2V API pricing
+ES: Precios de la API de HappyHorse 1.0 I2V
+
+[53] k53 (text)
+EN: <strong>Specification-based billing</strong>Check the input and output billing items below
+ES: <strong>Facturación por especificación</strong>Consulta los conceptos de entrada y salida más abajo
+
+[54] k54 (text)
+EN: <strong>No concurrency cap</strong>Available to all users
+ES: <strong>Concurrencia sin límite</strong>Disponible para todos los usuarios
+
+[55] k55 (text)
+EN: <strong>Shared balance</strong>300+ models, one key
+ES: <strong>Saldo compartido</strong>más de 300 modelos, una sola clave
+
+[56] k56 (aria-label)
+EN: Pricing table; scroll horizontally
+ES: Tabla de precios; desplázate horizontalmente
+
+[57] k57 (text)
+EN: Operation / specification
+ES: Operación / especificación
+
+[58] k58 (text)
+EN: Model
+ES: Modelo
+
+[59] k59 (text)
+EN: Price (USD)
+ES: Precio (USD)
+
+[60] k60 (text)
+EN: 720P video
+ES: Vídeo 720P
+
+[61] k61 (text)
+EN: 1080P video
+ES: Vídeo 1080P
+
+[62] k62 (text)
+EN: $0.2065 / second
+ES: $0,2065 / segundo
+
+[63] k63 (text)
+EN: 720P video · 5 second
+ES: Vídeo 720P · 5 segundos
+
+[64] k64 (text)
+EN: 720P video · 10 second
+ES: Vídeo 720P · 10 segundos
+
+[65] k65 (text)
+EN: USD, charged for successful requests. Checked November 7, 2026; the live catalog takes precedence.
+ES: USD, se cobran las peticiones realizadas con éxito. Comprobado el 7 de noviembre de 2026; prevalece el catálogo en tiempo real.
+
+[66] k66 (text)
+EN: View the model catalog ↗
+ES: Ver el catálogo de modelos ↗
+
+[67] k67 (text)
+EN: 03 / Workflow
+ES: 03 / Flujo de trabajo
+
+[68] k68 (text)
+EN: Put the model to work
+ES: Pon el modelo a trabajar
+
+[69] k69 (text)
+EN: 04 / Access
+ES: 04 / Acceso
+
+[70] k70 (text)
+EN: Start with one API key
+ES: Empieza con una sola clave de API
+
+[71] k71 (text)
+EN: Register and create an API key in the console.
+ES: Regístrate y crea una clave de API en la consola.
+
+[72] k72 (text)
+EN: Select model <code>happyhorse-1.0-i2v</code>, and confirm the inputs, output specification, and budget.
+ES: Selecciona el modelo <code>happyhorse-1.0-i2v</code> y confirma las entradas, las especificaciones de salida y el presupuesto.
+
+[73] k73 (text)
+EN: Use Bearer authentication; contact technical support for request parameters and result retrieval.
+ES: Usa autenticación Bearer; contacta con el soporte técnico para los parámetros de la petición y la obtención de resultados.
+
+[74] k74 (text)
+EN: POST
+ES: POST
+
+[75] k75 (text)
+EN: Endpoint from the model catalog details. <a href="https://anyaigc.ai/customersupport">Contact technical support ↗</a>
+ES: Endpoint según los detalles del catálogo de modelos. <a href="https://anyaigc.ai/customersupport">Contactar con el soporte técnico ↗</a>
+
+[76] k76 (text)
+EN: HappyHorse 1.0 I2V API for teams and enterprises
+ES: API de HappyHorse 1.0 I2V para equipos y empresas
+
+[77] k77 (text)
+EN: Self-service invoices and dedicated support.
+ES: Facturas en autoservicio y soporte dedicado.
+
+[78] k78 (text)
+EN: Invoices
+ES: Facturas
+
+[79] k79 (text)
+EN: Self-service invoices
+ES: Facturas en autoservicio
+
+[80] k80 (text)
+EN: Issue invoices yourself in the console for the amount you actually topped up.
+ES: Emite tú mismo las facturas en la consola por el importe que hayas recargado realmente.
+
+[81] k81 (text)
+EN: Dedicated support
+ES: Soporte dedicado
+
+[82] k82 (text)
+EN: Technical contact
+ES: Contacto técnico
+
+[83] k83 (text)
+EN: Dedicated support and technical contact for integration and troubleshooting.
+ES: Soporte dedicado y contacto técnico para la integración y la resolución de problemas.
+
+[84] k84 (text)
+EN: Payment methods
+ES: Métodos de pago
+
+[85] k85 (text)
+EN: WeChat Pay
+ES: WeChat Pay
+
+[86] k86 (text)
+EN: Alipay
+ES: Alipay
+
+[87] k87 (text)
+EN: USDT
+ES: USDT
+
+[88] k88 (text)
+EN: Credit card
+ES: Tarjeta de crédito
+
+[89] k89 (text)
+EN: Talk to sales
+ES: Hablar con ventas
+
+[90] k90 (text)
+EN: Start with a free account
+ES: Empezar con una cuenta gratuita
+
+[91] k91 (text)
+EN: Trust
+ES: Confianza
+
+[92] k92 (text)
+EN: Why teams trust AnyAIGC
+ES: Por qué los equipos confían en AnyAIGC
+
+[93] k93 (text)
+EN: 2M free tokens to start
+ES: 2M de tokens gratis para empezar
+
+[94] k94 (text)
+EN: New accounts get trial credit, so you can test before you top up.
+ES: Las cuentas nuevas reciben crédito de prueba para que pruebes antes de recargar saldo.
+
+[95] k95 (text)
+EN: Top up from $1, refundable
+ES: Recarga desde $1, con reembolso
+
+[96] k96 (text)
+EN: Top up from $1. Unused balance can be refunded with no fee.
+ES: Recarga desde $1. El saldo no utilizado se puede reembolsar sin comisión.
+
+[97] k97 (text)
+EN: Official channels, real models
+ES: Canales oficiales, modelos reales
+
+[98] k98 (text)
+EN: Requests go to official model channels, never cheaper or reverse-engineered substitutes.
+ES: Las peticiones van a los canales oficiales de los modelos, nunca a sustitutos más baratos o de ingeniería inversa.
+
+[99] k99 (text)
+EN: No retention, no training
+ES: Sin retención, sin entrenamiento
+
+[100] k100 (text)
+EN: Unless the law requires it, your prompts and outputs are not persistently stored or used for training. See the <a href="/privacy">privacy policy</a>.
+ES: Salvo que la ley lo exija, tus prompts y resultados no se almacenan de forma persistente ni se usan para entrenar modelos. Consulta la <a href="/privacy">política de privacidad</a>.
+
+[101] k101 (text)
+EN: Transparent billing, spend caps
+ES: Facturación transparente, límites de gasto
+
+[102] k102 (text)
+EN: See tokens and cost for every request in the console, and set a quota on each API key.
+ES: Consulta los tokens y el coste de cada petición en la consola y define una cuota para cada clave de API.
+
+[103] k103 (text)
+EN: 24/7 support
+ES: Soporte 24/7
+
+[104] k104 (text)
+EN: <a href="https://anyaigc.ai/customersupport">Contact support</a> any time about integration, billing or incidents.
+ES: <a href="https://anyaigc.ai/customersupport">Contacta con soporte</a> en cualquier momento para consultas sobre integración, facturación o incidencias.
+
+[105] k105 (text)
+EN: Sign up for 2M free tokens
+ES: Regístrate y recibe 2M de tokens gratis
+
+[106] k106 (text)
+EN: Related models
+ES: Modelos relacionados
+
+[107] k107 (text)
+EN: Wan 3.0 Video
+ES: Wan 3.0 Video
+
+[108] k108 (text)
+EN: $0.0439 / second
+ES: $0,0439 / segundo
+
+[109] k109 (text)
+EN: HappyHorse 1.1 R2V
+ES: HappyHorse 1.1 R2V
+
+[110] k110 (text)
+EN: HappyHorse 1.0 T2V
+ES: HappyHorse 1.0 T2V
+
+[111] k111 (text)
+EN: HappyHorse 1.1 T2V
+ES: HappyHorse 1.1 T2V
+
+[112] k112 (text)
+EN: HappyHorse 1.1 I2V
+ES: HappyHorse 1.1 I2V
+
+[113] k113 (text)
+EN: HappyHorse 1.0 Video Edit
+ES: HappyHorse 1.0 Video Edit
+
+[114] k114 (text)
+EN: HappyHorse 1.0 R2V
+ES: HappyHorse 1.0 R2V
+
+[115] k115 (text)
+EN: Wan 2.6 I2V
+ES: Wan 2.6 I2V
+
+[116] k116 (text)
+EN: $0.2904 / clip
+ES: $0,2904 / clip
+
+[117] k117 (text)
+EN: Wan 2.5 I2V Preview
+ES: Wan 2.5 I2V Preview
+
+[118] k118 (text)
+EN: $0.1452 / clip
+ES: $0,1452 / clip
+
+[119] k119 (text)
+EN: Qwen3.8 Omni Flash Realtime
+ES: Qwen3.8 Omni Flash Realtime
+
+[120] k120 (text)
+EN: $0.3416 / 1M tokens
+ES: $0,3416 / 1M de tokens
+
+[121] k121 (text)
+EN: Qwen conversation-model overview →
+ES: Resumen de los modelos de conversación de Qwen →
+
+[122] k122 (text)
+EN: HappyHorse 1.0
+ES: HappyHorse 1.0
+
+[123] k123 (text)
+EN: Specs and how to choose it
+ES: Especificaciones y cuándo elegirlo
+
+[124] k124 (text)
+EN: happyhorse-1.0-i2v is the HappyHorse 1.0 model for image-to-video, using one image as the first frame.
+ES: happyhorse-1.0-i2v es el modelo de HappyHorse 1.0 de imagen a vídeo y usa una imagen como primer fotograma.
+
+[125] k125 (text)
+EN: Alibaba Cloud's documentation lists 720P and 1080P output, 3 to 15 seconds per clip, 24 fps, MP4, with audio generated alongside the video.
+ES: La documentación de Alibaba Cloud indica salida en 720P y 1080P, de 3 a 15 segundos por clip, 24 fps, MP4, con audio generado junto con el vídeo.
+
+[126] k126 (text)
+EN: This page lists 720P video at $0.1161 / second, 1080P video at $0.2065 / second, the same figures as the pricing table above.
+ES: Esta página indica vídeo 720P a $0,1161 / segundo y vídeo 1080P a $0,2065 / segundo, las mismas cifras que la tabla de precios de arriba.
+
+[127] k127 (text)
+EN: <a href="/en/models/happyhorse-1.1-i2v">happyhorse-1.1-i2v</a> adds a 480P tier on top of 1.0. Choose 1.1 when you want low-resolution drafts.
+ES: <a href="/en/models/happyhorse-1.1-i2v">happyhorse-1.1-i2v</a> añade un nivel de 480P sobre la 1.0. Elige la 1.1 si quieres borradores en baja resolución.
+
+[128] k128 (text)
+EN: Specs come from the <a href="https://www.alibabacloud.com/help/en/model-studio/video-generation">Alibaba Cloud Model Studio video generation docs</a>. The table on this page is the price, and the model catalog is authoritative for live rates.
+ES: Las especificaciones proceden de la <a href="https://www.alibabacloud.com/help/en/model-studio/video-generation">documentación de generación de vídeo de Alibaba Cloud Model Studio</a>. La tabla de esta página es la de precios, y el catálogo de modelos es la referencia para las tarifas actuales.
+
+[129] k129 (text)
+EN: FAQ
+ES: Preguntas frecuentes
+
+[130] k130 (text)
+EN: HappyHorse 1.0 I2V API FAQ
+ES: Preguntas frecuentes sobre la API de HappyHorse 1.0 I2V
+
+[131] k131 (text)
+EN: What is HappyHorse 1.0 I2V for?
+ES: ¿Para qué sirve HappyHorse 1.0 I2V?
+
+[132] k132 (text)
+EN: Which resolutions and durations does happyhorse-1.0-i2v support?
+ES: ¿Qué resoluciones y duraciones admite happyhorse-1.0-i2v?
+
+[133] k133 (text)
+EN: Per Alibaba Cloud's documentation: 720P and 1080P, 3–15 seconds per clip, 24 fps, MP4, with audio generated.
+ES: Según la documentación de Alibaba Cloud: 720P y 1080P, de 3 a 15 segundos por clip, 24 fps, MP4, con audio generado.
+
+[134] k134 (text)
+EN: What is the difference between HappyHorse 1.1 and 1.0?
+ES: ¿Qué diferencia hay entre HappyHorse 1.1 y 1.0?
+
+[135] k135 (text)
+EN: Version 1.1 adds a 480P tier; everything else matches 1.0: 3–15 seconds, 24 fps, MP4, with audio.
+ES: La versión 1.1 añade un nivel de 480P; el resto coincide con la 1.0: de 3 a 15 segundos, 24 fps, MP4, con audio.
+
+[136] k136 (text)
+EN: How is API usage priced?
+ES: ¿Cómo se factura el uso de la API?
+
+[137] k137 (text)
+EN: 720P video $0.1161/second；1080P video $0.2065/second See the catalog for live prices.
+ES: Vídeo 720P $0,1161/segundo; vídeo 1080P $0,2065/segundo. Consulta el catálogo para ver los precios actuales.
+
+[138] k138 (text)
+EN: Is concurrency capped?
+ES: ¿Hay un límite de concurrencia?
+
+[139] k139 (text)
+EN: AnyAIGC does not set a concurrency cap for this model; it is available by default.
+ES: AnyAIGC no fija un límite de concurrencia para este modelo; está disponible por defecto.
+
+[140] k140 (text)
+EN: How do I get an API key?
+ES: ¿Cómo obtengo una clave de API?
+
+[141] k141 (text)
+EN: <a href="https://anyaigc.ai/register?aff=oOK7&channel=c_wpduopc9">Create an AnyAIGC account</a>, then create an API key in the console.
+ES: <a href="https://anyaigc.ai/register?aff=oOK7&channel=c_wpduopc9">Crea una cuenta de AnyAIGC</a> y luego crea una clave de API en la consola.
+
+[142] k142 (text)
+EN: Can I use outputs commercially?
+ES: ¿Puedo usar los resultados con fines comerciales?
+
+[143] k143 (text)
+EN: Commercial usage is governed by official Qwen and Alibaba Cloud terms.
+ES: El uso comercial se rige por las condiciones oficiales de Qwen y Alibaba Cloud.
+
+[144] k144 (text)
+EN: Can I get an invoice from AnyAIGC?
+ES: ¿Puedo obtener una factura de AnyAIGC?
+
+[145] k145 (text)
+EN: Yes. You can issue invoices yourself in the console, for the amount you actually topped up.
+ES: Sí. Puedes emitir tus propias facturas en la consola, por el importe que hayas recargado realmente.
+
+[146] k146 (text)
+EN: Which payment methods are supported?
+ES: ¿Qué métodos de pago se admiten?
+
+[147] k147 (text)
+EN: You can top up with WeChat Pay, Alipay, USDT or a credit card. Your balance is in USD and works across every model on the platform. Invoices can be issued in the console for the amount you topped up.
+ES: Puedes recargar saldo con WeChat Pay, Alipay, USDT o tarjeta de crédito. Tu saldo está en USD y sirve para todos los modelos de la plataforma. Las facturas se pueden emitir en la consola por el importe recargado.
+
+[148] k148 (text)
+EN: Is there free trial credit for new users?
+ES: ¿Hay crédito de prueba gratuito para usuarios nuevos?
+
+[149] k149 (text)
+EN: Yes. New accounts get 2 million tokens of trial credit.
+ES: Sí. Las cuentas nuevas reciben 2 millones de tokens de crédito de prueba.
+
+[150] k150 (text)
+EN: Can I get a refund on my balance?
+ES: ¿Puedo pedir el reembolso de mi saldo?
+
+[151] k151 (text)
+EN: Yes. Unused balance can be refunded with no fee.
+ES: Sí. El saldo no utilizado se puede reembolsar sin comisión.
+
+[152] k152 (text)
+EN: Is my data safe?
+ES: ¿Mis datos están seguros?
+
+[153] k153 (text)
+EN: Prompts and outputs are not persistently stored or used for training unless required by law.
+ES: Los prompts y las salidas no se almacenan de forma persistente ni se usan para entrenamiento, salvo que la ley lo exija.
+
+[154] k154 (text)
+EN: Related model APIs
+ES: APIs de modelos relacionados
+
+[155] k155 (text)
+EN: The same AnyAIGC API key works with these video models. Compare pricing and capabilities.
+ES: La misma clave de API de AnyAIGC funciona con estos modelos de vídeo. Compara precios y capacidades.
+
+[156] k156 (text)
+EN: Grok Video API
+ES: API de Grok Video
+
+[157] k157 (text)
+EN: View guide →
+ES: Ver guía →
+
+[158] k158 (text)
+EN: Wan 3.0 API
+ES: API de Wan 3.0
+
+[159] k159 (text)
+EN: Hailuo H3 API
+ES: API de Hailuo H3
+
+[160] k160 (text)
+EN: Muse Video API
+ES: API de Muse Video
+
+[161] k161 (text)
+EN: Seedance API
+ES: API de Seedance
+
+[162] k162 (text)
+EN: Kling API
+ES: API de Kling
+
+[163] k163 (text)
+EN: Ready to call HappyHorse 1.0 I2V?
+ES: ¿Listo para llamar a HappyHorse 1.0 I2V?
+
+[164] k164 (text)
+EN: Sign up for AnyAIGC
+ES: Regístrate en AnyAIGC
+
+[165] k165 (text)
+EN: An API gateway for global AI models. One base URL and one API key for 300+ models.
+ES: Una pasarela de API para modelos de IA globales. Una sola URL base y una sola clave de API para más de 300 modelos.
+
+[166] k166 (text)
+EN: Product
+ES: Producto
+
+[167] k167 (text)
+EN: Console
+ES: Consola
+
+[168] k168 (text)
+EN: Resources
+ES: Recursos
+
+[169] k169 (text)
+EN: API docs ↗
+ES: Documentación de la API ↗
+
+[170] k170 (text)
+EN: Contact us
+ES: Contacto
+
+[171] k171 (text)
+EN: Legal
+ES: Legal
+
+[172] k172 (text)
+EN: Privacy policy
+ES: Política de privacidad
+
+[173] k173 (text)
+EN: Terms of service
+ES: Términos del servicio
+
+[174] k174 (text)
+EN: © 2026 AnyAIGC. HappyHorse 1.0 I2V names and trademarks belong to their respective Alibaba owners. AnyAIGC is an independent API provider and is not affiliated with Alibaba Cloud.
+ES: © 2026 AnyAIGC. Los nombres y las marcas de HappyHorse 1.0 I2V pertenecen a sus respectivos propietarios de Alibaba. AnyAIGC es un proveedor de API independiente y no está afiliado a Alibaba Cloud.
+
+[175] k175 (title)
+EN: HappyHorse 1.0 R2V API Pricing | From $0.1161/second - AnyAIGC
+ES: API de HappyHorse 1.0 R2V: precio desde $0,1161/s | AnyAIGC
+
+[176] k176 (meta:description)
+EN: HappyHorse 1.0 R2V API: video creation from $0.1161 / second, no concurrency cap, and self-service invoices on AnyAIGC, with one key for 300+ models.
+ES: API de HappyHorse 1.0 R2V: vídeo desde $0,1161/segundo, concurrencia sin límite y facturas en autoservicio en AnyAIGC, con una clave para más de 300 modelos.
+
+[177] k177 (meta:keywords)
+EN: HappyHorse 1.0 R2V API,HappyHorse 1.0 R2V API pricing,HappyHorse 1.0 R2V API for business,AnyAIGC
+ES: API de HappyHorse 1.0 R2V,precio API de HappyHorse 1.0 R2V,API de HappyHorse 1.0 R2V para empresas,AnyAIGC
+
+[178] k178 (meta:og:title)
+EN: HappyHorse 1.0 R2V API Pricing | From $0.1161/second - AnyAIGC
+ES: API de HappyHorse 1.0 R2V: precio desde $0,1161/s | AnyAIGC
+
+[179] k179 (meta:og:description)
+EN: HappyHorse 1.0 R2V API: video creation from $0.1161 / second, no concurrency cap, and self-service invoices on AnyAIGC, with one key for 300+ models.
+ES: API de HappyHorse 1.0 R2V: vídeo desde $0,1161/segundo, concurrencia sin límite y facturas en autoservicio en AnyAIGC, con una clave para más de 300 modelos.
+
+[180] k180 (meta:og:image:alt)
+EN: HappyHorse 1.0 R2V API · AnyAIGC
+ES: API de HappyHorse 1.0 R2V · AnyAIGC
+
+[181] k181 (meta:twitter:title)
+EN: HappyHorse 1.0 R2V API Pricing | From $0.1161/second - AnyAIGC
+ES: API de HappyHorse 1.0 R2V: precio desde $0,1161/s | AnyAIGC
+
+[182] k182 (meta:twitter:description)
+EN: HappyHorse 1.0 R2V API: video creation from $0.1161 / second, no concurrency cap, and self-service invoices on AnyAIGC, with one key for 300+ models.
+ES: API de HappyHorse 1.0 R2V: vídeo desde $0,1161/segundo, concurrencia sin límite y facturas en autoservicio en AnyAIGC, con una clave para más de 300 modelos.
+
+[183] k183 (ld:name)
+EN: HappyHorse 1.0 R2V API Pricing | From $0.1161/second - AnyAIGC
+ES: API de HappyHorse 1.0 R2V: precio desde $0,1161/s | AnyAIGC
+
+[184] k184 (ld:description)
+EN: HappyHorse 1.0 R2V API: video creation from $0.1161 / second, no concurrency cap, and self-service invoices on AnyAIGC, with one key for 300+ models.
+ES: API de HappyHorse 1.0 R2V: vídeo desde $0,1161/segundo, concurrencia sin límite y facturas en autoservicio en AnyAIGC, con una clave para más de 300 modelos.
+
+[185] k185 (ld:name)
+EN: HappyHorse 1.0 R2V
+ES: HappyHorse 1.0 R2V
+
+[186] k186 (ld:name)
+EN: HappyHorse 1.0 R2V API
+ES: API de HappyHorse 1.0 R2V
+
+[187] k187 (aria-label)
+EN: HappyHorse 1.0 R2V API
+ES: API de HappyHorse 1.0 R2V
+
+[188] k188 (text)
+EN: HappyHorse 1.0 R2V API
+ES: API de HappyHorse 1.0 R2V
+
+[189] k189 (text)
+EN: Reference-to-video that carries your creative intent into motion.
+ES: De referencia a vídeo que da movimiento a tu intención creativa.
+
+[190] k190 (text)
+EN: HappyHorse 1.0 for reference-to-video. Use up to nine reference images to preserve subjects, scenes, and style.
+ES: HappyHorse 1.0 de referencia a vídeo. Usa hasta nueve imágenes de referencia para conservar sujetos, escenas y estilo.
+
+[191] k191 (text)
+EN: Reference-to-video
+ES: De referencia a vídeo
+
+[192] k192 (text)
+EN: Use up to nine reference images to preserve subjects, scenes, and style.
+ES: Usa hasta nueve imágenes de referencia para conservar sujetos, escenas y estilo.
+
+[193] k193 (text)
+EN: HappyHorse 1.0 R2V API pricing
+ES: Precios de la API de HappyHorse 1.0 R2V
+
+[194] k194 (text)
+EN: Select model <code>happyhorse-1.0-r2v</code>, and confirm the inputs, output specification, and budget.
+ES: Selecciona el modelo <code>happyhorse-1.0-r2v</code> y confirma las entradas, las especificaciones de salida y el presupuesto.
+
+[195] k195 (text)
+EN: HappyHorse 1.0 R2V API for teams and enterprises
+ES: API de HappyHorse 1.0 R2V para equipos y empresas
+
+[196] k196 (text)
+EN: happyhorse-1.0-r2v is the HappyHorse 1.0 model for reference-to-video, keeping subjects and style from reference images.
+ES: happyhorse-1.0-r2v es el modelo de HappyHorse 1.0 de referencia a vídeo, que conserva los sujetos y el estilo de las imágenes de referencia.
+
+[197] k197 (text)
+EN: <a href="/en/models/happyhorse-1.1-r2v">happyhorse-1.1-r2v</a> adds a 480P tier on top of 1.0. Choose 1.1 when you want low-resolution drafts.
+ES: <a href="/en/models/happyhorse-1.1-r2v">happyhorse-1.1-r2v</a> añade un nivel de 480P sobre la 1.0. Elige la 1.1 si quieres borradores en baja resolución.
+
+[198] k198 (text)
+EN: HappyHorse 1.0 R2V API FAQ
+ES: Preguntas frecuentes sobre la API de HappyHorse 1.0 R2V
+
+[199] k199 (text)
+EN: What is HappyHorse 1.0 R2V for?
+ES: ¿Para qué sirve HappyHorse 1.0 R2V?
+
+[200] k200 (text)
+EN: Which resolutions and durations does happyhorse-1.0-r2v support?
+ES: ¿Qué resoluciones y duraciones admite happyhorse-1.0-r2v?
+
+[201] k201 (text)
+EN: Vidu API
+ES: API de Vidu
+
+[202] k202 (text)
+EN: Ready to call HappyHorse 1.0 R2V?
+ES: ¿Listo para llamar a HappyHorse 1.0 R2V?
+
+[203] k203 (text)
+EN: © 2026 AnyAIGC. HappyHorse 1.0 R2V names and trademarks belong to their respective Alibaba owners. AnyAIGC is an independent API provider and is not affiliated with Alibaba Cloud.
+ES: © 2026 AnyAIGC. Los nombres y las marcas de HappyHorse 1.0 R2V pertenecen a sus respectivos propietarios de Alibaba. AnyAIGC es un proveedor de API independiente y no está afiliado a Alibaba Cloud.
+
+[204] k204 (title)
+EN: HappyHorse 1.0 T2V API Pricing | From $0.1161/second - AnyAIGC
+ES: API de HappyHorse 1.0 T2V: precio desde $0,1161/s | AnyAIGC
+
+[205] k205 (meta:description)
+EN: HappyHorse 1.0 T2V API: video creation from $0.1161 / second, no concurrency cap, and self-service invoices on AnyAIGC, with one key for 300+ models.
+ES: API de HappyHorse 1.0 T2V: vídeo desde $0,1161/segundo, concurrencia sin límite y facturas en autoservicio en AnyAIGC, con una clave para más de 300 modelos.
+
+[206] k206 (meta:keywords)
+EN: HappyHorse 1.0 T2V API,HappyHorse 1.0 T2V API pricing,HappyHorse 1.0 T2V API for business,AnyAIGC
+ES: API de HappyHorse 1.0 T2V,precio API de HappyHorse 1.0 T2V,API de HappyHorse 1.0 T2V para empresas,AnyAIGC
+
+[207] k207 (meta:og:title)
+EN: HappyHorse 1.0 T2V API Pricing | From $0.1161/second - AnyAIGC
+ES: API de HappyHorse 1.0 T2V: precio desde $0,1161/s | AnyAIGC
+
+[208] k208 (meta:og:description)
+EN: HappyHorse 1.0 T2V API: video creation from $0.1161 / second, no concurrency cap, and self-service invoices on AnyAIGC, with one key for 300+ models.
+ES: API de HappyHorse 1.0 T2V: vídeo desde $0,1161/segundo, concurrencia sin límite y facturas en autoservicio en AnyAIGC, con una clave para más de 300 modelos.
+
+[209] k209 (meta:og:image:alt)
+EN: HappyHorse 1.0 T2V API · AnyAIGC
+ES: API de HappyHorse 1.0 T2V · AnyAIGC
+
+[210] k210 (meta:twitter:title)
+EN: HappyHorse 1.0 T2V API Pricing | From $0.1161/second - AnyAIGC
+ES: API de HappyHorse 1.0 T2V: precio desde $0,1161/s | AnyAIGC
+
+[211] k211 (meta:twitter:description)
+EN: HappyHorse 1.0 T2V API: video creation from $0.1161 / second, no concurrency cap, and self-service invoices on AnyAIGC, with one key for 300+ models.
+ES: API de HappyHorse 1.0 T2V: vídeo desde $0,1161/segundo, concurrencia sin límite y facturas en autoservicio en AnyAIGC, con una clave para más de 300 modelos.
+
+[212] k212 (ld:name)
+EN: HappyHorse 1.0 T2V API Pricing | From $0.1161/second - AnyAIGC
+ES: API de HappyHorse 1.0 T2V: precio desde $0,1161/s | AnyAIGC
+
+[213] k213 (ld:description)
+EN: HappyHorse 1.0 T2V API: video creation from $0.1161 / second, no concurrency cap, and self-service invoices on AnyAIGC, with one key for 300+ models.
+ES: API de HappyHorse 1.0 T2V: vídeo desde $0,1161/segundo, concurrencia sin límite y facturas en autoservicio en AnyAIGC, con una clave para más de 300 modelos.
+
+[214] k214 (ld:name)
+EN: HappyHorse 1.0 T2V
+ES: HappyHorse 1.0 T2V
+
+[215] k215 (ld:name)
+EN: HappyHorse 1.0 T2V API
+ES: API de HappyHorse 1.0 T2V
+
+[216] k216 (aria-label)
+EN: HappyHorse 1.0 T2V API
+ES: API de HappyHorse 1.0 T2V
+
+[217] k217 (text)
+EN: HappyHorse 1.0 T2V API
+ES: API de HappyHorse 1.0 T2V
+
+[218] k218 (text)
+EN: Text-to-video that carries your creative intent into motion.
+ES: De texto a vídeo que da movimiento a tu intención creativa.
+
+[219] k219 (text)
+EN: HappyHorse 1.0 for text-to-video. Turn descriptions of scenes, characters, action, and camera movement into video.
+ES: HappyHorse 1.0 de texto a vídeo. Convierte descripciones de escenas, personajes, acción y movimientos de cámara en vídeo.
+
+[220] k220 (text)
+EN: Text-to-video
+ES: De texto a vídeo
+
+[221] k221 (text)
+EN: Turn descriptions of scenes, characters, action, and camera movement into video.
+ES: Convierte descripciones de escenas, personajes, acción y movimientos de cámara en vídeo.
+
+[222] k222 (text)
+EN: HappyHorse 1.0 T2V API pricing
+ES: Precios de la API de HappyHorse 1.0 T2V
+
+[223] k223 (text)
+EN: Select model <code>happyhorse-1.0-t2v</code>, and confirm the inputs, output specification, and budget.
+ES: Selecciona el modelo <code>happyhorse-1.0-t2v</code> y confirma las entradas, las especificaciones de salida y el presupuesto.
+
+[224] k224 (text)
+EN: HappyHorse 1.0 T2V API for teams and enterprises
+ES: API de HappyHorse 1.0 T2V para equipos y empresas
+
+[225] k225 (text)
+EN: happyhorse-1.0-t2v is the HappyHorse 1.0 model for text-to-video from a text prompt.
+ES: happyhorse-1.0-t2v es el modelo de HappyHorse 1.0 de texto a vídeo a partir de un prompt de texto.
+
+[226] k226 (text)
+EN: <a href="/en/models/happyhorse-1.1-t2v">happyhorse-1.1-t2v</a> adds a 480P tier on top of 1.0. Choose 1.1 when you want low-resolution drafts.
+ES: <a href="/en/models/happyhorse-1.1-t2v">happyhorse-1.1-t2v</a> añade un nivel de 480P sobre la 1.0. Elige la 1.1 si quieres borradores en baja resolución.
+
+[227] k227 (text)
+EN: HappyHorse 1.0 T2V API FAQ
+ES: Preguntas frecuentes sobre la API de HappyHorse 1.0 T2V
+
+[228] k228 (text)
+EN: What is HappyHorse 1.0 T2V for?
+ES: ¿Para qué sirve HappyHorse 1.0 T2V?
+
+[229] k229 (text)
+EN: Which resolutions and durations does happyhorse-1.0-t2v support?
+ES: ¿Qué resoluciones y duraciones admite happyhorse-1.0-t2v?
+
+[230] k230 (text)
+EN: Ready to call HappyHorse 1.0 T2V?
+ES: ¿Listo para llamar a HappyHorse 1.0 T2V?
+
+[231] k231 (text)
+EN: © 2026 AnyAIGC. HappyHorse 1.0 T2V names and trademarks belong to their respective Alibaba owners. AnyAIGC is an independent API provider and is not affiliated with Alibaba Cloud.
+ES: © 2026 AnyAIGC. Los nombres y las marcas de HappyHorse 1.0 T2V pertenecen a sus respectivos propietarios de Alibaba. AnyAIGC es un proveedor de API independiente y no está afiliado a Alibaba Cloud.
+
+[232] k232 (title)
+EN: HappyHorse 1.0 Video Edit API Pricing | From $0.1161/s - AnyAIGC
+ES: API de HappyHorse 1.0 Video Edit: precio $0,1161/s | AnyAIGC
+
+[233] k233 (meta:description)
+EN: HappyHorse 1.0 Video Edit API: video creation from $0.1161 / second, no concurrency cap, and self-service invoices on AnyAIGC.
+ES: API de HappyHorse 1.0 Video Edit: vídeo desde $0,1161/segundo, concurrencia sin límite y facturas en autoservicio en AnyAIGC.
+
+[234] k234 (meta:keywords)
+EN: HappyHorse 1.0 Video Edit API,HappyHorse 1.0 Video Edit API pricing,HappyHorse 1.0 Video Edit API for business,AnyAIGC
+ES: API de HappyHorse 1.0 Video Edit,precio API de HappyHorse 1.0 Video Edit,API de HappyHorse 1.0 Video Edit para empresas,AnyAIGC
+
+[235] k235 (meta:og:title)
+EN: HappyHorse 1.0 Video Edit API Pricing | From $0.1161/s - AnyAIGC
+ES: API de HappyHorse 1.0 Video Edit: precio $0,1161/s | AnyAIGC
+
+[236] k236 (meta:og:description)
+EN: HappyHorse 1.0 Video Edit API: video creation from $0.1161 / second, no concurrency cap, and self-service invoices on AnyAIGC.
+ES: API de HappyHorse 1.0 Video Edit: vídeo desde $0,1161/segundo, concurrencia sin límite y facturas en autoservicio en AnyAIGC.
+
+[237] k237 (meta:og:image:alt)
+EN: HappyHorse 1.0 Video Edit API · AnyAIGC
+ES: API de HappyHorse 1.0 Video Edit · AnyAIGC
+
+[238] k238 (meta:twitter:title)
+EN: HappyHorse 1.0 Video Edit API Pricing | From $0.1161/s - AnyAIGC
+ES: API de HappyHorse 1.0 Video Edit: precio $0,1161/s | AnyAIGC
+
+[239] k239 (meta:twitter:description)
+EN: HappyHorse 1.0 Video Edit API: video creation from $0.1161 / second, no concurrency cap, and self-service invoices on AnyAIGC.
+ES: API de HappyHorse 1.0 Video Edit: vídeo desde $0,1161/segundo, concurrencia sin límite y facturas en autoservicio en AnyAIGC.
+
+[240] k240 (ld:name)
+EN: HappyHorse 1.0 Video Edit API Pricing | From $0.1161/s - AnyAIGC
+ES: API de HappyHorse 1.0 Video Edit: precio $0,1161/s | AnyAIGC
+
+[241] k241 (ld:description)
+EN: HappyHorse 1.0 Video Edit API: video creation from $0.1161 / second, no concurrency cap, and self-service invoices on AnyAIGC.
+ES: API de HappyHorse 1.0 Video Edit: vídeo desde $0,1161/segundo, concurrencia sin límite y facturas en autoservicio en AnyAIGC.
+
+[242] k242 (ld:name)
+EN: HappyHorse 1.0 Video Edit
+ES: HappyHorse 1.0 Video Edit
+
+[243] k243 (ld:name)
+EN: HappyHorse 1.0 Video Edit API
+ES: API de HappyHorse 1.0 Video Edit
+
+[244] k244 (aria-label)
+EN: HappyHorse 1.0 Video Edit API
+ES: API de HappyHorse 1.0 Video Edit
+
+[245] k245 (text)
+EN: HappyHorse 1.0 Video Edit API
+ES: API de HappyHorse 1.0 Video Edit
+
+[246] k246 (text)
+EN: Video editing that carries your creative intent into motion.
+ES: Edición de vídeo que da movimiento a tu intención creativa.
+
+[247] k247 (text)
+EN: HappyHorse 1.0 for video editing. Edit existing video with natural language and up to five reference images for local or global changes.
+ES: HappyHorse 1.0 para edición de vídeo. Edita vídeo existente con lenguaje natural y hasta cinco imágenes de referencia para cambios locales o globales.
+
+[248] k248 (text)
+EN: Video editing
+ES: Edición de vídeo
+
+[249] k249 (text)
+EN: Edit existing video with natural language and up to five reference images for local or global changes.
+ES: Edita vídeo existente con lenguaje natural y hasta cinco imágenes de referencia para cambios locales o globales.
+
+[250] k250 (text)
+EN: HappyHorse 1.0 Video Edit API pricing
+ES: Precios de la API de HappyHorse 1.0 Video Edit
+
+[251] k251 (text)
+EN: Select model <code>happyhorse-1.0-video-edit</code>, and confirm the inputs, output specification, and budget.
+ES: Selecciona el modelo <code>happyhorse-1.0-video-edit</code> y confirma las entradas, las especificaciones de salida y el presupuesto.
+
+[252] k252 (text)
+EN: HappyHorse 1.0 Video Edit API for teams and enterprises
+ES: API de HappyHorse 1.0 Video Edit para equipos y empresas
+
+[253] k253 (text)
+EN: happyhorse-1.0-video-edit is the HappyHorse 1.0 model for video editing of an existing clip with text instructions.
+ES: happyhorse-1.0-video-edit es el modelo de HappyHorse 1.0 para editar un clip existente con instrucciones de texto.
+
+[254] k254 (text)
+EN: Video editing is only available in version 1.0. To generate new footage, use the text, image or reference models in the same family.
+ES: La edición de vídeo solo está disponible en la versión 1.0. Para generar metraje nuevo, usa los modelos de texto, imagen o referencia de la misma familia.
+
+[255] k255 (text)
+EN: HappyHorse 1.0 Video Edit API FAQ
+ES: Preguntas frecuentes sobre la API de HappyHorse 1.0 Video Edit
+
+[256] k256 (text)
+EN: What is HappyHorse 1.0 Video Edit for?
+ES: ¿Para qué sirve HappyHorse 1.0 Video Edit?
+
+[257] k257 (text)
+EN: Which resolutions and durations does happyhorse-1.0-video-edit support?
+ES: ¿Qué resoluciones y duraciones admite happyhorse-1.0-video-edit?
+
+[258] k258 (text)
+EN: Video editing is only available in 1.0. The 1.1 text, image and reference models add a 480P tier.
+ES: La edición de vídeo solo está disponible en la 1.0. Los modelos de texto, imagen y referencia de la 1.1 añaden un nivel de 480P.
+
+[259] k259 (text)
+EN: Ready to call HappyHorse 1.0 Video Edit?
+ES: ¿Listo para llamar a HappyHorse 1.0 Video Edit?
+
+[260] k260 (text)
+EN: © 2026 AnyAIGC. HappyHorse 1.0 Video Edit names and trademarks belong to their respective Alibaba owners. AnyAIGC is an independent API provider and is not affiliated with Alibaba Cloud.
+ES: © 2026 AnyAIGC. Los nombres y las marcas de HappyHorse 1.0 Video Edit pertenecen a sus respectivos propietarios de Alibaba. AnyAIGC es un proveedor de API independiente y no está afiliado a Alibaba Cloud.
+
+[261] k261 (title)
+EN: HappyHorse 1.1 I2V API Pricing | From $0.1161/second - AnyAIGC
+ES: API de HappyHorse 1.1 I2V: precio desde $0,1161/s | AnyAIGC
+
+[262] k262 (meta:description)
+EN: HappyHorse 1.1 I2V API: video creation from $0.1161 / second, no concurrency cap, and self-service invoices on AnyAIGC, with one key for 300+ models.
+ES: API de HappyHorse 1.1 I2V: vídeo desde $0,1161/segundo, concurrencia sin límite y facturas en autoservicio en AnyAIGC, con una clave para más de 300 modelos.
+
+[263] k263 (meta:keywords)
+EN: HappyHorse 1.1 I2V API,HappyHorse 1.1 I2V API pricing,HappyHorse 1.1 I2V API for business,AnyAIGC
+ES: API de HappyHorse 1.1 I2V,precio API de HappyHorse 1.1 I2V,API de HappyHorse 1.1 I2V para empresas,AnyAIGC
+

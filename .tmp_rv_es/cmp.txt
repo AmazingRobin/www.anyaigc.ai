@@ -1,0 +1,40 @@
+[33] EN: starting rate · see billing details below
+  MINE: tarifa inicial · consulta el detalle de facturación más abajo
+  REF: {'tarifa inicial · consulta los detalles de facturación más abajo': ['q1']}
+
+[45] EN: Designed for this kind of work
+  MINE: Diseñado para este tipo de trabajo
+  REF: {'Pensado para este tipo de trabajo': ['q1']}
+
+[53] EN: <strong>Specification-based billing</strong>Check the input and output billing items below
+  MINE: <strong>Facturación por especificación</strong>Consulta los conceptos de entrada y salida más abajo
+  REF: {'<strong>Facturación según la especificación</strong>Consulta abajo los conceptos de facturación de entrada y salida': ['q1']}
+
+[55] EN: <strong>Shared balance</strong>300+ models, one key
+  MINE: <strong>Saldo compartido</strong>más de 300 modelos, una sola clave
+  REF: {'<strong>Saldo compartido</strong>Más de 300 modelos, una sola clave': ['q1']}
+
+[65] EN: USD, charged for successful requests. Checked November 7, 2026; the live catalog takes precedence.
+  MINE: USD, se cobran las peticiones realizadas con éxito. Comprobado el 7 de noviembre de 2026; prevalece el catálogo en tiempo real.
+  REF: {'USD, se cobra por peticiones correctas. Comprobado el 7 de noviembre de 2026; prevalece el catálogo de modelos.': ['q1']}
+
+[73] EN: Use Bearer authentication; contact technical support for request parameters and result retrieval.
+  MINE: Usa autenticación Bearer; contacta con el soporte técnico para los parámetros de la petición y la obtención de resultados.
+  REF: {'Usa autenticación Bearer; contacta con el soporte técnico para los parámetros de la petición y la obtención del resultado.': ['q1']}
+
+[80] EN: Issue invoices yourself in the console for the amount you actually topped up.
+  MINE: Emite tú mismo las facturas en la consola por el importe que hayas recargado realmente.
+  REF: {'Emite tú mismo las facturas en la consola por el importe que hayas recargado realmente.': ['grok', 'b3rest', 'q1'], 'Emite las facturas por tu cuenta en la consola, por el importe que hayas recargado realmente.': ['doubao']}
+
+[139] EN: AnyAIGC does not set a concurrency cap for this model; it is available by default.
+  MINE: AnyAIGC no fija un límite de concurrencia para este modelo; está disponible por defecto.
+  REF: {'AnyAIGC no fija un límite de concurrencia para este modelo; está disponible de forma predeterminada.': ['q1']}
+
+[152] EN: Is my data safe?
+  MINE: ¿Mis datos están seguros?
+  REF: {'¿Están seguros mis datos?': ['q1']}
+
+[155] EN: The same AnyAIGC API key works with these video models. Compare pricing and capabilities.
+  MINE: La misma clave de API de AnyAIGC funciona con estos modelos de vídeo. Compara precios y capacidades.
+  REF: {'La misma clave de API de AnyAIGC funciona con estos modelos de video. Compara precios y capacidades.': ['grok'], 'La misma clave de API de AnyAIGC funciona con estos modelos de vídeo. Compara precios y capacidades.': ['doubao', 'b3rest']}
+
