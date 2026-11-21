@@ -22,6 +22,9 @@ ICON = re.sub(r'<title>.*?</title>', '', re.search(r'<svg[^>]*>(.*)</svg>', _raw
 
 # slug -> (标题, {语言: 卖点}, {语言: 标签}, 右侧 4 块示意图)
 DATA = {
+    'seedream-5.5': ('Seedream 5.5', {'zh': f'图层拆分与原生 RGBA，每张 {cny("seedream-5.5")} 起', 'en': f'Layers and native RGBA, from {usd("seedream-5.5")} / image'},
+                     {'zh': ['图层拆分', 'RGBA 透明图', '并发不限'], 'en': ['Layer separation', 'Native RGBA', 'Unlimited concurrency']},
+                     ('edit', 'photo', 'multi', 'type')),
     'seedream': ('Seedream API', {'zh': f'字节跳动全系生图模型，按张 {cny("seedream-5.0-lite")} 起', 'en': f'Every Seedream model, from {usd("seedream-5.0-lite")} / image'},
                  {'zh': ['5.0 Pro · lite · 4.5 · 4.0', '对公 · 专票'], 'en': ['5.0 Pro · lite · 4.5 · 4.0', 'Self-service invoices']},
                  ('info', 'edit', 'seq', 'lang')),
@@ -59,6 +62,8 @@ TAG_I18N = {
     'Precise edits': _t('精密な編集', '정밀 편집', 'Ediciones precisas', 'Präzise Bearbeitung'),
     '4K': _t('4K', '4K', '4K', '4K'),
     'Image sets': _t('画像セット', '이미지 세트', 'Conjuntos de imágenes', 'Bildserien'),
+    'Layer separation': _t('レイヤー分離', '레이어 분리', 'Separación de capas', 'Ebenentrennung'),
+    'Native RGBA': _t('ネイティブ RGBA', '네이티브 RGBA', 'RGBA nativo', 'Natives RGBA'),
     'Typography': _t('タイポグラフィ', '타이포그래피', 'Tipografía', 'Typografie'),
     'Up to 15 images': _t('最大15枚', '최대 15장', 'Hasta 15 imágenes', 'Bis zu 15 Bilder'),
     'Native 2K': _t('ネイティブ 2K', '네이티브 2K', '2K nativo', 'Natives 2K'),
@@ -68,6 +73,8 @@ TAG_I18N = {
 SUB_I18N = {
     'seedream': lambda u: _t(f'Seedream 全モデル、1枚 {u} から', f'Seedream 전 모델, 이미지당 {u}부터',
                              f'Todos los modelos Seedream, desde {u} / imagen', f'Alle Seedream-Modelle, ab {u} / Bild'),
+    'seedream-5.5': lambda u: _t(f'レイヤー分離とネイティブ RGBA、1枚 {u} から', f'레이어 분리와 네이티브 RGBA, 이미지당 {u}부터',
+                                 f'Capas y RGBA nativo, desde {u} / imagen', f'Ebenen und natives RGBA, ab {u} / Bild'),
     'seedream-5.0-pro': lambda u: _t(f'フラッグシップモデル、1枚 {u} から', f'플래그십 모델, 이미지당 {u}부터',
                                      f'El modelo insignia, desde {u} / imagen', f'Das Flaggschiff, ab {u} / Bild'),
     'seedream-5.0-lite': lambda u: _t(f'4K とウェブ検索、1枚 {u} から', f'4K와 웹 검색, 이미지당 {u}부터',
@@ -141,7 +148,7 @@ def main():
             fs = 92 if len(title) <= 13 else 76
             subtxt, taglist = texts(slug, lang)
             t = ''.join(f'<span class="{"d" if i == 0 else ""}">{x}</span>' for i, x in enumerate(taglist))
-            keys = [f'{a}/{b}' for a, b in GL.OVERVIEW] if slug == 'seedream' else [f'{slug}/{k}' for k in GL.PICK[slug]['hero']] if slug in GL.PICK else None
+            keys = [f'{a}/{b}' for a, b in GL.OVERVIEW] if slug == 'seedream' else [f'{slug}/{k}' for k in GL.PICK[slug]['hero']] if slug in GL.PICK else [f'{slug}/{k}' for k in GL.EXTRA[slug]['hero']] if slug in GL.EXTRA else None
             if keys:
                 tl = ''.join(f'<li class="sd-tile"><img src="/assets/models/seedream/{GL.IMAGES[k]["file"]}" alt=""></li>' for k in keys)
             else:

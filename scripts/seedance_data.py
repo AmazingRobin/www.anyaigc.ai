@@ -1,4 +1,4 @@
-"""Seedance catalog data read on 2026-11-05.
+"""Seedance catalog data read on 2026-11-05 (2.5 flash added 2026-11-20).
 
 Pricing source: https://anyaigc.ai/pricing?keyword=seedance (detail drawers).
 Rates are USD / 1M tokens. User confirmed using the lowest Fast/mini rates.
@@ -6,6 +6,11 @@ User confirmed on 2026-11-05: 2.0 supports 4K; mini uses the same content[]
 request structure, generates one video per task, and has unlimited concurrency
 by default for every user.
 Official capabilities: seed.bytedance.com/zh/seedance2_0 and /zh/seedance2_5.
+2026-11-20: 2.5 flash added from the catalog detail drawer (group Seedance-2,
+USD / 1M tokens: 480p/720p without video input $8.505, with video input $5.225;
+max 720p output). The official Seed pages do not mention flash, so its page only
+states what the catalog and the docs confirm. User confirmed unlimited
+concurrency and "reuse the closest documented endpoint, change only the model".
 """
 import os
 
@@ -18,10 +23,10 @@ DOC_CREATE_20 = 'https://docs.anyaigc.ai/en/reference/seedance/post/api/v3/conte
 DOC_CREATE_25 = 'https://docs.anyaigc.ai/en/reference/seedance/post/api/v3/contents/generations/tasks?leaf=c%3A1792738852814'
 DOC_QUERY_20 = 'https://docs.anyaigc.ai/en/reference/volc/api/v3/contents/generations/tasks/%7Bid%7D?leaf=438503236'
 DOC_QUERY = 'https://docs.anyaigc.ai/en/reference/seedance/api/v3/contents/generations/tasks/%7Bid%7D?leaf=c%3A1792739265091'
-DATE = '2026-11-05'
-VER = '20261105b'
+DATE = '2026-11-20'
+VER = '20261120'
 
-SLUGS = ['seedance', 'doubao-seedance-2-5', 'doubao-seedance-2-0', 'doubao-seedance-2-0-fast', 'doubao-seedance-2-0-mini']
+SLUGS = ['seedance', 'doubao-seedance-2-5', 'doubao-seedance-2-5-flash', 'doubao-seedance-2-0', 'doubao-seedance-2-0-fast', 'doubao-seedance-2-0-mini']
 
 MODELS = {
     'doubao-seedance-2-5': {
@@ -31,6 +36,14 @@ MODELS = {
         'rows': [('480p / 720p', '不含参考视频', '13.001'), ('480p / 720p', '含参考视频', '7.776'), ('1080p', '不含参考视频', '14.216'), ('1080p', '含参考视频', '8.505')],
         'rows_en': [('480p / 720p', 'Without reference video', '13.001'), ('480p / 720p', 'With reference video', '7.776'), ('1080p', 'Without reference video', '14.216'), ('1080p', 'With reference video', '8.505')],
         'official': 'https://seed.bytedance.com/zh/seedance2_5', 'tag': '最新', 'feature': '长叙事 · 强参考 · 精准编辑',
+    },
+    'doubao-seedance-2-5-flash': {
+        'name': 'Seedance 2.5 flash', 'id': 'doubao-seedance-2-5-flash-261115', 'min': '5.225',
+        'desc_zh': '字节跳动豆包推出的高效多模态视频生成模型，支持全模态音视频组合参考、有声视频生成及视频编辑延长，兼顾生成速度与多模态控制，最高支持 720p 输出。',
+        'desc_en': 'An efficient multimodal video model from ByteDance Doubao. It supports combined audio and video references, video with sound, and video editing and extension, balancing speed with multimodal control, with output up to 720p.',
+        'rows': [('480p / 720p', '不含参考视频', '8.505'), ('480p / 720p', '含参考视频', '5.225')],
+        'rows_en': [('480p / 720p', 'Without reference video', '8.505'), ('480p / 720p', 'With reference video', '5.225')],
+        'official': 'https://seed.bytedance.com/zh/seedance2_5', 'tag': '高效', 'feature': '高效生成 · 全模态参考 · 最高 720p',
     },
     'doubao-seedance-2-0': {
         'name': 'Seedance 2.0', 'id': 'doubao-seedance-2-0-260128', 'min': '2.916',

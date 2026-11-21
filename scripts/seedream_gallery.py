@@ -603,3 +603,38 @@ IMAGES = {'seedream-4.0/0_0_1': {'en': 'Refer to this image, generate three imag
                             'sec_zh': '多语种原生支持',
                             'w': 960,
                             'zh': '把菜单翻译成中文。'}}
+
+
+# ---- Seedream 5.5（2026-11-20）：官方页 https://seed.bytedance.com/zh/seedream5_5 的示例图 ----
+# 素材由 drafts/sd55_make_assets.py 从官方页面的 sd55-* 图片和动图画面帧导出（动图取第一帧、中间帧、最后一帧，透明背景垫白底，不做任何改图）。
+# 官方页没有「图层拆分」「文字图层 OCR」的专门示例图，对应位置用官方「透明素材」「发现灵感」版块里最接近的图。
+# 不放进 PICK：PICK 会被总览页的示例图墙遍历，这里只给 5.5 自己的 hero 和「能做什么」使用，没有示例图墙（gallery 为空）。
+SOURCE['seedream-5.5'] = 'https://seed.bytedance.com/zh/seedream5_5'
+SOURCE_EN['seedream-5.5'] = 'https://seed.bytedance.com/en/seedream5_5'
+EXTRA = {'seedream-5.5': {'hero': ['h_edit', 'h_rgba', 'h_layer', 'h_type'],
+                          'features': {'edit': 'f_edit', 'photo': 'f_rgba', 'multi': 'f_layer', 'type': 'f_type'},
+                          'gallery': []}}
+
+
+def _im(file, w, h, zh, en):
+    return {'file': file, 'w': w, 'h': h, 'inputs': 0, 'zh': zh, 'en': en, 'sec_zh': '', 'sec_en': ''}
+
+
+IMAGES.update({
+    'seedream-5.5/h_edit': _im('5.5-h-edit.webp', 720, 963, '多轮编辑后的最终画面：粉色微缩房间里，一只手正在摆放章鱼玩偶。',
+                               'Final frame of a multi-turn edit: a hand places an octopus plush in a pink miniature room.'),
+    'seedream-5.5/h_rgba': _im('5.5-h-rgba.webp', 475, 719, '透明素材示例：带白色描边的奔跑少女贴纸，挂在铁丝网上，背景是蓝天白云。',
+                               'Transparent asset example: a running-girl sticker with a white outline hung on a wire fence against a blue sky.'),
+    'seedream-5.5/h_layer': _im('5.5-h-layer.webp', 476, 600, '透明素材示例：棋盘格背景上散布的动物、树木和小物件元素。',
+                                'Transparent asset example: animals, trees and small objects scattered on a checkerboard background.'),
+    'seedream-5.5/h_type': _im('5.5-h-type.webp', 720, 960, '绿色大字标题的 PRINT PLAY! 丝网印刷海报，四周排有多处小字。',
+                               'A screen-printing poster with a large green PRINT PLAY! headline and small text around it.'),
+    'seedream-5.5/f_edit': _im('5.5-f-edit.webp', 1440, 720, '多轮编辑示例：同一幅静物构图连续三步，从只有一块石头到插满水果和花枝的摆件。',
+                               'Multi-turn edit example: the same still life in three steps, from a single stone to an arrangement of fruit and flowers.'),
+    'seedream-5.5/f_rgba': _im('5.5-f-rgba.webp', 1425, 714, '透明素材示例：同一个奔跑少女角色分别用在铁丝网挂件、磁贴和白色门贴三个场景。',
+                               'Transparent asset example: the same running-girl character used as a fence charm, a magnet and a door decal.'),
+    'seedream-5.5/f_layer': _im('5.5-f-layer.webp', 1428, 714, '透明元素素材示例：从棋盘格上的元素图，到用这些元素组合出的完整插画场景。',
+                                'Transparent element example: from an element sheet on a checkerboard to complete illustrated scenes built from those elements.'),
+    'seedream-5.5/f_type': _im('5.5-f-type.webp', 1440, 720, '蓝闪蝶信息图：中央是蝴蝶，周围是带编号的局部放大图和说明文字。',
+                               'A blue morpho butterfly infographic: the butterfly in the center, surrounded by numbered close-ups and captions.'),
+})

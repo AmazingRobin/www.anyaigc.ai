@@ -9,7 +9,7 @@ import subprocess
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from eleven_data import PRICE, SLUGS  # noqa: E402
+from eleven_data import PRICE, SLUGS, is_stt  # noqa: E402
 from eleven_layout import logo, HERO_IMG  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -18,6 +18,7 @@ BRAND = 'AnyAIGC'  # 区分大小写，不要转大写
 
 ENT = {'zh': '对公 · 专票', 'en': 'Contracts · invoices'}
 UNIT = {'zh': '/ 万字符', 'en': '/ 10K chars'}
+UNIT_STT = {'zh': '/ 秒', 'en': '/ second'}  # Scribe 语音转文字按秒计费
 DEAL = {'zh': '约官方 8.1 折', 'en': '19% off list price'}
 TAGS = {'zh': '并发不限', 'en': 'Unlimited RPM'}
 # 每个页面：标题关键词（接在 Eleven 后面）、一句卖点
@@ -29,8 +30,25 @@ PAGES = {
     'eleven-multilingual-v2': ('Multilingual v2', {'zh': '长文本稳定，双语混读', 'en': 'Stable long-form and mixed-language reading'}),
     'eleven-flash-v2-5': ('Flash v2.5', {'zh': '超长文本，批量字幕配音', 'en': 'Very long text and bulk subtitle voiceover'}),
     'eleven-flash-v2': ('Flash v2', {'zh': '轻量高速，英语短句播报', 'en': 'Light and fast English announcer'}),
+    'eleven-scribe-v3': ('Scribe v3', {'zh': '录音转文字，90+ 种语言', 'en': 'Speech to text for recordings, 90+ languages'}),
+    'eleven-scribe-v2': ('Scribe v2', {'zh': '上一代录音转写，90+ 种语言', 'en': 'Previous-gen transcription, 90+ languages'}),
 }
 assert list(PAGES) == SLUGS
+
+# 新语言（ja / ko / es / de）分享图：只做 Scribe 两页。用法：python scripts/og_eleven.py --langs=ja,ko,es,de
+# 不带 --langs 时仍然只生成 zh、en，行为不变。新语言页的发票口径是「在控制台自助开具」，所以标签用 Self-service invoices 的译法（与 og_gpt.py 一致）。
+NEW_LANGS = ('ja', 'ko', 'es', 'de')
+NEW_SLUGS = ('eleven-scribe-v3', 'eleven-scribe-v2')
+UNIT_STT_I18N = {'ja': '/ 秒', 'ko': '/ 초', 'es': '/ segundo', 'de': '/ Sekunde'}
+DEAL_I18N = {'ja': '定価から19%オフ', 'ko': '정가 대비 19% 할인', 'es': '19 % menos', 'de': '19 % günstiger'}
+TAGS_I18N = {'ja': '同時実行数の上限なし', 'ko': '동시 실행 제한 없음', 'es': 'Sin límite de RPM', 'de': 'Kein RPM-Limit'}
+ENT_I18N = {'ja': '請求書を自分で発行', 'ko': '인보이스 직접 발급', 'es': 'Facturas en consola', 'de': 'Rechnungen im Konto'}
+SUB_I18N = {
+    'eleven-scribe-v3': {'ja': '録音の音声文字起こし、90以上の言語', 'ko': '녹음 음성 텍스트 변환, 90개 이상 언어',
+                         'es': 'Voz a texto para grabaciones, más de 90 idiomas', 'de': 'Sprache-zu-Text für Aufnahmen, 90+ Sprachen'},
+    'eleven-scribe-v2': {'ja': '前世代の文字起こし、90以上の言語', 'ko': '이전 세대 음성 텍스트 변환, 90개 이상 언어',
+                         'es': 'Transcripción de la generación anterior, más de 90 idiomas', 'de': 'Transkription der Vorgängerversion, 90+ Sprachen'},
+}
 
 TPL = '''<!doctype html><html><head><meta charset="utf-8"><style>
 *{box-sizing:border-box}
@@ -64,16 +82,26 @@ def chrome():
 def main():
     os.makedirs(OUT, exist_ok=True)
     names = []
-    for lang in ('zh', 'en'):
+    only = [a.split('=', 1)[1].split(',') for a in sys.argv[1:] if a.startswith('--langs=')]
+    for lang in (only[0] if only else ('zh', 'en')):
+        new = lang in NEW_LANGS
         for slug, (key, sub) in PAGES.items():
-            if not os.path.exists(os.path.join(ROOT, lang, 'models', slug + '.html')):
+            if new and slug not in NEW_SLUGS:
                 continue
-            chips = (f'<span class="d">${PRICE[slug]} {UNIT[lang]}</span><span class="o">{DEAL[lang]}</span>'
-                     f'<span>{TAGS[lang]}</span><span>{ENT[lang]}</span>')
+            # 新语言以英文页是否存在为准（译文页可能还没渲染）；zh / en 以本语言页为准
+            if not os.path.exists(os.path.join(ROOT, 'en' if new else lang, 'models', slug + '.html')):
+                continue
+            if new:
+                unit, deal, tags, ent, sub_l = UNIT_STT_I18N[lang], DEAL_I18N[lang], TAGS_I18N[lang], ENT_I18N[lang], SUB_I18N[slug][lang]
+            else:
+                unit = UNIT_STT[lang] if is_stt(slug) else UNIT[lang]
+                deal, tags, ent, sub_l = DEAL[lang], TAGS[lang], ENT[lang], sub[lang]
+            chips = (f'<span class="d">${PRICE[slug]} {unit}</span><span class="o">{deal}</span>'
+                     f'<span>{tags}</span><span>{ent}</span>')
             fs = 112 if len(key) <= 8 else 84
             html = (TPL.replace('@IMG', HERO_IMG[slug]).replace('@LOGO', logo(cls='', fill='#ffffff'))
                     .replace('@SMALL', logo(cls='', fill='#0c0a09')).replace('@BRAND', BRAND)
-                    .replace('@KEY', key).replace('@SUB', sub[lang]).replace('@CHIPS', chips).replace('@FS', str(fs)))
+                    .replace('@KEY', key).replace('@SUB', sub_l).replace('@CHIPS', chips).replace('@FS', str(fs)))
             n = f'{slug}-{lang}'
             io.open(os.path.join(OUT, n + '.html'), 'w', encoding='utf-8').write(html)
             names.append(n)

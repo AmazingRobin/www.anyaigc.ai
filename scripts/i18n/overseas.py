@@ -85,6 +85,11 @@ RULES = [
     (r', VAT invoices\.', ', invoices.'),
     (r'\bVAT invoices\.', 'Invoices.'),
     (r'\bbank transfer, ', ''),
+    # Eleven Scribe 页（2026-11-20）：描述、首屏副标题里的「bank transfer and VAT special invoices (for teams)」
+    (r',? ?(?:and )?bank transfer and VAT special invoices(?: for teams)?\.', ', self-service invoices.'),
+    # meta keywords：整个关键词删掉
+    (r',[^,"]*API VAT special invoice(?=,)', ''),
+    (r',ElevenLabs API bank transfer(?=,)', ''),
 ]
 
 # 处理完仍不应出现在新语言页面里的说法；命中就报错，由人决定怎么写

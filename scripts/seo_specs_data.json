@@ -2142,5 +2142,71 @@
   "compare_slug": "doubao-seed-2-0-mini",
   "compare_zh": "官方称 Mini 面向低时延、高并发和成本敏感场景，更看重快速响应时选它。",
   "compare_en": "the vendor says Mini targets low-latency, high-concurrency and cost-sensitive scenarios, so choose it when fast responses matter most."
+ },
+ {
+  "slug": "eleven-scribe-v3",
+  "source": "https://elevenlabs.io/docs/overview/models",
+  "facts_zh": [
+   "Eleven Scribe v3 的模型 ID 是 scribe_v3，ElevenLabs 称其为面向录音音频的最准确语音识别模型，覆盖 90 多种语言。",
+   "官方列出词级时间戳、最多 32 位说话人的说话人分离、最多 1,000 个关键词提示和音频事件标注（如笑声、掌声）。",
+   "官方更新日志称 Scribe v3 于 2026 年 11 月 9 日发布，在 FLEURS 基准的 102 种语言上，词错误比 Scribe v2 少 27%。"
+  ],
+  "facts_en": [
+   "Eleven Scribe v3 uses the model ID scribe_v3, and ElevenLabs calls it its most accurate speech recognition model for recorded audio, covering 90+ languages.",
+   "ElevenLabs lists word-level timestamps, speaker diarization for up to 32 speakers, keyterm prompting with up to 1,000 terms, and audio event tagging such as laughter and applause.",
+   "The ElevenLabs changelog dates the Scribe v3 release to 9 November 2026 and says it makes 27% fewer word errors than Scribe v2 on the FLEURS benchmark across 102 languages."
+  ],
+  "compare_slug": "eleven-scribe-v2",
+  "compare_zh": "已经在用 Scribe v2 的项目可以继续用，两款在 AnyAIGC 上价格相同，详见 Eleven Scribe v2。",
+  "compare_en": "A project already on Scribe v2 can keep using it. The two models cost the same on AnyAIGC; see Eleven Scribe v2."
+ },
+ {
+  "slug": "eleven-scribe-v2",
+  "source": "https://elevenlabs.io/docs/overview/models",
+  "facts_zh": [
+   "Eleven Scribe v2 的模型 ID 是 scribe_v2，官方称它是上一代最先进的语音识别模型，已由 scribe_v3 接替，覆盖 90 多种语言。",
+   "官方列出词级时间戳、说话人分离、动态音频标注、关键词提示和实体检测，并仍可使用，不在官方停用模型列表里。"
+  ],
+  "facts_en": [
+   "Eleven Scribe v2 uses the model ID scribe_v2, and ElevenLabs calls it its previous state-of-the-art speech recognition model, succeeded by scribe_v3, covering 90+ languages.",
+   "ElevenLabs lists word-level timestamps, speaker diarization, dynamic audio tagging, keyterm prompting and entity detection, and the model remains available and is not in the deprecated list."
+  ],
+  "compare_slug": "eleven-scribe-v3",
+  "compare_zh": "新项目建议先试 Eleven Scribe v3，两款在 AnyAIGC 上价格相同。",
+  "compare_en": "For a new project, try Eleven Scribe v3 first. The two models cost the same on AnyAIGC."
+ },
+ {
+  "slug": "gpt-6.2-sol",
+  "source": "https://openai.com/index/introducing-gpt-6-2-astra-sol/",
+  "facts_zh": [
+   "OpenAI 于 2026 年 11 月 17 日与 GPT-6.2 Astra 同时推出 GPT-6.2 Sol，并称它是面向日常工作的首选模型。",
+   "OpenAI 称 GPT-6.2 Sol 相比 GPT-6.1 Sol 更智能、更高效，API 价格沿用 GPT-6.1 Sol：输入 $2、缓存输入 $0.10、输出 $10（每百万 tokens）。",
+   "在 Cognition 的 FrontierCode 2.0 上，GPT-6.2 Sol 与 GPT-6.2 Astra 相差不到 0.5 分，成本约为其五分之一（两者均为 Max）。"
+  ],
+  "facts_en": [
+   "OpenAI released GPT-6.2 Sol alongside GPT-6.2 Astra on November 17, 2026 and calls it its go-to model for everyday work.",
+   "OpenAI says GPT-6.2 Sol is smarter and more efficient than GPT-6.1 Sol and keeps GPT-6.1 Sol's API prices: $2 input, $0.10 cached input and $10 output per 1M tokens.",
+   "On Cognition's FrontierCode 2.0, GPT-6.2 Sol comes within 0.5 points of GPT-6.2 Astra at about one-fifth of the cost (both at max)."
+  ],
+  "compare_slug": "gpt-6.2-astra",
+  "compare_zh": "gpt-6.2-sol 面向日常工作，gpt-6.2-astra 是应对最棘手项目的新前沿模型，官方输入价是 Sol 的 4 倍。",
+  "compare_en": "gpt-6.2-sol is built for everyday work, while gpt-6.2-astra is the new frontier model for the hardest projects, at four times Sol's list input price."
+ },
+ {
+  "slug": "gpt-6.2-astra",
+  "source": "https://openai.com/index/introducing-gpt-6-2-astra-sol/",
+  "facts_zh": [
+   "OpenAI 于 2026 年 11 月 17 日推出 GPT-6.2 Astra，称它是应对最棘手项目的新前沿模型。",
+   "GPT-6.2 Astra 的 API 输入和输出 Token 价格比 GPT-6 Astra 低 20%，缓存输入价格低 60%：输入 $8、缓存输入 $0.40、输出 $40（每百万 tokens）。",
+   "在 Agents’ Last Exam 上，GPT-6.2 Astra 得分比 GPT-6 Astra 高 5.2 分，成本不到其三分之一。"
+  ],
+  "facts_en": [
+   "OpenAI released GPT-6.2 Astra on November 17, 2026 and calls it its new frontier model for the hardest projects.",
+   "GPT-6.2 Astra's API input and output token prices are 20% lower than GPT-6 Astra's and cached input is 60% lower: $8 input, $0.40 cached input and $40 output per 1M tokens.",
+   "On Agents’ Last Exam, GPT-6.2 Astra scores 5.2 points higher than GPT-6 Astra at less than a third of the cost."
+  ],
+  "compare_slug": "gpt-6.2-sol",
+  "compare_zh": "gpt-6.2-astra 用于最棘手的项目，gpt-6.2-sol 在 FrontierCode 2.0 上与它相差不到 0.5 分，成本约为其五分之一。",
+  "compare_en": "gpt-6.2-astra is for the hardest projects, while gpt-6.2-sol comes within 0.5 points of it on FrontierCode 2.0 at about one-fifth of the cost."
  }
 ]

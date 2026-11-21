@@ -37,7 +37,7 @@
 <meta name="twitter:image" content="https://www.anyaigc.ai/assets/og/doubao-seedance-2-0-de.png">
 <link rel="stylesheet" href="/assets/models/scrollbar.css?v=20261125">
 <link rel="stylesheet" href="/assets/models/lang-menu.css?v=20261117c">
-<link rel="stylesheet" href="/assets/models/seedance.css?v=20261105b">
+<link rel="stylesheet" href="/assets/models/seedance.css?v=20261120">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -65,7 +65,7 @@
       "name": "Seedance 2.0 API Preise | Ab $2,916/1 Mio. Tokens - AnyAIGC",
       "description": "Seedance 2.0 API ab $2,916/1 Mio. Tokens. Multimodales Video mit nativem Audio, asynchronen Aufgaben und unbegrenzter Parallelität. Rechnungen im Self-Service.",
       "inLanguage": "de",
-      "dateModified": "2026-11-05",
+      "dateModified": "2026-11-20",
       "isPartOf": {
         "@id": "https://www.anyaigc.ai/#website"
       },
@@ -171,10 +171,10 @@
         },
         {
           "@type": "Question",
-          "name": "Welche Eingaben akzeptiert Seedance?",
+          "name": "Was kann Seedance als Eingabe verarbeiten?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Seedance 2.0 akzeptiert Text, Bilder, Audio und Video als Referenzen, mit Videobearbeitung, Verlängerung und nativem Audio. 2.0 Fast legt den Schwerpunkt auf Geschwindigkeit, 2.0 mini ist für hochfrequente Workloads gedacht, und 2.5 ergänzt stärkere Unterstützung für lange Erzählungen, Referenzen und präzise Bearbeitungen."
+            "text": "Seedance 2.0 nimmt Text, Bilder, Audio und Video als Referenzen entgegen, mit Videobearbeitung, Verlängerung und nativem Audio. 2.0 Fast setzt auf Tempo, 2.0 mini ist für hochfrequente Workloads ausgelegt, 2.5 ergänzt Stärken bei langen Erzählungen, Referenzen und präzisen Bearbeitungen, und 2.5 flash verbindet Tempo mit multimodaler Steuerung."
           }
         },
         {
@@ -182,7 +182,7 @@
           "name": "Wie viele Videos liefert eine Anfrage?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Eine Anfrage zum Erstellen liefert eine Aufgaben-ID. Nachdem die asynchrone Aufgabe abgeschlossen ist, erhalten Sie per Abfrage eine Video-URL. Die Dauer wird über das Feld duration oder durch das Modell festgelegt."
+            "text": "Eine Erstellungsanfrage liefert eine Aufgaben-ID. Nachdem die asynchrone Aufgabe abgeschlossen ist, erhalten Sie per Abfrage eine Video-URL. Die Dauer wird über das Feld duration oder das Modell gesteuert."
           }
         },
         {
@@ -190,15 +190,15 @@
           "name": "Welche Auflösungen, Seitenverhältnisse und Dauern werden unterstützt?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Seedance 2.0 unterstützt 480p, 720p, 1080p und 4K; die 4K-Stufe ist jetzt verfügbar. Seedance 2.5 unterstützt 480p, 720p und 1080p, mit einer Dauer von 4–30 oder -1. Fast und mini haben Preisstufen für 480p / 720p. Für Seitenverhältnis und Dauer gilt die API-Dokumentation des jeweiligen Modells."
+            "text": "Seedance 2.0 unterstützt 480p, 720p, 1080p und 4K; die 4K-Stufe ist jetzt verfügbar. Seedance 2.5 unterstützt 480p, 720p und 1080p, mit einer Dauer von 4–30 oder -1. Fast, mini und 2.5 flash haben Preisstufen für 480p / 720p, und 2.5 flash liefert Ausgaben bis 720p. Seitenverhältnis und Dauer entnehmen Sie der API-Dokumentation des jeweiligen Modells."
           }
         },
         {
           "@type": "Question",
-          "name": "Wie rufe ich das Ergebnis ab?",
+          "name": "Wie erhalte ich das Ergebnis?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Speichern Sie die id aus dem Aufruf zum Erstellen und rufen Sie dann GET /api/v3/contents/generations/tasks/{id} auf. Bei Erfolg lesen Sie content.video_url. Die genauen Statuswerte stammen aus der API-Antwort."
+            "text": "Speichern Sie die id aus dem Erstellungsaufruf und rufen Sie dann GET /api/v3/contents/generations/tasks/{id} auf. Bei Erfolg lesen Sie content.video_url. Die genauen Statuswerte stammen aus der API-Antwort."
           }
         },
         {
@@ -206,7 +206,7 @@
           "name": "Gibt es ein Parallelitätslimit?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "AnyAIGC setzt für Seedance kein Limit für die Parallelität, und das gilt standardmäßig für jedes Konto. Verwenden Sie bei großen Batches eine Warteschlange und eine Wiederholungsstrategie."
+            "text": "AnyAIGC setzt für Seedance kein Limit für die Parallelität, und das gilt standardmäßig für jedes Konto. Verwenden Sie bei großen Batches eine Warteschlange und eine Retry-Strategie."
           }
         },
         {
@@ -238,7 +238,7 @@
           "name": "Kann ich mein Guthaben erstatten lassen?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Nicht verbrauchtes Guthaben kann ohne Gebühr erstattet werden. Den Ablauf erfahren Sie beim Support."
+            "text": "Nicht genutztes Guthaben kann ohne Gebühr erstattet werden. Den Ablauf erfragen Sie beim Support."
           }
         },
         {
@@ -246,7 +246,7 @@
           "name": "Sind das die echten Modelle? Sind meine Daten sicher?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Anfragen laufen über offizielle Modellkanäle. Sofern nicht gesetzlich vorgeschrieben, werden Prompts und Ausgaben weder dauerhaft gespeichert noch zum Training verwendet; die Konsole zeigt die Anfragedetails."
+            "text": "Anfragen laufen über offizielle Modellkanäle. Sofern nicht gesetzlich vorgeschrieben, werden Prompts und Ausgaben weder dauerhaft gespeichert noch für Training verwendet; die Konsole zeigt Details zu Anfragen."
           }
         }
       ]
@@ -323,7 +323,7 @@
 </p>
 <h1>Seedance 2.0 API</h1>
 <p class="sd-price-line">Ab <strong>$2,916</strong> / 1 Mio. Tokens</p>
-<p class="sd-lead">Ein professionelles multimodales Videomodell mit Text-, Bild-, Audio- und Videoreferenzen sowie Bearbeitung und Verlängerung.</p>
+<p class="sd-lead">Ein professionelles multimodales Videomodell mit Text-, Bild-, Audio- und Videoreferenzen, Bearbeitung und Verlängerung.</p>
 <div class="o-cta">
 <a class="sd-btn sd-btn-primary" href="https://anyaigc.ai/register?aff=oOK7&channel=c_wpduopc9">API-Schlüssel holen →</a>
 <a class="sd-btn sd-btn-light" href="#pricing">Preise ansehen</a>
@@ -347,7 +347,7 @@
 </div>
 <figure class="sd-hero-media">
 <div class="sd-hero-art">
-<video src="/assets/models/seedance/seedance-2-0-official.mp4?v=20261105b" poster="/assets/models/seedance/seedance-2-0-official.webp?v=20261105b" width="1280" height="720" controls playsinline preload="metadata" aria-label="Offizielle Demo von Seedance 2.0">
+<video src="/assets/models/seedance/seedance-2-0-official.mp4?v=20261120" poster="/assets/models/seedance/seedance-2-0-official.webp?v=20261120" width="1280" height="720" controls playsinline preload="metadata" aria-label="Offizielle Demo von Seedance 2.0">
 </video>
 </div>
 <figcaption>
@@ -360,8 +360,8 @@
 </section>
 <section class="o-section" id="features">
 <div class="o-wrap">
-<h2>Seedance-Videofunktionen</h2>
-<p class="o-lead">Führen Sie Prompts, Referenzmaterial, Bewegung und Ton in einem Workflow zur Videoerstellung zusammen.</p>
+<h2>Videofunktionen von Seedance</h2>
+<p class="o-lead">Bringen Sie Prompts, Referenzmaterial, Bewegung und Ton in einem Workflow zur Videoerstellung zusammen.</p>
 <ul class="sd-cards">
 <li class="sd-card o-reveal">
 <span class="sd-card-no">01</span>
@@ -370,33 +370,33 @@
 </li>
 <li class="sd-card o-reveal">
 <span class="sd-card-no">02</span>
-<h3>Native Audio-Video-Ausgabe</h3>
+<h3>Native audiovisuelle Ausgabe</h3>
 <p>Setzen Sie generate_audio, um synchronen Ton für Werbung und Social-Media-Inhalte zu erzeugen.</p>
 </li>
 <li class="sd-card o-reveal">
 <span class="sd-card-no">03</span>
 <h3>Kontrolle auf Regie-Niveau</h3>
-<p>Beschreiben Sie über das content-Array Einstellungen, Figuren, Handlungen, Dialoge und Referenzen.</p>
+<p>Beschreiben Sie über das content-Array Kameraeinstellungen, Figuren, Handlungen, Dialoge und Referenzen.</p>
 </li>
 <li class="sd-card o-reveal">
 <span class="sd-card-no">04</span>
 <h3>Asynchrone Aufgaben</h3>
-<p>Erstellen Sie eine Aufgabe, fragen Sie ihre ID ab und laden Sie dann content.video_url herunter.</p>
+<p>Erstellen Sie eine Aufgabe, fragen Sie sie per ID ab und laden Sie dann content.video_url herunter.</p>
 </li>
 </ul>
-<p class="o-note">Quellen: <a href="https://seed.bytedance.com/zh/seedance2_0" target="_blank" rel="noopener">Seedance 2.0</a> · <a href="https://seed.bytedance.com/zh/seedance2_5" target="_blank" rel="noopener">Seedance 2.5</a> · <a href="https://anyaigc.ai/pricing?keyword=seedance" target="_blank" rel="noopener">AnyAIGC Modellkatalog</a> (2026-11-05)</p>
+<p class="o-note">Quellen: <a href="https://seed.bytedance.com/zh/seedance2_0" target="_blank" rel="noopener">Seedance 2.0</a> · <a href="https://seed.bytedance.com/zh/seedance2_5" target="_blank" rel="noopener">Seedance 2.5</a> · <a href="https://anyaigc.ai/pricing?keyword=seedance" target="_blank" rel="noopener">Modellkatalog von AnyAIGC</a> (2026-11-20)</p>
 </div>
 </section>
 <section class="o-section sd-band" id="pricing">
 <div class="o-wrap">
 <h2>Seedance 2.0 API Preise</h2>
-<p class="o-lead">Alle vier Modelle nutzen denselben Endpunkt für asynchrone Aufgaben. Abgerechnet wird pro 1 Mio. generierter Tokens, mit eigenen Preisen, wenn ein Referenzvideo enthalten ist.</p>
+<p class="o-lead">Alle Seedance-Modelle nutzen denselben Endpunkt für asynchrone Aufgaben. Die Abrechnung erfolgt pro 1 Mio. generierter Tokens, mit eigenen Preisen, wenn ein Referenzvideo enthalten ist.</p>
 <ul class="o-billing">
 <li>
 <strong>Pro 1 Mio. Tokens</strong>
 </li>
 <li>
-<strong>Referenzvideo: eigener Preis</strong>
+<strong>Referenzvideo hat einen eigenen Preis</strong>
 </li>
 <li>
 <strong>Eine Aufgaben-ID pro Anfrage</strong>
@@ -511,7 +511,7 @@
 <strong>$8.505</strong>
 </li>
 </ul>
-<p class="o-note">Preise in USD, abgerechnet bei erfolgreicher Generierung. Aktuelle Preise finden Sie im Modellkatalog.</p>
+<p class="o-note">Preise in USD, abgerechnet bei erfolgreicher Generierung. Aktuelle Preise stehen im Modellkatalog.</p>
 <p class="o-note">Die 4K-Stufe von Seedance 2.0 ist jetzt verfügbar: $4,860 ohne Referenzvideo oder $2,916 mit Referenzvideo, pro 1 Mio. Tokens.</p>
 <div class="o-price-cta">
 <a class="sd-btn sd-btn-primary" href="https://anyaigc.ai/register?aff=oOK7&channel=c_wpduopc9">API-Schlüssel holen</a>
@@ -525,7 +525,7 @@
 <ul class="sd-uses">
 <li>
 <b>Werbung</b>
-<p>Produktgeschichten, Shot-Skripte und synchronisierte Audio-Video-Demos.</p>
+<p>Produktgeschichten, Shot-Skripte und synchronisierte audiovisuelle Demos.</p>
 </li>
 <li>
 <b>Film</b>
@@ -533,7 +533,7 @@
 </li>
 <li>
 <b>Social Media</b>
-<p>Entwürfe für Kurzformate, Batch-Varianten und hochfrequente Inhalte.</p>
+<p>Entwürfe für Kurzformate, Batch-Varianten und Inhalte in hoher Frequenz.</p>
 </li>
 </ul>
 </div>
@@ -548,7 +548,7 @@
 </li>
 <li>
 <h3>Ein Anbieterkonto</h3>
-<p>Verbinden Sie sich über https://anyaigc.ai mit einem einzigen Anbieterkonto.</p>
+<p>Verbinden Sie sich über https://anyaigc.ai mit einem Anbieterkonto.</p>
 </li>
 <li>
 <h3>Veröffentlichte Preise, unbegrenzte Parallelität</h3>
@@ -562,8 +562,8 @@
 <h2>Erste Schritte mit der Seedance 2.0 API</h2>
 <ol class="o-steps">
 <li>Registrieren Sie sich bei AnyAIGC und erstellen Sie einen API-Schlüssel.</li>
-<li>Senden Sie JSON per POST an den Endpunkt zum Erstellen der Aufgabe und speichern Sie die zurückgegebene id.</li>
-<li>Fragen Sie den Abfrage-Endpunkt regelmäßig ab und laden Sie content.video_url herunter, sobald die Aufgabe erfolgreich war.</li>
+<li>Senden Sie JSON per POST an den Endpunkt zum Erstellen von Aufgaben und speichern Sie die zurückgegebene id.</li>
+<li>Fragen Sie den Abfrage-Endpunkt ab und laden Sie content.video_url herunter, sobald die Aufgabe erfolgreich war.</li>
 </ol>
 <figure class="o-code">
 <figcaption>
@@ -639,14 +639,14 @@ else:
     raise TimeoutError(&quot;Polling timed out. Keep the task ID and query again later.&quot;)</code>
 </pre>
 </figure>
-<p class="o-note">Felder und Antwortstruktur folgen der <a href="https://docs.anyaigc.ai/en/reference/seedance/post/api/v3/contents/generations/tasks?leaf=438503106" target="_blank" rel="noopener">AnyAIGC Seedance API-Dokumentation</a>. <a href="https://docs.anyaigc.ai/en/reference/volc/api/v3/contents/generations/tasks/%7Bid%7D?leaf=438503236" target="_blank" rel="noopener">Dokumentation zur Aufgabenabfrage</a>
+<p class="o-note">Felder und Antwortstruktur folgen der <a href="https://docs.anyaigc.ai/en/reference/seedance/post/api/v3/contents/generations/tasks?leaf=438503106" target="_blank" rel="noopener">AnyAIGC-Seedance-API-Dokumentation</a>. <a href="https://docs.anyaigc.ai/en/reference/volc/api/v3/contents/generations/tasks/%7Bid%7D?leaf=438503236" target="_blank" rel="noopener">Dokumentation zur Aufgabenabfrage</a>
 </p>
 </div>
 </section>
 <section class="o-section" id="enterprise">
 <div class="o-wrap">
 <h2>Seedance 2.0 API für Teams und Unternehmen</h2>
-<p class="o-lead">Teams können Seedance in einem üblichen Einkaufs-, Finanz- und Engineering-Prozess einführen.</p>
+<p class="o-lead">Teams können Seedance in einem üblichen Beschaffungs-, Finanz- und Engineering-Prozess einführen.</p>
 <ul class="sd-enterprise">
 <li>
 <b>Rechnungen im Self-Service</b>
@@ -656,7 +656,7 @@ else:
 
 <li>
 <b>Dedizierter Support</b>
-<p>Unterstützung bei Onboarding, Migration und Fehlersuche.</p>
+<p>Wir unterstützen bei Onboarding, Migration und Fehlersuche.</p>
 </li>
 </ul>
 <div class="pay-row" role="group" aria-label="Zahlungsmethoden">
@@ -670,7 +670,7 @@ else:
 </ul>
 </div>
 <div class="o-price-cta">
-<a class="sd-btn sd-btn-primary" href="https://anyaigc.ai/customersupport">Support für Unternehmen</a>
+<a class="sd-btn sd-btn-primary" href="https://anyaigc.ai/customersupport">Support kontaktieren</a>
 <a class="sd-btn sd-btn-light" href="https://anyaigc.ai/register?aff=oOK7&channel=c_wpduopc9">Kostenlos starten</a>
 </div>
 </div>
@@ -699,33 +699,39 @@ else:
 <p class="o-lead">Nutzen Sie einen API-Schlüssel und wechseln Sie das Modell über das Feld model.</p>
 <ul class="o-family">
 <li>
-<a href="/en/models/seedance">
+<a href="/de/models/seedance">
 <b>Seedance-Übersicht</b>
 <span>Preise und Modellauswahl</span>
 </a>
 </li>
 <li>
-<a href="/en/models/doubao-seedance-2-5">
+<a href="/de/models/doubao-seedance-2-5">
 <b>Seedance 2.5</b>
-<span>ab $7,776 / 1 Mio. Tokens</span>
+<span>Ab $7,776 / 1 Mio. Tokens</span>
 </a>
 </li>
 <li>
-<a href="/en/models/doubao-seedance-2-0" aria-current="page">
+<a href="/de/models/doubao-seedance-2-5-flash">
+<b>Seedance 2.5 flash</b>
+<span>Ab $5,225 / 1 Mio. Tokens</span>
+</a>
+</li>
+<li>
+<a href="/de/models/doubao-seedance-2-0" aria-current="page">
 <b>Seedance 2.0</b>
-<span>ab $2,916 / 1 Mio. Tokens</span>
+<span>Ab $2,916 / 1 Mio. Tokens</span>
 </a>
 </li>
 <li>
 <a href="/de/models/doubao-seedance-2-0-fast">
 <b>Seedance 2.0 Fast</b>
-<span>ab $2,896 / 1 Mio. Tokens</span>
+<span>Ab $2,896 / 1 Mio. Tokens</span>
 </a>
 </li>
 <li>
 <a href="/de/models/doubao-seedance-2-0-mini">
 <b>Seedance 2.0 mini</b>
-<span>ab $1,843 / 1 Mio. Tokens</span>
+<span>Ab $1,843 / 1 Mio. Tokens</span>
 </a>
 </li>
 </ul>
@@ -734,7 +740,7 @@ else:
 <section class="o-section" id="spec-unique" aria-labelledby="spec-unique-title"><div class="o-wrap"><h2 id="spec-unique-title">Spezifikationen und Auswahlhilfe</h2><p>Volcengine positioniert Seedance 2.0 für die höchste Generierungsqualität.</p><p>Gibt 4–15 Sekunden lange Videos in 480p, 720p, 1080p (8 Bit) oder 4K (10 Bit) aus; es ist das einzige 2.0-Modell mit 1080p und 4K.</p><p>Ton lässt sich über den Parameter generate_audio zusammen mit dem Video erzeugen; die Ausgabe ist MP4.</p><p>Diese Seite nennt Videogenerierung zu $8,505 / 1 Mio. Tokens, Videoreferenz zu $5,225 / 1 Mio. Tokens, Videogenerierung zu $9,356 / 1 Mio. Tokens und Videoreferenz zu $5,711 / 1 Mio. Tokens, passend zur Preistabelle oben.</p><p>Wählen Sie <a href="/de/models/doubao-seedance-2-0-fast">doubao-seedance-2-0-fast</a>, wenn 480p oder 720p genügt und Tempo und Kosten wichtiger sind als die höchste Qualität.</p><p class="spec-note">Die Spezifikationen stammen aus der offiziellen Dokumentation des Herstellers (<a href="https://docs.volcengine.com/docs/ark/seedance-2-0?lang=zh">docs.volcengine.com</a>). Die Tabelle auf dieser Seite enthält den Preis, und für aktuelle Preise ist der Modellkatalog maßgeblich.</p></div></section>
 <section class="o-section" id="faq">
 <div class="o-wrap">
-<h2>Seedance API FAQ</h2>
+<h2>Häufige Fragen zur Seedance API</h2>
 <div class="o-faq">
 <details open>
 <summary>
@@ -746,10 +752,10 @@ else:
 </details>
 <details>
 <summary>
-<h3>Welche Eingaben akzeptiert Seedance?</h3>
+<h3>Was kann Seedance als Eingabe verarbeiten?</h3>
 </summary>
 <div class="o-ans">
-<p>Seedance 2.0 akzeptiert Text, Bilder, Audio und Video als Referenzen, mit Videobearbeitung, Verlängerung und nativem Audio. 2.0 Fast legt den Schwerpunkt auf Geschwindigkeit, 2.0 mini ist für hochfrequente Workloads gedacht, und 2.5 ergänzt stärkere Unterstützung für lange Erzählungen, Referenzen und präzise Bearbeitungen.</p>
+<p>Seedance 2.0 nimmt Text, Bilder, Audio und Video als Referenzen entgegen, mit Videobearbeitung, Verlängerung und nativem Audio. 2.0 Fast setzt auf Tempo, 2.0 mini ist für hochfrequente Workloads ausgelegt, 2.5 ergänzt Stärken bei langen Erzählungen, Referenzen und präzisen Bearbeitungen, und 2.5 flash verbindet Tempo mit multimodaler Steuerung.</p>
 </div>
 </details>
 <details>
@@ -757,7 +763,7 @@ else:
 <h3>Wie viele Videos liefert eine Anfrage?</h3>
 </summary>
 <div class="o-ans">
-<p>Eine Anfrage zum Erstellen liefert eine Aufgaben-ID. Nachdem die asynchrone Aufgabe abgeschlossen ist, erhalten Sie per Abfrage eine Video-URL. Die Dauer wird über das Feld duration oder durch das Modell festgelegt.</p>
+<p>Eine Erstellungsanfrage liefert eine Aufgaben-ID. Nachdem die asynchrone Aufgabe abgeschlossen ist, erhalten Sie per Abfrage eine Video-URL. Die Dauer wird über das Feld duration oder das Modell gesteuert.</p>
 </div>
 </details>
 <details>
@@ -765,15 +771,15 @@ else:
 <h3>Welche Auflösungen, Seitenverhältnisse und Dauern werden unterstützt?</h3>
 </summary>
 <div class="o-ans">
-<p>Seedance 2.0 unterstützt 480p, 720p, 1080p und 4K; die 4K-Stufe ist jetzt verfügbar. Seedance 2.5 unterstützt 480p, 720p und 1080p, mit einer Dauer von 4–30 oder -1. Fast und mini haben Preisstufen für 480p / 720p. Für Seitenverhältnis und Dauer gilt die API-Dokumentation des jeweiligen Modells.</p>
+<p>Seedance 2.0 unterstützt 480p, 720p, 1080p und 4K; die 4K-Stufe ist jetzt verfügbar. Seedance 2.5 unterstützt 480p, 720p und 1080p, mit einer Dauer von 4–30 oder -1. Fast, mini und 2.5 flash haben Preisstufen für 480p / 720p, und 2.5 flash liefert Ausgaben bis 720p. Seitenverhältnis und Dauer entnehmen Sie der API-Dokumentation des jeweiligen Modells.</p>
 </div>
 </details>
 <details>
 <summary>
-<h3>Wie rufe ich das Ergebnis ab?</h3>
+<h3>Wie erhalte ich das Ergebnis?</h3>
 </summary>
 <div class="o-ans">
-<p>Speichern Sie die id aus dem Aufruf zum Erstellen und rufen Sie dann GET /api/v3/contents/generations/tasks/{id} auf. Bei Erfolg lesen Sie content.video_url. Die genauen Statuswerte stammen aus der API-Antwort.</p>
+<p>Speichern Sie die id aus dem Erstellungsaufruf und rufen Sie dann GET /api/v3/contents/generations/tasks/{id} auf. Bei Erfolg lesen Sie content.video_url. Die genauen Statuswerte stammen aus der API-Antwort.</p>
 </div>
 </details>
 <details>
@@ -781,7 +787,7 @@ else:
 <h3>Gibt es ein Parallelitätslimit?</h3>
 </summary>
 <div class="o-ans">
-<p>AnyAIGC setzt für Seedance kein Limit für die Parallelität, und das gilt standardmäßig für jedes Konto. Verwenden Sie bei großen Batches eine Warteschlange und eine Wiederholungsstrategie.</p>
+<p>AnyAIGC setzt für Seedance kein Limit für die Parallelität, und das gilt standardmäßig für jedes Konto. Verwenden Sie bei großen Batches eine Warteschlange und eine Retry-Strategie.</p>
 </div>
 </details>
 <details>
@@ -814,7 +820,7 @@ else:
 <h3>Kann ich mein Guthaben erstatten lassen?</h3>
 </summary>
 <div class="o-ans">
-<p>Nicht verbrauchtes Guthaben kann ohne Gebühr erstattet werden. Den Ablauf erfahren Sie beim Support.</p>
+<p>Nicht genutztes Guthaben kann ohne Gebühr erstattet werden. Den Ablauf erfragen Sie beim Support.</p>
 </div>
 </details>
 <details>
@@ -822,7 +828,7 @@ else:
 <h3>Sind das die echten Modelle? Sind meine Daten sicher?</h3>
 </summary>
 <div class="o-ans">
-<p>Anfragen laufen über offizielle Modellkanäle. Sofern nicht gesetzlich vorgeschrieben, werden Prompts und Ausgaben weder dauerhaft gespeichert noch zum Training verwendet; die Konsole zeigt die Anfragedetails.</p>
+<p>Anfragen laufen über offizielle Modellkanäle. Sofern nicht gesetzlich vorgeschrieben, werden Prompts und Ausgaben weder dauerhaft gespeichert noch für Training verwendet; die Konsole zeigt Details zu Anfragen.</p>
 </div>
 </details>
 </div>
@@ -842,7 +848,7 @@ else:
 </path>
 </svg>
 <h2>Seedance nutzen</h2>
-<p>Registrieren Sie sich für 2 Mio. kostenlose Tokens und rufen Sie die gesamte Familie mit einem Schlüssel auf.</p>
+<p>Registrieren Sie sich für 2 Mio. Gratis-Tokens und nutzen Sie die ganze Familie mit einem Schlüssel.</p>
 <div class="o-cta">
 <a class="sd-btn sd-btn-primary" href="https://anyaigc.ai/register?aff=oOK7&channel=c_wpduopc9">Kostenlos starten</a>
 <a class="sd-btn sd-btn-light" href="https://docs.anyaigc.ai" target="_blank" rel="noopener">API-Dokumentation</a>
@@ -866,10 +872,10 @@ else:
 <div class="o-wrap">
 <b>AnyAIGC</b>
 <p>Seedance und Doubao sind Marken von ByteDance. AnyAIGC ist ein unabhängiger API-Anbieter und steht in keiner Verbindung zu ByteDance.</p>
-<p>Nutzungsrechte und kommerzielle Lizenzierung für Videos richten sich nach den offiziellen Bedingungen von ByteDance / Seed.</p>
+<p>Nutzungsrechte an Videos und kommerzielle Lizenzierung richten sich nach den offiziellen Bedingungen von ByteDance / Seed.</p>
 </div>
 </footer>
-<script src="/assets/models/seedance.js?v=20261105b" defer>
+<script src="/assets/models/seedance.js?v=20261120" defer>
 </script>
 <script defer src="/assets/models/lang-menu.js?v=20261117c"></script>
 </body>

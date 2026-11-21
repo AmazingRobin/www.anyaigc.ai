@@ -37,7 +37,7 @@
 <meta name="twitter:image" content="https://www.anyaigc.ai/assets/og/doubao-seedance-2-0-ja.png">
 <link rel="stylesheet" href="/assets/models/scrollbar.css?v=20261125">
 <link rel="stylesheet" href="/assets/models/lang-menu.css?v=20261117c">
-<link rel="stylesheet" href="/assets/models/seedance.css?v=20261105b">
+<link rel="stylesheet" href="/assets/models/seedance.css?v=20261120">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -65,7 +65,7 @@
       "name": "Seedance 2.0 API 料金：$2.916/100万から | AnyAIGC",
       "description": "Seedance 2.0 API：100万トークンあたり$2.916から。マルチモーダル動画、ネイティブ音声、非同期タスク、同時実行数の上限なし。請求書はセルフサービスで発行できます。",
       "inLanguage": "ja",
-      "dateModified": "2026-11-05",
+      "dateModified": "2026-11-20",
       "isPartOf": {
         "@id": "https://www.anyaigc.ai/#website"
       },
@@ -171,34 +171,34 @@
         },
         {
           "@type": "Question",
-          "name": "Seedance は何を入力として受け付けますか？",
+          "name": "Seedance には何を入力できますか？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Seedance 2.0 は、テキスト、画像、音声、動画を参照として受け付け、動画の編集、延長、ネイティブ音声に対応しています。2.0 Fast は速度を優先し、2.0 mini は高頻度の利用向けに設計されています。2.5 は、長いストーリー、参照、精密な編集が強化されています。"
+            "text": "Seedance 2.0 はテキスト、画像、音声、動画を参照として受け付け、動画の編集、延長、ネイティブ音声に対応しています。2.0 Fast は速度を優先し、2.0 mini は高頻度のワークロード向けに設計され、2.5 は長いストーリー、参照、精密な編集を強化し、2.5 flash は速さとマルチモーダルな制御のバランスを取ります。"
           }
         },
         {
           "@type": "Question",
-          "name": "1回のリクエストで動画はいくつ返されますか？",
+          "name": "1回のリクエストで何本の動画が返りますか？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "作成リクエストはタスクIDを1つ返します。非同期タスクが完了したら、照会して動画URLを1つ取得します。長さは duration フィールドまたはモデルによって決まります。"
+            "text": "作成リクエストが返すのはタスクID 1つです。非同期タスクが完了したら、照会すると動画URLが1つ得られます。動画の長さは duration フィールドまたはモデルによって決まります。"
           }
         },
         {
           "@type": "Question",
-          "name": "対応している解像度、アスペクト比、長さは何ですか？",
+          "name": "対応している解像度、アスペクト比、長さは？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Seedance 2.0 は480p、720p、1080p、4Kに対応しており、4Kティアは現在利用できます。Seedance 2.5 は480p、720p、1080pに対応し、duration は4–30または-1です。Fast と mini の料金ティアは480p / 720pです。アスペクト比と長さのパラメーターは、各モデルのAPIドキュメントに従ってください。"
+            "text": "Seedance 2.0 は 480p、720p、1080p、4K に対応し、4K ティアは現在利用できます。Seedance 2.5 は 480p、720p、1080p に対応し、duration は 4–30 または -1 です。Fast、mini、2.5 flash には 480p / 720p の料金ティアがあり、2.5 flash の出力は最大720pです。アスペクト比と duration のパラメータは、各モデルの API ドキュメントに従ってください。"
           }
         },
         {
           "@type": "Question",
-          "name": "結果はどのように取得しますか？",
+          "name": "結果はどう取得しますか？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "作成の呼び出しで返された id を保存し、GET /api/v3/contents/generations/tasks/{id} を呼び出します。成功したら content.video_url を読み取ります。ステータスの正確な値はAPIのレスポンスで確認してください。"
+            "text": "作成呼び出しで返された id を保存し、GET /api/v3/contents/generations/tasks/{id} を呼び出します。成功したら content.video_url を読み取ります。ステータスの値は、APIのレスポンスで確認してください。"
           }
         },
         {
@@ -206,7 +206,7 @@
           "name": "同時実行数の制限はありますか？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "AnyAIGC では Seedance の同時実行数に上限を設けておらず、すべてのアカウントで最初からこの設定です。大量のバッチ処理では、キューとリトライの仕組みを使ってください。"
+            "text": "AnyAIGC では Seedance の同時実行数に上限がなく、すべてのアカウントでデフォルトで利用できます。大量のバッチ処理では、キューと再試行の仕組みを使ってください。"
           }
         },
         {
@@ -230,7 +230,7 @@
           "name": "新規ユーザー向けの無料トライアルはありますか？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "はい。新規アカウントには200万トークン分のトライアル枠が付与され、チャージは$1から可能です。"
+            "text": "はい。新規アカウントには200万トークンのお試しクレジットが付与され、チャージは$1から可能です。"
           }
         },
         {
@@ -238,7 +238,7 @@
           "name": "残高は返金できますか？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "未使用の残高は手数料なしで返金できます。手続きについてはサポートにお問い合わせください。"
+            "text": "未使用の残高は手数料なしで返金できます。手続きはサポートにお問い合わせください。"
           }
         },
         {
@@ -246,7 +246,7 @@
           "name": "本物のモデルですか？データは安全ですか？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "リクエストは公式のモデルチャネルを経由します。法令で必要な場合を除き、プロンプトと出力は永続的に保存されず、学習にも使用されません。コンソールでリクエストの詳細を確認できます。"
+            "text": "リクエストは公式のモデルチャネルを経由します。法令で求められる場合を除き、プロンプトと出力は永続的に保存されず、学習にも使われません。リクエストの詳細はコンソールで確認できます。"
           }
         }
       ]
@@ -323,7 +323,7 @@
 </p>
 <h1>Seedance 2.0 API</h1>
 <p class="sd-price-line">100万トークンあたり<strong>$2.916</strong>から</p>
-<p class="sd-lead">テキスト、画像、音声、動画を参照でき、編集と延長にも対応した、プロ向けのマルチモーダル動画モデルです。</p>
+<p class="sd-lead">テキスト、画像、音声、動画を参照でき、編集と延長にも対応するプロ向けのマルチモーダル動画モデルです。</p>
 <div class="o-cta">
 <a class="sd-btn sd-btn-primary" href="https://anyaigc.ai/register?aff=oOK7&channel=c_wpduopc9">APIキーを取得 →</a>
 <a class="sd-btn sd-btn-light" href="#pricing">料金を見る</a>
@@ -347,7 +347,7 @@
 </div>
 <figure class="sd-hero-media">
 <div class="sd-hero-art">
-<video src="/assets/models/seedance/seedance-2-0-official.mp4?v=20261105b" poster="/assets/models/seedance/seedance-2-0-official.webp?v=20261105b" width="1280" height="720" controls playsinline preload="metadata" aria-label="Seedance 2.0 公式デモ">
+<video src="/assets/models/seedance/seedance-2-0-official.mp4?v=20261120" poster="/assets/models/seedance/seedance-2-0-official.webp?v=20261120" width="1280" height="720" controls playsinline preload="metadata" aria-label="Seedance 2.0 公式デモ">
 </video>
 </div>
 <figcaption>
@@ -361,7 +361,7 @@
 <section class="o-section" id="features">
 <div class="o-wrap">
 <h2>Seedance の動画機能</h2>
-<p class="o-lead">プロンプト、参照素材、動き、音を1つの動画制作ワークフローにまとめます。</p>
+<p class="o-lead">プロンプト、参照素材、動き、音を1つの動画制作ワークフローにまとめられます。</p>
 <ul class="sd-cards">
 <li class="sd-card o-reveal">
 <span class="sd-card-no">01</span>
@@ -370,36 +370,36 @@
 </li>
 <li class="sd-card o-reveal">
 <span class="sd-card-no">02</span>
-<h3>ネイティブな映像・音声出力</h3>
-<p>generate_audio を設定すると、広告やSNSコンテンツ向けに映像と同期した音声を生成できます。</p>
+<h3>映像と音声をネイティブで出力</h3>
+<p>generate_audio を設定すると、広告やソーシャル向けコンテンツに同期した音を生成できます。</p>
 </li>
 <li class="sd-card o-reveal">
 <span class="sd-card-no">03</span>
-<h3>監督レベルの演出制御</h3>
-<p>content 配列で、ショット、キャラクター、動作、セリフ、参照を記述します。</p>
+<h3>ディレクター並みの制御</h3>
+<p>content 配列で、カット、キャラクター、動作、セリフ、参照素材を記述できます。</p>
 </li>
 <li class="sd-card o-reveal">
 <span class="sd-card-no">04</span>
 <h3>非同期タスク</h3>
-<p>タスクを作成し、そのIDをポーリングして、content.video_url をダウンロードします。</p>
+<p>タスクを作成し、ID をポーリングして、content.video_url をダウンロードします。</p>
 </li>
 </ul>
-<p class="o-note">出典：<a href="https://seed.bytedance.com/zh/seedance2_0" target="_blank" rel="noopener">Seedance 2.0</a> · <a href="https://seed.bytedance.com/zh/seedance2_5" target="_blank" rel="noopener">Seedance 2.5</a> · <a href="https://anyaigc.ai/pricing?keyword=seedance" target="_blank" rel="noopener">AnyAIGC モデル一覧</a>（2026-11-05）</p>
+<p class="o-note">出典：<a href="https://seed.bytedance.com/zh/seedance2_0" target="_blank" rel="noopener">Seedance 2.0</a> · <a href="https://seed.bytedance.com/zh/seedance2_5" target="_blank" rel="noopener">Seedance 2.5</a> · <a href="https://anyaigc.ai/pricing?keyword=seedance" target="_blank" rel="noopener">AnyAIGC モデル一覧</a>（2026-11-20）</p>
 </div>
 </section>
 <section class="o-section sd-band" id="pricing">
 <div class="o-wrap">
 <h2>Seedance 2.0 API 料金</h2>
-<p class="o-lead">4つのモデルはすべて同じ非同期タスクのエンドポイントを使います。料金は生成されたトークン100万あたりで、参照動画を含める場合は別の料金になります。</p>
+<p class="o-lead">すべての Seedance モデルは同じ非同期タスクのエンドポイントを使います。課金は生成された100万トークンあたりで、参照動画を含めると料金が別になります。</p>
 <ul class="o-billing">
 <li>
 <strong>100万トークンあたり</strong>
 </li>
 <li>
-<strong>参照動画は別料金</strong>
+<strong>参照動画ありは別料金</strong>
 </li>
 <li>
-<strong>リクエストごとにタスクIDを1つ返します</strong>
+<strong>1リクエストにつきタスクID 1つ</strong>
 </li>
 <li>
 <strong>同時実行数の上限なし</strong>
@@ -412,7 +412,7 @@
 <tr>
 <th scope="col">操作と解像度</th>
 <th scope="col">モデルID</th>
-<th scope="col">料金（USD）</th>
+<th scope="col">単価（USD）</th>
 </tr>
 </thead>
 <tbody>
@@ -488,9 +488,9 @@
 </tbody>
 </table>
 </div>
-<p class="sd-table-hint">← 横にスクロールして料金表の全体を表示 →</p>
+<p class="sd-table-hint">← 表を横にスクロールすると料金表全体を確認できます →</p>
 <h3 class="sd-subheading">コスト例</h3>
-<p class="o-note">以下の課金トークン数を前提とした例です。動画の長さを固定した見積もりではなく、実際の費用はタスクの使用量と課金に従います。</p>
+<p class="o-note">課金されるトークン数が次のとおりだと仮定した例です。動画の長さを固定した見積りではなく、実際の費用はタスクの使用量と課金に従います。</p>
 <ul class="sd-costs">
 <li>
 <h3>Seedance 2.0</h3>
@@ -511,8 +511,8 @@
 <strong>$8.505</strong>
 </li>
 </ul>
-<p class="o-note">価格はUSD表記で、生成に成功した分の使用量に対して課金されます。最新の料金はモデル一覧で確認できます。</p>
-<p class="o-note">Seedance 2.0 の4Kティアは現在利用できます。100万トークンあたり、参照動画なしは$4.860、参照動画ありは$2.916です。</p>
+<p class="o-note">価格は USD 建てで、生成に成功した使用量に対して課金されます。最新の料金はモデル一覧で確認できます。</p>
+<p class="o-note">Seedance 2.0 の4Kティアを利用できます。100万トークンあたり、参照動画なしは$4.860、参照動画ありは$2.916です。</p>
 <div class="o-price-cta">
 <a class="sd-btn sd-btn-primary" href="https://anyaigc.ai/register?aff=oOK7&channel=c_wpduopc9">APIキーを取得</a>
 <a class="sd-btn sd-btn-light" href="https://anyaigc.ai/pricing">モデル一覧</a>
@@ -525,15 +525,15 @@
 <ul class="sd-uses">
 <li>
 <b>広告</b>
-<p>プロダクトストーリー、ショット台本、映像と音声が同期したデモ。</p>
+<p>プロダクトストーリー、カット割りの脚本、映像と音声が同期したデモ。</p>
 </li>
 <li>
-<b>映画制作</b>
-<p>参照素材をもとにしたキャラクター、カメラワーク、シーンのプリビズ。</p>
+<b>映画</b>
+<p>参照素材をもとにしたキャラクター、カメラ、シーンのプリビジュアライゼーション。</p>
 </li>
 <li>
 <b>SNS</b>
-<p>ショート動画の下書き、バリエーションの一括生成、高頻度のコンテンツ制作。</p>
+<p>ショート動画のドラフト、バリエーションの一括生成、高頻度のコンテンツ制作。</p>
 </li>
 </ul>
 </div>
@@ -544,15 +544,15 @@
 <ul class="sd-uses">
 <li>
 <h3>1つのキーで300以上のモデル</h3>
-<p>動画・画像・チャットのモデルで、1つのAPIキーと残高を共通で使えます。</p>
+<p>動画、画像、チャットのモデルを、1つのAPIキーと残高で利用できます。</p>
 </li>
 <li>
-<h3>1つのプロバイダーアカウント</h3>
-<p>https://anyaigc.ai から、1つのプロバイダーアカウントで接続できます。</p>
+<h3>1つのアカウントで利用</h3>
+<p>https://anyaigc.ai から、1つのアカウントで接続できます。</p>
 </li>
 <li>
 <h3>公開料金、同時実行数の上限なし</h3>
-<p>トークン単位の明確な料金で、すべてのユーザーが最初から同時実行数の上限なしで使えます。</p>
+<p>トークン単位の明確な料金で、すべてのユーザーが同時実行数の上限なしで利用できます。</p>
 </li>
 </ul>
 </div>
@@ -562,8 +562,8 @@
 <h2>Seedance 2.0 API をはじめる</h2>
 <ol class="o-steps">
 <li>AnyAIGC に登録して、APIキーを作成します。</li>
-<li>タスク作成のエンドポイントにJSONをPOSTし、返された id を保存します。</li>
-<li>照会のエンドポイントをポーリングし、成功したら content.video_url をダウンロードします。</li>
+<li>タスク作成エンドポイントに JSON を POST し、返された id を保存します。</li>
+<li>照会エンドポイントをポーリングし、成功したら content.video_url をダウンロードします。</li>
 </ol>
 <figure class="o-code">
 <figcaption>
@@ -646,7 +646,7 @@ else:
 <section class="o-section" id="enterprise">
 <div class="o-wrap">
 <h2>チーム・法人向け Seedance 2.0 API</h2>
-<p class="o-lead">調達、経理、エンジニアリングの通常の社内プロセスに沿って、チームで Seedance を導入できます。</p>
+<p class="o-lead">調達、経理、エンジニアリングの通常の手続きに沿って、チームで Seedance を導入できます。</p>
 <ul class="sd-enterprise">
 <li>
 <b>請求書をセルフサービスで発行</b>
@@ -695,37 +695,43 @@ else:
 
 <section class="o-section" id="family">
 <div class="o-wrap">
-<h2>Seedance モデルファミリー</h2>
+<h2>Seedance ファミリー</h2>
 <p class="o-lead">1つのAPIキーで、model フィールドを変えるだけでモデルを切り替えられます。</p>
 <ul class="o-family">
 <li>
-<a href="/en/models/seedance">
+<a href="/ja/models/seedance">
 <b>Seedance 概要</b>
 <span>料金とモデルの選び方</span>
 </a>
 </li>
 <li>
-<a href="/en/models/doubao-seedance-2-5">
+<a href="/ja/models/doubao-seedance-2-5">
 <b>Seedance 2.5</b>
-<span>100万トークンあたり$7.776から</span>
+<span>$7.776 / 100万トークンから</span>
 </a>
 </li>
 <li>
-<a href="/en/models/doubao-seedance-2-0" aria-current="page">
+<a href="/ja/models/doubao-seedance-2-5-flash">
+<b>Seedance 2.5 flash</b>
+<span>$5.225 / 100万トークンから</span>
+</a>
+</li>
+<li>
+<a href="/ja/models/doubao-seedance-2-0" aria-current="page">
 <b>Seedance 2.0</b>
-<span>100万トークンあたり$2.916から</span>
+<span>$2.916 / 100万トークンから</span>
 </a>
 </li>
 <li>
 <a href="/ja/models/doubao-seedance-2-0-fast">
 <b>Seedance 2.0 Fast</b>
-<span>100万トークンあたり$2.896から</span>
+<span>$2.896 / 100万トークンから</span>
 </a>
 </li>
 <li>
 <a href="/ja/models/doubao-seedance-2-0-mini">
 <b>Seedance 2.0 mini</b>
-<span>100万トークンあたり$1.843から</span>
+<span>$1.843 / 100万トークンから</span>
 </a>
 </li>
 </ul>
@@ -746,34 +752,34 @@ else:
 </details>
 <details>
 <summary>
-<h3>Seedance は何を入力として受け付けますか？</h3>
+<h3>Seedance には何を入力できますか？</h3>
 </summary>
 <div class="o-ans">
-<p>Seedance 2.0 は、テキスト、画像、音声、動画を参照として受け付け、動画の編集、延長、ネイティブ音声に対応しています。2.0 Fast は速度を優先し、2.0 mini は高頻度の利用向けに設計されています。2.5 は、長いストーリー、参照、精密な編集が強化されています。</p>
+<p>Seedance 2.0 はテキスト、画像、音声、動画を参照として受け付け、動画の編集、延長、ネイティブ音声に対応しています。2.0 Fast は速度を優先し、2.0 mini は高頻度のワークロード向けに設計され、2.5 は長いストーリー、参照、精密な編集を強化し、2.5 flash は速さとマルチモーダルな制御のバランスを取ります。</p>
 </div>
 </details>
 <details>
 <summary>
-<h3>1回のリクエストで動画はいくつ返されますか？</h3>
+<h3>1回のリクエストで何本の動画が返りますか？</h3>
 </summary>
 <div class="o-ans">
-<p>作成リクエストはタスクIDを1つ返します。非同期タスクが完了したら、照会して動画URLを1つ取得します。長さは duration フィールドまたはモデルによって決まります。</p>
+<p>作成リクエストが返すのはタスクID 1つです。非同期タスクが完了したら、照会すると動画URLが1つ得られます。動画の長さは duration フィールドまたはモデルによって決まります。</p>
 </div>
 </details>
 <details>
 <summary>
-<h3>対応している解像度、アスペクト比、長さは何ですか？</h3>
+<h3>対応している解像度、アスペクト比、長さは？</h3>
 </summary>
 <div class="o-ans">
-<p>Seedance 2.0 は480p、720p、1080p、4Kに対応しており、4Kティアは現在利用できます。Seedance 2.5 は480p、720p、1080pに対応し、duration は4–30または-1です。Fast と mini の料金ティアは480p / 720pです。アスペクト比と長さのパラメーターは、各モデルのAPIドキュメントに従ってください。</p>
+<p>Seedance 2.0 は 480p、720p、1080p、4K に対応し、4K ティアは現在利用できます。Seedance 2.5 は 480p、720p、1080p に対応し、duration は 4–30 または -1 です。Fast、mini、2.5 flash には 480p / 720p の料金ティアがあり、2.5 flash の出力は最大720pです。アスペクト比と duration のパラメータは、各モデルの API ドキュメントに従ってください。</p>
 </div>
 </details>
 <details>
 <summary>
-<h3>結果はどのように取得しますか？</h3>
+<h3>結果はどう取得しますか？</h3>
 </summary>
 <div class="o-ans">
-<p>作成の呼び出しで返された id を保存し、GET /api/v3/contents/generations/tasks/{id} を呼び出します。成功したら content.video_url を読み取ります。ステータスの正確な値はAPIのレスポンスで確認してください。</p>
+<p>作成呼び出しで返された id を保存し、GET /api/v3/contents/generations/tasks/{id} を呼び出します。成功したら content.video_url を読み取ります。ステータスの値は、APIのレスポンスで確認してください。</p>
 </div>
 </details>
 <details>
@@ -781,7 +787,7 @@ else:
 <h3>同時実行数の制限はありますか？</h3>
 </summary>
 <div class="o-ans">
-<p>AnyAIGC では Seedance の同時実行数に上限を設けておらず、すべてのアカウントで最初からこの設定です。大量のバッチ処理では、キューとリトライの仕組みを使ってください。</p>
+<p>AnyAIGC では Seedance の同時実行数に上限がなく、すべてのアカウントでデフォルトで利用できます。大量のバッチ処理では、キューと再試行の仕組みを使ってください。</p>
 </div>
 </details>
 <details>
@@ -806,7 +812,7 @@ else:
 <h3>新規ユーザー向けの無料トライアルはありますか？</h3>
 </summary>
 <div class="o-ans">
-<p>はい。新規アカウントには200万トークン分のトライアル枠が付与され、チャージは$1から可能です。</p>
+<p>はい。新規アカウントには200万トークンのお試しクレジットが付与され、チャージは$1から可能です。</p>
 </div>
 </details>
 <details>
@@ -814,7 +820,7 @@ else:
 <h3>残高は返金できますか？</h3>
 </summary>
 <div class="o-ans">
-<p>未使用の残高は手数料なしで返金できます。手続きについてはサポートにお問い合わせください。</p>
+<p>未使用の残高は手数料なしで返金できます。手続きはサポートにお問い合わせください。</p>
 </div>
 </details>
 <details>
@@ -822,7 +828,7 @@ else:
 <h3>本物のモデルですか？データは安全ですか？</h3>
 </summary>
 <div class="o-ans">
-<p>リクエストは公式のモデルチャネルを経由します。法令で必要な場合を除き、プロンプトと出力は永続的に保存されず、学習にも使用されません。コンソールでリクエストの詳細を確認できます。</p>
+<p>リクエストは公式のモデルチャネルを経由します。法令で求められる場合を除き、プロンプトと出力は永続的に保存されず、学習にも使われません。リクエストの詳細はコンソールで確認できます。</p>
 </div>
 </details>
 </div>
@@ -841,8 +847,8 @@ else:
 <path d="M1 12.509c0-4.678.024-8.505.064-8.505.032 0 .872.207 1.872.454l1.824.461v7.582c0 4.16-.016 7.574-.032 7.574-.024 0-.872.215-1.88.47L1 21.013v-8.505z" fill="#325AB4">
 </path>
 </svg>
-<h2>Seedance を使いはじめる</h2>
-<p>登録すると200万トークンを無料で受け取れ、1つのキーでファミリー全体を呼び出せます。</p>
+<h2>Seedance を使い始める</h2>
+<p>登録すると200万トークンを無料で利用でき、1つのキーでファミリー全体を呼び出せます。</p>
 <div class="o-cta">
 <a class="sd-btn sd-btn-primary" href="https://anyaigc.ai/register?aff=oOK7&channel=c_wpduopc9">無料登録</a>
 <a class="sd-btn sd-btn-light" href="https://docs.anyaigc.ai" target="_blank" rel="noopener">APIドキュメント</a>
@@ -865,11 +871,11 @@ else:
 <footer class="o-foot">
 <div class="o-wrap">
 <b>AnyAIGC</b>
-<p>Seedance と Doubao は ByteDance の商標です。AnyAIGC は独立したAPIプロバイダーであり、ByteDance とは提携関係にありません。</p>
+<p>Seedance と Doubao は ByteDance の商標です。AnyAIGC は独立した API プロバイダーであり、ByteDance とは提携関係にありません。</p>
 <p>動画の利用権と商用ライセンスは、ByteDance / Seed の公式規約に従います。</p>
 </div>
 </footer>
-<script src="/assets/models/seedance.js?v=20261105b" defer>
+<script src="/assets/models/seedance.js?v=20261120" defer>
 </script>
 <script defer src="/assets/models/lang-menu.js?v=20261117c"></script>
 </body>

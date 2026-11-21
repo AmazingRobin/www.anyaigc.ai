@@ -1,5 +1,5 @@
 # 把 Eleven（ElevenLabs）系列专题注册到专题首页（zh/en models/index.html）和 sitemap.xml：python scripts/eleven_register.py
-# 重复运行结果不变：已注册就只重建卡片。7 张卡片并入现有的「音频与音乐」类别（紧跟 Suno 卡片，用 <!-- Eleven --> 标记包住）；
+# 重复运行结果不变：已注册就只重建卡片。9 张卡片（7 款语音合成 + 2 款语音转文字 Scribe）并入现有的「音频与音乐」类别（紧跟 Suno 卡片，用 <!-- Eleven --> 标记包住）；
 # 每款模型各自独立成页，没有系列总览页，所以不新增类别标题。
 import io
 import json
@@ -8,7 +8,7 @@ import re
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from eleven_data import SITE, DATE, SLUGS, PRICE, MODELS  # noqa: E402
+from eleven_data import SITE, DATE, SLUGS, PRICE, MODELS, is_stt, STT_HOUR  # noqa: E402
 from eleven_layout import logo  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -31,9 +31,15 @@ CARDS = {
                           'Eleven Flash v2.5 API', 'Fast and light, 40,000 characters per request and 32 languages, for very long text and bulk subtitle voiceover.', ['Very long text', 'Bulk subtitles', 'Unlimited RPM']),
     'eleven-flash-v2': ('Eleven Flash v2 API', '轻量高速播报模型，官方文档只列了英语，适合英文短句朗读和提示音。', ['轻量高速', '英语', '并发不限'],
                         'Eleven Flash v2 API', 'Light and fast announcer model, English only per the official docs, for short English lines and prompts.', ['Light and fast', 'English', 'Unlimited RPM']),
+    # 语音转文字（Scribe）：按秒计费，价格行显示每秒价，卡片文案另写折合每小时
+    'eleven-scribe-v3': ('Eleven Scribe v3 API', 'ElevenLabs 录音文件转写模型，90+ 种语言，约官方 8.1 折，折合 $0.162 / 小时，适合会议纪要、字幕和访谈整理。', ['语音转文字', '90+ 种语言', '并发不限'],
+                         'Eleven Scribe v3 API', 'ElevenLabs speech-to-text model for recordings, 90+ languages, about 19% off list at $0.162 per hour, for meeting notes, subtitles and interviews.', ['Speech to text', '90+ languages', 'Unlimited RPM']),
+    'eleven-scribe-v2': ('Eleven Scribe v2 API', 'ElevenLabs 上一代录音转写模型，90+ 种语言，价格与 Scribe v3 相同，折合 $0.162 / 小时，官方仍可用。', ['语音转文字', '上一代', '并发不限'],
+                         'Eleven Scribe v2 API', 'Previous-generation ElevenLabs transcription model, 90+ languages, same price as Scribe v3 at $0.162 per hour, still available from ElevenLabs.', ['Speech to text', 'Previous gen', 'Unlimited RPM']),
 }
 CAT = {'zh': ('查看专题 →', '/ 万字符', 'ElevenLabs'),
        'en': ('View guide →', '/ 10K characters', 'ElevenLabs')}
+CAT_STT = {'zh': '/ 秒', 'en': 'per second'}
 
 
 def card(lang, slug):
@@ -52,7 +58,7 @@ def card(lang, slug):
           <ul class="af-tags">{tg}
           </ul>
           <div class="af-model-foot">
-            <span><strong>${PRICE[slug]}</strong> {CAT[lang][1]}</span>
+            <span><strong>${PRICE[slug]}</strong> {CAT_STT[lang] if is_stt(slug) else CAT[lang][1]}</span>
             <span class="af-model-go" aria-hidden="true">{CAT[lang][0]}</span>
           </div>
         </li>

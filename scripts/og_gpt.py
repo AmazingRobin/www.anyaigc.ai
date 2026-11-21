@@ -14,8 +14,12 @@ BRAND = 'AnyAIGC'  # 区分大小写
 
 # 每个页面一句卖点 + 3 个标签
 SUBS = {
-    'gpt':           ({'zh': 'OpenAI 全系 10 个型号，一个 API Key 调用', 'en': 'Every OpenAI GPT model, one API key'},
-                      {'zh': ['10 个型号', '约官方 0.5 折起', '对公 · 专票'], 'en': ['10 models', 'Up to 95% off', 'Self-service invoices']}),
+    'gpt':           ({'zh': 'OpenAI 全系 12 个型号，一个 API Key 调用', 'en': 'Every OpenAI GPT model, one API key'},
+                      {'zh': ['12 个型号', '约官方 0.5 折起', '对公 · 专票'], 'en': ['12 models', 'Up to 95% off', 'Self-service invoices']}),
+    'gpt-6.2-astra': ({'zh': 'OpenAI 新一代前沿模型，约官方价 0.5 折', 'en': "OpenAI's new frontier model at 95% off"},
+                      {'zh': ['最棘手的项目', 'Codex', '并发不限'], 'en': ['Hardest projects', 'Codex', 'Unlimited concurrency']}),
+    'gpt-6.2-sol':   ({'zh': '日常工作首选模型，约官方价 0.5 折', 'en': 'The everyday go-to model at 95% off'},
+                      {'zh': ['Responses API', 'Codex', '并发不限'], 'en': ['Responses API', 'Codex', 'Unlimited concurrency']}),
     'gpt-6-astra':   ({'zh': 'OpenAI 旗舰模型，约官方价 0.5 折', 'en': "OpenAI's flagship model at 95% off"},
                       {'zh': ['最高智能', 'Codex', '并发不限'], 'en': ['Top tier', 'Codex', 'Unlimited concurrency']}),
     'gpt-6.1-sol':   ({'zh': '接近 Astra 的智能，约官方价 0.5 折', 'en': 'Near-Astra intelligence at 95% off'},
@@ -42,7 +46,11 @@ SUBS = {
 # ---- 新语言（ja / ko / es / de）：副标题按型号写，标签按英文原文查表。非中文图不写合同/对公，发票写"自助开具"。
 NEW = ('ja', 'ko', 'es', 'de')
 SUB_I18N = {
-    'gpt': {'ja': 'OpenAI GPT 全10モデルを1つのAPIキーで', 'ko': 'OpenAI GPT 전 모델 10종을 API 키 하나로',
+    'gpt-6.2-astra': {'ja': 'OpenAIの新世代フロンティアモデルを95%オフで', 'ko': 'OpenAI 차세대 프런티어 모델, 95% 저렴',
+                      'es': 'Nuevo modelo de frontera de OpenAI con un 95 % menos', 'de': 'OpenAIs neues Frontier-Modell, 95 % günstiger'},
+    'gpt-6.2-sol': {'ja': '日常業務の定番モデルを95%オフで', 'ko': '일상 업무용 기본 모델, 95% 저렴',
+                    'es': 'El modelo de uso diario con un 95 % menos', 'de': 'Das Alltagsmodell für die tägliche Arbeit, 95 % günstiger'},
+    'gpt': {'ja': 'OpenAI GPT 全12モデルを1つのAPIキーで', 'ko': 'OpenAI GPT 전 모델 12종을 API 키 하나로',
             'es': 'Todos los modelos GPT de OpenAI con una sola clave', 'de': 'Alle OpenAI-GPT-Modelle mit einem Schlüssel'},
     'gpt-6-astra': {'ja': 'OpenAIのフラッグシップ、定価より95%オフ', 'ko': 'OpenAI 플래그십, 정가 대비 95% 저렴',
                     'es': 'Modelo insignia de OpenAI, 95 % menos', 'de': 'OpenAIs Flaggschiff, 95 % günstiger'},
@@ -74,7 +82,8 @@ def _t(ja, ko, es, de):
 TAG_I18N = {
     'Self-service invoices': _t('請求書を自分で発行', '인보이스 직접 발급', 'Facturas en consola', 'Rechnungen im Konto'),
     'Unlimited concurrency': _t('同時実行数の上限なし', '동시 실행 제한 없음', 'Sin límite de RPM', 'Kein RPM-Limit'),
-    '10 models': _t('10モデル', '10개 모델', '10 modelos', '10 Modelle'),
+    '12 models': _t('12モデル', '12개 모델', '12 modelos', '12 Modelle'),
+    'Hardest projects': _t('最難関のプロジェクト', '가장 까다로운 프로젝트', 'Los proyectos más difíciles', 'Die schwierigsten Projekte'),
     'Up to 95% off': _t('最大95%オフ', '최대 95% 저렴', 'Hasta 95 % menos', 'Bis zu 95 % günstiger'),
     'Top tier': _t('最上位', '최상위', 'Gama alta', 'Spitzenklasse'),
     'Codex': _t('Codex', 'Codex', 'Codex', 'Codex'),

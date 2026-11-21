@@ -5,9 +5,10 @@
 # Do not claim "works from mainland China" on English pages.
 from decimal import Decimal
 
-from eleven_data import PRICE, OFFICIAL, OFFICIAL_1K, MODELS, SLUGS, REG, MARKET, SUPPORT, DOCS_SPEECH, OFFICIAL_MODELS, OFFICIAL_PRICING
+from eleven_data import PRICE, OFFICIAL, OFFICIAL_1K, MODELS, TTS_SLUGS as SLUGS, STT_SLUGS, STT_HOUR, is_stt, REG, MARKET, SUPPORT, DOCS_SPEECH, OFFICIAL_MODELS, OFFICIAL_PRICING
 from eleven_layout import cost, money, unit_price
 import eleven_code as code
+import eleven_stt_en as stt
 
 DEAL = '19% off list price'
 
@@ -170,9 +171,12 @@ def compare_rows():
 COMPARE_NOTE = ('Language counts, character limits and latency come from the <a href="' + OFFICIAL_MODELS + '" target="_blank" rel="noopener">ElevenLabs model docs</a>. Latency is the median inference latency ElevenLabs states, excluding network and application latency. '
                 'Prices are current AnyAIGC prices; live prices are in the model catalog. "Not listed" and "Not stated" mean the official docs do not give that item.')
 
-FAMILY = [(s, '', f'{POS[s]} · {p(s)} / 10K chars') for s in SLUGS]
-FAMILY[0] = (FAMILY[0][0], 'Flagship', FAMILY[0][2])
-FAMILY[1] = (FAMILY[1][0], 'Low latency', FAMILY[1][2])
+_TTS = [(s, '', f'{POS[s]} · {p(s)} / 10K chars') for s in SLUGS]
+_TTS[0] = (_TTS[0][0], 'Flagship', _TTS[0][2])
+_TTS[1] = (_TTS[1][0], 'Low latency', _TTS[1][2])
+_STT = [(s, 'Latest' if s == 'eleven-scribe-v3' else '', f'{stt.POS[s]} · ${PRICE[s]} / sec (${STT_HOUR} / hour)') for s in STT_SLUGS]
+# text-to-speech and speech-to-text are listed separately
+FAMILY = [('Text to speech', _TTS), ('Speech to text', _STT)]
 
 
 def costs(slug):
@@ -250,6 +254,8 @@ def special_faq(slug):
 
 
 def build(slug):
+    if is_stt(slug):
+        return stt.build(slug)
     m = M[slug]
     d = MODELS[slug]
     mid, name = d['id'], d['name']

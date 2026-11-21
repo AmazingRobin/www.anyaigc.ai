@@ -1,12 +1,13 @@
 # Seedream 系列专题页中文文案。build(slug) 返回页面用的字典。价格用人民币（模型广场最低价按 6.718 换算）。
-from seedream_data import MODELS, MODEL_SLUGS, CNY, USD, SUPPORT, PRICING, DOCS, VOLC_DOC, cny
+from seedream_data import MODELS, MODEL_SLUGS, CNY, USD, SUPPORT, PRICING, DOCS, VOLC_DOC, RATE, TIERS_55, INPUT_55, PIXELS_55, cny, cny_of, cny_num
 import seedream_layout as G
 
 NL = '\n'
 
 FAMILY = [
-    ('seedream', '总览', 'Seedream 全系', '5 个型号的价格与参数对比'),
-    ('seedream-5.0-pro', '最新', 'Seedream 5.0 Pro', f'信息图、精准编辑、多语种 · {cny("seedream-5.0-pro")} / 张起'),
+    ('seedream', '总览', 'Seedream 全系', '6 个型号的价格与参数对比'),
+    ('seedream-5.5', '最新', 'Seedream 5.5', f'图层拆分、原生 RGBA、多轮编辑 · {cny("seedream-5.5")} / 张起'),
+    ('seedream-5.0-pro', '旗舰', 'Seedream 5.0 Pro', f'信息图、精准编辑、多语种 · {cny("seedream-5.0-pro")} / 张起'),
     ('seedream-5.0-lite', '高性价比', 'Seedream 5.0 lite', f'联网检索、组图、4K · {cny("seedream-5.0-lite")} / 张起'),
     ('seedream-4.5', '', 'Seedream 4.5', f'海报排版、多图融合 · {cny("seedream-4.5")} / 张起'),
     ('seedream-4.0', '', 'Seedream 4.0', f'生成编辑一体、组图 · {cny("seedream-4.0")} / 张起'),
@@ -37,7 +38,7 @@ def price_note(slug=None):
 PROMPT = '一张竖版 4:5 咖啡品牌海报，标题“秋日限定”，暖色调，留白干净，右下角放产品图'
 
 
-def code_py(model, size='2K', extra=''):
+def code_py(model, size='2K', extra='', cmt='显式传 size，不传会按更高档位计费'):
     return f'''import os
 import requests
 
@@ -49,7 +50,7 @@ resp = requests.post(
     json={{
         "model": "{model}",
         "prompt": "{PROMPT}",
-        "size": "{size}",  # 显式传 size，不传会按更高档位计费
+        "size": "{size}",  # {cmt}
         "response_format": "url",  # 或 b64_json
         "watermark": False,{extra}
     }},
@@ -149,7 +150,7 @@ def codes(slug):
         return [('py', 'Python', f'Python · {mid} 文生图', code_py(mid, '1024x1024')),
                 ('curl', 'cURL', f'cURL · {mid} 文生图', code_curl(mid, '1024x1024')),
                 ('sdk', 'OpenAI SDK', 'Python · OpenAI SDK', code_sdk(mid, '1024x1024'))]
-    out = [('py', 'Python', f'Python · {mid} 文生图', code_py(mid)),
+    out = [('py', 'Python', f'Python · {mid} 文生图', code_py(mid, cmt='不传 size 默认按 2K 计费') if slug == 'seedream-5.5' else code_py(mid)),
            ('curl', 'cURL', f'cURL · {mid} 文生图', code_curl(mid)),
            ('edit', '参考图编辑', f'Python · {mid} 多图融合', code_edit(mid))]
     if m['seq']:
@@ -184,6 +185,31 @@ def price_table(slugs):
     return G.table('Seedream API 价格（人民币）', PRICE_HEAD, [(None, [price_row(s) for s in slugs])])
 
 
+def billing_55():
+    return [('按张分档计费', '按输出像素分两档，参考图另计'), ('产出', '图片生成一次返回 1 张，不支持组图'),
+            ('并发不限', '所有用户默认享有'), ('余额通用', '同一余额可调用 300+ 模型')]
+
+
+def price_note_55():
+    return ('单价取自模型广场的最低价，按 1 美元 ≈ ¥6.718 换算成人民币。按单张输出图片的像素分档：1K / 1.5K 为 2,601,123 像素以内，'
+            '2K 为 2,601,124 ~ 4,624,220 像素，不传 <code>size</code> 默认按 2K 计费。输入图片（每张参考图，或待拆分的原图）另按张计费；'
+            f'图层拆分时，底图和每个图层逐张计费。按成功生成计费，实时价格以<a href="{PRICING}">模型广场</a>为准。')
+
+
+def price_table_55():
+    slug = 'seedream-5.5'
+    mid = MODELS[slug]['id']
+    (t1, u1), (t2, u2) = TIERS_55
+    def row(label, small, usd_v):
+        return (f'<th scope="row">{label}<small>{small}</small></th><td><code>{mid}</code></td><td>按张</td>'
+                f'<td class="o-num o-hl">{cny_of(usd_v)} / 张</td><td class="o-num sd-off">${usd_v}</td>')
+    groups = [('图片输出（按单张输出像素分档）',
+               [row(t1, f'单张输出 {PIXELS_55[t1]} 像素', u1), row(t2, f'单张输出 {PIXELS_55[t2]} 像素；不传 size 默认按 2K', u2)]),
+              ('输入图片',
+               [row('参考图 / 待拆分原图', '每张输入图片', INPUT_55)])]
+    return G.table('Seedream 5.5 API 价格（人民币）', [('项目', False), ('模型名', False), ('计费方式', False), ('AnyAIGC 价格', True), ('美元价', True)], groups)
+
+
 def billing(slug=None):
     one = '一次返回 1 张；组图按实际生成张数计' if slug in (None, 'seedream-5.0-lite', 'seedream-4.5', 'seedream-4.0') else '一次请求返回 1 张图片'
     return [('按张计费', '固定单价，不按 token 算'), ('产出', one), ('并发不限', '所有用户默认享有'), ('余额通用', '同一余额可调用 300+ 模型')]
@@ -198,17 +224,17 @@ def compare_table(cur=None):
         return f'<th scope="row">{label}</th>' + ''.join(f'<td{cls(s)}>{v}</td>' for s, v in zip(cols, vals))
     rows = [
         row('AnyAIGC 模型名', [f'<code>{MODELS[s]["id"]}</code>' for s in cols]),
-        row('定位', ['旗舰：智能思考、高密度信息图、交互式精准编辑', '轻量版：深度思考 + 联网检索，最高 4K', '海报排版、小字清晰、多图融合', '生成与编辑一体，组图', '旧版，纯文生图']),
+        row('定位', ['多轮编辑一致、原生 RGBA、图层拆分', '旗舰：智能思考、高密度信息图、交互式精准编辑', '轻量版：深度思考 + 联网检索，最高 4K', '海报排版、小字清晰、多图融合', '生成与编辑一体，组图', '旧版，纯文生图']),
         row('输出分辨率', [MODELS[s]['sizes'] for s in cols]),
-        row('参考图', ['最多 10 张', '最多 14 张', '最多 14 张', '最多 14 张', '不支持']),
-        row('组图（一次多张）', ['不支持', '最多 15 张', '最多 15 张', '最多 15 张', '不支持']),
-        row('专有能力', ['图层拆分、框选编辑、透明背景、十余种语言', '联网搜索（web_search）', '保持原图人脸与光影', '风格迁移、知识类插画', '中英双语']),
+        row('参考图', ['最多 10 张', '最多 10 张', '最多 14 张', '最多 14 张', '最多 14 张', '不支持']),
+        row('组图（一次多张）', ['不支持', '不支持', '最多 15 张', '最多 15 张', '最多 15 张', '不支持']),
+        row('专有能力', ['原生 RGBA 透明图、图层拆分（最多 99 层）、规整文字 OCR', '图层拆分、框选编辑、透明背景、十余种语言', '联网搜索（web_search）', '保持原图人脸与光影', '风格迁移、知识类插画', '中英双语']),
         row('AnyAIGC 起步价', [f'<strong>{cny(s)}</strong> / {MODELS[s]["unit"]}' for s in cols]),
     ]
-    return G.table('Seedream 5.0 Pro、5.0 lite、4.5、4.0、3.0 参数对比', head, [(None, rows)], cls='sd-compare')
+    return G.table('Seedream 5.5、5.0 Pro、5.0 lite、4.5、4.0、3.0 参数对比', head, [(None, rows)], cls='sd-compare')
 
 
-COMPARE_NOTE = (f'参数引自<a href="{VOLC_DOC}" target="_blank" rel="noopener">火山方舟图片生成 API 文档</a>与字节跳动 Seed 模型页（2026-10-28 读取），'
+COMPARE_NOTE = (f'参数引自<a href="{VOLC_DOC}" target="_blank" rel="noopener">火山方舟图片生成 API 文档</a>与字节跳动 Seed 模型页（2026-10-28、2026-11-20 读取），'
                 '3.0 参数引自 Seedream 3.0 技术报告。调用字段以 AnyAIGC 接口文档为准。')
 
 USES = [
@@ -223,9 +249,12 @@ USES = [
 
 # ---------------------------------------------------------------- 总览页
 def hub():
-    sp, sl, s45, s40, s30 = MODEL_SLUGS
+    s55, sp, sl, s45, s40, s30 = MODEL_SLUGS
+    t2k = cny_of(TIERS_55[1][1])
     models = [
-        (f'/zh/models/{sp}', '最新旗舰', 'Seedream 5.0 Pro', MODELS[sp]['id'],
+        (f'/zh/models/{s55}', '最新', 'Seedream 5.5', MODELS[s55]['id'],
+         '多轮编辑保持一致，原生支持 RGBA 透明图，图层拆分最多输出 1 张底图和 99 个图层，参考图最多 10 张，按输出分辨率分档计费。', cny(s55), ' / 张起'),
+        (f'/zh/models/{sp}', '旗舰', 'Seedream 5.0 Pro', MODELS[sp]['id'],
          '具备智能思考能力的多模态生图模型，擅长高密度信息图、交互式精准编辑和真实人像质感，原生支持十余种语言。', cny(sp), ' / 张起'),
         (f'/zh/models/{sl}', '高性价比', 'Seedream 5.0 lite', MODELS[sl]['id'],
          '5.0 的轻量版，深度思考加联网检索，最高 4K 输出，支持组图和最多 14 张参考图。', cny(sl), ' / 张起'),
@@ -237,6 +266,7 @@ def hub():
          '中英双语文生图模型，原生 2K，只支持文生图。新项目建议用 4.0 及以上型号。', cny(s30), ' / 次'),
     ]
     choose = G.table('Seedream 型号怎么选', [('需求', False), ('推荐型号', False), ('原因', False)], [(None, [
+        f'<th scope="row">透明背景图、把一张图拆成多个图层</th><td><a href="/zh/models/{s55}">Seedream 5.5</a></td><td>原生 RGBA 输出，图层拆分最多 1 张底图加 99 个图层（5.0 Pro 最多 16 个）</td>',
         f'<th scope="row">信息图、海报、UI 等文字密集画面</th><td><a href="/zh/models/{sp}">Seedream 5.0 Pro</a></td><td>官方主打高密度信息呈现，排版和小字最稳</td>',
         f'<th scope="row">按批注、框选精准改图</th><td><a href="/zh/models/{sp}">Seedream 5.0 Pro</a></td><td>响应框选和涂鸦批注，支持图层拆分和透明背景</td>',
         f'<th scope="row">日常批量出图、控制成本</th><td><a href="/zh/models/{sl}">Seedream 5.0 lite</a></td><td>5.0 代际单价最低（{cny(sl)} / 张），最高 4K</td>',
@@ -245,11 +275,11 @@ def hub():
     ])])
     faqs = [
         ('Seedream API 多少钱？',
-         f'AnyAIGC 上 Seedream 全系固定单价：5.0 Pro {cny(sp)} / 张起，5.0 lite {cny(sl)} / 张起，4.5 {cny(s45)} / 张起，4.0 {cny(s40)} / 张起，3.0 {cny(s30)} / 次。不同分辨率单价不同，实时价格以模型广场为准。'),
+         f'AnyAIGC 上 Seedream 全系固定单价：5.5 {cny(s55)} / 张起（2K {t2k} / 张，输入图片另计），5.0 Pro {cny(sp)} / 张起，5.0 lite {cny(sl)} / 张起，4.5 {cny(s45)} / 张起，4.0 {cny(s40)} / 张起，3.0 {cny(s30)} / 次。不同分辨率单价不同，实时价格以模型广场为准。'),
         ('Seedream 是什么？和豆包、即梦是什么关系？',
          'Seedream 是字节跳动 Seed 团队的图像生成模型系列，在火山引擎上以「豆包 Seedream」（doubao-seedream）的名字提供 API，即梦等字节产品里的生图能力也基于它。AnyAIGC 提供的是 Seedream 官方模型的 API 调用。'),
-        ('5.0 Pro、5.0 lite、4.5、4.0 有什么区别？',
-         '5.0 Pro 是旗舰，擅长信息图、精准编辑和多语种，最高 2K，不支持组图。5.0 lite 是轻量版，带联网检索，最高 4K。4.5 强在海报排版和保持原图细节。4.0 是第一个把生成和编辑合在一起的版本。5.0 lite、4.5、4.0 都支持组图和最多 14 张参考图。'),
+        ('5.5、5.0 Pro、5.0 lite、4.5、4.0 有什么区别？',
+         '5.5 是最新型号，强在多轮编辑一致性、原生 RGBA 透明图和最多 99 层的图层拆分，一次返回 1 张，不支持组图。5.0 Pro 是旗舰，擅长信息图、精准编辑和多语种，最高 2K，不支持组图。5.0 lite 是轻量版，带联网检索，最高 4K。4.5 强在海报排版和保持原图细节。4.0 是第一个把生成和编辑合在一起的版本。5.0 lite、4.5、4.0 都支持组图和最多 14 张参考图。'),
         ('支持哪些接口？可以改图吗？',
          f'全系走 OpenAI 兼容的 <code>POST /v1/images/generations</code>，换型号只改 <code>model</code>。改图、多图融合时在 <code>image</code> 里传图片 URL 数组；组图用 <code>sequential_image_generation: "auto"</code>。字段说明见 <a href="{DOCS}">AnyAIGC 接口文档</a>。'),
         conc_faq('Seedream 全系'),
@@ -259,31 +289,33 @@ def hub():
     return dict(
         name='Seedream', crumb='Seedream', product='Seedream API（AnyAIGC）', sku='seedream', currency='CNY',
         title=f'Seedream API 价格与接入｜5.0 Pro、4.5 全系 {cny(sl)} 起 - AnyAIGC',
-        desc=f'Seedream API 全系：豆包 Seedream 5.0 Pro、5.0 lite、4.5、4.0，按张计费 {cny(sl)} 起，支持多图融合、组图与 4K，并发不限，支持对公转账与增值税专票。',
-        og_desc=f'一个 Key 调用字节跳动 Seedream 全系：5.0 Pro、5.0 lite、4.5、4.0，按张 {cny(sl)} 起，并发不限。',
-        og_alt='AnyAIGC Seedream API：5.0 Pro、5.0 lite、4.5、4.0 全系',
-        keywords='Seedream API,Seedream API 价格,Seedream 5.0 API,Seedream 5.0 Pro API,Seedream 4.5 API,豆包 Seedream API,豆包生图 API,doubao-seedream,Seedream API Key,Seedream 组图,即梦 API,Seedream API 企业,Seedream API 发票,AnyAIGC',
-        product_desc='通过 AnyAIGC 调用字节跳动 Seedream 全系图像模型：doubao-seedream-5-0-pro、5-0（lite）、4-5、4-0、3-0，OpenAI 兼容 /v1/images/generations。',
+        desc=f'Seedream API 全系：豆包 Seedream 5.5、5.0 Pro、5.0 lite、4.5、4.0，按张计费 {cny(sl)} 起，支持多图融合、组图与 4K，并发不限，支持对公转账与增值税专票。',
+        og_desc=f'一个 Key 调用字节跳动 Seedream 全系：5.5、5.0 Pro、5.0 lite、4.5、4.0，按张 {cny(sl)} 起，并发不限。',
+        og_alt='AnyAIGC Seedream API：5.5、5.0 Pro、5.0 lite、4.5、4.0 全系',
+        keywords='Seedream API,Seedream API 价格,Seedream 5.5 API,Seedream 5.0 API,Seedream 5.0 Pro API,Seedream 4.5 API,豆包 Seedream API,豆包生图 API,doubao-seedream,Seedream API Key,Seedream 组图,即梦 API,Seedream API 企业,Seedream API 发票,AnyAIGC',
+        product_desc='通过 AnyAIGC 调用字节跳动 Seedream 全系图像模型：doubao-seedream-5-5、5-0-pro、5-0（lite）、4-5、4-0、3-0，OpenAI 兼容 /v1/images/generations。',
         offers=[(f'{MODELS[s]["name"]}（每{MODELS[s]["unit"]}起）', CNY[s]) for s in MODEL_SLUGS],
-        eyebrow='字节跳动 · Seedream 系列', h1='Seedream API<small>豆包 Seedream 5.0 Pro、5.0 lite、4.5、4.0 全系</small>',
+        eyebrow='字节跳动 · Seedream 系列', h1='Seedream API<small>豆包 Seedream 5.5、5.0 Pro、5.0 lite、4.5、4.0 全系</small>',
         lead=f'一个 API Key 调用字节跳动全部 Seedream 型号，<strong>按张 {cny(sl)} 起</strong>。',
         lead_sub='信息图、海报排版、多图融合、组图和 4K 出图都能直接走 API。固定单价，不按 token 算，国内直接调用。',
         facts=[('起步价', f'{cny(sl)} / 张'), ('最高', '4K'), ('参考图', '最多 14 张'), ('并发', '不限'), ('企业', '对公 · 专票')],
         tiles=[('info', 'Seedream 5.0 Pro'), ('seq', 'Seedream 5.0 lite'), ('multi', 'Seedream 4.5'), ('edit', 'Seedream 4.0')],
         models_h2='Seedream 全系型号', models_lead='所有型号接口相同，只需切换 <code>model</code>。点卡片查看每个型号的价格、参数和代码示例。',
         models=models,
-        compare_h2='Seedream 5.0 Pro vs 5.0 lite vs 4.5 vs 4.0 参数对比', compare_lead='分辨率、参考图、组图和专有能力放在一张表里。',
+        compare_h2='Seedream 5.5 vs 5.0 Pro vs 5.0 lite vs 4.5 vs 4.0 参数对比', compare_lead='分辨率、参考图、组图和专有能力放在一张表里。',
         compare_table=compare_table(), compare_note=COMPARE_NOTE,
         price_h2='Seedream API 价格', price_lead='全系固定单价。同一个 API Key、同一份余额调用全部型号。',
         billing=billing(), billing_label='计费要点', price_tables=price_table(MODEL_SLUGS), price_note=price_note(),
-        price_extra=f'      <h3 class="sd-h3 o-reveal">型号怎么选</h3>{NL}' + choose,
+        price_extra=(f'      <p class="o-note">Seedream 5.5 按输出分辨率分档：1K / 1.5K {cny(s55)}、2K {t2k}，输入图片另计，详见'
+                     f'<a href="/zh/models/{s55}#pricing">Seedream 5.5 价格</a>。</p>{NL}'
+                     f'      <h3 class="sd-h3 o-reveal">型号怎么选</h3>{NL}') + choose,
         costs_h3='成本示例', costs_lead='按上表起步价直接相加，不含其他费用。',
         costs=[('1,000 张商品图', f'Seedream 5.0 lite，1,000 × {cny(sl)}', f'¥{1000 * float(CNY[sl]):.0f}', '日常批量出图'),
                ('100 张信息图海报', f'Seedream 5.0 Pro，100 × {cny(sp)}', f'¥{100 * float(CNY[sp]):.0f}', '文字密集的版式'),
                ('一组 15 张系列插画', f'Seedream 4.0 组图，15 × {cny(s40)}', f'¥{15 * float(CNY[s40]):.2f}', '一次请求返回 15 张')],
         uses_h2='Seedream API 使用场景', uses=USES,
         qs_h2='快速接入 Seedream API', steps=steps(MODELS[sp]['id']), codes=codes(sp),
-        callout='换型号只改 <code>model</code>：<code>doubao-seedream-5-0-pro-260628</code>、<code>doubao-seedream-5-0-260128</code>、<code>doubao-seedream-4-5-251128</code> 或 <code>doubao-seedream-4-0-250828</code>，请求和返回格式相同。',
+        callout='换型号只改 <code>model</code>：<code>doubao-seedream-5-5-261028</code>、<code>doubao-seedream-5-0-pro-260628</code>、<code>doubao-seedream-5-0-260128</code>、<code>doubao-seedream-4-5-251128</code> 或 <code>doubao-seedream-4-0-250828</code>，请求和返回格式相同。',
         qs_note=QS_NOTE,
         family_h2='Seedream 系列专题', family_lead='每个型号单独一页，含完整价格、参数和代码示例。',
         faq_h2='Seedream API 常见问题', faqs=faqs,
@@ -318,6 +350,66 @@ def model_page(slug):
         return [(l1[0], f'{n1:,} × {p}', f'¥{n1 * f:.0f}' if n1 * f >= 10 else f'¥{n1 * f:.2f}', l1[1]),
                 (l2[0], f'{n2:,} × {p}', f'¥{n2 * f:.0f}' if n2 * f >= 10 else f'¥{n2 * f:.2f}', l2[1]),
                 (l3[0], f'{n3:,} × {p}', f'¥{n3 * f:.0f}' if n3 * f >= 10 else f'¥{n3 * f:.2f}', l3[1])]
+
+    if slug == 'seedream-5.5':
+        (t1, u1), (t2, u2) = TIERS_55
+        c1, c2, ci = cny_num(u1), cny_num(u2), cny_num(INPUT_55)
+        faqs = [
+            (f'{name} API 多少钱？',
+             f'AnyAIGC 上 {name}（<code>{mid}</code>）按单张输出图片的像素分档计费：1K / 1.5K（{PIXELS_55[t1]} 像素）¥{c1} / 张（${u1}），'
+             f'2K（{PIXELS_55[t2]} 像素）¥{c2} / 张（${u2}），不传 <code>size</code> 默认按 2K。输入图片（每张参考图，或待拆分的原图）¥{ci} / 张（${INPUT_55}）。'
+             '图层拆分时，底图和每个图层逐张计费。按成功生成计费，实时价格以模型广场为准。'),
+            ('Seedream 5.5 是什么？',
+             'Seedream 5.5 是字节跳动 Seed 团队的多模态图像生成模型，官方定位是「创造力与精确执行能力共同提升的多模态图像生成模型」。它支持文生图、单图生图和多参考图生图，'
+             '并进一步增强了多轮编辑的一致性、原生 RGBA 图片生成和图层拆分能力。'),
+            ('支持哪些分辨率？能出 4K 吗？',
+             '不能。按火山方舟文档，5.5 生成图片时 <code>size</code> 支持 <code>1K</code>、<code>1.5K</code>、<code>2K</code>（默认 2K），也可以直接写宽x高的像素尺寸，'
+             '总像素范围 1280x720（921,600）到 4,624,220，宽高比范围 1:16 到 16:1。需要 4K 请用 <a href="/zh/models/seedream-5.0-lite">Seedream 5.0 lite</a> 或 4.5。'),
+            ('能上传几张参考图？支持组图吗？',
+             '<code>image</code> 最多传 10 张参考图，用于改图和多图融合，每张参考图按输入图片计费。5.5 一次只返回 1 张图，不支持组图、联网搜索和流式输出；'
+             '需要组图请用 <a href="/zh/models/seedream-5.0-lite">5.0 lite</a>、4.5 或 4.0。'),
+            ('图层拆分和透明图（RGBA）能做什么？',
+             '图层拆分可以把一张图拆成最多 1 张底图和 99 个图层，对规整文字图层还能返回文字内容、位置和近似的视觉样式（富文本 OCR）；艺术字、手写体等非规整文字不返回。'
+             '5.5 还原生支持透明与半透明背景，可以直接生成 RGBA 图片。这些能力的请求参数以官方文档和 AnyAIGC 接口文档为准，接入前可以联系客服确认。'),
+            ('5.5 和 5.0 Pro 怎么选？',
+             f'5.5 起步价更低（{cny("seedream-5.5")} / 张起，5.0 Pro 为 {cny("seedream-5.0-pro")} / 张起），图层最多 99 个，也支持文字直接生成 RGBA 图；'
+             '5.0 Pro 图层最多 16 个，不支持文生 RGBA 图。两者都最高 2K、参考图最多 10 张、不支持组图。5.0 Pro 的详细能力见 <a href="/zh/models/seedream-5.0-pro">Seedream 5.0 Pro</a>。'),
+            conc_faq(name),
+            *COMMON_FAQ,
+            LICENSE_FAQ,
+        ]
+        return dict(base,
+            title=f'Seedream 5.5 API 价格与接入｜图层拆分 {p} 起 - AnyAIGC',
+            desc=f'Seedream 5.5 API（{mid}）按张分档计费，1K 起 {p}，2K 为 ¥{c2}，支持原生 RGBA 透明图、图层拆分与多参考图，并发不限，支持对公转账与增值税专票。',
+            og_desc=f'字节跳动 Seedream 5.5 API：{p} / 张起，多轮编辑一致、原生 RGBA、图层拆分，并发不限。',
+            og_alt='AnyAIGC Seedream 5.5 API 价格与接入',
+            keywords='Seedream 5.5 API,Seedream 5.5 API 价格,doubao-seedream-5-5-261028,豆包 Seedream 5.5,Seedream 5.5 图层拆分,Seedream RGBA 透明图,Seedream 5.5 接入,Seedream API Key,Seedream 5.5 API 企业,Seedream 5.5 API 发票,AnyAIGC',
+            product_desc=f'通过 AnyAIGC 调用字节跳动 Seedream 5.5（{mid}）图像生成与编辑模型，按张分档计费，OpenAI 兼容 /v1/images/generations。',
+            offers=[(f'{name} {t1}（每张）', c1), (f'{name} {t2}（每张）', c2)],
+            billing=billing_55(), price_tables=price_table_55(), price_note=price_note_55(),
+            price_lead=f'按输出分辨率分档计费，1K / 1.5K 起步价 {p} / 张，输入图片另计。',
+            final_p=f'注册即送 200 万 tokens 试用额度，{p} / 张起，并发不限。',
+            lead=f'多轮编辑一致、原生 RGBA 与图层拆分，<strong>每张 {p} 起</strong>。',
+            lead_sub='官方定位为创造力与精确执行能力共同提升的多模态图像生成模型。按输出分辨率分档计费，参考图另计，国内直接调用。',
+            facts=[('起步价', f'{p} / 张'), ('最高', '2K'), ('参考图', '最多 10 张'), ('图层', '最多 99 个'), ('并发', '不限'), ('企业', '对公 · 专票')],
+            tiles=[('edit', '多轮编辑一致'), ('photo', '原生 RGBA 透明图'), ('multi', '图层拆分'), ('type', '文字图层 OCR')],
+            about_h2='Seedream 5.5 是什么',
+            about_ps=['Seedream 5.5 是字节跳动 Seed 团队的多模态图像生成模型，官方定位为「创造力与精确执行能力共同提升的多模态图像生成模型」。它支持文生图、单图生图和多参考图生图，并进一步增强了多轮编辑的一致性、原生 RGBA 图片生成和图层拆分能力。',
+                      f'在 AnyAIGC 上，模型名是 <code>{mid}</code>，走 OpenAI 兼容的 <code>/v1/images/generations</code>，按输出分辨率分档计费，1K / 1.5K 每张 {p} 起，输入图片另计。国内网络可以直接调用，不需要火山引擎账号和实名认证。'],
+            spec=[('模型名', f'<code>{mid}</code>'), ('输出分辨率', '1K / 1.5K / 2K（默认 2K）'), ('参考图', '最多 10 张'),
+                  ('组图', '不支持'), ('专有能力', 'RGBA 透明图 · 图层拆分（最多 99 个）'), ('接口', '/v1/images/generations')],
+            features_h2='Seedream 5.5 能做什么',
+            features_lead='下面四项来自字节跳动 Seed 官方页面和火山方舟文档。',
+            features=[('edit', '多轮编辑保持一致', '连续多轮修改同一张图时，只改你要求的区域；官方页面写明支持非编辑区域的像素级保持。'),
+                      ('photo', '原生 RGBA 透明图', '原生支持透明与半透明背景，文字或参考图都能生成带透明通道的 RGBA 图片，不用再手动抠图。'),
+                      ('multi', '图层拆分', '把一张图拆成最多 1 张底图和 99 个图层，分别替换、调整位置或重新排版；底图和每个图层逐张计费。'),
+                      ('type', '规整文字的富文本 OCR', '对拆分出的规整文字图层，返回文字内容、位置和近似的视觉样式；艺术字、手写体等非规整文字不返回。')],
+            costs=[('1,000 张 1K 文生图', f'1,000 × ¥{c1}', f'¥{1000 * float(c1):.0f}', '批量出图，1K / 1.5K 档'),
+                   ('100 张 2K 文生图', f'100 × ¥{c2}', f'¥{100 * float(c2):.0f}', '精细出图，2K 档'),
+                   ('100 次 2K 参考图编辑', f'100 × (¥{c2} + ¥{ci})', f'¥{100 * (float(c2) + float(ci)):.0f}', '每次 1 张参考图加 1 张 2K 输出')],
+            callout='5.5 一次只返回 1 张图，不支持组图（<code>sequential_image_generation</code>）、联网搜索和流式输出；需要组图，把 <code>model</code> 换成 <code>doubao-seedream-5-0-260128</code>（5.0 lite）即可。',
+            faqs=faqs,
+        )
 
     if slug == 'seedream-5.0-pro':
         faqs = [

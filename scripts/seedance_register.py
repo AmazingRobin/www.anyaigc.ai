@@ -32,7 +32,9 @@ def hub(lang):
 
 '''
     if 'id="cat-seedance"' in s:
-        s = re.sub(r'      <h3 class="af-section-head" id="cat-seedance".*?<!-- /Seedance -->\n\n', lambda _: block, s, flags=re.S)
+        # 页面里这个 <h3> 前面的空白可能被后处理去掉，所以不要求缩进；缩进跟随原文
+        s = re.sub(r'( *)<h3 class="af-section-head" id="cat-seedance".*?<!-- /Seedance -->\n\n',
+                   lambda m: m.group(1) + block.lstrip(' '), s, flags=re.S)
     else:
         anchor = '      <h3 class="af-section-head" id="cat-muse"'
         assert anchor in s

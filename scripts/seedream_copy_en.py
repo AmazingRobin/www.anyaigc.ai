@@ -2,7 +2,7 @@
 # Prices are USD: the lowest price shown in the AnyAIGC model catalog (see seedream_data.USD).
 from decimal import Decimal
 
-from seedream_data import MODELS, MODEL_SLUGS, USD, SUPPORT, PRICING, DOCS, VOLC_DOC, usd
+from seedream_data import MODELS, MODEL_SLUGS, USD, SUPPORT, PRICING, DOCS, VOLC_DOC, TIERS_55, INPUT_55, PIXELS_55, usd
 import seedream_layout as G
 
 NL = '\n'
@@ -22,8 +22,9 @@ def cost(n, slug):
 
 
 FAMILY = [
-    ('seedream', 'Overview', 'All Seedream models', 'Pricing and specs for 5 models'),
-    ('seedream-5.0-pro', 'Latest', 'Seedream 5.0 Pro', f'Infographics, precise edits, multilingual · from {usd("seedream-5.0-pro")} / image'),
+    ('seedream', 'Overview', 'All Seedream models', 'Pricing and specs for 6 models'),
+    ('seedream-5.5', 'Latest', 'Seedream 5.5', f'Layer separation, native RGBA, multi-turn edits · from {usd("seedream-5.5")} / image'),
+    ('seedream-5.0-pro', 'Flagship', 'Seedream 5.0 Pro', f'Infographics, precise edits, multilingual · from {usd("seedream-5.0-pro")} / image'),
     ('seedream-5.0-lite', 'Best value', 'Seedream 5.0 lite', f'Web search, image sets, 4K · from {usd("seedream-5.0-lite")} / image'),
     ('seedream-4.5', '', 'Seedream 4.5', f'Poster layouts, multi-image fusion · from {usd("seedream-4.5")} / image'),
     ('seedream-4.0', '', 'Seedream 4.0', f'Generation and editing in one · from {usd("seedream-4.0")} / image'),
@@ -56,7 +57,7 @@ COSTS_LEAD = 'Calculated at the from price above, with nothing else added. Check
 PROMPT = 'A vertical 4:5 poster for a coffee brand, headline “Autumn Limited”, warm tones, clean negative space, product shot in the bottom-right corner'
 
 
-def code_py(model, size='2K', extra=''):
+def code_py(model, size='2K', extra='', cmt='set size explicitly; omitting it may bill a higher tier'):
     return f'''import os
 import requests
 
@@ -68,7 +69,7 @@ resp = requests.post(
     json={{
         "model": "{model}",
         "prompt": "{PROMPT}",
-        "size": "{size}",  # set size explicitly; omitting it may bill a higher tier
+        "size": "{size}",  # {cmt}
         "response_format": "url",  # or b64_json
         "watermark": False,{extra}
     }},
@@ -168,7 +169,7 @@ def codes(slug):
         return [('py', 'Python', f'Python · {mid} text-to-image', code_py(mid, '1024x1024')),
                 ('curl', 'cURL', f'cURL · {mid} text-to-image', code_curl(mid, '1024x1024')),
                 ('sdk', 'OpenAI SDK', 'Python · OpenAI SDK', code_sdk(mid, '1024x1024'))]
-    out = [('py', 'Python', f'Python · {mid} text-to-image', code_py(mid)),
+    out = [('py', 'Python', f'Python · {mid} text-to-image', code_py(mid, cmt='omitting size bills the 2K tier') if slug == 'seedream-5.5' else code_py(mid)),
            ('curl', 'cURL', f'cURL · {mid} text-to-image', code_curl(mid)),
            ('edit', 'Reference images', f'Python · {mid} multi-image fusion', code_edit(mid))]
     if m['seq']:
@@ -203,6 +204,38 @@ def price_table(slugs):
     return G.table('Seedream API pricing (USD)', PRICE_HEAD, [(None, [price_row(s) for s in slugs])])
 
 
+def money3(d):
+    """Exact Decimal as dollars, trimming trailing zeros but keeping at least 2 decimals."""
+    t = format(Decimal(d).normalize(), 'f')
+    whole, _, frac = t.partition('.')
+    return f'${int(whole):,}.' + frac.ljust(2, '0')
+
+
+def billing_55():
+    return [('Per image, tiered', 'Two tiers by output pixels; reference images billed extra'), ('Output', '1 image per request, no image sets'),
+            ('Unlimited concurrency', 'Default for every account'), ('One balance', 'Works across 300+ models')]
+
+
+def price_note_55():
+    return ('Prices are in USD and show the lowest price in the model catalog. Billing tiers follow the pixels of each output image: '
+            '1K / 1.5K covers up to 2,601,123 pixels and 2K covers 2,601,124 to 4,624,220 pixels. Omitting <code>size</code> bills the 2K tier. '
+            'Input images (each reference image, or the source image you want split) are billed separately; in layer separation, the base image and every layer are billed per image. '
+            f'You are billed per successful generation. See the live rates in the <a href="{PRICING}">model catalog</a>.')
+
+
+def price_table_55():
+    mid = MODELS['seedream-5.5']['id']
+    (t1, u1), (t2, u2) = TIERS_55
+
+    def row(label, small, v):
+        return (f'<th scope="row">{label}<small>{small}</small></th><td><code>{mid}</code></td><td>Per image</td>'
+                f'<td class="o-num o-hl">${v} / image</td>')
+    groups = [('Image output (tiered by pixels per output image)',
+               [row(t1, f'{PIXELS_55[t1]} pixels per output image', u1), row(t2, f'{PIXELS_55[t2]} pixels; the default when size is omitted', u2)]),
+              ('Input images', [row('Reference or source image', 'Each input image', INPUT_55)])]
+    return G.table('Seedream 5.5 API pricing (USD)', [('Item', False), ('Model ID', False), ('Billing', False), ('AnyAIGC price (USD)', True)], groups)
+
+
 def billing(slug=None):
     one = ('1 image per request; image sets are billed per image generated' if slug in (None, 'seedream-5.0-lite', 'seedream-4.5', 'seedream-4.0')
            else '1 image per request')
@@ -221,19 +254,19 @@ def compare_table(cur=None):
         return f'<th scope="row">{label}</th>' + ''.join(f'<td{cls(s)}>{v}</td>' for s, v in zip(cols, vals))
     rows = [
         row('AnyAIGC model ID', [f'<code>{MODELS[s]["id"]}</code>' for s in cols]),
-        row('Positioning', ['Flagship: reasoning, dense infographics, interactive precise editing', 'Lightweight: deep thinking + web search, up to 4K',
+        row('Positioning', ['Multi-turn edit consistency, native RGBA, layer separation', 'Flagship: reasoning, dense infographics, interactive precise editing', 'Lightweight: deep thinking + web search, up to 4K',
                             'Poster layouts, legible small text, multi-image fusion', 'Generation and editing in one, image sets', 'Legacy, text-to-image only']),
         row('Output resolution', [MODELS[s]['sizes_en'] for s in cols]),
-        row('Reference images', ['Up to 10', 'Up to 14', 'Up to 14', 'Up to 14', 'Not supported']),
-        row('Image sets (several per request)', ['Not supported', 'Up to 15', 'Up to 15', 'Up to 15', 'Not supported']),
-        row('Distinct features', ['Layer separation, region editing, transparent backgrounds, 10+ languages', 'Web search (web_search)',
+        row('Reference images', ['Up to 10', 'Up to 10', 'Up to 14', 'Up to 14', 'Up to 14', 'Not supported']),
+        row('Image sets (several per request)', ['Not supported', 'Not supported', 'Up to 15', 'Up to 15', 'Up to 15', 'Not supported']),
+        row('Distinct features', ['Native RGBA transparency, layer separation (up to 99 layers), OCR for regular text layers', 'Layer separation, region editing, transparent backgrounds, 10+ languages', 'Web search (web_search)',
                                   'Keeps faces and lighting from the source', 'Style transfer, knowledge-based illustrations', 'Chinese and English']),
         row('AnyAIGC from', [f'<strong>{usd(s)}</strong> / {UNIT[MODELS[s]["unit"]]}' for s in cols]),
     ]
-    return G.table('Seedream 5.0 Pro, 5.0 lite, 4.5, 4.0 and 3.0 compared', head, [(None, rows)], cls='sd-compare')
+    return G.table('Seedream 5.5, 5.0 Pro, 5.0 lite, 4.5, 4.0 and 3.0 compared', head, [(None, rows)], cls='sd-compare')
 
 
-COMPARE_NOTE = (f'Specs are quoted from the <a href="{VOLC_DOC}" target="_blank" rel="noopener">Volcano Engine Ark image generation API docs</a> and the ByteDance Seed model pages (read 2026-10-28); '
+COMPARE_NOTE = (f'Specs are quoted from the <a href="{VOLC_DOC}" target="_blank" rel="noopener">Volcano Engine Ark image generation API docs</a> and the ByteDance Seed model pages (read 2026-10-28 and 2026-11-20); '
                 '3.0 specs come from the Seedream 3.0 technical report. Request fields follow the AnyAIGC API docs.')
 
 USES = [
@@ -248,9 +281,12 @@ USES = [
 
 # ---------------------------------------------------------------- overview page
 def hub():
-    sp, sl, s45, s40, s30 = MODEL_SLUGS
+    s55, sp, sl, s45, s40, s30 = MODEL_SLUGS
+    t2k = '$' + TIERS_55[1][1]
     models = [
-        (f'/en/models/{sp}', 'Latest flagship', 'Seedream 5.0 Pro', MODELS[sp]['id'],
+        (f'/en/models/{s55}', 'Latest', 'Seedream 5.5', MODELS[s55]['id'],
+         'Consistent multi-turn edits, native RGBA transparency, and layer separation into one base image plus up to 99 layers. Up to 10 reference images, billed in tiers by output resolution.', usd(s55), ' / image'),
+        (f'/en/models/{sp}', 'Flagship', 'Seedream 5.0 Pro', MODELS[sp]['id'],
          'A multimodal image model with reasoning built in. Strong at dense infographics, interactive precise editing and realistic portraits, with native support for 10+ languages.', usd(sp), ' / image'),
         (f'/en/models/{sl}', 'Best value', 'Seedream 5.0 lite', MODELS[sl]['id'],
          'The lightweight 5.0 model with deep thinking and web search, up to 4K output, image sets and up to 14 reference images.', usd(sl), ' / image'),
@@ -262,6 +298,7 @@ def hub():
          'A bilingual Chinese and English text-to-image model with native 2K output. Text-to-image only; use 4.0 or newer for new projects.', usd(s30), ' / request'),
     ]
     choose = G.table('Which Seedream model to use', [('Need', False), ('Recommended', False), ('Why', False)], [(None, [
+        f'<th scope="row">Transparent images, or splitting one image into layers</th><td><a href="/en/models/{s55}">Seedream 5.5</a></td><td>Native RGBA output and up to 99 layers plus a base image (5.0 Pro: up to 16 layers)</td>',
         f'<th scope="row">Infographics, posters, UI and other text-heavy images</th><td><a href="/en/models/{sp}">Seedream 5.0 Pro</a></td><td>Built for dense information, with the most reliable layouts and small text</td>',
         f'<th scope="row">Precise edits from annotations or selected regions</th><td><a href="/en/models/{sp}">Seedream 5.0 Pro</a></td><td>Follows selections and scribbled notes, supports layer separation and transparent backgrounds</td>',
         f'<th scope="row">Everyday batch work on a budget</th><td><a href="/en/models/{sl}">Seedream 5.0 lite</a></td><td>Lowest price in the 5.0 generation ({usd(sl)} / image), up to 4K</td>',
@@ -270,11 +307,11 @@ def hub():
     ])])
     faqs = [
         ('How much does the Seedream API cost?',
-         f'Every Seedream model on AnyAIGC has a flat price: 5.0 Pro from {usd(sp)} / image, 5.0 lite from {usd(sl)} / image, 4.5 from {usd(s45)} / image, 4.0 from {usd(s40)} / image and 3.0 at {usd(s30)} / request. Higher resolutions cost more; live prices are in the model catalog.'),
+         f'Every Seedream model on AnyAIGC has a flat price: 5.5 from {usd(s55)} / image (2K is {t2k} / image, input images billed separately), 5.0 Pro from {usd(sp)} / image, 5.0 lite from {usd(sl)} / image, 4.5 from {usd(s45)} / image, 4.0 from {usd(s40)} / image and 3.0 at {usd(s30)} / request. Higher resolutions cost more; live prices are in the model catalog.'),
         ('What is Seedream? How does it relate to Doubao and Jimeng?',
          'Seedream is the image generation model family from the ByteDance Seed team. On Volcano Engine it is offered as "Doubao Seedream" (doubao-seedream), and image generation in ByteDance products such as Jimeng is built on it. AnyAIGC provides API access to the official Seedream models.'),
-        ('What is the difference between 5.0 Pro, 5.0 lite, 4.5 and 4.0?',
-         '5.0 Pro is the flagship: strong at infographics, precise editing and multilingual text, up to 2K, no image sets. 5.0 lite is the lightweight model with web search, up to 4K. 4.5 excels at poster layouts and keeping source details. 4.0 was the release that merged generation and editing. 5.0 lite, 4.5 and 4.0 all support image sets and up to 14 reference images.'),
+        ('What is the difference between 5.5, 5.0 Pro, 5.0 lite, 4.5 and 4.0?',
+         '5.5 is the newest model, strongest at consistent multi-turn edits, native RGBA transparency and layer separation of up to 99 layers; it returns 1 image per request and has no image sets. 5.0 Pro is the flagship: strong at infographics, precise editing and multilingual text, up to 2K, no image sets. 5.0 lite is the lightweight model with web search, up to 4K. 4.5 excels at poster layouts and keeping source details. 4.0 was the release that merged generation and editing. 5.0 lite, 4.5 and 4.0 all support image sets and up to 14 reference images.'),
         ('Which endpoint does it use? Can it edit images?',
          f'Every model uses the OpenAI-compatible <code>POST /v1/images/generations</code>; switching models only changes <code>model</code>. For editing and multi-image fusion, pass an array of image URLs in <code>image</code>. For image sets, use <code>sequential_image_generation: "auto"</code>. See the <a href="{DOCS}">AnyAIGC API docs</a> for every field.'),
         conc_faq('every Seedream model'),
@@ -284,31 +321,33 @@ def hub():
     return dict(
         name='Seedream', crumb='Seedream', product='Seedream API (AnyAIGC)', sku='seedream', currency='USD',
         title=f'Seedream API Pricing & Access | From {usd(sl)}/Image - AnyAIGC',
-        desc=f'Seedream API for 5.0 Pro, 5.0 lite, 4.5 and 4.0 from {usd(sl)} per image. Multi-image fusion, image sets, 4K, unlimited concurrency, VAT invoices.',
-        og_desc=f'One key for every ByteDance Seedream model: 5.0 Pro, 5.0 lite, 4.5 and 4.0, from {usd(sl)} per image, unlimited concurrency.',
-        og_alt='AnyAIGC Seedream API: 5.0 Pro, 5.0 lite, 4.5 and 4.0',
-        keywords='Seedream API,Seedream API pricing,Seedream 5.0 API,Seedream 5.0 Pro API,Seedream 4.5 API,Doubao Seedream API,ByteDance image API,doubao-seedream,Seedream API key,Seedream image sets,Seedream API for business,Seedream API invoice,AnyAIGC',
-        product_desc='Access every ByteDance Seedream image model through AnyAIGC: doubao-seedream-5-0-pro, 5-0 (lite), 4-5, 4-0 and 3-0, via the OpenAI-compatible /v1/images/generations.',
+        desc=f'Seedream API for 5.5, 5.0 Pro, 5.0 lite, 4.5 and 4.0 from {usd(sl)} per image. Multi-image fusion, image sets, 4K, unlimited concurrency, VAT invoices.',
+        og_desc=f'One key for every ByteDance Seedream model: 5.5, 5.0 Pro, 5.0 lite, 4.5 and 4.0, from {usd(sl)} per image, unlimited concurrency.',
+        og_alt='AnyAIGC Seedream API: 5.5, 5.0 Pro, 5.0 lite, 4.5 and 4.0',
+        keywords='Seedream API,Seedream API pricing,Seedream 5.5 API,Seedream 5.0 API,Seedream 5.0 Pro API,Seedream 4.5 API,Doubao Seedream API,ByteDance image API,doubao-seedream,Seedream API key,Seedream image sets,Seedream API for business,Seedream API invoice,AnyAIGC',
+        product_desc='Access every ByteDance Seedream image model through AnyAIGC: doubao-seedream-5-5, 5-0-pro, 5-0 (lite), 4-5, 4-0 and 3-0, via the OpenAI-compatible /v1/images/generations.',
         offers=[(f'{MODELS[s]["name"]} (per {UNIT[MODELS[s]["unit"]]}, from)', USD[s]) for s in MODEL_SLUGS],
-        eyebrow='ByteDance · Seedream family', h1='Seedream API<small>Doubao Seedream 5.0 Pro, 5.0 lite, 4.5 and 4.0</small>',
+        eyebrow='ByteDance · Seedream family', h1='Seedream API<small>Doubao Seedream 5.5, 5.0 Pro, 5.0 lite, 4.5 and 4.0</small>',
         lead=f'One API key for every ByteDance Seedream model, <strong>from {usd(sl)} per image</strong>.',
         lead_sub='Infographics, poster layouts, multi-image fusion, image sets and 4K output, all over the API. Flat per-image pricing instead of tokens, with no Volcano Engine account needed.',
         facts=[('From', f'{usd(sl)} / image'), ('Up to', '4K'), ('Reference images', 'Up to 14'), ('Concurrency', 'Unlimited'), ('Enterprise', 'Contracts · invoices')],
         tiles=[('info', 'Seedream 5.0 Pro'), ('seq', 'Seedream 5.0 lite'), ('multi', 'Seedream 4.5'), ('edit', 'Seedream 4.0')],
         models_h2='Every Seedream model', models_lead='All models share one API; just change <code>model</code>. Open a card for that model\'s pricing, specs and code samples.',
         models=models,
-        compare_h2='Seedream 5.0 Pro vs 5.0 lite vs 4.5 vs 4.0', compare_lead='Resolution, reference images, image sets and distinct features side by side.',
+        compare_h2='Seedream 5.5 vs 5.0 Pro vs 5.0 lite vs 4.5 vs 4.0', compare_lead='Resolution, reference images, image sets and distinct features side by side.',
         compare_table=compare_table(), compare_note=COMPARE_NOTE,
         price_h2='Seedream API pricing', price_lead='Flat prices across the lineup. One API key and one balance for every model.',
         billing=billing(), billing_label='Billing basics', price_tables=price_table(MODEL_SLUGS), price_note=price_note(),
-        price_extra=f'      <h3 class="sd-h3 o-reveal">Which model to use</h3>{NL}' + choose,
+        price_extra=(f'      <p class="o-note">Seedream 5.5 is billed in tiers by output resolution: 1K / 1.5K {usd(s55)}, 2K {t2k}, with input images billed separately. See '
+                     f'<a href="/en/models/{s55}#pricing">Seedream 5.5 pricing</a>.</p>{NL}'
+                     f'      <h3 class="sd-h3 o-reveal">Which model to use</h3>{NL}') + choose,
         costs_h3='Cost examples', costs_lead=COSTS_LEAD,
         costs=[('1,000 product shots', 'Seedream 5.0 lite, ' + cost(1000, sl)[0], cost(1000, sl)[1], 'Everyday batch work'),
                ('100 infographic posters', 'Seedream 5.0 Pro, ' + cost(100, sp)[0], cost(100, sp)[1], 'Text-heavy layouts'),
                ('A 15-image illustration set', 'Seedream 4.0 image set, ' + cost(15, s40)[0], cost(15, s40)[1], '15 images in one request')],
         uses_h2='Seedream API use cases', uses=USES,
         qs_h2='Get started with the Seedream API', steps=steps(MODELS[sp]['id']), codes=codes(sp),
-        callout='Switch models by changing <code>model</code> to <code>doubao-seedream-5-0-pro-260628</code>, <code>doubao-seedream-5-0-260128</code>, <code>doubao-seedream-4-5-251128</code> or <code>doubao-seedream-4-0-250828</code>. Requests and responses keep the same format.',
+        callout='Switch models by changing <code>model</code> to <code>doubao-seedream-5-5-261028</code>, <code>doubao-seedream-5-0-pro-260628</code>, <code>doubao-seedream-5-0-260128</code>, <code>doubao-seedream-4-5-251128</code> or <code>doubao-seedream-4-0-250828</code>. Requests and responses keep the same format.',
         qs_note=QS_NOTE,
         family_h2='Seedream model guides', family_lead='Each model has its own page with full pricing, specs and code samples.',
         faq_h2='Seedream API FAQ', faqs=faqs,
@@ -341,6 +380,68 @@ def model_page(slug):
 
     def costs3(n1, n2, n3, l1, l2, l3):
         return [(lab[0], *cost(n, slug), lab[1]) for n, lab in ((n1, l1), (n2, l2), (n3, l3))]
+
+    if slug == 'seedream-5.5':
+        (t1, u1), (t2, u2) = TIERS_55
+        faqs = [
+            (f'How much does the {name} API cost?',
+             f'On AnyAIGC, {name} (<code>{mid}</code>) is billed in tiers by the pixels of each output image: 1K / 1.5K (up to {PIXELS_55[t1]} pixels) is ${u1} / image, '
+             f'2K ({PIXELS_55[t2]} pixels) is ${u2} / image, and omitting <code>size</code> bills 2K. Input images (each reference image, or the source image you want split) are ${INPUT_55} / image. '
+             'In layer separation, the base image and every layer are billed per image. You are billed per successful generation; live prices are in the model catalog.'),
+            ('What is Seedream 5.5?',
+             'Seedream 5.5 is a multimodal image generation model from the ByteDance Seed team, described officially as raising creativity and precise execution together. It supports text-to-image, single-image and multi-reference generation, '
+             'and strengthens consistency across multi-turn edits, native RGBA image generation and layer separation.'),
+            ('Which resolutions are supported? Can it output 4K?',
+             'No 4K. Per the Volcano Engine Ark docs, 5.5 accepts <code>size</code> values of <code>1K</code>, <code>1.5K</code> and <code>2K</code> (default 2K) for image generation, or width x height pixel dimensions '
+             'with a total of 921,600 (1280x720) to 4,624,220 pixels and aspect ratios from 1:16 to 16:1. For 4K, use <a href="/en/models/seedream-5.0-lite">Seedream 5.0 lite</a> or 4.5.'),
+            ('How many reference images can I send? Does it support image sets?',
+             '<code>image</code> accepts up to 10 reference images for editing and multi-image fusion, and each one is billed as an input image. 5.5 returns 1 image per request and does not support image sets, web search or streaming; '
+             'use <a href="/en/models/seedream-5.0-lite">5.0 lite</a>, 4.5 or 4.0 for image sets.'),
+            ('What can layer separation and RGBA output do?',
+             'Layer separation splits one image into a base image plus up to 99 layers, and for regular text layers it can return the text, its position and an approximate visual style (rich-text OCR); decorative or handwritten text returns nothing. '
+             '5.5 also natively supports transparent and semi-transparent backgrounds, so it can output RGBA images directly. The request fields for these features follow the official docs and the AnyAIGC API docs; contact support to confirm them before you integrate.'),
+            ('Should I pick 5.5 or 5.0 Pro?',
+             f'5.5 starts lower (from {usd("seedream-5.5")} / image versus {usd("seedream-5.0-pro")} for 5.0 Pro), separates up to 99 layers and can generate RGBA images from text; '
+             '5.0 Pro separates up to 16 layers and does not generate RGBA from text alone. Both top out at 2K, take up to 10 reference images and have no image sets. See <a href="/en/models/seedream-5.0-pro">Seedream 5.0 Pro</a> for its other strengths.'),
+            conc_faq(name),
+            *COMMON_FAQ,
+            LICENSE_FAQ,
+        ]
+        c_a = Decimal(u1) * 1000
+        c_b = Decimal(u2) * 100
+        c_c = (Decimal(u2) + Decimal(INPUT_55)) * 100
+        return dict(base,
+            title=f'Seedream 5.5 API Pricing | Layer Split from {p} - AnyAIGC',
+            desc=f'Seedream 5.5 API ({mid}): {p} per image at 1K, ${u2} at 2K. Native RGBA, layer separation, unlimited concurrency, VAT invoices.',
+            og_desc=f'ByteDance Seedream 5.5 API from {p} per image: consistent multi-turn edits, native RGBA, layer separation, unlimited concurrency.',
+            og_alt='AnyAIGC Seedream 5.5 API pricing and access',
+            keywords='Seedream 5.5 API,Seedream 5.5 API pricing,doubao-seedream-5-5-261028,Doubao Seedream 5.5,Seedream 5.5 layer separation,Seedream RGBA transparent image,Seedream 5.5 access,Seedream API key,Seedream API for business,Seedream API invoice,AnyAIGC',
+            product_desc=f'Access ByteDance Seedream 5.5 ({mid}) image generation and editing through AnyAIGC, billed per image in resolution tiers via the OpenAI-compatible /v1/images/generations.',
+            offers=[(f'{name} {t1} (per image)', u1), (f'{name} {t2} (per image)', u2)],
+            billing=billing_55(), price_tables=price_table_55(), price_note=price_note_55(),
+            price_lead=f'Billed in tiers by output resolution. 1K / 1.5K starts at {p} / image, and input images are billed separately.',
+            final_p=f'Sign up and get 2M free tokens. From {p} / image, with unlimited concurrency.',
+            lead=f'Consistent multi-turn edits, native RGBA and layer separation, <strong>from {p} per image</strong>.',
+            lead_sub='Described officially as raising creativity and precise execution together. Tiered by output resolution, with reference images billed separately.',
+            facts=[('From', f'{p} / image'), ('Up to', '2K'), ('Reference images', 'Up to 10'), ('Layers', 'Up to 99'), ('Concurrency', 'Unlimited'), ('Enterprise', 'Contracts · invoices')],
+            tiles=[('edit', 'Consistent multi-turn edits'), ('photo', 'Native RGBA'), ('multi', 'Layer separation'), ('type', 'Text layer OCR')],
+            about_h2='What is Seedream 5.5',
+            about_ps=['Seedream 5.5 is a multimodal image generation model from the ByteDance Seed team, described officially as raising creativity and precise execution together. It supports text-to-image, single-image and multi-reference generation, and strengthens consistency across multi-turn edits, native RGBA image generation and layer separation.',
+                      f'On AnyAIGC the model ID is <code>{mid}</code>, served through the OpenAI-compatible <code>/v1/images/generations</code> and billed in tiers by output resolution: from {p} per image at 1K / 1.5K, with input images billed separately. You do not need a Volcano Engine account or ID verification.'],
+            spec=[('Model ID', f'<code>{mid}</code>'), ('Output resolution', '1K / 1.5K / 2K (default 2K)'), ('Reference images', 'Up to 10'),
+                  ('Image sets', 'Not supported'), ('Distinct features', 'RGBA transparency · layer separation (up to 99)'), ('Endpoint', '/v1/images/generations')],
+            features_h2='What Seedream 5.5 can do',
+            features_lead='These four capabilities come from the official ByteDance Seed model page and the Volcano Engine Ark docs.',
+            features=[('edit', 'Consistent multi-turn edits', 'Keep revising one image over several rounds and only the requested area changes; the official page says pixels outside the edited area can stay fixed.'),
+                      ('photo', 'Native RGBA transparency', 'Native support for transparent and semi-transparent backgrounds, so text or reference images can produce RGBA images without manual cutouts.'),
+                      ('multi', 'Layer separation', 'Split one image into a base image plus up to 99 layers, then replace, move or re-lay them out; the base image and each layer are billed per image.'),
+                      ('type', 'Rich-text OCR for regular text', 'For regular text layers, returns the text, its position and an approximate visual style; decorative and handwritten text returns nothing.')],
+            costs=[('1,000 text-to-image at 1K', f'1,000 × ${u1}', money(c_a), 'Batch work, 1K / 1.5K tier'),
+                   ('100 text-to-image at 2K', f'100 × ${u2}', money(c_b), 'Higher detail, 2K tier'),
+                   ('100 reference edits at 2K', f'100 × (${u2} + ${INPUT_55})', money3(c_c), 'One reference image plus one 2K output each')],
+            callout='5.5 returns 1 image per request and does not support image sets (<code>sequential_image_generation</code>), web search or streaming. For image sets, change <code>model</code> to <code>doubao-seedream-5-0-260128</code> (5.0 lite).',
+            faqs=faqs,
+        )
 
     if slug == 'seedream-5.0-pro':
         faqs = [

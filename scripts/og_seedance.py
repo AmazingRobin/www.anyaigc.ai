@@ -17,7 +17,9 @@ NEW = ('ja', 'ko', 'es', 'de')
 LANGATTR = {'zh': 'zh-CN', 'en': 'en', 'ja': 'ja', 'ko': 'ko', 'es': 'es', 'de': 'de'}
 # 新语言文案表：缺词直接 KeyError，不回退到英文
 TXT = {
-    '4 models': {'ja': '4モデル', 'ko': '4개 모델', 'es': '4 modelos', 'de': '4 Modelle'},
+    '5 models': {'ja': '5モデル', 'ko': '5개 모델', 'es': '5 modelos', 'de': '5 Modelle'},
+    'Efficient generation': {'ja': '高効率な生成', 'ko': '효율적인 생성', 'es': 'Generación eficiente', 'de': 'Effiziente Generierung'},
+    'Up to 720p': {'ja': '最大720p出力', 'ko': '최대 720p 출력', 'es': 'Hasta 720p', 'de': 'Bis zu 720p'},
     'Native audio': {'ja': 'ネイティブ音声', 'ko': '네이티브 오디오', 'es': 'Audio nativo', 'de': 'Natives Audio'},
     'Unlimited concurrency': {'ja': '同時実行数の上限なし', 'ko': '동시 실행 제한 없음', 'es': 'Sin límite de RPM', 'de': 'Kein RPM-Limit'},
     'Self-service invoices': {'ja': '請求書を自分で発行', 'ko': '인보이스 직접 발급', 'es': 'Facturas en consola', 'de': 'Rechnungen im Konto'},
@@ -30,6 +32,8 @@ TXT = {
 SUB_FMT = {
     'multi': {'ja': 'マルチモーダル動画 · ${p} / 100万トークンから', 'ko': '멀티모달 영상 · ${p} / 100만 토큰부터',
               'es': 'Vídeo multimodal · desde ${p} / 1 M de tokens', 'de': 'Multimodales Video · ab ${p} / 1 Mio. Tokens'},
+    'flash': {'ja': '高効率な動画生成 · ${p} / 100万トークンから', 'ko': '효율적인 영상 생성 · ${p} / 100만 토큰부터',
+              'es': 'Vídeo eficiente · desde ${p} / 1 M de tokens', 'de': 'Effizientes Video · ab ${p} / 1 Mio. Tokens'},
     'mini': {'ja': '高頻度の動画生成 · ${p} / 100万トークンから', 'ko': '고빈도 영상 생성 · ${p} / 100만 토큰부터',
              'es': 'Vídeo de alta frecuencia · desde ${p} / 1 M de tokens', 'de': 'Hochfrequentes Video · ab ${p} / 1 Mio. Tokens'},
 }
@@ -55,18 +59,22 @@ def main():
             zh = lang == 'zh'
             subtitle = (f'多模态视频生成 · ${price} / 1M tokens 起' if zh else f'Multimodal video · from ${price} / 1M tokens')
             # 英文键；zh 保持原中文文案，新语言按键查 TXT
-            tags = ['四个型号', '音画同步', '并发不限', '对公 · 专票'] if zh else ['4 models', 'Native audio', 'Unlimited concurrency', 'Self-service invoices']
+            tags = ['五个型号', '音画同步', '并发不限', '对公 · 专票'] if zh else ['5 models', 'Native audio', 'Unlimited concurrency', 'Self-service invoices']
             if not overview:
                 tags[0] = {'doubao-seedance-2-5': '30 秒长叙事' if zh else '30-second stories',
+                           'doubao-seedance-2-5-flash': '高效生成' if zh else 'Efficient generation',
                            'doubao-seedance-2-0': '全模态参考' if zh else 'Multimodal references',
                            'doubao-seedance-2-0-fast': '更快生成' if zh else 'Faster generation',
                            'doubao-seedance-2-0-mini': '高频与规模化' if zh else 'High-frequency workloads'}[slug]
+                if slug == 'doubao-seedance-2-5-flash':
+                    tags[1] = '最高 720p' if zh else 'Up to 720p'
+                    subtitle = f'高效视频生成 · ${price} / 1M tokens 起' if zh else f'Efficient video · from ${price} / 1M tokens'
                 if slug == 'doubao-seedance-2-0-mini':
                     tags[1] = '按 tokens 计费' if zh else 'Token-based billing'
                     subtitle = f'高频视频生成 · ${price} / 1M tokens 起' if zh else f'High-frequency video · from ${price} / 1M tokens'
             if lang in NEW:
                 tags = [TXT[x][lang] for x in tags]
-                subtitle = SUB_FMT['mini' if slug == 'doubao-seedance-2-0-mini' else 'multi'][lang].replace('{p}', price)
+                subtitle = SUB_FMT['mini' if slug == 'doubao-seedance-2-0-mini' else 'flash' if slug == 'doubao-seedance-2-5-flash' else 'multi'][lang].replace('{p}', price)
             elif lang == 'en':
                 pass  # 英文标签已是海外口径（Self-service invoices）
             h = f'''<!doctype html><html lang="{LANGATTR[lang]}"><head><meta charset="utf-8"><style>

@@ -1,4 +1,4 @@
-# 生成 Seedream 系列专题页（中英文各 6 页：总览 + 5.0 Pro / 5.0 lite / 4.5 / 4.0 / 3.0）：python scripts/seedream_pages.py
+# 生成 Seedream 系列专题页（中英文各 7 页：总览 + 5.5 / 5.0 Pro / 5.0 lite / 4.5 / 4.0 / 3.0）：python scripts/seedream_pages.py
 # 数据在 seedream_data.py，版块在 seedream_layout.py，文案在 seedream_copy_zh.py / seedream_copy_en.py。
 # 每次整页重写，之后需重跑 scripts/payments.py 和 scripts/trust.py 补上支付方式与信任版块（两个脚本重复运行结果不变）。
 import io

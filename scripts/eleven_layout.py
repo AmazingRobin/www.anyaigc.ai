@@ -7,7 +7,7 @@ import os
 import re
 from decimal import Decimal
 
-from eleven_data import DATE, VER, SITE, REG, PRICING, MARKET, SUPPORT, DOCS, PRICE, OFFICIAL, MODELS, MODEL_SLUGS
+from eleven_data import DATE, VER, SITE, REG, PRICING, MARKET, SUPPORT, DOCS, PRICE, OFFICIAL, MODELS, MODEL_SLUGS, STT_OFFICIAL_HOUR
 from icons import svg as icon_svg
 
 NL = '\n'
@@ -126,7 +126,7 @@ def head(lang, slug, c):
         {'@type': 'BreadcrumbList', '@id': f'{me}#breadcrumb', 'itemListElement': [
             {'@type': 'ListItem', 'position': i + 1, 'name': n, 'item': u} for i, (n, u) in enumerate(crumbs)]},
         {'@type': 'Product', '@id': f'{me}#product', 'name': c['product'], 'description': c['product_desc'],
-         'category': t['category'], 'sku': c['sku'], 'image': og_img,
+         'category': c.get('category', t['category']), 'sku': c['sku'], 'image': og_img,
          'brand': {'@type': 'Brand', 'name': 'AnyAIGC'},
          'offers': {'@type': 'AggregateOffer', 'priceCurrency': 'USD', 'lowPrice': min(offers, key=lambda o: float(o[1]))[1],
                     'highPrice': max(offers, key=lambda o: float(o[1]))[1], 'offerCount': len(offers),
@@ -320,12 +320,30 @@ def price_rows(slug, labels):
     return rows
 
 
+def stt_rows(rows):
+    """语音转文字的价格行：rows = [(单位, 说明, 官方价单元格 HTML, AnyAIGC 价, 模型 ID, 是否主行)]，金额由文案层用精确算术算好"""
+    out = ''
+    for lab, small, off_cell, ours, mid, main in rows:
+        cls = ' class="el-row-main"' if main else ''
+        out += (f'            <tr{cls}><th scope="row">{lab}<small>{small}</small></th><td><code>{mid}</code></td>'
+                f'<td class="o-num o-strike">{off_cell}</td><td class="o-num o-hl">{ours}</td></tr>{NL}')
+    return out
+
+
+def stt_cost(slug, seconds, official=False):
+    """语音转文字成本（美元，Decimal）。官方价按每小时 $0.20 标价，只在能精确整除时才给出官方同用量"""
+    if official:
+        return Decimal(STT_OFFICIAL_HOUR) * Decimal(seconds) / Decimal(3600)
+    return Decimal(PRICE[slug]) * Decimal(seconds)
+
+
 def pricing(lang, slug, c):
     t = L[lang]
     p = c['pricing']
     billing = ''.join(f'        <li><strong>{s}</strong>{x}</li>{NL}' for s, x in p['billing'])
     th = ''.join(f'<th scope="col"{" class=" + chr(34) + cls + chr(34) if cls else ""}>{h}</th>' for h, cls in p['head'])
-    body = f'          <tbody>{NL}' + price_rows(slug, p['labels']) + f'          </tbody>{NL}'
+    rows_html = stt_rows(p['rows']) if p.get('rows') else price_rows(slug, p['labels'])
+    body = f'          <tbody>{NL}' + rows_html + f'          </tbody>{NL}'
     costs = ''.join(f'''        <li class="o-cost o-reveal">
           <h4>{h}</h4>
           <p class="o-cost-calc">{calc}</p>
@@ -464,19 +482,25 @@ def enterprise(lang, name):
 
 
 def family(lang, slug, items, h2, lead, kicker):
-    lis = ''
-    for s, tag, desc in items:
-        cur = ' aria-current="page"' if s == slug else ''
-        tg = f'<span class="o-tag">{tag}</span>' if tag else ''
-        name = MODELS[s]['name'] if s in MODELS else desc[0]
-        sub = desc if s in MODELS else desc[1]
-        lis += f'        <li><a href="/{lang}/models/{s}"{cur}>{tg}<b>{name}</b><span>{sub}</span></a></li>{NL}'
+    """items 可以是 [(slug, tag, desc), ...]，也可以是 [(分组标题, [(slug, tag, desc), ...]), ...]（语音合成与语音转文字分开标注）"""
+    grouped = bool(items) and isinstance(items[0][1], list)
+    groups = items if grouped else [('', items)]
+    out = ''
+    for title, its in groups:
+        lis = ''
+        for s, tag, desc in its:
+            cur = ' aria-current="page"' if s == slug else ''
+            tg = f'<span class="o-tag">{tag}</span>' if tag else ''
+            name = MODELS[s]['name'] if s in MODELS else desc[0]
+            sub = desc if s in MODELS else desc[1]
+            lis += f'        <li><a href="/{lang}/models/{s}"{cur}>{tg}<b>{name}</b><span>{sub}</span></a></li>{NL}'
+        if title:
+            out += f'      <h3 class="el-h3 o-reveal">{title}</h3>{NL}'
+        out += f'      <ul class="o-family o-reveal">{NL}{lis}      </ul>{NL}'
     return f'''  <!-- FAMILY -->
   <section class="o-section" id="family" aria-labelledby="family-title">
     <div class="o-wrap o-col">
-{head2(kicker, h2, 'family-title', lead)}      <ul class="o-family o-reveal">
-{lis}      </ul>
-    </div>
+{head2(kicker, h2, 'family-title', lead)}{out}    </div>
   </section>
 
 '''

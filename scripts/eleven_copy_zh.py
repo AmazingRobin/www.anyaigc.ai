@@ -3,9 +3,10 @@
 # 只写有来源的事实：官方能力一律标注「官方」，AnyAIGC 接口文档没写明的（响应格式、自有克隆音色、流式、字符计数口径）不下结论，交付时请用户确认。
 from decimal import Decimal
 
-from eleven_data import PRICE, OFFICIAL, OFFICIAL_1K, MODELS, SLUGS, REG, MARKET, SUPPORT, DOCS_SPEECH, OFFICIAL_MODELS, OFFICIAL_PRICING
+from eleven_data import PRICE, OFFICIAL, OFFICIAL_1K, MODELS, TTS_SLUGS as SLUGS, STT_SLUGS, STT_HOUR, is_stt, REG, MARKET, SUPPORT, DOCS_SPEECH, OFFICIAL_MODELS, OFFICIAL_PRICING
 from eleven_layout import cost, money, unit_price
 import eleven_code as code
+import eleven_stt_zh as stt
 
 DEAL = '约官方 8.1 折'
 OFF_NOTE = '约官方 8.1 折'
@@ -169,9 +170,12 @@ def compare_rows():
 COMPARE_NOTE = ('语言数、字符上限和延迟来自 <a href="' + OFFICIAL_MODELS + '" target="_blank" rel="noopener">ElevenLabs 官方模型文档</a>；延迟是官方标注的中位推理延迟，不含网络和应用延迟。价格为 AnyAIGC 当前价格，实时价格以模型广场为准。'
                 '「未列出」「未标注」表示官方文档没有给出该项。')
 
-FAMILY = [(s, '', f'{POS[s]} · {p(s)} / 万字符') for s in SLUGS]
-FAMILY[0] = (FAMILY[0][0], '旗舰', FAMILY[0][2])
-FAMILY[1] = (FAMILY[1][0], '低延迟', FAMILY[1][2])
+_TTS = [(s, '', f'{POS[s]} · {p(s)} / 万字符') for s in SLUGS]
+_TTS[0] = (_TTS[0][0], '旗舰', _TTS[0][2])
+_TTS[1] = (_TTS[1][0], '低延迟', _TTS[1][2])
+_STT = [(s, '最新' if s == 'eleven-scribe-v3' else '', f'{stt.POS[s]} · ${PRICE[s]} / 秒（${STT_HOUR} / 小时）') for s in STT_SLUGS]
+# 语音合成与语音转文字分开标注
+FAMILY = [('语音合成（文字转语音）', _TTS), ('语音转文字（录音转写）', _STT)]
 
 
 def costs(slug):
@@ -257,6 +261,8 @@ def fit_title(core, brand, limit=64):
 
 
 def build(slug):
+    if is_stt(slug):
+        return stt.build(slug)
     m = M[slug]
     d = MODELS[slug]
     mid, name = d['id'], d['name']

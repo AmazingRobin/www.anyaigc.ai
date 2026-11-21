@@ -17,6 +17,8 @@ LOGO = f'<svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true" focu
 
 # slug -> (中文简介, 中文标签, 英文简介, 英文标签)
 CARDS = {
+    'seedream-5.5': ('Seedream 最新型号，多轮编辑保持一致，原生 RGBA 透明图，图层拆分最多 99 层。', ['最新', 'RGBA 透明图', '图层拆分'],
+                     'The newest Seedream with consistent multi-turn edits, native RGBA transparency and up to 99 layers of layer separation.', ['Latest', 'Native RGBA', 'Layer separation']),
     'seedream-5.0-pro': ('字节跳动 Seed 旗舰生图模型，擅长高密度信息图、框选精准编辑和多语种文字。', ['最新', '信息图', '精准编辑'],
                          "ByteDance Seed's flagship image model for dense infographics, precise markup edits and multilingual text.", ['Latest', 'Infographics', 'Precise edits']),
     'seedream-5.0-lite': ('Seedream 5.0 轻量版，深度思考加联网检索，最高 4K，支持组图。', ['4K', '联网检索', '组图'],
@@ -28,7 +30,7 @@ CARDS = {
     'seedream-3.0': ('中英双语文生图模型，原生 2K。旧版，新项目建议用 4.0 及以上。', ['旧版', '文生图', '原生 2K'],
                      'Bilingual Chinese-English text-to-image model with native 2K. Legacy; use 4.0 or newer for new work.', ['Legacy', 'Text-to-image', 'Native 2K']),
 }
-ORDER = ['seedream-5.0-pro', 'seedream-5.0-lite', 'seedream-4.5', 'seedream-4.0', 'seedream-3.0']
+ORDER = ['seedream-5.5', 'seedream-5.0-pro', 'seedream-5.0-lite', 'seedream-4.5', 'seedream-4.0', 'seedream-3.0']
 CAT = {'zh': ('Seedream 系列', '全系总览与价格对比', '查看专题 →'), 'en': ('Seedream models', 'overview and price comparison', 'View guide →')}
 VENDOR = {'zh': '字节跳动', 'en': 'ByteDance'}
 

@@ -6,13 +6,13 @@
     <lastmod>2026-11-17</lastmod>
     </url>
   <url>
-    <loc>https://www.anyaigc.ai/zh/models/</loc><lastmod>2026-11-17</lastmod>
+    <loc>https://www.anyaigc.ai/zh/models/</loc><lastmod>2026-11-20</lastmod>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/"/>
   </url>
   <url>
-    <loc>https://www.anyaigc.ai/en/models/</loc><lastmod>2026-11-17</lastmod>
+    <loc>https://www.anyaigc.ai/en/models/</loc><lastmod>2026-11-20</lastmod>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/"/>
@@ -7930,5 +7930,401 @@
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/hy4-flash"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/hy4-flash"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/hy4-flash"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/zh/models/eleven-scribe-v3</loc>
+    <lastmod>2026-11-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/eleven-scribe-v3"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/eleven-scribe-v3"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.anyaigc.ai/ja/models/eleven-scribe-v3"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.anyaigc.ai/ko/models/eleven-scribe-v3"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.anyaigc.ai/es/models/eleven-scribe-v3"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.anyaigc.ai/de/models/eleven-scribe-v3"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/eleven-scribe-v3"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/en/models/eleven-scribe-v3</loc>
+    <lastmod>2026-11-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/eleven-scribe-v3"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/eleven-scribe-v3"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.anyaigc.ai/ja/models/eleven-scribe-v3"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.anyaigc.ai/ko/models/eleven-scribe-v3"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.anyaigc.ai/es/models/eleven-scribe-v3"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.anyaigc.ai/de/models/eleven-scribe-v3"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/eleven-scribe-v3"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/ja/models/eleven-scribe-v3</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/eleven-scribe-v3"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/eleven-scribe-v3"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.anyaigc.ai/ja/models/eleven-scribe-v3"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.anyaigc.ai/ko/models/eleven-scribe-v3"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.anyaigc.ai/es/models/eleven-scribe-v3"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.anyaigc.ai/de/models/eleven-scribe-v3"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/eleven-scribe-v3"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/ko/models/eleven-scribe-v3</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/eleven-scribe-v3"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/eleven-scribe-v3"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.anyaigc.ai/ja/models/eleven-scribe-v3"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.anyaigc.ai/ko/models/eleven-scribe-v3"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.anyaigc.ai/es/models/eleven-scribe-v3"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.anyaigc.ai/de/models/eleven-scribe-v3"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/eleven-scribe-v3"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/es/models/eleven-scribe-v3</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/eleven-scribe-v3"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/eleven-scribe-v3"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.anyaigc.ai/ja/models/eleven-scribe-v3"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.anyaigc.ai/ko/models/eleven-scribe-v3"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.anyaigc.ai/es/models/eleven-scribe-v3"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.anyaigc.ai/de/models/eleven-scribe-v3"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/eleven-scribe-v3"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/de/models/eleven-scribe-v3</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/eleven-scribe-v3"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/eleven-scribe-v3"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.anyaigc.ai/ja/models/eleven-scribe-v3"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.anyaigc.ai/ko/models/eleven-scribe-v3"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.anyaigc.ai/es/models/eleven-scribe-v3"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.anyaigc.ai/de/models/eleven-scribe-v3"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/eleven-scribe-v3"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/zh/models/eleven-scribe-v2</loc>
+    <lastmod>2026-11-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/eleven-scribe-v2"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/eleven-scribe-v2"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.anyaigc.ai/ja/models/eleven-scribe-v2"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.anyaigc.ai/ko/models/eleven-scribe-v2"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.anyaigc.ai/es/models/eleven-scribe-v2"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.anyaigc.ai/de/models/eleven-scribe-v2"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/eleven-scribe-v2"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/en/models/eleven-scribe-v2</loc>
+    <lastmod>2026-11-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/eleven-scribe-v2"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/eleven-scribe-v2"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.anyaigc.ai/ja/models/eleven-scribe-v2"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.anyaigc.ai/ko/models/eleven-scribe-v2"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.anyaigc.ai/es/models/eleven-scribe-v2"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.anyaigc.ai/de/models/eleven-scribe-v2"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/eleven-scribe-v2"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/ja/models/eleven-scribe-v2</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/eleven-scribe-v2"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/eleven-scribe-v2"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.anyaigc.ai/ja/models/eleven-scribe-v2"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.anyaigc.ai/ko/models/eleven-scribe-v2"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.anyaigc.ai/es/models/eleven-scribe-v2"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.anyaigc.ai/de/models/eleven-scribe-v2"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/eleven-scribe-v2"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/ko/models/eleven-scribe-v2</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/eleven-scribe-v2"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/eleven-scribe-v2"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.anyaigc.ai/ja/models/eleven-scribe-v2"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.anyaigc.ai/ko/models/eleven-scribe-v2"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.anyaigc.ai/es/models/eleven-scribe-v2"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.anyaigc.ai/de/models/eleven-scribe-v2"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/eleven-scribe-v2"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/es/models/eleven-scribe-v2</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/eleven-scribe-v2"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/eleven-scribe-v2"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.anyaigc.ai/ja/models/eleven-scribe-v2"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.anyaigc.ai/ko/models/eleven-scribe-v2"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.anyaigc.ai/es/models/eleven-scribe-v2"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.anyaigc.ai/de/models/eleven-scribe-v2"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/eleven-scribe-v2"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/de/models/eleven-scribe-v2</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/eleven-scribe-v2"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/eleven-scribe-v2"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.anyaigc.ai/ja/models/eleven-scribe-v2"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.anyaigc.ai/ko/models/eleven-scribe-v2"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.anyaigc.ai/es/models/eleven-scribe-v2"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.anyaigc.ai/de/models/eleven-scribe-v2"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/eleven-scribe-v2"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/zh/models/doubao-seedance-2-5-flash</loc>
+    <lastmod>2026-11-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/doubao-seedance-2-5-flash"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/doubao-seedance-2-5-flash"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.anyaigc.ai/ja/models/doubao-seedance-2-5-flash"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.anyaigc.ai/ko/models/doubao-seedance-2-5-flash"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.anyaigc.ai/es/models/doubao-seedance-2-5-flash"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.anyaigc.ai/de/models/doubao-seedance-2-5-flash"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/doubao-seedance-2-5-flash"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/en/models/doubao-seedance-2-5-flash</loc>
+    <lastmod>2026-11-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/doubao-seedance-2-5-flash"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/doubao-seedance-2-5-flash"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.anyaigc.ai/ja/models/doubao-seedance-2-5-flash"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.anyaigc.ai/ko/models/doubao-seedance-2-5-flash"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.anyaigc.ai/es/models/doubao-seedance-2-5-flash"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.anyaigc.ai/de/models/doubao-seedance-2-5-flash"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/doubao-seedance-2-5-flash"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/ja/models/doubao-seedance-2-5-flash</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/doubao-seedance-2-5-flash"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/doubao-seedance-2-5-flash"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.anyaigc.ai/ja/models/doubao-seedance-2-5-flash"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.anyaigc.ai/ko/models/doubao-seedance-2-5-flash"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.anyaigc.ai/es/models/doubao-seedance-2-5-flash"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.anyaigc.ai/de/models/doubao-seedance-2-5-flash"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/doubao-seedance-2-5-flash"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/ko/models/doubao-seedance-2-5-flash</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/doubao-seedance-2-5-flash"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/doubao-seedance-2-5-flash"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.anyaigc.ai/ja/models/doubao-seedance-2-5-flash"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.anyaigc.ai/ko/models/doubao-seedance-2-5-flash"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.anyaigc.ai/es/models/doubao-seedance-2-5-flash"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.anyaigc.ai/de/models/doubao-seedance-2-5-flash"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/doubao-seedance-2-5-flash"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/es/models/doubao-seedance-2-5-flash</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/doubao-seedance-2-5-flash"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/doubao-seedance-2-5-flash"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.anyaigc.ai/ja/models/doubao-seedance-2-5-flash"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.anyaigc.ai/ko/models/doubao-seedance-2-5-flash"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.anyaigc.ai/es/models/doubao-seedance-2-5-flash"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.anyaigc.ai/de/models/doubao-seedance-2-5-flash"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/doubao-seedance-2-5-flash"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/de/models/doubao-seedance-2-5-flash</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/doubao-seedance-2-5-flash"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/doubao-seedance-2-5-flash"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.anyaigc.ai/ja/models/doubao-seedance-2-5-flash"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.anyaigc.ai/ko/models/doubao-seedance-2-5-flash"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.anyaigc.ai/es/models/doubao-seedance-2-5-flash"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.anyaigc.ai/de/models/doubao-seedance-2-5-flash"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/doubao-seedance-2-5-flash"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/zh/models/seedream-5.5</loc>
+    <lastmod>2026-11-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/seedream-5.5"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/seedream-5.5"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.anyaigc.ai/ja/models/seedream-5.5"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.anyaigc.ai/ko/models/seedream-5.5"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.anyaigc.ai/es/models/seedream-5.5"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.anyaigc.ai/de/models/seedream-5.5"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/seedream-5.5"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/en/models/seedream-5.5</loc>
+    <lastmod>2026-11-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/seedream-5.5"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/seedream-5.5"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.anyaigc.ai/ja/models/seedream-5.5"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.anyaigc.ai/ko/models/seedream-5.5"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.anyaigc.ai/es/models/seedream-5.5"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.anyaigc.ai/de/models/seedream-5.5"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/seedream-5.5"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/ja/models/seedream-5.5</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/seedream-5.5"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/seedream-5.5"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.anyaigc.ai/ja/models/seedream-5.5"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.anyaigc.ai/ko/models/seedream-5.5"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.anyaigc.ai/es/models/seedream-5.5"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.anyaigc.ai/de/models/seedream-5.5"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/seedream-5.5"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/ko/models/seedream-5.5</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/seedream-5.5"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/seedream-5.5"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.anyaigc.ai/ja/models/seedream-5.5"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.anyaigc.ai/ko/models/seedream-5.5"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.anyaigc.ai/es/models/seedream-5.5"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.anyaigc.ai/de/models/seedream-5.5"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/seedream-5.5"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/es/models/seedream-5.5</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/seedream-5.5"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/seedream-5.5"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.anyaigc.ai/ja/models/seedream-5.5"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.anyaigc.ai/ko/models/seedream-5.5"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.anyaigc.ai/es/models/seedream-5.5"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.anyaigc.ai/de/models/seedream-5.5"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/seedream-5.5"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/de/models/seedream-5.5</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/seedream-5.5"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/seedream-5.5"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.anyaigc.ai/ja/models/seedream-5.5"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.anyaigc.ai/ko/models/seedream-5.5"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.anyaigc.ai/es/models/seedream-5.5"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.anyaigc.ai/de/models/seedream-5.5"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/seedream-5.5"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/zh/models/gpt-6.2-astra</loc>
+    <lastmod>2026-11-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/gpt-6.2-astra"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/gpt-6.2-astra"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.anyaigc.ai/ja/models/gpt-6.2-astra"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.anyaigc.ai/ko/models/gpt-6.2-astra"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.anyaigc.ai/es/models/gpt-6.2-astra"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.anyaigc.ai/de/models/gpt-6.2-astra"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/gpt-6.2-astra"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/en/models/gpt-6.2-astra</loc>
+    <lastmod>2026-11-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/gpt-6.2-astra"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/gpt-6.2-astra"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.anyaigc.ai/ja/models/gpt-6.2-astra"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.anyaigc.ai/ko/models/gpt-6.2-astra"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.anyaigc.ai/es/models/gpt-6.2-astra"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.anyaigc.ai/de/models/gpt-6.2-astra"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/gpt-6.2-astra"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/ja/models/gpt-6.2-astra</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/gpt-6.2-astra"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/gpt-6.2-astra"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.anyaigc.ai/ja/models/gpt-6.2-astra"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.anyaigc.ai/ko/models/gpt-6.2-astra"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.anyaigc.ai/es/models/gpt-6.2-astra"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.anyaigc.ai/de/models/gpt-6.2-astra"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/gpt-6.2-astra"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/ko/models/gpt-6.2-astra</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/gpt-6.2-astra"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/gpt-6.2-astra"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.anyaigc.ai/ja/models/gpt-6.2-astra"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.anyaigc.ai/ko/models/gpt-6.2-astra"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.anyaigc.ai/es/models/gpt-6.2-astra"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.anyaigc.ai/de/models/gpt-6.2-astra"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/gpt-6.2-astra"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/es/models/gpt-6.2-astra</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/gpt-6.2-astra"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/gpt-6.2-astra"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.anyaigc.ai/ja/models/gpt-6.2-astra"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.anyaigc.ai/ko/models/gpt-6.2-astra"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.anyaigc.ai/es/models/gpt-6.2-astra"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.anyaigc.ai/de/models/gpt-6.2-astra"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/gpt-6.2-astra"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/de/models/gpt-6.2-astra</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/gpt-6.2-astra"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/gpt-6.2-astra"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.anyaigc.ai/ja/models/gpt-6.2-astra"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.anyaigc.ai/ko/models/gpt-6.2-astra"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.anyaigc.ai/es/models/gpt-6.2-astra"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.anyaigc.ai/de/models/gpt-6.2-astra"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/gpt-6.2-astra"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/zh/models/gpt-6.2-sol</loc>
+    <lastmod>2026-11-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/gpt-6.2-sol"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/gpt-6.2-sol"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.anyaigc.ai/ja/models/gpt-6.2-sol"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.anyaigc.ai/ko/models/gpt-6.2-sol"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.anyaigc.ai/es/models/gpt-6.2-sol"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.anyaigc.ai/de/models/gpt-6.2-sol"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/gpt-6.2-sol"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/en/models/gpt-6.2-sol</loc>
+    <lastmod>2026-11-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/gpt-6.2-sol"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/gpt-6.2-sol"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.anyaigc.ai/ja/models/gpt-6.2-sol"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.anyaigc.ai/ko/models/gpt-6.2-sol"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.anyaigc.ai/es/models/gpt-6.2-sol"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.anyaigc.ai/de/models/gpt-6.2-sol"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/gpt-6.2-sol"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/ja/models/gpt-6.2-sol</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/gpt-6.2-sol"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/gpt-6.2-sol"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.anyaigc.ai/ja/models/gpt-6.2-sol"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.anyaigc.ai/ko/models/gpt-6.2-sol"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.anyaigc.ai/es/models/gpt-6.2-sol"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.anyaigc.ai/de/models/gpt-6.2-sol"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/gpt-6.2-sol"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/ko/models/gpt-6.2-sol</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/gpt-6.2-sol"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/gpt-6.2-sol"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.anyaigc.ai/ja/models/gpt-6.2-sol"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.anyaigc.ai/ko/models/gpt-6.2-sol"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.anyaigc.ai/es/models/gpt-6.2-sol"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.anyaigc.ai/de/models/gpt-6.2-sol"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/gpt-6.2-sol"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/es/models/gpt-6.2-sol</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/gpt-6.2-sol"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/gpt-6.2-sol"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.anyaigc.ai/ja/models/gpt-6.2-sol"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.anyaigc.ai/ko/models/gpt-6.2-sol"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.anyaigc.ai/es/models/gpt-6.2-sol"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.anyaigc.ai/de/models/gpt-6.2-sol"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/gpt-6.2-sol"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/de/models/gpt-6.2-sol</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/gpt-6.2-sol"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/gpt-6.2-sol"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.anyaigc.ai/ja/models/gpt-6.2-sol"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.anyaigc.ai/ko/models/gpt-6.2-sol"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.anyaigc.ai/es/models/gpt-6.2-sol"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.anyaigc.ai/de/models/gpt-6.2-sol"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/gpt-6.2-sol"/>
   </url>
 </urlset>

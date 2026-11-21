@@ -211,7 +211,7 @@ def img(key, cls='', sizes='(max-width: 900px) 50vw, 300px', eager=False, alt=No
 
 
 def pick(slug):
-    return GL.PICK.get(slug)
+    return GL.PICK.get(slug) or GL.EXTRA.get(slug)
 
 
 def hero_media(lang, slug, c):
@@ -299,7 +299,11 @@ def features(c, slug=None, lang='zh'):
         return f'<div class="sd-art sd-art-{k}" aria-hidden="true"><i></i><i></i><i></i></div>'
     lis = ''.join(f'        <li class="sd-feature o-reveal">{art(k)}'
                   f'<div class="sd-feature-body"><h3>{h}</h3><p>{p}</p></div></li>{NL}' for k, h, p in c['features'])
-    return section('features', c['features_h2'], f'      <ul class="sd-features">{NL}{lis}      </ul>{NL}', c.get('features_lead', ''))
+    credit = ''
+    if slug in GL.EXTRA:  # 5.5 没有示例图墙，官方图的署名放在「能做什么」下面
+        src = GL.SOURCE if lang == 'zh' else GL.SOURCE_EN
+        credit = f'      <p class="o-note">{L[lang]["credit"]} <a href="{src[slug]}" target="_blank" rel="noopener">{L[lang]["credit_link"]}</a></p>{NL}'
+    return section('features', c['features_h2'], f'      <ul class="sd-features">{NL}{lis}      </ul>{NL}{credit}', c.get('features_lead', ''))
 
 
 def gallery(lang, slug, name):
@@ -309,7 +313,7 @@ def gallery(lang, slug, name):
         groups = [(s, [k for k in GL.PICK[s]['gallery'][:3]]) for s in GL.PICK]
         h2, lead = t['gallery_hub_h2'], t['gallery_hub_lead']
         links = ' · '.join(f'<a href="{src[s]}" target="_blank" rel="noopener">{s.replace("seedream-", "Seedream ")}</a>' for s in GL.PICK)
-    elif pick(slug):
+    elif slug in GL.PICK:
         groups = [(slug, GL.PICK[slug]['gallery'])]
         h2, lead = t['gallery_h2'].format(name=name), t['gallery_lead'].format(name=name)
         links = f'<a href="{src[slug]}" target="_blank" rel="noopener">{t["credit_link"]}</a>'

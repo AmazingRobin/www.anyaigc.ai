@@ -7,6 +7,7 @@
 | 型号 | AnyAIGC model |
 | --- | --- |
 | Seedance 2.5 | `doubao-seedance-2-5-260628` |
+| Seedance 2.5 flash | `doubao-seedance-2-5-flash-261115` |
 | Seedance 2.0 | `doubao-seedance-2-0-260128` |
 | Seedance 2.0 Fast | `doubao-seedance-2-0-fast-260128` |
 | Seedance 2.0 mini | `doubao-seedance-2-0-mini-260615` |
@@ -30,11 +31,20 @@
 
 查询文档的成功示例明确使用 `status: "succeeded"`、`content.video_url`、`usage.completion_tokens` 和 `usage.total_tokens`。不推测其他状态枚举，Python 代码检查成功、错误对象和总等待超时；不进行付费生成测试。
 
+## Seedance 2.5 flash（2026-11-20 新增）
+
+核对日期：2026-11-20。slug `doubao-seedance-2-5-flash`，页面标题名 Seedance 2.5 flash。
+
+- 价格来自 [AnyAIGC 模型广场](https://anyaigc.ai/pricing?keyword=seedance)模型详情抽屉（分组 Seedance-2，按量计费，USD / 1M tokens，仅一档分辨率）：480p / 720p 不含视频输入 $8.505，包含视频输入（含参考视频）$5.225。起步价 $5.225。模型广场标注最高支持 720p 输出，页面不写 1080p。
+- 用户确认：并发不限、所有用户默认享有；接口「沿用文档里最接近的接口，只换模型名」。flash 的创建与查询任务沿用 2.5 文档（链接见上，`seedance` 平台，请求体 model 填 `doubao-seedance-2-5-flash-261115`）。示例只用 `content[]`、`model`、`resolution`（720p）、`duration`、`ratio`、`generate_audio`、`watermark` 这些 2.0 / 2.5 文档共有的字段。
+- 官方来源：[Seedance 2.5 官网](https://seed.bytedance.com/zh/seedance2_5)全文没有出现 flash，WebSearch 也没有查到 flash 的官方说明，所以页面只写模型广场描述和文档能证实的内容，不写官方发布日期、语言数、时长上限等。首屏视频沿用 2.5 官方视频并标「系列能力参考」，不称为 flash 生成。
+- 待用户确认：flash 是否支持 2.5 文档里的 `duration` 4–30 / -1、`output_format`、`omni_reference_task_type`、`ratio="adaptive"`；flash 是否有独立的官方说明页；是否需要写发布日期。
+
 ## 再生成
 
 ```powershell
 $env:PYTHONIOENCODING='utf-8'
-python scripts/seedance_pages.py
+python scripts/seedance_pages.py   # 注意：会覆盖 ja/ko/es/de 已加的语言菜单与 hreflang，已有页用 git merge-file 合并，不要直接整体重跑
 python scripts/seedance_register.py
 python scripts/payments.py
 python scripts/trust.py
