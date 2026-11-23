@@ -27,6 +27,8 @@ PAY_A = ('You can top up with WeChat Pay, Alipay, USDT or a credit card. Your ba
 
 # 整句精确替换（单元文本完全相等才替换）
 EXACT = {
+    # 专题首页（en/models/index.html）卡片标签
+    'Bank transfer · VAT': 'Self-service invoices',
     # 第 6 批（Llama / Eleven / Speech / Nano / Jev / SparkDesk / Hy4 / Muse）
     'VAT general and special': 'Issue them yourself',
     'Invoices for every top-up, including Chinese VAT general and special invoices, based on the amount you paid.':

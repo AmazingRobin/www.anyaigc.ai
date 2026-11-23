@@ -25,7 +25,7 @@ import overseas as O
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 NL = '\n'
 DRAFT = os.path.join(ROOT, 'drafts', 'i18n')
-MENU_CSS = '/assets/models/lang-menu.css?v=20261117c'
+MENU_CSS = '/assets/models/lang-menu.css?v=20261123c'
 MENU_JS = '/assets/models/lang-menu.js?v=20261117c'
 SHORT = {'zh': 'ZH', 'en': 'EN', 'ja': 'JA', 'ko': 'KO', 'es': 'ES', 'de': 'DE'}
 # 导航栏文字太长会把右侧按钮挤出屏幕（西语七项共 92 个字符，中文只有 39）：只在导航栏里改用短写法，页面正文和页脚不变
@@ -75,7 +75,7 @@ def placement(node, anc):
 def menu(slug, lang, langs=None, kind='nav'):
     langs = langs or L.ALL
     items = ''.join(
-        f'<li><a href="/{c}/models/{slug}" hreflang="{L.LANGS[c]["hreflang"]}" lang="{L.LANGS[c]["hreflang"]}">'
+        f'<li><a href="/{c}/models/{"" if slug == "index" else slug}" hreflang="{L.LANGS[c]["hreflang"]}" lang="{L.LANGS[c]["hreflang"]}">'
         f'{L.LANGS[c]["native"]}</a></li>' for c in langs if c != lang)
     label = L.LANGS[lang]['native'] if kind == 'foot' else SHORT[lang]
     extra = ' lang-menu--foot' if kind == 'foot' else ''
@@ -181,6 +181,8 @@ def localize(src, slug, lang):
     s = re.sub(r'(<html\b[^>]*\blang=")[^"]*"', lambda m: m.group(1) + L.LANGS[lang]['hreflang'] + '"', src, count=1)
     s = s.replace('/en/models/', f'/{lang}/models/')
     s = s.replace(f'/assets/og/{slug}-en.png', f'/assets/og/{slug}-{lang}.png')
+    if slug == 'index':  # 专题首页的分享图叫 models-<lang>.png
+        s = s.replace('/assets/og/models-en.png', f'/assets/og/models-{lang}.png')
     # 语言菜单在路径替换之后生成，它的链接要保持 /en/ /zh/ 等原样
     s = convert_switches(s, slug, lang, L.ALL, 'zh-CN', drop_body=True)
     s = shorten_nav(relink(s, lang), lang)

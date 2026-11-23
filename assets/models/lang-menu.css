@@ -27,3 +27,7 @@
 
 /* 西语、德语的导航文字比中英文长，次要导航项要比原来的 1100px 断点更早隐藏（d-hide-md 是 DeepSeek 页的写法，其他系列各自核对） */
 @media (max-width:1180px){:lang(es) .d-hide-md,:lang(de) .d-hide-md{display:none}}
+
+/* 页面自己的链接颜色规则（如 .q-footer a{color:#fff}）会盖过 color:inherit，导致菜单项在白色菜单底上看不清。这里用更高的优先级固定颜色，深色页面用浅色字 */
+.lang-menu .lang-menu-list a,.lang-menu .lang-menu-list a:hover,.lang-menu .lang-menu-list a:focus-visible{color:#1a1a1a}
+:root[data-scrollbar="dark"] .lang-menu .lang-menu-list a,:root[data-scrollbar="dark"] .lang-menu .lang-menu-list a:hover,:root[data-scrollbar="dark"] .lang-menu .lang-menu-list a:focus-visible{color:#f2f2f2}

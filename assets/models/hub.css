@@ -91,3 +91,9 @@ a:focus-visible,button:focus-visible{outline:3px solid rgba(255,211,138,.6);outl
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 
+/* 顶栏里的语言菜单按钮：默认继承正文深色，在深色顶栏上看不清，这里跟导航链接同色 */
+.af-nav .lang-menu>summary{color:#d8ccc6;background:#3a2d29}
+.af-nav .lang-menu>summary:hover,.af-nav .lang-menu[open]>summary{color:#fff;background:#4b3a35}
+/* 下拉菜单里的链接：不继承导航链接的样式（inline-block、浅色字、深色悬停底），整行可点，深色字配白色菜单底 */
+.af-nav .lang-menu-list a{display:block;width:100%;box-sizing:border-box;padding:8px 10px;border-radius:8px;font-size:13px;font-weight:500;color:#1a1a1a;background:transparent}
+.af-nav .lang-menu-list a:hover,.af-nav .lang-menu-list a:focus-visible{color:#1a1a1a;background:rgba(0,0,0,.06)}
