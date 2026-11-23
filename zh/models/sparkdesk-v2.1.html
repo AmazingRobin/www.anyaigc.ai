@@ -11,12 +11,20 @@
 <link rel="canonical" href="https://www.anyaigc.ai/zh/models/sparkdesk-v2.1">
 <link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/sparkdesk-v2.1">
 <link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/sparkdesk-v2.1">
+<link rel="alternate" hreflang="ja" href="https://www.anyaigc.ai/ja/models/sparkdesk-v2.1">
+<link rel="alternate" hreflang="ko" href="https://www.anyaigc.ai/ko/models/sparkdesk-v2.1">
+<link rel="alternate" hreflang="es" href="https://www.anyaigc.ai/es/models/sparkdesk-v2.1">
+<link rel="alternate" hreflang="de" href="https://www.anyaigc.ai/de/models/sparkdesk-v2.1">
 <link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/sparkdesk-v2.1">
 <link rel="icon" href="/favicon.ico">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="AnyAIGC">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:locale:alternate" content="ko_KR">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:locale:alternate" content="de_DE">
 <meta property="og:url" content="https://www.anyaigc.ai/zh/models/sparkdesk-v2.1">
 <meta property="og:title" content="SparkDesk-v2.1 API 价格与接入｜讯飞星火 2.x 旧版 - AnyAIGC">
 <meta property="og:description" content="SparkDesk-v2.1 输入 $8.7360/1M、输出 $8.7360/1M，输入输出同价。讯飞星火早期的 2.x 版本（接口版本 v2.1），对话、知识问答、逻辑推理和代码理解，OpenAI 兼容接口，并发不限，支持对公转账与增值税专票。">
@@ -29,6 +37,7 @@
 <meta name="twitter:description" content="SparkDesk-v2.1 输入 $8.7360/1M、输出 $8.7360/1M，输入输出同价。讯飞星火早期的 2.x 版本（接口版本 v2.1），对话、知识问答、逻辑推理和代码理解，OpenAI 兼容接口，并发不限，支持对公转账与增值税专票。">
 <meta name="twitter:image" content="https://www.anyaigc.ai/assets/og/sparkdesk-v2.1-zh.png">
 <link rel="stylesheet" href="/assets/models/scrollbar.css?v=20261125">
+<link rel="stylesheet" href="/assets/models/lang-menu.css?v=20261117c">
 <link rel="preload" as="image" href="/assets/models/sparkdesk/hero.webp" media="(min-width:641px)">
 <link rel="stylesheet" href="/assets/models/sparkdesk.css?v=20261113b">
 <script type="application/ld+json">
@@ -283,7 +292,7 @@
       </ul>
     </nav>
     <ul class="o-nav-right">
-      <li><a class="o-pill" href="/en/models/sparkdesk-v2.1" hreflang="en" lang="en">English</a></li>
+      <li><details class="lang-menu"><summary aria-label="Language: 中文">ZH</summary><ul class="lang-menu-list"><li><a href="/en/models/sparkdesk-v2.1" hreflang="en" lang="en">English</a></li><li><a href="/ja/models/sparkdesk-v2.1" hreflang="ja" lang="ja">日本語</a></li><li><a href="/ko/models/sparkdesk-v2.1" hreflang="ko" lang="ko">한국어</a></li><li><a href="/es/models/sparkdesk-v2.1" hreflang="es" lang="es">Español</a></li><li><a href="/de/models/sparkdesk-v2.1" hreflang="de" lang="de">Deutsch</a></li></ul></details></li>
       <li><a class="o-pill sp-nav-login" href="https://anyaigc.ai/console">登录</a></li>
       <li><a class="o-pill sp-nav-cta" href="https://anyaigc.ai/register?aff=oOK7&channel=c_wpduopc9">免费注册</a></li>
     </ul>
@@ -627,7 +636,6 @@ stream = client.chat.completions.create(
       <ul class="o-related" aria-label="更多">
         <li><a class="o-pill" href="/zh/models/">全部模型专题</a></li>
         <li><a class="o-pill" href="https://anyaigc.ai/pricing">模型广场</a></li>
-        <li><a class="o-pill" href="/en/models/sparkdesk-v2.1" hreflang="en" lang="en">SparkDesk-v2.1 API in English</a></li>
       </ul>
     </div>
   </section>
@@ -667,11 +675,12 @@ stream = client.chat.completions.create(
     </div>
     <div class="o-foot-bottom">
       <p><svg class="sp-mark sp-foot-mark" viewBox="0 0 24 24" fill="#ffffff" aria-hidden="true" focusable="false"><path d="M2 13.08C2 9.182 4.772 6.367 9.32 2.122c-.65 7.883 6.41 8.272 5.023 12.214-.99 2.815-4.244 1.949-4.59 1.342 0 0 1.212.347 1.385-.866.174-1.213-2.252-1.862-3.81-4.937-2.6 2.988-.954 9.008 4.2 9.008 4.764 0 6.583-4.937 4.894-8.099 0 0 4.071.693 4.418 3.811.346 3.119-3.638 8.533-9.095 8.403C6.288 22.868 2 18.84 2 13.08z"></path><path d="M17.852 6.107L11.615 0c-.52 5.933.866 8.374 4.894 9.485 2.729.753 3.307 1.04 4.504 2.772-.338-2.407-.78-3.812-3.161-6.15z"></path><path clip-rule="evenodd" d="M9.033 18.323c.709.354 1.542.56 2.495.56 4.764 0 6.583-4.937 4.894-8.099 0 0 4.071.693 4.418 3.811.156 1.403-.565 3.27-1.902 4.89-3.458 1.57-7.29.84-9.905-1.162z" fill-rule="evenodd"></path></svg><span>&copy; 2026 AnyAIGC。SparkDesk、讯飞星火是科大讯飞股份有限公司的商标。AnyAIGC 是独立的 API 服务商，与科大讯飞无隶属或合作关系。参数引自讯飞公开文档，模型许可与商用条款以科大讯飞官方为准。</span></p>
-      <a class="o-pill" href="/en/models/sparkdesk-v2.1" hreflang="en" lang="en">English</a>
+      <details class="lang-menu lang-menu--foot"><summary aria-label="Language: 中文">中文</summary><ul class="lang-menu-list"><li><a href="/en/models/sparkdesk-v2.1" hreflang="en" lang="en">English</a></li><li><a href="/ja/models/sparkdesk-v2.1" hreflang="ja" lang="ja">日本語</a></li><li><a href="/ko/models/sparkdesk-v2.1" hreflang="ko" lang="ko">한국어</a></li><li><a href="/es/models/sparkdesk-v2.1" hreflang="es" lang="es">Español</a></li><li><a href="/de/models/sparkdesk-v2.1" hreflang="de" lang="de">Deutsch</a></li></ul></details>
     </div>
   </div>
 </footer>
 
 <script src="/assets/models/sparkdesk.js?v=20261113b" defer></script>
+<script defer src="/assets/models/lang-menu.js?v=20261117c"></script>
 </body>
 </html>

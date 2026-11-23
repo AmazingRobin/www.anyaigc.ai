@@ -288,7 +288,7 @@
     <nav aria-label="メインナビゲーション">
       <ul class="o-nav-left">
         <li><a class="o-pill" href="/en/models/">モデルガイド</a></li>
-        <li class="k-hide-md"><a class="o-pill" href="/en/models/kimi">Kimi</a></li>
+        <li class="k-hide-md"><a class="o-pill" href="/ja/models/kimi">Kimi</a></li>
         <li><a class="o-pill" href="https://anyaigc.ai/pricing">モデル一覧</a></li>
         <li><a class="o-pill" href="#pricing">料金</a></li>
         <li class="k-hide-md"><a class="o-pill" href="#claude-code">Claude Code</a></li>
@@ -313,7 +313,7 @@
         <ol class="o-crumbs">
           <li><a href="/">ホーム</a></li>
           <li><a href="/en/models/">モデルガイド</a></li>
-            <li><a href="/en/models/kimi">Kimi</a></li>
+            <li><a href="/ja/models/kimi">Kimi</a></li>
           <li aria-current="page">Kimi K3.1 Pro API</li>
         </ol>
       </nav>
@@ -501,7 +501,7 @@
           </tbody>
         </table>
       </div>
-      <p class="o-note">仕様は Moonshot AI の公開資料に基づいています。価格は現在の AnyAIGC の価格です。最新の料金はモデル一覧をご確認ください。詳しくは <a href="/en/models/kimi-k3">Kimi K3 API</a> と <a href="/ja/models/kimi-k2.7-code">Kimi K2.7 Code API</a> をご覧ください。</p>
+      <p class="o-note">仕様は Moonshot AI の公開資料に基づいています。価格は現在の AnyAIGC の価格です。最新の料金はモデル一覧をご確認ください。詳しくは <a href="/ja/models/kimi-k3">Kimi K3 API</a> と <a href="/ja/models/kimi-k2.7-code">Kimi K2.7 Code API</a> をご覧ください。</p>
     </div>
   </section>
 
@@ -692,9 +692,9 @@ stream = client.chat.completions.create(
       <h2 class="o-h2 o-reveal" id="family-title">ほかの Kimi モデル</h2>
       <p class="o-lead o-reveal">1つの APIキーで、以下の Kimi モデルをすべて呼び出せます。タスクの難易度と予算に合わせて選んでください。</p>
       <ul class="o-family o-reveal">
-        <li><a href="/en/models/kimi"><b>Kimi の概要</b><span>K3.1 Pro、K3、K2.7 Code、K2.6 の料金比較</span></a></li>
-        <li><a href="/en/models/kimi-k3.1-pro" aria-current="page"><span class="o-tag">最新</span><b>Kimi K3.1 Pro</b><span>K3.1 シリーズ最初のモデル、コンテキスト長1M · 入力 $0.8100 / 100万</span></a></li>
-        <li><a href="/en/models/kimi-k3"><b>Kimi K3</b><span>2.8Tパラメータのオープンウェイト、コンテキスト長1M · 入力 $1.2150 / 100万</span></a></li>
+        <li><a href="/ja/models/kimi"><b>Kimi の概要</b><span>K3.1 Pro、K3、K2.7 Code、K2.6 の料金比較</span></a></li>
+        <li><a href="/ja/models/kimi-k3.1-pro" aria-current="page"><span class="o-tag">最新</span><b>Kimi K3.1 Pro</b><span>K3.1 シリーズ最初のモデル、コンテキスト長1M · 入力 $0.8100 / 100万</span></a></li>
+        <li><a href="/ja/models/kimi-k3"><b>Kimi K3</b><span>2.8Tパラメータのオープンウェイト、コンテキスト長1M · 入力 $1.2150 / 100万</span></a></li>
         <li><a href="/ja/models/kimi-k2.7-code"><span class="o-tag">コーディング</span><b>Kimi K2.7 Code</b><span>コーディング向けに調整した K2.6、常に思考 · 入力 $0.3847 / 100万</span></a></li>
         <li><a href="/ja/models/kimi-k2.6"><b>Kimi K2.6</b><span>汎用マルチモーダルエージェント、思考モードは任意 · 入力 $0.3847 / 100万</span></a></li>
       </ul>
@@ -702,7 +702,7 @@ stream = client.chat.completions.create(
   </section>
 
   <!-- FAQ -->
-  <section class="o-section" id="spec-unique" aria-labelledby="spec-unique-title"><div class="o-wrap o-col"><span class="k-kicker">仕様</span><h2 class="o-h2" id="spec-unique-title">仕様と選び方</h2><p>Kimi の公式モデル一覧では、kimi-k3.1-pro は Kimi K3.1 シリーズ最初のモデルであり、これまでで最も高性能なフラッグシップと説明されています。</p><p>ベンダーによると、パラメータ数は兆単位（3兆）で、ネイティブの画像理解と1,000,000トークンのコンテキスト長を備え、コード、3D制作、金融リサーチと財務モデリングで大きく向上しています。</p><p>高速版の kimi-k3.1-pro-highspeed も提供されており、速度は標準版の約2〜3倍です。</p><p>このページでは、入力$0.8100、出力$4.0500、キャッシュヒット$0.0810と記載しており、上の料金表と一致しています。</p><p><a href="/en/models/kimi-k3">kimi-k3</a> との比較：公式の一覧では、K3 は2.8兆パラメータの前世代フラッグシップとされています。K3.1 Pro はコード、3D制作、金融リサーチで大きく向上しています。</p><p class="spec-note">仕様はベンダーの公式ドキュメント（<a href="https://platform.kimi.com/docs/models">platform.kimi.com</a>）に基づいています。このページの表は料金を示したもので、最新の料金はモデル一覧が正となります。</p></div></section>
+  <section class="o-section" id="spec-unique" aria-labelledby="spec-unique-title"><div class="o-wrap o-col"><span class="k-kicker">仕様</span><h2 class="o-h2" id="spec-unique-title">仕様と選び方</h2><p>Kimi の公式モデル一覧では、kimi-k3.1-pro は Kimi K3.1 シリーズ最初のモデルであり、これまでで最も高性能なフラッグシップと説明されています。</p><p>ベンダーによると、パラメータ数は兆単位（3兆）で、ネイティブの画像理解と1,000,000トークンのコンテキスト長を備え、コード、3D制作、金融リサーチと財務モデリングで大きく向上しています。</p><p>高速版の kimi-k3.1-pro-highspeed も提供されており、速度は標準版の約2〜3倍です。</p><p>このページでは、入力$0.8100、出力$4.0500、キャッシュヒット$0.0810と記載しており、上の料金表と一致しています。</p><p><a href="/ja/models/kimi-k3">kimi-k3</a> との比較：公式の一覧では、K3 は2.8兆パラメータの前世代フラッグシップとされています。K3.1 Pro はコード、3D制作、金融リサーチで大きく向上しています。</p><p class="spec-note">仕様はベンダーの公式ドキュメント（<a href="https://platform.kimi.com/docs/models">platform.kimi.com</a>）に基づいています。このページの表は料金を示したもので、最新の料金はモデル一覧が正となります。</p></div></section>
 <section class="o-section" id="faq" aria-labelledby="faq-title">
     <div class="o-wrap o-col">
       <span class="k-kicker o-reveal">FAQ</span>
@@ -710,7 +710,7 @@ stream = client.chat.completions.create(
       <div class="o-faq">
         <details open><summary><h3>Kimi K3.1 Pro API の料金はいくらですか？</h3></summary><div class="o-ans"><p>AnyAIGC では、<code>kimi-k3.1-pro</code> はトークン単位で課金されます。入力は100万トークンあたり$0.8100、出力は100万トークンあたり$4.0500、キャッシュヒットは100万トークンあたり$0.0810です。Moonshot の公式USD価格は入力$2.00、出力$10.00、キャッシュヒット$0.20で、AnyAIGC は定価の約40%です。出力には思考トークンが含まれます。最新の料金はモデル一覧をご確認ください。</p></div></details>
         <details><summary><h3>Kimi K3.1 Pro のモデルIDは何ですか？コンテキスト長はどれくらいですか？</h3></summary><div class="o-ans"><p>モデルIDは <code>kimi-k3.1-pro</code> です。Moonshot は1,048,576トークン（1M）のコンテキスト長を掲載しています。<code>max_completion_tokens</code> のデフォルトは131,072で、最大1,048,576まで設定できます。</p></div></details>
-        <details><summary><h3>Kimi K3.1 Pro は K3 と何が違いますか？</h3></summary><div class="o-ans"><p>Moonshot によると、K3.1 Pro は <a href="/en/models/kimi-k3">Kimi K3</a> に、はるかに多くのポストトレーニング計算量をかけ、数百の下流ドメインをまたぐ共同の強化学習で訓練したモデルです。Moonshot が報告している向上点には、長期的なコーディング（Kimi Code Bench 3.0が55.95から61.2に向上）、金融リサーチ（社内評価が58.8から70.4に向上）、事実の正確性（主張ごとのハルシネーション率が23.4%から8.3%に低下）があります。パラメータの制約は K3 と同じなので、移行はモデル名を変更するだけです。AnyAIGC での K3.1 Pro の料金は入力$0.8100、出力$4.0500で、K3 より約3分の1安くなっています。</p></div></details>
+        <details><summary><h3>Kimi K3.1 Pro は K3 と何が違いますか？</h3></summary><div class="o-ans"><p>Moonshot によると、K3.1 Pro は <a href="/ja/models/kimi-k3">Kimi K3</a> に、はるかに多くのポストトレーニング計算量をかけ、数百の下流ドメインをまたぐ共同の強化学習で訓練したモデルです。Moonshot が報告している向上点には、長期的なコーディング（Kimi Code Bench 3.0が55.95から61.2に向上）、金融リサーチ（社内評価が58.8から70.4に向上）、事実の正確性（主張ごとのハルシネーション率が23.4%から8.3%に低下）があります。パラメータの制約は K3 と同じなので、移行はモデル名を変更するだけです。AnyAIGC での K3.1 Pro の料金は入力$0.8100、出力$4.0500で、K3 より約3分の1安くなっています。</p></div></details>
         <details><summary><h3>Kimi K3.1 Pro の思考の深さはどう調整しますか？</h3></summary><div class="o-ans"><p>K3.1 Pro は常に思考し、思考をオフにすることはできません。深さはリクエストボディのトップレベルにある <code>reasoning_effort</code> フィールドで指定します。<code>low</code>、<code>high</code>、<code>max</code> のいずれかで、デフォルトは <code>max</code> です。<code>temperature</code> や <code>top_p</code> などのサンプリングパラメータは Moonshot 側で固定されているため、リクエストに含めないでください。</p></div></details>
         <details><summary><h3>Kimi K3.1 Pro はツール呼び出し、画像・動画の入力に対応していますか？</h3></summary><div class="o-ans"><p>はい。Moonshot のドキュメントには、ツール呼び出し（<code>tools</code> / <code>tool_choice</code>）、構造化出力（<code>json_schema</code>）、ストリーミング、画像・動画の入力が記載されています。マルチターンの会話やツール呼び出しでは、アシスタントのメッセージ全体（<code>reasoning_content</code> と <code>tool_calls</code> を含む）を、変更せずに次のリクエストで送り返してください。</p></div></details>
         <details><summary><h3>Kimi K3.1 Pro は Claude Code で使えますか？</h3></summary><div class="o-ans"><p>はい。<code>~/.claude/settings.json</code> の env ブロックで、<code>ANTHROPIC_BASE_URL</code> を <code>https://anyaigc.ai</code>、<code>ANTHROPIC_AUTH_TOKEN</code> をご自身のAPIキー、<code>ANTHROPIC_MODEL</code> を <code>kimi-k3.1-pro</code> に設定し、<code>claude</code> を実行してください。</p></div></details>
@@ -727,7 +727,7 @@ stream = client.chat.completions.create(
     </div>
   </section>
 
-<!-- related-models --><section class="rel-models o-section" id="related" aria-labelledby="related-title"><div class="o-wrap o-col"><div class="rel-inner"><h2 id="related-title">関連モデルの API</h2><p>同じ AnyAIGC の APIキーで、次の言語モデルを利用できます。料金と機能を比較してください。</p><ul class="rel-list"><li><a href="/ja/models/doubao-seed-2-1-pro"><b>Doubao Seed API</b><span>ガイドを見る →</span></a></li><li><a href="/en/models/llama"><b>Llama API</b><span>ガイドを見る →</span></a></li><li><a href="/en/models/mimo"><b>Xiaomi MiMo API</b><span>ガイドを見る →</span></a></li><li><a href="/en/models/minimax"><b>MiniMax API</b><span>ガイドを見る →</span></a></li><li><a href="/en/models/hy4"><b>Hy4 API</b><span>ガイドを見る →</span></a></li><li><a href="/ja/models/claude"><b>Claude API</b><span>ガイドを見る →</span></a></li></ul></div></div></section><!-- /related-models -->
+<!-- related-models --><section class="rel-models o-section" id="related" aria-labelledby="related-title"><div class="o-wrap o-col"><div class="rel-inner"><h2 id="related-title">関連モデルの API</h2><p>同じ AnyAIGC の APIキーで、次の言語モデルを利用できます。料金と機能を比較してください。</p><ul class="rel-list"><li><a href="/ja/models/doubao-seed-2-1-pro"><b>Doubao Seed API</b><span>ガイドを見る →</span></a></li><li><a href="/en/models/llama"><b>Llama API</b><span>ガイドを見る →</span></a></li><li><a href="/ja/models/mimo"><b>Xiaomi MiMo API</b><span>ガイドを見る →</span></a></li><li><a href="/ja/models/minimax"><b>MiniMax API</b><span>ガイドを見る →</span></a></li><li><a href="/en/models/hy4"><b>Hy4 API</b><span>ガイドを見る →</span></a></li><li><a href="/ja/models/claude"><b>Claude API</b><span>ガイドを見る →</span></a></li></ul></div></div></section><!-- /related-models -->
   <!-- 结尾 CTA -->
   <section class="o-final" aria-labelledby="final-title">
     <div class="o-wrap">
@@ -740,7 +740,7 @@ stream = client.chat.completions.create(
       </div>
       <ul class="o-related" aria-label="その他">
         <li><a class="o-pill" href="/en/models/">モデルガイド一覧</a></li>
-        <li><a class="o-pill" href="/en/models/kimi">Kimi の概要</a></li>
+        <li><a class="o-pill" href="/ja/models/kimi">Kimi の概要</a></li>
         <li><a class="o-pill" href="https://anyaigc.ai/pricing">モデル一覧</a></li>
       </ul>
     </div>

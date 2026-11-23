@@ -288,7 +288,7 @@
     <nav aria-label="주 메뉴">
       <ul class="o-nav-left">
         <li><a class="o-pill" href="/en/models/">모델 가이드</a></li>
-        <li class="g-hide-md"><a class="o-pill" href="/en/models/glm">GLM</a></li>
+        <li class="g-hide-md"><a class="o-pill" href="/ko/models/glm">GLM</a></li>
         <li><a class="o-pill" href="https://anyaigc.ai/pricing">모델 카탈로그</a></li>
         <li><a class="o-pill" href="#pricing">가격</a></li>
         <li class="g-hide-md"><a class="o-pill" href="#claude-code">Claude Code</a></li>
@@ -313,7 +313,7 @@
         <ol class="o-crumbs">
           <li><a href="/">홈</a></li>
           <li><a href="/en/models/">모델 가이드</a></li>
-            <li><a href="/en/models/glm">GLM</a></li>
+            <li><a href="/ko/models/glm">GLM</a></li>
           <li aria-current="page">GLM-5.2 API</li>
         </ol>
       </nav>
@@ -347,7 +347,7 @@
       <div class="g-prose">
         <p class="o-reveal">Zhipu는 GLM-5.2를 장시간 작업 시대를 위한 플래그십으로 소개합니다. Zhipu에 따르면 1M 컨텍스트를 실제로 쓸 수 있어 프로젝트 규모의 엔지니어링 컨텍스트에 맞고, 장시간 작업을 더 안정적으로 수행하며 엔지니어링 관례를 더 일관되게 따릅니다.</p>
         <p class="o-reveal">컨텍스트 길이는 GLM-5.1의 200K에서 1M으로 늘었습니다. 아키텍처는 DSA 희소 어텐션을 쓰는 MoE를 유지하면서 IndexShare를 추가했습니다. 희소 어텐션 레이어 4개마다 인덱서 하나를 공유하는 방식이며, Zhipu에 따르면 1M 컨텍스트에서 토큰당 연산량이 2.9배 줄어듭니다. GLM-5.2는 기본적으로 동적 사고 모드를 사용하고, 사고 모드를 끌 수 있으며, MIT 라이선스의 오픈 소스입니다.</p>
-        <p class="o-reveal">AnyAIGC에서 <code>glm-5.2</code>는 OpenAI 호환 <code>/v1/chat/completions</code> 엔드포인트로 동작하며 Claude Code에서 바로 사용할 수 있고, 동시 실행 제한이 없습니다. 새 프로젝트에는 같은 가격의 <a href="/en/models/glm-5.3">GLM-5.3</a>을 검토하세요. 같은 베이스 모델에 코딩 성능을 높인 모델입니다.</p>
+        <p class="o-reveal">AnyAIGC에서 <code>glm-5.2</code>는 OpenAI 호환 <code>/v1/chat/completions</code> 엔드포인트로 동작하며 Claude Code에서 바로 사용할 수 있고, 동시 실행 제한이 없습니다. 새 프로젝트에는 같은 가격의 <a href="/ko/models/glm-5.3">GLM-5.3</a>을 검토하세요. 같은 베이스 모델에 코딩 성능을 높인 모델입니다.</p>
       </div>
       <dl class="g-spec o-reveal">
         <div><dt>컨텍스트 길이</dt><dd>1M<small>토큰, GLM-5.1은 200K</small></dd></div>
@@ -499,7 +499,7 @@
           </tbody>
         </table>
       </div>
-      <p class="o-note">사양은 Zhipu Z.ai 공식 문서를 따랐습니다. 가격은 현재 AnyAIGC 가격이며, 실시간 가격은 모델 카탈로그에서 확인하세요. <a href="/en/models/glm-5.3">GLM-5.3 API</a>와 <a href="/en/models/glm-5.3-flash">GLM-5.3-Flash API</a>도 참고하세요.</p>
+      <p class="o-note">사양은 Zhipu Z.ai 공식 문서를 따랐습니다. 가격은 현재 AnyAIGC 가격이며, 실시간 가격은 모델 카탈로그에서 확인하세요. <a href="/ko/models/glm-5.3">GLM-5.3 API</a>와 <a href="/ko/models/glm-5.3-flash">GLM-5.3-Flash API</a>도 참고하세요.</p>
     </div>
   </section>
 
@@ -710,16 +710,16 @@ stream = client.chat.completions.create(
       <h2 class="o-h2 o-reveal" id="family-title">다른 GLM 모델</h2>
       <p class="o-lead o-reveal">API 키 하나로 아래 모든 GLM 모델을 호출할 수 있습니다. 작업 난이도와 예산에 맞춰 고르세요.</p>
       <ul class="o-family o-reveal">
-        <li><a href="/en/models/glm"><b>GLM 개요</b><span>GLM-5.3, GLM-5.3-Flash, GLM-5.2 가격 비교</span></a></li>
-        <li><a href="/en/models/glm-5.3"><span class="o-tag">최신</span><b>GLM-5.3</b><span>코딩과 에이전트용 Zhipu 플래그십, 1M 컨텍스트 · 입력 $0.9450 / 1M</span></a></li>
-        <li><a href="/en/models/glm-5.3-flash"><span class="o-tag">저비용</span><b>GLM-5.3-Flash</b><span>네이티브 멀티모달, 총 320B / 활성 18B · 입력 $0.0607 / 1M</span></a></li>
-        <li><a href="/en/models/glm-5.2" aria-current="page"><b>GLM-5.2</b><span>장시간 작업용 플래그십, 사고 모드 선택 가능 · 입력 $0.9450 / 1M</span></a></li>
+        <li><a href="/ko/models/glm"><b>GLM 개요</b><span>GLM-5.3, GLM-5.3-Flash, GLM-5.2 가격 비교</span></a></li>
+        <li><a href="/ko/models/glm-5.3"><span class="o-tag">최신</span><b>GLM-5.3</b><span>코딩과 에이전트용 Zhipu 플래그십, 1M 컨텍스트 · 입력 $0.9450 / 1M</span></a></li>
+        <li><a href="/ko/models/glm-5.3-flash"><span class="o-tag">저비용</span><b>GLM-5.3-Flash</b><span>네이티브 멀티모달, 총 320B / 활성 18B · 입력 $0.0607 / 1M</span></a></li>
+        <li><a href="/ko/models/glm-5.2" aria-current="page"><b>GLM-5.2</b><span>장시간 작업용 플래그십, 사고 모드 선택 가능 · 입력 $0.9450 / 1M</span></a></li>
       </ul>
     </div>
   </section>
 
   <!-- FAQ -->
-  <section class="o-section" id="spec-unique" aria-labelledby="spec-unique-title"><div class="o-wrap o-col"><span class="g-kicker">사양</span><h2 class="o-h2" id="spec-unique-title">사양과 선택 기준</h2><p>Z.ai 문서는 GLM-5.2를 장시간 작업을 위해 만든 플래그십 모델로 설명하며, 1M 토큰 컨텍스트를 실제로 쓸 수 있다는 점을 강조합니다.</p><p>벤더에 따르면 대규모 구현, 자동화된 연구, 성능 최적화를 포함한 장시간 코딩 에이전트 시나리오를 위해 수개월간 전문 학습을 거쳤습니다.</p><p>벤더는 GLM-5.3이 같은 베이스 모델을 사용하며, 개선점은 사후 학습(post-training)에서 나왔다고 밝혔습니다.</p><p>이 페이지에는 입력 $0.9450, 출력 $2.9700, 캐시 히트 $0.2362가 표시되며, 위의 가격표와 일치합니다.</p><p><a href="/en/models/glm-5.3">glm-5.3</a>과 비교하면, 벤더는 GLM-5.3이 Z.ai Code Bench에서 GLM-5.2보다 50% 향상되었다고 밝혔습니다. 더 강한 코딩과 에이전트 능력이 필요하면 GLM-5.3을 선택하세요.</p><p class="spec-note">사양은 벤더 공식 문서(<a href="https://docs.z.ai/guides/llm/glm-5.2">docs.z.ai</a>)를 따랐습니다. 이 페이지의 표는 가격이며, 실시간 요금은 모델 카탈로그가 기준입니다.</p></div></section>
+  <section class="o-section" id="spec-unique" aria-labelledby="spec-unique-title"><div class="o-wrap o-col"><span class="g-kicker">사양</span><h2 class="o-h2" id="spec-unique-title">사양과 선택 기준</h2><p>Z.ai 문서는 GLM-5.2를 장시간 작업을 위해 만든 플래그십 모델로 설명하며, 1M 토큰 컨텍스트를 실제로 쓸 수 있다는 점을 강조합니다.</p><p>벤더에 따르면 대규모 구현, 자동화된 연구, 성능 최적화를 포함한 장시간 코딩 에이전트 시나리오를 위해 수개월간 전문 학습을 거쳤습니다.</p><p>벤더는 GLM-5.3이 같은 베이스 모델을 사용하며, 개선점은 사후 학습(post-training)에서 나왔다고 밝혔습니다.</p><p>이 페이지에는 입력 $0.9450, 출력 $2.9700, 캐시 히트 $0.2362가 표시되며, 위의 가격표와 일치합니다.</p><p><a href="/ko/models/glm-5.3">glm-5.3</a>과 비교하면, 벤더는 GLM-5.3이 Z.ai Code Bench에서 GLM-5.2보다 50% 향상되었다고 밝혔습니다. 더 강한 코딩과 에이전트 능력이 필요하면 GLM-5.3을 선택하세요.</p><p class="spec-note">사양은 벤더 공식 문서(<a href="https://docs.z.ai/guides/llm/glm-5.2">docs.z.ai</a>)를 따랐습니다. 이 페이지의 표는 가격이며, 실시간 요금은 모델 카탈로그가 기준입니다.</p></div></section>
 <section class="o-section" id="faq" aria-labelledby="faq-title">
     <div class="o-wrap o-col">
       <span class="g-kicker o-reveal">FAQ</span>
@@ -727,7 +727,7 @@ stream = client.chat.completions.create(
       <div class="o-faq">
         <details open><summary><h3>GLM-5.2 API 요금은 얼마입니까?</h3></summary><div class="o-ans"><p>AnyAIGC에서 <code>glm-5.2</code>는 토큰 단위로 과금됩니다. 입력 100만 토큰당 $0.9450, 출력 100만 토큰당 $2.9700, 캐시 히트 100만 토큰당 $0.2362입니다. Zhipu의 공식 USD 정가는 입력 $1.40, 출력 $4.40, 캐시 히트 $0.26이며, AnyAIGC의 입력과 출력 요금은 공식 정가의 약 67.5%(약 30% 할인)입니다. 실시간 가격은 모델 카탈로그에서 확인하세요.</p></div></details>
         <details><summary><h3>GLM-5.2의 모델 ID와 컨텍스트 길이는 어떻게 됩니까?</h3></summary><div class="o-ans"><p>모델 ID는 <code>glm-5.2</code>입니다. Zhipu는 1M 토큰의 컨텍스트 길이와 최대 128K 출력 토큰을 제공한다고 밝혔습니다. 텍스트 입력만 지원합니다.</p></div></details>
-        <details><summary><h3>GLM-5.2에서 사고 모드를 끌 수 있습니까?</h3></summary><div class="o-ans"><p>네. Zhipu에 따르면 GLM-5.2는 기본적으로 동적 사고 모드를 사용해 모델이 생각할지 여부를 스스로 결정하며, 사고 모드를 끌 수도 있습니다. 항상 생각하는 <a href="/en/models/glm-5.3">GLM-5.3</a>과의 주요 차이점 중 하나입니다. AnyAIGC에서는 <code>reasoning_effort</code>로 사고 깊이를 설정할 수 있습니다.</p></div></details>
+        <details><summary><h3>GLM-5.2에서 사고 모드를 끌 수 있습니까?</h3></summary><div class="o-ans"><p>네. Zhipu에 따르면 GLM-5.2는 기본적으로 동적 사고 모드를 사용해 모델이 생각할지 여부를 스스로 결정하며, 사고 모드를 끌 수도 있습니다. 항상 생각하는 <a href="/ko/models/glm-5.3">GLM-5.3</a>과의 주요 차이점 중 하나입니다. AnyAIGC에서는 <code>reasoning_effort</code>로 사고 깊이를 설정할 수 있습니다.</p></div></details>
         <details><summary><h3>GLM-5.2의 특징은 무엇입니까?</h3></summary><div class="o-ans"><p>Zhipu는 GLM-5.2를 장시간 작업 시대의 플래그십 모델로 소개합니다. 1M 컨텍스트를 실제로 활용할 수 있어 프로젝트 규모의 엔지니어링 컨텍스트에 적합합니다. 장시간 작업을 더 안정적으로 수행하고, 엔지니어링 관례를 더 일관되게 따르며, 하나의 작업을 요구 사항 정리부터 멀티 플랫폼 배포까지 이어서 처리할 수 있습니다. Zhipu에 따르면 IndexShare 설계는 1M 컨텍스트에서 토큰당 연산량을 2.9배 줄입니다.</p></div></details>
         <details><summary><h3>GLM-5.2와 GLM-5.3 중 어느 쪽을 사용해야 합니까?</h3></summary><div class="o-ans"><p>두 모델은 같은 베이스 모델을 사용하며, AnyAIGC에서 입력과 출력 요금이 같습니다. GLM-5.3은 확장된 사후 학습이 추가되었고, Zhipu는 코딩 성능이 50% 향상되었다고 보고했으며, 캐시 히트 가격도 더 낮습니다($0.1758 vs $0.2362). 새 프로젝트는 GLM-5.3으로 시작하세요. 사고 모드를 꺼야 하거나 이미 프로덕션에서 GLM-5.2를 튜닝해 두었다면 GLM-5.2를 계속 사용하세요.</p></div></details>
         <details><summary><h3>Claude Code에서 GLM-5.2를 사용할 수 있습니까?</h3></summary><div class="o-ans"><p>네. <code>~/.claude/settings.json</code>의 env 블록에서 <code>ANTHROPIC_BASE_URL</code>을 <code>https://anyaigc.ai</code>로, <code>ANTHROPIC_AUTH_TOKEN</code>을 API 키로, <code>ANTHROPIC_MODEL</code>을 <code>glm-5.2</code>로 설정한 뒤 <code>claude</code>를 실행하세요. 토큰 단위로 과금되며, 구독 플랜처럼 5시간 단위의 사용 한도 구간이 없습니다.</p></div></details>
@@ -744,7 +744,7 @@ stream = client.chat.completions.create(
     </div>
   </section>
 
-<!-- related-models --><section class="rel-models o-section" id="related" aria-labelledby="related-title"><div class="o-wrap o-col"><div class="rel-inner"><h2 id="related-title">관련 모델 API</h2><p>같은 AnyAIGC API 키로 아래 언어 모델도 사용할 수 있습니다. 가격과 기능을 비교해 보세요.</p><ul class="rel-list"><li><a href="/en/models/llama"><b>Llama API</b><span>가이드 보기 →</span></a></li><li><a href="/en/models/mimo"><b>Xiaomi MiMo API</b><span>가이드 보기 →</span></a></li><li><a href="/en/models/minimax"><b>MiniMax API</b><span>가이드 보기 →</span></a></li><li><a href="/en/models/hy4"><b>Hy4 API</b><span>가이드 보기 →</span></a></li><li><a href="/ko/models/claude"><b>Claude API</b><span>가이드 보기 →</span></a></li><li><a href="/ko/models/gpt"><b>GPT API</b><span>가이드 보기 →</span></a></li></ul></div></div></section><!-- /related-models -->
+<!-- related-models --><section class="rel-models o-section" id="related" aria-labelledby="related-title"><div class="o-wrap o-col"><div class="rel-inner"><h2 id="related-title">관련 모델 API</h2><p>같은 AnyAIGC API 키로 아래 언어 모델도 사용할 수 있습니다. 가격과 기능을 비교해 보세요.</p><ul class="rel-list"><li><a href="/en/models/llama"><b>Llama API</b><span>가이드 보기 →</span></a></li><li><a href="/ko/models/mimo"><b>Xiaomi MiMo API</b><span>가이드 보기 →</span></a></li><li><a href="/ko/models/minimax"><b>MiniMax API</b><span>가이드 보기 →</span></a></li><li><a href="/en/models/hy4"><b>Hy4 API</b><span>가이드 보기 →</span></a></li><li><a href="/ko/models/claude"><b>Claude API</b><span>가이드 보기 →</span></a></li><li><a href="/ko/models/gpt"><b>GPT API</b><span>가이드 보기 →</span></a></li></ul></div></div></section><!-- /related-models -->
   <!-- 结尾 CTA -->
   <section class="o-final" aria-labelledby="final-title">
     <div class="o-wrap">
@@ -757,7 +757,7 @@ stream = client.chat.completions.create(
       </div>
       <ul class="o-related" aria-label="더보기">
         <li><a class="o-pill" href="/en/models/">전체 모델 가이드</a></li>
-        <li><a class="o-pill" href="/en/models/glm">GLM 개요</a></li>
+        <li><a class="o-pill" href="/ko/models/glm">GLM 개요</a></li>
         <li><a class="o-pill" href="https://anyaigc.ai/pricing">모델 카탈로그</a></li>
       </ul>
     </div>

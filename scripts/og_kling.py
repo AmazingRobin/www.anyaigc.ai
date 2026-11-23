@@ -58,10 +58,9 @@ UNIT = {
 }
 
 
-def money(v, lang):
-    """美元金额；西德用逗号小数，日韩英用点。"""
-    s = '$' + v
-    return s.replace('.', ',') if lang in ('es', 'de') else s
+def money(v):
+    """美元金额，小数一律用点。"""
+    return '$' + v
 
 
 def L(en, ja, ko, es, de):
@@ -304,7 +303,7 @@ JS = r'''
 def build_html(slug, lang):
     p = PAGES[slug]
     unit, val = p['price']
-    price = UNIT[unit][lang].format(p=money(val, lang))
+    price = UNIT[unit][lang].format(p=money(val))
     sub = p['sub'][lang]
     h1 = p['h1']
     hsize = 84 if len(h1) <= 20 else (72 if len(h1) <= 26 else 64)

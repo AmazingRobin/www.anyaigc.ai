@@ -296,7 +296,7 @@
     <nav aria-label="주 메뉴">
       <ul class="o-nav-left">
         <li><a class="o-pill" href="/en/models/">모델 가이드</a></li>
-        <li class="g-hide-md"><a class="o-pill" href="/en/models/glm">GLM</a></li>
+        <li class="g-hide-md"><a class="o-pill" href="/ko/models/glm">GLM</a></li>
         <li><a class="o-pill" href="https://anyaigc.ai/pricing">모델 카탈로그</a></li>
         <li><a class="o-pill" href="#pricing">가격</a></li>
         <li class="g-hide-md"><a class="o-pill" href="#claude-code">Claude Code</a></li>
@@ -321,7 +321,7 @@
         <ol class="o-crumbs">
           <li><a href="/">홈</a></li>
           <li><a href="/en/models/">모델 가이드</a></li>
-            <li><a href="/en/models/glm">GLM</a></li>
+            <li><a href="/ko/models/glm">GLM</a></li>
           <li aria-current="page">GLM-5.3-Flash API</li>
         </ol>
       </nav>
@@ -507,7 +507,7 @@
           </tbody>
         </table>
       </div>
-      <p class="o-note">사양은 Zhipu Z.ai 공식 문서를 따랐습니다. 가격은 현재 AnyAIGC 가격이며, 실시간 가격은 모델 카탈로그에서 확인하세요. <a href="/en/models/glm-5.3">GLM-5.3 API</a>도 참고하세요.</p>
+      <p class="o-note">사양은 Zhipu Z.ai 공식 문서를 따랐습니다. 가격은 현재 AnyAIGC 가격이며, 실시간 가격은 모델 카탈로그에서 확인하세요. <a href="/ko/models/glm-5.3">GLM-5.3 API</a>도 참고하세요.</p>
     </div>
   </section>
 
@@ -708,16 +708,16 @@ stream = client.chat.completions.create(
       <h2 class="o-h2 o-reveal" id="family-title">다른 GLM 모델</h2>
       <p class="o-lead o-reveal">API 키 하나로 아래 모든 GLM 모델을 호출할 수 있습니다. 작업 난이도와 예산에 맞춰 고르세요.</p>
       <ul class="o-family o-reveal">
-        <li><a href="/en/models/glm"><b>GLM 개요</b><span>GLM-5.3, GLM-5.3-Flash, GLM-5.2 가격 비교</span></a></li>
-        <li><a href="/en/models/glm-5.3"><span class="o-tag">최신</span><b>GLM-5.3</b><span>코딩과 에이전트용 Zhipu 플래그십, 1M 컨텍스트 · 입력 $0.9450 / 1M</span></a></li>
-        <li><a href="/en/models/glm-5.3-flash" aria-current="page"><span class="o-tag">저비용</span><b>GLM-5.3-Flash</b><span>네이티브 멀티모달, 총 320B / 활성 18B · 입력 $0.0607 / 1M</span></a></li>
+        <li><a href="/ko/models/glm"><b>GLM 개요</b><span>GLM-5.3, GLM-5.3-Flash, GLM-5.2 가격 비교</span></a></li>
+        <li><a href="/ko/models/glm-5.3"><span class="o-tag">최신</span><b>GLM-5.3</b><span>코딩과 에이전트용 Zhipu 플래그십, 1M 컨텍스트 · 입력 $0.9450 / 1M</span></a></li>
+        <li><a href="/ko/models/glm-5.3-flash" aria-current="page"><span class="o-tag">저비용</span><b>GLM-5.3-Flash</b><span>네이티브 멀티모달, 총 320B / 활성 18B · 입력 $0.0607 / 1M</span></a></li>
         <li><a href="/ko/models/glm-5.2"><b>GLM-5.2</b><span>장시간 작업용 플래그십, 사고 모드 선택 가능 · 입력 $0.9450 / 1M</span></a></li>
       </ul>
     </div>
   </section>
 
   <!-- FAQ -->
-  <section class="o-section" id="spec-unique" aria-labelledby="spec-unique-title"><div class="o-wrap o-col"><span class="g-kicker">사양</span><h2 class="o-h2" id="spec-unique-title">사양과 선택 기준</h2><p>Z.ai 문서는 GLM-5.3-Flash를 GLM-5 시리즈 최초의 네이티브 멀티모달 모델이라고 설명하며, GLM-5.2보다 지능이 높다고 밝힙니다.</p><p>문서에는 전체 320B, 활성 18B 파라미터로 명시되어 있습니다. 희소 어텐션과 선형 어텐션을 결합한 최초의 오픈 소스 프런티어 모델이며, GLM-5.3 대비 어텐션 연산을 3.01배, KV 캐시를 4.44배 줄였다고 설명합니다.</p><p>공식 모델 개요 표에는 1M 토큰 컨텍스트 길이가 기재되어 있습니다.</p><p>이 페이지에는 입력 $0.0607, 출력 $0.2025, 캐시 히트 $0.0122가 표시되며, 위의 가격표와 일치합니다.</p><p><a href="/en/models/glm-5.3">glm-5.3</a>과 비교: 공식 문서에 따르면 GLM-5.3은 현재 텍스트 입력만 받습니다. 이미지 등 멀티모달 입력이 필요하면 GLM-5.3-Flash를 선택하세요.</p><p class="spec-note">사양은 벤더 공식 문서(<a href="https://docs.z.ai/guides/vlm/glm-5.3-flash">docs.z.ai</a>)를 따랐습니다. 이 페이지의 표는 가격이며, 실시간 요금은 모델 카탈로그가 기준입니다.</p></div></section>
+  <section class="o-section" id="spec-unique" aria-labelledby="spec-unique-title"><div class="o-wrap o-col"><span class="g-kicker">사양</span><h2 class="o-h2" id="spec-unique-title">사양과 선택 기준</h2><p>Z.ai 문서는 GLM-5.3-Flash를 GLM-5 시리즈 최초의 네이티브 멀티모달 모델이라고 설명하며, GLM-5.2보다 지능이 높다고 밝힙니다.</p><p>문서에는 전체 320B, 활성 18B 파라미터로 명시되어 있습니다. 희소 어텐션과 선형 어텐션을 결합한 최초의 오픈 소스 프런티어 모델이며, GLM-5.3 대비 어텐션 연산을 3.01배, KV 캐시를 4.44배 줄였다고 설명합니다.</p><p>공식 모델 개요 표에는 1M 토큰 컨텍스트 길이가 기재되어 있습니다.</p><p>이 페이지에는 입력 $0.0607, 출력 $0.2025, 캐시 히트 $0.0122가 표시되며, 위의 가격표와 일치합니다.</p><p><a href="/ko/models/glm-5.3">glm-5.3</a>과 비교: 공식 문서에 따르면 GLM-5.3은 현재 텍스트 입력만 받습니다. 이미지 등 멀티모달 입력이 필요하면 GLM-5.3-Flash를 선택하세요.</p><p class="spec-note">사양은 벤더 공식 문서(<a href="https://docs.z.ai/guides/vlm/glm-5.3-flash">docs.z.ai</a>)를 따랐습니다. 이 페이지의 표는 가격이며, 실시간 요금은 모델 카탈로그가 기준입니다.</p></div></section>
 <section class="o-section" id="faq" aria-labelledby="faq-title">
     <div class="o-wrap o-col">
       <span class="g-kicker o-reveal">FAQ</span>
@@ -725,7 +725,7 @@ stream = client.chat.completions.create(
       <div class="o-faq">
         <details open><summary><h3>GLM-5.3-Flash API 가격은 얼마입니까?</h3></summary><div class="o-ans"><p>AnyAIGC에서 <code>glm-5.3-flash</code>는 토큰 단위로 과금됩니다. 입력 100만 토큰당 $0.0607, 출력 100만 토큰당 $0.2025, 캐시 히트 100만 토큰당 $0.0122입니다. Zhipu의 공식 USD 정가는 입력 $0.15, 출력 $0.50, 캐시 히트 $0.03이므로 AnyAIGC는 공식 정가의 약 40.5%(약 60% 할인)입니다. 출력에는 사고 토큰이 포함됩니다. 실시간 요금은 모델 카탈로그를 확인하세요.</p></div></details>
         <details><summary><h3>GLM-5.3-Flash의 모델 ID는 무엇이며 컨텍스트 길이는 얼마입니까?</h3></summary><div class="o-ans"><p>모델 ID는 <code>glm-5.3-flash</code>입니다. Zhipu는 1M 토큰 컨텍스트 길이와 최대 128K 출력 토큰을 명시합니다. AnyAIGC를 통해 텍스트와 이미지 입력을 받을 수 있습니다.</p></div></details>
-        <details><summary><h3>GLM-5.3-Flash는 GLM-5.3과 어떻게 다릅니까?</h3></summary><div class="o-ans"><p>GLM-5.3-Flash는 새로 학습한 베이스 모델을 기반으로 하며, 전체 320B, 활성 18B 파라미터와 희소+선형 하이브리드 어텐션을 사용합니다. GLM-5 시리즈 최초의 네이티브 멀티모달 모델입니다. Zhipu에 따르면 <a href="/en/models/glm-5.3">GLM-5.3</a>과 비교해 어텐션 연산이 약 3배, KV 캐시가 약 4.4배 적게 필요합니다. GLM-5.3은 가장 어려운 코딩 작업에 더 강한 플래그십이며 텍스트만 받습니다. Flash는 이미지를 받고 가격은 약 1/15입니다(입력 $0.0607 vs $0.9450).</p></div></details>
+        <details><summary><h3>GLM-5.3-Flash는 GLM-5.3과 어떻게 다릅니까?</h3></summary><div class="o-ans"><p>GLM-5.3-Flash는 새로 학습한 베이스 모델을 기반으로 하며, 전체 320B, 활성 18B 파라미터와 희소+선형 하이브리드 어텐션을 사용합니다. GLM-5 시리즈 최초의 네이티브 멀티모달 모델입니다. Zhipu에 따르면 <a href="/ko/models/glm-5.3">GLM-5.3</a>과 비교해 어텐션 연산이 약 3배, KV 캐시가 약 4.4배 적게 필요합니다. GLM-5.3은 가장 어려운 코딩 작업에 더 강한 플래그십이며 텍스트만 받습니다. Flash는 이미지를 받고 가격은 약 1/15입니다(입력 $0.0607 vs $0.9450).</p></div></details>
         <details><summary><h3>GLM-5.3-Flash가 GLM-5.2보다 더 낫습니까?</h3></summary><div class="o-ans"><p>Zhipu는 GLM-5.3-Flash가 <a href="/ko/models/glm-5.2">GLM-5.2</a>를 전반적으로 앞서면서 가격은 약 10분의 1이라고 밝혔습니다. 보고된 비교: DeepSWE 63.4 vs 46.2, Toolathlon Verified 78.4 vs 59.9, AutomationBench 48.8 vs 26.2, GDPval-AA v2 1773 vs 1504.</p></div></details>
         <details><summary><h3>GLM-5.3-Flash는 이미지를 받습니까? 어떻게 보냅니까?</h3></summary><div class="o-ans"><p>네. <code>messages[].content</code> 배열에 <code>{"type": "image_url", "image_url": {"url": ...}}</code> 콘텐츠 블록을 추가하세요. <code>url</code>에는 공개 이미지 URL 또는 Base64 데이터 URL을 넣을 수 있습니다. 이미지가 여러 장이면 블록을 여러 개 추가하세요.</p></div></details>
         <details><summary><h3>Claude Code에서 GLM-5.3-Flash를 사용할 수 있습니까?</h3></summary><div class="o-ans"><p>네. <code>~/.claude/settings.json</code>의 env 블록에서 <code>ANTHROPIC_BASE_URL</code>을 <code>https://anyaigc.ai</code>로, <code>ANTHROPIC_AUTH_TOKEN</code>을 API 키로, <code>ANTHROPIC_MODEL</code>을 <code>glm-5.3-flash</code>로 설정한 뒤 <code>claude</code>를 실행하세요. 토큰 단위로 결제하며, 구독 플랜처럼 5시간 단위의 사용 한도 구간이 없습니다.</p></div></details>
@@ -743,7 +743,7 @@ stream = client.chat.completions.create(
     </div>
   </section>
 
-<!-- related-models --><section class="rel-models o-section" id="related" aria-labelledby="related-title"><div class="o-wrap o-col"><div class="rel-inner"><h2 id="related-title">관련 모델 API</h2><p>같은 AnyAIGC API 키로 아래 언어 모델도 사용할 수 있습니다. 가격과 기능을 비교해 보세요.</p><ul class="rel-list"><li><a href="/ko/models/grok-4.x"><b>Grok 4 API</b><span>가이드 보기 →</span></a></li><li><a href="/ko/models/doubao-seed-2-1-pro"><b>Doubao Seed API</b><span>가이드 보기 →</span></a></li><li><a href="/en/models/llama"><b>Llama API</b><span>가이드 보기 →</span></a></li><li><a href="/en/models/mimo"><b>Xiaomi MiMo API</b><span>가이드 보기 →</span></a></li><li><a href="/en/models/minimax"><b>MiniMax API</b><span>가이드 보기 →</span></a></li><li><a href="/en/models/hy4"><b>Hy4 API</b><span>가이드 보기 →</span></a></li></ul></div></div></section><!-- /related-models -->
+<!-- related-models --><section class="rel-models o-section" id="related" aria-labelledby="related-title"><div class="o-wrap o-col"><div class="rel-inner"><h2 id="related-title">관련 모델 API</h2><p>같은 AnyAIGC API 키로 아래 언어 모델도 사용할 수 있습니다. 가격과 기능을 비교해 보세요.</p><ul class="rel-list"><li><a href="/ko/models/grok-4.x"><b>Grok 4 API</b><span>가이드 보기 →</span></a></li><li><a href="/ko/models/doubao-seed-2-1-pro"><b>Doubao Seed API</b><span>가이드 보기 →</span></a></li><li><a href="/en/models/llama"><b>Llama API</b><span>가이드 보기 →</span></a></li><li><a href="/ko/models/mimo"><b>Xiaomi MiMo API</b><span>가이드 보기 →</span></a></li><li><a href="/ko/models/minimax"><b>MiniMax API</b><span>가이드 보기 →</span></a></li><li><a href="/en/models/hy4"><b>Hy4 API</b><span>가이드 보기 →</span></a></li></ul></div></div></section><!-- /related-models -->
   <!-- 结尾 CTA -->
   <section class="o-final" aria-labelledby="final-title">
     <div class="o-wrap">
@@ -756,7 +756,7 @@ stream = client.chat.completions.create(
       </div>
       <ul class="o-related" aria-label="더보기">
         <li><a class="o-pill" href="/en/models/">전체 모델 가이드</a></li>
-        <li><a class="o-pill" href="/en/models/glm">GLM 개요</a></li>
+        <li><a class="o-pill" href="/ko/models/glm">GLM 개요</a></li>
         <li><a class="o-pill" href="https://anyaigc.ai/pricing">모델 카탈로그</a></li>
       </ul>
     </div>

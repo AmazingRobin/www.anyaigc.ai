@@ -27,6 +27,16 @@ PAY_A = ('You can top up with WeChat Pay, Alipay, USDT or a credit card. Your ba
 
 # 整句精确替换（单元文本完全相等才替换）
 EXACT = {
+    # 第 6 批（Llama / Eleven / Speech / Nano / Jev / SparkDesk / Hy4 / Muse）
+    'VAT general and special': 'Issue them yourself',
+    'Invoices for every top-up, including Chinese VAT general and special invoices, based on the amount you paid.':
+        'Issue an invoice in the console for the amount you actually topped up, whenever you need one.',
+    'An invoice for every top-up, including Chinese VAT general and special invoices, for expensing and tax credits.':
+        'Issue an invoice in the console for the amount you actually topped up, whenever you need one.',
+    'Invoices for every top-up, including Chinese VAT general and special invoices, for expense reporting and tax credits.':
+        'Issue an invoice in the console for the amount you actually topped up, whenever you need one.',
+    'Chinese VAT general and special invoices for the actual top-up amount.':
+        'Issue invoices yourself in the console for the amount you actually topped up.',
     # 第 5 批（Kling / Vidu / Wan / HappyHorse）
     'Ordinary and special invoices': 'Issue them yourself',
     'Including VAT special invoices': 'Issue them yourself',
@@ -69,6 +79,8 @@ EXACT = {
 
 # 描述、关键词等里的短语（正则，对每个单元和结构化数据字符串都执行）
 RULES = [
+    # 第 6 批：SparkDesk 描述
+    (r'with unlimited RPM and bank transfer plus VAT special invoices for teams[.]', 'with unlimited RPM and self-service invoices.'),
     # 第 5 批：Vidu 描述、Wan 描述
     (r'Unlimited concurrency, VAT invoices, bank transfer and contracts on AnyAIGC[.]', 'Unlimited concurrency and self-service invoices on AnyAIGC.'),
     (r'Unlimited concurrency, VAT invoices, contracts[.]', 'Unlimited concurrency and self-service invoices.'),

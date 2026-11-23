@@ -54,7 +54,7 @@ SUBS_I18N = {
     'claude-opus-4-8': {'ja': '4.x系の最終Opus、定価より88%オフ', 'ko': '4.x 마지막 Opus, 정가 대비 88% 저렴',
                         'es': 'El último Opus 4.x, 88 % menos que el precio de lista', 'de': 'Das letzte Opus 4.x, 88 % unter Listenpreis'},
     'claude-opus-4-7': {'ja': 'SWE-bench Verified 87.6%、88%オフ', 'ko': 'SWE-bench Verified 87.6%, 88% 저렴',
-                        'es': 'SWE-bench Verified 87,6 %, 88 % menos', 'de': 'SWE-bench Verified 87,6 %, 88 % günstiger'},
+                        'es': 'SWE-bench Verified 87.6 %, 88 % menos', 'de': 'SWE-bench Verified 87.6 %, 88 % günstiger'},
     'claude-opus-4-6': {'ja': '旧世代ですが利用可能、定価より88%オフ', 'ko': '이전 세대지만 사용 가능, 정가 대비 88% 저렴',
                         'es': 'Generación anterior, aún disponible, 88 % menos', 'de': 'Ältere Generation, weiter verfügbar, 88 % günstiger'},
 }
@@ -81,7 +81,7 @@ TAGS_I18N = {
     'claude-opus-4-8': {'ja': ['4.x最終版', '88%オフ', 'Claude Code'], 'ko': ['4.x 최종', '88% 저렴', 'Claude Code'],
                         'es': ['Último 4.x', '88 % menos', 'Claude Code'], 'de': ['Letztes 4.x', '88 % günstiger', 'Claude Code']},
     'claude-opus-4-7': {'ja': ['SWE-bench 87.6%', '高解像度の画像入力', '88%オフ'], 'ko': ['SWE-bench 87.6%', '고해상도 비전', '88% 저렴'],
-                        'es': ['SWE-bench 87,6 %', 'Visión en alta resolución', '88 % menos'], 'de': ['SWE-bench 87,6 %', 'Hochauflösende Bilder', '88 % günstiger']},
+                        'es': ['SWE-bench 87.6 %', 'Visión en alta resolución', '88 % menos'], 'de': ['SWE-bench 87.6 %', 'Hochauflösende Bilder', '88 % günstiger']},
     'claude-opus-4-6': {'ja': ['利用可能', '1Mコンテキスト長', '88%オフ'], 'ko': ['사용 가능', '1M 컨텍스트', '88% 저렴'],
                         'es': ['Disponible', 'Contexto de 1M', '88 % menos'], 'de': ['Verfügbar', '1M Kontext', '88 % günstiger']},
 }

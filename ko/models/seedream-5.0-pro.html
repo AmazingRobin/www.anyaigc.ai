@@ -393,16 +393,16 @@
           <thead><tr><th scope="col"></th><th scope="col"><a href="/ko/models/seedream-5.5">Seedream 5.5</a></th><th scope="col"><a href="/ko/models/seedream-5.0-pro">Seedream 5.0 Pro</a></th><th scope="col"><a href="/ko/models/seedream-5.0-lite">Seedream 5.0 lite</a></th><th scope="col"><a href="/ko/models/seedream-4.5">Seedream 4.5</a></th><th scope="col"><a href="/ko/models/seedream-4.0">Seedream 4.0</a></th><th scope="col"><a href="/ko/models/seedream-3.0">Seedream 3.0</a></th></tr></thead>
           <tbody>
             <tr><th scope="row">AnyAIGC 모델 ID</th><td><code>doubao-seedream-5-5-261028</code></td><td class="sd-cur"><code>doubao-seedream-5-0-pro-260628</code></td><td><code>doubao-seedream-5-0-260128</code></td><td><code>doubao-seedream-4-5-251128</code></td><td><code>doubao-seedream-4-0-250828</code></td><td><code>doubao-seedream-3-0-t2i-250415</code></td></tr>
-            <tr><th scope="row">포지셔닝</th><td>여러 턴에 걸친 편집 일관성, 네이티브 RGBA, 레이어 분리</td><td class="sd-cur">플래그십: 추론, 고밀도 인포그래픽, 인터랙티브 정밀 편집</td><td>경량: 심층 사고 + 웹 검색, 최대 4K</td><td>포스터 레이아웃, 읽기 쉬운 작은 글자, 다중 이미지 합성</td><td>생성과 편집을 한 번에, 이미지 세트</td><td>이전 세대, 텍스트→이미지 전용</td></tr>
+            <tr><th scope="row">포지셔닝</th><td>일관된 멀티턴 편집, 네이티브 RGBA, 레이어 분리</td><td class="sd-cur">플래그십: 추론, 고밀도 인포그래픽, 인터랙티브 정밀 편집</td><td>경량: 심층 사고 + 웹 검색, 최대 4K</td><td>포스터 레이아웃, 읽기 쉬운 작은 글자, 다중 이미지 합성</td><td>생성과 편집을 한 번에, 이미지 세트</td><td>이전 세대, 텍스트→이미지 전용</td></tr>
             <tr><th scope="row">출력 해상도</th><td>1K / 1.5K / 2K</td><td class="sd-cur">1K / 1.5K / 2K</td><td>2K / 3K / 4K</td><td>2K / 4K</td><td>1K / 2K / 4K</td><td>픽셀 크기, 예: 1024x1024</td></tr>
             <tr><th scope="row">참조 이미지</th><td>최대 10</td><td class="sd-cur">최대 10</td><td>최대 14</td><td>최대 14</td><td>최대 14</td><td>지원하지 않음</td></tr>
             <tr><th scope="row">이미지 세트 (요청당 여러 장)</th><td>지원하지 않음</td><td class="sd-cur">지원하지 않음</td><td>최대 15</td><td>최대 15</td><td>최대 15</td><td>지원하지 않음</td></tr>
-            <tr><th scope="row">주요 특징</th><td>네이티브 RGBA 투명도, 레이어 분리(최대 99개 레이어), 일반 텍스트 레이어 OCR</td><td class="sd-cur">레이어 분리, 영역 편집, 투명 배경, 10개 이상 언어</td><td>웹 검색 (web_search)</td><td>원본의 얼굴과 조명 유지</td><td>스타일 전환, 지식 기반 일러스트</td><td>중국어·영어</td></tr>
+            <tr><th scope="row">주요 특징</th><td>네이티브 RGBA 투명도, 레이어 분리(최대 99개 레이어), 일반 텍스트 레이어용 OCR</td><td class="sd-cur">레이어 분리, 영역 편집, 투명 배경, 10개 이상 언어</td><td>웹 검색 (web_search)</td><td>원본의 얼굴과 조명 유지</td><td>스타일 전환, 지식 기반 일러스트</td><td>중국어·영어</td></tr>
             <tr><th scope="row">AnyAIGC 최저가</th><td><strong>$0.0229</strong> / 이미지</td><td class="sd-cur"><strong>$0.0441</strong> / 이미지</td><td><strong>$0.0223</strong> / 이미지</td><td><strong>$0.0253</strong> / 이미지</td><td><strong>$0.0203</strong> / 이미지</td><td><strong>$0.0101</strong> / 요청</td></tr>
           </tbody>
         </table>
       </div>
-      <p class="o-note">사양은 <a href="https://www.volcengine.com/docs/82379/1541523" target="_blank" rel="noopener">Volcano Engine Ark 이미지 생성 API 문서</a>와 ByteDance Seed 모델 페이지를 인용했습니다(2026-10-28, 2026-11-20 열람). 3.0 사양은 Seedream 3.0 기술 보고서에서 가져왔습니다. 요청 필드는 AnyAIGC API 문서를 따릅니다.</p>
+      <p class="o-note">사양은 <a href="https://www.volcengine.com/docs/82379/1541523" target="_blank" rel="noopener">Volcano Engine Ark 이미지 생성 API 문서</a>와 ByteDance Seed 모델 페이지(2026-10-28 및 2026-11-20 확인)에서 인용했으며, 3.0 사양은 Seedream 3.0 기술 보고서를 따랐습니다. 요청 필드는 AnyAIGC API 문서를 따릅니다.</p>
     </div>
   </section>
 
@@ -559,12 +559,12 @@ img = client.images.generate(
       <p class="o-lead o-reveal">같은 API이며 <code>model</code>만 바꾸면 전환됩니다.</p>
       <ul class="o-family o-reveal">
         <li><a href="/ko/models/seedream"><span class="o-tag">개요</span><b>모든 Seedream 모델</b><span>6개 모델의 가격과 사양</span></a></li>
-        <li><a href="/ko/models/seedream-5.5"><span class="o-tag">최신</span><b>Seedream 5.5</b><span>레이어 분리, 네이티브 RGBA, 여러 턴 편집 · 이미지당 $0.0229부터</span></a></li>
+        <li><a href="/ko/models/seedream-5.5"><span class="o-tag">최신</span><b>Seedream 5.5</b><span>레이어 분리, 네이티브 RGBA, 멀티턴 편집 · 이미지당 $0.0229부터</span></a></li>
         <li><a href="/ko/models/seedream-5.0-pro" aria-current="page"><span class="o-tag">플래그십</span><b>Seedream 5.0 Pro</b><span>인포그래픽, 정밀 편집, 다국어 · 이미지당 $0.0441부터</span></a></li>
         <li><a href="/ko/models/seedream-5.0-lite"><span class="o-tag">가성비 우수</span><b>Seedream 5.0 lite</b><span>웹 검색, 이미지 세트, 4K · 이미지당 $0.0223부터</span></a></li>
         <li><a href="/ko/models/seedream-4.5"><b>Seedream 4.5</b><span>포스터 레이아웃, 다중 이미지 합성 · 이미지당 $0.0253부터</span></a></li>
         <li><a href="/ko/models/seedream-4.0"><b>Seedream 4.0</b><span>생성과 편집을 한 번에 · 이미지당 $0.0203부터</span></a></li>
-        <li><a href="/ko/models/seedream-3.0"><span class="o-tag">레거시</span><b>Seedream 3.0</b><span>텍스트→이미지 전용 · 요청당 $0.0101</span></a></li>
+        <li><a href="/ko/models/seedream-3.0"><span class="o-tag">이전 세대</span><b>Seedream 3.0</b><span>텍스트→이미지 전용 · 요청당 $0.0101</span></a></li>
       </ul>
     </div>
   </section>
@@ -591,7 +591,7 @@ img = client.images.generate(
     </div>
   </section>
 
-<!-- related-models --><section class="rel-models o-section" id="related" aria-labelledby="related-title"><div class="o-wrap o-col"><div class="rel-inner"><h2 id="related-title">관련 모델 API</h2><p>같은 AnyAIGC API 키로 다음 이미지 모델도 사용할 수 있습니다. 가격과 기능을 비교해 보세요.</p><ul class="rel-list"><li><a href="/en/models/qwen-image-3.0"><b>Qwen Image API</b><span>가이드 보기 →</span></a></li><li><a href="/ko/models/midjourney"><b>Midjourney API</b><span>가이드 보기 →</span></a></li><li><a href="/ko/models/grok-image"><b>Grok Image API</b><span>가이드 보기 →</span></a></li><li><a href="/en/models/kling-image-3.0"><b>Kling Image API</b><span>가이드 보기 →</span></a></li><li><a href="/en/models/muse-image"><b>Muse Image API</b><span>가이드 보기 →</span></a></li><li><a href="/en/models/vidu-image-q2"><b>Vidu Image API</b><span>가이드 보기 →</span></a></li></ul></div></div></section><!-- /related-models -->
+<!-- related-models --><section class="rel-models o-section" id="related" aria-labelledby="related-title"><div class="o-wrap o-col"><div class="rel-inner"><h2 id="related-title">관련 모델 API</h2><p>같은 AnyAIGC API 키로 다음 이미지 모델도 사용할 수 있습니다. 가격과 기능을 비교해 보세요.</p><ul class="rel-list"><li><a href="/ko/models/qwen-image-3.0"><b>Qwen Image API</b><span>가이드 보기 →</span></a></li><li><a href="/ko/models/midjourney"><b>Midjourney API</b><span>가이드 보기 →</span></a></li><li><a href="/ko/models/grok-image"><b>Grok Image API</b><span>가이드 보기 →</span></a></li><li><a href="/ko/models/kling-image-3.0"><b>Kling Image API</b><span>가이드 보기 →</span></a></li><li><a href="/en/models/muse-image"><b>Muse Image API</b><span>가이드 보기 →</span></a></li><li><a href="/ko/models/vidu-image-q2"><b>Vidu Image API</b><span>가이드 보기 →</span></a></li></ul></div></div></section><!-- /related-models -->
   <!-- 结尾 CTA -->
   <section class="o-final" aria-labelledby="final-title">
     <div class="o-wrap">

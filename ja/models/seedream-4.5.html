@@ -396,12 +396,12 @@
             <tr><th scope="row">出力解像度</th><td>1K / 1.5K / 2K</td><td>1K / 1.5K / 2K</td><td>2K / 3K / 4K</td><td class="sd-cur">2K / 4K</td><td>1K / 2K / 4K</td><td>ピクセル指定（例：1024x1024）</td></tr>
             <tr><th scope="row">参照画像</th><td>最大10</td><td>最大10</td><td>最大14</td><td class="sd-cur">最大14</td><td>最大14</td><td>非対応</td></tr>
             <tr><th scope="row">画像セット（1リクエストで複数枚）</th><td>非対応</td><td>非対応</td><td>最大15</td><td class="sd-cur">最大15</td><td>最大15</td><td>非対応</td></tr>
-            <tr><th scope="row">特徴</th><td>ネイティブのRGBA透過、レイヤー分離（最大99レイヤー）、通常のテキストレイヤー向けOCR</td><td>レイヤー分離、領域編集、透過背景、10言語以上</td><td>Web検索（web_search）</td><td class="sd-cur">元画像の顔や光の状態を維持</td><td>スタイル転送、知識ベースのイラスト</td><td>中国語と英語</td></tr>
+            <tr><th scope="row">特徴</th><td>ネイティブRGBA透過、レイヤー分離（最大99レイヤー）、通常のテキストレイヤー向けOCR</td><td>レイヤー分離、領域編集、透過背景、10言語以上</td><td>Web検索（web_search）</td><td class="sd-cur">元画像の顔や光の状態を維持</td><td>スタイル転送、知識ベースのイラスト</td><td>中国語と英語</td></tr>
             <tr><th scope="row">AnyAIGC 最低価格</th><td><strong>$0.0229</strong> / 枚</td><td><strong>$0.0441</strong> / 枚</td><td><strong>$0.0223</strong> / 枚</td><td class="sd-cur"><strong>$0.0253</strong> / 枚</td><td><strong>$0.0203</strong> / 枚</td><td><strong>$0.0101</strong> / リクエスト</td></tr>
           </tbody>
         </table>
       </div>
-      <p class="o-note">仕様は <a href="https://www.volcengine.com/docs/82379/1541523" target="_blank" rel="noopener">Volcano Engine Ark の画像生成APIドキュメント</a> と ByteDance Seed のモデルページ（2026-10-28 と 2026-11-20 に確認）から引用しています。3.0 の仕様は Seedream 3.0 の技術レポートに基づきます。リクエストのフィールドは AnyAIGC の API ドキュメントに従います。</p>
+      <p class="o-note">仕様は <a href="https://www.volcengine.com/docs/82379/1541523" target="_blank" rel="noopener">Volcano Engine Ark 画像生成APIドキュメント</a>と ByteDance Seed のモデルページ（2026-10-28 と 2026-11-20 に確認）から引用しています。3.0 の仕様は Seedream 3.0 のテクニカルレポートによります。リクエストのフィールドは AnyAIGC のAPIドキュメントに従います。</p>
     </div>
   </section>
 
@@ -585,12 +585,12 @@ img = client.images.generate(
       <p class="o-lead o-reveal">同じAPIで、<code>model</code> を変えるだけで切り替えられます。</p>
       <ul class="o-family o-reveal">
         <li><a href="/ja/models/seedream"><span class="o-tag">概要</span><b>Seedream のすべてのモデル</b><span>6モデルの料金と仕様</span></a></li>
-        <li><a href="/ja/models/seedream-5.5"><span class="o-tag">最新</span><b>Seedream 5.5</b><span>レイヤー分離、ネイティブRGBA、マルチターン編集 · 1枚あたり$0.0229から</span></a></li>
+        <li><a href="/ja/models/seedream-5.5"><span class="o-tag">最新</span><b>Seedream 5.5</b><span>レイヤー分離、ネイティブRGBA、マルチターン編集 · $0.0229 / 枚から</span></a></li>
         <li><a href="/ja/models/seedream-5.0-pro"><span class="o-tag">フラッグシップ</span><b>Seedream 5.0 Pro</b><span>インフォグラフィック、精密な編集、多言語 · $0.0441 / 枚から</span></a></li>
         <li><a href="/ja/models/seedream-5.0-lite"><span class="o-tag">コスパ重視</span><b>Seedream 5.0 lite</b><span>Web検索、画像セット、4K · $0.0223 / 枚から</span></a></li>
         <li><a href="/ja/models/seedream-4.5" aria-current="page"><b>Seedream 4.5</b><span>ポスターレイアウト、複数画像の合成 · $0.0253 / 枚から</span></a></li>
         <li><a href="/ja/models/seedream-4.0"><b>Seedream 4.0</b><span>生成と編集を1つに · $0.0203 / 枚から</span></a></li>
-        <li><a href="/ja/models/seedream-3.0"><span class="o-tag">旧バージョン</span><b>Seedream 3.0</b><span>テキストから画像のみ · $0.0101 / リクエスト</span></a></li>
+        <li><a href="/ja/models/seedream-3.0"><span class="o-tag">旧世代</span><b>Seedream 3.0</b><span>テキストから画像のみ · $0.0101 / リクエスト</span></a></li>
       </ul>
     </div>
   </section>
@@ -617,7 +617,7 @@ img = client.images.generate(
     </div>
   </section>
 
-<!-- related-models --><section class="rel-models o-section" id="related" aria-labelledby="related-title"><div class="o-wrap o-col"><div class="rel-inner"><h2 id="related-title">関連モデルの API</h2><p>同じ AnyAIGC の APIキーで、次の画像モデルも使えます。料金と機能を比較できます。</p><ul class="rel-list"><li><a href="/en/models/nano-banana"><b>Nano Banana API</b><span>ガイドを見る →</span></a></li><li><a href="/en/models/qwen-image-3.0"><b>Qwen Image API</b><span>ガイドを見る →</span></a></li><li><a href="/ja/models/midjourney"><b>Midjourney API</b><span>ガイドを見る →</span></a></li><li><a href="/ja/models/grok-image"><b>Grok Image API</b><span>ガイドを見る →</span></a></li><li><a href="/en/models/kling-image-3.0"><b>Kling Image API</b><span>ガイドを見る →</span></a></li><li><a href="/en/models/muse-image"><b>Muse Image API</b><span>ガイドを見る →</span></a></li></ul></div></div></section><!-- /related-models -->
+<!-- related-models --><section class="rel-models o-section" id="related" aria-labelledby="related-title"><div class="o-wrap o-col"><div class="rel-inner"><h2 id="related-title">関連モデルの API</h2><p>同じ AnyAIGC のAPIキーで、次の画像モデルも使えます。料金と機能を比較できます。</p><ul class="rel-list"><li><a href="/en/models/nano-banana"><b>Nano Banana API</b><span>ガイドを見る →</span></a></li><li><a href="/ja/models/qwen-image-3.0"><b>Qwen Image API</b><span>ガイドを見る →</span></a></li><li><a href="/ja/models/midjourney"><b>Midjourney API</b><span>ガイドを見る →</span></a></li><li><a href="/ja/models/grok-image"><b>Grok Image API</b><span>ガイドを見る →</span></a></li><li><a href="/ja/models/kling-image-3.0"><b>Kling Image API</b><span>ガイドを見る →</span></a></li><li><a href="/en/models/muse-image"><b>Muse Image API</b><span>ガイドを見る →</span></a></li></ul></div></div></section><!-- /related-models -->
   <!-- 结尾 CTA -->
   <section class="o-final" aria-labelledby="final-title">
     <div class="o-wrap">

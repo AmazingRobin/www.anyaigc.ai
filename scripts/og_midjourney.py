@@ -20,7 +20,8 @@ PI, PH = usd('mj_imagine'), usd('mj_upscale')
 NEW = ('ja', 'ko', 'es', 'de')
 SUB = {'zh': f'Imagine ${PI} / 次，放大 ${PH} / 次', 'en': f'Imagine ${PI} per call, upscale ${PH}',
        'ja': f'Imagine 1回 ${PI}、アップスケール ${PH}', 'ko': f'Imagine 회당 ${PI}, 업스케일 ${PH}',
-       'es': f'Imagine ${PI} por llamada, ampliar ${PH}', 'de': f'Imagine ${PI} pro Aufruf, Hochskalieren ${PH}'}
+       'es': f'Imagine ${PI} por llamada, ampliar ${PH}',
+       'de': f'Imagine ${PI} pro Aufruf, Hochskalieren ${PH}'}
 # 非中文图不写"合同/对公"，发票写"自助开具"（2026-11-17 起非中文页口径）
 TAGS = {'zh': ['14 种操作', 'Niji', '并发不限', '对公 · 专票'],
         'en': ['14 operations', 'Niji', 'Unlimited concurrency', 'Self-service invoices'],

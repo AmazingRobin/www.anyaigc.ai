@@ -53,7 +53,7 @@ EXTRA = {
               'es': ['Visión', 'Contexto de 1 M'], 'de': ['Bildverständnis', '1 Mio. Kontext']}),
     'deepseek-v4-pro': dict(
         sub={'ja': '1.6T のフラッグシップ。3段階の推論強度', 'ko': '1.6T 플래그십, 3단계 추론 강도',
-             'es': 'Modelo insignia de 1,6T con tres niveles de razonamiento', 'de': '1,6T-Flaggschiff mit drei Denkstufen'},
+             'es': 'Modelo insignia de 1.6T con tres niveles de razonamiento', 'de': '1.6T-Flaggschiff mit drei Denkstufen'},
         tags={'ja': ['思考モード', '100万コンテキスト'], 'ko': ['사고 모드', '100만 컨텍스트'],
               'es': ['Razonamiento', 'Contexto de 1 M'], 'de': ['Denkmodus', '1 Mio. Kontext']}),
     'deepseek-v4-flash': dict(

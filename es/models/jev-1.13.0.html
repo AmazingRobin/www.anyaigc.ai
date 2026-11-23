@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="es" class="no-js">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>API de jev-1.13.0: precio &amp; acceso, primer Jev | AnyAIGC</title>
+<meta name="description" content="API de jev-1.13.0, primer Jev de TypeSafe: $0.0227/1M de entrada, salida gratuita, contexto de 32k, concurrencia sin límite y facturas en autoservicio.">
+<meta name="keywords" content="jev-1.13.0,API de jev-1.13.0,precio de jev-1.13.0,API de Jev,precio API de Jev,clave de API de Jev,TypeSafe Jev,modelo System One,jev-1.13.0 obsoleto,API de clasificación,API de Jev para empresas,factura API de Jev,AnyAIGC">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="theme-color" content="#F386A1">
+<link rel="canonical" href="https://www.anyaigc.ai/es/models/jev-1.13.0">
+<link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/jev-1.13.0">
+<link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/jev-1.13.0">
+<link rel="alternate" hreflang="ja" href="https://www.anyaigc.ai/ja/models/jev-1.13.0">
+<link rel="alternate" hreflang="ko" href="https://www.anyaigc.ai/ko/models/jev-1.13.0">
+<link rel="alternate" hreflang="es" href="https://www.anyaigc.ai/es/models/jev-1.13.0">
+<link rel="alternate" hreflang="de" href="https://www.anyaigc.ai/de/models/jev-1.13.0">
+<link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/jev-1.13.0">
+<link rel="icon" href="/favicon.ico">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AnyAIGC">
+<meta property="og:locale" content="es_ES">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:locale:alternate" content="ko_KR">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:url" content="https://www.anyaigc.ai/es/models/jev-1.13.0">
+<meta property="og:title" content="API de jev-1.13.0: precio &amp; acceso, primer Jev | AnyAIGC">
+<meta property="og:description" content="El primer Jev público de TypeSafe devuelve decisiones tipadas con probabilidades calibradas. $0.0227/1M de entrada, salida gratuita, contexto de 32k, concurrencia sin límite y facturas en autoservicio.">
+<meta property="og:image" content="https://www.anyaigc.ai/assets/og/jev-1.13.0-es.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="API de jev-1.13.0 en AnyAIGC: el primer modelo System One público de TypeSafe, con salida gratuita">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="API de jev-1.13.0: precio &amp; acceso, primer Jev | AnyAIGC">
+<meta name="twitter:description" content="jev-1.13.0 devuelve decisiones tipadas con probabilidades calibradas. $0.0227 por 1M de tokens de entrada, salida gratuita, contexto de 32k, concurrencia sin límite.">
+<meta name="twitter:image" content="https://www.anyaigc.ai/assets/og/jev-1.13.0-es.png">
+<link rel="stylesheet" href="/assets/models/scrollbar.css?v=20261125">
+<link rel="stylesheet" href="/assets/models/lang-menu.css?v=20261117c">
+<link rel="stylesheet" href="/assets/models/jev.css?v=20261025b">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.anyaigc.ai/#org",
+      "name": "AnyAIGC",
+      "url": "https://www.anyaigc.ai/",
+      "logo": "https://www.anyaigc.ai/logo.webp"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.anyaigc.ai/#website",
+      "url": "https://www.anyaigc.ai/",
+      "name": "AnyAIGC",
+      "publisher": {
+        "@id": "https://www.anyaigc.ai/#org"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.anyaigc.ai/es/models/jev-1.13.0#webpage",
+      "url": "https://www.anyaigc.ai/es/models/jev-1.13.0",
+      "name": "API de jev-1.13.0: precio & acceso, primer Jev | AnyAIGC",
+      "description": "API de jev-1.13.0, primer Jev de TypeSafe: $0.0227/1M de entrada, salida gratuita, contexto de 32k, concurrencia sin límite y facturas en autoservicio.",
+      "inLanguage": "es",
+      "isPartOf": {
+        "@id": "https://www.anyaigc.ai/#website"
+      },
+      "breadcrumb": {
+        "@id": "https://www.anyaigc.ai/es/models/jev-1.13.0#breadcrumb"
+      },
+      "mainEntity": {
+        "@id": "https://www.anyaigc.ai/es/models/jev-1.13.0#product"
+      },
+      "dateModified": "2026-10-25"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.anyaigc.ai/es/models/jev-1.13.0#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inicio",
+          "item": "https://www.anyaigc.ai/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guías de modelos",
+          "item": "https://www.anyaigc.ai/es/models/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Jev",
+          "item": "https://www.anyaigc.ai/es/models/jev"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "jev-1.13.0",
+          "item": "https://www.anyaigc.ai/es/models/jev-1.13.0"
+        }
+      ]
+    },
+    {
+      "@type": "Product",
+      "@id": "https://www.anyaigc.ai/es/models/jev-1.13.0#product",
+      "name": "API de jev-1.13.0 (AnyAIGC)",
+      "description": "Llama a jev-1.13.0, el primer modelo System One público de TypeSafe AI, a través de AnyAIGC: POST /v1/systemone, respuestas tipadas con probabilidades calibradas, contexto de 32k, facturación solo por tokens de entrada, salida gratuita y concurrencia sin límite.",
+      "category": "API de modelos de decisión",
+      "sku": "jev-1.13.0",
+      "image": "https://www.anyaigc.ai/assets/og/jev-1.13.0-es.png",
+      "brand": {
+        "@type": "Brand",
+        "name": "AnyAIGC"
+      },
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "USD",
+        "lowPrice": "0.0227",
+        "highPrice": "0.0227",
+        "offerCount": 1,
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.anyaigc.ai/es/models/jev-1.13.0#pricing",
+        "offers": [
+          {
+            "@type": "Offer",
+            "name": "Entrada de jev-1.13.0 (por millón de tokens)",
+            "price": "0.0227",
+            "priceCurrency": "USD"
+          }
+        ]
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.anyaigc.ai/es/models/jev-1.13.0#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Qué es jev-1.13.0?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "jev-1.13.0 es la primera versión pública de Jev, el modelo System One de TypeSafe AI, anunciada el 15 de septiembre de 2026. System One toma su nombre del juicio rápido e intuitivo de Kahneman. Envías el contenido que se debe evaluar (state) y un conjunto de preguntas tipadas, y Jev devuelve respuestas tipadas con probabilidades calibradas en lugar de texto libre. En AnyAIGC tiene un contexto de 32k tokens y admite los tipos de pregunta noul, choice y score."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Está obsoleto jev-1.13.0?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. El 14 de octubre de 2026 se publicó una versión más reciente, jev-1.14.0, pero jev-1.13.0 sigue disponible en AnyAIGC y no se ha anunciado ninguna fecha de cierre. TypeSafe indica que avisará con 60 días de antelación antes de retirar jev-1.13.0. Las integraciones existentes pueden seguir funcionando; para proyectos nuevos recomendamos jev-1.14.0."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuánto cuesta la API de jev-1.13.0?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "En AnyAIGC, jev-1.13.0 cuesta $0.0227 por millón de tokens de entrada y la salida es gratuita. La facturación es por token y solo se cobran los tokens de entrada. Por ejemplo, 1.000.000 de peticiones de 300 tokens de entrada cada una suman 300M de tokens, que equivalen a $6.81. La concurrencia no tiene límite para ningún usuario. El precio actual está en el catálogo de modelos de AnyAIGC."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué diferencia hay entre jev-1.13.0 y jev-1.14.0?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "jev-1.13.0 es la primera versión pública (15 de septiembre de 2026), con un contexto de 32k tokens, entrada de texto y los tipos de pregunta noul, choice y score. jev-1.14.0 (14 de octubre de 2026) aporta pequeñas mejoras generales, con la mayor ganancia en multilingüe según TypeSafe. En AnyAIGC tiene un contexto de 256k tokens y añade entrada de imágenes experimental y el tipo de pregunta box. Ambas cuestan lo mismo."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Es la API de jev-1.13.0 compatible con OpenAI?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Jev usa la API System One de TypeSafe: POST https://anyaigc.ai/v1/systemone con model, state y questions en el cuerpo, y answers y usage en la respuesta. No hay messages ni choices, por lo que los SDK de OpenAI no pueden llamarla. Usa HTTP simple con requests, fetch o cURL y la cabecera habitual Authorization: Bearer <API Key>. La llamada es síncrona: sin streaming y sin sondeo de tareas."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué limitaciones tiene jev-1.13.0?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Según TypeSafe, Jev interpreta el texto al pie de la letra, no es una calculadora (evita las operaciones matemáticas y el conteo), es débil al comparar fechas y en preguntas de varios saltos, pierde precisión cuando el estado contiene mucho texto irrelevante, puede verse afectado por la inyección de prompts y favorece ligeramente la primera opción en las preguntas de elección. No genera texto. El inglés es lo que mejor funciona; otros idiomas funcionan, pero con peor resultado. El artículo de arXiv de terceros también lo encontró más débil con idiomas de pocos recursos, etiquetas con ruido y juicios de calidad basados en rúbricas."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Puedo obtener una factura de AnyAIGC?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí. Puedes emitir tus propias facturas en la consola, por el importe que hayas recargado realmente."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué métodos de pago se admiten?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Puedes recargar saldo con WeChat Pay, Alipay, USDT o tarjeta de crédito. Tu saldo está en USD y sirve para todos los modelos de la plataforma. Las facturas se pueden emitir en la consola por el importe recargado."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Hay crédito de prueba gratuito para usuarios nuevos?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí. Las cuentas nuevas reciben 2 millones de tokens de crédito de prueba para que pruebes antes de decidir si recargas saldo. Las recargas empiezan en $1."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Puedo pedir el reembolso de mi saldo?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí. El saldo no utilizado se puede reembolsar sin comisión. Contacta con soporte para iniciar el reembolso."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Son los modelos reales? ¿Están seguros mis datos?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Las peticiones van a los canales oficiales de los modelos, nunca a sustitutos más baratos o de ingeniería inversa. Salvo que la ley lo exija, no almacenamos de forma persistente tus prompts ni tus resultados, ni los usamos para entrenar modelos, y la consola muestra los tokens y el coste de cada petición."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="o-skip" href="#main">Saltar al contenido principal</a>
+
+<header class="o-nav">
+  <div class="o-wrap o-nav-inner">
+    <a class="o-brand" href="/" aria-label="Inicio de AnyAIGC">AnyAIGC</a>
+    <nav aria-label="Principal">
+      <ul class="o-nav-left">
+        <li><a class="o-pill" href="/en/models/">Modelos</a></li>
+        <li><a class="o-pill" href="https://anyaigc.ai/pricing">Catálogo</a></li>
+        <li><a class="o-pill" href="#pricing">Precios</a></li>
+        <li><a class="o-pill" href="#enterprise">Empresas</a></li>
+        <li><a class="o-pill" href="https://docs.anyaigc.ai/en/reference/typesafe/v1/systemone" target="_blank" rel="noopener">Docs de API</a></li>
+      </ul>
+    </nav>
+    <ul class="o-nav-right">
+      <li><details class="lang-menu"><summary aria-label="Language: Español">ES</summary><ul class="lang-menu-list"><li><a href="/zh/models/jev-1.13.0" hreflang="zh-CN" lang="zh-CN">中文</a></li><li><a href="/en/models/jev-1.13.0" hreflang="en" lang="en">English</a></li><li><a href="/ja/models/jev-1.13.0" hreflang="ja" lang="ja">日本語</a></li><li><a href="/ko/models/jev-1.13.0" hreflang="ko" lang="ko">한국어</a></li><li><a href="/de/models/jev-1.13.0" hreflang="de" lang="de">Deutsch</a></li></ul></details></li>
+      <li><a class="o-pill" href="https://anyaigc.ai/console">Acceder</a></li>
+      <li><a class="o-pill j-nav-cta" href="https://anyaigc.ai/register?aff=oOK7&channel=c_wpduopc9">Registrarse gratis</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="main">
+  <!-- Hero -->
+  <section class="j-hero" aria-labelledby="hero-title">
+    <div class="o-wrap">
+      <nav aria-label="Ruta de navegación">
+        <ol class="o-crumbs">
+          <li><a href="/">Inicio</a></li>
+          <li><a href="/en/models/">Modelos</a></li>
+          <li><a href="/es/models/jev">Jev</a></li>
+          <li aria-current="page">jev-1.13.0</li>
+        </ol>
+      </nav>
+      <p class="j-eyebrow"><svg viewBox="0 0 24 24" fill="#1E1E1E" aria-hidden="true" focusable="false"><path d="M16.512 2.928L16.512 7.067 20.242 9.487 20.243 18.652 12 24 7.489 21.073 7.489 16.82 3.756 14.399 3.756 5.35 4.111 5.118 12 0ZM9.697 20.65L11.998 22.144 18.032 18.227 15.732 16.735ZM12.779 10.332L12.779 14.4 9.046 16.822 9.046 19.216 14.953 15.383 14.953 8.921ZM16.512 15.384L18.684 16.794 18.684 10.332 16.512 8.922ZM5.966 13.976L8.268 15.47 10.569 13.976 8.268 12.485ZM5.316 6.193L5.316 12.544 7.487 11.134 7.487 7.066 11.221 4.643 11.221 2.36 5.316 6.193ZM9.047 11.132L11.22 12.542 11.22 10.332 9.049 8.921 9.049 11.132ZM9.697 7.487L12 8.981 14.3 7.488 12 5.994ZM12.78 4.643L14.953 6.054 14.953 3.774 12.78 2.359Z"></path></svg><span>TypeSafe AI · Primer Jev público</span></p>
+      <h1 class="j-h1" id="hero-title"><span>API de jev-1.13.0</span><span class="j-h1-sub">El primer modelo System One, <span class="j-nw">ya en AnyAIGC</span></span></h1>
+      <p class="j-lead">jev-1.13.0 es el primer Jev público de TypeSafe. Devuelve decisiones tipadas con probabilidades calibradas para clasificación, enrutamiento, moderación y puntuación. La entrada cuesta $0.0227 por millón de tokens y la salida es gratuita.</p>
+      <p class="o-notice j-callout j-callout-pink" role="note"><span><strong>Hay una versión más reciente, jev-1.14.0.</strong> jev-1.13.0 sigue disponible en AnyAIGC y no se ha anunciado ninguna fecha de cierre; TypeSafe indica que avisará con 60 días de antelación antes de retirarlo. Para proyectos nuevos, consulta <a href="/es/models/jev-1.14.0">jev-1.14.0</a>.</span></p>
+      <div class="o-cta">
+        <a class="o-btn o-btn-dark" href="https://anyaigc.ai/register?aff=oOK7&channel=c_wpduopc9">Obtener clave de API</a>
+        <a class="o-btn o-btn-light" href="#pricing">Ver precios</a>
+      </div>
+      <ul class="o-facts" aria-label="Datos clave">
+        <li>Modelo <strong>jev-1.13.0</strong></li>
+        <li>Contexto <strong>32k</strong></li>
+        <li>Salida <strong>Gratuita</strong></li>
+        <li>Concurrencia <strong>Sin límite</strong></li>
+        <li>Equipos <strong>Facturas en autoservicio</strong></li>
+      </ul>
+    </div>
+
+    <figure class="j-desk" aria-label="Ejemplo: una petición /v1/systemone a jev-1.13.0 que responde tres preguntas">
+      <div class="j-desk-inner">
+        <span class="j-blob j-blob-a" aria-hidden="true"></span>
+        <span class="j-blob j-blob-b" aria-hidden="true"></span>
+        <span class="j-blob j-blob-c" aria-hidden="true"></span>
+        <span class="j-desk-tag" aria-hidden="true">AnyAIGC.OS / jev-1.13.0</span>
+        <div class="j-desk-grid">
+          <div class="j-win j-demo">
+            <div class="j-win-bar"><span>POST https://anyaigc.ai/v1/systemone</span><i aria-hidden="true"></i></div>
+            <div class="j-win-body">
+              <div class="j-pane">
+                <p class="j-pane-h"><b>petición</b><span>estado + 3 preguntas</span></p>
+<pre class="j-req"><span class="k">"model"</span>: <span class="s">"jev-1.13.0"</span>,
+<span class="k">"state"</span>: <span class="s">"Help! My payouts have been failing for 3 days."</span>,
+<span class="k">"questions"</span>: {
+  <span class="k">"department"</span>: {<span class="m">"type"</span>: <span class="s">"choice"</span>, …},
+  <span class="k">"frustration"</span>: {<span class="m">"type"</span>: <span class="s">"score"</span>, …},
+  <span class="k">"is_urgent"</span>: {<span class="m">"type"</span>: <span class="s">"noul"</span>, …}
+}<span class="j-cursor" aria-hidden="true"></span></pre>
+              </div>
+              <div class="j-pane">
+                <p class="j-pane-h"><b>respuestas</b><span>tipadas · calibradas</span></p>
+                <ul class="j-ans">
+                  <li>
+                    <div class="j-ans-top"><span class="j-label">departamento</span><span class="j-ans-type">choice</span><span class="j-ans-val">facturación · 0.81</span></div>
+                    <ul class="j-bars">
+                      <li class="j-bar is-top"><span>facturación</span><span class="j-bar-track"><span class="j-bar-fill" style="--v:.88;--d:.3s"></span></span><span class="j-bar-num">0.88</span></li>
+                      <li class="j-bar"><span>técnico</span><span class="j-bar-track"><span class="j-bar-fill" style="--v:.12;--d:.4s"></span></span><span class="j-bar-num">0.12</span></li>
+                      <li class="j-bar"><span>ventas</span><span class="j-bar-track"><span class="j-bar-fill" style="--v:0;--d:.5s"></span></span><span class="j-bar-num">0</span></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <div class="j-ans-top"><span class="j-label">frustración</span><span class="j-ans-type">score</span><span class="j-ans-val">1.05 / 2</span></div>
+                    <ul class="j-bars">
+                      <li class="j-bar"><span>0 Calma</span><span class="j-bar-track"><span class="j-bar-fill" style="--v:0;--d:.6s"></span></span><span class="j-bar-num">0</span></li>
+                      <li class="j-bar is-top"><span>1 Frustrado</span><span class="j-bar-track"><span class="j-bar-fill" style="--v:.95;--d:.7s"></span></span><span class="j-bar-num">0.95</span></li>
+                      <li class="j-bar"><span>2 Enfadado</span><span class="j-bar-track"><span class="j-bar-fill" style="--v:.05;--d:.8s"></span></span><span class="j-bar-num">0.05</span></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <div class="j-ans-top"><span class="j-label">is_urgent</span><span class="j-ans-type">noul</span><span class="j-ans-val">0.95</span></div>
+                    <div class="j-meter" aria-hidden="true"><i style="--v:.95;--d:.9s"></i></div>
+                  </li>
+                </ul>
+              </div>
+              <p class="j-demo-foot"><span>usage.input_tokens 318</span><span>output_tokens 34 · gratis</span><span>síncrono · sin sondeo</span></p>
+            </div>
+          </div>
+          <div class="j-desk-side" aria-hidden="true">
+            <div class="j-win j-win-pink j-win-pinkbar j-clock">
+              <div class="j-win-bar"><span>Herramienta de reloj</span><i></i></div>
+              <div class="j-win-body">Según TypeSafe<br>respuesta de extremo a extremo<span class="j-clock-time">70–500 ms</span><span data-j-clock>00:00:00</span></div>
+            </div>
+            <div class="j-win j-about-win">
+              <div class="j-win-bar"><span>jev-1.13.0</span><i></i></div>
+              <div class="j-win-body">
+                <svg viewBox="0 0 24 24" fill="#1E1E1E" aria-hidden="true" focusable="false"><path d="M16.512 2.928L16.512 7.067 20.242 9.487 20.243 18.652 12 24 7.489 21.073 7.489 16.82 3.756 14.399 3.756 5.35 4.111 5.118 12 0ZM9.697 20.65L11.998 22.144 18.032 18.227 15.732 16.735ZM12.779 10.332L12.779 14.4 9.046 16.822 9.046 19.216 14.953 15.383 14.953 8.921ZM16.512 15.384L18.684 16.794 18.684 10.332 16.512 8.922ZM5.966 13.976L8.268 15.47 10.569 13.976 8.268 12.485ZM5.316 6.193L5.316 12.544 7.487 11.134 7.487 7.066 11.221 4.643 11.221 2.36 5.316 6.193ZM9.047 11.132L11.22 12.542 11.22 10.332 9.049 8.921 9.049 11.132ZM9.697 7.487L12 8.981 14.3 7.488 12 5.994ZM12.78 4.643L14.953 6.054 14.953 3.774 12.78 2.359Z"></path></svg>
+                <div>Primer Jev público<br>de TypeSafe AI
+                  <ul class="j-chips"><li class="j-chip-dark">noul</li><li>choice</li><li>score</li></ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <figcaption class="j-desk-note">Los valores proceden del ejemplo de respuesta de la documentación de la API de AnyAIGC, que respondió jev-1.13.0. Tus resultados dependen de tu petición.</figcaption>
+      </div>
+    </figure>
+  </section>
+
+  <!-- About -->
+  <section class="o-section" id="about" aria-labelledby="about-title">
+    <div class="o-wrap">
+      <div class="j-head j-crop o-reveal">
+        <span class="j-kicker">01 · QUÉ ES JEV-1.13.0</span>
+        <h2 class="o-h2" id="about-title">jev-1.13.0: el primer modelo System One público</h2>
+        <p class="o-lead">Un LLM de chat te devuelve un párrafo que hay que analizar. jev-1.13.0 le entrega a tu código un valor que puede usar: una probabilidad, una opción o una puntuación.</p>
+      </div>
+      <div class="j-prose">
+        <p class="o-reveal">TypeSafe AI anunció jev-1.13.0 el 15 de septiembre de 2026 como el primer modelo System One público. El nombre viene del Sistema 1 de Kahneman, el lado rápido e intuitivo del juicio humano. Según TypeSafe, Jev se entrena con RLCD (Reinforcement Learning for Calibrated Decisions, aprendizaje por refuerzo para decisiones calibradas) y un muestreador paralelo, y devuelve respuestas tipadas con probabilidades calibradas en lugar de texto libre.</p>
+        <p class="o-reveal">Piensa en él como un if inteligente. Pon el contenido que quieres evaluar en <code>state</code>, define preguntas con nombre y tipo en <code>questions</code> y todas se responden en paralelo en una sola petición, sin límite en el número de preguntas. TypeSafe garantiza que las respuestas siempre coinciden con el tipo que pediste, así que no tienes que escribir lógica de análisis ni de reintentos.</p>
+      </div>
+      <dl class="j-spec j-spec-4 o-reveal">
+        <div><dt>Lanzamiento</dt><dd>2026-09-15<small>primer Jev público</small></dd></div>
+        <div><dt>Contexto</dt><dd>32k tokens<small>según el catálogo de modelos de AnyAIGC</small></dd></div>
+        <div><dt>Entrada</dt><dd>Texto<small>noul · choice · score</small></dd></div>
+        <div><dt>Precio</dt><dd>$0.0227 / 1M<small>solo entrada, salida gratuita</small></dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- Question types -->
+  <section class="o-section j-band-pink" id="types" aria-labelledby="types-title">
+    <div class="o-wrap">
+      <div class="j-head j-crop o-reveal">
+        <span class="j-kicker">02 · TIPOS DE PREGUNTA</span>
+        <h2 class="o-h2" id="types-title">Tres tipos de pregunta en jev-1.13.0</h2>
+        <p class="o-lead">Dale un nombre a cada pregunta en <code>questions</code>; la respuesta vuelve bajo el mismo nombre.</p>
+      </div>
+      <ul class="j-types">
+        <li class="o-reveal">
+          <div class="j-win">
+            <div class="j-win-bar"><span>type: noul</span><i aria-hidden="true"></i></div>
+            <div class="j-win-body">
+              <p class="j-type-name"><b>noul</b><span>probabilidad de que sea verdadero</span></p>
+              <p class="j-type-desc">Devuelve una probabilidad de 0 a 1. Pregunta con <code>instructions</code> o describe los casos <code>true</code> y <code>false</code> en <code>criteria</code>.</p>
+              <span class="j-snip-label">petición</span>
+<pre class="j-snip"><span class="k">"is_urgent"</span>: {
+  <span class="k">"type"</span>: <span class="s">"noul"</span>,
+  <span class="k">"instructions"</span>: <span class="s">"Does this convey urgency?"</span>
+}</pre>
+              <span class="j-snip-label">respuesta</span>
+<pre class="j-snip">{<span class="k">"type"</span>: <span class="s">"noul"</span>, <span class="k">"noul"</span>: 0.95}</pre>
+            </div>
+          </div>
+        </li>
+        <li class="o-reveal">
+          <div class="j-win">
+            <div class="j-win-bar"><span>type: choice</span><i aria-hidden="true"></i></div>
+            <div class="j-win-body">
+              <p class="j-type-name"><b>choice</b><span>elegir una opción</span></p>
+              <p class="j-type-desc"><code>criteria</code> asigna una descripción a cada opción, de 1 a 255 opciones. Devuelve la opción elegida, un nivel de confianza y una probabilidad para cada opción.</p>
+              <span class="j-snip-label">petición</span>
+<pre class="j-snip"><span class="k">"department"</span>: {
+  <span class="k">"type"</span>: <span class="s">"choice"</span>,
+  <span class="k">"criteria"</span>: {<span class="k">"billing"</span>: <span class="s">"…"</span>, <span class="k">"sales"</span>: <span class="s">"…"</span>, <span class="k">"technical"</span>: <span class="s">"…"</span>}
+}</pre>
+              <span class="j-snip-label">respuesta</span>
+<pre class="j-snip">{<span class="k">"choice"</span>: <span class="s">"billing"</span>, <span class="k">"confidence"</span>: 0.81,
+ <span class="k">"probabilities"</span>: {<span class="k">"billing"</span>: 0.88, <span class="k">"sales"</span>: 0, <span class="k">"technical"</span>: 0.12}}</pre>
+            </div>
+          </div>
+        </li>
+        <li class="o-reveal">
+          <div class="j-win">
+            <div class="j-win-bar"><span>type: score</span><i aria-hidden="true"></i></div>
+            <div class="j-win-body">
+              <p class="j-type-name"><b>score</b><span>puntuar en una escala</span></p>
+              <p class="j-type-desc"><code>criteria</code> es un array ordenado de 2 a 10 niveles. Devuelve una puntuación ponderada por probabilidad (puede ser decimal), un nivel de confianza, una leyenda y las probabilidades de cada nivel.</p>
+              <span class="j-snip-label">petición</span>
+<pre class="j-snip"><span class="k">"frustration"</span>: {
+  <span class="k">"type"</span>: <span class="s">"score"</span>,
+  <span class="k">"criteria"</span>: [<span class="s">"Calm"</span>, <span class="s">"Frustrated"</span>, <span class="s">"Very angry"</span>]
+}</pre>
+              <span class="j-snip-label">respuesta</span>
+<pre class="j-snip">{<span class="k">"score"</span>: 1.05, <span class="k">"confidence"</span>: 0.92,
+ <span class="k">"probabilities"</span>: {<span class="k">"0"</span>: 0, <span class="k">"1"</span>: 0.95, <span class="k">"2"</span>: 0.05}}</pre>
+            </div>
+          </div>
+        </li>
+        <li class="o-reveal">
+          <div class="j-win j-win-gray">
+            <div class="j-win-bar"><span>¿Necesitas imágenes o box?</span><i aria-hidden="true"></i></div>
+            <div class="j-win-body">
+              <p class="j-type-name"><b>jev-1.14.0</b><span>contexto de 256k, imágenes, box</span></p>
+              <p class="j-type-desc">En AnyAIGC, jev-1.13.0 admite entrada de texto con un contexto de 32k. El tipo experimental box para localizar objetos en imágenes, la entrada de imágenes y el contexto de 256k están en <a href="/es/models/jev-1.14.0">jev-1.14.0</a>, al mismo precio.</p>
+              <span class="j-snip-label">cambiar</span>
+<pre class="j-snip"><span class="k">"model"</span>: <span class="s">"jev-1.14.0"</span></pre>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="o-section j-band-gray" id="pricing" aria-labelledby="pricing-title">
+    <div class="o-wrap j-wide">
+      <div class="j-head j-crop o-reveal">
+        <span class="j-kicker">03 · PRECIOS</span>
+        <h2 class="o-h2" id="pricing-title">Precio de la API de jev-1.13.0</h2>
+        <p class="o-lead">Pago por uso solo sobre los tokens de entrada. La salida es gratuita y no hay suscripción ni cuota mensual.</p>
+      </div>
+      <ul class="o-billing o-reveal" aria-label="Facturación de un vistazo">
+        <li><strong>Por token</strong>Solo se cobran los tokens de entrada</li>
+        <li><strong>Salida gratuita</strong>Las respuestas no cuestan nada</li>
+        <li><strong>Concurrencia sin límite</strong>Para todas las cuentas por defecto</li>
+        <li><strong>USD</strong>Un saldo para más de 300 modelos</li>
+      </ul>
+
+      <div class="o-table-wrap o-reveal">
+        <table class="o-table">
+          <caption class="o-sr">Precio de jev-1.13.0 en AnyAIGC (USD por millón de tokens)</caption>
+          <thead>
+            <tr><th scope="col">Función</th><th scope="col">Modelo</th><th scope="col" class="o-num">Precio (USD)</th></tr>
+          </thead>
+          <tbody>
+            <tr class="j-tgroup"><th scope="rowgroup" colspan="3">Jev 1.13<span>contexto de 32k · entrada de texto</span></th></tr>
+            <tr><th scope="row">Entrada<small>por millón de tokens</small></th><td><code>jev-1.13.0</code></td><td class="o-num o-hl">$0.0227</td></tr>
+            <tr><th scope="row">Salida<small>por millón de tokens</small></th><td><code>jev-1.13.0</code></td><td class="o-num"><span class="o-free">Gratis</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="o-note">Precios en USD, facturados por petición correcta sobre los tokens de entrada; la salida no se cobra. Consulta el <a href="https://anyaigc.ai/pricing">catálogo de modelos de AnyAIGC</a> para ver los precios actuales.</p>
+
+      <h3 class="j-h3 o-reveal">Ejemplos de coste</h3>
+      <p class="o-lead o-reveal">A $0.0227 por millón de tokens de entrada, con salida gratuita.</p>
+      <ul class="o-costs">
+        <li class="o-cost o-reveal">
+          <h4>Clasificar 1M de tickets de soporte</h4>
+          <p class="o-cost-calc">1.000.000 de peticiones × 300 tokens de entrada = 300M tokens</p>
+          <p class="o-cost-total">$6.81</p>
+          <p class="o-cost-off">300 × $0.0227, con varias preguntas por petición</p>
+        </li>
+        <li class="o-cost o-reveal">
+          <h4>Moderar 100k publicaciones</h4>
+          <p class="o-cost-calc">100.000 publicaciones × 500 tokens de entrada = 50M tokens</p>
+          <p class="o-cost-total">$1.135</p>
+          <p class="o-cost-off">50 × $0.0227</p>
+        </li>
+        <li class="o-cost o-reveal">
+          <h4>Etiquetar mil millones de tokens de datos</h4>
+          <p class="o-cost-calc">Map-reduce sobre un conjunto de datos grande, 1.000.000.000 de tokens de entrada</p>
+          <p class="o-cost-total">$22.70</p>
+          <p class="o-cost-off">1,000 × $0.0227</p>
+        </li>
+      </ul>
+      <div class="o-price-cta o-reveal">
+        <a class="o-btn o-btn-dark" href="https://anyaigc.ai/register?aff=oOK7&channel=c_wpduopc9">Obtener clave de API</a>
+        <a class="j-link" href="https://anyaigc.ai/pricing">Ver en el catálogo de modelos</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Use cases -->
+  <section class="o-section j-band-pink" id="use-cases" aria-labelledby="uses-title">
+    <div class="o-wrap">
+      <div class="j-head j-crop o-reveal">
+        <span class="j-kicker">04 · CASOS DE USO</span>
+        <h2 class="o-h2" id="uses-title">Para qué sirve jev-1.13.0</h2>
+        <p class="o-lead">En cualquier lugar donde tu código necesite un resultado sobre el que ramificar, ordenar o lanzar alertas.</p>
+      </div>
+      <ul class="j-uses">
+        <li class="o-reveal"><span class="j-k">01 · choice</span><h3>Clasificación e intención</h3><p>Ordena mensajes, productos o documentos en categorías fijas con una probabilidad para cada una y envía los casos de baja confianza a una persona o a un LLM.</p></li>
+        <li class="o-reveal"><span class="j-k">02 · choice + noul</span><h3>Enrutamiento de tickets</h3><p>Una sola petición responde qué equipo se encarga, si es urgente y cuán molesto está el cliente, para saber quién lo recibe y en qué lugar de la cola va.</p></li>
+        <li class="o-reveal"><span class="j-k">03 · score</span><h3>Puntuación de riesgo</h3><p>Puntúa transacciones, pedidos o cuentas según tus propios niveles. La puntuación es un decimal ponderado por probabilidad, lo que facilita definir umbrales.</p></li>
+        <li class="o-reveal"><span class="j-k">04 · noul</span><h3>Moderación de contenido</h3><p>Comprueba comentarios y contenido generado por usuarios en busca de infracciones de las normas, con cada regla como una pregunta propia que se responde en paralelo.</p></li>
+        <li class="o-reveal"><span class="j-k">05 · noul</span><h3>Guardarraíles para LLM</h3><p>Añade una comprobación antes y después de tu LLM: detecta jailbreaks e inyección de prompts, o confirma que una respuesta se ciñe a las fuentes que proporcionaste.</p></li>
+        <li class="o-reveal"><span class="j-k">06 · score</span><h3>Evaluación con LLM como juez</h3><p>Asume parte de tus evaluaciones con LLM como juez y califica respuestas en una escala, pagando solo la entrada. El artículo de arXiv encontró que los juicios de calidad basados en rúbricas son un punto débil, así que haz comprobaciones por muestreo primero.</p></li>
+        <li class="o-reveal"><span class="j-k">07 · if</span><h3>if inteligentes</h3><p>Extrae condiciones del texto: si es una petición de reembolso, si menciona a un competidor, si el cliente quiere que le devuelvan la llamada. Conecta la respuesta directamente a tu lógica.</p></li>
+        <li class="o-reveal"><span class="j-k">08 · map-reduce</span><h3>Trabajos por lotes a gran escala</h3><p>Etiqueta millones de registros uno a uno y agrega los resultados. La concurrencia sin límite y la salida gratuita encajan con el trabajo por lotes sin conexión.</p></li>
+        <li class="o-reveal"><span class="j-k">09 · realtime</span><h3>Aplicaciones en tiempo real</h3><p>TypeSafe indica respuestas típicas de unos 100 ms, lo bastante rápidas para usarse dentro de una petición de cara al usuario.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Benchmarks -->
+  <section class="o-section" id="benchmarks" aria-labelledby="bench-title">
+    <div class="o-wrap">
+      <div class="j-head j-crop o-reveal">
+        <span class="j-kicker">05 · BENCHMARKS</span>
+        <h2 class="o-h2" id="bench-title">Precisión y velocidad de jev-1.13.0</h2>
+        <p class="o-lead">El artículo independiente de la izquierda probó exactamente esta versión. Las cifras propias de TypeSafe están a la derecha, por separado.</p>
+      </div>
+      <div class="j-bench">
+        <div class="j-win o-reveal">
+          <div class="j-win-bar"><span>Artículo de terceros · arXiv 2609.37647</span><i aria-hidden="true"></i></div>
+          <div class="j-win-body">
+            <ul class="j-stats">
+              <li><b>95–99%</b><span>de precisión en IMDB, SST-2, HellaSwag y ARC</span></li>
+              <li><b>86.7%</b><span>en comprensión lectora Belebele en 122 idiomas</span></li>
+              <li><b>27 / 37</b><span>conjuntos de datos en los que superó a Qwen3.8-27B</span></li>
+              <li><b>37 / 37</b><span>conjuntos de datos en los que superó a Gemma-4-E4B</span></li>
+            </ul>
+            <p class="j-bench-weak">El artículo también encontró que Jev es más débil con idiomas de pocos recursos, etiquetas con ruido y juicios de calidad basados en rúbricas.</p>
+            <p class="j-src"><cite>Evaluating and Benchmarking the System One Model Jev</cite>, 2026-09-29. Se probó jev-1.13.0, zero-shot, en 37 conjuntos de datos. <a href="https://arxiv.org/abs/2609.37647" target="_blank" rel="noopener">Leer el artículo ↗</a></p>
+          </div>
+        </div>
+        <div class="j-win j-win-pink j-win-pinkbar o-reveal">
+          <div class="j-win-bar"><span>Según TypeSafe</span><i aria-hidden="true"></i></div>
+          <div class="j-win-body">
+            <ul class="j-race">
+              <li><span class="j-label">Latencia</span><b>70–500 ms</b><span>tiempo de respuesta de extremo a extremo, según TypeSafe</span></li>
+              <li><span class="j-label">Velocidad</span><b>193.6×</b><span>más rápido que los LLM en las evaluaciones de flujos de trabajo de TypeSafe</span></li>
+              <li><span class="j-label">Coste</span><b>444.6×</b><span>más barato que los LLM en las mismas evaluaciones</span></li>
+            </ul>
+            <p class="j-src">Son mediciones propias de TypeSafe, que la propia empresa considera el extremo alto. Tus resultados dependen de tu tarea.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Limitations -->
+  <section class="o-section j-band-sage" id="limits" aria-labelledby="limits-title">
+    <div class="o-wrap j-wide">
+      <div class="j-head j-crop o-reveal">
+        <span class="j-kicker">06 · LIMITACIONES</span>
+        <h2 class="o-h2" id="limits-title">Conoce los límites antes de publicar</h2>
+        <p class="o-lead">Según la guía oficial de TypeSafe. Deja que el código resuelva lo que el código puede calcular y haz una sola cosa por pregunta.</p>
+      </div>
+      <ul class="j-limits">
+        <li class="o-reveal"><strong>Lee el texto al pie de la letra</strong>Responde a la pregunta que escribiste, no a la que querías hacer. Redáctala con precisión.</li>
+        <li class="o-reveal"><strong>No es una calculadora</strong>Evita las operaciones matemáticas y el conteo; hazlos en código.</li>
+        <li class="o-reveal"><strong>Flojo con fechas y razonamiento de varios saltos</strong>Compara las fechas por tu cuenta y divide el razonamiento de varios pasos antes de consultar a Jev.</li>
+        <li class="o-reveal"><strong>El estado irrelevante perjudica</strong>Un estado grande con texto sin relación reduce la precisión. Envía solo lo que importa.</li>
+        <li class="o-reveal"><strong>Riesgo de inyección de prompts</strong>El contenido no confiable dentro del estado puede sesgar las respuestas. Añade salvaguardas en los flujos críticos.</li>
+        <li class="o-reveal"><strong>Sesgo hacia la primera opción</strong>En las preguntas de elección se favorece ligeramente la primera opción. Cambia el orden para comprobarlo.</li>
+        <li class="o-reveal"><strong>No genera texto</strong>No hace chat, resúmenes ni reescrituras. Combínalo con un LLM cuando necesites redactar.</li>
+        <li class="o-reveal"><strong>El inglés es lo que mejor funciona</strong>Otros idiomas funcionan, pero con menor calidad; jev-1.14.0 es la versión que más mejora en multilingüe.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Why AnyAIGC -->
+  <section class="o-section" id="why" aria-labelledby="why-title">
+    <div class="o-wrap">
+      <div class="j-head j-crop o-reveal">
+        <span class="j-kicker">07 · POR QUÉ AnyAIGC</span>
+        <h2 class="o-h2" id="why-title">Usa jev-1.13.0 a través de AnyAIGC</h2>
+        <p class="o-lead">Jev toma la decisión, un LLM redacta el texto y una sola clave cubre ambos.</p>
+      </div>
+      <ul class="j-adv">
+        <li class="o-reveal"><b>300+</b><h3>Una clave para todos los modelos</h3><p>Jev comparte una misma clave de API y un mismo saldo con GPT, Claude y más de 300 modelos.</p></li>
+        <li class="o-reveal"><b>Directo</b><h3>Envía las peticiones directamente</h3><p>Envía las peticiones a <code>https://anyaigc.ai/v1/systemone</code>.</p></li>
+        <li class="o-reveal"><b>$0.0227</b><h3>Precio unitario fijo</h3><p>$0.0227 por millón de tokens de entrada, salida gratuita, precios en USD y sin suscripción.</p></li>
+        <li class="o-reveal"><b>Sin límite</b><h3>Concurrencia sin límite</h3><p>Todas las cuentas tienen concurrencia sin límite por defecto, lista para trabajos por lotes y picos de tráfico.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Quickstart -->
+  <section class="o-section j-band-gray j-full" id="quickstart" aria-labelledby="qs-title">
+    <div class="o-wrap o-col">
+      <div class="j-head j-crop o-reveal">
+        <span class="j-kicker">08 · INICIO RÁPIDO</span>
+        <h2 class="o-h2" id="qs-title">Usa la API de jev-1.13.0 en tres pasos</h2>
+        <p class="o-lead">Jev no es compatible con OpenAI. Llama a <code>/v1/systemone</code> con HTTP simple.</p>
+      </div>
+      <ol class="o-steps o-reveal">
+        <li><strong>Regístrate y recarga saldo</strong>: crea una cuenta en <a href="https://anyaigc.ai/register?aff=oOK7&channel=c_wpduopc9">anyaigc.ai</a>. Tu saldo sirve para todos los modelos.</li>
+        <li><strong>Crea una clave de API</strong>: en la consola, crea una clave que empiece por <code>sk-</code> y guárdala en la variable de entorno <code>ANYAIGC_API_KEY</code>.</li>
+        <li><strong>Envía una petición</strong>: haz un POST a <code>https://anyaigc.ai/v1/systemone</code> con <code>model</code> igual a <code>jev-1.13.0</code>, además de <code>state</code> y <code>questions</code>. La respuesta es síncrona, así que no hay nada que sondear.</li>
+      </ol>
+
+      <div class="j-code-area o-reveal">
+        <ul class="o-tabs" role="tablist" aria-label="Ejemplos de código">
+          <li role="presentation"><button type="button" role="tab" id="tab-curl" aria-controls="panel-curl" aria-selected="true">cURL</button></li>
+          <li role="presentation"><button type="button" role="tab" id="tab-py" aria-controls="panel-py" aria-selected="false">Python</button></li>
+          <li role="presentation"><button type="button" role="tab" id="tab-node" aria-controls="panel-node" aria-selected="false">Node.js</button></li>
+          <li role="presentation"><button type="button" role="tab" id="tab-res" aria-controls="panel-res" aria-selected="false">Respuesta</button></li>
+        </ul>
+
+        <figure class="o-code" id="panel-curl" role="tabpanel" aria-labelledby="tab-curl">
+          <figcaption><b>POST /v1/systemone · triaje de tickets</b><button class="o-copy" type="button" aria-controls="code-curl" data-done="Copiado">Copiar</button></figcaption>
+<pre id="code-curl"><code>curl https://anyaigc.ai/v1/systemone \
+  -H <span class="s">"Authorization: Bearer $ANYAIGC_API_KEY"</span> \
+  -H <span class="s">"Content-Type: application/json"</span> \
+  -d <span class="s">'{
+    "model": "jev-1.13.0",
+    "state": "Help! My payouts have been failing for 3 days.",
+    "questions": {
+      "department": {
+        "type": "choice",
+        "instructions": "Which team should handle this?",
+        "criteria": {
+          "billing": "Payments, invoicing, refunds",
+          "sales": "Pricing, upgrades, new accounts",
+          "technical": "Bugs, outages, integrations"
+        }
+      },
+      "frustration": {
+        "type": "score",
+        "instructions": "How frustrated is the customer?",
+        "criteria": ["Calm", "Frustrated", "Very angry"]
+      },
+      "is_urgent": {
+        "type": "noul",
+        "instructions": "Does this convey urgency?",
+        "criteria": {"false": "No urgency expressed", "true": "Explicitly time-sensitive"}
+      }
+    }
+  }'</span></code></pre>
+        </figure>
+
+        <figure class="o-code" id="panel-py" role="tabpanel" aria-labelledby="tab-py">
+          <figcaption><b>Python · requests</b><button class="o-copy" type="button" aria-controls="code-py" data-done="Copiado">Copiar</button></figcaption>
+<pre id="code-py"><code><span class="k">import</span> os
+<span class="k">import</span> requests
+
+resp = requests.post(
+    <span class="s">"https://anyaigc.ai/v1/systemone"</span>,
+    headers={<span class="s">"Authorization"</span>: <span class="s">f"Bearer {os.environ['ANYAIGC_API_KEY']}"</span>},
+    json={
+        <span class="s">"model"</span>: <span class="s">"jev-1.13.0"</span>,
+        <span class="s">"state"</span>: <span class="s">"Help! My payouts have been failing for 3 days."</span>,
+        <span class="s">"questions"</span>: {
+            <span class="s">"department"</span>: {
+                <span class="s">"type"</span>: <span class="s">"choice"</span>,
+                <span class="s">"instructions"</span>: <span class="s">"Which team should handle this?"</span>,
+                <span class="s">"criteria"</span>: {
+                    <span class="s">"billing"</span>: <span class="s">"Payments, invoicing, refunds"</span>,
+                    <span class="s">"sales"</span>: <span class="s">"Pricing, upgrades, new accounts"</span>,
+                    <span class="s">"technical"</span>: <span class="s">"Bugs, outages, integrations"</span>,
+                },
+            },
+            <span class="s">"frustration"</span>: {
+                <span class="s">"type"</span>: <span class="s">"score"</span>,
+                <span class="s">"instructions"</span>: <span class="s">"How frustrated is the customer?"</span>,
+                <span class="s">"criteria"</span>: [<span class="s">"Calm"</span>, <span class="s">"Frustrated"</span>, <span class="s">"Very angry"</span>],
+            },
+            <span class="s">"is_urgent"</span>: {
+                <span class="s">"type"</span>: <span class="s">"noul"</span>,
+                <span class="s">"instructions"</span>: <span class="s">"Does this convey urgency?"</span>,
+                <span class="s">"criteria"</span>: {<span class="s">"false"</span>: <span class="s">"No urgency expressed"</span>, <span class="s">"true"</span>: <span class="s">"Explicitly time-sensitive"</span>},
+            },
+        },
+    },
+    timeout=<span class="n">30</span>,
+)
+resp.raise_for_status()
+data = resp.json()
+answers = data[<span class="s">"answers"</span>]
+
+dept = answers[<span class="s">"department"</span>]
+print(<span class="s">"department:"</span>, dept[<span class="s">"choice"</span>], dept[<span class="s">"confidence"</span>])
+print(<span class="s">"frustration:"</span>, answers[<span class="s">"frustration"</span>][<span class="s">"score"</span>])
+print(<span class="s">"is_urgent:"</span>, answers[<span class="s">"is_urgent"</span>][<span class="s">"noul"</span>])
+print(<span class="s">"usage:"</span>, data[<span class="s">"usage"</span>])  <span class="c"># only input_tokens are billed</span></code></pre>
+        </figure>
+
+        <figure class="o-code" id="panel-node" role="tabpanel" aria-labelledby="tab-node">
+          <figcaption><b>Node.js 18+ · fetch (guárdalo como .mjs)</b><button class="o-copy" type="button" aria-controls="code-node" data-done="Copiado">Copiar</button></figcaption>
+<pre id="code-node"><code><span class="k">const</span> resp = <span class="k">await</span> fetch(<span class="s">"https://anyaigc.ai/v1/systemone"</span>, {
+  method: <span class="s">"POST"</span>,
+  headers: {
+    Authorization: <span class="s">`Bearer ${process.env.ANYAIGC_API_KEY}`</span>,
+    <span class="s">"Content-Type"</span>: <span class="s">"application/json"</span>,
+  },
+  body: JSON.stringify({
+    model: <span class="s">"jev-1.13.0"</span>,
+    state: <span class="s">"Help! My payouts have been failing for 3 days."</span>,
+    questions: {
+      department: {
+        type: <span class="s">"choice"</span>,
+        instructions: <span class="s">"Which team should handle this?"</span>,
+        criteria: {
+          billing: <span class="s">"Payments, invoicing, refunds"</span>,
+          sales: <span class="s">"Pricing, upgrades, new accounts"</span>,
+          technical: <span class="s">"Bugs, outages, integrations"</span>,
+        },
+      },
+      frustration: {
+        type: <span class="s">"score"</span>,
+        instructions: <span class="s">"How frustrated is the customer?"</span>,
+        criteria: [<span class="s">"Calm"</span>, <span class="s">"Frustrated"</span>, <span class="s">"Very angry"</span>],
+      },
+      is_urgent: {
+        type: <span class="s">"noul"</span>,
+        instructions: <span class="s">"Does this convey urgency?"</span>,
+        criteria: { <span class="k">false</span>: <span class="s">"No urgency expressed"</span>, <span class="k">true</span>: <span class="s">"Explicitly time-sensitive"</span> },
+      },
+    },
+  }),
+});
+<span class="k">if</span> (!resp.ok) <span class="k">throw new</span> Error(<span class="s">`${resp.status} ${await resp.text()}`</span>);
+
+<span class="k">const</span> { answers, usage } = <span class="k">await</span> resp.json();
+console.log(<span class="s">"department:"</span>, answers.department.choice, answers.department.confidence);
+console.log(<span class="s">"frustration:"</span>, answers.frustration.score);
+console.log(<span class="s">"is_urgent:"</span>, answers.is_urgent.noul);
+console.log(<span class="s">"usage:"</span>, usage);</code></pre>
+        </figure>
+
+        <figure class="o-code" id="panel-res" role="tabpanel" aria-labelledby="tab-res">
+          <figcaption><b>200 OK · application/json</b><button class="o-copy" type="button" aria-controls="code-res" data-done="Copiado">Copiar</button></figcaption>
+<pre id="code-res"><code>{
+  <span class="s">"answers"</span>: {
+    <span class="s">"department"</span>: {
+      <span class="s">"type"</span>: <span class="s">"choice"</span>,
+      <span class="s">"choice"</span>: <span class="s">"billing"</span>,
+      <span class="s">"confidence"</span>: <span class="n">0.81</span>,
+      <span class="s">"probabilities"</span>: {<span class="s">"billing"</span>: <span class="n">0.88</span>, <span class="s">"sales"</span>: <span class="n">0</span>, <span class="s">"technical"</span>: <span class="n">0.12</span>}
+    },
+    <span class="s">"frustration"</span>: {
+      <span class="s">"type"</span>: <span class="s">"score"</span>,
+      <span class="s">"score"</span>: <span class="n">1.05</span>,
+      <span class="s">"confidence"</span>: <span class="n">0.92</span>,
+      <span class="s">"legend"</span>: {<span class="s">"0"</span>: <span class="s">"Calm"</span>, <span class="s">"1"</span>: <span class="s">"Frustrated"</span>, <span class="s">"2"</span>: <span class="s">"Very angry"</span>},
+      <span class="s">"probabilities"</span>: {<span class="s">"0"</span>: <span class="n">0</span>, <span class="s">"1"</span>: <span class="n">0.95</span>, <span class="s">"2"</span>: <span class="n">0.05</span>}
+    },
+    <span class="s">"is_urgent"</span>: {<span class="s">"type"</span>: <span class="s">"noul"</span>, <span class="s">"noul"</span>: <span class="n">0.95</span>}
+  },
+  <span class="s">"model"</span>: <span class="s">"jev-1.13.0"</span>,
+  <span class="s">"usage"</span>: {<span class="s">"input_tokens"</span>: <span class="n">318</span>, <span class="s">"output_tokens"</span>: <span class="n">34</span>}
+}</code></pre>
+        </figure>
+      </div>
+
+      <p class="j-callout j-callout-pink o-reveal"><span><strong>Mantén las peticiones por debajo de 32k tokens.</strong> En AnyAIGC, jev-1.13.0 tiene una ventana de contexto de 32k tokens. Para entradas más largas, divide el contenido en varias peticiones, elimina de <code>state</code> el texto irrelevante o pasa a <a href="/es/models/jev-1.14.0">jev-1.14.0</a>, con su contexto de 256k.</span></p>
+      <p class="o-note">Los valores de la respuesta provienen de la documentación de la API de AnyAIGC. <code>model</code> devuelve la versión que se ejecutó y <code>usage.output_tokens</code> no se factura. Un cuerpo no válido devuelve 400 y una clave no válida devuelve 401, con un cuerpo de error con la forma <code>{"error": {"code", "message", "param", "type"}}</code>. Los parámetros completos están en la <a href="https://docs.anyaigc.ai/en/reference/typesafe/v1/systemone" target="_blank" rel="noopener">documentación de la API System One de AnyAIGC</a>.</p>
+    </div>
+  </section>
+
+  <!-- Enterprise -->
+  <section class="o-section j-band-pink" id="enterprise" aria-labelledby="ent-title">
+    <div class="o-wrap j-wide">
+      <div class="j-head j-crop o-reveal">
+        <span class="j-kicker">09 · EMPRESAS</span>
+        <h2 class="o-h2" id="ent-title">API de jev-1.13.0 para equipos y empresas</h2>
+        <p class="o-lead">Compra con el proceso habitual de tu empresa, con soporte para finanzas, legal e ingeniería.</p>
+      </div>
+      <ul class="o-cards">
+        <li class="o-card o-reveal"><strong>Facturas</strong><h3>Emítelas por tu cuenta</h3><p>Emite una factura en la consola por el importe que hayas recargado realmente, cuando la necesites.</p></li>
+        <li class="o-card o-reveal"><strong>Soporte dedicado</strong><h3>Soporte y contacto técnico</h3><p>Un contacto dedicado de soporte y técnico te ayuda con la integración, el ajuste de umbrales y las incidencias del día a día.</p></li>
+      </ul>
+      <div class="pay-row o-reveal" role="group" aria-label="Métodos de pago"><span class="pay-label">Métodos de pago</span><ul class="pay-list"><li>WeChat Pay</li><li>Alipay</li><li>USDT</li><li>Tarjeta de crédito</li></ul></div>
+      <div class="o-price-cta o-reveal">
+        <a class="o-btn o-btn-dark" href="https://anyaigc.ai/customersupport">Hablar con ventas</a>
+        <a class="o-btn o-btn-light" href="https://anyaigc.ai/register?aff=oOK7&channel=c_wpduopc9">Empezar con una cuenta gratuita</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST -->
+  <section class="o-section" id="trust" aria-labelledby="trust-title">
+    <div class="o-wrap o-col">
+      <h2 class="o-h2 o-reveal" id="trust-title">Por qué los equipos confían en AnyAIGC</h2>
+      <p class="o-lead o-reveal">Crédito de prueba, recargas, reembolsos, tratamiento de datos y facturación, todo explicado desde el principio.</p>
+      <ul class="trust-list">
+        <li class="o-reveal"><h3>2M de tokens gratis para empezar</h3><p>Las cuentas nuevas reciben crédito de prueba para que pruebes antes de recargar saldo.</p></li>
+        <li class="o-reveal"><h3>Recarga desde $1, con reembolso</h3><p>Recarga desde $1. El saldo no utilizado se puede reembolsar sin comisión.</p></li>
+        <li class="o-reveal"><h3>Canales oficiales, modelos reales</h3><p>Las peticiones van a los canales oficiales de los modelos, nunca a sustitutos más baratos o de ingeniería inversa.</p></li>
+        <li class="o-reveal"><h3>Sin retención, sin entrenamiento</h3><p>Salvo que la ley lo exija, tus prompts y resultados no se almacenan de forma persistente ni se usan para entrenar modelos. Consulta la <a href="/privacy">política de privacidad</a>.</p></li>
+        <li class="o-reveal"><h3>Facturación transparente, límites de gasto</h3><p>Consulta los tokens y el coste de cada petición en la consola y define una cuota para cada clave de API.</p></li>
+        <li class="o-reveal"><h3>Soporte 24/7</h3><p><a href="https://anyaigc.ai/customersupport">Contacta con soporte</a> en cualquier momento para consultas sobre integración, facturación o incidencias.</p></li>
+      </ul>
+      <div class="o-price-cta o-reveal"><a class="o-btn o-btn-dark" href="https://anyaigc.ai/register?aff=oOK7&channel=c_wpduopc9">Regístrate y recibe 2M de tokens gratis</a></div>
+    </div>
+  </section>
+  <!-- /TRUST -->
+
+  <!-- FAMILY -->
+  <section class="o-section" id="family" aria-labelledby="family-title">
+    <div class="o-wrap j-wide">
+      <div class="j-head j-crop o-reveal">
+        <h2 class="o-h2" id="family-title">Modelos Jev</h2>
+        <p class="o-lead">Una sola clave de API sirve para todas las versiones de Jev que figuran abajo.</p>
+      </div>
+      <ul class="o-family o-reveal">
+        <li><a href="/es/models/jev"><b>Resumen de Jev</b><span>El modelo System One, comparación de versiones y precios</span></a></li>
+        <li><a href="/es/models/jev-1.14.0"><span class="o-tag">Más reciente</span><b>jev-1.14.0</b><span>Contexto de 256k, imágenes y box experimentales · entrada $0.0227 / 1M</span></a></li>
+        <li><a href="/es/models/jev-1.13.0" aria-current="page"><span class="j-cur">Esta página</span><b>jev-1.13.0</b><span>Primera versión pública, contexto de 32k · entrada $0.0227 / 1M</span></a></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="o-section j-dark" id="faq" aria-labelledby="faq-title">
+    <div class="o-wrap">
+      <div class="j-head j-crop o-reveal" style="--cc:#FEFEFE">
+        <span class="j-kicker">Preguntas frecuentes</span>
+        <h2 class="o-h2" id="faq-title">Preguntas frecuentes sobre la API de jev-1.13.0</h2>
+      </div>
+      <div class="o-faq">
+        <details open><summary><h3>¿Qué es jev-1.13.0?</h3></summary><div class="o-ans"><p>jev-1.13.0 es la primera versión pública de Jev, el modelo System One de TypeSafe AI, anunciada el 15 de septiembre de 2026. System One toma su nombre del juicio rápido e intuitivo de Kahneman. Envías el contenido que se debe evaluar (<code>state</code>) y un conjunto de preguntas tipadas, y Jev devuelve respuestas tipadas con probabilidades calibradas en lugar de texto libre. En AnyAIGC tiene un contexto de 32k tokens y admite los tipos de pregunta noul, choice y score.</p></div></details>
+        <details><summary><h3>¿Está obsoleto jev-1.13.0?</h3></summary><div class="o-ans"><p>No. El 14 de octubre de 2026 se publicó una versión más reciente, <a href="/es/models/jev-1.14.0">jev-1.14.0</a>, pero jev-1.13.0 sigue disponible en AnyAIGC y no se ha anunciado ninguna fecha de cierre. TypeSafe indica que avisará con 60 días de antelación antes de retirar jev-1.13.0. Las integraciones existentes pueden seguir funcionando; para proyectos nuevos recomendamos jev-1.14.0.</p></div></details>
+        <details><summary><h3>¿Cuánto cuesta la API de jev-1.13.0?</h3></summary><div class="o-ans"><p>En AnyAIGC, jev-1.13.0 cuesta $0.0227 por millón de tokens de entrada y la salida es gratuita. La facturación es por token y solo se cobran los tokens de entrada. Por ejemplo, 1.000.000 de peticiones de 300 tokens de entrada cada una suman 300M de tokens, que equivalen a $6.81. La concurrencia no tiene límite para ningún usuario. El precio actual está en el <a href="https://anyaigc.ai/pricing">catálogo de modelos de AnyAIGC</a>.</p></div></details>
+        <details><summary><h3>¿Qué diferencia hay entre jev-1.13.0 y jev-1.14.0?</h3></summary><div class="o-ans"><p>jev-1.13.0 es la primera versión pública (15 de septiembre de 2026), con un contexto de 32k tokens, entrada de texto y los tipos de pregunta noul, choice y score. jev-1.14.0 (14 de octubre de 2026) aporta pequeñas mejoras generales, con la mayor ganancia en multilingüe según TypeSafe. En AnyAIGC tiene un contexto de 256k tokens y añade entrada de imágenes experimental y el tipo de pregunta box. Ambas cuestan lo mismo.</p></div></details>
+        <details><summary><h3>¿Es la API de jev-1.13.0 compatible con OpenAI?</h3></summary><div class="o-ans"><p>No. Jev usa la API System One de TypeSafe: <code>POST https://anyaigc.ai/v1/systemone</code> con <code>model</code>, <code>state</code> y <code>questions</code> en el cuerpo, y <code>answers</code> y <code>usage</code> en la respuesta. No hay <code>messages</code> ni <code>choices</code>, por lo que los SDK de OpenAI no pueden llamarla. Usa HTTP simple con requests, fetch o cURL y la cabecera habitual <code>Authorization: Bearer &lt;API Key&gt;</code>. La llamada es síncrona: sin streaming y sin sondeo de tareas.</p></div></details>
+        <details><summary><h3>¿Qué limitaciones tiene jev-1.13.0?</h3></summary><div class="o-ans"><p>Según TypeSafe, Jev interpreta el texto al pie de la letra, no es una calculadora (evita las operaciones matemáticas y el conteo), es débil al comparar fechas y en preguntas de varios saltos, pierde precisión cuando el estado contiene mucho texto irrelevante, puede verse afectado por la inyección de prompts y favorece ligeramente la primera opción en las preguntas de elección. No genera texto. El inglés es lo que mejor funciona; otros idiomas funcionan, pero con peor resultado. El artículo de arXiv de terceros también lo encontró más débil con idiomas de pocos recursos, etiquetas con ruido y juicios de calidad basados en rúbricas.</p></div></details>
+        <details><summary><h3>¿Puedo obtener una factura de AnyAIGC?</h3></summary><div class="o-ans"><p>Sí. Puedes emitir tus propias facturas en la consola, por el importe que hayas recargado realmente.</p></div></details>
+        <details><summary><h3>¿Qué métodos de pago se admiten?</h3></summary><div class="o-ans"><p>Puedes recargar saldo con WeChat Pay, Alipay, USDT o tarjeta de crédito. Tu saldo está en USD y sirve para todos los modelos de la plataforma. Las facturas se pueden emitir en la consola por el importe recargado.</p></div></details>
+        <details><summary><h3>¿Hay crédito de prueba gratuito para usuarios nuevos?</h3></summary><div class="o-ans"><p>Sí. Las cuentas nuevas reciben 2 millones de tokens de crédito de prueba para que pruebes antes de decidir si recargas saldo. Las recargas empiezan en $1.</p></div></details>
+        <details><summary><h3>¿Puedo pedir el reembolso de mi saldo?</h3></summary><div class="o-ans"><p>Sí. El saldo no utilizado se puede reembolsar sin comisión. Contacta con soporte para iniciar el reembolso.</p></div></details>
+        <details><summary><h3>¿Son los modelos reales? ¿Están seguros mis datos?</h3></summary><div class="o-ans"><p>Las peticiones van a los canales oficiales de los modelos, nunca a sustitutos más baratos o de ingeniería inversa. Salvo que la ley lo exija, no almacenamos de forma persistente tus prompts ni tus resultados, ni los usamos para entrenar modelos, y la consola muestra los tokens y el coste de cada petición.</p></div></details>
+      </div>
+    </div>
+  </section>
+
+<!-- related-models --><section class="rel-models o-section" id="related" aria-labelledby="related-title"><div class="o-wrap"><div class="rel-inner"><h2 id="related-title">APIs de modelos relacionados</h2><p>La misma clave de API de AnyAIGC funciona con estos modelos de lenguaje. Compara precios y capacidades.</p><ul class="rel-list"><li><a href="/es/models/gemini-4-hydrogen"><b>API de Gemini 4</b><span>Ver guía →</span></a></li><li><a href="/es/models/deepseek"><b>API de DeepSeek</b><span>Ver guía →</span></a></li><li><a href="/es/models/qwen"><b>API de Qwen</b><span>Ver guía →</span></a></li><li><a href="/es/models/kimi"><b>API de Kimi</b><span>Ver guía →</span></a></li><li><a href="/es/models/glm"><b>API de GLM</b><span>Ver guía →</span></a></li><li><a href="/es/models/grok-4.x"><b>API de Grok 4</b><span>Ver guía →</span></a></li></ul></div></div></section><!-- /related-models -->
+  <!-- Final CTA -->
+  <section class="o-final" aria-labelledby="final-title">
+    <span class="j-blob j-blob-a" aria-hidden="true"></span>
+    <span class="j-blob j-blob-b" aria-hidden="true"></span>
+    <div class="o-wrap">
+      <svg class="j-mark" viewBox="0 0 24 24" fill="#1E1E1E" aria-hidden="true" focusable="false"><path d="M16.512 2.928L16.512 7.067 20.242 9.487 20.243 18.652 12 24 7.489 21.073 7.489 16.82 3.756 14.399 3.756 5.35 4.111 5.118 12 0ZM9.697 20.65L11.998 22.144 18.032 18.227 15.732 16.735ZM12.779 10.332L12.779 14.4 9.046 16.822 9.046 19.216 14.953 15.383 14.953 8.921ZM16.512 15.384L18.684 16.794 18.684 10.332 16.512 8.922ZM5.966 13.976L8.268 15.47 10.569 13.976 8.268 12.485ZM5.316 6.193L5.316 12.544 7.487 11.134 7.487 7.066 11.221 4.643 11.221 2.36 5.316 6.193ZM9.047 11.132L11.22 12.542 11.22 10.332 9.049 8.921 9.049 11.132ZM9.697 7.487L12 8.981 14.3 7.488 12 5.994ZM12.78 4.643L14.953 6.054 14.953 3.774 12.78 2.359Z"></path></svg>
+      <h2 id="final-title">Deja la decisión en manos de Jev</h2>
+      <p>Crea una clave de API y llama a jev-1.13.0 desde tu código en minutos. $0.0227 por millón de tokens de entrada, salida gratuita.</p>
+      <div class="o-cta">
+        <a class="o-btn o-btn-dark" href="https://anyaigc.ai/register?aff=oOK7&channel=c_wpduopc9">Regístrate en AnyAIGC</a>
+        <a class="o-btn o-btn-light" href="https://docs.anyaigc.ai/en/reference/typesafe/v1/systemone" target="_blank" rel="noopener">Lee la documentación de la API</a>
+      </div>
+      <ul class="o-related" aria-label="Más">
+        <li><a class="o-pill" href="/en/models/">Todas las guías de modelos</a></li>
+        <li><a class="o-pill" href="/es/models/jev">Resumen de Jev</a></li>
+        <li><a class="o-pill" href="https://anyaigc.ai/pricing">Catálogo de modelos</a></li>
+        <li><a class="o-pill" href="https://docs.anyaigc.ai/en/reference/typesafe/v1/systemone" target="_blank" rel="noopener">Documentación de la API System One</a></li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer class="o-foot">
+  <div class="o-wrap">
+    <div class="o-foot-top">
+      <div class="o-foot-brand">
+        <a class="o-brand" href="/">AnyAIGC</a>
+        <p>Una pasarela de API para modelos de IA globales. Una sola URL base y una sola clave de API para más de 300 modelos.</p>
+      </div>
+      <div class="o-foot-cols">
+        <div class="o-foot-col">
+          <h2>Producto</h2>
+          <ul>
+            <li><a href="/en/models/">Guías de modelos</a></li>
+            <li><a href="https://anyaigc.ai/pricing">Catálogo de modelos</a></li>
+            <li><a href="https://anyaigc.ai/console">Consola</a></li>
+          </ul>
+        </div>
+        <div class="o-foot-col">
+          <h2>Recursos</h2>
+          <ul>
+            <li><a href="https://docs.anyaigc.ai/en/reference/typesafe/v1/systemone" target="_blank" rel="noopener">Documentación de la API ↗</a></li>
+            <li><a href="https://anyaigc.ai/customersupport">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="o-foot-col">
+          <h2>Legal</h2>
+          <ul>
+            <li><a href="/privacy">Política de privacidad</a></li>
+            <li><a href="/terms">Términos del servicio</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="o-foot-bottom">
+      <p><svg viewBox="0 0 24 24" fill="#FEFEFE" aria-hidden="true" focusable="false"><path d="M16.512 2.928L16.512 7.067 20.242 9.487 20.243 18.652 12 24 7.489 21.073 7.489 16.82 3.756 14.399 3.756 5.35 4.111 5.118 12 0ZM9.697 20.65L11.998 22.144 18.032 18.227 15.732 16.735ZM12.779 10.332L12.779 14.4 9.046 16.822 9.046 19.216 14.953 15.383 14.953 8.921ZM16.512 15.384L18.684 16.794 18.684 10.332 16.512 8.922ZM5.966 13.976L8.268 15.47 10.569 13.976 8.268 12.485ZM5.316 6.193L5.316 12.544 7.487 11.134 7.487 7.066 11.221 4.643 11.221 2.36 5.316 6.193ZM9.047 11.132L11.22 12.542 11.22 10.332 9.049 8.921 9.049 11.132ZM9.697 7.487L12 8.981 14.3 7.488 12 5.994ZM12.78 4.643L14.953 6.054 14.953 3.774 12.78 2.359Z"></path></svg><span>&copy; 2026 AnyAIGC. Jev es una marca de TypeSafe AI. AnyAIGC es un proveedor de API independiente y no está afiliado a TypeSafe AI. El uso comercial está sujeto a los términos oficiales de TypeSafe. Las cifras de benchmarks y velocidad proceden de los materiales públicos de TypeSafe y de un artículo de terceros.</span></p>
+      <details class="lang-menu lang-menu--foot"><summary aria-label="Language: Español">Español</summary><ul class="lang-menu-list"><li><a href="/zh/models/jev-1.13.0" hreflang="zh-CN" lang="zh-CN">中文</a></li><li><a href="/en/models/jev-1.13.0" hreflang="en" lang="en">English</a></li><li><a href="/ja/models/jev-1.13.0" hreflang="ja" lang="ja">日本語</a></li><li><a href="/ko/models/jev-1.13.0" hreflang="ko" lang="ko">한국어</a></li><li><a href="/de/models/jev-1.13.0" hreflang="de" lang="de">Deutsch</a></li></ul></details>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/models/jev.js?v=20261025b" defer></script>
+<script defer src="/assets/models/lang-menu.js?v=20261117c"></script>
+</body>
+</html>

@@ -83,9 +83,9 @@ PRICE = {  # 起步价句式，{p} 为 "$x"
 }
 
 
-def money(amount, lang):
-    """西班牙语、德语小数用逗号，日韩用点；仍为美元。"""
-    return "$" + (amount.replace(".", ",") if lang in ("es", "de") else amount)
+def money(amount):
+    """美元金额，小数一律用点。"""
+    return "$" + amount
 
 
 def new_tags(c, lang):
@@ -94,9 +94,9 @@ def new_tags(c, lang):
     for t in c["tags_en"]:
         if t.startswith("From $"):
             unit = "image" if c["slug"] == "vidu-image-q2" else ("first" if c["start_en"].startswith("first") else "second")
-            out.append(PRICE[unit][lang].format(p=money(t[6:], lang)))
+            out.append(PRICE[unit][lang].format(p=money(t[6:])))
         elif t.startswith("Video from $"):
-            out.append(TXT["Video from"][lang].format(p=money(t[12:], lang)))
+            out.append(TXT["Video from"][lang].format(p=money(t[12:])))
         else:
             out.append(TXT[t][lang])
     return out

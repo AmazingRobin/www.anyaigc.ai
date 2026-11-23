@@ -11,12 +11,20 @@
 <link rel="canonical" href="https://www.anyaigc.ai/zh/models/eleven-v4">
 <link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/zh/models/eleven-v4">
 <link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/models/eleven-v4">
+<link rel="alternate" hreflang="ja" href="https://www.anyaigc.ai/ja/models/eleven-v4">
+<link rel="alternate" hreflang="ko" href="https://www.anyaigc.ai/ko/models/eleven-v4">
+<link rel="alternate" hreflang="es" href="https://www.anyaigc.ai/es/models/eleven-v4">
+<link rel="alternate" hreflang="de" href="https://www.anyaigc.ai/de/models/eleven-v4">
 <link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/models/eleven-v4">
 <link rel="icon" href="/favicon.ico">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="AnyAIGC">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:locale:alternate" content="ko_KR">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:locale:alternate" content="de_DE">
 <meta property="og:url" content="https://www.anyaigc.ai/zh/models/eleven-v4">
 <meta property="og:title" content="Eleven v4 API 价格与接入｜约官方 8.1 折 - AnyAIGC">
 <meta property="og:description" content="eleven_v4 $0.6480/万字符，约官方 8.1 折。ElevenLabs 旗舰语音合成模型，情感层次细腻，适合有声书、配音和高质量成品音频，并发不限，支持对公转账与增值税专票。">
@@ -29,6 +37,7 @@
 <meta name="twitter:description" content="eleven_v4 $0.6480/万字符，约官方 8.1 折。ElevenLabs 旗舰语音合成模型，情感层次细腻，适合有声书、配音和高质量成品音频，并发不限，支持对公转账与增值税专票。">
 <meta name="twitter:image" content="https://www.anyaigc.ai/assets/og/eleven-v4-zh.png">
 <link rel="stylesheet" href="/assets/models/scrollbar.css?v=20261125">
+<link rel="stylesheet" href="/assets/models/lang-menu.css?v=20261117c">
 <link rel="preload" as="image" href="/assets/models/eleven/hero-v4.webp" media="(min-width:641px)">
 <link rel="stylesheet" href="/assets/models/eleven.css?v=20261113">
 <script type="application/ld+json">
@@ -293,7 +302,7 @@
       </ul>
     </nav>
     <ul class="o-nav-right">
-      <li><a class="o-pill" href="/en/models/eleven-v4" hreflang="en" lang="en">English</a></li>
+      <li><details class="lang-menu"><summary aria-label="Language: 中文">ZH</summary><ul class="lang-menu-list"><li><a href="/en/models/eleven-v4" hreflang="en" lang="en">English</a></li><li><a href="/ja/models/eleven-v4" hreflang="ja" lang="ja">日本語</a></li><li><a href="/ko/models/eleven-v4" hreflang="ko" lang="ko">한국어</a></li><li><a href="/es/models/eleven-v4" hreflang="es" lang="es">Español</a></li><li><a href="/de/models/eleven-v4" hreflang="de" lang="de">Deutsch</a></li></ul></details></li>
       <li><a class="o-pill el-nav-login" href="https://anyaigc.ai/console">登录</a></li>
       <li><a class="o-pill el-nav-cta" href="https://anyaigc.ai/register?aff=oOK7&channel=c_wpduopc9">免费注册</a></li>
     </ul>
@@ -652,7 +661,6 @@ client = OpenAI(base_url=<span class="s">"https://anyaigc.ai/v1"</span>, api_key
       <ul class="o-related" aria-label="更多">
         <li><a class="o-pill" href="/zh/models/">全部模型专题</a></li>
         <li><a class="o-pill" href="https://anyaigc.ai/pricing">模型广场</a></li>
-        <li><a class="o-pill" href="/en/models/eleven-v4" hreflang="en" lang="en">Eleven v4 API in English</a></li>
       </ul>
     </div>
   </section>
@@ -692,11 +700,12 @@ client = OpenAI(base_url=<span class="s">"https://anyaigc.ai/v1"</span>, api_key
     </div>
     <div class="o-foot-bottom">
       <p><svg class="el-mark el-foot-mark" viewBox="0 0 24 24" fill="#ffffff" aria-hidden="true" focusable="false"><path d="M5 0h5v24H5V0zM14 0h5v24h-5V0z"></path></svg><span>&copy; 2026 AnyAIGC。Eleven、ElevenLabs 是 Eleven Labs, Inc. 的商标。AnyAIGC 是独立的 API 服务商，与 ElevenLabs 无隶属或合作关系。模型参数与官方价引自 ElevenLabs 公开文档和价格页，商用授权与音色版权以 ElevenLabs 官方条款为准。</span></p>
-      <a class="o-pill" href="/en/models/eleven-v4" hreflang="en" lang="en">English</a>
+      <details class="lang-menu lang-menu--foot"><summary aria-label="Language: 中文">中文</summary><ul class="lang-menu-list"><li><a href="/en/models/eleven-v4" hreflang="en" lang="en">English</a></li><li><a href="/ja/models/eleven-v4" hreflang="ja" lang="ja">日本語</a></li><li><a href="/ko/models/eleven-v4" hreflang="ko" lang="ko">한국어</a></li><li><a href="/es/models/eleven-v4" hreflang="es" lang="es">Español</a></li><li><a href="/de/models/eleven-v4" hreflang="de" lang="de">Deutsch</a></li></ul></details>
     </div>
   </div>
 </footer>
 
 <script src="/assets/models/eleven.js?v=20261113" defer></script>
+<script defer src="/assets/models/lang-menu.js?v=20261117c"></script>
 </body>
 </html>

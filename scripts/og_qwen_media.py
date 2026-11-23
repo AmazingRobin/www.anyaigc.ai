@@ -112,11 +112,9 @@ PER_I18N = {
 
 
 def price_i18n(m, lang):
-    """美元数字与英文图一致；es/de 小数点改逗号，只翻译单位。"""
+    """美元数字与英文图一致，只翻译单位。"""
     r = entry_rate(m)
     amount = money(r['amount'], m, 'en')
-    if lang in ('es', 'de'):
-        amount = amount.replace('.', ',')
     if r['unit'] in PER_I18N:
         per = PER_I18N[r['unit']][lang]
         return {'ja': f'{amount} / {per}', 'ko': f'{per} {amount}'}.get(lang, f'{amount} {per}')

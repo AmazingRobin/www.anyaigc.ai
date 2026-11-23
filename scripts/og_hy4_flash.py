@@ -2,9 +2,19 @@
 
 Usage: python scripts/og_hy4_flash.py  -> .playwright-mcp/hy4-flash-og/hy4-flash-<lang>.html
 Screenshot each at 1200x630 into assets/og/hy4-flash-<lang>.png, then delete the temp HTML.
+
+新语言 / 重出英文图（需先 python scripts/preview.py）：
+    python scripts/og_hy4_flash.py --langs=ja,ko,es,de [--only=hy4-flash]
+    python scripts/og_hy4_flash.py --langs=en
+直接截图到 assets/og/<slug>-<lang>.png，截图前量 DOM 自检，越界/重叠自动缩小字号，仍违例不出图；zh 图不在这里重出。
 """
+import sys
 from html import escape
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import og_newlang as nl  # noqa: E402
+from og_newlang import L  # noqa: E402
 
 from hy4_flash_data import PRICES
 from hy4_flash_pages import mark, DEAL_ZH, DEAL_EN
@@ -26,8 +36,27 @@ h1 small{display:block;margin-top:18px;font-size:32px;line-height:1.35;font-weig
 .art{position:absolute;right:56px;top:96px;width:430px;height:430px;background:#fff;border:1px solid #e6e6e6;border-radius:8px}
 .art svg{display:block;width:100%;height:100%}
 .tags{position:absolute;left:72px;bottom:58px;display:flex;gap:12px;margin:0;padding:0;list-style:none}
-.tags li{padding:8px 18px;border-radius:999px;background:#fff;border:1px solid #e6e6e6;font-size:20px;color:#333}
+.tags li{padding:8px 18px;border-radius:999px;background:#fff;border:1px solid #e6e6e6;font-size:20px;color:#333;white-space:nowrap}
+.deal{white-space:nowrap}
+.n h1 small{font-size:28px}.n .deal b{font-size:21px}.n .deal span{font-size:19px}.n .tags li{font-size:18px;padding:8px 15px}
 """
+
+# 新语言文案（事实只取英文页现有内容）；缺词直接 KeyError，不回退英文
+TXT = {
+    "OpenAI + Anthropic": L("OpenAI + Anthropic", "OpenAI + Anthropic", "OpenAI + Anthropic", "OpenAI + Anthropic"),
+}
+DEAL_I18N = {  # 英文图「About N% off list」；列表价用各语言的「定价」说法（简报术语表）
+    "ja": "定価より約{n}%オフ", "ko": "공식 정가 대비 약 {n}% 저렴",
+    "es": "Aprox. {n} % menos que la lista", "de": "Rund {n} % unter Listenpreis",
+}
+DETAIL_I18N = {
+    "ja": "入力 {a} · 定価 {o}", "ko": "입력 {a} · 정가 {o}", "es": "Entrada {a} · lista {o}", "de": "Eingabe {a} · Liste {o}",
+}
+SUB_I18N = {
+    "ja": "日常業務向けの低コストモデル", "ko": "일상 업무를 위한 저비용 모델",
+    "es": "Un modelo de bajo coste para el trabajo diario", "de": "Ein kostengünstiges Modell für die tägliche Arbeit",
+}
+SAVE = 60  # 「About 60% off list」
 
 
 def art():
@@ -42,20 +71,41 @@ def art():
             f'<text x="378" y="286" font-size="40" font-family="Georgia, Times New Roman, serif" fill="{ink}">flash</text></svg>')
 
 
-def page(lang):
-    zh = lang == "zh"
+def fields(lang):
+    """返回 (品牌名, 副标题, 折扣标签, 价格说明, 标签列表)。新语言逐项查词表，不回退英文。"""
     p = PRICES[0]
-    sub = "面向日常工作的高性价比模型" if zh else "A low-cost model for everyday work"
-    detail = f'输入 ${p["amount"]} · 官方 ${p["official"]}' if zh else f'Input ${p["amount"]} · list ${p["official"]}'
-    tags = ["图像理解", "1M 上下文", "并发不限", "对公 · 专票"] if zh else ["Image input", "1M context", "Unlimited concurrency", "VAT invoices"]
+    if lang in nl.NEW:
+        a, o = nl.money(p["amount"], lang), nl.money(p["official"], lang)
+        deal = DEAL_I18N[lang].format(n=SAVE)
+        detail = DETAIL_I18N[lang].format(a=a, o=o)
+        tags = [nl.word(t, lang, TXT) for t in ["Image input", "1M context", "Unlimited concurrency", nl.ENT_EN]]
+        return "Tencent Hunyuan", SUB_I18N[lang], deal, detail, tags
+    if lang == "zh":
+        return "腾讯混元", "面向日常工作的高性价比模型", DEAL_ZH, f'输入 ${p["amount"]} · 官方 ${p["official"]}', ["图像理解", "1M 上下文", "并发不限", "对公 · 专票"]
+    return "Tencent Hunyuan", "A low-cost model for everyday work", DEAL_EN, f'Input ${p["amount"]} · list ${p["official"]}', [nl.ENT_EN if t == "VAT invoices" else t for t in ["Image input", "1M context", "Unlimited concurrency", nl.ENT_EN]]
+
+
+def page(lang):
+    brand, sub, deal, detail, tags = fields(lang)
     lis = "".join(f"<li>{escape(t)}</li>" for t in tags)
-    return (f'<!doctype html><html lang="{"zh-CN" if zh else "en"}"><head><meta charset="utf-8"><title>Hy4 Flash API</title><style>{CSS}</style></head><body>'
-            f'<div class="art">{art()}</div><div class="main"><div class="brand">AnyAIGC <i>×</i> {mark("m", 40)} {"腾讯混元" if zh else "Tencent Hunyuan"}</div>'
+    return (f'<!doctype html><html lang="{nl.LANGATTR[lang]}"><head><meta charset="utf-8"><title>Hy4 Flash API</title><style>{CSS}</style></head><body>'
+            f'<div class="art">{art()}</div><div class="main"><div class="brand">AnyAIGC <i>×</i> {mark("m", 40)} {brand}</div>'
             f'<h1>Hy4 Flash API<small>{escape(sub)}</small></h1>'
-            f'<div class="deal"><b>{escape(DEAL_ZH if zh else DEAL_EN)}</b><span>{escape(detail)}</span></div></div><ul class="tags">{lis}</ul></body></html>')
+            f'<div class="deal"><b>{escape(deal)}</b><span>{escape(detail)}</span></div></div><ul class="tags">{lis}</ul></body></html>')
+
+
+# 版面自检配置：右侧图框不能被文字压到，标签不能越出画面
+SLUGS = ["hy4-flash"]
+CFG = {"scale": ["h1", "h1 small", [".deal b", ".deal span"]], "chips": [".tags li"],
+       "check": ["h1", "h1 small", ".deal", ".brand"], "obst": [".art"], "max": [1200, 630]}
 
 
 def main():
+    langs, only, html_only = nl.parse_args(sys.argv, SLUGS)
+    if langs:
+        jobs = [("hy4-flash", lang, page(lang)) for lang in langs if only is None or "hy4-flash" in only]
+        nl.shoot(jobs, str(ROOT), str(OUT), ".playwright-mcp/hy4-flash-og", CFG, html_only)
+        return
     OUT.mkdir(parents=True, exist_ok=True)
     for lang in ("zh", "en"):
         (OUT / f"hy4-flash-{lang}.html").write_text(page(lang), encoding="utf-8")

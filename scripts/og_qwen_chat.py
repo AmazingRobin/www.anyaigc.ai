@@ -82,13 +82,9 @@ def facts(slug):
     return {'name': h1[:-4], 'price': price.group(1), 'overview': 'Compare 24 Models' in title}
 
 
-def fmt_price(p, lang):
-    return p.replace('.', ',') if lang in ('es', 'de') else p
-
-
 def build(slug, lang):
     f = facts(slug)
-    price = fmt_price(f['price'], lang)
+    price = f['price']
     line1 = (tr('compare24', lang) + ' ' if f['overview'] else '') + tr('compat', lang)
     line2 = tr('from', lang).replace('{p}', price)
     # 两行各占一块，价格短语不会被拆开，避免第二行只剩一个孤词
