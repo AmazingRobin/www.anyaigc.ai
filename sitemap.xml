@@ -3,8 +3,70 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://www.anyaigc.ai/</loc>
-    <lastmod>2026-11-17</lastmod>
-    </url>
+    <lastmod>2026-11-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.anyaigc.ai/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.anyaigc.ai/ko/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.anyaigc.ai/es/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.anyaigc.ai/de/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/en/</loc>
+    <lastmod>2026-11-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.anyaigc.ai/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.anyaigc.ai/ko/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.anyaigc.ai/es/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.anyaigc.ai/de/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/ja/</loc>
+    <lastmod>2026-11-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.anyaigc.ai/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.anyaigc.ai/ko/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.anyaigc.ai/es/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.anyaigc.ai/de/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/ko/</loc>
+    <lastmod>2026-11-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.anyaigc.ai/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.anyaigc.ai/ko/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.anyaigc.ai/es/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.anyaigc.ai/de/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/es/</loc>
+    <lastmod>2026-11-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.anyaigc.ai/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.anyaigc.ai/ko/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.anyaigc.ai/es/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.anyaigc.ai/de/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/de/</loc>
+    <lastmod>2026-11-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.anyaigc.ai/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.anyaigc.ai/ko/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.anyaigc.ai/es/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.anyaigc.ai/de/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/"/>
+  </url>
   <url>
     <loc>https://www.anyaigc.ai/zh/models/</loc>
     <lastmod>2026-11-20</lastmod>
@@ -1789,12 +1851,136 @@
   </url>
   <url>
     <loc>https://www.anyaigc.ai/privacy</loc>
-    <lastmod>2026-10-22</lastmod>
-    </url>
+    <lastmod>2026-11-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/privacy"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/privacy"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.anyaigc.ai/ja/privacy"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.anyaigc.ai/ko/privacy"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.anyaigc.ai/es/privacy"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.anyaigc.ai/de/privacy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/privacy"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/en/privacy</loc>
+    <lastmod>2026-11-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/privacy"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/privacy"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.anyaigc.ai/ja/privacy"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.anyaigc.ai/ko/privacy"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.anyaigc.ai/es/privacy"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.anyaigc.ai/de/privacy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/privacy"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/ja/privacy</loc>
+    <lastmod>2026-11-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/privacy"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/privacy"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.anyaigc.ai/ja/privacy"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.anyaigc.ai/ko/privacy"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.anyaigc.ai/es/privacy"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.anyaigc.ai/de/privacy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/privacy"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/ko/privacy</loc>
+    <lastmod>2026-11-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/privacy"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/privacy"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.anyaigc.ai/ja/privacy"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.anyaigc.ai/ko/privacy"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.anyaigc.ai/es/privacy"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.anyaigc.ai/de/privacy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/privacy"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/es/privacy</loc>
+    <lastmod>2026-11-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/privacy"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/privacy"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.anyaigc.ai/ja/privacy"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.anyaigc.ai/ko/privacy"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.anyaigc.ai/es/privacy"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.anyaigc.ai/de/privacy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/privacy"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/de/privacy</loc>
+    <lastmod>2026-11-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/privacy"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/privacy"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.anyaigc.ai/ja/privacy"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.anyaigc.ai/ko/privacy"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.anyaigc.ai/es/privacy"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.anyaigc.ai/de/privacy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/privacy"/>
+  </url>
   <url>
     <loc>https://www.anyaigc.ai/terms</loc>
-    <lastmod>2026-10-22</lastmod>
-    </url>
+    <lastmod>2026-11-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/terms"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/terms"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.anyaigc.ai/ja/terms"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.anyaigc.ai/ko/terms"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.anyaigc.ai/es/terms"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.anyaigc.ai/de/terms"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/terms"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/en/terms</loc>
+    <lastmod>2026-11-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/terms"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/terms"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.anyaigc.ai/ja/terms"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.anyaigc.ai/ko/terms"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.anyaigc.ai/es/terms"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.anyaigc.ai/de/terms"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/terms"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/ja/terms</loc>
+    <lastmod>2026-11-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/terms"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/terms"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.anyaigc.ai/ja/terms"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.anyaigc.ai/ko/terms"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.anyaigc.ai/es/terms"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.anyaigc.ai/de/terms"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/terms"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/ko/terms</loc>
+    <lastmod>2026-11-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/terms"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/terms"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.anyaigc.ai/ja/terms"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.anyaigc.ai/ko/terms"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.anyaigc.ai/es/terms"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.anyaigc.ai/de/terms"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/terms"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/es/terms</loc>
+    <lastmod>2026-11-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/terms"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/terms"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.anyaigc.ai/ja/terms"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.anyaigc.ai/ko/terms"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.anyaigc.ai/es/terms"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.anyaigc.ai/de/terms"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/terms"/>
+  </url>
+  <url>
+    <loc>https://www.anyaigc.ai/de/terms</loc>
+    <lastmod>2026-11-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/terms"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/terms"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.anyaigc.ai/ja/terms"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.anyaigc.ai/ko/terms"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.anyaigc.ai/es/terms"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.anyaigc.ai/de/terms"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/terms"/>
+  </url>
   <url>
     <loc>https://www.anyaigc.ai/zh/models/gemini-4-hydrogen</loc>
     <lastmod>2026-11-19</lastmod>

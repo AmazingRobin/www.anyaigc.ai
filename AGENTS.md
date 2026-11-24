@@ -11,12 +11,17 @@
 - Cloudflare Pages 自动去掉 `.html`：`/zh/models/suno.html` 对外地址是 `/zh/models/suno`。
 
 ```
+index.html                站点首页（中文），en/ ja/ ko/ es/ de/ 下各有 index.html。由 scripts/home_page.py 生成，不要手改
+scripts/home_page.py      站点首页生成脚本；文案在 scripts/home_copy/<lang>.json，样式 assets/home/home.css，脚本 assets/home/home.js
 zh/models/index.html      中文专题首页（所有中文专题的列表）
 zh/models/<slug>.html     中文专题页
 en/models/index.html      英文专题首页
 en/models/<slug>.html     英文专题页
 assets/models/scrollbar.css   所有专题页共用的滚动条样式（必须引入）
-assets/models/hub.css         专题首页样式（沿用站点首页 af-* 风格）
+assets/models/hub.css         专题首页样式（与站点首页同一套暖黑配色，见下方「站点视觉」）
+legal.css                     隐私政策、服务条款、404 的样式（同一套配色）
+privacy.html / terms.html     隐私政策、服务协议的中文原文（法律文本，唯一的源）；en/ ja/ ko/ es/ de/ 下的同名页由 scripts/legal_pages.py 生成，不要手改
+scripts/legal_copy/<lang>.json  法律页译文（src.json 是中文原文抽出的单元）；改了中文原文要先 `python scripts/legal_pages.py extract`，重新翻译变化的单元，再 `build`
 assets/models/<slug>.css      每个专题页自己的样式
 assets/models/<slug>.js       每个专题页自己的交互（可选）
 assets/og/<slug>-zh.png       分享图 1200×630，中英各一张
@@ -79,6 +84,7 @@ scripts/check_topics.py   专题页自检
 - 两个专题首页的 JSON-LD `ItemList`：加 `ListItem`，`position` 顺延，更新 `numberOfItems`。
 - `sitemap.xml`：中英各加一个 `<url>`，带三条 `xhtml:link`（zh-CN / en / x-default），更新 `lastmod`。
 - 专题首页本身的 `lastmod` 也改成当天。
+- 日语、韩语、西班牙语、德语的专题首页和 sitemap 条目在第 8 步「新语言」里补，这里只做中英。
 
 ### 6. 分享图
 
@@ -99,7 +105,52 @@ PYTHONIOENCODING=utf-8 python scripts/check_topics.py
 - 页面写完后，按下面「SEO 后处理脚本」的顺序补跑一遍，再跑 `check_topics.py`。新页的标题、同类模型版块会由这些脚本补上，不用手写。
 - 不要用 `python -m http.server` 预览，它不支持 clean URL，`/en/models/<slug>` 会 404。
 
-### 8. 交付
+### 8. 新语言（ja/ko/es/de）
+
+中文页和英文页做完、「SEO 后处理脚本」跑完、`check_topics.py` 0 错误之后，再做日语、韩语、西班牙语、德语版本。**以英文页为源，不是中文页。** 站点已有 6 种语言（zh、en、ja、ko、es、de），新增的专题页也要补齐，否则这几种语言的用户在语言菜单里会看到页面缺失。`check_topics.py` 会对缺少新语言版本的专题页给出警告（不是错误，可以按系列分批做）：交付时要告诉用户哪些没做、打算什么时候做。
+
+**口径（用户已确认，英文页和新语言页一样适用）：**
+
+- 发票只写「在控制台自助开具，按实际充值金额开具」。不写增值税、专票、对公转账、签订合同、中国大陆可访问、国内直连、海外信用卡。保留微信支付、支付宝、USDT、信用卡，保留「专属客服与技术对接」。
+- 价格和小数一律用小数点（`$0.0596`），德语、西语也不用逗号。
+- 品牌名 `AnyAIGC`；代码、模型 ID、URL、数字原样保留，翻译只动文字。
+- 翻译者和复核者必须是不同的代理；不自动 commit；用户说「暂停」之后不要自己续跑工作流。
+
+**步骤**（S = 这批页面的 slug，P = slug 前缀；单个新型号也当作一个"系列"来做，翻译记忆库会复用已有译文，通常只剩少量待译条目。各脚本的细节和参数见 `scripts/i18n/README.md`）：
+
+```bash
+export PYTHONIOENCODING=utf-8
+python scripts/i18n/overseas.py P                  # 1 英文页改成海外口径（自动登记进 overseas_done.json；不登记 check_topics 就不检查这个前缀）
+python scripts/i18n/china_faq.py P                 #   删掉「能否从中国大陆调用」的 FAQ
+python scripts/i18n/china_body.py P                #   删掉正文里的大陆直连说法
+python scripts/check_topics.py                     #   英文页仍要 0 错误
+python scripts/i18n/merge_tm.py <系列> --all       # 2 合并所有已有的翻译记忆库
+python scripts/i18n/batch.py prepare <系列> S      # 3 合并去重
+python scripts/i18n/batch.py tm-fill <系列> <lang> #   每种语言各跑一次，命中记忆库的直接用
+python scripts/i18n/batch.py tm-chunks <系列> 11000
+#   把 drafts/i18n/<系列>/chunks/*.json 复制成 todo/<lang>-<NN>.json（每种语言一份，翻译工作流读的是 todo/）
+#   4 翻译：scripts/i18n/workflows/translate-group.js（args：series chunks wave brief desc refs），写出 out/<lang>-todo-<NN>.json
+#   然后每种语言 python scripts/i18n/consolidate.py <系列> <lang> 合成 out/<lang>-all.json
+#   复核：scripts/i18n/workflows/review-segmented.js（按 id 段并行，写 out/<lang>-rev-<seg>.json 补丁；check_patch.py 通过、补丁文件 90 秒没变化后 merge_patches.py）
+#   简报：scripts/i18n/briefs/ 里按系列写一份术语表和语气（可复制最近的 batch*.md 改）
+python scripts/i18n/batch.py validate <系列> <lang>   # 5 校验，ERROR 必须为 0
+python scripts/i18n/batch.py render <系列> <lang> S   # 6 渲染成 <lang>/models/<slug>.html
+python scripts/i18n/register.py S                  # 7 sitemap，并给中英页补 hreflang 和语言菜单
+python scripts/i18n/decimal_point.py html          # 8 保证 es/de 没有小数逗号
+python scripts/i18n/relink_home.py                 # 9 首页、隐私政策、服务条款的链接指向各语言自己的页面
+python scripts/i18n/org_logo.py                    #   结构化数据里的 logo
+python scripts/og_<系列>.py --langs=ja,ko,es,de    # 10 分享图（先给脚本加四种语言文案；出图后核对每张的修改时间，Chrome 偶发静默失败会写回旧图）
+python scripts/related_models.py                   # 11 同类模型版块
+python scripts/sitemap_lastmod.py
+python scripts/check_topics.py                     # 12 必须 0 错误，不再有「缺少 x 版本」的警告
+```
+
+- **专题首页（4 种新语言）要补卡片：** `index` 当作一个页面走同样的流程：`batch.py prepare hub index`，`resync.py hub`，补译缺口，`render hub <lang> index`。新增型号后这一步容易漏。
+- **英文页以后又改了，要重新同步：** 先 `prepare`，再 `resync.py <系列>`，补译 `todo-resync-<lang>.json`，再渲染。重新运行任何 `*_pages.py` 生成脚本后，英文页会回到旧写法：要重跑 `overseas.py`、`china_faq.py`、`china_body.py`、`relink_home.py`、`org_logo.py`。
+- **版面检查：** 日语和德语各一页，在 390px 宽下量 `scrollWidth`（`scripts/i18n/mobile_probe.py`），别大量截图。
+- 站点首页（`/`、`/en/` 等）、隐私政策、服务条款不是每次新增型号都要动。改它们见上面「项目速览」里的 `scripts/home_page.py` 和 `scripts/legal_pages.py`。
+
+### 9. 交付
 
 告诉用户改了哪些文件、需要他确认的事实（例如文档里没写清楚的返回字段）、本地预览地址。不要自动提交或推送。
 
@@ -158,7 +209,8 @@ python scripts/check_topics.py          # 12 自检，必须 0 错误
   - 新模型：把 id 加进 `scripts/icons.py` 的 `ICONS`，运行 `python scripts/icons.py --fetch`，再在脚本里加对应页面的替换规则。脚本把 path 内联进页面（首屏、结尾、专题首页卡片），重复运行结果不变。
   - 分享图用同一份 SVG（`scripts/og_claude.py` 读 `assets/icons/claude-color.svg`）。
   - 页脚商标声明照常保留。
-- 专题首页（`/zh/models/`、`/en/models/`）统一用 `hub.css`，沿用站点首页的 af-* 暖色风格，不按模型变。
+- 专题首页（`/zh/models/` 等 6 种语言）统一用 `hub.css`，沿用站点首页的暖黑配色和 logo 顶栏，不按模型变。
+- **站点视觉（2026-11-23 起）：** 站点首页、专题首页、隐私政策、服务条款、404 统一为暖黑底、配色取自品牌 logo（`assets/home/logo.webp`）：底 `#0f0b0a`，奶油文字 `#f6ede3`，主强调珊瑚 `#f68766`，辅助青绿 `#47b4b6`、黄 `#ffd166`，珊瑚按钮上的字 `#2a0d08`。变量定义在 `assets/home/home.css` 的 `:root`，`hub.css`、`legal.css` 各自复制了一份，改色要三处一起改。以前的暖白加珊瑚风格不再使用。顶栏品牌一律用 logo 图片（`/assets/home/logo.webp?v=…`，显示高度 42px），不要再用文字。各模型专题页仍按各自模型官网的风格设计，不受这条限制。
 - **滚动条必须换成该模型的品牌色。** 所有专题页 `<head>` 里先引入 `/assets/models/scrollbar.css`（只提供圆角、尺寸和中性默认色），再引入页面自己的 CSS，并在自己的 CSS 里覆盖全部 4 个变量：
   - 浅色页面：写在 `:root{...}` 里
   - 深色页面：`<html>` 加 `data-scrollbar="dark"`，变量写在 `:root[data-scrollbar="dark"]{...}` 里
@@ -245,4 +297,4 @@ python scripts/check_topics.py          # 12 自检，必须 0 错误
 - Windows 下 Python 打印中文会乱码，运行脚本前设 `PYTHONIOENCODING=utf-8`。写文件时用 `encoding='utf-8'`。
 - 用 bash heredoc 写含单引号的长内容容易出错，复杂内容用 Write 工具写成文件再处理。
 - Playwright 截图只能保存到仓库目录（如 `.playwright-mcp/`），交付前删掉截图。
-- 改了全站文案（如模型数、注册链接）要同时改 `index.html`、`privacy.html`、`terms.html`、`README.md`、`README.en.md` 和所有专题页。
+- 改了全站文案（如模型数、注册链接）要同时改 `scripts/home_copy/<lang>.json`（再运行 `python scripts/home_page.py`，不要手改 6 个 `index.html`）、`privacy.html`、`terms.html`（改了要同步 `scripts/legal_copy/`，见上）、`README.md`、`README.en.md` 和所有专题页。

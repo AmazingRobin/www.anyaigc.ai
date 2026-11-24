@@ -1,0 +1,308 @@
+{
+ "lang": "en",
+ "html_lang": "en",
+ "og_locale": "en_US",
+ "native": "English",
+ "title": "AnyAIGC | One API Key for 300+ AI Models",
+ "desc": "One API key for 300+ AI models, including Claude, GPT, Gemini and DeepSeek. OpenAI-compatible, pay as you go, with self-service invoices.",
+ "og_desc": "One API key for 300+ AI models. OpenAI-compatible, pay as you go, with self-service invoices.",
+ "keywords": "AI API,OpenAI-compatible API,Claude API,GPT API,Gemini API,DeepSeek API,300+ models,API gateway,pay as you go",
+ "og_alt": "AnyAIGC: 300+ models, one API key",
+ "skip": "Skip to main content",
+ "brand_aria": "AnyAIGC home",
+ "nav_aria": "Main navigation",
+ "nav": [
+  "Model Guides",
+  "Models & Pricing",
+  "Quick Start",
+  "Enterprise",
+  "API Docs"
+ ],
+ "login": "Log in",
+ "cta_key": "Get an API Key",
+ "hero": {
+  "badge": "OpenAI compatible · 300+ models in one catalog",
+  "h1a": "One API key for",
+  "h1b": "300+ AI models",
+  "lead": "OpenAI-compatible and pay as you go, with self-service invoices. One endpoint for Claude, OpenAI, Gemini, Grok, DeepSeek, Qwen, Kimi, Doubao and Zhipu GLM, plus image, video, audio, embedding and retrieval models.",
+  "btn_docs": "Read the docs",
+  "sub_link": "Teams and enterprises: contact support →"
+ },
+ "term": {
+  "tabs_aria": "Example language",
+  "chips_aria": "Switch the example model",
+  "user_msg": "Hello, introduce yourself",
+  "comment": "# Returns the OpenAI-compatible format: choices[0].message.content",
+  "note": "To switch models, change only the <b>model</b> line. The Base URL and key stay the same. Claude models also have a native /v1/messages endpoint, see each model guide."
+ },
+ "stats": [
+  [
+   "300+",
+   "Models in one catalog"
+  ],
+  [
+   "OpenAI",
+   "Protocol compatible"
+  ],
+  [
+   "$1",
+   "Top up from $1, pay as you go"
+  ],
+  [
+   "Invoices",
+   "Self-service in the console"
+  ]
+ ],
+ "stats_aria": "Platform highlights",
+ "marq_aria": "Supported model vendors",
+ "vendors": [
+  "Claude",
+  "OpenAI",
+  "Gemini",
+  "Grok",
+  "DeepSeek",
+  "Qwen",
+  "Kimi",
+  "Zhipu GLM",
+  "Kling",
+  "Doubao",
+  "MiniMax"
+ ],
+ "why": {
+  "h2": "From use case to first request, in fewer steps",
+  "lead": "Confirm the use case and model first, then connect in three steps. Built for developers, studios and teams adding AI to apps, coding tools, automation workflows and internal systems.",
+  "cards": [
+   {
+    "tag": "MODELS",
+    "big": "300+",
+    "h": "Models in one catalog",
+    "p": "Language, image, video, audio, embedding and retrieval models. Pick from the live catalog in the console."
+   },
+   {
+    "tag": "COMPATIBLE",
+    "big": "",
+    "h": "Works with the OpenAI SDK",
+    "p": "Most existing projects only need a new Base URL, API key and model ID to migrate, with no rewrite of business code."
+   },
+   {
+    "tag": "ACCOUNT",
+    "big": "",
+    "h": "One key, one balance",
+    "p": "Text, image, video and music models share one API key and one balance. Switching models means changing the model ID and parameters, nothing else."
+   },
+   {
+    "tag": "BILLING",
+    "big": "",
+    "h": "Pay as you go, with a clear bill",
+    "p": "No subscriptions or monthly fees. The console shows tokens and charges for every request, and you can set a spend cap per key."
+   },
+   {
+    "tag": "INVOICE",
+    "big": "",
+    "h": "Self-service invoices",
+    "p": "Issue an invoice in the console for the amount you actually topped up, whenever you need one."
+   }
+  ]
+ },
+ "models": {
+  "h2": "Popular model APIs",
+  "lead": "Every family has its own guide with a price table, integration examples and invoice details. Model IDs, prices and availability follow the live console.",
+  "more": "Browse all 300+ model guides →",
+  "items": [
+   [
+    "Claude",
+    "Anthropic models: prices and integration"
+   ],
+   [
+    "GPT",
+    "OpenAI chat models: price comparison"
+   ],
+   [
+    "Gemini",
+    "Google Gemini 4 integration"
+   ],
+   [
+    "Grok",
+    "xAI Grok text models"
+   ],
+   [
+    "DeepSeek",
+    "DeepSeek model overview"
+   ],
+   [
+    "Qwen",
+    "Qwen chat model overview"
+   ],
+   [
+    "Kimi",
+    "Moonshot Kimi models"
+   ],
+   [
+    "GLM",
+    "Zhipu GLM models"
+   ],
+   [
+    "Kling",
+    "Kling video and image models"
+   ],
+   [
+    "Seedance",
+    "Doubao video generation"
+   ],
+   [
+    "Seedream",
+    "Doubao image generation"
+   ],
+   [
+    "MiniMax",
+    "Chat, video and speech"
+   ]
+  ]
+ },
+ "start": {
+  "h2": "Connect in three steps",
+  "lead": "Create an API key, copy the Base URL and a real model ID, then send a first test request.",
+  "steps": [
+   [
+    "Create an account",
+    "Sign up for AnyAIGC and open the console to create your own API key. New accounts get 2M free tokens."
+   ],
+   [
+    "Create an API key",
+    "Copy the Base URL, API key and model name, then follow the docs to finish setup."
+   ],
+   [
+    "Connect your project or tool",
+    "Point the OpenAI SDK, Cursor, Dify, Chatbox and similar tools at the AnyAIGC address."
+   ]
+  ],
+  "copy": "Copy",
+  "done": "Copied",
+  "note": "With the OpenAI SDK, set baseURL to the address above and use the API key you created in the console."
+ },
+ "tools": {
+  "h2": "Works with your developer tools",
+  "lead": "Pick a tool to see its setup guide. Check which protocol your client supports and use a real model ID.",
+  "items": [
+   [
+    "Claude Code",
+    "Terminal coding workflow with Claude: project understanding, code Q&A, refactoring advice and scripting"
+   ],
+   [
+    "Codex",
+    "Local coding agent: read and write projects, run commands, fix issues, run tests and ship engineering work"
+   ],
+   [
+    "Cursor",
+    "Code generation, refactoring, project Q&A and everyday development"
+   ],
+   [
+    "Dify",
+    "AI workflows, knowledge bases, support bots and internal company apps"
+   ],
+   [
+    "OpenClaw",
+    "Local AI workbench: browser actions, file handling, tool calls and multi-model setups"
+   ],
+   [
+    "Hermes Agent",
+    "Gateway and automated message flow: task dispatch, tool-call forwarding and long-running workflows"
+   ],
+   [
+    "Chatbox / Cherry Studio",
+    "Everyday chat, summaries, translation and switching between models"
+   ],
+   [
+    "OpenWebUI / n8n",
+    "Self-hosted platforms, automation and team toolchains"
+   ]
+  ]
+ },
+ "ent": {
+  "h2": "AnyAIGC for teams and enterprises",
+  "lead": "Bring procurement, finance and engineering into one integration process.",
+  "cards": [
+   {
+    "tag": "INVOICE",
+    "h": "Self-service invoices",
+    "p": "Issue an invoice in the console for the amount you actually topped up, whenever you need one."
+   },
+   {
+    "tag": "SUPPORT",
+    "h": "Support and technical contact",
+    "p": "A dedicated support and technical contact for integration and day-to-day questions."
+   }
+  ],
+  "pay_label": "Payment methods",
+  "pay": [
+   "WeChat Pay",
+   "Alipay",
+   "USDT",
+   "Credit card"
+  ],
+  "btn_support": "Talk to sales",
+  "btn_reg": "Start with a free account"
+ },
+ "trust": {
+  "h2": "Why you can rely on AnyAIGC",
+  "items": [
+   "<b>Top up from $1.</b> Validate with a small amount, then top up as you need.",
+   "<b>Unused balance is refundable,</b> with no fee.",
+   "<b>Official model channels.</b> No low-spec or reverse-engineered substitutes, no downgrades.",
+   "<b>No training on your data.</b> Except where required by law, inputs and outputs are not stored persistently. See the <a href=\"{privacy}\">Privacy Policy</a>.",
+   "<b>Transparent billing.</b> The console shows tokens and charges for every request, and you can set a spend cap per key.",
+   "<b>24/7 support.</b> <a href=\"{support}\">Contact support</a> any time."
+  ],
+  "btn": "Start free with 2M tokens"
+ },
+ "faq": {
+  "h2": "FAQ",
+  "items": [
+   [
+    "Can I get an invoice from AnyAIGC?",
+    "Yes. You can issue invoices yourself in the console, for the amount you actually topped up."
+   ],
+   [
+    "Do new accounts get free trial credit?",
+    "Yes. New accounts get 2M free tokens, so you can try models and the integration at small scale."
+   ],
+   [
+    "Can unused balance be refunded?",
+    "Yes. Unused balance is refundable, with no fee."
+   ],
+   [
+    "Do you use substitute models? Is my data safe?",
+    "We use official model channels, with no low-spec or reverse-engineered substitutes. Except where required by law, we do not store inputs or outputs persistently or use them for training. See the <a href=\"{privacy}\">Privacy Policy</a>."
+   ],
+   [
+    "Which payment methods are supported?",
+    "You can top up with WeChat Pay, Alipay, USDT or a credit card. Your balance is in USD and works across every model on the platform. Invoices can be issued in the console for the amount you topped up."
+   ],
+   [
+    "How do I connect an existing project?",
+    "Most projects using the OpenAI SDK only need the Base URL changed to {base}, plus an API key and model ID from the console. Authentication uses Authorization: Bearer &lt;API Key&gt;. Model IDs, prices and availability follow the live console and the models page."
+   ],
+   [
+    "Which developer tools are supported?",
+    "Claude Code, Codex, OpenClaw, Hermes, Cursor, Dify, Cherry Studio, Chatbox, OpenWebUI and n8n. Setup guides are in the <a href=\"{docs}\" target=\"_blank\" rel=\"noopener\">API docs</a>."
+   ]
+  ]
+ },
+ "final": {
+  "h2": "Ready for your first request?",
+  "p": "Check real model IDs and prices in the console, then create an API key and test at small scale.",
+  "btn_reg": "Sign up and create an API key",
+  "btn_pricing": "View models and pricing"
+ },
+ "foot": {
+  "links": [
+   "Model Guides",
+   "Models & Pricing",
+   "API Docs",
+   "Contact support",
+   "Privacy Policy",
+   "Terms of Service"
+  ],
+  "note": "Model names and trademarks mentioned here belong to their respective owners. AnyAIGC is an independent API provider and is not affiliated with these vendors."
+ }
+}

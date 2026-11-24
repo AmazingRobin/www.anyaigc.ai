@@ -23,7 +23,7 @@ SUB_I18N = {
 TXT = {
     'input': {'ja': '入力', 'ko': '입력', 'es': 'entrada', 'de': 'Eingabe'},
     'Unlimited concurrency': {'ja': '同時実行数の上限なし', 'ko': '동시 실행 제한 없음', 'es': 'Sin límite de RPM', 'de': 'Kein RPM-Limit'},
-    'Contracts · invoices': {'ja': '請求書を自分で発行', 'ko': '인보이스 직접 발급', 'es': 'Facturas en consola', 'de': 'Rechnungen im Konto'},
+    'Self-service invoices': {'ja': '請求書を自分で発行', 'ko': '인보이스 직접 발급', 'es': 'Facturas en consola', 'de': 'Rechnungen im Konto'},
     'Built for coding, agents, and knowledge work.': SUB_I18N['grok-4.x'],
 }
 
@@ -32,7 +32,7 @@ def tr(lang, zh, en):
     """新语言查 TXT 表（缺词直接报错）；英文图的合同标签改成自助开票（2026-11-17 起非中文口径）。"""
     if lang in NEW:
         return TXT[en][lang]
-    if lang == 'en' and en == 'Contracts · invoices':
+    if lang == 'en' and en == 'Self-service invoices':
         return 'Self-service invoices'
     return _tr(lang, zh, en)
 
@@ -56,7 +56,7 @@ def main():
             fs=64 if len(name)>20 else 82
             s=f'''<!doctype html><html lang="{LANGATTR[lang]}"><head><meta charset="utf-8"><style>
 *{{box-sizing:border-box}}body{{width:1200px;height:630px;margin:0;background:#fff;color:#0a0a0a;font-family:Arial,"Microsoft YaHei","Yu Gothic UI","Malgun Gothic",sans-serif;position:relative;overflow:hidden}}.top{{position:absolute;left:64px;right:64px;top:45px;display:flex;align-items:center;justify-content:space-between;font-size:24px;letter-spacing:-.6px}}.brand{{font-weight:700}}.top small{{font:13px Consolas,monospace;color:#777;letter-spacing:1.5px}}.mark{{position:absolute;right:72px;top:145px;border:1px solid #deddd9;border-radius:32px;padding:35px;background:#f7f7f5}}.mark svg{{width:120px;height:120px}}h1{{position:absolute;left:64px;top:157px;margin:0;max-width:920px;font-size:{fs}px;line-height:1.15;font-weight:400;letter-spacing:-3px}}h1 span{{display:block;font-size:45px;margin-top:7px;letter-spacing:-1px;color:#777}}p{{position:absolute;left:64px;top:331px;font-size:29px;margin:0;max-width:1000px;line-height:1.5;font-weight:400}}.tags{{position:absolute;left:64px;bottom:65px;display:flex;gap:12px;align-items:center}}.tags span{{font-size:18px;border:1px solid #d7d6d1;border-radius:999px;padding:13px 21px;white-space:nowrap}}.tags .price{{background:#0a0a0a;color:#fff;border-color:#0a0a0a}}.rule{{position:absolute;left:64px;right:64px;bottom:30px;height:1px;background:#deddd9}}
-.n .tags span{{font-size:17px;padding:12px 15px}}.n p{{font-size:26px;max-width:1000px;word-break:keep-all}}</style></head><body class="{'n' if lang in NEW else ''}"><div class="top"><span class="brand">AnyAIGC <span style="font-weight:400;color:#777">/ Grok</span></span><small>TEXT & CODE / API</small></div>{'<div class="mark">'+logo()+'</div>' if len(name)<22 else ''}<h1>{e(name)}<span>API</span></h1><p>{e(sub)}</p><div class="tags"><span class="price">${price} / 1M {tr(lang,'输入起','input')}</span><span>{tr(lang,'并发不限','Unlimited concurrency')}</span><span>{tr(lang,'对公 · 专票','Contracts · invoices')}</span></div><div class="rule"></div></body></html>'''
+.n .tags span{{font-size:17px;padding:12px 15px}}.n p{{font-size:26px;max-width:1000px;word-break:keep-all}}</style></head><body class="{'n' if lang in NEW else ''}"><div class="top"><span class="brand">AnyAIGC <span style="font-weight:400;color:#777">/ Grok</span></span><small>TEXT & CODE / API</small></div>{'<div class="mark">'+logo()+'</div>' if len(name)<22 else ''}<h1>{e(name)}<span>API</span></h1><p>{e(sub)}</p><div class="tags"><span class="price">${price} / 1M {tr(lang,'输入起','input')}</span><span>{tr(lang,'并发不限','Unlimited concurrency')}</span><span>{tr(lang,'对公 · 专票','Self-service invoices')}</span></div><div class="rule"></div></body></html>'''
             s=s.replace('<span class="brand">AnyAIGC', '<span class="brand" style="display:flex;align-items:center;gap:10px">'+logo()+'AnyAIGC')
             s=s.replace('.brand{font-weight:700}', '.brand{font-weight:700}.brand svg{width:25px;height:25px}')
             (out/f'{slug}-{lang}.html').write_text(s,encoding='utf-8')

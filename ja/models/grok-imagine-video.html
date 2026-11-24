@@ -49,7 +49,7 @@
       "@id": "https://www.anyaigc.ai/#org",
       "name": "AnyAIGC",
       "url": "https://www.anyaigc.ai/",
-      "logo": "https://www.anyaigc.ai/logo.webp"
+      "logo": "https://www.anyaigc.ai/assets/home/logo-512.png"
     },
     {
       "@type": "WebSite",
@@ -86,7 +86,7 @@
           "@type": "ListItem",
           "position": 1,
           "name": "ホーム",
-          "item": "https://www.anyaigc.ai/"
+          "item": "https://www.anyaigc.ai/ja/"
         },
         {
           "@type": "ListItem",
@@ -263,10 +263,10 @@
 
 <header class="o-nav">
   <div class="o-wrap o-nav-inner">
-    <a class="o-brand" href="/" aria-label="AnyAIGC ホーム">AnyAIGC</a>
+    <a class="o-brand" href="/ja/" aria-label="AnyAIGC ホーム">AnyAIGC</a>
     <nav aria-label="メインナビゲーション">
       <ul class="o-nav-left">
-        <li><a class="o-pill" href="/en/models/">モデルガイド</a></li>
+        <li><a class="o-pill" href="/ja/models/">モデルガイド</a></li>
         <li class="gk-hide-sm"><a class="o-pill" href="https://anyaigc.ai/pricing">モデル一覧</a></li>
         <li><a class="o-pill" href="#pricing">料金</a></li>
         <li><a class="o-pill" href="#enterprise">法人向け</a></li>
@@ -286,7 +286,7 @@
   <section class="gk-hero" aria-labelledby="hero-title">
     <div class="o-wrap">
       <nav aria-label="パンくずリスト">
-        <ol class="o-crumbs"><li><a href="/">ホーム</a></li><li><a href="/en/models/">モデルガイド</a></li><li><a href="/ja/models/grok-video">Grok Video</a></li><li aria-current="page">Grok Imagine Video</li></ol>
+        <ol class="o-crumbs"><li><a href="/ja/">ホーム</a></li><li><a href="/ja/models/">モデルガイド</a></li><li><a href="/ja/models/grok-video">Grok Video</a></li><li aria-current="page">Grok Imagine Video</li></ol>
       </nav>
       <p class="gk-kicker"><svg viewBox="0 0 24 24" width="22" height="22" fill="#0a0a0a" fill-rule="evenodd" aria-hidden="true" focusable="false"><path d="M9.27 15.29l7.978-5.897c.391-.29.95-.177 1.137.272.98 2.369.542 5.215-1.41 7.169-1.951 1.954-4.667 2.382-7.149 1.406l-2.711 1.257c3.889 2.661 8.611 2.003 11.562-.953 2.341-2.344 3.066-5.539 2.388-8.42l.006.007c-.983-4.232.242-5.924 2.75-9.383.06-.082.12-.164.179-.248l-3.301 3.305v-.01L9.267 15.292M7.623 16.723c-2.792-2.67-2.31-6.801.071-9.184 1.761-1.763 4.647-2.483 7.166-1.425l2.705-1.25a7.808 7.808 0 00-1.829-1A8.975 8.975 0 005.984 5.83c-2.533 2.536-3.33 6.436-1.962 9.764 1.022 2.487-.653 4.246-2.34 6.022-.599.63-1.199 1.259-1.682 1.925l7.62-6.815"></path></svg><span>xAI · 2026年1月リリース · 動画編集</span></p>
       <h1 class="gk-h1" id="hero-title">Grok Imagine Video API</h1>
@@ -527,7 +527,7 @@ curl https://anyaigc.ai/v1/videos/edits \
         <li class="o-reveal"><h3>200万トークンを無料で提供</h3><p>新規アカウントにはトライアル枠が付与されるので、チャージ前に試せます。</p></li>
         <li class="o-reveal"><h3>$1 からチャージ、返金可能</h3><p>$1 からチャージできます。未使用の残高は手数料なしで返金できます。</p></li>
         <li class="o-reveal"><h3>公式チャネル、本物のモデル</h3><p>リクエストは公式のモデルチャネルに送られ、安価な代替モデルやリバースエンジニアリングによるモデルは使いません。</p></li>
-        <li class="o-reveal"><h3>保存なし、学習利用なし</h3><p>法令で求められる場合を除き、プロンプトと出力を永続的に保存せず、学習にも使用しません。<a href="/privacy">プライバシーポリシー</a>をご覧ください。</p></li>
+        <li class="o-reveal"><h3>保存なし、学習利用なし</h3><p>法令で求められる場合を除き、プロンプトと出力を永続的に保存せず、学習にも使用しません。<a href="/ja/privacy">プライバシーポリシー</a>をご覧ください。</p></li>
         <li class="o-reveal"><h3>明細が見える課金、利用上限</h3><p>コンソールでリクエストごとのトークン数と料金を確認でき、APIキーごとに上限（クォータ）を設定できます。</p></li>
         <li class="o-reveal"><h3>24/7 サポート</h3><p>連携、課金、障害について、いつでも<a href="https://anyaigc.ai/customersupport">サポートに問い合わせる</a>ことができます。</p></li>
       </ul>
@@ -573,7 +573,7 @@ curl https://anyaigc.ai/v1/videos/edits \
     </div>
   </section>
 
-<!-- related-models --><section class="rel-models o-section" id="related" aria-labelledby="related-title"><div class="o-wrap o-col"><div class="rel-inner"><h2 id="related-title">関連モデルの API</h2><p>同じ AnyAIGC のAPIキーで、これらの動画モデルを利用できます。料金と機能を比較してください。</p><ul class="rel-list"><li><a href="/en/models/vidu"><b>Vidu API</b><span>ガイドを見る →</span></a></li><li><a href="/en/models/wan3.0-video"><b>Wan 3.0 API</b><span>ガイドを見る →</span></a></li><li><a href="/en/models/happyhorse-1.1-t2v"><b>HappyHorse API</b><span>ガイドを見る →</span></a></li><li><a href="/en/models/hailuo-h3"><b>Hailuo H3 API</b><span>ガイドを見る →</span></a></li><li><a href="/en/models/muse-video"><b>Muse Video API</b><span>ガイドを見る →</span></a></li><li><a href="/en/models/seedance"><b>Seedance API</b><span>ガイドを見る →</span></a></li></ul></div></div></section><!-- /related-models -->
+<!-- related-models --><section class="rel-models o-section" id="related" aria-labelledby="related-title"><div class="o-wrap o-col"><div class="rel-inner"><h2 id="related-title">関連モデルの API</h2><p>同じ AnyAIGC のAPIキーで、これらの動画モデルを利用できます。料金と機能を比較してください。</p><ul class="rel-list"><li><a href="/ja/models/vidu"><b>Vidu API</b><span>ガイドを見る →</span></a></li><li><a href="/ja/models/wan3.0-video"><b>Wan 3.0 API</b><span>ガイドを見る →</span></a></li><li><a href="/ja/models/happyhorse-1.1-t2v"><b>HappyHorse API</b><span>ガイドを見る →</span></a></li><li><a href="/ja/models/hailuo-h3"><b>Hailuo H3 API</b><span>ガイドを見る →</span></a></li><li><a href="/ja/models/muse-video"><b>Muse Video API</b><span>ガイドを見る →</span></a></li><li><a href="/ja/models/seedance"><b>Seedance API</b><span>ガイドを見る →</span></a></li></ul></div></div></section><!-- /related-models -->
   <!-- 结尾 CTA -->
   <section class="o-final" aria-labelledby="final-title">
     <div class="o-wrap">
@@ -585,7 +585,7 @@ curl https://anyaigc.ai/v1/videos/edits \
         <a class="o-btn o-btn-light" href="https://docs.anyaigc.ai" target="_blank" rel="noopener">APIドキュメントを読む</a>
       </div>
       <ul class="o-related" aria-label="その他">
-        <li><a class="o-pill" href="/en/models/">モデルガイド一覧</a></li>
+        <li><a class="o-pill" href="/ja/models/">モデルガイド一覧</a></li>
         <li><a class="o-pill" href="/ja/models/grok-video">Grok Videoの概要</a></li>
         <li><a class="o-pill" href="https://anyaigc.ai/pricing">モデル一覧</a></li>
       </ul>
@@ -596,14 +596,14 @@ curl https://anyaigc.ai/v1/videos/edits \
   <div class="o-wrap">
     <div class="o-foot-top">
       <div class="o-foot-brand">
-        <a class="o-brand" href="/">AnyAIGC</a>
+        <a class="o-brand" href="/ja/">AnyAIGC</a>
         <p>グローバルなAIモデル向けのAPIゲートウェイ。1つのベースURLと1つのAPIキーで300以上のモデルを利用できます。</p>
       </div>
       <div class="o-foot-cols">
         <div class="o-foot-col">
           <h2>プロダクト</h2>
           <ul>
-            <li><a href="/en/models/">モデルガイド</a></li>
+            <li><a href="/ja/models/">モデルガイド</a></li>
             <li><a href="https://anyaigc.ai/pricing">モデル一覧</a></li>
             <li><a href="https://anyaigc.ai/console">コンソール</a></li>
           </ul>
@@ -619,8 +619,8 @@ curl https://anyaigc.ai/v1/videos/edits \
         <div class="o-foot-col">
           <h2>法的情報</h2>
           <ul>
-            <li><a href="/privacy">プライバシーポリシー</a></li>
-            <li><a href="/terms">利用規約</a></li>
+            <li><a href="/ja/privacy">プライバシーポリシー</a></li>
+            <li><a href="/ja/terms">利用規約</a></li>
           </ul>
         </div>
       </div>

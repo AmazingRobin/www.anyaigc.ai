@@ -81,7 +81,7 @@ def fields(lang):
         return "Tencent Hunyuan", SUB_I18N[lang], deal, detail, tags
     if lang == "zh":
         return "腾讯混元", "腾讯混元新一代模型，图像理解与 Agent 任务", DEAL_ZH, f'输入 ${p["amount"]} · 官方 ${p["official"]}', ["图像理解", "OpenAI + Anthropic 格式", "并发不限", "对公 · 专票"]
-    return "Tencent Hunyuan", "Tencent Hunyuan's latest: vision and agent work", DEAL_EN, f'Input ${p["amount"]} · list ${p["official"]}', [nl.ENT_EN if t == "VAT invoices" else t for t in ["Image input", "OpenAI + Anthropic", "Unlimited concurrency", nl.ENT_EN]]
+    return "Tencent Hunyuan", "Tencent Hunyuan's latest: vision and agent work", DEAL_EN, f'Input ${p["amount"]} · list ${p["official"]}', [["Image input", "OpenAI + Anthropic", "Unlimited concurrency", nl.ENT_EN]]
 
 
 def page(lang):

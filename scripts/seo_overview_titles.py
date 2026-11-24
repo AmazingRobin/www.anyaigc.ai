@@ -30,8 +30,8 @@ TITLES = {
 }
 
 DESCRIPTIONS = {
-    ("en", "kling"): "Kling API overview: 16 image, video and audio models, from text-to-video to motion control and avatars. Unlimited concurrency, bank transfer and VAT invoices.",
-    ("en", "kling-advanced-lip-sync"): "Kling Advanced Lip Sync API: $0.00844 face detection, $0.0844 per 5s lip-sync. Async jobs, unlimited concurrency, bank transfer and VAT invoices.",
+    ("en", "kling"): "Kling API overview: 16 image, video and audio models, from text-to-video to motion control and avatars. Unlimited concurrency, self-service invoices.",
+    ("en", "kling-advanced-lip-sync"): "Kling Advanced Lip Sync API: $0.00844 face detection, $0.0844 per 5s lip-sync. Async jobs, unlimited concurrency, self-service invoices.",
 }
 
 

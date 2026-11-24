@@ -27,6 +27,9 @@ PAY_A = ('You can top up with WeChat Pay, Alipay, USDT or a credit card. Your ba
 
 # 整句精确替换（单元文本完全相等才替换）
 EXACT = {
+    # 首屏要点和规格行里的短标签（各系列生成器都会写）：2026-11-24 起非中文页一律写「自助开票」
+    'Contracts · invoices': 'Self-service invoices',
+    'Invoices · contracts': 'Self-service invoices',
     # 专题首页（en/models/index.html）卡片标签
     'Bank transfer · VAT': 'Self-service invoices',
     # 第 6 批（Llama / Eleven / Speech / Nano / Jev / SparkDesk / Hy4 / Muse）
@@ -100,6 +103,8 @@ RULES = [
     (r'Chinese VAT general and special invoices based on the actual top-up amount[.]',
      'Issue invoices yourself in the console for the amount you actually topped up.'),
     (r'<strong>Contracts · invoices</strong>', '<strong>Self-service invoices</strong>'),
+    (r'<strong>Invoices · contracts</strong>', '<strong>Self-service invoices</strong>'),
+    (r'^Contracts · invoices <b>Available</b>$', 'Invoices <b>Self-service</b>'),
     (r'(<strong>Invoices</strong>)contracts', r'\1self-service'),
     (r', contracts, invoices\.', ', self-service invoices.'),
     (r',? (?:bank transfer and (?:VAT )?[Ii]nvoices|(?:VAT )?invoices and bank transfer)\.', ', self-service invoices.'),
@@ -420,7 +425,7 @@ def main():
     d = os.path.join(root, 'en', 'models')
     changed, left = [], []
     for f in sorted(os.listdir(d)):
-        if not f.endswith('.html') or f == 'index.html' or not any(f.startswith(a) for a in args):
+        if not f.endswith('.html') or (f == 'index.html' and 'index' not in args) or not any(f.startswith(a) for a in args):
             continue
         p = os.path.join(d, f)
         src = io_read(p)
@@ -435,6 +440,22 @@ def main():
     print('仍有中国发票/对公转账说法:', len(left))
     for x in left[:20]:
         print('  ', x)
+    if not dry:
+        register_prefixes(root, args, d)
+
+
+def register_prefixes(root, args, d):
+    """把本次匹配到页面的前缀登记进 overseas_done.json。
+    check_topics.py 只对登记过的前缀检查英文页的海外口径，漏登记就等于不检查，所以这一步不能靠人记。"""
+    import json
+    import os
+    path = os.path.join(root, 'scripts', 'i18n', 'overseas_done.json')
+    done = json.loads(io_read(path)) if os.path.exists(path) else []
+    names = [f for f in os.listdir(d) if f.endswith('.html') and f != 'index.html']
+    added = [a for a in args if a not in done and any(f.startswith(a) for f in names)]
+    if added:
+        io_write(path, json.dumps(done + added, indent=1) + chr(10))
+        print('已登记进 overseas_done.json:', ', '.join(added))
 
 
 def io_read(p):

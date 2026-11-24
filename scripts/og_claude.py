@@ -3,7 +3,7 @@
 #   需要 python scripts/preview.py 在 http://localhost:8765 运行；不带参数时 zh、en 全部重生成
 # zh / en：文案从页面本身读取：标题取 H1，副标题取 og:title「｜/:」后的卖点，标签取专题首页卡片的 tags，价格取页面价格表
 # ja / ko / es / de：专题首页还没做，副标题和标签直接写在下面的 SUBS_I18N、TAGS_I18N；标题和价格取英文页
-# 非中文图不写"合同/对公"：英文原来的 "Contracts · invoices" 一律换成 "Self-service invoices"（2026-11-17 起非中文页口径）
+# 非中文图不写"合同/对公"：开票标签一律写 "Self-service invoices"（2026-11-17 起非中文页口径）
 import glob
 import io
 import os
@@ -167,8 +167,7 @@ def main():
                         sub = re.sub(r'\s*[-|]\s*AnyAIGC.*$', '', sub).strip()
                     card = re.search(r'href="/' + lang + '/models/' + re.escape(slug) + r'">.*?<ul class="af-tags">(.*?)</ul>', hub, re.S)
                     tags = re.findall(r'<li>([^<]*)</li>', card.group(1))[:3] if card else []
-                    tags = [('Self-service invoices' if t == 'Contracts · invoices' else t) for t in tags]
-                chips = f'<span class="d">{price}{PRICE_UNIT[lang]}</span>' + ''.join(f'<span>{t}</span>' for t in tags)
+                    chips = f'<span class="d">{price}{PRICE_UNIT[lang]}</span>' + ''.join(f'<span>{t}</span>' for t in tags)
                 html = render(star, name, sub, chips, '96' if len(name) <= 15 else '88', lang)
             io.open(os.path.join(OUT, n + '.html'), 'w', encoding='utf-8').write(html)
             names.append(n)

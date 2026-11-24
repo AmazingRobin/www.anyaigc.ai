@@ -121,10 +121,6 @@ ENT = {
     'en': ('invoice', 'dedicated'),
 }
 # 非中文页面不应再出现的中国开票/对公转账说法
-try:
-    OVERSEAS_DONE = json.load(io.open(os.path.join(ROOT, 'scripts', 'i18n', 'overseas_done.json'), encoding='utf-8'))
-except (OSError, ValueError):
-    OVERSEAS_DONE = []
 NON_ZH_FORBIDDEN = re.compile(r'\bVAT\b|bank transfer|wire transfer|corporate (?:bank|account)|special invoice|service agreement|sign a contract', re.I)
 
 
@@ -187,7 +183,8 @@ def check_forbidden(tag, lang, html):
     # 非中文页面不写中国开票/对公转账说法。en 页面按系列分批转换：只检查 overseas_done.json 里登记过的前缀；新语言页一律检查
     slug_m = re.search(r'/models/([^\]]+)\.html', tag)
     slug = slug_m.group(1) if slug_m else ''
-    strict = lang != 'zh' and (lang != 'en' or any(slug.startswith(p) for p in OVERSEAS_DONE))
+    # 2026-11-24 起全部英文页都已转成海外口径，不再按系列前缀分批，所有非中文页一律检查
+    strict = lang != 'zh'
     if strict:
         vis = re.sub(r'<style\b.*?</style>', ' ', html, flags=re.S)
         vis = re.sub(r'<(?!script)[^>]+>', ' ', vis)
@@ -341,6 +338,12 @@ def main():
     for lang in NEW_LANGS:
         for s in set(slugs[lang]) - set(slugs['en']):
             errors.append(f'{lang}/models/{s}.html 没有对应的英文页（新语言以英文页为源）')
+    # 新增型号后很容易漏掉日韩西德版本：不是错误（可以按系列分批做），但要明确提醒，不能静默通过
+    for lang in NEW_LANGS:
+        missing = sorted(set(slugs['en']) - set(slugs[lang]) - {'index'})
+        if missing:
+            warns.append(f'[{lang}/models/] 缺少 {len(missing)} 个专题页的{lang}版本：{", ".join(missing[:6])}{" …" if len(missing) > 6 else ""}'
+                         f'（流程见 AGENTS.md「新语言（ja/ko/es/de）」）')
     sitemap = read('sitemap.xml')
     for lang in LANGS:
         if not slugs[lang]:

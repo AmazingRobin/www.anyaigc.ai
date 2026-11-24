@@ -1,21 +1,23 @@
-# 多语言专题页（ja / ko / es / de）开发流程
+# 多语言页面（ja / ko / es / de）开发流程
 
-2026-11-17 确认：给 `/models/` 下的专题页新增日语 `/ja/`、韩语 `/ko/`、西班牙语 `/es/`、德语 `/de/`。
-范围只含专题页和专题首页；站点首页、隐私政策、服务条款不做。西语、德语用通用版本，不分地区。
-质量保证只用 AI 交叉检查，没有母语审校。已用 DeepSeek 系列（4 页 × 4 语言）跑通试点。
+2026-11-17 起为站点新增日语 `/ja/`、韩语 `/ko/`、西班牙语 `/es/`、德语 `/de/`。范围：专题页、专题首页、站点首页、隐私政策、服务条款（404 页不做多语言）。
+西语、德语用通用版本，不分地区。质量保证只用 AI 交叉检查，没有母语审校。
+
+**新增一个模型专题页时怎么做，见 `AGENTS.md`「新语言（ja/ko/es/de）」一节（有逐步清单）。本文件是各个脚本的细节。**
 
 ## 原则
 
 1. **源文是英文页，不是中文页。** 英文页已经是本地化改写。
-2. **一个系列一个系列做。** 每个系列做完、自检 0 错误后给用户确认，再做下一个。不自动 commit。
-3. **价格、模型 ID、代码、URL、数字原样保留。** 翻译只动文字。
-4. **非中文页面（含现有英文页）的企业口径**：
+2. **价格、模型 ID、代码、URL、数字原样保留。** 翻译只动文字。价格和小数一律用小数点（0.0596），德语、西语也不用逗号。
+3. **非中文页面（含英文页）的企业口径**：
    - 发票写成"在控制台自助开具，按实际充值金额"，不写增值税、专票、中国发票流程。
    - 支付方式保留微信支付、支付宝、USDT、信用卡，去掉"对公转账"。
    - 删掉「对公转账」「签订合同」两张卡片和对应 FAQ；保留"专属客服与技术对接"。
-   - 不写"能否从中国大陆调用"这类卖点（见记忆 `en-no-china-access-claim`），新语言页构建时自动删掉该 FAQ。
+   - 不写"能否从中国大陆调用"这类卖点（见记忆 `en-no-china-access-claim`）。
    - 不写 SLA、可用率、企业专属分组或线路（CLAUDE.md）。
-5. **不要为了凑长度而扩写。** 译文要像当地开发者文档，不是英文的逐词对应。
+4. **不要为了凑长度而扩写。** 译文要像当地开发者文档，不是英文的逐词对应。
+5. **翻译者和复核者不能是同一个代理。** 复核按 id 段并行，只写补丁文件，不碰总文件。
+6. **不自动 commit。**
 
 ## 文件
 
@@ -23,106 +25,86 @@
 | :--- | :--- |
 | `langs.py` | 语言表（目录、hreflang、og:locale、自称） |
 | `htmlseg.py` | 把页面切成翻译单元并精确回填；代码、SVG、模型 ID、语言菜单不进翻译 |
-| `overseas.py` | 把英文页改成海外口径（卡片、FAQ、描述、支付行），自带残留检查 |
-| `batch.py` | 一个系列的翻译批次：合并去重、分块、校验、翻译记忆库、渲染 |
-| `build.py` | 单页回填；改路径、6 语言 hreflang、og、语言菜单；FAQ 与 JSON-LD 同步 |
-| `register.py` | 写 sitemap；给已有 zh/en 页补 hreflang 和语言菜单（重复运行不变） |
-| `og_margin.py` | 检查分享图标签行右边距 |
+| `overseas.py` | 把英文页改成海外口径（卡片、FAQ、描述、支付行），自带残留检查；**运行后自动把前缀登记进 `overseas_done.json`**（`check_topics.py` 只对登记过的前缀检查英文页） |
+| `china_faq.py` / `china_body.py` | 删掉英文页里「能否从中国大陆调用」的 FAQ 和正文里的大陆直连说法 |
+| `batch.py` | 一个系列的翻译批次：`prepare` 合并去重分块、`tm-fill` 用记忆库、`tm-chunks` 重新分块、`validate` 校验、`render` 渲染、`tm-save` 存记忆库 |
+| `merge_tm.py` | 合并翻译记忆库：`merge_tm.py <目标> --all` 合并所有已有系列 |
+| `consolidate.py` / `merge_patches.py` / `check_patch.py` | 把分散的译文合成 `<lang>-all.json`；合并复核补丁；校验一个复核段 |
+| `resync.py` | 英文源页改动后，把已复核的译文按"角色+原文"重新映射到新的 union，缺的写成 `todo-resync-<lang>.json` |
+| `build.py` | 单页回填；改路径、6 语言 hreflang、og、语言菜单；首页链接和隐私/条款链接改成各语言自己的页面 |
+| `register.py` | 写 sitemap；给已有 zh/en 页补 hreflang 和语言菜单 |
+| `relink_home.py` | 把 en/ja/ko/es/de 页里指向 `/`、`/privacy`、`/terms` 的链接改成各语言自己的；面包屑 item 同理 |
+| `org_logo.py` | 把专题页 JSON-LD 的 `Organization.logo` 换成新 logo（`/assets/home/logo-512.png`） |
+| `decimal_point.py` | 把 es/de 页里的小数逗号改回小数点（html / series / tm 三种模式） |
+| `check_home_copy.py` / `check_legal_copy.py` | 站点首页文案、法律页译文的自检 |
 | `briefs/<系列>.md` | 该系列的术语表和各语言风格，翻译时整份附上 |
-| `../og_<系列>.py --langs=ja,ko,es,de` | 生成新语言分享图（每个系列的脚本要各自加语言文案） |
-| `drafts/i18n/<系列>/` | 翻译稿、翻译记忆库（`drafts/` 在 .gitignore，不进仓库） |
+| `workflows/translate-group.js` | 翻译工作流：4 种语言 × N 块，分波并行 |
+| `workflows/review-segmented.js` | 复核工作流：按 id 段并行，只写 `<lang>-rev-<seg>.json` 补丁；`args.only=["ja-s0",…]` 可只补跑指定段 |
+| `workflows/home-i18n.js`、`legal-i18n.js` | 站点首页、法律页的翻译加复核工作流 |
+| `../og_<系列>.py --langs=ja,ko,es,de` | 新语言分享图；`--langs=en` 只重出英文图；每个系列的脚本各自有新语言文案词表 |
+| `drafts/i18n/<系列>/` | 翻译稿、翻译记忆库。**`drafts/` 在 .gitignore 里，不进仓库**，换机器就没有了，记忆库丢了只是要重新翻译 |
 
-## 单个系列的流程（以 DeepSeek 为例，S = 该系列所有 slug）
+## 单个系列的流程（S = 该系列所有 slug，P = slug 前缀）
 
 ```bash
 export PYTHONIOENCODING=utf-8
-python scripts/check_topics.py                         # 0 · 先确认起点是 0 错误
-python scripts/i18n/overseas.py <系列前缀>              # 1 · 英文页改成海外口径（并把前缀登记进 overseas_done.json）
-python scripts/i18n/batch.py prepare <系列> $S          # 2 · 合并去重，写 union.json 和 chunks/
-#   3 · 翻译：每个 chunk × 4 语言一个代理，写 out/<lang>-<NN>.json（Workflow 并行），随后每种语言一个独立复核代理
-python scripts/i18n/batch.py validate <系列> <lang>     # 4 · 脚本校验：id、标签、价格小数、实体、<code>、字符集、标题/描述宽度
-python scripts/i18n/batch.py render <系列> <lang> $S    # 5 · 合并并回填成 <lang>/models/<slug>.html
-python scripts/i18n/register.py $S                     # 6 · sitemap + 给 zh/en 页补 hreflang 和语言菜单
-python scripts/og_<系列>.py --langs=ja,ko,es,de         # 7 · 分享图（先给脚本加四种语言文案）
-python scripts/i18n/og_margin.py <系列前缀>             # 8 · 右边距检查
-python scripts/check_topics.py                         # 9 · 自检，必须 0 错误
-#   10 · 390px 宽度抽样：日语和德语各一页，量 scrollWidth（别大量截图）
+python scripts/check_topics.py                              # 0 起点必须 0 错误
+python scripts/i18n/overseas.py P                           # 1 英文页改成海外口径，自动登记前缀
+python scripts/i18n/china_faq.py P && python scripts/i18n/china_body.py P
+mkdir -p drafts/i18n/<系列>
+python scripts/i18n/merge_tm.py <系列> --all                # 2 合并所有已有的翻译记忆库
+python scripts/i18n/batch.py prepare <系列> $S              # 3 合并去重，写 union.json
+for l in ja ko es de; do python scripts/i18n/batch.py tm-fill <系列> $l; done   # 4 记忆库命中的直接用，未命中的才翻译
+python scripts/i18n/batch.py tm-chunks <系列> 11000         # 5 只把未命中的分块；再把 chunks/*.json 复制成 todo/<lang>-<NN>.json
+#   6 翻译：workflows/translate-group.js（args：series chunks wave brief desc refs）
+#   7 consolidate → 复核：workflows/review-segmented.js（args：series total segs brief desc refs extra）→ check_patch → merge_patches
+python scripts/i18n/batch.py validate <系列> <lang>         # 8 校验
+python scripts/i18n/batch.py render <系列> <lang> $S        # 9 渲染成 <lang>/models/<slug>.html
+python scripts/i18n/register.py $S                          # 10 sitemap + 给 zh/en 页补 hreflang 和语言菜单
+python scripts/i18n/decimal_point.py html                   # 11 es/de 的小数逗号改回小数点（只改译文新产生的）
+python scripts/og_<系列>.py --langs=ja,ko,es,de             # 12 分享图（先给脚本加四种语言文案，es/de 价格用小数点）
+python scripts/i18n/relink_home.py && python scripts/i18n/org_logo.py   # 13 首页、法律页链接和 logo
+python scripts/related_models.py                            # 14 同类模型版块
+python scripts/check_topics.py                              # 15 必须 0 错误
+#   16 版面抽样：日语和德语各一页，390px 量 scrollWidth（别大量截图）；scripts/i18n/mobile_probe.py、width_scan.py
 ```
 
-### 翻译记忆库（后面的系列先复用前面的译文）
+### 翻译记忆库
 
-```bash
-cp drafts/i18n/<已完成系列>/tm-<lang>.json drafts/i18n/<新系列>/tm-<lang>.json   # 每种语言各一份
-python scripts/i18n/batch.py tm-fill <系列> <lang>     # 命中的写 out/<lang>-tm.json，未命中的写 delta-<lang>.json
-python scripts/i18n/batch.py tm-chunks <系列> 18000    # 只把未命中的重新分块，翻译块更大、代理更少
-#   …翻译、复核、validate、render…
-python scripts/i18n/batch.py tm-save <系列> <lang>     # 复核完成后把译文存回 tm-<lang>.json
-```
-
-记忆库键是 `role + 0x1f + 原文`。Claude 从 DeepSeek 复用了 102/1172 条（只有导航、页脚、企业接入这类公共文案）。
-英文源页改动后，同样用 `prepare` → `tm-fill`，只补译变化的句子。
+记忆库键是 `role + 0x1f + 原文`。`merge_tm.py --all` 会把所有系列的记忆库合进新系列；英文源页改动后同样用 `prepare` → `tm-fill`，只补译变化的句子；复核完成后用 `batch.py tm-save <系列> <lang>` 存回。
+`prepare` 之后如果英文页又改了，先 `resync.py <系列>`，再补译 `todo-resync-<lang>.json` 里缺的条目。
 
 ### 翻译源
 所有系列的翻译源都是 `build.source(slug)`：英文页去掉"中国大陆可访问"的卖点（FAQ 整条删、句子里的 "direct access from mainland China" 删）。
 `extract`、`prepare`、`build` 必须用同一个源，否则单元编号对不上。
+`build.source()` 还会把英文页里指向 `/en/`、`/en/privacy`、`/en/terms` 的链接还原成 `/`、`/privacy`、`/terms`（`relink_home.py` 改过英文页之后，各系列保存的原文仍是旧写法）；渲染时 `localize()` 再把它们转成各语言自己的首页和法律页，并把指向 `/en/models/…` 的内部链接转成各语言自己的页面。**不要改动这两处，否则已有系列的译文会对不上、被当成要重新翻译。**
+
+### 专题首页（6 种语言）
+`index` 当作一个 slug 走同样的流程（prepare / merge_tm / tm-fill / 翻译 / 复核 / render index）。新增模型后，4 种新语言的专题首页也要补卡片：对 hub 系列重新 `prepare`，`resync` 之后补译缺口，再 `render hub <lang> index`。
+
+### 站点首页（`/`、`/en/` … 6 种语言）
+由 `scripts/home_page.py` 生成，文案在 `scripts/home_copy/<lang>.json`（`en.json` 是源文）。改文案改 JSON，运行 `python scripts/home_page.py`；`python scripts/i18n/check_home_copy.py <lang>` 自检。不要手改 `index.html`。
+
+### 隐私政策、服务条款（6 种语言）
+中文原文是根目录 `privacy.html`、`terms.html`；其他语言由 `scripts/legal_pages.py` 生成到 `/<lang>/privacy`、`/<lang>/terms`，译文在 `scripts/legal_copy/<lang>.json`。改了中文原文：先 `python scripts/legal_pages.py extract`，重新翻译变化的单元，`python scripts/i18n/check_legal_copy.py <lang>` 自检，再 `python scripts/legal_pages.py build`。法律文本译文只是对照译本，以中文为准，上线前建议让有资质的人审阅。
 
 ### 分享图和导航
-- `python scripts/og_<系列>.py --langs=ja,ko,es,de`：每个系列的 og 脚本各自加 SUBS_I18N / TAGS_I18N（见 `og_claude.py`）。
+- `python scripts/og_<系列>.py --langs=ja,ko,es,de`：每个系列的 og 脚本各自加新语言文案（见 `og_claude.py`）。Chrome 偶发静默失败、旧图被原样写回，出图后要核对每张的修改时间。
 - `python scripts/i18n/nav_probe.py <slug> es,de,ja,ko 390,1100,1200,1440`：量各宽度下导航是否溢出；西德语导航文字长，必要时在 `build.py` 的 `NAV_SHORT` 里加短写法。
 
 ## 交叉检查的角度（翻译者与检查者不能是同一个代理）
 
-- **事实**：数字、价格、模型 ID、折扣百分比与英文逐项一致；没有新增原文没有的承诺或数字。
-- **语境**：像当地开发者文档；敬体和称呼一致；标题里有当地人会搜的词。
-- **术语**：与简报一致；同一概念全文只用一个词，跨文件对照。
-- **残留**：没有漏译、没有中文、没有机翻痕迹。
-- **结构**：标签、占位符、`<code>` 与原文一致（`build.py` 和 `batch.py validate` 都会硬性拦截）。
+- **事实**：数字、价格、模型 ID、折扣百分比、参数、接口路径与英文逐项一致；没有新增或漏掉的事实、承诺（没有 SLA、中国大陆访问、海外信用卡、增值税、对公转账、合同）。
+- **语境**：像当地开发者写的文档，不是翻译腔；语气、敬体、称呼全文一致；标题和描述里有当地开发者会搜的词。
+- **术语**：与简报术语表一致；同一概念全文只用一个词，并与已复核系列一致。
+- **残留**：没有漏译整句、没有汉字（日语除外）、没有其他语言混入。
+- **结构**：标签、占位符、`<code>` 与原文一致。
 
-## 已知坑
+## 已知的坑
 
-- 简报文件不要叫 `claude.md`、`agents.md`：Windows 文件名不分大小写，Claude Code 会把它当项目指令文件自动加载。Claude 系列的简报叫 `briefs/claude-series.md`。
-- 在 Python 字符串里写 `\b` 会被写成退格字符（0x08）。改完脚本要查：
-  `python -c "b=open(p,'rb').read(); print(b.count(bytes([8])))"`，非 0 就把 0x08 换成 `bytes([92,98])`。
-- **工作流跑着的时候，不要对同一个系列运行 `tm-fill`、`tm-chunks`、`prepare`、`render`。** 2026-11-18 试渲染时 `tm-fill` 把 `out/<lang>-*.json` 全部删了，翻译者和复核代理的成果一起丢失。
-  现在 `tm-fill` 不再删文件，但 `prepare` / `tm-chunks` 仍会重写 `union.json` 和 `chunks/`，编号会错开。
-  需要预览时，等工作流结束，或把 `drafts/i18n/<系列>/` 整个复制一份再试。
-- 译文丢了怎么办：工作流代理是用脚本写译文的，脚本留在系统 Temp 目录里，对话记录在 `~/.claude/projects/.../subagents/workflows/<run>/agent-*.jsonl`。
-  `drafts/i18n/_recover.py plan|replay <label>` 能按记录重放代理的命令还原译文（Claude 系列当时还原了 24/28 块，其余用 `remap.py` 按原文迁移 + 补译）。
-- 翻译源变了（改了改写规则、修了英文错字）导致 `union.json` 编号错开：用 `remap.py` 按「角色 + 原文」把旧译文迁移到新编号，只重译原文变了的条目。
-- 补译零散缺失的句子：`todo/<lang>-<n>.json` → 译者写 `out/<lang>-todo-<n>.json` → `check_todo.py` 自检 → `consolidate.py` 合并成 `out/<lang>-all.json`（之后 validate / render 都只读它）。
-- **英文页的「能否从中国大陆调用」FAQ** 用 `python scripts/i18n/china_faq.py` 处理（2026-11-18 用户确认删除）：纯问题整条删，复合问题（并发/xAI 账号/取 key）只去掉中国相关部分，可见 FAQ 与 JSON-LD 同步。重复运行不变；系列重新生成英文页后要再跑一次。正文里的「mainland China」卖点（卡片标题、介绍句）用 `python scripts/i18n/china_body.py` 处理（2026-11-18 用户确认删除）：卡片换成不带中国说法的标题并保留其它事实，卡片数量不变，meta keywords 里的 "OpenAI/Gemini API China" 一并删掉；句子用 `overseas.CHINA_RULES` 删掉那一小段（新语言页翻译源用同一组规则）。重复运行不变，系列重新生成英文页后要再跑一次。
-- 英文页数据里的坏日期（`scripts/seo_specs_data.json` 的 `facts_en` 串字）已修；改完要跑 `python scripts/seo_unique_specs.py` 写回页面。
-- 页面排版自检（都需要 `python scripts/preview.py` 在 8765 端口运行，用无头 Chrome 量真实渲染结果）：
-  `kicker_probe.py`（「规格」小标题样式是否和同页其它版块一致）、`h2_probe.py`（标题样式）、
-  `width_scan.py <lang> --width=1440`（「同类模型 API」和 FAQ 的左边界/宽度是否对齐）、
-  `mobile_probe.py <lang>`（真实 390px：页面是否横向溢出、同类模型版块是否对齐）。
-  注意：无头 Chrome 的 `--window-size=390` 实际给 478px 宽，量手机宽度必须用 `mobile_probe.py` 里的 390px iframe。
-  Kling 的导航在手机上是自己内部横向滚动（`overflow:auto`），`mobile_probe.py` 会报 "nav right 446"，但页面本身没有溢出，不是问题。
-- 「同类模型 API」版块（`scripts/related_models.py`）沿用本页 FAQ 的 `*-section` / `*-wrap` 容器，所以宽度和上一个版块自动一致；
-  FAQ 列表自己带 max-width 的系列（Grok 文本、Llama、MiniMax、Suno、MiMo、Hy4、Jev）在 `assets/models/scrollbar.css` 里有单独的宽度规则。
-  `scrollbar.css` 的版本号现在是 20261123，改样式后要同步改 `related_models.py` 的 `CSS_VERSION` 和两个专题首页。
-- 分享图标签行：西语、德语文案长，标签必须 `white-space:nowrap` 并缩小字号；改文案后跑 `og_margin.py`。
-- `scripts/payments.py` 对 kling、seedance 总览这类 JSON-LD 压成一行的页面会报错，
-  它已改成不写对公转账，但不要对全站直接重跑；对已转换系列用 `overseas.py` 即可。
-- 新语言的专题首页最后统一做；首页上线前，页面里指向 `/<lang>/models/` 的链接先退回英文页，
-  系列页上线后用 `python scripts/i18n/build.py relink <lang> <slug>...` 重新指向。
-
-## 待办
-
-- [ ] 新语言专题首页（`hub.css` 的 `af-*` 风格，四种语言）和 sitemap 里首页条目
-- [ ] 其余系列的 `og_*.py` 加四种语言
-- [ ] 英文源页两处 FAQ 不一致（gemini-4-argon、gemini-4-hydrogen 的 "Contact" 与 "Talk to"），轮到 Gemini 时先修
-- [ ] Kling / Seedance 总览页和 doubao-seedance-* 结构特殊（FAQ 没有 `<h3>`、JSON-LD 压成一行），单独验证
-
-## 系列顺序
-
-| 批次 | 内容 | 状态 |
-| :--- | :--- | :--- |
-| 试点 | DeepSeek（4 页） | 完成，用户已确认三项译法 |
-| 第 1 批 | Claude（12） | 完成 |
-| 第 1 批 | Gemini（6）、Suno（1）、Midjourney（1） | 完成 |
-| 第 2 批 | GPT（17）、Grok（17） | 完成，等用户确认 |
-| 第 3 批 | Doubao、Seedream、Seedance、Kimi、GLM、MiMo、MiniMax | |
-| 第 4 批 | Kling、Vidu、Viduq、Wan、HappyHorse、Muse、Hailuo | |
-| 第 5 批 | Qwen（30）、Llama、Eleven、Speech、Jev、Spark、Hy 等 | |
-| 收尾 | 专题首页、sitemap lastmod、全站自检 | |
+- 工作流里并发跑太多代理会限流（429）；一次 12 到 16 个比较稳。
+- 代理偶尔不调用 StructuredOutput 就结束，补丁文件没写出，要按段重跑（`review-segmented.js` 的 `args.only`）。
+- 合并补丁前要等补丁文件 90 到 120 秒没有变化，并且收到工作流完成通知。
+- 翻译代理会在 `scripts/` 和 `drafts/` 下留 `_build*.py` 之类的临时文件，收尾时挪到 `drafts/i18n/_scratch/`。
+- 在 bash 里用 heredoc 写含反斜杠的 Python 会被转义破坏（例如 `\b` 变成退格符）；复杂内容用 Write 或 Edit 工具。
+- 用户说"暂停"之后，不要自己续跑工作流，等用户说继续。

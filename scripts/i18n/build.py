@@ -180,6 +180,10 @@ def localize(src, slug, lang):
     """路径、hreflang、og、语言切换。输入是已经翻译好的英文结构页。"""
     s = re.sub(r'(<html\b[^>]*\blang=")[^"]*"', lambda m: m.group(1) + L.LANGS[lang]['hreflang'] + '"', src, count=1)
     s = s.replace('/en/models/', f'/{lang}/models/')
+    # 站点首页：英文源页已经指向 /en/（scripts/i18n/relink_home.py），各语言渲染成自己的首页 /<lang>/，面包屑 item 同理
+    s = re.sub(r'(<a\s[^>]*?href=")/(?:en/)?(")', lambda m: m.group(1) + f'/{lang}/' + m.group(2), s)
+    s = s.replace('"item": "https://www.anyaigc.ai/en/"', f'"item": "https://www.anyaigc.ai/{lang}/"')
+    s = re.sub(r'(<a\s[^>]*?href=")/(privacy|terms)(")', lambda m: m.group(1) + f'/{lang}/' + m.group(2) + m.group(3), s)
     s = s.replace(f'/assets/og/{slug}-en.png', f'/assets/og/{slug}-{lang}.png')
     if slug == 'index':  # 专题首页的分享图叫 models-<lang>.png
         s = s.replace('/assets/og/models-en.png', f'/assets/og/models-{lang}.png')
@@ -220,6 +224,10 @@ def source(slug):
     """翻译源 = 英文页去掉"中国大陆可访问"卖点（非中文页不写，见记忆 en-no-china-access-claim）。
     extract / batch.prepare / build 三处都必须用它，单元编号才对得上。"""
     src = io.open(os.path.join(ROOT, 'en', 'models', slug + '.html'), encoding='utf-8').read()
+    # relink_home.py 把英文页里指向首页、隐私政策、服务条款的链接改成了 /en/ 开头；翻译源要还原成原来的写法，
+    # 这样各系列已存的 union.json 和译文还能对上，渲染时 localize() 再把它们转成各语言自己的页面。
+    src = re.sub(r'(<a\s[^>]*?href=")/en/(privacy|terms)(")', lambda m: m.group(1) + '/' + m.group(2) + m.group(3), src)
+    src = re.sub(r'(<a\s[^>]*?href=")/en/(")', lambda m: m.group(1) + '/' + m.group(2), src)
     return O.strip_china_access(src)
 
 

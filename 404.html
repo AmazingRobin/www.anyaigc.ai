@@ -5,25 +5,34 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>页面不存在 - AnyAIGC</title>
 <meta name="robots" content="noindex,follow">
+<meta name="theme-color" content="#0f0b0a">
 <link rel="icon" href="/favicon.ico">
 <style>
-:root{--ink:#241c1a;--muted:#6c615c;--canvas:#f8f5f2;--coral:#e45f45;--coral-dark:#bd432f;--line:#eaded8}
+:root{--bg:#0f0b0a;--s1:#171211;--line:rgba(255,235,215,.11);--line2:rgba(255,235,215,.2);--tx:#f6ede3;--mu:#b8aca1;--ac:#f68766;--te:#47b4b6;--ye:#ffd166}
 *{box-sizing:border-box}
-body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;background:var(--canvas);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;line-height:1.7}
-main{max-width:520px;text-align:center}
-.code{font-size:64px;font-weight:800;color:var(--coral);margin:0;line-height:1}
-h1{font-size:24px;margin:12px 0 8px}
-p{color:var(--muted);margin:0 0 24px}
+html{color-scheme:dark;-webkit-text-size-adjust:100%}
+body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;color:var(--tx);font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei UI","Noto Sans CJK SC",sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-wrap:anywhere;background:radial-gradient(ellipse 60% 55% at 12% 0%,rgba(246,135,102,.2),transparent 70%),radial-gradient(ellipse 55% 50% at 92% 0%,rgba(71,180,182,.17),transparent 70%),var(--bg)}
+main{max-width:520px;width:100%;text-align:center}
+.logo{display:block;height:42px;width:auto;margin:0 auto 28px}
+.code{font-size:96px;font-weight:800;margin:0;line-height:1;letter-spacing:-.02em;background:linear-gradient(90deg,var(--ac),var(--ye));-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+h1{font-size:24px;margin:14px 0 8px}
+p{color:var(--mu);margin:0 0 24px}
 .btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-a{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:10px 20px;border-radius:8px;text-decoration:none;font-weight:700;border:1px solid var(--line);color:var(--ink);background:#fff}
-a.primary{background:var(--coral);border-color:var(--coral);color:#fff}
-a.primary:hover{background:var(--coral-dark);border-color:var(--coral-dark)}
-a:focus-visible{outline:3px solid rgba(228,95,69,.4);outline-offset:2px}
+a{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:10px 20px;border-radius:10px;text-decoration:none;font-weight:600;border:1px solid var(--line2);color:var(--tx);background:rgba(255,255,255,.04);transition:background-color .2s,border-color .2s}
+a:hover{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.3)}
+a.primary{background:var(--ac);border-color:transparent;color:#2a0d08}
+a.primary:hover{background:#ff9f82}
+a:focus-visible{outline:2px solid var(--ac);outline-offset:3px}
 .en{margin-top:28px;font-size:14px}
+.en a{color:var(--ac)}
+::selection{background:rgba(246,135,102,.3);color:#fff}
+@media (max-width:480px){.code{font-size:72px}.btns a{flex:1 1 100%}}
+@media (prefers-reduced-motion:reduce){a{transition:none}}
 </style>
 </head>
 <body>
 <main>
+  <img class="logo" src="/assets/home/logo.webp?v=20261123d" width="102" height="42" alt="AnyAIGC">
   <p class="code">404</p>
   <h1>页面不存在</h1>
   <p>你访问的地址可能已更改或被移除。可以从模型专题找到想要的模型 API 价格与接入方法。</p>

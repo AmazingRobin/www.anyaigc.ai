@@ -36,5 +36,3 @@
 # Language roots -> model hubs (no zh/index.html or en/index.html)
 /zh /zh/models/ 301
 /zh/ /zh/models/ 301
-/en /en/models/ 301
-/en/ /en/models/ 301

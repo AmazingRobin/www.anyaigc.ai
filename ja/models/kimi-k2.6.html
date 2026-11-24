@@ -48,7 +48,7 @@
       "@id": "https://www.anyaigc.ai/#org",
       "name": "AnyAIGC",
       "url": "https://www.anyaigc.ai/",
-      "logo": "https://www.anyaigc.ai/logo.webp"
+      "logo": "https://www.anyaigc.ai/assets/home/logo-512.png"
     },
     {
       "@type": "WebSite",
@@ -85,7 +85,7 @@
           "@type": "ListItem",
           "position": 1,
           "name": "ホーム",
-          "item": "https://www.anyaigc.ai/"
+          "item": "https://www.anyaigc.ai/ja/"
         },
         {
           "@type": "ListItem",
@@ -284,10 +284,10 @@
 
 <header class="o-nav">
   <div class="o-wrap o-nav-inner">
-    <a class="o-brand" href="/" aria-label="AnyAIGC ホーム">AnyAIGC</a>
+    <a class="o-brand" href="/ja/" aria-label="AnyAIGC ホーム">AnyAIGC</a>
     <nav aria-label="メインナビゲーション">
       <ul class="o-nav-left">
-        <li><a class="o-pill" href="/en/models/">モデルガイド</a></li>
+        <li><a class="o-pill" href="/ja/models/">モデルガイド</a></li>
         <li class="k-hide-md"><a class="o-pill" href="/ja/models/kimi">Kimi</a></li>
         <li><a class="o-pill" href="https://anyaigc.ai/pricing">モデル一覧</a></li>
         <li><a class="o-pill" href="#pricing">料金</a></li>
@@ -311,8 +311,8 @@
     <div class="o-wrap k-hero-inner">
       <nav aria-label="パンくずリスト">
         <ol class="o-crumbs">
-          <li><a href="/">ホーム</a></li>
-          <li><a href="/en/models/">モデルガイド</a></li>
+          <li><a href="/ja/">ホーム</a></li>
+          <li><a href="/ja/models/">モデルガイド</a></li>
             <li><a href="/ja/models/kimi">Kimi</a></li>
           <li aria-current="page">Kimi K2.6 API</li>
         </ol>
@@ -679,7 +679,7 @@ stream = client.chat.completions.create(
         <li class="o-reveal"><h3>200万トークンを無料で提供</h3><p>新規アカウントにはトライアル枠が付与されるので、チャージ前に試せます。</p></li>
         <li class="o-reveal"><h3>$1 からチャージ、返金可能</h3><p>$1 からチャージできます。未使用の残高は手数料なしで返金できます。</p></li>
         <li class="o-reveal"><h3>公式チャネル、本物のモデル</h3><p>リクエストは公式のモデルチャネルに送られ、安価な代替モデルやリバースエンジニアリングによるモデルは使いません。</p></li>
-        <li class="o-reveal"><h3>保存なし、学習利用なし</h3><p>法令で求められる場合を除き、プロンプトと出力を永続的に保存せず、学習にも使用しません。<a href="/privacy">プライバシーポリシー</a>をご覧ください。</p></li>
+        <li class="o-reveal"><h3>保存なし、学習利用なし</h3><p>法令で求められる場合を除き、プロンプトと出力を永続的に保存せず、学習にも使用しません。<a href="/ja/privacy">プライバシーポリシー</a>をご覧ください。</p></li>
         <li class="o-reveal"><h3>明細が見える課金、利用上限</h3><p>コンソールでリクエストごとのトークン数と料金を確認でき、APIキーごとに上限（クォータ）を設定できます。</p></li>
         <li class="o-reveal"><h3>24/7 サポート</h3><p>連携、課金、障害について、いつでも<a href="https://anyaigc.ai/customersupport">サポートに問い合わせる</a>ことができます。</p></li>
       </ul>
@@ -724,12 +724,12 @@ stream = client.chat.completions.create(
         <details><summary><h3>新規ユーザー向けの無料トライアルはありますか？</h3></summary><div class="o-ans"><p>はい。新規アカウントには200万トークン分のトライアル枠が付与されるので、チャージするかどうか決める前に試せます。チャージは $1 から可能です。</p></div></details>
         <details><summary><h3>残高は返金できますか？</h3></summary><div class="o-ans"><p>はい。未使用の残高は手数料なしで返金できます。返金をご希望の場合は、サポートにご連絡ください。</p></div></details>
         <details><summary><h3>本物のモデルですか？データは安全ですか？</h3></summary><div class="o-ans"><p>リクエストは公式のモデルチャネルに送られ、安価な代替モデルやリバースエンジニアリングによるモデルは使いません。法令で求められる場合を除き、プロンプトや出力を永続的に保存せず、学習にも使用しません。コンソールでは、リクエストごとのトークン数と料金を確認できます。</p></div></details>
-        <details><summary><h3>入力したデータはトレーニングに使われますか？</h3></summary><div class="o-ans"><p>いいえ。法令で必要な場合を除き、AnyAIGC はプロンプトや出力を永続的に保存せず、モデルの学習にも使用しません。リクエストは HTTPS で暗号化されます。AnyAIGC の<a href="/privacy">プライバシーポリシー</a>をご覧ください。モデル自体のデータポリシーは Moonshot AI の公式規約に従います。</p></div></details>
+        <details><summary><h3>入力したデータはトレーニングに使われますか？</h3></summary><div class="o-ans"><p>いいえ。法令で必要な場合を除き、AnyAIGC はプロンプトや出力を永続的に保存せず、モデルの学習にも使用しません。リクエストは HTTPS で暗号化されます。AnyAIGC の<a href="/ja/privacy">プライバシーポリシー</a>をご覧ください。モデル自体のデータポリシーは Moonshot AI の公式規約に従います。</p></div></details>
       </div>
     </div>
   </section>
 
-<!-- related-models --><section class="rel-models o-section" id="related" aria-labelledby="related-title"><div class="o-wrap o-col"><div class="rel-inner"><h2 id="related-title">関連モデルの API</h2><p>同じ AnyAIGC の APIキーで、次の言語モデルを利用できます。料金と機能を比較してください。</p><ul class="rel-list"><li><a href="/ja/models/qwen"><b>Qwen API</b><span>ガイドを見る →</span></a></li><li><a href="/ja/models/glm"><b>GLM API</b><span>ガイドを見る →</span></a></li><li><a href="/ja/models/grok-4.x"><b>Grok 4 API</b><span>ガイドを見る →</span></a></li><li><a href="/ja/models/doubao-seed-2-1-pro"><b>Doubao Seed API</b><span>ガイドを見る →</span></a></li><li><a href="/en/models/llama"><b>Llama API</b><span>ガイドを見る →</span></a></li><li><a href="/ja/models/mimo"><b>Xiaomi MiMo API</b><span>ガイドを見る →</span></a></li></ul></div></div></section><!-- /related-models -->
+<!-- related-models --><section class="rel-models o-section" id="related" aria-labelledby="related-title"><div class="o-wrap o-col"><div class="rel-inner"><h2 id="related-title">関連モデルの API</h2><p>同じ AnyAIGC の APIキーで、次の言語モデルを利用できます。料金と機能を比較してください。</p><ul class="rel-list"><li><a href="/ja/models/qwen"><b>Qwen API</b><span>ガイドを見る →</span></a></li><li><a href="/ja/models/glm"><b>GLM API</b><span>ガイドを見る →</span></a></li><li><a href="/ja/models/grok-4.x"><b>Grok 4 API</b><span>ガイドを見る →</span></a></li><li><a href="/ja/models/doubao-seed-2-1-pro"><b>Doubao Seed API</b><span>ガイドを見る →</span></a></li><li><a href="/ja/models/llama"><b>Llama API</b><span>ガイドを見る →</span></a></li><li><a href="/ja/models/mimo"><b>Xiaomi MiMo API</b><span>ガイドを見る →</span></a></li></ul></div></div></section><!-- /related-models -->
   <!-- 结尾 CTA -->
   <section class="o-final" aria-labelledby="final-title">
     <div class="o-wrap">
@@ -741,7 +741,7 @@ stream = client.chat.completions.create(
         <a class="o-btn o-btn-light" href="https://docs.anyaigc.ai" target="_blank" rel="noopener">API-Dokumentation lesen<span class="k-arrow" aria-hidden="true">→</span></a>
       </div>
       <ul class="o-related" aria-label="その他">
-        <li><a class="o-pill" href="/en/models/">モデルガイド一覧</a></li>
+        <li><a class="o-pill" href="/ja/models/">モデルガイド一覧</a></li>
         <li><a class="o-pill" href="/ja/models/kimi">Kimi の概要</a></li>
         <li><a class="o-pill" href="https://anyaigc.ai/pricing">モデル一覧</a></li>
       </ul>
@@ -753,14 +753,14 @@ stream = client.chat.completions.create(
   <div class="o-wrap">
     <div class="o-foot-top">
       <div class="o-foot-brand">
-        <a class="o-brand" href="/">AnyAIGC</a>
+        <a class="o-brand" href="/ja/">AnyAIGC</a>
         <p>グローバルな AI モデル向けの API ゲートウェイ。1つのベースURLと1つの APIキーで300以上のモデルを利用できます。</p>
       </div>
       <div class="o-foot-cols">
         <div class="o-foot-col">
           <h2>プロダクト</h2>
           <ul>
-            <li><a href="/en/models/">モデルガイド</a></li>
+            <li><a href="/ja/models/">モデルガイド</a></li>
             <li><a href="https://anyaigc.ai/pricing">モデル一覧</a></li>
             <li><a href="https://anyaigc.ai/console">コンソール</a></li>
           </ul>
@@ -775,8 +775,8 @@ stream = client.chat.completions.create(
         <div class="o-foot-col">
           <h2>法的情報</h2>
           <ul>
-            <li><a href="/privacy">プライバシーポリシー</a></li>
-            <li><a href="/terms">利用規約</a></li>
+            <li><a href="/ja/privacy">プライバシーポリシー</a></li>
+            <li><a href="/ja/terms">利用規約</a></li>
           </ul>
         </div>
       </div>

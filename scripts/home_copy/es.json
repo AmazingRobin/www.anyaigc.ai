@@ -1,0 +1,308 @@
+{
+ "lang": "es",
+ "html_lang": "es",
+ "og_locale": "es_ES",
+ "native": "Español",
+ "title": "AnyAIGC | Una clave de API para más de 300 modelos de IA",
+ "desc": "Una clave de API para más de 300 modelos de IA, como Claude, GPT, Gemini y DeepSeek. Compatible con OpenAI, pago por uso y facturas en autoservicio.",
+ "og_desc": "Una clave de API para más de 300 modelos de IA. Compatible con OpenAI, pago por uso y facturas en autoservicio.",
+ "keywords": "API de IA,API compatible con OpenAI,API de Claude,API de GPT,API de Gemini,API de DeepSeek,más de 300 modelos,pasarela de API,pago por uso",
+ "og_alt": "AnyAIGC: más de 300 modelos, una sola clave de API",
+ "skip": "Saltar al contenido principal",
+ "brand_aria": "Inicio de AnyAIGC",
+ "nav_aria": "Navegación principal",
+ "nav": [
+  "Guías de modelos",
+  "Precios",
+  "Inicio rápido",
+  "Empresas",
+  "Docs de API"
+ ],
+ "login": "Iniciar sesión",
+ "cta_key": "Obtener clave de API",
+ "hero": {
+  "badge": "Compatible con OpenAI · más de 300 modelos en un catálogo",
+  "h1a": "Una clave de API para",
+  "h1b": "más de 300 modelos de IA",
+  "lead": "Compatible con OpenAI y de pago por uso, con facturas en autoservicio. Un solo endpoint para Claude, OpenAI, Gemini, Grok, DeepSeek, Qwen, Kimi, Doubao y Zhipu GLM, además de modelos de imagen, vídeo, audio, embeddings y recuperación.",
+  "btn_docs": "Leer la documentación",
+  "sub_link": "Equipos y empresas: contacta con soporte →"
+ },
+ "term": {
+  "tabs_aria": "Lenguaje del ejemplo",
+  "chips_aria": "Cambiar el modelo del ejemplo",
+  "user_msg": "Hola, preséntate",
+  "comment": "# Devuelve el formato compatible con OpenAI: choices[0].message.content",
+  "note": "Para cambiar de modelo, modifica solo la línea <b>model</b>. La Base URL y la clave siguen igual. Los modelos de Claude también tienen un endpoint nativo /v1/messages; consulta la guía de cada modelo."
+ },
+ "stats": [
+  [
+   "300+",
+   "Modelos en un solo catálogo"
+  ],
+  [
+   "OpenAI",
+   "Compatible con el protocolo"
+  ],
+  [
+   "$1",
+   "Recarga desde $1, pago por uso"
+  ],
+  [
+   "Facturas",
+   "En autoservicio en la consola"
+  ]
+ ],
+ "stats_aria": "Aspectos destacados de la plataforma",
+ "marq_aria": "Proveedores de modelos compatibles",
+ "vendors": [
+  "Claude",
+  "OpenAI",
+  "Gemini",
+  "Grok",
+  "DeepSeek",
+  "Qwen",
+  "Kimi",
+  "Zhipu GLM",
+  "Kling",
+  "Doubao",
+  "MiniMax"
+ ],
+ "why": {
+  "h2": "De tu caso de uso a la primera petición, en menos pasos",
+  "lead": "Primero confirma el caso de uso y el modelo, y después conéctate en tres pasos. Pensado para desarrolladores, estudios y equipos que añaden IA a aplicaciones, herramientas de programación, flujos de automatización y sistemas internos.",
+  "cards": [
+   {
+    "tag": "MODELS",
+    "big": "300+",
+    "h": "Modelos en un solo catálogo",
+    "p": "Modelos de lenguaje, imagen, vídeo, audio, embeddings y recuperación. Elige del catálogo actualizado en la consola."
+   },
+   {
+    "tag": "COMPATIBLE",
+    "big": "",
+    "h": "Funciona con el SDK de OpenAI",
+    "p": "En la mayoría de los proyectos basta con cambiar la Base URL, la clave de API y el ID de modelo para migrar, sin reescribir el código de negocio."
+   },
+   {
+    "tag": "ACCOUNT",
+    "big": "",
+    "h": "Una clave, un saldo",
+    "p": "Los modelos de texto, imagen, vídeo y música comparten una misma clave de API y un mismo saldo. Para cambiar de modelo solo cambias el ID de modelo y los parámetros."
+   },
+   {
+    "tag": "BILLING",
+    "big": "",
+    "h": "Pago por uso, con cargos claros",
+    "p": "Sin suscripciones ni cuotas mensuales. La consola muestra los tokens y el cargo de cada petición, y puedes fijar un límite de gasto por clave."
+   },
+   {
+    "tag": "INVOICE",
+    "big": "",
+    "h": "Facturas en consola",
+    "p": "Emite una factura en la consola por el importe que hayas recargado realmente, cuando la necesites."
+   }
+  ]
+ },
+ "models": {
+  "h2": "API de modelos populares",
+  "lead": "Cada familia tiene su propia guía con tabla de precios, ejemplos de integración y datos de facturación. Los ID de modelo, los precios y la disponibilidad se rigen por lo que muestra la consola.",
+  "more": "Ver las guías de los más de 300 modelos →",
+  "items": [
+   [
+    "Claude",
+    "Modelos de Anthropic: precios e integración"
+   ],
+   [
+    "GPT",
+    "Modelos de chat de OpenAI: comparación de precios"
+   ],
+   [
+    "Gemini",
+    "Integración de Google Gemini 4"
+   ],
+   [
+    "Grok",
+    "Modelos de texto Grok de xAI"
+   ],
+   [
+    "DeepSeek",
+    "Resumen de los modelos DeepSeek"
+   ],
+   [
+    "Qwen",
+    "Resumen de los modelos de chat Qwen"
+   ],
+   [
+    "Kimi",
+    "Modelos Kimi de Moonshot"
+   ],
+   [
+    "GLM",
+    "Modelos GLM de Zhipu"
+   ],
+   [
+    "Kling",
+    "Modelos de vídeo e imagen de Kling"
+   ],
+   [
+    "Seedance",
+    "Generación de vídeo de Doubao"
+   ],
+   [
+    "Seedream",
+    "Generación de imágenes de Doubao"
+   ],
+   [
+    "MiniMax",
+    "Chat, vídeo y voz"
+   ]
+  ]
+ },
+ "start": {
+  "h2": "Conéctate en tres pasos",
+  "lead": "Crea una clave de API, copia la Base URL y un ID de modelo real, y envía una primera petición de prueba.",
+  "steps": [
+   [
+    "Crea una cuenta",
+    "Regístrate en AnyAIGC y abre la consola para crear tu propia clave de API. Las cuentas nuevas reciben 2 millones de tokens gratis."
+   ],
+   [
+    "Crea una clave de API",
+    "Copia la Base URL, la clave de API y el nombre del modelo, y sigue la documentación para terminar la configuración."
+   ],
+   [
+    "Conecta tu proyecto o herramienta",
+    "Apunta el SDK de OpenAI, Cursor, Dify, Chatbox y herramientas similares a la dirección de AnyAIGC."
+   ]
+  ],
+  "copy": "Copiar",
+  "done": "Copiado",
+  "note": "Con el SDK de OpenAI, define baseURL con la dirección de arriba y usa la clave de API que creaste en la consola."
+ },
+ "tools": {
+  "h2": "Funciona con tus herramientas de desarrollo",
+  "lead": "Elige una herramienta para ver su guía de configuración. Comprueba qué protocolo admite tu cliente y usa un ID de modelo real.",
+  "items": [
+   [
+    "Claude Code",
+    "Programación con Claude en la terminal: comprensión del proyecto, preguntas sobre el código, consejos de refactorización y scripts"
+   ],
+   [
+    "Codex",
+    "Agente de programación local: lee y escribe proyectos, ejecuta comandos, corrige errores, lanza pruebas y entrega trabajo de ingeniería"
+   ],
+   [
+    "Cursor",
+    "Generación de código, refactorización, preguntas sobre el proyecto y desarrollo diario"
+   ],
+   [
+    "Dify",
+    "Flujos de trabajo de IA, bases de conocimiento, bots de atención al cliente y aplicaciones internas de la empresa"
+   ],
+   [
+    "OpenClaw",
+    "Espacio de trabajo local de IA: acciones en el navegador, gestión de archivos, llamadas a herramientas y configuraciones con varios modelos"
+   ],
+   [
+    "Hermes Agent",
+    "Pasarela y flujo automatizado de mensajes: asignación de tareas, reenvío de llamadas a herramientas y flujos de larga duración"
+   ],
+   [
+    "Chatbox / Cherry Studio",
+    "Chat diario, resúmenes, traducción y cambio entre modelos"
+   ],
+   [
+    "OpenWebUI / n8n",
+    "Plataformas autoalojadas, automatización y cadenas de herramientas de equipo"
+   ]
+  ]
+ },
+ "ent": {
+  "h2": "AnyAIGC para equipos y empresas",
+  "lead": "Reúne compras, finanzas e ingeniería en un único proceso de integración.",
+  "cards": [
+   {
+    "tag": "INVOICE",
+    "h": "Facturas en consola",
+    "p": "Emite una factura en la consola por el importe que hayas recargado realmente, cuando la necesites."
+   },
+   {
+    "tag": "SUPPORT",
+    "h": "Soporte y contacto técnico",
+    "p": "Un contacto dedicado de soporte y asistencia técnica para la integración y las dudas del día a día."
+   }
+  ],
+  "pay_label": "Métodos de pago",
+  "pay": [
+   "WeChat Pay",
+   "Alipay",
+   "USDT",
+   "Tarjeta de crédito"
+  ],
+  "btn_support": "Hablar con ventas",
+  "btn_reg": "Empieza con una cuenta gratuita"
+ },
+ "trust": {
+  "h2": "Por qué puedes confiar en AnyAIGC",
+  "items": [
+   "<b>Recarga desde $1.</b> Valida con una cantidad pequeña y recarga después según lo necesites.",
+   "<b>El saldo no utilizado se puede reembolsar,</b> sin comisión.",
+   "<b>Canales oficiales de los modelos.</b> Sin sustitutos de menor calidad ni de ingeniería inversa, sin degradar el modelo.",
+   "<b>Sin entrenamiento con tus datos.</b> Salvo que la ley lo exija, las entradas y salidas no se almacenan de forma persistente. Consulta la <a href=\"{privacy}\">Política de privacidad</a>.",
+   "<b>Facturación transparente.</b> La consola muestra los tokens y el cargo de cada petición, y puedes fijar un límite de gasto por clave.",
+   "<b>Soporte 24/7.</b> <a href=\"{support}\">Contacta con soporte</a> cuando quieras."
+  ],
+  "btn": "Empieza gratis con 2 millones de tokens"
+ },
+ "faq": {
+  "h2": "Preguntas frecuentes",
+  "items": [
+   [
+    "¿Puedo obtener una factura de AnyAIGC?",
+    "Sí. Puedes emitir tus propias facturas en la consola, por el importe que hayas recargado realmente."
+   ],
+   [
+    "¿Las cuentas nuevas reciben crédito de prueba gratuito?",
+    "Sí. Las cuentas nuevas reciben 2 millones de tokens gratis, para que pruebes los modelos y la integración a pequeña escala."
+   ],
+   [
+    "¿Se puede reembolsar el saldo no utilizado?",
+    "Sí. El saldo no utilizado se puede reembolsar, sin comisión."
+   ],
+   [
+    "¿Se usan modelos sustitutos? ¿Están seguros mis datos?",
+    "Usamos los canales oficiales de los modelos, sin sustitutos de menor calidad ni de ingeniería inversa. Salvo que la ley lo exija, no almacenamos las entradas ni las salidas de forma persistente ni las usamos para entrenar. Consulta la <a href=\"{privacy}\">Política de privacidad</a>."
+   ],
+   [
+    "¿Qué métodos de pago se admiten?",
+    "Puedes recargar saldo con WeChat Pay, Alipay, USDT o tarjeta de crédito. Tu saldo está en USD y sirve para todos los modelos de la plataforma. Las facturas se pueden emitir en la consola por el importe recargado."
+   ],
+   [
+    "¿Cómo conecto un proyecto existente?",
+    "En la mayoría de los proyectos que usan el SDK de OpenAI basta con cambiar la Base URL a {base} y usar una clave de API y un ID de modelo de la consola. La autenticación usa Authorization: Bearer &lt;API Key&gt;. Los ID de modelo, los precios y la disponibilidad se rigen por lo que muestran la consola y la página de modelos."
+   ],
+   [
+    "¿Qué herramientas de desarrollo se admiten?",
+    "Claude Code, Codex, OpenClaw, Hermes, Cursor, Dify, Cherry Studio, Chatbox, OpenWebUI y n8n. Las guías de configuración están en la <a href=\"{docs}\" target=\"_blank\" rel=\"noopener\">documentación de la API</a>."
+   ]
+  ]
+ },
+ "final": {
+  "h2": "¿Listo para tu primera petición?",
+  "p": "Consulta los ID de modelo y los precios reales en la consola, crea una clave de API y prueba a pequeña escala.",
+  "btn_reg": "Regístrate y crea una clave de API",
+  "btn_pricing": "Ver modelos y precios"
+ },
+ "foot": {
+  "links": [
+   "Guías de modelos",
+   "Modelos y precios",
+   "Documentación de la API",
+   "Contacta con soporte",
+   "Política de privacidad",
+   "Términos del servicio"
+  ],
+  "note": "Los nombres de modelos y las marcas mencionados pertenecen a sus respectivos propietarios. AnyAIGC es un proveedor de API independiente y no está afiliado a estos proveedores."
+ }
+}

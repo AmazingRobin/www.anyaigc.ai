@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ja" data-scrollbar="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AnyAIGC | OpenAI互換API｜1つのキーで300以上のAIモデル</title>
+<meta name="description" content="1つのAPIキーで、Claude、GPT、Gemini、DeepSeek など300以上のAIモデルを利用できます。OpenAI互換、従量課金で、請求書はコンソールで自分で発行できます。">
+<meta name="keywords" content="AI API,OpenAI互換API,Claude API,GPT API,Gemini API,DeepSeek API,300以上のモデル,APIゲートウェイ,従量課金">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#0f0b0a">
+<link rel="canonical" href="https://www.anyaigc.ai/ja/">
+<link rel="alternate" hreflang="zh-CN" href="https://www.anyaigc.ai/">
+<link rel="alternate" hreflang="en" href="https://www.anyaigc.ai/en/">
+<link rel="alternate" hreflang="ja" href="https://www.anyaigc.ai/ja/">
+<link rel="alternate" hreflang="ko" href="https://www.anyaigc.ai/ko/">
+<link rel="alternate" hreflang="es" href="https://www.anyaigc.ai/es/">
+<link rel="alternate" hreflang="de" href="https://www.anyaigc.ai/de/">
+<link rel="alternate" hreflang="x-default" href="https://www.anyaigc.ai/en/">
+<link rel="icon" href="/favicon.ico">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AnyAIGC">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="ko_KR">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:url" content="https://www.anyaigc.ai/ja/">
+<meta property="og:title" content="AnyAIGC | OpenAI互換API｜1つのキーで300以上のAIモデル">
+<meta property="og:description" content="1つのAPIキーで300以上のAIモデルを利用できます。OpenAI互換、従量課金、請求書の自己発行に対応しています。">
+<meta property="og:image" content="https://www.anyaigc.ai/assets/og/models-ja.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="AnyAIGC：1つのAPIキーで300以上のモデル">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AnyAIGC | OpenAI互換API｜1つのキーで300以上のAIモデル">
+<meta name="twitter:description" content="1つのAPIキーで300以上のAIモデルを利用できます。OpenAI互換、従量課金、請求書の自己発行に対応しています。">
+<meta name="twitter:image" content="https://www.anyaigc.ai/assets/og/models-ja.png">
+<link rel="stylesheet" href="/assets/models/scrollbar.css?v=20261125">
+<link rel="stylesheet" href="/assets/models/lang-menu.css?v=20261123c">
+<link rel="stylesheet" href="/assets/home/home.css?v=20261123i">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.anyaigc.ai/#org",
+      "name": "AnyAIGC",
+      "url": "https://www.anyaigc.ai/",
+      "logo": "https://www.anyaigc.ai/assets/home/logo-512.png"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.anyaigc.ai/#website",
+      "url": "https://www.anyaigc.ai/",
+      "name": "AnyAIGC",
+      "publisher": {
+        "@id": "https://www.anyaigc.ai/#org"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.anyaigc.ai/ja/#webpage",
+      "url": "https://www.anyaigc.ai/ja/",
+      "name": "AnyAIGC | OpenAI互換API｜1つのキーで300以上のAIモデル",
+      "inLanguage": "ja",
+      "isPartOf": {
+        "@id": "https://www.anyaigc.ai/#website"
+      },
+      "about": {
+        "@id": "https://www.anyaigc.ai/#org"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "inLanguage": "ja",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "AnyAIGC で請求書を発行できますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "はい。実際にチャージした金額分の請求書を、コンソールでご自身で発行できます。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "新規アカウントには無料のトライアル枠がありますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "はい。新規アカウントには200万トークンを無料で提供しますので、モデルや接続を少量で試せます。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "未使用の残高は返金できますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "はい。未使用の残高は、手数料なしで返金できます。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "代替モデルを使っていませんか？データは安全ですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "公式のモデルチャネルを使用しており、低スペックのモデルやリバースエンジニアリングによる代替モデルは使いません。法令で求められる場合を除き、入力と出力を永続的に保存せず、学習にも使用しません。詳しくはプライバシーポリシーをご覧ください。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "どの支払い方法に対応していますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "WeChat Pay、Alipay、USDT、クレジットカードでチャージできます。残高は USD で、プラットフォーム上のすべてのモデルで使えます。請求書は、チャージした金額分をコンソールで発行できます。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "既存のプロジェクトはどう接続しますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "OpenAI SDK を使っているプロジェクトの多くは、Base URL を https://anyaigc.ai/v1 に変更し、コンソールで取得したAPIキーとモデルIDを指定するだけで接続できます。認証には Authorization: Bearer <API Key> を使います。モデルID、料金、提供状況はコンソールとモデルのページの最新情報に従います。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "どの開発ツールに対応していますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Claude Code、Codex、OpenClaw、Hermes、Cursor、Dify、Cherry Studio、Chatbox、OpenWebUI、n8n に対応しています。設定ガイドはAPIドキュメントにあります。"
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">メインコンテンツへスキップ</a>
+<header class="nav">
+  <div class="nav-in">
+    <a class="brand" href="/ja/" aria-label="AnyAIGC ホーム"><img src="/assets/home/logo.webp?v=20261123i" width="102" height="42" alt="AnyAIGC"></a>
+    <nav class="nav-links" aria-label="メインナビゲーション">
+      <a href="/ja/models/">モデルガイド</a>
+      <a href="https://anyaigc.ai/pricing">モデルと料金</a>
+      <a href="#start">クイックスタート</a>
+      <a href="#enterprise">法人向け</a>
+      <a href="https://docs.anyaigc.ai" target="_blank" rel="noopener">APIドキュメント</a>
+    </nav>
+    <div class="nav-r">
+      <details class="lang-menu"><summary aria-label="Language: 日本語">JA</summary><ul class="lang-menu-list"><li><a href="/" hreflang="zh-CN" lang="zh-CN">中文</a></li><li><a href="/en/" hreflang="en" lang="en">English</a></li><li><a href="/ko/" hreflang="ko" lang="ko">한국어</a></li><li><a href="/es/" hreflang="es" lang="es">Español</a></li><li><a href="/de/" hreflang="de" lang="de">Deutsch</a></li></ul></details>
+      <a class="login" href="https://anyaigc.ai/console">ログイン</a>
+      <a class="btn btn-p btn-s" href="https://anyaigc.ai/register?aff=oOK7&amp;channel=c_wpduopc9">APIキーを取得</a>
+    </div>
+  </div>
+</header>
+<main id="main">
+<section class="hero">
+  <i class="aur a1" aria-hidden="true"></i><i class="aur a2" aria-hidden="true"></i><i class="aur a3" aria-hidden="true"></i>
+  <div class="wrap">
+    <div class="hero-in">
+      <div>
+        <span class="badge"><i class="dot" aria-hidden="true"></i>OpenAI互換 · 300以上のモデルを1つのカタログに</span>
+        <h1>1つのAPIキーで<br><span class="g">300以上のAIモデル</span></h1>
+        <p class="lead">OpenAI互換の従量課金で、請求書は自分で発行できます。Claude、OpenAI、Gemini、Grok、DeepSeek、Qwen、Kimi、Doubao、Zhipu GLM に加え、画像・動画・音声・埋め込み・検索モデルも1つのエンドポイントから呼び出せます。</p>
+        <div class="cta">
+          <a class="btn btn-p" href="https://anyaigc.ai/register?aff=oOK7&amp;channel=c_wpduopc9">APIキーを取得</a>
+          <a class="btn" href="https://docs.anyaigc.ai" target="_blank" rel="noopener">ドキュメントを読む</a>
+        </div>
+        <a class="sub-link" href="https://anyaigc.ai/customersupport">チーム・企業のお客様：サポートへお問い合わせ →</a>
+      </div>
+      <div class="term" id="demo">
+        <div class="term-bar">
+          <i></i><i></i><i></i>
+          <div class="tabs" role="tablist" aria-label="サンプルの言語">
+            <button type="button" role="tab" data-t="curl" aria-selected="true">cURL</button>
+            <button type="button" role="tab" data-t="py" aria-selected="false">Python</button>
+          </div>
+          <span class="term-url">POST /v1/chat/completions</span>
+        </div>
+        <div class="chips" role="group" aria-label="サンプルのモデルを切り替え"><button type="button" data-m="gpt-6.2-sol" aria-pressed="true">gpt-6.2-sol</button><button type="button" data-m="deepseek-v4-flash" aria-pressed="false">deepseek-v4-flash</button><button type="button" data-m="kimi-k3" aria-pressed="false">kimi-k3</button><button type="button" data-m="glm-5.3" aria-pressed="false">glm-5.3</button><button type="button" data-m="qwen3.8-max" aria-pressed="false">qwen3.8-max</button></div>
+        <pre class="code" data-p="curl" lang="en"><code><span class="ln" style="--i:0"><span class="k">curl</span> https://anyaigc.ai/v1/chat/completions \</span><span class="ln" style="--i:1">  -H <span class="s">"Authorization: Bearer $ANYAIGC_API_KEY"</span> \</span><span class="ln" style="--i:2">  -H <span class="s">"Content-Type: application/json"</span> \</span><span class="ln" style="--i:3">  -d <span class="s">'{</span></span><span class="ln" style="--i:4">    <span class="s">"model": "</span><span class="m">gpt-6.2-sol</span><span class="s">",</span></span><span class="ln" style="--i:5">    <span class="s">"messages": [{"role": "user", "content": "こんにちは、自己紹介してください"}]</span></span><span class="ln" style="--i:6">  <span class="s">}'</span></span><span class="ln" style="--i:7"><span class="c"># OpenAI互換の形式で返ります：choices[0].message.content</span></span><span class="cur" aria-hidden="true"></span></code></pre>
+        <pre class="code" data-p="py" lang="en" hidden><code><span class="ln" style="--i:0"><span class="k">import</span> os</span><span class="ln" style="--i:1"><span class="k">from</span> openai <span class="k">import</span> OpenAI</span><span class="ln" style="--i:2"></span><span class="ln" style="--i:3">client = OpenAI(</span><span class="ln" style="--i:4">    base_url=<span class="s">"https://anyaigc.ai/v1"</span>,</span><span class="ln" style="--i:5">    api_key=os.environ[<span class="s">"ANYAIGC_API_KEY"</span>],</span><span class="ln" style="--i:6">)</span><span class="ln" style="--i:7">resp = client.chat.completions.create(</span><span class="ln" style="--i:8">    model=<span class="s">"</span><span class="m">gpt-6.2-sol</span><span class="s">"</span>,</span><span class="ln" style="--i:9">    messages=[{<span class="s">"role"</span>: <span class="s">"user"</span>, <span class="s">"content"</span>: <span class="s">"こんにちは、自己紹介してください"</span>}],</span><span class="ln" style="--i:10">)</span><span class="ln" style="--i:11">print(resp.choices[0].message.content)</span></code></pre>
+        <p class="term-note">モデルを切り替えるときは、<b>model</b> の行だけを変更します。Base URL とキーはそのままです。Claude モデルにはネイティブの /v1/messages エンドポイントもあります。詳しくは各モデルガイドをご覧ください。</p>
+      </div>
+    </div>
+    <div class="stats" aria-label="プラットフォームの特長"><div><b>300+</b><span>1つのカタログにあるモデル</span></div><div><b>OpenAI</b><span>プロトコル互換</span></div><div><b>$1</b><span>$1からチャージ、従量課金</span></div><div><b>請求書</b><span>コンソールで自分で発行</span></div></div>
+  </div>
+</section>
+
+<div class="marq" aria-label="対応モデルのベンダー">
+  <div class="track"><ul><li><img class="ic" src="/assets/icons/claude-color.svg" width="22" height="22" alt="" loading="lazy" decoding="async">Claude</li><li><span class="ic mono-ic" style="--u:url(/assets/icons/openai.svg)" aria-hidden="true"></span>OpenAI</li><li><img class="ic" src="/assets/icons/gemini-color.svg" width="22" height="22" alt="" loading="lazy" decoding="async">Gemini</li><li><span class="ic mono-ic" style="--u:url(/assets/icons/grok.svg)" aria-hidden="true"></span>Grok</li><li><img class="ic" src="/assets/icons/deepseek-color.svg" width="22" height="22" alt="" loading="lazy" decoding="async">DeepSeek</li><li><span class="ic mono-ic" style="--u:url(/assets/icons/qwen.svg)" aria-hidden="true"></span>Qwen</li><li><span class="ic mono-ic" style="--u:url(/assets/icons/kimi.svg)" aria-hidden="true"></span>Kimi</li><li><img class="ic" src="/assets/icons/zhipu-color.svg" width="22" height="22" alt="" loading="lazy" decoding="async">Zhipu GLM</li><li><span class="ic mono-ic" style="--u:url(/assets/icons/kling.svg)" aria-hidden="true"></span>Kling</li><li><img class="ic" src="/assets/icons/bytedance-color.svg" width="22" height="22" alt="" loading="lazy" decoding="async">Doubao</li><li><img class="ic" src="/assets/icons/minimax-color.svg" width="22" height="22" alt="" loading="lazy" decoding="async">MiniMax</li></ul><ul aria-hidden="true"><li><img class="ic" src="/assets/icons/claude-color.svg" width="22" height="22" alt="" loading="lazy" decoding="async">Claude</li><li><span class="ic mono-ic" style="--u:url(/assets/icons/openai.svg)" aria-hidden="true"></span>OpenAI</li><li><img class="ic" src="/assets/icons/gemini-color.svg" width="22" height="22" alt="" loading="lazy" decoding="async">Gemini</li><li><span class="ic mono-ic" style="--u:url(/assets/icons/grok.svg)" aria-hidden="true"></span>Grok</li><li><img class="ic" src="/assets/icons/deepseek-color.svg" width="22" height="22" alt="" loading="lazy" decoding="async">DeepSeek</li><li><span class="ic mono-ic" style="--u:url(/assets/icons/qwen.svg)" aria-hidden="true"></span>Qwen</li><li><span class="ic mono-ic" style="--u:url(/assets/icons/kimi.svg)" aria-hidden="true"></span>Kimi</li><li><img class="ic" src="/assets/icons/zhipu-color.svg" width="22" height="22" alt="" loading="lazy" decoding="async">Zhipu GLM</li><li><span class="ic mono-ic" style="--u:url(/assets/icons/kling.svg)" aria-hidden="true"></span>Kling</li><li><img class="ic" src="/assets/icons/bytedance-color.svg" width="22" height="22" alt="" loading="lazy" decoding="async">Doubao</li><li><img class="ic" src="/assets/icons/minimax-color.svg" width="22" height="22" alt="" loading="lazy" decoding="async">MiniMax</li></ul></div>
+</div>
+
+<section class="sec cv" id="why">
+  <div class="wrap">
+    <p class="eyebrow">01 / WHY ANYAIGC</p>
+    <h2>用途の確認から最初のリクエストまで、少ないステップで</h2>
+    <p class="sec-lead">まず用途とモデルを決めて、3ステップで接続します。アプリ、コーディングツール、自動化ワークフロー、社内システムにAIを組み込む開発者、スタジオ、チーム向けです。</p>
+    <div class="bento"><div class="card rv"><span class="tag">MODELS</span><div class="big">300+</div><h3>1つのカタログにあるモデル</h3><p>言語、画像、動画、音声、埋め込み、検索のモデルを用意しています。コンソールの最新カタログから選べます。</p></div><div class="card rv"><span class="tag">COMPATIBLE</span><h3>OpenAI SDK で使えます</h3><p>既存のプロジェクトの多くは、Base URL、APIキー、モデルIDを差し替えるだけで移行でき、業務コードを書き直す必要はありません。</p></div><div class="card rv"><span class="tag">ACCOUNT</span><h3>1つのキーと1つの残高</h3><p>テキスト、画像、動画、音楽のモデルで、1つのAPIキーと1つの残高を共有します。モデルを切り替えるときは、モデルIDとパラメータを変えるだけです。</p></div><div class="card rv"><span class="tag">BILLING</span><h3>従量課金で、明細もわかりやすく</h3><p>サブスクリプションや月額料金はありません。コンソールでリクエストごとのトークン数と料金を確認でき、キーごとに利用上限を設定できます。</p></div><div class="card rv"><span class="tag">INVOICE</span><h3>請求書を自分で発行</h3><p>必要なときに、コンソールで実際にチャージした金額分の請求書を発行できます。</p></div></div>
+  </div>
+</section>
+
+<section class="sec cv" id="models">
+  <div class="wrap">
+    <p class="eyebrow">02 / MODELS</p>
+    <h2>人気モデルの API</h2>
+    <p class="sec-lead">各シリーズに専用のガイドがあり、料金表、接続サンプル、請求書の情報を掲載しています。モデルID、料金、提供状況はコンソールの最新情報に従います。</p>
+    <div class="models"><a class="card mc rv" href="/ja/models/claude"><span class="tile"><img class="ic" src="/assets/icons/claude-color.svg" width="24" height="24" alt="" loading="lazy" decoding="async"></span><div><h3>Claude</h3><p>Anthropic のモデル：料金と接続方法</p></div><span class="go" aria-hidden="true">→</span></a><a class="card mc rv" href="/ja/models/gpt"><span class="tile"><span class="ic mono-ic" style="--u:url(/assets/icons/openai.svg)" aria-hidden="true"></span></span><div><h3>GPT</h3><p>OpenAI のチャットモデル：料金比較</p></div><span class="go" aria-hidden="true">→</span></a><a class="card mc rv" href="/ja/models/gemini-4-hydrogen"><span class="tile"><img class="ic" src="/assets/icons/gemini-color.svg" width="24" height="24" alt="" loading="lazy" decoding="async"></span><div><h3>Gemini</h3><p>Google Gemini 4 の接続方法</p></div><span class="go" aria-hidden="true">→</span></a><a class="card mc rv" href="/ja/models/grok-4.x"><span class="tile"><span class="ic mono-ic" style="--u:url(/assets/icons/grok.svg)" aria-hidden="true"></span></span><div><h3>Grok</h3><p>xAI Grok のテキストモデル</p></div><span class="go" aria-hidden="true">→</span></a><a class="card mc rv" href="/ja/models/deepseek"><span class="tile"><img class="ic" src="/assets/icons/deepseek-color.svg" width="24" height="24" alt="" loading="lazy" decoding="async"></span><div><h3>DeepSeek</h3><p>DeepSeek モデルの概要</p></div><span class="go" aria-hidden="true">→</span></a><a class="card mc rv" href="/ja/models/qwen"><span class="tile"><span class="ic mono-ic" style="--u:url(/assets/icons/qwen.svg)" aria-hidden="true"></span></span><div><h3>Qwen</h3><p>Qwen チャットモデルの概要</p></div><span class="go" aria-hidden="true">→</span></a><a class="card mc rv" href="/ja/models/kimi"><span class="tile"><span class="ic mono-ic" style="--u:url(/assets/icons/kimi.svg)" aria-hidden="true"></span></span><div><h3>Kimi</h3><p>Moonshot Kimi のモデル</p></div><span class="go" aria-hidden="true">→</span></a><a class="card mc rv" href="/ja/models/glm"><span class="tile"><img class="ic" src="/assets/icons/zhipu-color.svg" width="24" height="24" alt="" loading="lazy" decoding="async"></span><div><h3>GLM</h3><p>Zhipu GLM のモデル</p></div><span class="go" aria-hidden="true">→</span></a><a class="card mc rv" href="/ja/models/kling"><span class="tile"><span class="ic mono-ic" style="--u:url(/assets/icons/kling.svg)" aria-hidden="true"></span></span><div><h3>Kling</h3><p>Kling の動画・画像モデル</p></div><span class="go" aria-hidden="true">→</span></a><a class="card mc rv" href="/ja/models/seedance"><span class="tile"><img class="ic" src="/assets/icons/bytedance-color.svg" width="24" height="24" alt="" loading="lazy" decoding="async"></span><div><h3>Seedance</h3><p>Doubao の動画生成</p></div><span class="go" aria-hidden="true">→</span></a><a class="card mc rv" href="/ja/models/seedream"><span class="tile"><img class="ic" src="/assets/icons/bytedance-color.svg" width="24" height="24" alt="" loading="lazy" decoding="async"></span><div><h3>Seedream</h3><p>Doubao の画像生成</p></div><span class="go" aria-hidden="true">→</span></a><a class="card mc rv" href="/ja/models/minimax"><span class="tile"><img class="ic" src="/assets/icons/minimax-color.svg" width="24" height="24" alt="" loading="lazy" decoding="async"></span><div><h3>MiniMax</h3><p>チャット、動画、音声</p></div><span class="go" aria-hidden="true">→</span></a></div>
+    <a class="more" href="/ja/models/">300以上のモデルガイドをすべて見る →</a>
+  </div>
+</section>
+
+<section class="sec cv" id="start">
+  <div class="wrap">
+    <p class="eyebrow">03 / QUICK START</p>
+    <h2>3ステップで接続</h2>
+    <p class="sec-lead">APIキーを作成し、Base URL と有効なモデルIDをコピーして、最初のテストリクエストを送ります。</p>
+    <div class="steps"><div class="card rv"><div class="n mono">01</div><h3>アカウントを作成</h3><p>AnyAIGC に登録し、コンソールを開いて自分のAPIキーを作成します。新規アカウントには200万トークンを無料で提供します。</p></div><div class="card rv"><div class="n mono">02</div><h3>APIキーを作成</h3><p>Base URL、APIキー、モデル名をコピーし、ドキュメントに従って設定を完了します。</p></div><div class="card rv"><div class="n mono">03</div><h3>プロジェクトやツールを接続</h3><p>OpenAI SDK、Cursor、Dify、Chatbox などのツールで、接続先を AnyAIGC のアドレスに設定します。</p></div></div>
+    <div class="base">
+      <span class="mono" style="color:var(--mu);font-size:13px">Base URL</span>
+      <code>https://anyaigc.ai/v1</code>
+      <button type="button" class="btn btn-s" data-copy="https://anyaigc.ai/v1" data-done="コピーしました">コピー</button>
+    </div>
+    <p class="base-note">OpenAI SDK では、baseURL に上記のアドレスを設定し、コンソールで作成したAPIキーを使います。</p>
+  </div>
+</section>
+
+<section class="sec cv" id="tools" style="padding-top:24px">
+  <div class="wrap">
+    <p class="eyebrow">04 / TOOLS</p>
+    <h2>開発ツールで使えます</h2>
+    <p class="sec-lead">ツールを選ぶと設定ガイドを確認できます。お使いのクライアントが対応するプロトコルを確認し、有効なモデルIDを指定してください。</p>
+    <div class="tools"><a href="https://docs.anyaigc.ai" target="_blank" rel="noopener" class="rv"><b>Claude Code</b><span>Claude を使うターミナル上のコーディング作業：プロジェクトの理解、コードへの質問、リファクタリングの提案、スクリプト作成</span></a><a href="https://docs.anyaigc.ai" target="_blank" rel="noopener" class="rv"><b>Codex</b><span>ローカルで動くコーディングエージェント：プロジェクトの読み書き、コマンド実行、不具合の修正、テストの実行、開発作業の完了まで</span></a><a href="https://docs.anyaigc.ai" target="_blank" rel="noopener" class="rv"><b>Cursor</b><span>コード生成、リファクタリング、プロジェクトへの質問、日々の開発</span></a><a href="https://docs.anyaigc.ai" target="_blank" rel="noopener" class="rv"><b>Dify</b><span>AIワークフロー、ナレッジベース、サポートボット、社内向けアプリ</span></a><a href="https://docs.anyaigc.ai" target="_blank" rel="noopener" class="rv"><b>OpenClaw</b><span>ローカルのAIワークベンチ：ブラウザ操作、ファイル処理、ツール呼び出し、複数モデルの構成</span></a><a href="https://docs.anyaigc.ai" target="_blank" rel="noopener" class="rv"><b>Hermes Agent</b><span>ゲートウェイと自動化されたメッセージフロー：タスクの振り分け、ツール呼び出しの転送、長時間のワークフロー</span></a><a href="https://docs.anyaigc.ai" target="_blank" rel="noopener" class="rv"><b>Chatbox / Cherry Studio</b><span>日常のチャット、要約、翻訳、モデルの切り替え</span></a><a href="https://docs.anyaigc.ai" target="_blank" rel="noopener" class="rv"><b>OpenWebUI / n8n</b><span>セルフホスト型のプラットフォーム、自動化、チームのツールチェーン</span></a></div>
+  </div>
+</section>
+
+<section class="sec cv ent" id="enterprise">
+  <div class="wrap">
+    <p class="eyebrow">05 / ENTERPRISE</p>
+    <h2>チーム・企業向けの AnyAIGC</h2>
+    <p class="sec-lead">購買、経理、エンジニアリングの担当者が、1つの導入フローで進められます。</p>
+    <div class="ent-grid c2"><div class="card rv"><span class="tag">INVOICE</span><h3>請求書を自分で発行</h3><p>必要なときに、コンソールで実際にチャージした金額分の請求書を発行できます。</p></div><div class="card rv"><span class="tag">SUPPORT</span><h3>サポートと技術窓口</h3><p>導入や日々のご質問に対応する、専任のサポートと技術の窓口があります。</p></div></div>
+    <div class="pay"><span class="l">お支払い方法</span><em>WeChat Pay</em><em>Alipay</em><em>USDT</em><em>クレジットカード</em></div>
+    <div class="cta">
+      <a class="btn btn-p" href="https://anyaigc.ai/customersupport">営業に問い合わせる</a>
+      <a class="btn" href="https://anyaigc.ai/register?aff=oOK7&amp;channel=c_wpduopc9">無料アカウントで始める</a>
+    </div>
+  </div>
+</section>
+
+<section class="sec cv" id="trust">
+  <div class="wrap">
+    <p class="eyebrow">06 / TRUST</p>
+    <h2>AnyAIGC を安心して使える理由</h2>
+    <ul class="trust"><li><b>$1からチャージできます。</b>まず少額で検証し、必要に応じてチャージしてください。</li><li><b>未使用の残高は返金できます。</b>手数料はかかりません。</li><li><b>公式のモデルチャネルを使用します。</b>低スペックのモデルやリバースエンジニアリングによる代替モデルは使わず、性能を落とすこともありません。</li><li><b>お客様のデータで学習しません。</b>法令で求められる場合を除き、入力と出力を永続的に保存しません。詳しくは<a href="/ja/privacy">プライバシーポリシー</a>をご覧ください。</li><li><b>わかりやすい課金。</b>コンソールでリクエストごとのトークン数と料金を確認でき、キーごとに利用上限を設定できます。</li><li><b>24/7 サポート。</b>いつでも<a href="https://anyaigc.ai/customersupport">サポートに問い合わせる</a>ことができます。</li></ul>
+    <div class="cta" style="margin-top:28px"><a class="btn btn-p" href="https://anyaigc.ai/register?aff=oOK7&amp;channel=c_wpduopc9">200万トークンで無料で始める</a></div>
+  </div>
+</section>
+
+<section class="sec cv" id="faq" style="padding-top:24px">
+  <div class="wrap">
+    <p class="eyebrow">07 / FAQ</p>
+    <h2>よくある質問</h2>
+    <div class="faq"><details><summary>AnyAIGC で請求書を発行できますか？</summary><p>はい。実際にチャージした金額分の請求書を、コンソールでご自身で発行できます。</p></details><details><summary>新規アカウントには無料のトライアル枠がありますか？</summary><p>はい。新規アカウントには200万トークンを無料で提供しますので、モデルや接続を少量で試せます。</p></details><details><summary>未使用の残高は返金できますか？</summary><p>はい。未使用の残高は、手数料なしで返金できます。</p></details><details><summary>代替モデルを使っていませんか？データは安全ですか？</summary><p>公式のモデルチャネルを使用しており、低スペックのモデルやリバースエンジニアリングによる代替モデルは使いません。法令で求められる場合を除き、入力と出力を永続的に保存せず、学習にも使用しません。詳しくは<a href="/ja/privacy">プライバシーポリシー</a>をご覧ください。</p></details><details><summary>どの支払い方法に対応していますか？</summary><p>WeChat Pay、Alipay、USDT、クレジットカードでチャージできます。残高は USD で、プラットフォーム上のすべてのモデルで使えます。請求書は、チャージした金額分をコンソールで発行できます。</p></details><details><summary>既存のプロジェクトはどう接続しますか？</summary><p>OpenAI SDK を使っているプロジェクトの多くは、Base URL を https://anyaigc.ai/v1 に変更し、コンソールで取得したAPIキーとモデルIDを指定するだけで接続できます。認証には Authorization: Bearer &lt;API Key&gt; を使います。モデルID、料金、提供状況はコンソールとモデルのページの最新情報に従います。</p></details><details><summary>どの開発ツールに対応していますか？</summary><p>Claude Code、Codex、OpenClaw、Hermes、Cursor、Dify、Cherry Studio、Chatbox、OpenWebUI、n8n に対応しています。設定ガイドは<a href="https://docs.anyaigc.ai" target="_blank" rel="noopener">APIドキュメント</a>にあります。</p></details></div>
+  </div>
+</section>
+
+<section class="sec cv" style="padding-top:24px">
+  <div class="wrap">
+    <div class="final">
+      <h2>最初のリクエストを送る準備はできましたか？</h2>
+      <p>コンソールで有効なモデルIDと料金を確認し、APIキーを作成して、少量でテストしてみましょう。</p>
+      <div class="cta">
+        <a class="btn btn-p" href="https://anyaigc.ai/register?aff=oOK7&amp;channel=c_wpduopc9">登録してAPIキーを作成</a>
+        <a class="btn" href="https://anyaigc.ai/pricing">モデルと料金を見る</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <a class="foot-logo" href="/ja/" aria-label="AnyAIGC ホーム"><img src="/assets/home/logo.webp?v=20261123i" width="78" height="32" alt="AnyAIGC" loading="lazy"></a>
+    <div class="foot-links"><a href="/ja/models/">モデルガイド</a><a href="https://anyaigc.ai/pricing">モデルと料金</a><a href="https://docs.anyaigc.ai" target="_blank" rel="noopener">APIドキュメント</a><a href="https://anyaigc.ai/customersupport">サポートに問い合わせる</a><a href="/ja/privacy">プライバシーポリシー</a><a href="/ja/terms">利用規約</a></div>
+    <div class="foot-links foot-langs"><a href="/" hreflang="zh-CN" lang="zh-CN">中文</a><a href="/en/" hreflang="en" lang="en">English</a><a href="/ko/" hreflang="ko" lang="ko">한국어</a><a href="/es/" hreflang="es" lang="es">Español</a><a href="/de/" hreflang="de" lang="de">Deutsch</a></div>
+    <p>&copy; 2026 AnyAIGC。ここに記載のモデル名および商標は、それぞれの所有者に帰属します。AnyAIGC は独立した API プロバイダーであり、これらのベンダーとは提携関係にありません。</p>
+  </div>
+</footer>
+<script src="/assets/models/lang-menu.js?v=20261117c" defer></script>
+<script src="/assets/home/home.js?v=20261123i" defer></script>
+</body>
+</html>

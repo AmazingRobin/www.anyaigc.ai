@@ -1,0 +1,308 @@
+{
+ "lang": "de",
+ "html_lang": "de",
+ "og_locale": "de_DE",
+ "native": "Deutsch",
+ "title": "AnyAIGC | Ein API-Schlüssel für über 300 KI-Modelle",
+ "desc": "Ein API-Schlüssel für über 300 KI-Modelle, darunter Claude, GPT, Gemini und DeepSeek. OpenAI-kompatibel, nutzungsbasiert abgerechnet, mit Rechnungen im Konto.",
+ "og_desc": "Ein API-Schlüssel für über 300 KI-Modelle. OpenAI-kompatibel, nutzungsbasiert abgerechnet, mit Rechnungen im Konto.",
+ "keywords": "KI-API,OpenAI-kompatible API,Claude API,GPT API,Gemini API,DeepSeek API,300+ Modelle,API-Gateway,nutzungsbasierte Abrechnung",
+ "og_alt": "AnyAIGC: über 300 Modelle, ein API-Schlüssel",
+ "skip": "Zum Hauptinhalt springen",
+ "brand_aria": "AnyAIGC Startseite",
+ "nav_aria": "Hauptnavigation",
+ "nav": [
+  "Modellguides",
+  "Modelle & Preise",
+  "Schnellstart",
+  "Unternehmen",
+  "API-Doku"
+ ],
+ "login": "Anmelden",
+ "cta_key": "API-Schlüssel holen",
+ "hero": {
+  "badge": "OpenAI-kompatibel · über 300 Modelle in einem Katalog",
+  "h1a": "Ein API-Schlüssel für",
+  "h1b": "über 300 KI-Modelle",
+  "lead": "OpenAI-kompatibel und nutzungsbasiert abgerechnet, mit Rechnungen im Konto. Ein Endpunkt für Claude, OpenAI, Gemini, Grok, DeepSeek, Qwen, Kimi, Doubao und Zhipu GLM sowie für Bild-, Video-, Audio-, Embedding- und Retrieval-Modelle.",
+  "btn_docs": "Doku lesen",
+  "sub_link": "Teams und Unternehmen: Support kontaktieren →"
+ },
+ "term": {
+  "tabs_aria": "Sprache des Beispiels",
+  "chips_aria": "Beispielmodell wechseln",
+  "user_msg": "Hallo, stellen Sie sich bitte kurz vor",
+  "comment": "# Gibt das OpenAI-kompatible Format zurück: choices[0].message.content",
+  "note": "Zum Wechseln des Modells ändern Sie nur die Zeile <b>model</b>. Base URL und API-Schlüssel bleiben gleich. Claude-Modelle haben außerdem einen nativen Endpunkt /v1/messages, siehe den jeweiligen Modellguide."
+ },
+ "stats": [
+  [
+   "300+",
+   "Modelle in einem Katalog"
+  ],
+  [
+   "OpenAI",
+   "Protokollkompatibel"
+  ],
+  [
+   "$1",
+   "Aufladen ab $1, nutzungsbasiert abgerechnet"
+  ],
+  [
+   "Rechnungen",
+   "Selbst in der Konsole ausstellen"
+  ]
+ ],
+ "stats_aria": "Plattform im Überblick",
+ "marq_aria": "Unterstützte Modellanbieter",
+ "vendors": [
+  "Claude",
+  "OpenAI",
+  "Gemini",
+  "Grok",
+  "DeepSeek",
+  "Qwen",
+  "Kimi",
+  "Zhipu GLM",
+  "Kling",
+  "Doubao",
+  "MiniMax"
+ ],
+ "why": {
+  "h2": "Vom Anwendungsfall zur ersten Anfrage in wenigen Schritten",
+  "lead": "Legen Sie zuerst Anwendungsfall und Modell fest und verbinden Sie sich dann in drei Schritten. Gedacht für Entwickler, Studios und Teams, die KI in Apps, Coding-Tools, Automatisierungen und interne Systeme einbauen.",
+  "cards": [
+   {
+    "tag": "MODELS",
+    "big": "300+",
+    "h": "Modelle in einem Katalog",
+    "p": "Sprach-, Bild-, Video-, Audio-, Embedding- und Retrieval-Modelle. Wählen Sie aus dem aktuellen Katalog in der Konsole."
+   },
+   {
+    "tag": "COMPATIBLE",
+    "big": "",
+    "h": "Funktioniert mit dem OpenAI SDK",
+    "p": "Für die Migration der meisten bestehenden Projekte genügen eine neue Base URL, ein API-Schlüssel und eine Modell-ID, ohne den Geschäftscode umzuschreiben."
+   },
+   {
+    "tag": "ACCOUNT",
+    "big": "",
+    "h": "Ein Schlüssel, ein Guthaben",
+    "p": "Text-, Bild-, Video- und Musikmodelle teilen sich einen API-Schlüssel und ein Guthaben. Zum Modellwechsel ändern Sie nur die Modell-ID und die Parameter."
+   },
+   {
+    "tag": "BILLING",
+    "big": "",
+    "h": "Nutzungsbasiert abgerechnet, klar nachvollziehbar",
+    "p": "Keine Abos und keine Monatsgebühren. Die Konsole zeigt Tokens und Kosten jeder Anfrage, und Sie können pro Schlüssel ein Ausgabenlimit setzen."
+   },
+   {
+    "tag": "INVOICE",
+    "big": "",
+    "h": "Rechnungen im Konto",
+    "p": "Stellen Sie Rechnungen in der Konsole selbst aus, über den tatsächlich aufgeladenen Betrag, wann immer Sie eine brauchen."
+   }
+  ]
+ },
+ "models": {
+  "h2": "Beliebte Modell-APIs",
+  "lead": "Jede Modellfamilie hat einen eigenen Guide mit Preistabelle, Integrationsbeispielen und Hinweisen zu Rechnungen. Modell-IDs, Preise und Verfügbarkeit richten sich nach der aktuellen Konsole.",
+  "more": "Alle Modellguides für über 300 Modelle ansehen →",
+  "items": [
+   [
+    "Claude",
+    "Modelle von Anthropic: Preise und Integration"
+   ],
+   [
+    "GPT",
+    "Chat-Modelle von OpenAI: Preisvergleich"
+   ],
+   [
+    "Gemini",
+    "Google Gemini 4 anbinden"
+   ],
+   [
+    "Grok",
+    "Grok-Textmodelle von xAI"
+   ],
+   [
+    "DeepSeek",
+    "Überblick über die DeepSeek-Modelle"
+   ],
+   [
+    "Qwen",
+    "Überblick über die Qwen-Chatmodelle"
+   ],
+   [
+    "Kimi",
+    "Kimi-Modelle von Moonshot"
+   ],
+   [
+    "GLM",
+    "GLM-Modelle von Zhipu"
+   ],
+   [
+    "Kling",
+    "Video- und Bildmodelle von Kling"
+   ],
+   [
+    "Seedance",
+    "Videogenerierung von Doubao"
+   ],
+   [
+    "Seedream",
+    "Bildgenerierung von Doubao"
+   ],
+   [
+    "MiniMax",
+    "Chat, Video und Sprache"
+   ]
+  ]
+ },
+ "start": {
+  "h2": "In drei Schritten verbinden",
+  "lead": "Erstellen Sie einen API-Schlüssel, kopieren Sie die Base URL und eine gültige Modell-ID und senden Sie dann eine erste Testanfrage.",
+  "steps": [
+   [
+    "Konto erstellen",
+    "Registrieren Sie sich bei AnyAIGC und erstellen Sie in der Konsole Ihren eigenen API-Schlüssel. Neue Konten erhalten 2 Mio. Tokens kostenlos."
+   ],
+   [
+    "API-Schlüssel erstellen",
+    "Kopieren Sie Base URL, API-Schlüssel und Modellnamen und schließen Sie die Einrichtung anhand der Doku ab."
+   ],
+   [
+    "Projekt oder Tool anbinden",
+    "Richten Sie das OpenAI SDK, Cursor, Dify, Chatbox und ähnliche Tools auf die AnyAIGC-Adresse aus."
+   ]
+  ],
+  "copy": "Kopieren",
+  "done": "Kopiert",
+  "note": "Setzen Sie beim OpenAI SDK baseURL auf die obige Adresse und verwenden Sie den API-Schlüssel aus der Konsole."
+ },
+ "tools": {
+  "h2": "Passt zu Ihren Entwickler-Tools",
+  "lead": "Wählen Sie ein Tool, um die Einrichtungsanleitung zu sehen. Prüfen Sie, welches Protokoll Ihr Client unterstützt, und verwenden Sie eine gültige Modell-ID.",
+  "items": [
+   [
+    "Claude Code",
+    "Coding im Terminal mit Claude: Projektverständnis, Fragen zum Code, Refactoring-Vorschläge und Skripte"
+   ],
+   [
+    "Codex",
+    "Lokaler Coding-Agent: Projekte lesen und schreiben, Befehle ausführen, Fehler beheben, Tests laufen lassen und Entwicklungsarbeit abschließen"
+   ],
+   [
+    "Cursor",
+    "Codegenerierung, Refactoring, Fragen zum Projekt und die tägliche Entwicklung"
+   ],
+   [
+    "Dify",
+    "KI-Workflows, Wissensdatenbanken, Support-Bots und interne Unternehmensanwendungen"
+   ],
+   [
+    "OpenClaw",
+    "Lokale KI-Werkbank: Browseraktionen, Dateiverarbeitung, Tool-Aufrufe und Setups mit mehreren Modellen"
+   ],
+   [
+    "Hermes Agent",
+    "Gateway und automatisierter Nachrichtenfluss: Aufgabenverteilung, Weiterleitung von Tool-Aufrufen und lang laufende Workflows"
+   ],
+   [
+    "Chatbox / Cherry Studio",
+    "Alltäglicher Chat, Zusammenfassungen, Übersetzung und Wechsel zwischen Modellen"
+   ],
+   [
+    "OpenWebUI / n8n",
+    "Selbst gehostete Plattformen, Automatisierung und Toolchains für Teams"
+   ]
+  ]
+ },
+ "ent": {
+  "h2": "AnyAIGC für Teams und Unternehmen",
+  "lead": "Bringen Sie Einkauf, Finanzen und Entwicklung in einen gemeinsamen Integrationsprozess.",
+  "cards": [
+   {
+    "tag": "INVOICE",
+    "h": "Rechnungen im Konto",
+    "p": "Stellen Sie Rechnungen in der Konsole selbst aus, über den tatsächlich aufgeladenen Betrag, wann immer Sie eine brauchen."
+   },
+   {
+    "tag": "SUPPORT",
+    "h": "Support und technischer Kontakt",
+    "p": "Ein fester Ansprechpartner für Support und Technik bei der Integration und bei Fragen im Alltag."
+   }
+  ],
+  "pay_label": "Zahlungsmethoden",
+  "pay": [
+   "WeChat Pay",
+   "Alipay",
+   "USDT",
+   "Kreditkarte"
+  ],
+  "btn_support": "Vertrieb kontaktieren",
+  "btn_reg": "Mit kostenlosem Konto starten"
+ },
+ "trust": {
+  "h2": "Warum Sie sich auf AnyAIGC verlassen können",
+  "items": [
+   "<b>Aufladen ab $1.</b> Testen Sie mit einem kleinen Betrag und laden Sie dann nach Bedarf auf.",
+   "<b>Nicht genutztes Guthaben ist erstattungsfähig,</b> ohne Gebühr.",
+   "<b>Offizielle Modellkanäle.</b> Keine Ersatzmodelle mit geringerer Leistung oder per Reverse Engineering, keine Qualitätsminderung.",
+   "<b>Kein Training mit Ihren Daten.</b> Sofern das Gesetz es nicht verlangt, werden Eingaben und Ausgaben nicht dauerhaft gespeichert. Siehe die <a href=\"{privacy}\">Datenschutzerklärung</a>.",
+   "<b>Transparente Abrechnung.</b> Die Konsole zeigt Tokens und Kosten jeder Anfrage, und Sie können pro Schlüssel ein Ausgabenlimit setzen.",
+   "<b>Support rund um die Uhr.</b> <a href=\"{support}\">Support kontaktieren</a>, jederzeit."
+  ],
+  "btn": "Kostenlos mit 2 Mio. Tokens starten"
+ },
+ "faq": {
+  "h2": "FAQ",
+  "items": [
+   [
+    "Kann ich bei AnyAIGC eine Rechnung bekommen?",
+    "Ja. Sie können Rechnungen in der Konsole selbst ausstellen, über den tatsächlich aufgeladenen Betrag."
+   ],
+   [
+    "Erhalten neue Konten kostenloses Testguthaben?",
+    "Ja. Neue Konten erhalten 2 Mio. Tokens kostenlos, damit Sie Modelle und die Anbindung in kleinem Umfang testen können."
+   ],
+   [
+    "Kann nicht genutztes Guthaben erstattet werden?",
+    "Ja. Nicht genutztes Guthaben kann gebührenfrei erstattet werden."
+   ],
+   [
+    "Werden Ersatzmodelle verwendet? Sind meine Daten sicher?",
+    "Wir nutzen offizielle Modellkanäle, ohne Ersatzmodelle mit geringerer Leistung oder per Reverse Engineering. Sofern das Gesetz es nicht verlangt, speichern wir Eingaben und Ausgaben nicht dauerhaft und verwenden sie nicht für Training. Siehe die <a href=\"{privacy}\">Datenschutzerklärung</a>."
+   ],
+   [
+    "Welche Zahlungsmethoden werden unterstützt?",
+    "Sie können Guthaben per WeChat Pay, Alipay, USDT oder Kreditkarte aufladen. Ihr Guthaben wird in USD geführt und gilt für alle Modelle der Plattform. Rechnungen über den aufgeladenen Betrag können Sie in der Konsole ausstellen."
+   ],
+   [
+    "Wie binde ich ein bestehendes Projekt an?",
+    "Bei den meisten Projekten mit dem OpenAI SDK genügt es, die Base URL auf {base} zu ändern und einen API-Schlüssel und eine Modell-ID aus der Konsole einzutragen. Die Authentifizierung erfolgt über Authorization: Bearer &lt;API Key&gt;. Modell-IDs, Preise und Verfügbarkeit richten sich nach der aktuellen Konsole und der Modellseite."
+   ],
+   [
+    "Welche Entwickler-Tools werden unterstützt?",
+    "Claude Code, Codex, OpenClaw, Hermes, Cursor, Dify, Cherry Studio, Chatbox, OpenWebUI und n8n. Die Einrichtungsanleitungen finden Sie in der <a href=\"{docs}\" target=\"_blank\" rel=\"noopener\">API-Doku</a>."
+   ]
+  ]
+ },
+ "final": {
+  "h2": "Bereit für Ihre erste Anfrage?",
+  "p": "Prüfen Sie gültige Modell-IDs und Preise in der Konsole, erstellen Sie dann einen API-Schlüssel und testen Sie in kleinem Umfang.",
+  "btn_reg": "Registrieren und API-Schlüssel erstellen",
+  "btn_pricing": "Modelle und Preise ansehen"
+ },
+ "foot": {
+  "links": [
+   "Modellguides",
+   "Modelle & Preise",
+   "API-Doku",
+   "Support kontaktieren",
+   "Datenschutzerklärung",
+   "Nutzungsbedingungen"
+  ],
+  "note": "Die hier genannten Modellnamen und Marken gehören ihren jeweiligen Inhabern. AnyAIGC ist ein unabhängiger API-Anbieter und steht in keiner Verbindung zu diesen Anbietern."
+ }
+}

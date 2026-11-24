@@ -33,7 +33,7 @@ TAGLINE_I18N = {
 }
 TXT = {
     'models': {'ja': 'モデル', 'ko': '모델', 'es': 'modelos', 'de': 'Modelle'},
-    'Bank transfer · VAT': {'ja': '請求書を自分で発行', 'ko': '인보이스 직접 발급', 'es': 'Facturas en consola', 'de': 'Rechnungen im Konto'},
+    'Self-service invoices': {'ja': '請求書を自分で発行', 'ko': '인보이스 직접 발급', 'es': 'Facturas en consola', 'de': 'Rechnungen im Konto'},
 }
 
 
@@ -41,7 +41,7 @@ def t(lang, zh, en):
     """新语言查 TXT 表（缺词直接报错）；英文图的开票标签改成自助开票（2026-11-17 起非中文口径）。"""
     if lang in NEW:
         return TXT[en][lang]
-    if lang == 'en' and en == 'Bank transfer · VAT':
+    if lang == 'en' and en == 'Self-service invoices':
         return 'Self-service invoices'
     return tr(lang, zh, en)
 
@@ -56,7 +56,7 @@ def chrome():
 
 
 def card(lang, slug):
-    tags = ['Chat Completions', '300+ ' + t(lang, '模型', 'models'), t(lang, '对公 · 专票', 'Bank transfer · VAT')]
+    tags = ['Chat Completions', '300+ ' + t(lang, '模型', 'models'), t(lang, '对公 · 专票', 'Self-service invoices')]
     title = name(slug).replace('doubao-seed-', 'doubao-seed-<br>', 1)
     return f'''<!DOCTYPE html><html lang="{LANGATTR[lang]}" class="no-js"><head><meta charset="utf-8">
 <link rel="stylesheet" href="/assets/models/doubao-seed.css?v={VER}">

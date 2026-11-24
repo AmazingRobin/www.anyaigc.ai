@@ -45,10 +45,10 @@ LABEL_I18N = {
     'REAL-TIME API': _t('リアルタイム API', '실시간 API', 'API en tiempo real', 'Echtzeit-API'),
     'VIDEO API': _t('動画 API', '비디오 API', 'API de vídeo', 'Video-API'),
 }
-# 页脚标签：并发不限 / 自助开票（英文图的 Contracts · invoices 在新语言里一律换成自助开票）
+# 页脚标签：并发不限 / 自助开票（英文图和新语言图都写自助开票）
 FOOT_I18N = {
     'No concurrency cap': _t('同時実行数の上限なし', '동시 실행 제한 없음', 'Sin límite de RPM', 'Kein RPM-Limit'),
-    'Contracts · invoices': _t('請求書を自分で発行', '인보이스 직접 발급', 'Facturas en consola', 'Rechnungen im Konto'),
+    'Self-service invoices': _t('請求書を自分で発行', '인보이스 직접 발급', 'Facturas en consola', 'Rechnungen im Konto'),
 }
 # 单价单位（美元数字与英文图一致，只翻译单位；术语见 briefs/batch4-qwen.md）
 UNIT_I18N = {
@@ -158,7 +158,7 @@ def render(m, lang, shot=False):
         sub = escape(LEAD_I18N[m['lead'][1]][lang])
         price = escape(price_i18n(m, lang))
         conc = FOOT_I18N['No concurrency cap'][lang]
-        inv = FOOT_I18N['Contracts · invoices'][lang]
+        inv = FOOT_I18N['Self-service invoices'][lang]
     else:
         label=('图像 API' if m['kind']=='image' else '实时音视频 API' if m['kind']=='realtime' else '视频 API') if lang=='zh' else en_label
         sub=escape(m['lead'][lang=='en']);price=escape(price_label(m,lang))
