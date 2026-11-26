@@ -4,7 +4,7 @@
 from spark_data import PRICE, MODELS, REG, PRICING, SUPPORT, DOCS_CHAT, OFFICIAL_DOC
 from spark_layout import cost, money
 
-UNIT = '百万 tokens'
+UNIT = '百万 Token'
 MARKET = PRICING + '?provider=Spark'
 
 
@@ -31,7 +31,7 @@ def faq_common(name, slug):
 
 def faq_rpm(name, slug):
     return ('并发和速率有限制吗？',
-            f'AnyAIGC 对 <code>{MODELS[slug]["id"]}</code> 不设并发限制，所有用户默认享有，适合批量处理和多任务并行。按 token 计费，没有月费和按时间窗口重置的额度。')
+            f'AnyAIGC 对 <code>{MODELS[slug]["id"]}</code> 不设并发限制，所有用户默认享有，适合批量处理和多任务并行。按 Token 计费，没有月费和按时间窗口重置的额度。')
 
 
 # ---------------- 代码示例 ----------------
@@ -65,7 +65,7 @@ resp = client.chat.completions.create(
     ],
 )
 print(resp.choices[0].message.content)
-print(resp.usage)  # 本次请求的输入 / 输出 tokens'''
+print(resp.usage)  # 本次请求的输入 / 输出 Token'''
 
 
 def code_stream(model, user):
@@ -96,27 +96,27 @@ def qs_steps(model):
 
 QS_NOTE = f'完整参数见 <a href="{DOCS_CHAT}" target="_blank" rel="noopener">Chat Completions 接口文档</a>，文档示例里的模型名换成对应的 SparkDesk 模型 ID 即可。'
 PRICE_HEAD = [('计费项', ''), ('模型名', ''), ('AnyAIGC 单价（USD）', 'o-num o-hl')]
-LABELS = [('输入', '每 100 万 tokens'), ('输出', '每 100 万 tokens')]
+LABELS = [('输入', '每 100 万 Token'), ('输出', '每 100 万 Token')]
 
 
 def pricing_note(slug):
-    return (f'价格单位为美元，按实际消耗的 tokens 计费，输入和输出同价。表中为模型广场最低价，实时价格以 <a href="{MARKET}">AnyAIGC 模型广场</a> 为准。')
+    return (f'价格单位为美元，按实际消耗的 Token 计费，输入和输出同价。表中为模型广场最低价，实时价格以 <a href="{MARKET}">AnyAIGC 模型广场</a> 为准。')
 
 
 def billing(slug):
-    return [('按 token 计费', '输入、输出分别计量'), ('输入输出同价', f'均为 {p(slug, 0)} / 百万'), ('并发不限', '所有用户默认享有'), ('USD', '余额 300+ 模型通用')]
+    return [('按 Token 计费', '输入、输出分别计量'), ('输入输出同价', f'均为 {p(slug, 0)} / 百万'), ('并发不限', '所有用户默认享有'), ('USD', '余额 300+ 模型通用')]
 
 
 def costs(slug):
     return [
-        ('客服问答 1 万次', '每次 800 tokens 输入 + 300 tokens 输出', money(cost(slug, 800, 300, 10000))),
-        ('单篇长文摘要', '6,000 tokens 输入 + 800 tokens 输出', money(cost(slug, 6000, 800))),
-        ('每百万输入 + 百万输出', '100 万 tokens 输入 + 100 万 tokens 输出', money(cost(slug, 1000000, 1000000))),
+        ('客服问答 1 万次', '每次 800 Token 输入 + 300 Token 输出', money(cost(slug, 800, 300, 10000))),
+        ('单篇长文摘要', '6,000 tokens 输入 + 800 Token 输出', money(cost(slug, 6000, 800))),
+        ('每百万输入 + 百万输出', '100 万 Token 输入 + 100 万 Token 输出', money(cost(slug, 1000000, 1000000))),
     ]
 
 
 def offers(slug):
-    return [('输入（每 100 万 tokens）', PRICE[slug][0]), ('输出（每 100 万 tokens）', PRICE[slug][1])]
+    return [('输入（每 100 万 Token）', PRICE[slug][0]), ('输出（每 100 万 Token）', PRICE[slug][1])]
 
 
 FAMILY = [
@@ -134,8 +134,8 @@ def compare_rows():
             ('接口版本', '', 'v3.5', 'v3.1', 'v2.1'),
             ('上下文 / 最大输出', '官方文档', '8,192 / 8,192', '8,192 / 8,192', '官方文档未列出'),
             ('系统提示词（system 角色）', '官方文档', '支持', '不支持', '未列出'),
-            ('AnyAIGC 输入', '每百万 tokens', p(a, 0), p(b, 0), p(c, 0)),
-            ('AnyAIGC 输出', '每百万 tokens', p(a, 1), p(b, 1), p(c, 1))]
+            ('AnyAIGC 输入', '每百万 Token', p(a, 0), p(b, 0), p(c, 0)),
+            ('AnyAIGC 输出', '每百万 Token', p(a, 1), p(b, 1), p(c, 1))]
 
 
 COMPARE_NOTE = ('官方档位与参数来自<a href="' + OFFICIAL_DOC + '" target="_blank" rel="noopener">讯飞开放平台文档</a>，价格为 AnyAIGC 当前价格，实时价格以模型广场为准。'
@@ -153,8 +153,8 @@ M = {
         chips=['多轮对话', '知识问答', '代码理解'],
         about_h2='讯飞星火 Max 档的 3.5 版本',
         about=['SparkDesk-v3.5 是科大讯飞星火认知大模型的 3.5 版本接口，对应讯飞官方的星火 Max 档。模型广场的说明是：具备跨领域知识和语言理解能力，能通过自然对话理解并执行任务，覆盖语言理解、知识问答、逻辑推理、数学解题和代码理解。',
-               '讯飞官方文档标注该档位的上下文窗口和单次最大输出均为 8,192 tokens，并列出系统提示词（仅 Max、Ultra 支持）和联网搜索插件（Pro、Max、Ultra 支持）；官方文档说明函数调用需要改用 HTTP 协议，没有按档位列出。通过 AnyAIGC 调用时的实际支持情况，以接口文档和实测为准。',
-               '在 AnyAIGC 上，<code>SparkDesk-v3.5</code> 走 OpenAI 兼容的 <code>/v1/chat/completions</code>，一个 Bearer Key 即可调用，不需要自己申请讯飞开放平台的 APPID、APIKey 和 APISecret，也不用处理官方的 WebSocket 签名。按 token 计费，并发不限。'],
+               '讯飞官方文档标注该档位的上下文窗口和单次最大输出均为 8,192 Token，并列出系统提示词（仅 Max、Ultra 支持）和联网搜索插件（Pro、Max、Ultra 支持）；官方文档说明函数调用需要改用 HTTP 协议，没有按档位列出。通过 AnyAIGC 调用时的实际支持情况，以接口文档和实测为准。',
+               '在 AnyAIGC 上，<code>SparkDesk-v3.5</code> 走 OpenAI 兼容的 <code>/v1/chat/completions</code>，一个 Bearer Key 即可调用，不需要自己申请讯飞开放平台的 APPID、APIKey 和 APISecret，也不用处理官方的 WebSocket 签名。按 Token 计费，并发不限。'],
         spec=[('模型 ID', 'SparkDesk-v3.5', '请求体 model 字段，区分大小写'), ('对应官方档位', '星火 Max', 'domain：generalv3.5'),
               ('上下文窗口', '8,192', 'tokens，官方文档标注'), ('最大输出', '8,192', 'tokens，官方文档标注'),
               ('接口', 'Chat Completions', 'POST /v1/chat/completions'), ('输入 / 输出', '同价', None)],
@@ -166,7 +166,7 @@ M = {
                ('代码理解', '解释代码片段、定位明显错误、补全简单函数，适合开发辅助场景。'),
                ('系统提示词', '官方文档列出 Max 档支持用 system 角色设置对话背景，可用来固定角色口吻和回答规则。')],
         uses=[('01 · 客服', '客服问答与工单摘要', '把用户咨询和历史对话交给 SparkDesk-v3.5，生成回复草稿或工单摘要，由人工确认后发送。'),
-              ('02 · 知识库', '文档与知识库问答', '把检索到的文档片段放进提示词，让模型据此回答，注意单次上下文约 8K tokens，长文档需要先分段。'),
+              ('02 · 知识库', '文档与知识库问答', '把检索到的文档片段放进提示词，让模型据此回答，注意单次上下文约 8K Token，长文档需要先分段。'),
               ('03 · 写作', '文案改写与润色', '营销文案、通知、邮件的改写和润色，输入输出同价，批量处理时成本容易估算。'),
               ('04 · 开发', '代码解释与简单补全', '为内部工具加一个代码解释或注释生成功能，复杂工程任务建议选更长上下文的模型。')],
         final_h2='用一个 Key 调用 SparkDesk-v3.5',
@@ -181,8 +181,8 @@ M = {
         chips=['对话问答', '文案改写', '数学解题'],
         about_h2='讯飞星火 Pro 档的 3.1 版本',
         about=['SparkDesk-v3.1 是科大讯飞星火认知大模型的 3.1 版本接口，对应讯飞官方的星火 Pro 档。模型广场的说明是：具备跨领域知识和语言理解能力，通过自然对话理解并执行任务，覆盖语言理解、知识问答、逻辑推理、数学解题和代码理解。',
-               '讯飞官方文档标注该档位的上下文窗口和单次最大输出均为 8,192 tokens。官方文档说明 system 角色（设置对话背景）仅 Max 和 Ultra 支持，Pro 档支持联网搜索插件；如果你的应用需要固定角色提示词，请改用 <a href="/zh/models/sparkdesk-v3.5">SparkDesk-v3.5</a>。',
-               '在 AnyAIGC 上，<code>SparkDesk-v3.1</code> 走 OpenAI 兼容的 <code>/v1/chat/completions</code>，一个 Bearer Key 即可调用，不需要自己申请讯飞开放平台的 APPID、APIKey 和 APISecret。按 token 计费，并发不限。'],
+               '讯飞官方文档标注该档位的上下文窗口和单次最大输出均为 8,192 Token。官方文档说明 system 角色（设置对话背景）仅 Max 和 Ultra 支持，Pro 档支持联网搜索插件；如果你的应用需要固定角色提示词，请改用 <a href="/zh/models/sparkdesk-v3.5">SparkDesk-v3.5</a>。',
+               '在 AnyAIGC 上，<code>SparkDesk-v3.1</code> 走 OpenAI 兼容的 <code>/v1/chat/completions</code>，一个 Bearer Key 即可调用，不需要自己申请讯飞开放平台的 APPID、APIKey 和 APISecret。按 Token 计费，并发不限。'],
         spec=[('模型 ID', 'SparkDesk-v3.1', '请求体 model 字段，区分大小写'), ('对应官方档位', '星火 Pro', 'domain：generalv3'),
               ('上下文窗口', '8,192', 'tokens，官方文档标注'), ('最大输出', '8,192', 'tokens，官方文档标注'),
               ('接口', 'Chat Completions', 'POST /v1/chat/completions'), ('输入 / 输出', '同价', None)],
@@ -210,7 +210,7 @@ M = {
         about_h2='讯飞星火早期的 2.x 版本',
         about=['SparkDesk-v2.1 是科大讯飞星火认知大模型早期的 2.x 版本接口。模型广场的说明是：具备跨领域知识和语言理解能力，通过自然对话理解并执行任务，覆盖语言理解、知识问答、逻辑推理、数学解题和代码理解。',
                '讯飞开放平台当前文档的版本表里已经没有这一档，所以本页不列官方的上下文窗口、最大输出和功能边界，避免写出没有来源的数字。它在 AnyAIGC 上的单价是三款里最低的，适合已经接入、不想改模型 ID 的存量业务，或对效果要求不高的低成本场景。',
-               '在 AnyAIGC 上，<code>SparkDesk-v2.1</code> 走 OpenAI 兼容的 <code>/v1/chat/completions</code>，一个 Bearer Key 即可调用。新项目建议先评估 <a href="/zh/models/sparkdesk-v3.1">SparkDesk-v3.1</a> 或 <a href="/zh/models/sparkdesk-v3.5">SparkDesk-v3.5</a>。按 token 计费，并发不限。'],
+               '在 AnyAIGC 上，<code>SparkDesk-v2.1</code> 走 OpenAI 兼容的 <code>/v1/chat/completions</code>，一个 Bearer Key 即可调用。新项目建议先评估 <a href="/zh/models/sparkdesk-v3.1">SparkDesk-v3.1</a> 或 <a href="/zh/models/sparkdesk-v3.5">SparkDesk-v3.5</a>。按 Token 计费，并发不限。'],
         spec=[('模型 ID', 'SparkDesk-v2.1', '请求体 model 字段，区分大小写'), ('官方档位', '早期 2.x', '官方当前文档未列出'),
               ('上下文窗口', '未列出', '以实测为准'), ('最大输出', '未列出', '以实测为准'),
               ('接口', 'Chat Completions', 'POST /v1/chat/completions'), ('输入 / 输出', '同价', None)],
@@ -240,7 +240,7 @@ def build(slug):
 
     faqs = [
         (f'{name} API 多少钱？',
-         f'AnyAIGC 上 <code>{mid}</code> 按 token 计费：输入 {price_in}/百万 tokens，输出 {price_out}/百万 tokens，输入和输出同价。固定单价，没有订阅和月费，实时价格以模型广场为准。'),
+         f'AnyAIGC 上 <code>{mid}</code> 按 Token 计费：输入 {price_in}/百万 Token，输出 {price_out}/百万 Token，输入和输出同价。固定单价，没有订阅和月费，实时价格以模型广场为准。'),
         (f'{name} 的模型 ID 是什么？和讯飞星火是什么关系？',
          f'模型 ID 是 <code>{mid}</code>（区分大小写）。它是科大讯飞星火认知大模型的一个版本，AnyAIGC 提供 OpenAI 兼容的调用方式。注意它和 Apache Spark、Spark 邮箱等同名产品无关。'),
         (f'{name} 和其他 SparkDesk 型号怎么选？',
@@ -249,7 +249,7 @@ def build(slug):
         ('SparkDesk 兼容 OpenAI 接口吗？怎么调用？',
          f'兼容。{name} 走 <code>POST https://anyaigc.ai/v1/chat/completions</code>，请求和返回格式与 OpenAI Chat Completions 一致，OpenAI 官方 SDK 把 <code>base_url</code> 改成 <code>https://anyaigc.ai/v1</code> 即可。讯飞官方的 WebSocket 签名鉴权不需要处理，只要 <code>Authorization: Bearer</code>。'),
         (f'{name} 的上下文窗口有多大？',
-         ('讯飞官方文档标注该档位的上下文窗口和最大输出均为 8,192 tokens，长文档需要先分段或检索后再提问。通过 AnyAIGC 调用时以实测为准。' if s != 'sparkdesk-v2.1'
+         ('讯飞官方文档标注该档位的上下文窗口和最大输出均为 8,192 Token，长文档需要先分段或检索后再提问。通过 AnyAIGC 调用时以实测为准。' if s != 'sparkdesk-v2.1'
           else '讯飞开放平台当前文档的版本表已不再列出 2.x 版本，所以没有可引用的官方上下文数字。建议用你的真实输入长度实测，需要更确定的参数时选 SparkDesk-v3.1 或 SparkDesk-v3.5。')),
         faq_rpm(name, s),
         (f'{name} 停用了吗？',
@@ -265,29 +265,29 @@ def build(slug):
         og_alt=f'AnyAIGC {mid} API：输入 {price_in}/1M，并发不限',
         keywords=f'{mid} API,{mid},{mid} API 价格,{mid} 接入,{mid} API key,讯飞星火 API,星火大模型 API,星火 API 价格,星火 API 中转,SparkDesk API,星火 API OpenAI 兼容,{mid} API 企业,{mid} API 发票,星火 API 对公转账,AnyAIGC',
         crumb=f'{mid} API', product=f'{mid} API（AnyAIGC）', sku=s,
-        product_desc=f'通过 AnyAIGC 调用讯飞星火 {mid}：OpenAI 兼容 /v1/chat/completions，按 token 计费，输入 {price_in}/1M、输出 {price_out}/1M，并发不限。',
+        product_desc=f'通过 AnyAIGC 调用讯飞星火 {mid}：OpenAI 兼容 /v1/chat/completions，按 Token 计费，输入 {price_in}/1M、输出 {price_out}/1M，并发不限。',
         offers=offers(s),
         hero=dict(eyebrow=f'科大讯飞 · {mid}',
                   h1=f'SparkDesk-<span class="sp-blue">{mid.split("-")[1]}</span><span class="o-sr"> API</span>',
-                  lead=f'{m["desc_lead"]}。一个 API Key 调用，OpenAI 兼容接口，输入输出同价，按 token 计费。',
+                  lead=f'{m["desc_lead"]}。一个 API Key 调用，OpenAI 兼容接口，输入输出同价，按 Token 计费。',
                   ask=m['ask'], answer=m['answer'], chips=m['chips'],
-                  sub=f'<code>{mid}</code> 输入 {price_in} / 百万 tokens、输出 {price_out} / 百万 tokens，并发不限，支持对公转账与增值税专票。',
+                  sub=f'<code>{mid}</code> 输入 {price_in} / 百万 Token、输出 {price_out} / 百万 Token，并发不限，支持对公转账与增值税专票。',
                   notice=m['notice'],
                   facts=[('模型 ID', mid), ('官方档位', tier), ('输入', f'{price_in} / 1M'), ('并发', '不限'), ('企业', '对公 · 专票')]),
-        about=dict(kicker='关于模型', h2=m['about_h2'], paras=m['about'], spec=[(a, b, c) for a, b, c in m['spec'][:5]] + [('输入 / 输出', '同价', f'均为 {price_in} / 百万 tokens')]),
+        about=dict(kicker='关于模型', h2=m['about_h2'], paras=m['about'], spec=[(a, b, c) for a, b, c in m['spec'][:5]] + [('输入 / 输出', '同价', f'均为 {price_in} / 百万 Token')]),
         features=dict(kicker='能力', h2=m['feat_h2'], items=m['feats']),
-        pricing=dict(kicker='价格', h2=f'{name} API 价格', lead='按 token 计费，固定单价，没有订阅和月费。输入和输出同价。',
+        pricing=dict(kicker='价格', h2=f'{name} API 价格', lead='按 Token 计费，固定单价，没有订阅和月费。输入和输出同价。',
                      billing_label='计费要点', billing=billing(s), head=PRICE_HEAD, labels=LABELS,
-                     caption=f'{mid} 每百万 tokens 价格（美元）', note=pricing_note(s),
+                     caption=f'{mid} 每百万 Token 价格（美元）', note=pricing_note(s),
                      costs_h3='成本示例', costs_lead='按常见用法估算，用上面的单价相加得出。', costs=costs(s)),
         compare=dict(kicker='选型', h2='SparkDesk-v3.5、v3.1、v2.1 怎么选', lead='需要系统提示词选 v3.5，一般对话问答用 v3.1，存量业务和低成本场景看 v2.1。',
-                     head=COMPARE_HEAD, rows=compare_rows(), caption='SparkDesk-v3.5、SparkDesk-v3.1、SparkDesk-v2.1 对比，价格为 AnyAIGC 每百万 tokens 美元', note=COMPARE_NOTE),
+                     head=COMPARE_HEAD, rows=compare_rows(), caption='SparkDesk-v3.5、SparkDesk-v3.1、SparkDesk-v2.1 对比，价格为 AnyAIGC 每百万 Token 美元', note=COMPARE_NOTE),
         uses=dict(kicker='使用场景', h2=f'{name} 适合做什么', items=m['uses']),
         qs=dict(kicker='快速开始', h2=f'三步接入 {name} API', steps=qs_steps(mid),
                 tabs=[('curl', 'cURL', 'POST /v1/chat/completions', code_curl(mid, '用三句话解释什么是 API 限流')),
                       ('py', 'Python · OpenAI SDK', 'Python · openai SDK', code_py(mid, '你是一名耐心的技术支持，回答简洁并给出示例。' if s == 'sparkdesk-v3.5' else None, '用户反馈接口返回 429，应该怎么排查？')),
                       ('stream', '流式输出', 'Python · stream=True', code_stream(mid, '给一个 SaaS 产品写 5 条更新日志。'))],
-                callout=f'<strong>参数提示：</strong>模型 ID 区分大小写，写成 <code>{mid}</code>。返回格式与 OpenAI Chat Completions 一致，本次请求的 tokens 在 <code>usage</code> 字段里。该型号上下文有限，长文档请先分段或检索后再提问。',
+                callout=f'<strong>参数提示：</strong>模型 ID 区分大小写，写成 <code>{mid}</code>。返回格式与 OpenAI Chat Completions 一致，本次请求的 Token 在 <code>usage</code> 字段里。该型号上下文有限，长文档请先分段或检索后再提问。',
                 note=QS_NOTE),
         family_h2='SparkDesk 系列全部型号', family_lead='同一个 API Key 可以调用下面所有 SparkDesk 模型，按效果和预算选择。',
         faq_h2=f'{name} API 常见问题', faqs=faqs,

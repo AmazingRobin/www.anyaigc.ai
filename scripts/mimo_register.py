@@ -43,7 +43,7 @@ def card(lang, model):
     status = deal(lang, model) or ("官方已停用" if lang == "zh" else "Retired by Xiaomi")
     tags = [status, category, model[f"caps_{lang}"][0]]
     tags_html = "\n".join(f"     <li>{escape(tag)}</li>" for tag in tags)
-    unit = "百万输入 tokens" if lang == "zh" else "1M input tokens"
+    unit = "百万输入 Token" if lang == "zh" else "1M input tokens"
     return f'''        <li class="af-model">
           <div class="af-model-head">
      <span class="af-model-logo" style="background:#faf7f3;border:1px solid #ebe4dc" aria-hidden="true">{logo(lang, slug)}</span>

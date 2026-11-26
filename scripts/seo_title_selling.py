@@ -120,10 +120,10 @@ def candidates(name, pct, point, overseas, overview):
         # "API 价格与接入" tells the reader nothing.
         tails = ([best] if pct else []) + ([point] if point and "中转" not in point else [])
         # A compact spelling of the same price, tried when the full tail is too long:
-        # "输入 $0.1985/百万 tokens 起" -> "$0.1985/M 起". No information is dropped.
+        # "输入 $0.1985/百万 Token 起" -> "$0.1985/M 起". No information is dropped.
         # Only spacing and units are tightened; qualifiers like "输入" and "全系" stay.
-        # "¥0.08 / 秒起" -> "¥0.08/秒起", "8 个型号" -> "8 型号", "/百万 tokens" -> "/M".
-        compact = [re.sub(r" / ", "/", re.sub(r"(\d+) 个型号", r"\1 型号", re.sub(r"/(?:百万|M) tokens", "/M", t))) for t in tails]
+        # "¥0.08 / 秒起" -> "¥0.08/秒起", "8 个型号" -> "8 型号", "/百万 Token" -> "/M".
+        compact = [re.sub(r" / ", "/", re.sub(r"(\d+) 个型号", r"\1 型号", re.sub(r"/(?:百万|M) Token", "/M", t))) for t in tails]
         tails = tails + [c for c in compact if c not in tails]
         # "价格与接入" says the page has both the price and the integration steps. When the
         # tail is too long for it, the shorter "价格" form is tried before dropping the tail.

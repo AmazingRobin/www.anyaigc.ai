@@ -65,9 +65,9 @@ def zh_price(desc):
     # A "billing unit base price" is not a per-item price; a bare number would mislead.
     if "计费单位" in desc or "billing unit" in desc:
         return []
-    m = re.search(r"\$([0-9.]+)\s*/\s*百万 tokens", desc) or re.search(r"每百万 tokens \$([0-9.]+)", desc)
+    m = re.search(r"\$([0-9.]+)\s*/\s*百万 Token", desc) or re.search(r"每百万 Token \$([0-9.]+)", desc)
     if m:
-        return [f"输入 ${m.group(1)}/百万 tokens 起", f"${m.group(1)}/百万 tokens 起", f"${m.group(1)}/M tokens 起", f"${m.group(1)}/M 起"]
+        return [f"输入 ${m.group(1)}/百万 Token 起", f"${m.group(1)}/百万 Token 起", f"${m.group(1)}/M tokens 起", f"${m.group(1)}/M 起"]
     # No \b here: between two CJK characters ("秒起") it never matches.
     m = re.search(r"([\$¥])\s?([0-9.]+)" + RANGE + r"\s*/\s*([0-9]*\s*(?:秒|张|次|段|条)|(?:second|call|5s|image|request|clip)(?![A-Za-z]))", desc)
     if m:
@@ -178,7 +178,7 @@ def fix_qwen(page, lang, slug, name):
     if rows:
         if zh:
             parts = "、".join(f"{label} {price}" for label, price in rows)
-            answer = f"{name} 按 tokens 计费，{parts}（每百万 tokens 美元单价）。实时价格以模型广场为准。"
+            answer = f"{name} 按 Token 计费，{parts}（每百万 Token 美元单价）。实时价格以模型广场为准。"
             page = set_faq(page, "价格是多少？", f"{name} API 多少钱？", answer)
         else:
             parts = ", ".join(f"{label.lower()} {price}" for label, price in rows)

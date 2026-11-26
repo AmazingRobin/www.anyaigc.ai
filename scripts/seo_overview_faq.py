@@ -58,7 +58,7 @@ def answer(lang, found):
     lo_i, hi_i = min(found["in"]), max(found["in"])
     lo_o, hi_o = min(found["out"]), max(found["out"])
     if lang == "zh":
-        return (f"Qwen 对话模型按输入和输出 tokens 分别计费，单位是美元 / 每百万 tokens。"
+        return (f"Qwen 对话模型按输入和输出 Token 分别计费，单位是美元 / 每百万 Token。"
                 f"输入单价从 ${lo_i[0]}（{lo_i[1]}）到 ${hi_i[0]}（{hi_i[1]}），"
                 f"输出单价从 ${lo_o[0]}（{lo_o[1]}）到 ${hi_o[0]}（{hi_o[1]}）。"
                 f"每个型号的具体价格见上方价格表，实时价格以模型广场为准。")

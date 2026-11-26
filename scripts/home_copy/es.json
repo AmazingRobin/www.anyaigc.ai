@@ -165,7 +165,7 @@
   "steps": [
    [
     "Crea una cuenta",
-    "Regístrate en AnyAIGC y abre la consola para crear tu propia clave de API. Las cuentas nuevas reciben 2 millones de tokens gratis."
+    "Regístrate en AnyAIGC y abre la consola para crear tu propia clave de API. Las cuentas nuevas reciben 5 millones de tokens gratis."
    ],
    [
     "Crea una clave de API",
@@ -253,7 +253,7 @@
    "<b>Facturación transparente.</b> La consola muestra los tokens y el cargo de cada petición, y puedes fijar un límite de gasto por clave.",
    "<b>Soporte 24/7.</b> <a href=\"{support}\">Contacta con soporte</a> cuando quieras."
   ],
-  "btn": "Empieza gratis con 2 millones de tokens"
+  "btn": "Empieza gratis con 5 millones de tokens"
  },
  "faq": {
   "h2": "Preguntas frecuentes",
@@ -264,7 +264,7 @@
    ],
    [
     "¿Las cuentas nuevas reciben crédito de prueba gratuito?",
-    "Sí. Las cuentas nuevas reciben 2 millones de tokens gratis, para que pruebes los modelos y la integración a pequeña escala."
+    "Sí. Las cuentas nuevas reciben 5 millones de tokens gratis, para que pruebes los modelos y la integración a pequeña escala."
    ],
    [
     "¿Se puede reembolsar el saldo no utilizado?",

@@ -1,10 +1,14 @@
 # GPT Image 2.6（Sunburst / Flare）专题页中英文文案。build(lang, slug) 返回页面用的字典，被 gpt_image_copy_zh/en.py 调用。
 # 事实来源：OpenAI《Introducing Images 2.6》发布页、developers.openai.com 模型页与 image-generation 指南（2026-11-05 读取）。
-# 用户 2026-11-05 确认：AnyAIGC 接口支持 complexity、GIF、SVG、markup；不与官方价对比；-c 版中文页 1K/2K/4K 统一 ¥0.13。
-from gpt_image_data import (TOKEN, CALL, TOKENS_26, PRICING, SUPPORT, DOCS_GEN_25, DOCS_EDIT_25, POST_26, cny, money, cost_26)
+# 用户 2026-11-05 确认：AnyAIGC 接口支持 complexity、GIF、SVG、markup；-c 版 1K/2K/4K 统一一个价，中文页的按张价按美元 × 6.7 显示人民币，英文页用美元。
+# 2026-11-25 价格改为模型广场最低价：Token 价与 -c 版价均以 gpt_image_data 为准。
+# 2026-11-25 用户确认：2.6 要与官方价对比，官方价 $5/$8/$30 已核实（openai.com/business/pricing）。
+from gpt_image_data import (TOKEN, OFFICIAL, CALL, TOKENS_25, TOKENS_26, PRICING, SUPPORT, DOCS_GEN_25, DOCS_EDIT_25, POST_26, cny, money, cost_26, save)
 import gpt_image_layout as G
 
 T = TOKEN['2.6']
+S26 = save(T['out'], OFFICIAL['out'])      # 92，与 2.5 相同
+ZHE26 = f'{(100 - S26) / 10:g} 折'          # 0.8 折
 
 SIZE_RULES = {'zh': '最长边不超过 3840px，宽高都是 16 的倍数，长短边比例不超过 3:1，总像素在 655,360 到 8,294,400 之间',
               'en': ('the longest edge is at most 3840px, both sides are multiples of 16, the aspect ratio is no wider than 3:1, '
@@ -187,11 +191,12 @@ print(resp.json()["data"][0]["url"])'''
 # ---------------------------------------------------------------- 价格版块
 def price_tables(lang, slug):
     z = lang == 'zh'
-    tab = G.table('GPT Image 2.6 按 token 计费单价（美元 / 每 100 万 tokens）' if z else 'GPT Image 2.6 token pricing (USD per 1M tokens)',
-                  [('计费项' if z else 'Item', False), ('AnyAIGC 单价' if z else 'AnyAIGC rate', True)],
-                  [(None, G.token_rows_plain(lang, '2.6'))])
+    tab = G.table('GPT Image 2.6 按 Token 计费单价（美元 / 每 100 万 Token）' if z else 'GPT Image 2.6 token pricing (USD per 1M tokens)',
+                  ([('计费项', False), ('AnyAIGC', True), ('OpenAI 官方', True), ('节省', True)] if z else
+                   [('Item', False), ('AnyAIGC', True), ('OpenAI list', True), ('You save', True)]),
+                  [(None, G.token_rows(lang, '2.6'))])
     per = (f'      <h3 class="gi-h3 o-reveal">{"每张图大概多少钱" if z else "What one image costs"}</h3>\n'
-           f'      <p class="o-note">{"按 OpenAI 官方计算器给出的每张图片输出 tokens × AnyAIGC 输出单价估算，不含提示词和参考图的输入 tokens。GPT Image 2.6 的 Sunburst 和 Flare 使用同一套 tokens 数据。" if z else "Estimated from output tokens per image in OpenAI&#39;s official calculator × the AnyAIGC output rate, excluding prompt and reference image input tokens. Sunburst and Flare share the same token figures."}</p>\n'
+           f'      <p class="o-note">{"按 OpenAI 官方计算器给出的每张图片输出 Token × AnyAIGC 输出单价估算，不含提示词和参考图的输入 Token。GPT Image 2.6 的 Sunburst 和 Flare 使用同一套 Token 数据。" if z else "Estimated from output tokens per image in OpenAI&#39;s official calculator × the AnyAIGC output rate, excluding prompt and reference image input tokens. Sunburst and Flare share the same token figures."}</p>\n'
            + G.per_image_26(lang))
     return tab + per + G.call_block(lang, [slug + '-c'])
 
@@ -206,10 +211,12 @@ def costs(lang):
         a = cost_26(q, s)
         tk = TOKENS_26[q][s]
         if z:
-            calc = f'{n:,} 张 {s.replace("x", "×")}，<code>quality={q}</code>，每张约 {tk:,} 输出 tokens × ${T["out"]} / 1M'
+            calc = f'{n:,} 张 {s.replace("x", "×")}，<code>quality={q}</code>，每张约 {tk:,} 输出 Token × ${T["out"]} / 1M'
         else:
             calc = f'{n:,} {"image" if n == 1 else "images"} at {s.replace("x", "×")}, <code>quality={q}</code>, about {tk:,} output tokens each × ${T["out"]} / 1M'
-        out.append((h, calc, money(a * n, 2 if n > 1 else 4), ('只算图片输出' if z else 'Image output only')))
+        nd = 2 if n > 1 else 4
+        o = tk * float(OFFICIAL['out']) / 1e6
+        out.append((h, calc, money(a * n, nd), (f'官方 <s>{money(o * n, nd)}</s>' if z else f'List <s>{money(o * n, nd)}</s>')))
     return out
 
 
@@ -227,6 +234,8 @@ def build(lang, slug):
     unit = '张' if z else 'image'
     default_q, default_cx = ('high', 'high') if sun else ('medium', 'medium')
     a_low, a_med = cost_26('low', '1024x1024'), cost_26('medium', '1024x1024')
+    a_low_o = TOKENS_26['low']['1024x1024'] * float(OFFICIAL['out']) / 1e6
+    a_med_o = TOKENS_26['medium']['1024x1024'] * float(OFFICIAL['out']) / 1e6
     rules = SIZE_RULES[lang]
     py, curl = code_gen(lang, slug, default_q, default_cx)
     codes = [('py', 'Python', 'POST /v1/images/generations', py), ('curl', 'cURL', 'POST /v1/images/generations', curl),
@@ -237,12 +246,12 @@ def build(lang, slug):
     if z:
         if sun:
             eyebrow, h1sub = 'OpenAI · gpt-image-2.6-sunburst', '细节更强、多轮编辑更一致的 GPT Image'
-            lead = f'OpenAI 2026 年 11 月发布的 GPT Image 2.6 精细版，<strong>按次计费每张 {pc}</strong>，1K、2K、4K 出图同价。'
-            lead_sub = f'官方定位为“细节要求高的视觉作品”。质量设为 medium 或 high 时，多轮编辑中人物、产品和品牌细节更稳定。新增 GIF 动图、SVG 矢量输出、标注改图和 complexity 参数；也可以按 token 计费，图片输出 ${T["out"]} / 百万 tokens。'
+            lead = f'OpenAI 2026 年 11 月发布的 GPT Image 2.6 精细版，<strong>约官方价 {ZHE26}</strong>，也可按次计费每张 {pc}。'
+            lead_sub = f'官方定位为“细节要求高的视觉作品”。质量设为 medium 或 high 时，多轮编辑中人物、产品和品牌细节更稳定。新增 GIF 动图、SVG 矢量输出、标注改图和 complexity 参数；按 Token 计费，图片输出 ${T["out"]} / 百万 Token，官方价 ${OFFICIAL["out"]}。'
             about_h2 = 'GPT Image 2.6 Sunburst：改了几轮，主体还是原来那个'
             about = ['OpenAI 于 2026 年 11 月 4 日发布 Images 2.6，API 里分为 Sunburst 和 Flare 两个型号。官方把 Sunburst 描述为“面向细节视觉作品的图像生成与编辑模型”：质量设为 medium 或 high 时，画面细节更好，跨多轮编辑的一致性也更强，适合角色、产品和品牌元素需要前后一致的工作。',
                      f'这一代新增了 4 个能力：<code>complexity</code> 参数（low、medium、high，控制出图前规划多少）、标注改图 <code>markup</code>、SVG 矢量输出和 GIF 动图输出。质量档位与 2.5 相同，为 low、medium、high、xhigh、max 和 auto；尺寸可以自定义，{rules}。',
-                     f'在 AnyAIGC 上，Sunburst 和 <a href="/zh/models/{other}">{other_name}</a> 单价相同。注意 2.6 在 low、medium 质量下每张图的输出 tokens 比 2.5 多不少，高质量档相同；如果更在意每张图的固定成本，可以用按张计费的 <a href="#per-image"><code>{c_slug}</code></a>，每张 {pc}。']
+                     f'在 AnyAIGC 上，Sunburst 和 <a href="/zh/models/{other}">{other_name}</a> 单价相同，都约为官方价的 {100 - S26}%。2.6 与 2.5 的 Token 单价相同，只是 low、medium 质量下每张图用的输出 Token 更多（1024×1024 low 为 {TOKENS_26["low"]["1024x1024"]} 对 {TOKENS_25["low"]["1024x1024"]}，medium 为 {TOKENS_26["medium"]["1024x1024"]} 对 {TOKENS_25["medium"]["1024x1024"]}），high 及以上相同。需要每张固定价、方便做预算，可以用按张计费的 <a href="#per-image"><code>{c_slug}</code></a>，每张 {pc}。']
             spec = [('发布', '2026-11-04'), ('官方定位', '细节视觉作品'), ('质量档位', 'low – max'), ('complexity', 'low · medium · high'), ('输出格式', 'png · jpeg · webp · gif · svg'), ('接口', 'generations · edits')]
             hero_imgs = ('i26-knight-1', 'i26-chibi-up', 'i26-glass-whale')
             gallery = ['i26-knight-1', 'i26-knight-2', 'i26-knight-3', 'i26-glass-whale', 'i26-product-world', 'i26-monty', 'i26-markup-before', 'i26-markup-after']
@@ -252,17 +261,17 @@ def build(lang, slug):
                     ('03 · 动画', '品牌角色动起来', '把吉祥物或产品角色做成循环 GIF，用在应用内提示、加载动画和营销物料里。', 'i26-monty'),
                     ('04 · 广告', '商业定稿与主视觉', '用 high、xhigh 或 max 质量生成细节丰富的成品图，适合提案和投放素材。', 'i26-glass-whale')]
             diff = ('Sunburst 和 Flare 怎么选？和 GPT Image 2.5 比有什么变化？',
-                    f'两者都是 GPT Image 2.6，在 AnyAIGC 上单价相同，参数也一样。官方把 Sunburst 定位为细节视觉作品，质量设为 medium 或 high 时多轮编辑更一致；<a href="/zh/models/{other}">Flare</a> 面向快速迭代，low 质量下最快约 6 秒出图。和 <a href="/zh/models/{prev}">GPT Image 2.5 Sunburst</a> 相比，2.6 新增了 complexity、markup、SVG 和 GIF；low、medium 质量每张输出 tokens 比 2.5 多，high 及以上相同。')
-            title = 'GPT Image 2.6 Sunburst API 价格与接入｜多轮编辑更一致 - AnyAIGC'
+                    f'两者都是 GPT Image 2.6，在 AnyAIGC 上单价相同，参数也一样。官方把 Sunburst 定位为细节视觉作品，质量设为 medium 或 high 时多轮编辑更一致；<a href="/zh/models/{other}">Flare</a> 面向快速迭代，low 质量下最快约 6 秒出图。和 <a href="/zh/models/{prev}">GPT Image 2.5 Sunburst</a> 相比，2.6 新增了 complexity、markup、SVG 和 GIF；low、medium 质量每张输出 Token 比 2.5 多，high 及以上相同。')
+            title = f'GPT Image 2.6 Sunburst API 价格与接入｜约官方价 {ZHE26} - AnyAIGC'
             pitch = '细节更强、多轮编辑更一致'
         else:
             eyebrow, h1sub = 'OpenAI · gpt-image-2.6-flare', '更快出图、适合快速迭代的 GPT Image'
-            lead = f'OpenAI 2026 年 11 月发布的 GPT Image 2.6 快速版，<strong>按次计费每张 {pc}</strong>，1K、2K、4K 出图同价。'
-            lead_sub = f'官方介绍 Images 2.6 出图比之前快 50%，Flare 在 low 质量下最快约 6 秒出一张，海报和产品图的版式也更好。支持 GIF 动图、SVG 矢量输出和标注改图；也可以按 token 计费，图片输出 ${T["out"]} / 百万 tokens。'
+            lead = f'OpenAI 2026 年 11 月发布的 GPT Image 2.6 快速版，<strong>约官方价 {ZHE26}</strong>，也可按次计费每张 {pc}。'
+            lead_sub = f'官方介绍 Images 2.6 出图比之前快 50%，Flare 在 low 质量下最快约 6 秒出一张，海报和产品图的版式也更好。支持 GIF 动图、SVG 矢量输出和标注改图；按 Token 计费，图片输出 ${T["out"]} / 百万 Token，官方价 ${OFFICIAL["out"]}。'
             about_h2 = 'GPT Image 2.6 Flare：快速出图，也能出动图'
             about = ['OpenAI 于 2026 年 11 月 4 日发布 Images 2.6，API 里分为 Sunburst 和 Flare 两个型号。官方把 Flare 描述为“面向快速迭代的图像生成与编辑模型”：Images 2.6 出图比之前快 50%，Flare 在 low 质量下最快约 6 秒出图，同时提升了海报、产品图等专业视觉的版式质量。',
                      f'Flare 和 Sunburst 用同一套参数：新增 <code>complexity</code>（low、medium、high）、标注改图 <code>markup</code>、SVG 矢量输出和 GIF 动图输出；质量档位为 low、medium、high、xhigh、max 和 auto；尺寸可以自定义，{rules}。',
-                     f'在 AnyAIGC 上 Flare 和 <a href="/zh/models/{other}">{other_name}</a> 单价相同。按 token 计费时，low 质量 1024×1024 每张约 {money(a_low)}，medium 约 {money(a_med)}；需要每张固定成本可以用 <a href="#per-image"><code>{c_slug}</code></a>，每张 {pc}。']
+                     f'在 AnyAIGC 上 Flare 和 <a href="/zh/models/{other}">{other_name}</a> 单价相同，都约为官方价的 {100 - S26}%。按 Token 计费时，low 质量 1024×1024 每张约 {money(a_low)}，medium 约 {money(a_med)}；需要每张固定价、方便做预算，可以用 <a href="#per-image"><code>{c_slug}</code></a>，每张 {pc}。']
             spec = [('发布', '2026-11-04'), ('官方定位', '快速迭代'), ('low 质量出图', '最快约 6 秒'), ('complexity', 'low · medium · high'), ('输出格式', 'png · jpeg · webp · gif · svg'), ('接口', 'generations · edits')]
             hero_imgs = ('i26-chibi-up', 'i26-markup-after', 'i26-glass-whale')
             gallery = ['i26-speed', 'i26-monty', 'i26-product-world', 'i26-knight-1', 'i26-markup-before', 'i26-knight-3']
@@ -272,9 +281,9 @@ def build(lang, slug):
                     ('03 · 动画', '草图变动画角色', '上传手绘草图，生成会动的角色，做分镜预演和游戏素材。', 'i26-owl'),
                     ('04 · 修图', '标注改图快速修改', '在图上圈出要改的位置，配合 low complexity 快速完成局部修改。', 'i26-markup-before')]
             diff = ('Flare 和 Sunburst 怎么选？和 GPT Image 2.5 比有什么变化？',
-                    f'两者都是 GPT Image 2.6，在 AnyAIGC 上单价相同，参数也一样。Flare 面向快速迭代，low 质量下最快约 6 秒出图，适合产品内实时出图、草稿和 GIF；<a href="/zh/models/{other}">Sunburst</a> 面向细节视觉作品，多轮编辑更一致。和 <a href="/zh/models/{prev}">GPT Image 2.5 Flare</a> 相比，2.6 新增了 complexity、markup、SVG 和 GIF；low、medium 质量每张输出 tokens 比 2.5 多，high 及以上相同。')
-            title = 'GPT Image 2.6 Flare API 价格与接入｜出图提速 50% - AnyAIGC'
-            pitch = '出图更快、支持 GIF 动图'
+                    f'两者都是 GPT Image 2.6，在 AnyAIGC 上单价相同，参数也一样。Flare 面向快速迭代，low 质量下最快约 6 秒出图，适合产品内实时出图、草稿和 GIF；<a href="/zh/models/{other}">Sunburst</a> 面向细节视觉作品，多轮编辑更一致。和 <a href="/zh/models/{prev}">GPT Image 2.5 Flare</a> 相比，2.6 新增了 complexity、markup、SVG 和 GIF；low、medium 质量每张输出 Token 比 2.5 多，high 及以上相同。')
+            title = f'GPT Image 2.6 Flare API 价格与接入｜约官方价 {ZHE26} - AnyAIGC'
+            pitch = '出图提速 50%，low 质量最快约 6 秒'
         caps = [('出图更快', '官方介绍 Images 2.6 出图比之前快 50%，Flare 在 low 质量下最快约 6 秒出一张。'),
                 ('多轮编辑更一致', 'Sunburst 在 medium、high 质量下，跨多轮编辑保持人物、产品和品牌细节一致。'),
                 ('GIF 动图', '<code>format</code> 设为 gif，用 <code>frame_count</code>（2–64）和 <code>frame_duration_ms</code> 控制帧数和节奏。'),
@@ -283,14 +292,14 @@ def build(lang, slug):
                 ('complexity 参数', 'low、medium、high 三档，控制出图前规划多少。快速改图用 low，复杂排版用 high，不额外收费。')]
         faqs = [
             (f'{name} API 多少钱？',
-             f'AnyAIGC 上 <code>{slug}</code> 按 token 计费：文本输入 ${T["text_in"]}、图片输入 ${T["img_in"]}、图片输出 ${T["out"]}（每百万 tokens），缓存输入文本 ${T["text_cache"]}、图片 ${T["img_cache"]}。以 1024×1024 为例，low 质量每张图片输出约 {money(a_low)}，medium 约 {money(a_med)}。按张计费版 <code>{c_slug}</code> 每张 {pc}。实时价格以模型广场为准。'),
+             f'AnyAIGC 上 <code>{slug}</code> 按 Token 计费：文本输入 ${T["text_in"]}、图片输入 ${T["img_in"]}、图片输出 ${T["out"]}（每百万 Token），缓存输入文本 ${T["text_cache"]}、图片 ${T["img_cache"]}，约官方价 {ZHE26}。OpenAI 官方价为文本输入 ${OFFICIAL["text_in"]}、图片输入 ${OFFICIAL["img_in"]}、图片输出 ${OFFICIAL["out"]}。以 1024×1024 为例，low 质量每张图片输出约 {money(a_low)}（官方约 {money(a_low_o)}），medium 约 {money(a_med)}（官方约 {money(a_med_o)}）。按张计费版 <code>{c_slug}</code> 每张 {pc}。实时价格以模型广场为准。'),
             diff,
             ('怎么生成 GIF 动图和 SVG？',
              '都走 <code>POST /v1/images/generations</code>。GIF：<code>format</code> 设为 gif，<code>frame_count</code> 取 2–64（默认 9），<code>frame_duration_ms</code> 取 20–2000 毫秒（默认 200），<code>size</code> 是每一帧的尺寸。SVG：<code>format</code> 设为 svg，<code>n</code> 必须为 1，<code>quality</code> 作用于生成 SVG 前的参考图，返回的是静态矢量内容。两者都不支持编辑接口、流式输出和压缩参数。'),
             ('complexity 和标注改图（markup）怎么用？',
              '<code>complexity</code> 取 low、medium 或 high，不传时默认 high，调整它不额外收费。官方建议多数编辑任务用 low 配合需要的质量档，元素多、约束多的画面用 medium 或 high。标注改图走 <code>POST /v1/images/edits</code>：第一张 <code>image</code> 是原图，再传一张透明 PNG 作为 <code>markup</code>，宽高与原图一致，圈出要改的位置并在提示词里写清楚改法；markup 不能和 <code>mask</code> 一起用。'),
             (f'有按张计费的版本吗？{c_slug} 怎么收费？',
-             f'有。<code>{c_slug}</code> 是 {name} 的按张计费版，接口相同，只改 <code>model</code> 字段。每张固定 {pc}，1K、2K、4K 出图同价，质量档位不影响单价。每次请求出 1 张，不支持 <code>n</code>、<code>mask</code> 参数，也不支持透明背景。质量开到 medium 及以上或出大图时，按张计费通常更省。'),
+             f'有。<code>{c_slug}</code> 是 {name} 的按张计费版，接口相同，只改 <code>model</code> 字段。每张固定 {pc}，1K、2K、4K 出图同价，质量档位不影响单价。每次请求出 1 张，不支持 <code>n</code>、<code>mask</code> 参数，也不支持透明背景。按 Token 计费在多数质量和尺寸下每张更低（1024×1024 medium 约 {money(a_med)}），按张计费的好处是每张固定、方便预算；只有 max 质量的 2048×2048 和 3840×2160 两档，按张计费才更省。'),
             ('并发有限制吗？国内能直接调用吗？',
              f'AnyAIGC 对 {slug} 不设并发限制，所有用户默认享有。接口地址是 <code>https://anyaigc.ai/v1</code>，面向国内网络优化，通常无需额外代理；按美元计费，支持微信支付和支付宝，同一个 Key 还能调用平台上 300+ 其他模型。'),
             ('AnyAIGC 能开发票吗？支持增值税专票吗？',
@@ -302,28 +311,28 @@ def build(lang, slug):
         ]
         return dict(
             title=title,
-            desc=f'{name} API：{pitch}，支持 GIF、SVG 和标注改图，图片输出 ${T["out"]}/1M，按张 {pc} 起，并发不限，支持对公转账与增值税专票。',
-            og_desc=f'{slug} 图片输出 ${T["out"]} / 1M tokens，按张版每张 {pc}。新增 complexity、标注改图、SVG 和 GIF，兼容 /v1/images/generations 与 /v1/images/edits。',
-            og_alt=f'AnyAIGC {name} API：{pitch}',
+            desc=f'{name} API：{pitch}，支持 GIF、SVG 和标注改图，图片输出 ${T["out"]}/1M，约官方价 {ZHE26}，并发不限，支持对公转账与增值税专票。',
+            og_desc=f'{slug} 图片输出 ${T["out"]} / 1M Token，约官方价 {ZHE26}，按张版每张 {pc}。新增 complexity、标注改图、SVG 和 GIF，兼容 /v1/images/generations 与 /v1/images/edits。',
+            og_alt=f'AnyAIGC {name} API：约官方价 {ZHE26}',
             keywords=f'{name} API,{slug},{slug} API,GPT Image 2.6 API,{name} 价格,GPT Image 2.6 价格,GPT Image 2.6 GIF,GPT Image 2.6 SVG,OpenAI 图像生成 API,{name} API 企业,{name} API 发票,GPT Image API 对公转账,AnyAIGC',
             crumb=f'{short} API', product=f'{name} API（AnyAIGC）', sku=slug,
-            product_desc=f'通过 AnyAIGC 调用 OpenAI {name}（{slug}）：兼容 /v1/images/generations 与 /v1/images/edits，支持 complexity、markup、SVG 与 GIF 输出，按 token 计费，并发不限。',
-            offers=[('文本输入（每 100 万 tokens）', T['text_in']), ('图片输入（每 100 万 tokens）', T['img_in']), ('图片输出（每 100 万 tokens）', T['out']),
-                    ('文本缓存输入（每 100 万 tokens）', T['text_cache']), ('图片缓存输入（每 100 万 tokens）', T['img_cache'])],
+            product_desc=f'通过 AnyAIGC 调用 OpenAI {name}（{slug}）：兼容 /v1/images/generations 与 /v1/images/edits，支持 complexity、markup、SVG 与 GIF 输出，按 Token 计费，约官方价 {ZHE26}，并发不限。',
+            offers=[('文本输入（每 100 万 Token）', T['text_in']), ('图片输入（每 100 万 Token）', T['img_in']), ('图片输出（每 100 万 Token）', T['out']),
+                    ('文本缓存输入（每 100 万 Token）', T['text_cache']), ('图片缓存输入（每 100 万 Token）', T['img_cache'])],
             eyebrow=eyebrow, h1=f'{name}<span class="o-sr"> API</span><small>{h1sub}</small>', lead=lead, lead_sub=lead_sub, notice=None,
-            facts=[('模型 ID', slug), ('图片输出', f'${T["out"]} / 1M'), ('按张', f'{pc} / 张'), ('并发', '不限'), ('企业', '对公 · 专票')],
+            facts=[('模型 ID', slug), ('最大尺寸', '3840×2160'), ('并发', '不限'), ('企业', '对公 · 专票')],
             hero_imgs=hero_imgs, credit=CREDIT['zh'], credit_url=POST_26, gif=gif('zh', slug),
             about_h2=about_h2, about_ps=about, spec=spec,
             caps_h2=f'{short} 新增了什么', caps=caps, caps_lead='这些能力 Sunburst 和 Flare 都支持，接口字段相同。',
             gallery=gallery, gallery_h2=f'{short} 能做出什么', gallery_lead=gallery_lead,
-            price_h2=f'{name} API 价格', price_lead='按 token 计费，固定单价，没有订阅和月费。Sunburst 和 Flare 单价相同；也可以选每张固定价的 -c 版。',
+            price_h2=f'{name} API 价格', price_lead=f'按 Token 计费，固定单价，没有订阅和月费。文本输入、图片输入和图片输出都约为 OpenAI 官方价的 {100 - S26}%。Sunburst 和 Flare 单价相同；也可以选每张固定价的 -c 版。',
             billing_label='计费要点',
-            billing=[('按 token 计费', '提示词、参考图和生成的图片分别计价'), ('complexity 不加价', '三档同一单价'), ('并发不限', '所有用户默认享有'), ('余额通用', '同一余额可调用 300+ 模型')],
+            billing=[('按 Token 计费', '提示词、参考图和生成的图片分别计价'), ('complexity 不加价', '三档同一单价'), ('并发不限', '所有用户默认享有'), ('余额通用', '同一余额可调用 300+ 模型')],
             price_tables=price_tables('zh', slug),
-            price_note=f'按 token 价格单位为 USD，按张计费（-c 版）单位为人民币，均按成功请求计费。表中为模型广场最低价；SVG 输出除参考图的图片 tokens 外，还会计入生成 SVG 所用的 tokens。缓存价格仅在上游明确返回缓存用量时生效。实时价格以<a href="{PRICING}">模型广场</a>为准。',
-            costs_h3='成本示例', costs_lead='按上表单价计算，只算图片输出 tokens，不含提示词文本。', costs=costs('zh'),
+            price_note=f'按 Token 计费单位为 USD，按张计费（-c 版）为人民币（美元价 × 6.7），均按成功请求计费。表中 AnyAIGC 价为模型广场最低价，官方价取自 OpenAI 官网定价页；SVG 输出除参考图的图片 Token 外，还会计入生成 SVG 所用的 Token。缓存价格仅在上游明确返回缓存用量时生效。实时价格以<a href="{PRICING}">模型广场</a>为准。',
+            costs_h3='成本示例', costs_lead='按上表单价计算，只算图片输出 Token，不含提示词文本；右侧为同样 Token 按官方价的费用。', costs=costs('zh'),
             uses_h2=f'{short} 适合做什么', uses=uses,
-            steps=[f'<a href="{G.REG}">注册 AnyAIGC</a>，新用户送 200 万 tokens 试用额度，最低 $1 起充。',
+            steps=[f'<a href="{G.REG}">注册 AnyAIGC</a>，新用户送 500 万 Token 试用额度，最低 $1 起充。',
                    '在<a href="https://anyaigc.ai/console">控制台</a>创建 API Key，保存到环境变量 <code>ANYAIGC_API_KEY</code>。',
                    f'向 <code>https://anyaigc.ai/v1/images/generations</code> 发请求，<code>model</code> 填 <code>{slug}</code>；改图和标注改图用 <code>/v1/images/edits</code>。'],
             codes=codes, qs_h2=f'三步接入 {name} API',
@@ -331,19 +340,19 @@ def build(lang, slug):
             qs_note=f'普通图片返回 <code>data[0].url</code>，传 <code>response_format=b64_json</code> 可以拿 base64；GIF 和 SVG 示例用 base64 直接保存文件。提示词最长 1000 字符。其他字段与 GPT Image 2.5 相同，见 <a href="{DOCS_GEN_25}" target="_blank" rel="noopener">生成接口文档</a> 与 <a href="{DOCS_EDIT_25}" target="_blank" rel="noopener">编辑接口文档</a>。',
             family_h2='GPT Image 全部型号', family_lead='同一个 API Key，换型号只改 model 字段。',
             faq_h2=f'{name} API 常见问题', faqs=faqs,
-            final_h2=f'现在开始调用 {name}', final_p='注册即送 200 万 tokens 试用额度，先出几张图、做一个 GIF 看看效果。',
+            final_h2=f'现在开始调用 {name}', final_p='注册即送 500 万 Token 试用额度，先出几张图、做一个 GIF 看看效果。',
             name=name, docs=DOCS_GEN_25,
         )
 
     # ---------------- English
     if sun:
         eyebrow, h1sub = 'OpenAI · gpt-image-2.6-sunburst', 'More detail and steadier multi-round edits'
-        lead = f'The detail-focused GPT Image 2.6 model from OpenAI, released November 2026. <strong>{pc} per image</strong>, the same at 1K, 2K or 4K.'
-        lead_sub = f'OpenAI built it for detailed visual work. At medium or high quality, characters, products and brand details hold steady across editing rounds. It adds GIF and SVG output, markup-guided edits and a complexity setting. Token billing is also available at ${T["out"]} per 1M image output tokens.'
+        lead = f'The detail-focused GPT Image 2.6 model from OpenAI, released November 2026, <strong>about {S26}% off list</strong>. Per-image billing is also available at {pc}.'
+        lead_sub = f'OpenAI built it for detailed visual work. At medium or high quality, characters, products and brand details hold steady across editing rounds. It adds GIF and SVG output, markup-guided edits and a complexity setting. On AnyAIGC, image output is ${T["out"]} per 1M tokens, versus ${OFFICIAL["out"]} list.'
         about_h2 = 'GPT Image 2.6 Sunburst: the subject stays the same, round after round'
         about = ['OpenAI released Images 2.6 on November 4, 2026, with two API models, Sunburst and Flare. OpenAI describes Sunburst as image generation and editing for detailed visual work. At medium or high quality it delivers finer detail and stronger consistency across edits, which suits characters, products and brand elements that must match from one version to the next.',
                  f'This generation adds four capabilities: a <code>complexity</code> setting (low, medium or high) that controls how much the model plans, markup-guided edits with <code>markup</code>, SVG output and animated GIF output. Quality levels match GPT Image 2.5: low, medium, high, xhigh, max and auto. Custom sizes work as long as {rules}.',
-                 f'On AnyAIGC, Sunburst and <a href="/en/models/{other}">{other_name}</a> cost the same. At low and medium quality, 2.6 uses noticeably more output tokens per image than 2.5; from high up the counts match. For a fixed cost per image, use <a href="#per-image"><code>{c_slug}</code></a> at {pc} per image.']
+                 f'On AnyAIGC, Sunburst and <a href="/en/models/{other}">{other_name}</a> cost the same, about {100 - S26}% of the list price. 2.6 and 2.5 have the same token rates, but at low and medium quality 2.6 uses more output tokens per image ({TOKENS_26["low"]["1024x1024"]} vs {TOKENS_25["low"]["1024x1024"]} at low and {TOKENS_26["medium"]["1024x1024"]} vs {TOKENS_25["medium"]["1024x1024"]} at medium for 1024×1024); from high up the counts match. For a fixed, easy-to-budget cost per image, use <a href="#per-image"><code>{c_slug}</code></a> at {pc} per image.']
         spec = [('Released', '2026-11-04'), ('Built for', 'Detailed visual work'), ('Quality', 'low – max'), ('complexity', 'low · medium · high'), ('Formats', 'png · jpeg · webp · gif · svg'), ('Endpoints', 'generations · edits')]
         hero_imgs = ('i26-knight-1', 'i26-chibi-up', 'i26-glass-whale')
         gallery = ['i26-knight-1', 'i26-knight-2', 'i26-knight-3', 'i26-glass-whale', 'i26-product-world', 'i26-monty', 'i26-markup-before', 'i26-markup-after']
@@ -354,17 +363,17 @@ def build(lang, slug):
                 ('04 · Advertising', 'Final commercial visuals', 'Use high, xhigh or max quality for detailed finished images for pitches and campaigns.', 'i26-glass-whale')]
         diff = ('Sunburst or Flare? And what changed from GPT Image 2.5?',
                 f'Both are GPT Image 2.6, with the same rates on AnyAIGC and the same parameters. OpenAI positions Sunburst for detailed visual work, with steadier edits at medium or high quality. <a href="/en/models/{other}">Flare</a> is built for fast iteration and can return a low-quality image in as little as six seconds. Compared with <a href="/en/models/{prev}">GPT Image 2.5 Sunburst</a>, 2.6 adds complexity, markup, SVG and GIF. At low and medium quality it uses more output tokens per image than 2.5; from high up the counts are the same.')
-        title = 'GPT Image 2.6 Sunburst API pricing | Consistent edits - AnyAIGC'
+        title = f'GPT Image 2.6 Sunburst API pricing | {S26}% off list - AnyAIGC'
         pitch = 'more detail and steadier multi-round edits'
         dpitch = 'steadier edits, GIF and SVG'
     else:
         eyebrow, h1sub = 'OpenAI · gpt-image-2.6-flare', 'Faster images, built for quick iteration'
-        lead = f'The fast GPT Image 2.6 model from OpenAI, released November 2026. <strong>{pc} per image</strong>, the same at 1K, 2K or 4K.'
-        lead_sub = f'OpenAI says Images 2.6 generates images 50% faster than before, and Flare can return a low-quality image in as little as six seconds, with better layouts for posters and product shots. It supports GIF and SVG output and markup-guided edits. Token billing is also available at ${T["out"]} per 1M image output tokens.'
+        lead = f'The fast GPT Image 2.6 model from OpenAI, released November 2026, <strong>about {S26}% off list</strong>. Per-image billing is also available at {pc}.'
+        lead_sub = f'OpenAI says Images 2.6 generates images 50% faster than before, and Flare can return a low-quality image in as little as six seconds, with better layouts for posters and product shots. It supports GIF and SVG output and markup-guided edits. On AnyAIGC, image output is ${T["out"]} per 1M tokens, versus ${OFFICIAL["out"]} list.'
         about_h2 = 'GPT Image 2.6 Flare: fast images, and animated ones too'
         about = ['OpenAI released Images 2.6 on November 4, 2026, with two API models, Sunburst and Flare. OpenAI describes Flare as image generation and editing for fast iteration. Images 2.6 generates images 50% faster than before, Flare can finish a low-quality image in as little as six seconds, and layout quality improves for posters, product imagery and other professional visuals.',
                  f'Flare uses the same parameters as Sunburst. It adds <code>complexity</code> (low, medium or high), markup-guided edits with <code>markup</code>, SVG output and animated GIF output. Quality levels are low, medium, high, xhigh, max and auto. Custom sizes work as long as {rules}.',
-                 f'On AnyAIGC, Flare and <a href="/en/models/{other}">{other_name}</a> cost the same. With token billing, a 1024×1024 image costs about {money(a_low)} at low quality and {money(a_med)} at medium. For a fixed cost per image, use <a href="#per-image"><code>{c_slug}</code></a> at {pc} per image.']
+                 f'On AnyAIGC, Flare and <a href="/en/models/{other}">{other_name}</a> cost the same, about {100 - S26}% of the list price. With token billing, a 1024×1024 image costs about {money(a_low)} at low quality and {money(a_med)} at medium. For a fixed, easy-to-budget cost per image, use <a href="#per-image"><code>{c_slug}</code></a> at {pc} per image.']
         spec = [('Released', '2026-11-04'), ('Built for', 'Fast iteration'), ('Low quality', 'As fast as ~6 s'), ('complexity', 'low · medium · high'), ('Formats', 'png · jpeg · webp · gif · svg'), ('Endpoints', 'generations · edits')]
         hero_imgs = ('i26-chibi-up', 'i26-markup-after', 'i26-glass-whale')
         gallery = ['i26-speed', 'i26-monty', 'i26-product-world', 'i26-knight-1', 'i26-markup-before', 'i26-knight-3']
@@ -375,9 +384,9 @@ def build(lang, slug):
                 ('04 · Retouching', 'Quick markup edits', 'Circle the spot to change and pair it with low complexity for fast, focused edits.', 'i26-markup-before')]
         diff = ('Flare or Sunburst? And what changed from GPT Image 2.5?',
                 f'Both are GPT Image 2.6, with the same rates on AnyAIGC and the same parameters. Flare is built for fast iteration and can return a low-quality image in as little as six seconds, which suits in-app generation, drafts and GIFs. <a href="/en/models/{other}">Sunburst</a> is built for detailed visual work, with steadier multi-round edits. Compared with <a href="/en/models/{prev}">GPT Image 2.5 Flare</a>, 2.6 adds complexity, markup, SVG and GIF. At low and medium quality it uses more output tokens per image than 2.5; from high up the counts are the same.')
-        title = 'GPT Image 2.6 Flare API pricing | 50% faster images - AnyAIGC'
+        title = f'GPT Image 2.6 Flare API pricing | {S26}% off list - AnyAIGC'
         pitch = 'faster images and animated GIFs'
-        dpitch = '50% faster, with GIF and SVG output'
+        dpitch = '50% faster, GIF and SVG'
     caps = [('Faster generation', 'OpenAI says Images 2.6 is 50% faster than before, and Flare can return a low-quality image in as little as six seconds.'),
             ('Steadier edits', 'At medium and high quality, Sunburst keeps characters, products and brand details consistent across editing rounds.'),
             ('Animated GIFs', 'Set <code>format</code> to gif and control the animation with <code>frame_count</code> (2–64) and <code>frame_duration_ms</code>.'),
@@ -386,14 +395,14 @@ def build(lang, slug):
             ('complexity setting', 'Low, medium or high controls how much the model plans. Use low for quick edits and high for dense layouts, at no extra cost.')]
     faqs = [
         (f'How much does the {name} API cost?',
-         f'On AnyAIGC, <code>{slug}</code> is billed per token: ${T["text_in"]} for text input, ${T["img_in"]} for image input and ${T["out"]} for image output per 1M tokens, with cached text input at ${T["text_cache"]} and cached image input at ${T["img_cache"]}. A 1024×1024 image costs about {money(a_low)} in image output at low quality and {money(a_med)} at medium. The per-image version <code>{c_slug}</code> is {pc} per image. See the model catalog for live prices.'),
+         f'On AnyAIGC, <code>{slug}</code> is billed per token: ${T["text_in"]} for text input, ${T["img_in"]} for image input and ${T["out"]} for image output per 1M tokens, with cached text input at ${T["text_cache"]} and cached image input at ${T["img_cache"]}. OpenAI lists ${OFFICIAL["text_in"]}, ${OFFICIAL["img_in"]} and ${OFFICIAL["out"]}, so AnyAIGC is about {S26}% off list. A 1024×1024 image costs about {money(a_low)} in image output at low quality ({money(a_low_o)} at list) and {money(a_med)} at medium ({money(a_med_o)} at list). The per-image version <code>{c_slug}</code> is {pc} per image. See the model catalog for live prices.'),
         diff,
         ('How do I generate GIFs and SVGs?',
          'Both use <code>POST /v1/images/generations</code>. For a GIF, set <code>format</code> to gif, <code>frame_count</code> to 2–64 (default 9) and <code>frame_duration_ms</code> to 20–2000 ms (default 200); <code>size</code> sets each frame. For an SVG, set <code>format</code> to svg and <code>n</code> to 1. <code>quality</code> applies to the reference image behind the SVG, and the result is static vector content. Neither works with the edits endpoint, streaming or compression settings.'),
         ('How do complexity and markup-guided edits work?',
          '<code>complexity</code> takes low, medium or high and defaults to high. Changing it costs nothing extra. OpenAI recommends low for most edits, paired with the quality you need, and medium or high for scenes with many elements or constraints. Markup edits use <code>POST /v1/images/edits</code>: send the original as the first <code>image</code>, plus a transparent PNG as <code>markup</code> with the same width and height. Mark the areas to change and describe the change in the prompt. Markup cannot be combined with <code>mask</code>.'),
         (f'Is there a per-image version? How is {c_slug} priced?',
-         f'Yes. <code>{c_slug}</code> is the per-image version of {name}. It uses the same endpoints; only the <code>model</code> field changes. Each image costs a flat {pc} at 1K, 2K or 4K and at any quality level. Each request returns one image, and <code>n</code>, <code>mask</code> and transparent backgrounds are not supported. At medium quality and above, or for large images, per-image billing is usually cheaper.'),
+         f'Yes. <code>{c_slug}</code> is the per-image version of {name}. It uses the same endpoints; only the <code>model</code> field changes. Each image costs a flat {pc} at 1K, 2K or 4K and at any quality level. Each request returns one image, and <code>n</code>, <code>mask</code> and transparent backgrounds are not supported. Token billing is lower per image at most quality levels and sizes (about {money(a_med)} at 1024×1024 and medium quality). Per-image billing is mainly useful for a fixed, easy-to-budget price; it comes out lower only at max quality for 2048×2048 and 3840×2160.'),
         ('Are there concurrency limits? Does it work from mainland China?',
          f'AnyAIGC sets no concurrency limit on {slug}, and every account gets this by default. The base URL is <code>https://anyaigc.ai/v1</code>, which is tuned for networks in mainland China, so you usually do not need a proxy. Billing is in USD, you can pay with WeChat Pay, Alipay, USDT or a credit card, and the same key works for 300+ other models.'),
         ('Can AnyAIGC issue invoices, including VAT special invoices?',
@@ -405,28 +414,28 @@ def build(lang, slug):
     ]
     return dict(
         title=title,
-        desc=f'{name} API: {dpitch}. ${T["out"]}/1M image output or {pc}/image, unlimited concurrency, bank transfer and VAT invoices.',
-        og_desc=f'{slug}: ${T["out"]} per 1M image output tokens, or {pc} per image. Adds complexity, markup edits, SVG and GIF output on /v1/images/generations and /v1/images/edits.',
-        og_alt=f'AnyAIGC {name} API: {pitch}',
+        desc=f'{name} API: {dpitch}. ${T["out"]}/1M image output, {S26}% off list, or {pc}/image. Unlimited concurrency, self-service invoices.',
+        og_desc=f'{slug}: ${T["out"]} per 1M image output tokens, about {S26}% off list, or {pc} per image. Adds complexity, markup edits, SVG and GIF output on /v1/images/generations and /v1/images/edits.',
+        og_alt=f'AnyAIGC {name} API: about {S26}% off list',
         keywords=f'{name} API,{slug},{slug} API,GPT Image 2.6 API,{name} pricing,GPT Image 2.6 API pricing,GPT Image 2.6 GIF,GPT Image 2.6 SVG,OpenAI image API,{name} API for business,{name} API invoice,AnyAIGC',
         crumb=f'{short} API', product=f'{name} API (AnyAIGC)', sku=slug,
-        product_desc=f'Access OpenAI {name} ({slug}) through AnyAIGC: compatible with /v1/images/generations and /v1/images/edits, with complexity, markup, SVG and GIF output, billed per token with unlimited concurrency.',
+        product_desc=f'Access OpenAI {name} ({slug}) through AnyAIGC: compatible with /v1/images/generations and /v1/images/edits, with complexity, markup, SVG and GIF output, billed per token at about {S26}% off list, with unlimited concurrency.',
         offers=[('Text input (per 1M tokens)', T['text_in']), ('Image input (per 1M tokens)', T['img_in']), ('Image output (per 1M tokens)', T['out']),
                 ('Cached text input (per 1M tokens)', T['text_cache']), ('Cached image input (per 1M tokens)', T['img_cache'])],
         eyebrow=eyebrow, h1=f'{name}<span class="o-sr"> API</span><small>{h1sub}</small>', lead=lead, lead_sub=lead_sub, notice=None,
-        facts=[('Model ID', slug), ('Image output', f'${T["out"]} / 1M'), ('Per image', f'{pc}'), ('Concurrency', 'Unlimited'), ('Enterprise', 'Contracts · invoices')],
+        facts=[('Model ID', slug), ('Max size', '3840×2160'), ('Concurrency', 'Unlimited'), ('Enterprise', 'Contracts · invoices')],
         hero_imgs=hero_imgs, credit=CREDIT['en'], credit_url=POST_26, gif=gif('en', slug),
         about_h2=about_h2, about_ps=about, spec=spec,
         caps_h2=f'What is new in {short}', caps=caps, caps_lead='Sunburst and Flare both support these, with the same request fields.',
         gallery=gallery, gallery_h2=f'What {short} can make', gallery_lead=gallery_lead,
-        price_h2=f'{name} API pricing', price_lead='Billed per token at fixed rates, with no subscription or monthly fee. Sunburst and Flare cost the same, and a flat per-image -c version is also available.',
+        price_h2=f'{name} API pricing', price_lead=f'Billed per token at fixed rates, with no subscription or monthly fee. Text input, image input and image output all cost about {100 - S26}% of the OpenAI list price. Sunburst and Flare cost the same, and a flat per-image -c version is also available.',
         billing_label='Billing at a glance',
         billing=[('Token billing', 'Prompt text, reference images and output priced separately'), ('No complexity surcharge', 'Same rate at every level'), ('Unlimited concurrency', 'On by default for every account'), ('One balance', 'Works across 300+ models')],
         price_tables=price_tables('en', slug),
-        price_note=f'Prices in USD, charged per successful request. The table shows the lowest price in the model catalog. SVG output is billed for the reference image tokens plus the tokens used to write the SVG. Cached rates apply only when upstream reports cache usage. See the <a href="{PRICING}">model catalog</a> for live prices.',
-        costs_h3='Cost examples', costs_lead='Calculated from the rates above, counting image output tokens only and excluding prompt text.', costs=costs('en'),
+        price_note=f'Prices in USD, charged per successful request. AnyAIGC prices are the lowest in the model catalog; list prices come from the OpenAI pricing page. SVG output is billed for the reference image tokens plus the tokens used to write the SVG. Cached rates apply only when upstream reports cache usage. See the <a href="{PRICING}">model catalog</a> for live prices.',
+        costs_h3='Cost examples', costs_lead='Calculated from the rates above, counting image output tokens only and excluding prompt text. The right column shows the same tokens at OpenAI list price.', costs=costs('en'),
         uses_h2=f'What {short} is good for', uses=uses,
-        steps=[f'<strong>Sign up</strong>: <a href="{G.REG}">create an AnyAIGC account</a>. New accounts get 2 million tokens of trial credit, and top-ups start at $1.',
+        steps=[f'<strong>Sign up</strong>: <a href="{G.REG}">create an AnyAIGC account</a>. New accounts get 5 million tokens of trial credit, and top-ups start at $1.',
                '<strong>Create an API key</strong>: generate a key in the <a href="https://anyaigc.ai/console">console</a> and store it in the <code>ANYAIGC_API_KEY</code> environment variable.',
                f'<strong>Send a request</strong>: call <code>https://anyaigc.ai/v1/images/generations</code> with <code>model</code> set to <code>{slug}</code>. Use <code>/v1/images/edits</code> for edits and markup edits.'],
         codes=codes, qs_h2=f'Get started with the {name} API in three steps',
@@ -434,6 +443,6 @@ def build(lang, slug):
         qs_note=f'Regular images return <code>data[0].url</code>; pass <code>response_format=b64_json</code> to get base64. The GIF and SVG examples save the base64 result straight to a file. Prompts can be up to 1000 characters. Other fields match GPT Image 2.5; see the <a href="{DOCS_GEN_25}" target="_blank" rel="noopener">generations docs</a> and <a href="{DOCS_EDIT_25}" target="_blank" rel="noopener">edits docs</a>.',
         family_h2='All GPT Image models', family_lead='Same API key; switch models by changing the model field.',
         faq_h2=f'{name} API FAQ', faqs=faqs,
-        final_h2=f'Start building with {name}', final_p='New accounts get 2 million tokens of trial credit. Make a few images, or a GIF, and see the results.',
+        final_h2=f'Start building with {name}', final_p='New accounts get 5 million tokens of trial credit. Make a few images, or a GIF, and see the results.',
         name=name, docs=DOCS_GEN_25,
     )

@@ -165,7 +165,7 @@
   "steps": [
    [
     "Create an account",
-    "Sign up for AnyAIGC and open the console to create your own API key. New accounts get 2M free tokens."
+    "Sign up for AnyAIGC and open the console to create your own API key. New accounts get 5M free tokens."
    ],
    [
     "Create an API key",
@@ -253,7 +253,7 @@
    "<b>Transparent billing.</b> The console shows tokens and charges for every request, and you can set a spend cap per key.",
    "<b>24/7 support.</b> <a href=\"{support}\">Contact support</a> any time."
   ],
-  "btn": "Start free with 2M tokens"
+  "btn": "Start free with 5M tokens"
  },
  "faq": {
   "h2": "FAQ",
@@ -264,7 +264,7 @@
    ],
    [
     "Do new accounts get free trial credit?",
-    "Yes. New accounts get 2M free tokens, so you can try models and the integration at small scale."
+    "Yes. New accounts get 5M free tokens, so you can try models and the integration at small scale."
    ],
    [
     "Can unused balance be refunded?",

@@ -92,7 +92,7 @@ strong,b{font-weight:600}
 main{display:block;padding-top:64px}
 .nb-hero{position:relative;overflow:hidden;padding:40px 0 96px;background:var(--nb-black)}
 .nb-hero-glow{position:absolute;inset:auto -10% -40% -10%;height:70%;background:radial-gradient(50% 60% at 30% 100%,rgba(49,134,255,.28),transparent 70%),radial-gradient(40% 50% at 80% 100%,rgba(252,213,63,.14),transparent 70%);pointer-events:none}
-.nb-hero-grid{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.08fr);gap:56px;align-items:center}
+.nb-hero-grid{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,0.80fr);gap:26px;align-items:center}
 .o-crumbs{display:flex;flex-wrap:wrap;gap:6px;list-style:none;font-size:13px;line-height:20px;color:var(--nb-faint)}
 .o-crumbs li+li::before{content:"/";margin-right:6px;color:var(--nb-dim)}
 .o-crumbs a{text-decoration:none}
@@ -119,9 +119,10 @@ main{display:block;padding-top:64px}
 .nb-credit a{color:inherit}
 
 /* 引言 */
-.nb-quote{padding:120px 0;background:var(--nb-bg)}
-.nb-quote p{max-width:980px;font-size:clamp(28px,3.6vw,44px);line-height:1.12;letter-spacing:-.02em;font-weight:450;text-wrap:balance}
-.nb-quote span{color:var(--nb-dim)}
+.nb-quote{padding:96px 0 24px;background:var(--nb-bg)}
+.nb-quote p{max-width:980px;font-size:clamp(28px,3.6vw,44px);line-height:1.2;letter-spacing:-.02em;font-weight:450;text-wrap:balance}
+/* 暗色的补充句另起一行并缩小一档：主句一行，补充句一行，不再在同一行里混排两种颜色；text-wrap:wrap 避免被对半拆开 */
+.nb-quote span{display:block;margin-top:.5em;font-size:.6em;line-height:1.45;letter-spacing:-.01em;color:var(--nb-faint);text-wrap:wrap}
 
 /* ---------- 版块 ---------- */
 .o-section{padding:96px 0}
@@ -302,7 +303,7 @@ html:not(.no-js) .o-reveal.is-in{opacity:1;transform:none}
   .o-nav nav{display:none}
   .nb-hero{padding:28px 0 64px}
   .nb-hero-grid{grid-template-columns:1fr}
-  .nb-quote{padding:80px 0}
+  .nb-quote{padding:64px 0 16px}
   .nb-feature{grid-template-columns:1fr;padding:14px 14px 24px;border-radius:28px}
   .nb-feature:nth-child(even) figure{order:0}
   .nb-feature>div{padding:0 8px}

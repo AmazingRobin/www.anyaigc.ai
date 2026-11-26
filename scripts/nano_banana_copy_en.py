@@ -170,7 +170,7 @@ def codes(model, ratio='16:9', size='2K'):
 
 
 def steps(model):
-    return [f'<strong>Sign up</strong>: <a href="{G.REG}">create an AnyAIGC account</a>. New accounts get 2 million tokens of trial credit, and top-ups start at $1.',
+    return [f'<strong>Sign up</strong>: <a href="{G.REG}">create an AnyAIGC account</a>. New accounts get 5 million tokens of trial credit, and top-ups start at $1.',
             '<strong>Create an API key</strong>: generate a key in the <a href="https://anyaigc.ai/console">console</a> and store it in the <code>ANYAIGC_API_KEY</code> environment variable.',
             f'<strong>Send a request</strong>: call <code>POST https://anyaigc.ai/v1beta/models/{model}:generateContent</code> (native Gemini format). Projects already on the OpenAI SDK can use <code>/v1/chat/completions</code> with <code>model</code> set to <code>{model}</code>.']
 
@@ -309,7 +309,7 @@ def hub():
         qs_note=QS_NOTE,
         family_h2='Nano Banana model pages', family_lead='Each model has its own page with full pricing and code samples.',
         faq_h2='Nano Banana API FAQ', faqs=faqs,
-        final_h2='Start building with Nano Banana', final_p='Sign up for 2 million free tokens and use one key for the whole Nano Banana lineup and 300+ other models.',
+        final_h2='Start building with Nano Banana', final_p='Sign up for 5 million free tokens and use one key for the whole Nano Banana lineup and 300+ other models.',
     )
 
 
@@ -379,7 +379,7 @@ def model_page(slug):
             codes=codes(mid),
             callout='For faster responses without thinking, use the model name <code>gemini-nano-banana-2.1-nothinking</code>; for stronger composition reasoning, use <code>-thinking</code>.',
             faqs=faqs,
-            final_h2='Start building with Nano Banana 2.1', final_p=f'Sign up for 2 million free tokens. From {usd(slug)} per image with unlimited concurrency.',
+            final_h2='Start building with Nano Banana 2.1', final_p=f'Sign up for 5 million free tokens. From {usd(slug)} per image with unlimited concurrency.',
         )
 
     if slug == S2:
@@ -430,7 +430,7 @@ def model_page(slug):
             codes=codes(mid),
             callout='To move to Nano Banana 2.1, change <code>MODEL</code> to <code>gemini-nano-banana-2.1</code>. Requests and responses stay the same.',
             faqs=faqs,
-            final_h2='Start building with Nano Banana 2', final_p=f'Sign up for 2 million free tokens. From {usd(slug)} per image with unlimited concurrency.',
+            final_h2='Start building with Nano Banana 2', final_p=f'Sign up for 5 million free tokens. From {usd(slug)} per image with unlimited concurrency.',
         )
 
     # Nano Banana Pro
@@ -480,7 +480,7 @@ def model_page(slug):
         codes=codes(mid, '4:3', '4K'),
         callout='Thinking is always on for Nano Banana Pro and cannot be turned off. It supports 10 aspect ratios only, not 1:4, 4:1, 1:8 or 8:1.',
         faqs=faqs,
-        final_h2='Start building with Nano Banana Pro', final_p=f'Sign up for 2 million free tokens. From {usd(slug)} per image with unlimited concurrency.',
+        final_h2='Start building with Nano Banana Pro', final_p=f'Sign up for 5 million free tokens. From {usd(slug)} per image with unlimited concurrency.',
     )
 
 

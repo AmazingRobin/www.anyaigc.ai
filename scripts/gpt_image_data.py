@@ -1,9 +1,9 @@
 # GPT Image 系列专题页的数据：模型、价格、官方参考数据、示例图。被 scripts/gpt_image_pages.py 引用。
-# 价格来源：AnyAIGC 模型广场（https://anyaigc.ai/pricing?keyword=gpt-image-2，2026-10-25 最低价）
-# 官方价与 token 数来源：developers.openai.com 模型页与 image-generation 指南计算器（2026-10-25 读取）
+# 价格来源：AnyAIGC 模型广场（https://anyaigc.ai/pricing?keyword=gpt-image- ，2026-11-25 读取卡片与详情弹窗的最低价）
+# 官方价与 Token 数来源：developers.openai.com 模型页与 image-generation 指南计算器（2026-10-25 读取）
 
-DATE = '2026-11-05'
-VER = '20261105'
+DATE = '2026-11-25'
+VER = '20261125d'
 SITE = 'https://www.anyaigc.ai'
 REG = 'https://anyaigc.ai/register?aff=oOK7&channel=c_wpduopc9'
 PRICING = 'https://anyaigc.ai/pricing'
@@ -18,29 +18,34 @@ OFFICIAL_GUIDE = 'https://developers.openai.com/api/docs/guides/image-generation
 # GPT Image 2.6 发布页（只有英文版，中文地址返回同一篇英文）
 POST_26 = 'https://openai.com/index/introducing-images-2-6/'
 
-# 按 token 计费的价格（USD / 每 100 万 tokens）
-TOKEN = {
-    '2':   dict(text_in='0.3971', img_in='0.6354', out='2.3830', text_cache='0.1588', img_cache='0.2541'),
-    '2.5': dict(text_in='2.9700', img_in='4.7520', out='17.8200', text_cache='1.1880', img_cache='1.9010'),
-    # 2.6：模型广场最低价（Openai-Gpt-1 分组，2026-11-05 读取详情弹窗），Sunburst 与 Flare 相同
-    '2.6': dict(text_in='3.9710', img_in='6.3530', out='23.8240', text_cache='1.5880', img_cache='2.5410'),
-}
-# OpenAI 官方价（GPT Image 2 与 2.5 的 token 单价相同）
+# 按 Token 计费的价格（USD / 每 100 万 Token）
+# 2026-11-25 模型广场：gpt-image-2、2.5 与 2.6 的 Sunburst / Flare 五个型号最低价完全相同
+_TOKEN_MIN = dict(text_in='0.4118', img_in='0.6589', out='2.4710', text_cache='0.1647', img_cache='0.2636')
+TOKEN = {'2': dict(_TOKEN_MIN), '2.5': dict(_TOKEN_MIN), '2.6': dict(_TOKEN_MIN)}
+# OpenAI 官方价（2026-11-25 核实：gpt-image-2.5-sunburst 模型页 developers.openai.com/api/docs/models/gpt-image-2.5-sunburst
+# 写明 Token 费率与 GPT Image 2 相同；2.6 Sunburst / Flare 见 openai.com/business/pricing 的 Image models 版块，五项数字一致）
 OFFICIAL = dict(text_in='5.00', img_in='8.00', out='30.00', text_cache='1.25', img_cache='2.00')
-# 按次计费（USD / 张，固定价，不随尺寸和质量变化；最低价对应 1K 出图）
-CALL = {'2': '0.0119', '2.5': '0.0159', '2.6': '0.0199'}
-# 英文页 2K/4K 按张价格（USD / 张，模型基础价 × 支持 2K/4K 的最低倍率，2026-10-25 读取 /api/pricing）
-CALL_4K = {'2': '0.0149', '2.5': '0.0199', '2.6': '0.0199'}
-# 中文页按张计费显示人民币（元 / 张，用户提供）：1K 与 2K/4K 两档
-# 2.6-c：1K / 2K / 4K 统一 ¥0.13（用户 2026-11-05 确认）
-CALL_CNY = {'2': {'1k': '0.08', '4k': '0.1'}, '2.5': {'1k': '0.1', '4k': '0.13'}, '2.6': {'1k': '0.13', '4k': '0.13'}}
+# 按次计费（USD / 张，固定价，不随质量变化）。2026-11-25 模型广场 -c 版详情弹窗：
+# 1K 出图的最低价；2K/4K 出图的最低价（-c 版说明里写 2K/4K 要用更高一档的分组，故单价更高）。
+# 2.6-c 只有支持 1K/2K/4K 的那一档，1K、2K、4K 同价。
+CALL = {'2': '0.0124', '2.5': '0.0165', '2.6': '0.0206'}
+CALL_4K = {'2': '0.0154', '2.5': '0.0206', '2.6': '0.0206'}
+
+
+# 中文页首屏和分享图的按张价格显示人民币：美元价 × 6.7（用户 2026-11-25 指定）
+RMB_RATE = 6.7
 
 
 def cny(base, tier='1k'):
-    """中文页按张单价，如 ¥0.08"""
-    return f'¥{CALL_CNY[base][tier]}'
+    """按张单价的人民币写法，如 ¥0.11"""
+    return '¥%.2f' % (float(CALL_4K[base] if tier == '4k' else CALL[base]) * RMB_RATE)
 
-# OpenAI 官方计算器：GPT Image 2.5（Sunburst 与 Flare 共用）每张图的图片输出 tokens
+
+def usd(base, tier='1k'):
+    """按张单价（美元），如 $0.0165；tier='4k' 取 2K/4K 出图价"""
+    return '$' + (CALL_4K[base] if tier == '4k' else CALL[base])
+
+# OpenAI 官方计算器：GPT Image 2.5（Sunburst 与 Flare 共用）每张图的图片输出 Token
 TOKENS_25 = {
     'low':    {'1024x1024': 196, '1536x1024': 158, '1024x1536': 158, '2048x2048': 397, '2048x1152': 157, '3840x2160': 371},
     'medium': {'1024x1024': 439, '1536x1024': 343, '1024x1536': 343, '2048x2048': 892, '2048x1152': 367, '3840x2160': 865},
@@ -48,7 +53,7 @@ TOKENS_25 = {
     'xhigh':  {'1024x1024': 3122, '1536x1024': 2459, '1024x1536': 2459, '2048x2048': 6343, '2048x1152': 2511, '3840x2160': 5930},
     'max':    {'1024x1024': 7024, '1536x1024': 5488, '1024x1536': 5488, '2048x2048': 14272, '2048x1152': 5650, '3840x2160': 13342},
 }
-# OpenAI 官方计算器：GPT Image 2.6（Sunburst 与 Flare 共用）每张图的图片输出 tokens（2026-11-05 读取）
+# OpenAI 官方计算器：GPT Image 2.6（Sunburst 与 Flare 共用）每张图的图片输出 Token（2026-11-05 读取）
 TOKENS_26 = {
     'low':    {'1024x1024': 823, '1536x1024': 664, '1024x1536': 664, '2048x2048': 1667, '2048x1152': 659, '3840x2160': 1558},
     'medium': {'1024x1024': 1449, '1536x1024': 1132, '1024x1536': 1132, '2048x2048': 2944, '2048x1152': 1211, '3840x2160': 2855},
@@ -66,13 +71,13 @@ OFFICIAL_IMG_2 = {
 SIZES = ['1024x1024', '1536x1024', '1024x1536', '2048x2048', '2048x1152', '3840x2160', '2160x3840']
 
 # 页面顺序（总览页在前）
-# -c 按张计费版不单独做页面，在对应的按 token 型号页价格版块里说明（C_OF）
+# -c 按张计费版不单独做页面，在对应的按 Token 型号页价格版块里说明（C_OF）
 SLUGS = ['gpt-image', 'gpt-image-2.6-sunburst', 'gpt-image-2.6-flare', 'gpt-image-2.5-sunburst', 'gpt-image-2.5-flare', 'gpt-image-2']
 C_OF = {'gpt-image-2.6-sunburst': ['gpt-image-2.6-sunburst-c'], 'gpt-image-2.6-flare': ['gpt-image-2.6-flare-c'],
         'gpt-image-2.5-sunburst': ['gpt-image-2.5-sunburst-c'], 'gpt-image-2.5-flare': ['gpt-image-2.5-flare-c'],
         'gpt-image-2': ['gpt-image-2-c']}
 
-# 模型：id、展示名、基座（2 / 2.5）、计费方式（token / call）
+# 模型：id、展示名、基座（2 / 2.5）、计费方式（Token / call）
 MODELS = {
     'gpt-image-2.6-sunburst':   dict(name='GPT Image 2.6 Sunburst', base='2.6', kind='token'),
     'gpt-image-2.6-flare':      dict(name='GPT Image 2.6 Flare', base='2.6', kind='token'),

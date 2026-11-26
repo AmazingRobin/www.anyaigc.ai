@@ -107,7 +107,7 @@ def page(lang, slug, fit=False):
     else:
         sub = model['tag_'+lang] if model else ('12 个型号，一个 API Key。' if zh else '12 models. One API key.')
         deal_txt = deal(lang, model)
-        left = f"{'输入' if zh else 'Input'} ${price} / 1M tokens"
+        left = f"{'输入' if zh else 'Input'} ${price} / 1M {'Token' if zh else 'tokens'}"
         conc = '并发不限' if zh else 'Unlimited concurrency'
         inv = '对公 · 专票' if zh else 'Self-service invoices'
     body = ('n' + (' k' if lang == 'ko' else '')) if new else ''

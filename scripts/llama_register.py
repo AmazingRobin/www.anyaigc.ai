@@ -22,7 +22,7 @@ def hub(lang):
           </div>
           <p>{escape(model['desc_'+lang])}</p>
           <ul class="af-tags"><li>{deal(lang,model)}</li><li>{'并发不限' if zh else 'Unlimited concurrency'}</li><li>OpenAI {'兼容' if zh else 'compatible'}</li></ul>
-          <div class="af-model-foot"><span><strong>${model['input']}</strong> / {'百万输入 tokens' if zh else '1M input tokens'}</span><span class="af-model-go" aria-hidden="true">{'查看专题' if zh else 'View guide'} →</span></div>
+          <div class="af-model-foot"><span><strong>${model['input']}</strong> / {'百万输入 Token' if zh else '1M input tokens'}</span><span class="af-model-go" aria-hidden="true">{'查看专题' if zh else 'View guide'} →</span></div>
         </li>
 '''
     block = f'''      <!-- Llama -->

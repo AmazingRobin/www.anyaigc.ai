@@ -18,9 +18,9 @@ for lang in ('zh','en'):
                 return b
             key=model.group(1)
             # Count billed operation rows (input, output, and optional cache hit).
-            count=len(re.findall(r'<tr><th>(?:输入 tokens|Input tokens|输出 tokens|Output tokens|缓存命中|Cache hit)</th>', b))
+            count=len(re.findall(r'<tr><th>(?:输入 Token|Input tokens|输出 Token|Output tokens|缓存命中|Cache hit)</th>', b))
             label=(f'比千问官方便宜 {DISCOUNT[key]}%' if zh else f'{DISCOUNT[key]}% below official') if key in DISCOUNT else ('—' if zh else '—')
-            target=r'(<tr><th>(?:输入 tokens|Input tokens)</th><td><code>'+re.escape(key)+r'</code></td><td>.*?</td>)(</tr>)'
+            target=r'(<tr><th>(?:输入 Token|Input tokens)</th><td><code>'+re.escape(key)+r'</code></td><td>.*?</td>)(</tr>)'
             b=re.sub(target, lambda m:m.group(1)+f'<td class="q-discount" rowspan="{count}">{label}</td>'+m.group(2), b, count=1, flags=re.S)
             return b
         s=re.sub(r'<tbody>.*?</tbody>', tbody, s, flags=re.S)

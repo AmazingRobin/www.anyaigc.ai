@@ -597,7 +597,7 @@ def enterprise(lang, name):
 def trust_block(lang):
     items = "".join(f'<li><h3>{h(t)}</h3><p>{d}</p></li>' for t, d in trust.ITEMS[lang])
     return section("trust", pick(lang, "信任与保障", "TRUST"), trust.HEAD[lang][0], h(trust.HEAD[lang][1]),
-                   f'<ul class="trust-list">{items}</ul><div class="vd-actions">{button(pick(lang, "先注册领取 200 万 tokens", "Sign up for 2M free tokens"), REG)}</div>')
+                   f'<ul class="trust-list">{items}</ul><div class="vd-actions">{button(pick(lang, "先注册领取 500 万 Token", "Sign up for 5M free tokens"), REG)}</div>')
 
 
 def family(lang, slug):

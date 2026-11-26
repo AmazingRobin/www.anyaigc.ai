@@ -78,7 +78,7 @@ def price_of(model, key):
 
 
 def unit(lang):
-    return pick(lang, "百万 tokens", "1M tokens")
+    return pick(lang, "百万 Token", "1M tokens")
 
 
 def button(text, href, kind="dark", arrow=True):
@@ -102,7 +102,7 @@ def metadata(lang, model):
         title = pick(lang, "小米 MiMo API 价格与接入｜官方4折，V2.6 Pro/Flash - AnyAIGC",
        "Xiaomi MiMo API Pricing | About 60% Off Official - AnyAIGC")
         desc = pick(lang,
-      "小米 MiMo API 价格与接入：MiMo-V2.6-Pro、V2.6-Flash 约官方 4 折，输入 $0.0563/百万 tokens 起，1M 上下文、全模态输入，并发不限，支持对公转账、合同与增值税专票。",
+      "小米 MiMo API 价格与接入：MiMo-V2.6-Pro、V2.6-Flash 约官方 4 折，输入 $0.0563/百万 Token 起，1M 上下文、全模态输入，并发不限，支持对公转账、合同与增值税专票。",
       "Xiaomi MiMo API at about 60% off official pricing: MiMo-V2.6-Flash from $0.0563/1M input tokens, 1M context, unlimited concurrency, contracts and VAT invoices.")
     elif not model["legacy"]:
         name = model["name"]
@@ -110,7 +110,7 @@ def metadata(lang, model):
         title = pick(lang, f"{name} API 价格与接入｜官方4折，1M 上下文 - AnyAIGC",
        f"{name} API Pricing | About 60% Off Official - AnyAIGC")
         desc = pick(lang,
-      f"{name} API 价格与接入：约官方 4 折，输入 ${p['amount']}/百万 tokens（官方 ${p['official']}），输出 ${o['amount']}，1M 上下文、全模态输入，并发不限，支持对公转账、合同与增值税专票。",
+      f"{name} API 价格与接入：约官方 4 折，输入 ${p['amount']}/百万 Token（官方 ${p['official']}），输出 ${o['amount']}，1M 上下文、全模态输入，并发不限，支持对公转账、合同与增值税专票。",
       f"{name} API at about 60% off official pricing: ${p['amount']}/1M input tokens (official ${p['official']}), 1M context, unlimited concurrency, VAT invoices.")
     else:
         name = model["name"]
@@ -119,7 +119,7 @@ def metadata(lang, model):
         title = pick(lang, f"{name} API 价格与接入｜停用说明与迁移 - AnyAIGC",
        f"{name} API Pricing | Retirement & Migration - AnyAIGC")
         desc = pick(lang,
-      f"{name} API 价格：输入 ${p['amount']}/百万 tokens。小米官方已于 2026-10-21 停用该型号，本页说明如何迁移到约官方 4 折的 {succ['name']}。并发不限，支持对公转账与增值税专票。",
+      f"{name} API 价格：输入 ${p['amount']}/百万 Token。小米官方已于 2026-10-21 停用该型号，本页说明如何迁移到约官方 4 折的 {succ['name']}。并发不限，支持对公转账与增值税专票。",
       f"{name} API: ${p['amount']}/1M input tokens. Xiaomi retired it on 2026-10-21; move to {succ['name']} at about 60% off. Unlimited concurrency, VAT invoices.")
     assert (width(title) <= 64 if lang == "zh" else len(title) <= 65), (lang, title)
     assert (60 <= len(desc) <= 120 if lang == "zh" else 120 <= len(desc) <= 160), (lang, len(desc), desc)
@@ -150,10 +150,10 @@ def price_answer(lang, model):
         succ = MODEL_BY_SLUG[model["successor"]]
         sp = price_of(succ, "input")
         return pick(lang,
-      f"按 token 计费，单位 USD/百万 tokens：{joined}。小米官方已停用该型号，没有现行官方价可对比；替代型号 {succ['name']} 输入 ${sp['amount']}，约官方 4 折。实时价格以模型广场为准。",
+      f"按 Token 计费，单位 USD/百万 Token：{joined}。小米官方已停用该型号，没有现行官方价可对比；替代型号 {succ['name']} 输入 ${sp['amount']}，约官方 4 折。实时价格以模型广场为准。",
       f"Billed per token in USD per 1M tokens: {joined}. Xiaomi has retired this model, so there is no current official price to compare; its replacement {succ['name']} is ${sp['amount']} input, about 40% of the official price. See the catalog for current rates.")
     return pick(lang,
-  f"按 token 计费，单位 USD/百万 tokens：{joined}。输入与输出约为小米 MiMo 开放平台美元按量价的 40%，即约官方 4 折。实时价格以模型广场为准。",
+  f"按 Token 计费，单位 USD/百万 Token：{joined}。输入与输出约为小米 MiMo 开放平台美元按量价的 40%，即约官方 4 折。实时价格以模型广场为准。",
   f"Billed per token in USD per 1M tokens: {joined}. Input and output are about 40% of Xiaomi MiMo's official pay-as-you-go USD price, roughly 60% off. See the catalog for current rates.")
 
 
@@ -191,7 +191,7 @@ def model_faq(lang, model):
         other = FLASH if model is PRO else PRO
         items += [
      (pick(lang, "支持哪些输入？上下文有多长？", "What inputs are supported, and how long is the context?"),
-      pick(lang, "官方规格：输入支持文本、图像、视频、音频，输出为文本，上下文 1M tokens，最大输出 128K tokens。AnyAIGC 文档目前给出文本与 image_url 图像输入示例，音频、视频的传参方式请以 API 文档为准。",
+      pick(lang, "官方规格：输入支持文本、图像、视频、音频，输出为文本，上下文 1M Token，最大输出 128K Token。AnyAIGC 文档目前给出文本与 image_url 图像输入示例，音频、视频的传参方式请以 API 文档为准。",
     "Official specs: text, image, video and audio input with text output, a 1M-token context and up to 128K output tokens. The AnyAIGC docs currently show text and image_url examples; follow the API docs for audio and video input.")),
      (pick(lang, "应该使用哪个 API 接口？", "Which API endpoint should I use?"), endpoint),
      (pick(lang, f"{name} 和 {other['name']} 怎么选？", f"{name} or {other['name']}: which should I use?"),
@@ -204,7 +204,7 @@ def model_faq(lang, model):
 def overview_faq(lang):
     return [
  (pick(lang, "小米 MiMo API 多少钱？官方 4 折怎么算？", "How much is the Xiaomi MiMo API, and how is the 60% discount calculated?"),
-         pick(lang, "MiMo-V2.6-Pro 输入 $0.1749、输出 $0.3497（官方 $0.435、$0.87）；MiMo-V2.6-Flash 输入 $0.0563、输出 $0.1126（官方 $0.14、$0.28），单位 USD/百万 tokens，约为小米 MiMo 开放平台美元按量价的 40%。实时价格以模型广场为准。",
+         pick(lang, "MiMo-V2.6-Pro 输入 $0.1749、输出 $0.3497（官方 $0.435、$0.87）；MiMo-V2.6-Flash 输入 $0.0563、输出 $0.1126（官方 $0.14、$0.28），单位 USD/百万 Token，约为小米 MiMo 开放平台美元按量价的 40%。实时价格以模型广场为准。",
        "MiMo-V2.6-Pro is $0.1749 input and $0.3497 output (official $0.435 and $0.87); MiMo-V2.6-Flash is $0.0563 and $0.1126 (official $0.14 and $0.28), in USD per 1M tokens. You pay about 40% of Xiaomi MiMo's official pay-as-you-go USD price, that is, about 60% off. See the catalog for current rates.")),
         (pick(lang, "4 个 MiMo 模型怎么选？", "How do I choose among the four MiMo models?"),
          pick(lang, "复杂、长程的 Agent、编程与科研任务选 MiMo-V2.6-Pro；高频调用和规模化办公选 MiMo-V2.6-Flash。MiMo-V2.5-Pro 与 MiMo-V2.5 已被小米官方停用，新项目请使用 V2.6 系列。",
@@ -314,8 +314,8 @@ def topbar(lang, model):
       f"Xiaomi retired {model['id']} on 2026-10-21. Its replacement {succ['id']} is about 60% off the official price on AnyAIGC.")
         link = (f"/{lang}/models/{succ['slug']}", pick(lang, "查看替代型号", "See the replacement"))
     else:
-        text = pick(lang, "MiMo-V2.6-Pro / V2.6-Flash 约官方 4 折，新用户注册送 200 万 tokens。",
-      "MiMo-V2.6-Pro and V2.6-Flash at about 60% off Xiaomi's list price. 2M free tokens for new accounts.")
+        text = pick(lang, "MiMo-V2.6-Pro / V2.6-Flash 约官方 4 折，新用户注册送 500 万 Token。",
+      "MiMo-V2.6-Pro and V2.6-Flash at about 60% off Xiaomi's list price. 5M free tokens for new accounts.")
         link = ("#pricing", pick(lang, "查看价格", "See pricing"))
     return (f'<div class="mi-bar"><p>{h(text)}{pick(lang, "", " ")}<a href="{h(link[0])}">{h(link[1])} <span aria-hidden="true">→</span></a></p></div>\n')
 
@@ -351,14 +351,14 @@ def hero(lang, model):
     if model is None:
         title = '<span class="mi-h1-main">Xiaomi MiMo API</span>'
         sub = pick(lang, "官方 4 折，接入 V2.6 全模态旗舰", "V2.6 omni-modal models at about 60% off")
-        lead = pick(lang, "一个 AnyAIGC API Key 调用 MiMo-V2.6-Pro、V2.6-Flash 等 4 个模型，OpenAI 兼容接口，并发不限。V2.6-Flash 输入 <strong>$0.0563 / 百万 tokens</strong>（官方 $0.14）。",
+        lead = pick(lang, "一个 AnyAIGC API Key 调用 MiMo-V2.6-Pro、V2.6-Flash 等 4 个模型，OpenAI 兼容接口，并发不限。V2.6-Flash 输入 <strong>$0.0563 / 百万 Token</strong>（官方 $0.14）。",
       "Call MiMo-V2.6-Pro, V2.6-Flash and two earlier models with one AnyAIGC API key. The endpoint is OpenAI-compatible, and concurrency is unlimited. V2.6-Flash input is <strong>$0.0563 / 1M tokens</strong> (official $0.14).")
         dl = deal_chip(lang, FLASH, overview=True)
     else:
         title = f'<span class="mi-h1-main">{h(model["name"])} API</span>'
         sub = model["tagline_" + lang]
         p = price_of(model, "input")
-        lead = h(model["desc_" + lang]) + pick(lang, f'输入 <strong>${p["amount"]} / 百万 tokens</strong>', f' Input is <strong>${p["amount"]} / 1M tokens</strong>')
+        lead = h(model["desc_" + lang]) + pick(lang, f'输入 <strong>${p["amount"]} / 百万 Token</strong>', f' Input is <strong>${p["amount"]} / 1M tokens</strong>')
         if p["official"]:
             lead += pick(lang, f'，官方 ${p["official"]}。', f' (Xiaomi list price: ${p["official"]}).')
         else:
@@ -372,7 +372,7 @@ def hero(lang, model):
         + pick(lang, "", " ") + f'<a href="/{lang}/models/{succ["slug"]}">{pick(lang, "查看", "View")} {h(succ["name"])} →</a></p>')
     facts = [pick(lang, "并发不限", "Unlimited concurrency"), pick(lang, "OpenAI 兼容", "OpenAI compatible"),
       pick(lang, "300+ 模型 · 一个 Key", "300+ models · one key"), pick(lang, "对公 · 专票", "Contracts · invoices"),
-      pick(lang, "注册送 200 万 tokens", "2M free tokens")]
+      pick(lang, "注册送 500 万 Token", "5M free tokens")]
     return ('<main id="main">\n<section class="mi-hero" aria-labelledby="hero-title"><div class="mi-wrap">'
      f'<nav class="mi-crumbs" aria-label="{pick(lang, "面包屑", "Breadcrumb")}"><ol>{crumbs}</ol></nav>'
      f'{notice}<h1 id="hero-title">{title}<span class="mi-h1-sub">{h(sub)}</span></h1>{dl}'
@@ -388,7 +388,7 @@ def deal_chip(lang, model, overview=False):
         return ""
     p = price_of(model, "input")
     scope = pick(lang, "V2.6-Flash 输入" if overview else "输入", "V2.6-Flash input" if overview else "Input")
-    detail = pick(lang, f'{scope} ${p["amount"]} · 官方 ${p["official"]} / 百万 tokens', f'{scope} ${p["amount"]} · official ${p["official"]} / 1M tokens')
+    detail = pick(lang, f'{scope} ${p["amount"]} · 官方 ${p["official"]} / 百万 Token', f'{scope} ${p["amount"]} · official ${p["official"]} / 1M tokens')
     return f'<a class="mi-deal" href="#pricing"><b>{h(deal(lang))}</b><span>{h(detail)}</span></a>'
 
 
@@ -499,10 +499,10 @@ def pricing_section(lang, model):
       + (" V2.6-Flash is also about 40% of official." if model is None else "")))
      + pick(lang, "", " ") + f'<a href="{OFFICIAL_PRICE_URL}" rel="noopener">{pick(lang, "官方价格来源", "Official price source")} ↗</a></p></div>')
     billing = ('<ul class="mi-billing">'
-        f'<li><strong>{pick(lang, "按 token 计费", "Per-token billing")}</strong>{pick(lang, "输入、输出、缓存命中分别计价。", "Input, output and cache hits are priced separately.")}</li>'
+        f'<li><strong>{pick(lang, "按 Token 计费", "Per-token billing")}</strong>{pick(lang, "输入、输出、缓存命中分别计价。", "Input, output and cache hits are priced separately.")}</li>'
         f'<li><strong>{pick(lang, "并发不限", "Unlimited concurrency")}</strong>{pick(lang, "不设固定 RPM 上限，所有用户默认享有。", "No fixed RPM cap, for every account.")}</li>'
         f'<li><strong>{pick(lang, "余额通用", "Shared balance")}</strong>{pick(lang, "一个 Key 调用 300+ 模型，$1 起充。", "One key for 300+ models; top up from $1.")}</li></ul>')
-    note = pick(lang, f"单位 USD/百万 tokens，按成功请求的实际 tokens 计费，实时价格以模型广场为准。小米官方价为其开放平台美元按量价（{CHECKED_DATE} 查询），仅作对比。",
+    note = pick(lang, f"单位 USD/百万 Token，按成功请求的实际 Token 计费，实时价格以模型广场为准。小米官方价为其开放平台美元按量价（{CHECKED_DATE} 查询），仅作对比。",
          f"Prices are USD per 1M tokens, charged on the actual tokens of successful requests; see the model catalog for current rates. Xiaomi official prices are its pay-as-you-go USD list (checked {CHECKED_DATE}), shown for comparison.")
     if model is None:
         examples = [cost_card(lang, PRO, Decimal(1), Decimal("0.25")), cost_card(lang, FLASH, Decimal(1), Decimal("0.25")),
@@ -518,7 +518,7 @@ def pricing_section(lang, model):
     lead = pick(lang, "直接对照小米官方价，每一项单价都写在表里。", "Every rate side by side with Xiaomi's official price.")
     if model and model["legacy"]:
         lead = pick(lang, "小米官方已停用该型号，下表为 AnyAIGC 当前单价。", "Xiaomi has retired this model; the table shows current AnyAIGC rates.")
-        note = pick(lang, "单位 USD/百万 tokens，按成功请求的实际 tokens 计费，实时价格以模型广场为准。",
+        note = pick(lang, "单位 USD/百万 Token，按成功请求的实际 Token 计费，实时价格以模型广场为准。",
       "Prices are USD per 1M tokens, charged on the actual tokens of successful requests; see the model catalog for current rates.")
     return section("pricing", pick(lang, "价格", "PRICING"), title, lead, body, "mi-tone")
 
@@ -533,9 +533,9 @@ def bench_section(lang, model):
         (pick(lang, "面向真实场景", "Real-world focus"), pick(lang, "重点优化代码、办公、设计、科研与网络安全。", "Tuned for coding, office, design, research and security."))]
     else:
         adv = [(pick(lang, "原生全模态", "Native omni-modal"), pick(lang, "图像、视频、音频、文本联合输入与理解。", "Joint image, video, audio and text input and understanding.")),
-        (pick(lang, "Pareto 前沿", "On the Pareto frontier"), pick(lang, "官方称真实工作流体验接近主流 Pro 级模型，token 效率更高。", "Xiaomi reports Pro-class workflow results with better token efficiency.")),
+        (pick(lang, "Pareto 前沿", "On the Pareto frontier"), pick(lang, "官方称真实工作流体验接近主流 Pro 级模型，Token 效率更高。", "Xiaomi reports Pro-class workflow results with better token efficiency.")),
  (pick(lang, "面向日常任务", "Everyday workloads"), pick(lang, "1M 上下文，适合多模态混合输入与多 Agent 协同。", "1M context for mixed multimodal input and multi-agent work.")),
-        (pick(lang, "高频调用", "High-volume calls"), pick(lang, "输入 $0.0563 / 百万 tokens，适合规模化任务。", "$0.0563 per 1M input tokens for work at scale."))]
+        (pick(lang, "高频调用", "High-volume calls"), pick(lang, "输入 $0.0563 / 百万 Token，适合规模化任务。", "$0.0563 per 1M input tokens for work at scale."))]
     cards = "".join(f'<article class="mi-adv"><span>{i:02d}</span><h3>{h(t)}</h3><p>{h(d)}</p></article>' for i, (t, d) in enumerate(adv, 1))
     second = ("aa-index.webp", 1600, 626, pick(lang, "Artificial Analysis 综合智能指数", "Artificial Analysis Intelligence Index"))
     if model is FLASH:
@@ -629,7 +629,7 @@ def uses_section(lang, model):
 def platform_section(lang):
     items = [("300+ 模型，一个 Key", "300+ models, one key", "统一 API Key 与余额，在 MiMo 与其他模型之间按任务切换。", "One API key and balance across MiMo and other models."),
       ("国内直连，并发不限", "Direct access, unlimited concurrency", "通过 AnyAIGC 域名从国内直接调用，不设固定 RPM 上限。", "Call AnyAIGC directly from mainland China with no fixed RPM cap."),
-      ("V2.6 官方 4 折，单价透明", "V2.6 at 60% off, clear rates", "V2.6 系列约官方 4 折，控制台可查每次调用的 tokens 与扣费。", "V2.6 at about 60% off the official price, with per-request usage in the console."),
+      ("V2.6 官方 4 折，单价透明", "V2.6 at 60% off, clear rates", "V2.6 系列约官方 4 折，控制台可查每次调用的 Token 与扣费。", "V2.6 at about 60% off the official price, with per-request usage in the console."),
       ("OpenAI 兼容", "OpenAI compatible", "现有 OpenAI SDK 项目改 base_url 与 model 即可接入。", "Point an existing OpenAI SDK project at the new base_url and model.")]
     cards = "".join(f'<article class="mi-card"><span class="mi-num">0{i}</span><h3>{h(pick(lang, a, b))}</h3><p>{h(pick(lang, c, d))}</p></article>'
       for i, (a, b, c, d) in enumerate(items, 1))
@@ -738,7 +738,7 @@ def trust_section(lang):
     items = "".join(f'<li><h3>{t}</h3><p>{d}</p></li>' for t, d in trust.ITEMS[lang])
     return section("trust", pick(lang, "信任与保障", "TRUST"), trust.HEAD[lang][0], h(trust.HEAD[lang][1]),
      f'<ul class="trust-list">{items}</ul><div class="mi-actions">'
-     + button(pick(lang, "先注册领取 200 万 tokens", "Sign up for 2M free tokens"), REG) + "</div>")
+     + button(pick(lang, "先注册领取 500 万 Token", "Sign up for 5M free tokens"), REG) + "</div>")
 
 
 def family_section(lang, slug):
@@ -779,7 +779,7 @@ def final(lang, slug, model):
    "Xiaomi MiMo and MiMo are trademarks of Xiaomi. AnyAIGC is an independent API provider and is not affiliated with Xiaomi. Model use and commercial terms follow Xiaomi MiMo's official terms; benchmark charts and demo media on this page are from Xiaomi MiMo.")
     return (f'<section class="mi-final" aria-labelledby="final-title"><div class="mi-wrap">{mark("#ffffff", "mi-final-mark", 56)}'
      f'<h2 id="final-title">{h(heading)}</h2>'
-     f'<p>{h(pick(lang, "注册 AnyAIGC，新用户送 200 万 tokens，一个 API Key 调用 300+ 模型。", "Sign up for AnyAIGC, get 2M free tokens, and call 300+ models with one API key."))}</p>'
+     f'<p>{h(pick(lang, "注册 AnyAIGC，新用户送 500 万 Token，一个 API Key 调用 300+ 模型。", "Sign up for AnyAIGC, get 5M free tokens, and call 300+ models with one API key."))}</p>'
      '<div class="mi-actions">' + primary
             + button(pick(lang, "查看模型广场", "Open the model catalog"), PRICING_URL, "ghost") + "</div>"
      f'<ul class="mi-final-links">{link_html}</ul></div></section></main>\n'

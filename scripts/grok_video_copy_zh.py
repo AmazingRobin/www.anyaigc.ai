@@ -95,7 +95,7 @@ curl https://anyaigc.ai/v1/videos/edits \\
 
 
 STEPS = lambda model: [
-    f'<a href="{REG}">注册 AnyAIGC</a>，新用户送 200 万 tokens 试用额度，最低 $1 起充。',
+    f'<a href="{REG}">注册 AnyAIGC</a>，新用户送 500 万 Token 试用额度，最低 $1 起充。',
     '在<a href="https://anyaigc.ai/console">控制台</a>创建 API Key，保存到环境变量 <code>ANYAIGC_API_KEY</code>。',
     f'向 <code>POST https://anyaigc.ai/v1/videos/generations</code> 提交任务，<code>model</code> 填 <code>{model}</code>，再用 <code>GET /v1/videos/{{request_id}}</code> 轮询结果。',
 ]
@@ -178,7 +178,7 @@ def build(slug):
             edits_note='改视频走 <code>POST /v1/videos/edits</code>，目前只有 <code>grok-imagine-video</code> 支持，输出最高 720p，时长与原视频一致。',
             gallery_h2='Grok Imagine 官方示例视频', gallery_lead='以下视频由 Grok Imagine 生成，来自 xAI 官方 Imagine API 页面和 Video 1.5 发布页。', gallery=GALLERY,
             pricing_h2='Grok 视频 API 价格', pricing_lead=f'按输出视频秒数计费，按分辨率分档，最低 {PL} / 秒。',
-            billing=[('按秒计费', '按生成的视频时长计，不按 token 算'), ('分档', '480p / 720p / 1080p'), ('图生视频', f'每张输入图另收 {IMG10}–{IMG15}'), ('并发不限', '所有用户默认享有')],
+            billing=[('按秒计费', '按生成的视频时长计，不按 Token 算'), ('分档', '480p / 720p / 1080p'), ('图生视频', f'每张输入图另收 {IMG10}–{IMG15}'), ('并发不限', '所有用户默认享有')],
             price_rows=[(S15, 'Grok Imagine Video 1.5（推荐）'), (SL, 'Grok Imagine Video 1.5 Lite（最低价）'), (S10, 'Grok Imagine Video（支持改视频）')],
             price_note=f'价格来自 AnyAIGC 模型广场，{RATE_NOTE}。xAI 官方价：Video 1.5 480p $0.08、720p $0.14 / 秒；1.5 Lite 480p $0.02、720p $0.03、1080p $0.14 / 秒；Video 480p $0.05、720p $0.07 / 秒{SRC}。{TAIL}',
             costs=[('100 条 6 秒草稿', f'100 × 6 秒 × {PL}', money('zh', MODELS[SL]['usd'], 600), '1.5 Lite，480p'),
@@ -198,7 +198,7 @@ def build(slug):
                 FAQ_ASYNC, FAQ_AUDIO, FAQ_CN, FAQ_CONC, FAQ_INVOICE, FAQ_CONTRACT,
                 ('生成的视频可以商用吗？', '视频的使用权和内容政策以 xAI 官方条款为准。AnyAIGC 只提供 API 调用通道，不额外限制你对生成结果的使用。'),
             ],
-            final_h2='现在开始调用 Grok 视频 API', final_p=f'注册即送 200 万 tokens 试用额度，{PL} / 秒起，并发不限。',
+            final_h2='现在开始调用 Grok 视频 API', final_p=f'注册即送 500 万 Token 试用额度，{PL} / 秒起，并发不限。',
         )
     elif slug == S15:
         c.update(
@@ -224,7 +224,7 @@ def build(slug):
             features_h2='Grok Imagine Video 1.5 能做什么', features_lead='以下视频由 Grok Imagine 生成，来自 xAI 官方页面，点击播放（有声音）。', features=FEATURES,
             gallery_h2='Grok Imagine 官方示例视频', gallery_lead='以下视频由 Grok Imagine 生成，来自 xAI 官方 Imagine API 页面和 Video 1.5 发布页。', gallery=GALLERY,
             pricing_h2='Grok Imagine Video 1.5 API 价格', pricing_lead=f'按输出视频秒数计费，480p {P15} / 秒，720p {P15_720} / 秒。',
-            billing=[('按秒计费', '按生成的视频时长计，不按 token 算'), ('分档', '480p / 720p'), ('图生视频', f'每张输入图另收 {IMG15}'), ('并发不限', '所有用户默认享有')],
+            billing=[('按秒计费', '按生成的视频时长计，不按 Token 算'), ('分档', '480p / 720p'), ('图生视频', f'每张输入图另收 {IMG15}'), ('并发不限', '所有用户默认享有')],
             price_rows=[(S15, 'Grok Imagine Video 1.5')],
             price_note=f'价格来自 AnyAIGC 模型广场，{RATE_NOTE}。xAI 官方价：480p $0.08 / 秒、720p $0.14 / 秒，输入图 $0.01 / 张{SRC}。{TAIL}',
             costs=[('1 条 6 秒短视频', f'6 秒 × {P15}', money('zh', MODELS[S15]['usd'], 6), '480p'),
@@ -244,7 +244,7 @@ def build(slug):
                 ('视频最长多少秒？支持哪些分辨率和比例？', '<code>duration</code> 可填 1–15 秒，按实际秒数计费；<code>resolution</code> 支持 480p、720p；<code>aspect_ratio</code> 支持 16:9、9:16、1:1，图生视频时画面比例跟随输入图片。'),
                 FAQ_ASYNC, FAQ_AUDIO, FAQ_CN, FAQ_CONC, FAQ_INVOICE, FAQ_CONTRACT,
             ],
-            final_h2='现在开始调用 Grok Imagine Video 1.5', final_p=f'注册即送 200 万 tokens 试用额度，{P15} / 秒起，并发不限。',
+            final_h2='现在开始调用 Grok Imagine Video 1.5', final_p=f'注册即送 500 万 Token 试用额度，{P15} / 秒起，并发不限。',
         )
     elif slug == SL:
         c.update(
@@ -277,7 +277,7 @@ def build(slug):
                 (None, '一键升级 1.5', f'需要复杂动作、多角色或更好的对白时，把 <code>model</code> 改成 <code>{S15}</code>。'),
             ],
             pricing_h2='Grok Imagine Video 1.5 Lite API 价格', pricing_lead=f'按输出视频秒数计费，480p {PL}、720p {PL_720}、1080p {PL_1080} / 秒。',
-            billing=[('按秒计费', '按生成的视频时长计，不按 token 算'), ('分档', '480p / 720p / 1080p'), ('图生视频', f'每张输入图另收 {IMG15}'), ('并发不限', '所有用户默认享有')],
+            billing=[('按秒计费', '按生成的视频时长计，不按 Token 算'), ('分档', '480p / 720p / 1080p'), ('图生视频', f'每张输入图另收 {IMG15}'), ('并发不限', '所有用户默认享有')],
             price_rows=[(SL, 'Grok Imagine Video 1.5 Lite'), (S15, '对比：Grok Imagine Video 1.5')],
             price_note=f'价格来自 AnyAIGC 模型广场，{RATE_NOTE}。xAI 官方价：1.5 Lite 480p $0.02、720p $0.03、1080p $0.14 / 秒，输入图 $0.01 / 张{SRC}。{TAIL}',
             costs=[('1,000 条 6 秒草稿', f'1,000 × 6 秒 × {PL}', money('zh', MODELS[SL]['usd'], 6000), '480p'),
@@ -303,7 +303,7 @@ def build(slug):
                 ('视频最长多少秒？支持哪些比例？', '<code>duration</code> 可填 1–15 秒，按实际秒数计费；<code>aspect_ratio</code> 支持 16:9、9:16、1:1，图生视频时画面比例跟随输入图片。'),
                 FAQ_ASYNC, FAQ_AUDIO, FAQ_CN, FAQ_CONC, FAQ_INVOICE, FAQ_CONTRACT,
             ],
-            final_h2='现在开始调用 Grok Imagine Video 1.5 Lite', final_p=f'注册即送 200 万 tokens 试用额度，{PL} / 秒起，并发不限。',
+            final_h2='现在开始调用 Grok Imagine Video 1.5 Lite', final_p=f'注册即送 500 万 Token 试用额度，{PL} / 秒起，并发不限。',
         )
     elif slug == S10:
         c.update(
@@ -336,7 +336,7 @@ def build(slug):
                        ('换风格', [('restyle-original', '原视频'), ('restyle-a', '结果 1'), ('restyle-b', '结果 2')])],
             edits_note=f'改视频走 <code>POST /v1/videos/edits</code>，按 xAI 文档原视频最长 8.7 秒，输出最高 720p、时长与原视频一致。计费为输出视频每秒价格加原视频每秒 {VID10}。',
             pricing_h2='Grok Imagine Video API 价格', pricing_lead=f'按输出视频秒数计费，480p {P10} / 秒，720p {P10_720} / 秒。',
-            billing=[('按秒计费', '按生成的视频时长计，不按 token 算'), ('分档', '480p / 720p'), ('图生视频', f'每张输入图另收 {IMG10}'), ('改视频', f'原视频每秒另收 {VID10}')],
+            billing=[('按秒计费', '按生成的视频时长计，不按 Token 算'), ('分档', '480p / 720p'), ('图生视频', f'每张输入图另收 {IMG10}'), ('改视频', f'原视频每秒另收 {VID10}')],
             price_rows=[(S10, 'Grok Imagine Video'), (S15, '对比：Grok Imagine Video 1.5')],
             price_note=f'价格来自 AnyAIGC 模型广场，{RATE_NOTE}。xAI 官方价：480p $0.05 / 秒、720p $0.07 / 秒，输入图 $0.002 / 张，输入视频 $0.01 / 秒{SRC}。{TAIL}',
             costs=[('1 条 6 秒短视频', f'6 秒 × {P10}', money('zh', MODELS[S10]['usd'], 6), '480p'),
@@ -356,6 +356,6 @@ def build(slug):
                 ('grok-imagine-video 会停用吗？', '目前没有。xAI 2026 年 11 月 2 日停用的是图像模型 <code>grok-imagine-image-quality</code>，视频模型不受影响。xAI 文档把第一代视频模型定位为改视频和续写视频的模型。'),
                 FAQ_ASYNC, FAQ_AUDIO, FAQ_CN, FAQ_CONC, FAQ_INVOICE, FAQ_CONTRACT,
             ],
-            final_h2='现在开始调用 Grok Imagine Video', final_p=f'注册即送 200 万 tokens 试用额度，{P10} / 秒起，并发不限。',
+            final_h2='现在开始调用 Grok Imagine Video', final_p=f'注册即送 500 万 Token 试用额度，{P10} / 秒起，并发不限。',
         )
     return c

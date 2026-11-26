@@ -54,7 +54,7 @@ def section(lang, slug, pin, pout):
         if f["kind"] != "sized":
             bits.append(f"定位是{f['gen']} 的{kind}型号")
         spec = "，".join(bits) + "。"
-        price = f"本页标价为每百万 tokens 输入 ${pin}、输出 ${pout}，与上方价格表是同一组数字。"
+        price = f"本页标价为每百万 Token 输入 ${pin}、输出 ${pout}，与上方价格表是同一组数字。"
         tail = "以上规格数字来自千问官方模型文档，价格以本页表格为准，模型广场的实时价格优先。"
     else:
         bits = [f"a context window of {ctx} tokens"]

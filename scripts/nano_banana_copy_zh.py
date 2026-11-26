@@ -1,6 +1,6 @@
 # Nano Banana 系列专题页中文文案。build(slug) 返回页面用的字典。价格用人民币（用户提供）。
 from nano_banana_data import (CNY, OFFICIAL, MODELS, MODEL_SLUGS, RATIOS_14, SIZES, SUPPORT, PRICING,
-                              DOCS_21, DOCS_GEMINI, DOCS_CHAT, GOOGLE_DOC, cny_min)
+                              DOCS_21, DOCS_GEMINI, DOCS_CHAT, GOOGLE_DOC, cny_min, cny_of)
 import nano_banana_layout as G
 
 NL = '\n'
@@ -142,7 +142,7 @@ def codes(model, ratio='16:9', size='2K'):
 
 
 def steps(model):
-    return [f'<a href="{G.REG}">注册 AnyAIGC</a>，新用户送 200 万 tokens 试用额度，最低 $1 起充。',
+    return [f'<a href="{G.REG}">注册 AnyAIGC</a>，新用户送 500 万 Token 试用额度，最低 $1 起充。',
             '在<a href="https://anyaigc.ai/console">控制台</a>创建 API Key，保存到环境变量 <code>ANYAIGC_API_KEY</code>。',
             f'向 <code>POST https://anyaigc.ai/v1beta/models/{model}:generateContent</code> 发请求（Gemini 原生格式）；已有 OpenAI SDK 的项目也可以用 <code>/v1/chat/completions</code>，<code>model</code> 填 <code>{model}</code>。']
 
@@ -158,13 +158,13 @@ def price_rows(slug):
     ids = '<br>'.join(f'<code>{i}</code>' for i in m['ids'])
     rows = []
     for res, p in CNY[slug]:
-        off = ' / '.join(f'${OFFICIAL[slug][r.strip()]}' for r in res.split('/'))
+        off = ' / '.join(cny_of(OFFICIAL[slug][r.strip()]) for r in res.split('/'))
         rows.append(f'<th scope="row">{res} 出图<small>{"、".join(r.strip() for r in res.split("/"))} 分辨率</small></th><td>{ids}</td>'
                     f'<td class="o-num o-hl">¥{p} / 张</td><td class="o-num nb-off">{off}</td>')
     return rows
 
 
-PRICE_HEAD = [('分辨率', False), ('模型名', False), ('AnyAIGC 单价', True), ('Google 官方（美元 / 张）', True)]
+PRICE_HEAD = [('分辨率', False), ('模型名', False), ('AnyAIGC 单价', True), ('Google 官方（人民币 / 张）', True)]
 
 
 def price_table(slugs):
@@ -174,7 +174,7 @@ def price_table(slugs):
 
 BILLING = [('按张计费', '按出图分辨率分档，固定单价'), ('每次 1 张', '一次请求通常返回 1 张图片'),
            (CONC, '所有用户默认享有'), ('余额通用', '同一余额可调用 300+ 模型')]
-PRICE_NOTE = ('AnyAIGC 单价为人民币，按成功提交计费，提示词和参考图不另外收费；Google 官方价为 Standard 档美元价，引自 '
+PRICE_NOTE = ('AnyAIGC 单价为人民币，按成功提交计费，提示词和参考图不另外收费；Google 官方价取 Standard 档美元价，按 1 美元 = 6.7 元折算，引自 '
               '<a href="https://ai.google.dev/gemini-api/docs/pricing" target="_blank" rel="noopener">Gemini API 定价页</a>，仅供参考。实时价格以'
               f'<a href="{PRICING}">模型广场</a>为准。')
 
@@ -196,7 +196,7 @@ def compare_table(cur=None):
         row('Google 搜索 grounding', ['网页 + 图片搜索', '网页 + 图片搜索', '网页搜索']),
         row('思考（Thinking）', ['可配置', '可配置', '默认开启，不可关闭']),
         row('AnyAIGC 价格', ['<br>'.join(f'{r} <strong>¥{p}</strong>' for r, p in CNY[s]) for s in cols]),
-        row('Google 官方价', [f'1K ${OFFICIAL[s]["1K"]} · 2K ${OFFICIAL[s]["2K"]} · 4K ${OFFICIAL[s]["4K"]}' for s in cols]),
+        row('Google 官方价', [f'1K {cny_of(OFFICIAL[s]["1K"])} · 2K {cny_of(OFFICIAL[s]["2K"])} · 4K {cny_of(OFFICIAL[s]["4K"])}' for s in cols]),
         row('发布时间', ['2026-10-06 正式版', '2026-02-26 预览，2026-05-28 正式版', '2025-11-20 预览，2026-05-28 正式版']),
     ]
     return G.table('Nano Banana 2.1、Nano Banana 2 与 Nano Banana Pro 参数对比', head, [(None, rows)], cls='nb-compare')
@@ -258,7 +258,7 @@ def hub():
         offers=[(f'{MODELS[s]["name"]} {r}（每张）', p) for s in (s21, s2, sp) for r, p in CNY[s]],
         eyebrow='Google · Nano Banana 系列', h1='Nano Banana API<small>Nano Banana 2.1、2 与 Pro 全系</small>',
         lead=f'一个 API Key 调用 Google 全部 Nano Banana 型号，<strong>按张 {cny_min(s21)} 起</strong>。',
-        lead_sub='文字渲染、多图合成、对话式改图和 4K 出图都能直接走 API。按分辨率固定单价，不按 token 算，成本一眼算清。',
+        lead_sub='文字渲染、多图合成、对话式改图和 4K 出图都能直接走 API。按分辨率固定单价，不按 Token 算，成本一眼算清。',
         facts=[('起步价', f'{cny_min(s21)} / 张'), ('最高', '4K'), ('参考图', '最多 14 张'), ('并发', '不限'), ('企业', '对公 · 专票')],
         hero_imgs=('golden-hour-portrait', 'neon-portrait', 'can-localization'),
         quote='想到什么，就画出来。<span>写实、俏皮、精细或天马行空，一句话描述就够了。</span>',
@@ -283,7 +283,7 @@ def hub():
         qs_note=QS_NOTE,
         family_h2='Nano Banana 系列专题', family_lead='每个型号单独一页，含完整价格表和代码示例。',
         faq_h2='Nano Banana API 常见问题', faqs=faqs,
-        final_h2='现在开始调用 Nano Banana', final_p='注册即送 200 万 tokens 试用额度，一个 Key 调用 Nano Banana 全系和 300+ 其他模型。',
+        final_h2='现在开始调用 Nano Banana', final_p='注册即送 500 万 Token 试用额度，一个 Key 调用 Nano Banana 全系和 300+ 其他模型。',
     )
 
 
@@ -308,7 +308,7 @@ def model_page(slug):
     if slug == 'nano-banana-2.1':
         faqs = [
             ('Nano Banana 2.1 API 多少钱？',
-             f'AnyAIGC 上 Nano Banana 2.1 按张计费：{price_str(slug)}。Google 官方价为 1K $0.0336、2K $0.0504、4K $0.113 每张。按成功提交计费，实时价格以模型广场为准。'),
+             f'AnyAIGC 上 Nano Banana 2.1 按张计费：{price_str(slug)}。Google 官方价为 1K {cny_of(OFFICIAL[slug]["1K"])}、2K {cny_of(OFFICIAL[slug]["2K"])}、4K {cny_of(OFFICIAL[slug]["4K"])} 每张（美元价按 6.7 折算）。按成功提交计费，实时价格以模型广场为准。'),
             ('Nano Banana 2.1 是什么？什么时候发布的？',
              'Nano Banana 2.1（Gemini Nano Banana 2.1，模型名 gemini-nano-banana-2.1）是 Google 在 2026 年 10 月 6 日发布的图像生成与编辑模型，是 Nano Banana 2（Gemini 3.1 Flash Image）的升级版。Google 把它定位为 Nano Banana 系列的主力高效模型。'),
             ('Nano Banana 2.1 和 Nano Banana 2 有什么区别？',
@@ -354,13 +354,13 @@ def model_page(slug):
             codes=codes(mid),
             callout='想关掉思考换取更快返回，可以把模型名写成 <code>gemini-nano-banana-2.1-nothinking</code>；需要更强的构图推理用 <code>-thinking</code>。',
             faqs=faqs,
-            final_h2='现在开始调用 Nano Banana 2.1', final_p=f'注册即送 200 万 tokens 试用额度，1K 每张 {cny_min(slug)}，并发不限。',
+            final_h2='现在开始调用 Nano Banana 2.1', final_p=f'注册即送 500 万 Token 试用额度，1K 每张 {cny_min(slug)}，并发不限。',
         )
 
     if slug == 'nano-banana-2':
         faqs = [
             ('Nano Banana 2 API 多少钱？',
-             f'AnyAIGC 上 Nano Banana 2 按张计费：{price_str(slug)}，<code>gemini-3.1-flash-image</code> 和 <code>gemini-3.1-flash-image-preview</code> 同价。Google 官方价为 1K $0.067、2K $0.101、4K $0.151 每张。实时价格以模型广场为准。'),
+             f'AnyAIGC 上 Nano Banana 2 按张计费：{price_str(slug)}，<code>gemini-3.1-flash-image</code> 和 <code>gemini-3.1-flash-image-preview</code> 同价。Google 官方价为 1K {cny_of(OFFICIAL[slug]["1K"])}、2K {cny_of(OFFICIAL[slug]["2K"])}、4K {cny_of(OFFICIAL[slug]["4K"])} 每张（美元价按 6.7 折算）。实时价格以模型广场为准。'),
             ('Nano Banana 2 停用了吗？要迁移到 2.1 吗？',
              'Google 已把 Nano Banana 2.1 列为 gemini-3.1-flash-image 的推荐替代型号，但目前没有公布停用日期，AnyAIGC 上可以继续调用。新项目建议直接用 <a href="/zh/models/nano-banana-2.1">Nano Banana 2.1</a>，迁移只需改模型名，请求格式不变。'),
             ('Nano Banana 2 是哪个模型？',
@@ -405,13 +405,13 @@ def model_page(slug):
             codes=codes(mid),
             callout='迁移到 Nano Banana 2.1 只需把 <code>MODEL</code> 改成 <code>gemini-nano-banana-2.1</code>，请求和返回格式不变。',
             faqs=faqs,
-            final_h2='现在开始调用 Nano Banana 2', final_p=f'注册即送 200 万 tokens 试用额度，1K / 2K 每张 {cny_min(slug)}，并发不限。',
+            final_h2='现在开始调用 Nano Banana 2', final_p=f'注册即送 500 万 Token 试用额度，1K / 2K 每张 {cny_min(slug)}，并发不限。',
         )
 
     # Nano Banana Pro
     faqs = [
         ('Nano Banana Pro API 多少钱？',
-         f'AnyAIGC 上 Nano Banana Pro 按张计费：{price_str(slug)}，<code>gemini-3-pro-image</code> 和 <code>gemini-3-pro-image-preview</code> 同价。Google 官方价为 1K / 2K $0.134、4K $0.24 每张。实时价格以模型广场为准。'),
+         f'AnyAIGC 上 Nano Banana Pro 按张计费：{price_str(slug)}，<code>gemini-3-pro-image</code> 和 <code>gemini-3-pro-image-preview</code> 同价。Google 官方价为 1K / 2K {cny_of(OFFICIAL[slug]["1K"])}、4K {cny_of(OFFICIAL[slug]["4K"])} 每张（美元价按 6.7 折算）。实时价格以模型广场为准。'),
         ('Nano Banana Pro 是哪个模型？',
          'Nano Banana Pro 是 Google Gemini 3 Pro Image 的昵称，2025 年 11 月 20 日发布预览版，2026 年 5 月 28 日推出正式版 gemini-3-pro-image。它带推理能力，适合复杂版式、密集文字、商业精修和需要真实世界知识的画面。'),
         ('Nano Banana Pro 和 Nano Banana 2.1 怎么选？',
@@ -455,7 +455,7 @@ def model_page(slug):
         codes=codes(mid, '4:3', '4K'),
         callout='Nano Banana Pro 的思考默认开启、不能关闭；宽高比只支持 10 种，不支持 1:4、4:1、1:8、8:1。',
         faqs=faqs,
-        final_h2='现在开始调用 Nano Banana Pro', final_p=f'注册即送 200 万 tokens 试用额度，1K / 2K 每张 {cny_min(slug)}，并发不限。',
+        final_h2='现在开始调用 Nano Banana Pro', final_p=f'注册即送 500 万 Token 试用额度，1K / 2K 每张 {cny_min(slug)}，并发不限。',
     )
 
 

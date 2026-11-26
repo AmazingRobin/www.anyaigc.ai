@@ -38,7 +38,7 @@
   "source": "https://www.minimax.io/models/text/m3",
   "facts_zh": [
    "M3 是原生多模态模型，支持文本、图片、视频输入，输出文本。",
-   "M3 上下文窗口最高 1M tokens，官方保证最低 512K tokens，采用 MiniMax 自研的 MSA 稀疏注意力架构。",
+   "M3 上下文窗口最高 1M Token，官方保证最低 512K Token，采用 MiniMax 自研的 MSA 稀疏注意力架构。",
    "M3 为开放权重模型，官方自部署参考配置为 8 张 B200（MXFP8）。"
   ],
   "facts_en": [
@@ -177,7 +177,7 @@
    "支持多种宽高比，分辨率从 512px 到 4K。",
    "单个工作流中可保持最多 5 个角色的外观一致和最多 14 个物体的还原度。",
    "可调用网页搜索的实时信息和图片做图像检索增强，能在图中生成清晰文字并翻译、本地化图内文字；发布时在 Gemini API 和 AI Studio 中为预览版。",
-   "官方文档中的模型代码是 gemini-3.1-flash-image，输入支持文本、图片、视频和 PDF，输出为图片和文本；输入上限 131,072 tokens，输出上限 32,768 tokens。"
+   "官方文档中的模型代码是 gemini-3.1-flash-image，输入支持文本、图片、视频和 PDF，输出为图片和文本；输入上限 131,072 Token，输出上限 32,768 Token。"
   ],
   "facts_en": [
    "Nano Banana 2 is Gemini 3.1 Flash Image, released by Google on Feb 26, 2026, positioned as bringing Nano Banana Pro's world knowledge, quality and reasoning at Flash speed.",
@@ -198,7 +198,7 @@
    "可在图中生成多种语言的准确文字，支持局部编辑、调整镜头角度、焦点、调色和光照。",
    "最多可混合 14 张图片，并保持最多 5 个人物的外观一致；提供多种宽高比和 2K、4K 分辨率。",
    "可连接 Google 搜索获取实时信息（如天气、体育）来生成信息图；生成的图片带 SynthID 水印。",
-   "官方文档中的模型代码是 gemini-3-pro-image，输入支持图片和文本，输出为图片和文本；输入上限 65,536 tokens，输出上限 32,768 tokens。"
+   "官方文档中的模型代码是 gemini-3-pro-image，输入支持图片和文本，输出为图片和文本；输入上限 65,536 Token，输出上限 32,768 Token。"
   ],
   "facts_en": [
    "Nano Banana Pro is Gemini 3 Pro Image, built on Gemini 3 Pro and released by Google on Nov 20, 2025.",
@@ -1088,7 +1088,7 @@
    "qwen-image-2.0-2026-03-03 是 qwen-image-2.0 的快照版本，能力与 qwen-image-2.0 相同，官方定位为兼顾质量与响应速度的千问加速系列图像生成与编辑模型。",
    "输出图像总像素需在 512×512 到 2048×2048 之间，默认分辨率为 2048×2048。",
    "每次可生成 1 到 6 张图像。",
-   "提示词最多可接收 1,300 个 token，qwen-image-2.0-pro 的上限是 800 个 token。"
+   "提示词最多可接收 1,300 个 Token，qwen-image-2.0-pro 的上限是 800 个 Token。"
   ],
   "facts_en": [
    "qwen-image-2.0-2026-03-03 is a snapshot of qwen-image-2.0 with the same capabilities. Alibaba Cloud describes it as part of the Qwen accelerated series for image generation and editing, balancing quality and response speed.",
@@ -1230,7 +1230,7 @@
   "source": "https://platform.claude.com/docs/en/models/fable-5/overview",
   "facts_zh": [
    "Claude Fable 5 于 2026 年 6 月 9 日发布。",
-   "上下文窗口为 100 万 tokens，单次最大输出为 12.8 万 tokens。",
+   "上下文窗口为 100 万 Token，单次最大输出为 12.8 万 Token。",
    "思考模式为自适应思考且始终开启，effort 默认值为 high。",
    "可靠知识截止时间为 2026 年 1 月。"
   ],
@@ -1249,7 +1249,7 @@
   "source": "https://platform.claude.com/docs/en/models/fable-5-1/overview",
   "facts_zh": [
    "Claude Fable 5.1 于 2026 年 9 月 1 日发布。",
-   "上下文窗口为 100 万 tokens，单次最大输出为 12.8 万 tokens。",
+   "上下文窗口为 100 万 Token，单次最大输出为 12.8 万 Token。",
    "思考模式为自适应思考且始终开启，effort 默认值为 high。",
    "可靠知识截止时间为 2026 年 6 月。"
   ],
@@ -1269,7 +1269,7 @@
   "facts_zh": [
    "Anthropic 将 Claude Fable 5.2 定位为面向高难度推理和长时程智能体任务的模型，于 2026 年 11 月 9 日发布。",
    "官方列出的典型用途包括持续数小时的智能体会话、多步骤深度研究，以及把分析一直做到成品文档、表格或演示文稿。",
-   "上下文窗口为 100 万 tokens，单次最大输出为 12.8 万 tokens，官方标注的相对延迟为“中等”。",
+   "上下文窗口为 100 万 Token，单次最大输出为 12.8 万 Token，官方标注的相对延迟为“中等”。",
    "思考模式为自适应思考且始终开启，effort 默认值为 high，可靠知识截止时间为 2026 年 6 月。"
   ],
   "facts_en": [
@@ -1288,8 +1288,8 @@
   "facts_zh": [
    "Anthropic 将 Claude Haiku 5.5 定位为面向分类、路由、抽取和子代理等高并发、对延迟敏感的任务，于 2026 年 10 月 7 日发布。",
    "官方标注的相对延迟为“最快”，是当前在售型号中最快的一档。",
-   "支持 100 万 tokens 上下文和最多 12.8 万 tokens 输出，支持自适应思考，effort 默认值为 medium。",
-   "它使用 Claude 4.7 起的新分词器，同样的文本比在 Claude Haiku 4.5 上多约 30% 的 tokens。"
+   "支持 100 万 Token 上下文和最多 12.8 万 Token 输出，支持自适应思考，effort 默认值为 medium。",
+   "它使用 Claude 4.7 起的新分词器，同样的文本比在 Claude Haiku 4.5 上多约 30% 的 Token。"
   ],
   "facts_en": [
    "Anthropic positions Claude Haiku 5.5 for high-volume, latency-sensitive work such as classification, routing, extraction, and subagent tasks; it was released on October 7, 2026.",
@@ -1306,7 +1306,7 @@
   "source": "https://platform.claude.com/docs/en/models/opus-4-6/overview",
   "facts_zh": [
    "Claude Opus 4.6 于 2026 年 2 月 5 日发布。",
-   "上下文窗口为 100 万 tokens，单次最大输出为 12.8 万 tokens。",
+   "上下文窗口为 100 万 Token，单次最大输出为 12.8 万 Token。",
    "支持自适应思考；旧的扩展思考（budget_tokens）方式在该型号上已标为弃用，effort 默认值为 high。",
    "可靠知识截止时间为 2025 年 5 月，训练数据截止时间为 2025 年 8 月。"
   ],
@@ -1325,8 +1325,8 @@
   "source": "https://platform.claude.com/docs/en/models/opus-4-7/overview",
   "facts_zh": [
    "Claude Opus 4.7 于 2026 年 4 月 16 日发布。",
-   "当前的分词器从 Claude Opus 4.7 开始引入：100 万 tokens 约合 55.5 万个英文单词，而之前的型号约合 75 万个单词。",
-   "上下文窗口为 100 万 tokens，单次最大输出为 12.8 万 tokens，支持自适应思考，effort 默认值为 high。",
+   "当前的分词器从 Claude Opus 4.7 开始引入：100 万 Token 约合 55.5 万个英文单词，而之前的型号约合 75 万个单词。",
+   "上下文窗口为 100 万 Token，单次最大输出为 12.8 万 Token，支持自适应思考，effort 默认值为 high。",
    "可靠知识截止时间为 2026 年 1 月。"
   ],
   "facts_en": [
@@ -1344,7 +1344,7 @@
   "source": "https://platform.claude.com/docs/en/models/opus-4-8/overview",
   "facts_zh": [
    "Claude Opus 4.8 于 2026 年 5 月 28 日发布。",
-   "上下文窗口为 100 万 tokens，同步 Messages API 单次最大输出为 12.8 万 tokens；在 Message Batches API 上加 output-300k-2026-03-24 beta 头可输出最多 30 万 tokens。",
+   "上下文窗口为 100 万 Token，同步 Messages API 单次最大输出为 12.8 万 Token；在 Message Batches API 上加 output-300k-2026-03-24 beta 头可输出最多 30 万 Token。",
    "支持自适应思考，effort 默认值为 high。",
    "可靠知识截止时间为 2026 年 1 月。"
   ],
@@ -1364,7 +1364,7 @@
   "facts_zh": [
    "Claude Opus 5 于 2026 年 7 月 24 日发布。",
    "Anthropic 文档称 Claude Opus 5 面向复杂的智能体编程和企业工作，长时程智能体任务是其强项。",
-   "上下文窗口为 100 万 tokens，单次最大输出为 12.8 万 tokens，支持自适应思考，effort 默认值为 high。",
+   "上下文窗口为 100 万 Token，单次最大输出为 12.8 万 Token，支持自适应思考，effort 默认值为 high。",
    "可靠知识截止时间为 2026 年 5 月。"
   ],
   "facts_en": [
@@ -1383,7 +1383,7 @@
   "facts_zh": [
    "Anthropic 将 Claude Opus 5.5 定位为面向长时间运行的智能体编程和知识工作，于 2026 年 9 月 22 日发布，是官方建议大多数场景首选的型号。",
    "官方列出的典型用途包括连续数小时的自主编程智能体、大规模重构、复杂系统工程、以视觉为主的工作流和计算机操作（computer use）。",
-   "上下文窗口为 100 万 tokens，单次最大输出为 12.8 万 tokens，官方标注的相对延迟为“中等”。",
+   "上下文窗口为 100 万 Token，单次最大输出为 12.8 万 Token，官方标注的相对延迟为“中等”。",
    "思考模式为自适应思考且始终开启，effort 默认值为 medium，可靠知识截止时间为 2026 年 6 月。"
   ],
   "facts_en": [
@@ -1401,7 +1401,7 @@
   "source": "https://platform.claude.com/docs/en/models/sonnet-5/overview",
   "facts_zh": [
    "Claude Sonnet 5 于 2026 年 6 月 30 日发布。",
-   "上下文窗口为 100 万 tokens，单次最大输出为 12.8 万 tokens。",
+   "上下文窗口为 100 万 Token，单次最大输出为 12.8 万 Token。",
    "支持自适应思考，effort 默认值为 high。",
    "可靠知识截止时间为 2026 年 1 月。"
   ],
@@ -1421,7 +1421,7 @@
   "facts_zh": [
    "Claude Sonnet 5.5 于 2026 年 9 月 28 日发布，官方描述为“速度与智能的最佳组合”。",
    "官方称它面向日常编程、智能体和企业工作负载，例如代码生成、数据分析、内容创作、视觉理解和智能体工具调用。",
-   "上下文窗口为 100 万 tokens，单次最大输出为 12.8 万 tokens，官方标注的相对延迟为“快”。",
+   "上下文窗口为 100 万 Token，单次最大输出为 12.8 万 Token，官方标注的相对延迟为“快”。",
    "支持自适应思考，effort 默认值为 high，可靠知识截止时间为 2026 年 6 月。"
   ],
   "facts_en": [
@@ -1605,7 +1605,7 @@
   "source": "https://docs.x.ai/developers/grok-4-7",
   "facts_zh": [
    "grok-4.7 于 2026 年 9 月 21 日上线，官方称它是面向编程、智能体任务和知识工作的旗舰模型。",
-   "上下文窗口为 500,000 tokens，知识截止时间为 2026 年 5 月，输入支持文本和图像，输出为文本，没有文本输出上限。",
+   "上下文窗口为 500,000 Token，知识截止时间为 2026 年 5 月，输入支持文本和图像，输出为文本，没有文本输出上限。",
    "推理强度可选 low、medium、high（默认）和 xhigh；支持函数调用、网页搜索、X 搜索和代码执行。",
    "官方模型选择表把代码和对话都指向 grok-4.7。"
   ],
@@ -1616,7 +1616,7 @@
    "The official model-selection table points both code and chat at grok-4.7."
   ],
   "compare_slug": "grok-4.6",
-  "compare_zh": "两者上下文都是 500,000 tokens，推理档位也相同；官方文档把代码和对话的首选写成 grok-4.7。",
+  "compare_zh": "两者上下文都是 500,000 Token，推理档位也相同；官方文档把代码和对话的首选写成 grok-4.7。",
   "compare_en": "both have a 500,000-token context and the same reasoning levels, but the official docs name grok-4.7 as the first choice for code and chat."
  },
  {
@@ -1624,7 +1624,7 @@
   "source": "https://docs.x.ai/developers/release-notes",
   "facts_zh": [
    "grok-4.6 于 2026 年 8 月 12 日上线，官方称它是面向编程、智能体任务和知识工作的旗舰模型。",
-   "上下文窗口为 500,000 tokens，输入支持文本和图像，输出为文本，没有文本输出上限。",
+   "上下文窗口为 500,000 Token，输入支持文本和图像，输出为文本，没有文本输出上限。",
    "推理强度可选 low、medium、high（默认）和 xhigh。"
   ],
   "facts_en": [
@@ -1650,7 +1650,7 @@
    "The release notes also state that grok-4.5 is available in the API console for EU users."
   ],
   "compare_slug": "grok-4.6",
-  "compare_zh": "推理档位多了 xhigh，官方写明上下文窗口为 500,000 tokens。",
+  "compare_zh": "推理档位多了 xhigh，官方写明上下文窗口为 500,000 Token。",
   "compare_en": "its reasoning levels add xhigh, and the official notes state a 500,000-token context window."
  },
  {
@@ -1665,7 +1665,7 @@
    "The vendor's May 19, 2026 release note describes it as in early access."
   ],
   "compare_slug": "grok-4.7",
-  "compare_zh": "上下文窗口 500,000 tokens，官方模型选择表把代码和对话都指向它。",
+  "compare_zh": "上下文窗口 500,000 Token，官方模型选择表把代码和对话都指向它。",
   "compare_en": "it has a 500,000-token context window, and the official model-selection table points both code and chat at it."
  },
  {
@@ -1692,7 +1692,7 @@
    "Google 官方文档中 Nano Banana 2.1 的模型代码是 gemini-nano-banana-2.1，是 Nano Banana 2（Gemini 3.1 Flash Image）的更新版，保持 Flash 级速度和成本。",
    "官方列出的改进包括画质与真实感、提示词遵循、多轮对话中的角色一致性和文字渲染；输出分辨率为 1K、2K、4K，默认 1K。",
    "支持最多 14 张参考图融合，其中最多 4 个角色保持一致、最多 10 个物体保持还原；支持 Google 搜索事实依据，思考等级可选 minimal、medium（默认）和 high。",
-   "输入支持文本、图片、视频和 PDF，输出为图片和文本；输入上限 131,072 tokens，输出上限 32,768 tokens。"
+   "输入支持文本、图片、视频和 PDF，输出为图片和文本；输入上限 131,072 Token，输出上限 32,768 Token。"
   ],
   "facts_en": [
    "In Google's docs the model code for Nano Banana 2.1 is gemini-nano-banana-2.1. It updates Nano Banana 2 (Gemini 3.1 Flash Image) and keeps Flash-level speed and cost.",
@@ -1701,7 +1701,7 @@
    "Input can be text, image, video and PDF, and output is image and text, with a 131,072-token input limit and a 32,768-token output limit."
   ],
   "compare_slug": "nano-banana-pro",
-  "compare_zh": "Google 把 2.1 称为 Gemini 3 Pro Image（Nano Banana Pro）更高效的对应型号；Pro 的输入上限只有 65,536 tokens，且不支持视频输入。",
+  "compare_zh": "Google 把 2.1 称为 Gemini 3 Pro Image（Nano Banana Pro）更高效的对应型号；Pro 的输入上限只有 65,536 Token，且不支持视频输入。",
   "compare_en": "Google calls 2.1 the more efficient counterpart to Gemini 3 Pro Image (Nano Banana Pro); Pro has a 65,536-token input limit and takes no video input."
  },
  {
@@ -1709,7 +1709,7 @@
   "source": "https://docs.x.ai/developers/models/grok-4.20-reasoning",
   "facts_zh": [
    "官方文档把 Grok 4.20 描述为高性能模型，强调速度和智能体工具调用能力，对提示词的遵循严格。",
-   "官方规格表写明上下文窗口为 1,000,000 tokens，输入支持文本和图片，输出为文本，支持函数调用、结构化输出和推理。",
+   "官方规格表写明上下文窗口为 1,000,000 Token，输入支持文本和图片，输出为文本，支持函数调用、结构化输出和推理。",
    "官方发布说明显示，Grok 4.20 与 Grok 4.20 Multi-agent 于 2026 年 3 月 10 日上线。"
   ],
   "facts_en": [
@@ -1726,7 +1726,7 @@
   "source": "https://docs.x.ai/developers/models/grok-4.20-non-reasoning",
   "facts_zh": [
    "官方文档把它列为 Grok 4.20 的非推理版（Non-Reasoning），描述与推理版相同：高性能、速度快、擅长智能体工具调用。",
-   "官方规格表写明上下文窗口为 1,000,000 tokens，输入支持文本和图片，输出为文本，支持函数调用和结构化输出。",
+   "官方规格表写明上下文窗口为 1,000,000 Token，输入支持文本和图片，输出为文本，支持函数调用和结构化输出。",
    "官方发布说明显示，Grok 4.20 于 2026 年 3 月 10 日上线。"
   ],
   "facts_en": [
@@ -1743,7 +1743,7 @@
   "source": "https://docs.x.ai/developers/models/grok-4.3",
   "facts_zh": [
    "官方文档对 grok-4.3 的描述是：速度快、可靠，工具调用和指令遵循能力强。",
-   "官方规格表写明上下文窗口为 1,000,000 tokens，输入支持文本和图片，输出为文本，支持函数调用和结构化输出。",
+   "官方规格表写明上下文窗口为 1,000,000 Token，输入支持文本和图片，输出为文本，支持函数调用和结构化输出。",
    "推理强度可配置，可选 none（完全不推理）、low、medium 和 high；官方别名是 grok-4.3-latest。"
   ],
   "facts_en": [
@@ -1752,7 +1752,7 @@
    "Reasoning is configurable with none (no reasoning at all), low, medium and high, and the official alias is grok-4.3-latest."
   ],
   "compare_slug": "grok-4.7",
-  "compare_zh": "官方模型选择表把代码和对话的首选写成 grok-4.7，它的上下文窗口为 500,000 tokens，推理档位多了 xhigh。",
+  "compare_zh": "官方模型选择表把代码和对话的首选写成 grok-4.7，它的上下文窗口为 500,000 Token，推理档位多了 xhigh。",
   "compare_en": "the official model-selection table names grok-4.7 as the first choice for code and chat; it has a 500,000-token context window and adds an xhigh reasoning level."
  },
  {
@@ -1847,22 +1847,22 @@
   "source": "https://aistudio.google.com/docs/models/gemini-4-carbon",
   "facts_zh": [
    "Google 官方文档把 Gemini 4 Carbon 定位为最强的推理模型，面向复杂软件工程、数学和科学问题、高事实准确度和自主多步智能体。",
-   "上下文窗口为 1,048,576 tokens（输入和输出共用），默认同步输出上限 65,536 tokens，开启长解码后最高可到 1,048,576 tokens；输入支持文本、图片、视频、音频和 PDF，输出为文本。"
+   "上下文窗口为 1,048,576 Token（输入和输出共用），默认同步输出上限 65,536 Token，开启长解码后最高可到 1,048,576 Token；输入支持文本、图片、视频、音频和 PDF，输出为文本。"
   ],
   "facts_en": [
    "Google's docs position Gemini 4 Carbon as its most capable reasoning model, built for complex software engineering, math and science problems, high factual accuracy and autonomous multi-step agents.",
    "The context window is 1,048,576 tokens (input and output combined), max output is 65,536 tokens by default and up to 1,048,576 with long decode; input can be text, image, video, audio and PDF, and output is text."
   ],
   "compare_slug": "gemini-4-argon",
-  "compare_zh": "官方称 Argon 在复杂编程、智能体、数学和科学任务上响应更快、每轮 token 花费更低。",
+  "compare_zh": "官方称 Argon 在复杂编程、智能体、数学和科学任务上响应更快、每轮 Token 花费更低。",
   "compare_en": "Google says Argon answers faster and spends fewer tokens per turn across complex coding, agentic, math and science tasks."
  },
  {
   "slug": "gemini-4-argon",
   "source": "https://aistudio.google.com/docs/models/gemini-4-argon",
   "facts_zh": [
-   "Google 官方文档把 Gemini 4 Argon 描述为高效的 Gemini 4 前沿推理模型：与 Carbon 相比，在复杂编程、智能体、数学和科学任务上响应更快、每轮 token 花费更低。",
-   "上下文窗口为 1,048,576 tokens（输入和输出共用），默认同步输出上限 65,536 tokens，开启长解码后最高可到 1,048,576 tokens；输入支持文本、图片、视频、音频和 PDF，输出为文本。"
+   "Google 官方文档把 Gemini 4 Argon 描述为高效的 Gemini 4 前沿推理模型：与 Carbon 相比，在复杂编程、智能体、数学和科学任务上响应更快、每轮 Token 花费更低。",
+   "上下文窗口为 1,048,576 Token（输入和输出共用），默认同步输出上限 65,536 Token，开启长解码后最高可到 1,048,576 Token；输入支持文本、图片、视频、音频和 PDF，输出为文本。"
   ],
   "facts_en": [
    "Google's docs describe Gemini 4 Argon as the efficient Gemini 4 frontier reasoning model: compared with Carbon it answers faster and spends fewer tokens per turn across complex coding, agentic, math and science tasks.",
@@ -1877,7 +1877,7 @@
   "source": "https://aistudio.google.com/docs/models/gemini-4-hydrogen",
   "facts_zh": [
    "Google 官方文档把 Gemini 4 Hydrogen 描述为面向日常编程和智能体工作流、兼顾速度和效率的模型。",
-   "上下文窗口为 1,048,576 tokens（输入和输出共用），默认同步输出上限 65,536 tokens，开启长解码后最高可到 1,048,576 tokens；输入支持文本、图片、视频、音频和 PDF，输出为文本。"
+   "上下文窗口为 1,048,576 Token（输入和输出共用），默认同步输出上限 65,536 Token，开启长解码后最高可到 1,048,576 Token；输入支持文本、图片、视频、音频和 PDF，输出为文本。"
   ],
   "facts_en": [
    "Google's docs describe Gemini 4 Hydrogen as the model for everyday coding and agentic workflows, with speed and efficiency.",
@@ -1892,14 +1892,14 @@
   "source": "https://aistudio.google.com/docs/models/gemini-3.8-flash",
   "facts_zh": [
    "Google 官方文档把 Gemini 3.8 Flash 称为最智能的 Flash 模型，面向长周期软件工程、自主智能体和复杂的企业工作流，同时保持 Flash 的速度和成本效率。",
-   "输入上限 1,048,576 tokens，输出上限 65,536 tokens；输入支持文本、图片、视频、音频和 PDF，输出为文本。"
+   "输入上限 1,048,576 Token，输出上限 65,536 Token；输入支持文本、图片、视频、音频和 PDF，输出为文本。"
   ],
   "facts_en": [
    "Google's docs call Gemini 3.8 Flash its most intelligent Flash model, engineered for long-horizon software engineering, autonomous agents and complex enterprise workflows, with the speed and cost efficiency of Flash.",
    "The input limit is 1,048,576 tokens and the output limit is 65,536 tokens; input can be text, image, video, audio and PDF, and output is text."
   ],
   "compare_slug": "gemini-4-hydrogen",
-  "compare_zh": "官方称 Gemini 4 Hydrogen 面向日常编程和智能体工作流，开启长解码后输出最高可到 1,048,576 tokens。",
+  "compare_zh": "官方称 Gemini 4 Hydrogen 面向日常编程和智能体工作流，开启长解码后输出最高可到 1,048,576 Token。",
   "compare_en": "Google positions Gemini 4 Hydrogen for everyday coding and agentic workflows, with output up to 1,048,576 tokens when long decode is on."
  },
  {
@@ -1907,7 +1907,7 @@
   "source": "https://aistudio.google.com/docs/models/gemini-3.8-flash-tts",
   "facts_zh": [
    "Google 官方文档把 Gemini 3.8 Flash TTS 称为旗舰创意语音合成模型，强调录音棚级音色保真、富有表现力的演绎、地道的地区口音和长篇多轮对话的稳定性。",
-   "输入只支持文本，输出为音频；输入上限 8,192 tokens，输出上限 16,384 tokens（Gemini API 的服务限制）。"
+   "输入只支持文本，输出为音频；输入上限 8,192 Token，输出上限 16,384 Token（Gemini API 的服务限制）。"
   ],
   "facts_en": [
    "Google's docs call Gemini 3.8 Flash TTS its flagship creative text-to-speech model, engineered for studio-grade voice fidelity, expressive acting, authentic regional accents and stable long-form multi-turn speech.",
@@ -1918,15 +1918,15 @@
   "slug": "gemini-3.1-pro-preview",
   "source": "https://aistudio.google.com/docs/models/gemini-3.1-pro-preview",
   "facts_zh": [
-   "Google 官方文档称 Gemini 3.1 Pro Preview 改进了 Gemini 3 Pro 系列的表现和可靠性：思考更好、token 使用更高效、回答更有依据且事实一致，并针对软件工程和需要精确调用工具、可靠多步执行的智能体工作流做了优化。",
-   "输入上限 1,048,576 tokens，输出上限 65,536 tokens；输入支持文本、图片、视频、音频和 PDF，输出为文本。调用时的模型名是 gemini-3.1-pro-preview。"
+   "Google 官方文档称 Gemini 3.1 Pro Preview 改进了 Gemini 3 Pro 系列的表现和可靠性：思考更好、Token 使用更高效、回答更有依据且事实一致，并针对软件工程和需要精确调用工具、可靠多步执行的智能体工作流做了优化。",
+   "输入上限 1,048,576 Token，输出上限 65,536 Token；输入支持文本、图片、视频、音频和 PDF，输出为文本。调用时的模型名是 gemini-3.1-pro-preview。"
   ],
   "facts_en": [
    "Google's docs say Gemini 3.1 Pro Preview refines the performance and reliability of the Gemini 3 Pro series with better thinking, improved token efficiency and more grounded, factually consistent answers, optimized for software engineering and for agentic workflows that need precise tool use and reliable multi-step execution.",
    "The input limit is 1,048,576 tokens and the output limit is 65,536 tokens; input can be text, image, video, audio and PDF, and output is text. The model name to call is gemini-3.1-pro-preview."
   ],
   "compare_slug": "gemini-4-argon",
-  "compare_zh": "官方称 Gemini 4 Argon 是高效的 Gemini 4 前沿推理模型，开启长解码后输出最高可到 1,048,576 tokens。",
+  "compare_zh": "官方称 Gemini 4 Argon 是高效的 Gemini 4 前沿推理模型，开启长解码后输出最高可到 1,048,576 Token。",
   "compare_en": "Google describes Gemini 4 Argon as the efficient Gemini 4 frontier reasoning model, with output up to 1,048,576 tokens when long decode is on."
  },
  {
@@ -1986,7 +1986,7 @@
   "facts_zh": [
    "智谱官方文档把 GLM-5.3 称为最新旗舰模型，与 GLM-5.2 使用同一个基座模型，所有改进都来自后训练。",
    "官方称它在 Z.ai Code Bench 上比 GLM-5.2 提升 50%，并在 Terminal Bench 3.0 等公开基准上达到开源模型中的最好水平。",
-   "目前只支持文本输入，上下文窗口 1M tokens，最大输出 128K tokens；推理始终开启，推理强度可选 low、high、max（默认 max），不再支持关闭推理。"
+   "目前只支持文本输入，上下文窗口 1M Token，最大输出 128K Token；推理始终开启，推理强度可选 low、high、max（默认 max），不再支持关闭推理。"
   ],
   "facts_en": [
    "Z.ai's docs call GLM-5.3 its latest flagship model; it uses the same base model as GLM-5.2, with all improvements coming from post-training.",
@@ -2001,7 +2001,7 @@
   "slug": "glm-5.2",
   "source": "https://docs.z.ai/guides/llm/glm-5.2",
   "facts_zh": [
-   "智谱官方文档把 GLM-5.2 描述为面向长周期任务的旗舰模型，强调 1M tokens 上下文可以真正用起来。",
+   "智谱官方文档把 GLM-5.2 描述为面向长周期任务的旗舰模型，强调 1M Token 上下文可以真正用起来。",
    "官方称它经过数月针对长周期编程智能体场景的专项训练，覆盖大规模实现、自动化研究和性能优化等任务。",
    "官方称 GLM-5.3 与它使用同一个基座模型，GLM-5.3 的改进来自后训练。"
   ],
@@ -2020,7 +2020,7 @@
   "facts_zh": [
    "智谱官方文档称 GLM-5.3-Flash 是 GLM-5 系列第一个原生多模态模型，智能水平高于 GLM-5.2。",
    "官方写明它有 3200 亿总参数、180 亿激活参数，是第一个结合稀疏注意力和线性注意力的开源前沿模型，相比 GLM-5.3 注意力计算减少 3.01 倍、KV 缓存减少 4.44 倍。",
-   "官方模型总览表列出的上下文为 1M tokens。"
+   "官方模型总览表列出的上下文为 1M Token。"
   ],
   "facts_en": [
    "Z.ai's docs call GLM-5.3-Flash the first native multimodal model in the GLM-5 series, with stronger intelligence than GLM-5.2.",
@@ -2036,7 +2036,7 @@
   "source": "https://platform.kimi.com/docs/models",
   "facts_zh": [
    "Kimi 官方模型列表把 kimi-k3.1-pro 写作 Kimi K3.1 系列的首个模型，也是 Kimi 迄今能力最强的旗舰模型。",
-   "官方写明它有 3 万亿级参数，原生支持视觉理解，上下文窗口为 100 万 tokens，在代码、3D 创作、金融研究与建模方面有明显提升。",
+   "官方写明它有 3 万亿级参数，原生支持视觉理解，上下文窗口为 100 万 Token，在代码、3D 创作、金融研究与建模方面有明显提升。",
    "官方同时提供高速版 kimi-k3.1-pro-highspeed，速度约为普速版的 2 到 3 倍。"
   ],
   "facts_en": [
@@ -2053,7 +2053,7 @@
   "source": "https://platform.kimi.com/docs/models",
   "facts_zh": [
    "Kimi 官方模型列表把 kimi-k3 称为上一代旗舰模型，也是全球首个开源的 3 万亿级模型，参数为 2.8 万亿。",
-   "官方写明它原生支持视觉理解，上下文窗口为 100 万 tokens，面向长程编程、知识工作和深度推理等场景。"
+   "官方写明它原生支持视觉理解，上下文窗口为 100 万 Token，面向长程编程、知识工作和深度推理等场景。"
   ],
   "facts_en": [
    "Kimi's official model list calls kimi-k3 the previous-generation flagship and the world's first open-source trillion-scale model, with 2.8 trillion parameters.",
@@ -2069,7 +2069,7 @@
   "facts_zh": [
    "阿里云官方文档把 qwen3.8-omni-flash-realtime 描述为用于实时音频和视频交互的模型，输出文本和音频，支持多声道音频和工具调用。",
    "输入支持文本、流式音频和视频（连续的图像帧）；通过 WebSocket、WebRTC 或 AOQ 接入，默认音色是 Tina。",
-   "官方写明最大总输入为 196,608 tokens，最大输出为 65,536 tokens；音频历史最多 100 轮、共 600 秒，视频历史最多 50 轮、共 240 秒。",
+   "官方写明最大总输入为 196,608 Token，最大输出为 65,536 Token；音频历史最多 100 轮、共 600 秒，视频历史最多 50 轮、共 240 秒。",
    "语音输出按音频及其对应文本分别计费。"
   ],
   "facts_en": [
@@ -2079,7 +2079,7 @@
    "For speech output, the audio and its corresponding text are billed at their respective output rates."
   ],
   "compare_slug": "qwen3.8-omni-flash",
-  "compare_zh": "官方文档里 qwen3.8-omni-flash 的上下文窗口为一百万 tokens；需要实时音视频交互、流式音频输入时选本型号。",
+  "compare_zh": "官方文档里 qwen3.8-omni-flash 的上下文窗口为一百万 Token；需要实时音视频交互、流式音频输入时选本型号。",
   "compare_en": "the official docs give qwen3.8-omni-flash a 1,000,000-token context window; choose this model when you need real-time audio and video interaction with streaming audio input."
  },
  {
@@ -2180,7 +2180,7 @@
   "source": "https://openai.com/index/introducing-gpt-6-2-astra-sol/",
   "facts_zh": [
    "OpenAI 于 2026 年 11 月 17 日与 GPT-6.2 Astra 同时推出 GPT-6.2 Sol，并称它是面向日常工作的首选模型。",
-   "OpenAI 称 GPT-6.2 Sol 相比 GPT-6.1 Sol 更智能、更高效，API 价格沿用 GPT-6.1 Sol：输入 $2、缓存输入 $0.10、输出 $10（每百万 tokens）。",
+   "OpenAI 称 GPT-6.2 Sol 相比 GPT-6.1 Sol 更智能、更高效，API 价格沿用 GPT-6.1 Sol：输入 $2、缓存输入 $0.10、输出 $10（每百万 Token）。",
    "在 Cognition 的 FrontierCode 2.0 上，GPT-6.2 Sol 与 GPT-6.2 Astra 相差不到 0.5 分，成本约为其五分之一（两者均为 Max）。"
   ],
   "facts_en": [
@@ -2197,7 +2197,7 @@
   "source": "https://openai.com/index/introducing-gpt-6-2-astra-sol/",
   "facts_zh": [
    "OpenAI 于 2026 年 11 月 17 日推出 GPT-6.2 Astra，称它是应对最棘手项目的新前沿模型。",
-   "GPT-6.2 Astra 的 API 输入和输出 Token 价格比 GPT-6 Astra 低 20%，缓存输入价格低 60%：输入 $8、缓存输入 $0.40、输出 $40（每百万 tokens）。",
+   "GPT-6.2 Astra 的 API 输入和输出 Token 价格比 GPT-6 Astra 低 20%，缓存输入价格低 60%：输入 $8、缓存输入 $0.40、输出 $40（每百万 Token）。",
    "在 Agents’ Last Exam 上，GPT-6.2 Astra 得分比 GPT-6 Astra 高 5.2 分，成本不到其三分之一。"
   ],
   "facts_en": [

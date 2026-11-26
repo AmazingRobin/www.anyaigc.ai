@@ -38,7 +38,7 @@
 <meta name="twitter:image" content="https://www.anyaigc.ai/assets/og/nano-banana-2.1-ko.png">
 <link rel="stylesheet" href="/assets/models/scrollbar.css?v=20261125">
 <link rel="stylesheet" href="/assets/models/lang-menu.css?v=20261123c">
-<link rel="stylesheet" href="/assets/models/nano-banana.css?v=20261025">
+<link rel="stylesheet" href="/assets/models/nano-banana.css?v=20261126">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -218,7 +218,7 @@
           "name": "신규 사용자에게 무료 체험 크레딧이 있습니까?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "네. 신규 계정에는 토큰 200만 개 분량의 체험 크레딧이 제공되므로 충전 여부를 결정하기 전에 먼저 테스트할 수 있습니다. 충전은 $1부터 가능합니다."
+            "text": "네. 신규 계정에는 토큰 500만 개 분량의 체험 크레딧이 제공되므로 충전 여부를 결정하기 전에 먼저 테스트할 수 있습니다. 충전은 $1부터 가능합니다."
           }
         },
         {
@@ -371,6 +371,20 @@
           <p class="o-cost-off">대규모 SKU 카탈로그</p>
         </li>
       </ul>
+      <!-- GIFT -->
+      <h3 class="nb-h3 o-reveal">무료 토큰 500만 개로 만들 수 있는 이미지 수</h3>
+      <p class="o-note">신규 계정에는 토큰 500만 개가 제공되며 약 $0.5에 해당합니다. 위 가격 기준으로 생성할 수 있는 이미지 수는 다음과 같습니다(소수점 이하 버림).</p>
+      <div class="o-table-wrap o-reveal">
+        <table class="o-table">
+          <caption class="o-sr">Nano Banana: 무료 크레딧으로 생성할 수 있는 이미지 수</caption>
+          <thead><tr><th scope="col">모델</th><th scope="col" class="o-num">1K</th><th scope="col" class="o-num">2K</th><th scope="col" class="o-num">4K</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Nano Banana 2.1</th><td class="o-num">39</td><td class="o-num">26</td><td class="o-num">11</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="o-note">1K 이미지 수는 위의 최저 가격 기준입니다. 2K와 4K는 해상도별 가격 비율로 환산한 추정치입니다. 실시간 가격은 모델 카탈로그에서 확인하세요.</p>
+      <!-- /GIFT -->
       <div class="o-price-cta o-reveal">
         <a class="o-btn o-btn-dark" href="https://anyaigc.ai/register?aff=oOK7&channel=c_wpduopc9">API 키 받기</a>
         <a class="o-btn o-btn-light" href="https://anyaigc.ai/pricing">모델 카탈로그에서 보기</a>
@@ -438,7 +452,7 @@
     <div class="o-wrap nb-wide">
       <h2 class="o-h2 o-reveal" id="quickstart-title">Nano Banana 2.1 API 시작하기</h2>
       <ol class="o-steps o-reveal">
-        <li><strong>가입</strong>: <a href="https://anyaigc.ai/register?aff=oOK7&channel=c_wpduopc9">AnyAIGC 계정을 만드세요</a>. 신규 계정에는 토큰 200만 개 분량의 체험 크레딧이 제공되며, 충전은 $1부터 가능합니다.</li>
+        <li><strong>가입</strong>: <a href="https://anyaigc.ai/register?aff=oOK7&channel=c_wpduopc9">AnyAIGC 계정을 만드세요</a>. 신규 계정에는 토큰 500만 개 분량의 체험 크레딧이 제공되며, 충전은 $1부터 가능합니다.</li>
         <li><strong>API 키 만들기</strong>: <a href="https://anyaigc.ai/console">콘솔</a>에서 키를 생성하고 <code>ANYAIGC_API_KEY</code> 환경 변수에 저장하세요.</li>
         <li><strong>요청 보내기</strong>: <code>POST https://anyaigc.ai/v1beta/models/gemini-nano-banana-2.1:generateContent</code>(네이티브 Gemini 형식)를 호출하세요. 이미 OpenAI SDK를 쓰는 프로젝트는 <code>/v1/chat/completions</code>에서 <code>model</code>을 <code>gemini-nano-banana-2.1</code>로 지정하면 됩니다.</li>
       </ol>
@@ -577,14 +591,14 @@ resp.raise_for_status()
       <h2 class="o-h2 o-reveal" id="trust-title">팀이 AnyAIGC를 신뢰하는 이유</h2>
       <p class="o-lead o-reveal">체험 크레딧, 충전, 환불, 데이터 처리, 과금 방식을 미리 분명하게 안내합니다.</p>
       <ul class="trust-list">
-        <li class="o-reveal"><h3>시작은 무료 토큰 200만 개</h3><p>신규 계정에는 체험 크레딧이 제공되므로 충전 전에 먼저 테스트할 수 있습니다.</p></li>
+        <li class="o-reveal"><h3>시작은 무료 토큰 500만 개</h3><p>신규 계정에는 체험 크레딧이 제공되므로 충전 전에 먼저 테스트할 수 있습니다.</p></li>
         <li class="o-reveal"><h3>$1부터 충전, 환불 가능</h3><p>$1부터 충전할 수 있습니다. 사용하지 않은 잔액은 수수료 없이 환불받을 수 있습니다.</p></li>
         <li class="o-reveal"><h3>공식 채널, 실제 모델</h3><p>요청은 공식 모델 채널로 전달되며, 저가 모델이나 리버스 엔지니어링 방식의 대체 모델은 사용하지 않습니다.</p></li>
         <li class="o-reveal"><h3>저장 없음, 학습 없음</h3><p>법령에서 요구하는 경우를 제외하고, 프롬프트와 출력은 영구 저장되지 않으며 학습에 사용되지 않습니다. <a href="/ko/privacy">개인정보 처리방침</a>을 참고하세요.</p></li>
         <li class="o-reveal"><h3>투명한 과금, 사용 한도 설정</h3><p>콘솔에서 모든 요청의 토큰 수와 비용을 확인할 수 있고, API 키마다 한도를 설정할 수 있습니다.</p></li>
         <li class="o-reveal"><h3>연중무휴 24시간 지원</h3><p>연동, 과금, 장애와 관련된 문의는 언제든지 <a href="https://anyaigc.ai/customersupport">고객 지원</a>으로 연락하세요.</p></li>
       </ul>
-      <div class="o-price-cta o-reveal"><a class="o-btn o-btn-dark" href="https://anyaigc.ai/register?aff=oOK7&channel=c_wpduopc9">가입하고 무료 토큰 200만 개 받기</a></div>
+      <div class="o-price-cta o-reveal"><a class="o-btn o-btn-dark" href="https://anyaigc.ai/register?aff=oOK7&channel=c_wpduopc9">가입하고 무료 토큰 500만 개 받기</a></div>
     </div>
   </section>
   <!-- /TRUST -->
@@ -618,7 +632,7 @@ resp.raise_for_status()
         <details><summary><h3>동시 실행 제한이 있습니까?</h3></summary><div class="o-ans"><p>AnyAIGC는 Nano Banana 2.1에 동시 실행 제한을 두지 않으며, 모든 계정에 기본으로 적용됩니다. base URL은 <code>https://anyaigc.ai</code>이고 Google 계정은 필요하지 않습니다. 같은 키로 300개 이상의 다른 모델도 사용할 수 있습니다.</p></div></details>
         <details><summary><h3>AnyAIGC에서 인보이스를 받을 수 있습니까?</h3></summary><div class="o-ans"><p>네. 콘솔에서 실제 충전한 금액 기준으로 직접 인보이스를 발급할 수 있습니다.</p></div></details>
         <details><summary><h3>어떤 결제 수단을 지원합니까?</h3></summary><div class="o-ans"><p>WeChat Pay, Alipay, USDT, 신용카드로 충전할 수 있습니다. 잔액은 USD 기준이며 플랫폼의 모든 모델에서 사용할 수 있습니다. 인보이스는 콘솔에서 충전한 금액 기준으로 발급할 수 있습니다.</p></div></details>
-        <details><summary><h3>신규 사용자에게 무료 체험 크레딧이 있습니까?</h3></summary><div class="o-ans"><p>네. 신규 계정에는 토큰 200만 개 분량의 체험 크레딧이 제공되므로 충전 여부를 결정하기 전에 먼저 테스트할 수 있습니다. 충전은 $1부터 가능합니다.</p></div></details>
+        <details><summary><h3>신규 사용자에게 무료 체험 크레딧이 있습니까?</h3></summary><div class="o-ans"><p>네. 신규 계정에는 토큰 500만 개 분량의 체험 크레딧이 제공되므로 충전 여부를 결정하기 전에 먼저 테스트할 수 있습니다. 충전은 $1부터 가능합니다.</p></div></details>
         <details><summary><h3>잔액을 환불받을 수 있습니까?</h3></summary><div class="o-ans"><p>네. 사용하지 않은 잔액은 수수료 없이 환불받을 수 있습니다. 환불은 고객 지원에 문의해 진행하세요.</p></div></details>
         <details><summary><h3>실제 모델이 맞습니까? 데이터는 안전합니까?</h3></summary><div class="o-ans"><p>요청은 공식 모델 채널로 전달되며, 저가 모델이나 리버스 엔지니어링 방식의 대체 모델은 사용하지 않습니다. 법령에서 요구하는 경우를 제외하고 프롬프트와 출력을 영구 저장하거나 학습에 사용하지 않으며, 콘솔에서 모든 요청의 토큰 수와 비용을 확인할 수 있습니다.</p></div></details>
         <details><summary><h3>이미지를 상업적으로 사용할 수 있습니까? 워터마크가 있습니까?</h3></summary><div class="o-ans"><p>사용 권리와 콘텐츠 정책은 Google 공식 약관을 따릅니다. Google은 Nano Banana가 생성하는 모든 이미지에 보이지 않는 SynthID 디지털 워터마크를 삽입하며, 그림에서는 눈에 보이지 않습니다. AnyAIGC는 API 접근만 제공하며 결과물 사용 방식에 별도 제한을 추가하지 않습니다. 이미지에 실존 인물의 초상이나 제3자 상표가 포함된다면 필요한 권리를 갖고 있는지 확인하세요.</p></div></details>
@@ -632,7 +646,7 @@ resp.raise_for_status()
     <div class="o-wrap">
       <svg class="nb-final-logo" viewBox="0 0 24 24" width="44" height="44" aria-hidden="true" focusable="false"><path d="M1.5 19.824c0-.548.444-.992.991-.992h.744a.991.991 0 010 1.983H2.49a.991.991 0 01-.991-.991z" fill="#F3AD61"></path><path d="M14.837 13.5h7.076c.522 0 .784-.657.413-1.044l-1.634-1.704a3.183 3.183 0 00-4.636 0l-1.633 1.704c-.37.385-.107 1.044.414 1.044zM3.587 13.5h7.076c.521 0 .784-.659.414-1.044l-1.635-1.704a3.183 3.183 0 00-4.636 0l-1.633 1.704c-.37.385-.107 1.044.414 1.044z" fill="#F9C23C"></path><path d="M12.525 1.521c3.69-.53 5.97 8.923 4.309 12.744-1.662 3.82-5.248 4.657-9.053 6.152a3.49 3.49 0 01-1.279.244c-1.443 0-2.227 1.187-2.774-.282-.707-1.9.22-4.031 2.069-4.757 2.014-.79 3.084-2.308 3.89-4.364.82-2.096.877-2.956.873-5.241-.003-1.827-.123-4.195 1.965-4.496z" fill="#FEEFC2"></path><path d="M16.834 14.264l-7.095-3.257c-.815 1.873-2.29 3.308-4.156 4.043-2.16.848-3.605 3.171-2.422 5.54 2.364 4.727 13.673-.05 13.673-6.325z" fill="#FCD53F"></path><path clip-rule="evenodd" d="M13.68 12.362c.296.094.46.41.365.707-1.486 4.65-5.818 6.798-9.689 6.997a.562.562 0 11-.057-1.124c3.553-.182 7.372-2.138 8.674-6.216a.562.562 0 01.707-.364z" fill="#F9C23C" fill-rule="evenodd"></path><path d="M17.43 19.85l-7.648-8.835h6.753c1.595.08 2.846 1.433 2.846 3.073v5.664c0 .997-.898 1.302-1.95.098z" fill="#FFF478"></path></svg>
       <h2 id="final-title">Nano Banana 2.1로 시작하세요</h2>
-      <p>가입하면 무료 토큰 200만 개를 받을 수 있습니다. 동시 실행 제한 없이 이미지당 $0.0128부터.</p>
+      <p>가입하면 무료 토큰 500만 개를 받을 수 있습니다. 동시 실행 제한 없이 이미지당 $0.0128부터.</p>
       <div class="o-cta">
         <a class="o-btn o-btn-dark" href="https://anyaigc.ai/register?aff=oOK7&channel=c_wpduopc9">AnyAIGC 가입하기</a>
         <a class="o-btn o-btn-light" href="https://docs.anyaigc.ai" target="_blank" rel="noopener">API 문서 읽기</a>

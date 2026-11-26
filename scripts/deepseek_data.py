@@ -1,5 +1,5 @@
 # DeepSeek 系列专题页的数据：模型、价格、官方参数。被 scripts/deepseek_pages.py、deepseek_copy_*.py 引用。
-# AnyAIGC 价格（美元 / 百万 tokens）：模型广场 https://anyaigc.ai/pricing?keyword=deepseek 的最低价（2026-10-30 读取）
+# AnyAIGC 价格（美元 / 百万 Token）：模型广场 https://anyaigc.ai/pricing?keyword=deepseek 的最低价（2026-10-30 读取）
 # 官方价与参数：api-docs.deepseek.com/quick_start/pricing（美元价，分闲时 / 高峰）、api-docs.deepseek.com/updates、
 #   www.deepseek.com/news/deepseek-v4-1-flash、Hugging Face deepseek-ai 模型卡（2026-10-30 读取）
 

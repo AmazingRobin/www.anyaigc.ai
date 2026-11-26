@@ -119,7 +119,7 @@ FAQ_DIFF = ('Image 2.0, Image or Quality: which one should I use?',
             f'Grok Imagine Image Quality was retired by xAI on Nov 2, 2026, and its requests are now served by 2.0 at low quality.')
 
 STEPS = lambda model, edit: [
-    f'<a href="{REG}">Sign up for AnyAIGC</a>. New accounts get 2M free tokens, and you can top up from $1.',
+    f'<a href="{REG}">Sign up for AnyAIGC</a>. New accounts get 5M free tokens, and you can top up from $1.',
     'Create an API key in the <a href="https://anyaigc.ai/console">console</a> and save it as the <code>ANYAIGC_API_KEY</code> environment variable.',
     f'Send a request to <code>POST https://anyaigc.ai/v1/images/generations</code> with <code>model</code> set to <code>{model}</code>'
     + ('. For edits, use <code>POST /v1/images/edits</code>.' if edit else '.'),
@@ -216,7 +216,7 @@ def build(slug):
                 ('Can I edit an image from a reference?', 'Image 2.0 supports editing: send the source image and your instruction to <code>POST /v1/images/edits</code> as multipart/form-data. xAI supports compositing up to 5 reference images per request; the AnyAIGC docs currently show a single-image example, so check the AnyAIGC API docs for multi-image input.'),
                 FAQ_CN, FAQ_CONC, FAQ_INVOICE, FAQ_CONTRACT, FAQ_COMMERCIAL,
             ],
-            final_h2='Start building with Grok Imagine', final_p=f'Sign up and get 2M free tokens. From {P10} / image, unlimited concurrency.',
+            final_h2='Start building with Grok Imagine', final_p=f'Sign up and get 5M free tokens. From {P10} / image, unlimited concurrency.',
         )
     elif slug == 'grok-imagine-image-2.0':
         c.update(
@@ -266,7 +266,7 @@ def build(slug):
                 ('Does grok-imagine-image-quality still work?', f'xAI merged <code>grok-imagine-image-quality</code> into 2.0 on Nov 2, 2026, so those requests are served by 2.0 at low quality. Old code still runs on AnyAIGC (from {PQ} / image), but 2.0 at Low quality is {GAP} cheaper per image at every resolution, so switching <code>model</code> to <code>grok-imagine-image-2.0</code> saves money.'),
                 FAQ_CN, FAQ_CONC, FAQ_INVOICE, FAQ_CONTRACT, FAQ_COMMERCIAL,
             ],
-            final_h2='Start building with Grok Imagine Image 2.0', final_p=f'Sign up and get 2M free tokens. From {P20} per image, unlimited concurrency.',
+            final_h2='Start building with Grok Imagine Image 2.0', final_p=f'Sign up and get 5M free tokens. From {P20} per image, unlimited concurrency.',
         )
     elif slug == 'grok-imagine-image':
         c.update(
@@ -325,7 +325,7 @@ def build(slug):
                 ('Can it edit images?', 'On AnyAIGC, <code>grok-imagine-image</code> uses the generation endpoint <code>/v1/images/generations</code>. To upload and modify an image, call <code>/v1/images/edits</code> with <code>grok-imagine-image-2.0</code>.'),
                 FAQ_CN, FAQ_CONC, FAQ_INVOICE, FAQ_CONTRACT, FAQ_COMMERCIAL,
             ],
-            final_h2='Start building with Grok Imagine Image', final_p=f'Sign up and get 2M free tokens. {P10} per image, unlimited concurrency.',
+            final_h2='Start building with Grok Imagine Image', final_p=f'Sign up and get 5M free tokens. {P10} per image, unlimited concurrency.',
         )
     elif slug == 'grok-imagine-image-quality':
         c.update(

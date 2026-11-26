@@ -96,7 +96,7 @@ def price_offers(lang, slug):
             if r.get(kind) is not None:
                 offers.append((r['range_' + lang] + ' · ' + label + ' / 1M tokens', r[kind]))
     if MODELS[slug].get('audio_base') is not None:
-        offers.append((tr(lang, '音频输入 / 1M tokens', 'Audio input / 1M tokens'), MODELS[slug]['audio_base']))
+        offers.append((tr(lang, '音频输入 / 1M Token', 'Audio input / 1M tokens'), MODELS[slug]['audio_base']))
     return offers
 
 def metadata(lang, slug):
@@ -105,7 +105,7 @@ def metadata(lang, slug):
     rate = MODELS[slug]['rates'][0]['input']
     title = tr(lang, f'{n} API 价格与接入 - AnyAIGC', f'{n} API Pricing - AnyAIGC')
     desc = tr(lang,
-        f'{n} API 输入每百万 tokens ${rate} 起，{c["tagline"]}，兼容 OpenAI 接口。{CONCURRENCY["zh_short"]}，支持企业对公转账、服务合同与增值税专票，300+ 模型共用一个 Key。',
+        f'{n} API 输入每百万 Token ${rate} 起，{c["tagline"]}，兼容 OpenAI 接口。{CONCURRENCY["zh_short"]}，支持企业对公转账、服务合同与增值税专票，300+ 模型共用一个 Key。',
         f'{n} API from ${rate}/1M input tokens. {CONCURRENCY["en_short"]}. Chat Completions, 300+ models, VAT invoices and bank transfer.')
     return title, desc
 
@@ -117,7 +117,7 @@ def faqs(lang, slug):
     choose = tr(lang, '本页介绍和默认代码采用模型广场当前列出的最新快照。<a href="#quickstart">快速开始</a>中保留旧版代码示例，已有项目可以按需使用。不同快照的能力可能不同，本页价格在核对时一致。', 'The overview and default examples use the newest snapshot listed in the catalog. <a href="#quickstart">Quickstart</a> also includes older code examples for existing integrations. Capabilities can differ between snapshots; the listed prices matched when verified.') if len(SNAPSHOTS[slug]) > 1 else tr(lang, '当前模型广场列出一个快照，默认代码使用该版本。可以根据本页的能力介绍、场景和价格表选型，再用实际业务输入测试效果。', 'The catalog currently lists one snapshot, used by the default examples. Evaluate its capabilities, use cases and pricing against your own inputs.')
     rows = [
         (tr(lang, f'{n} API 怎么收费？', f'How is {n} API priced?'),
-         tr(lang, f'按输入与输出 token 计费，输入 ${r["input"]}、输出 ${r["output"]} / 百万 tokens 起。完整档位及适用的缓存、音频价格见本页价格表；实时价格以模型广场为准。', f'Input starts at ${r["input"]} and output at ${r["output"]} per 1M tokens. The table lists all published tiers and applicable cache and audio rates. Check the model catalog for live prices.')),
+         tr(lang, f'按输入与输出 Token 计费，输入 ${r["input"]}、输出 ${r["output"]} / 百万 Token 起。完整档位及适用的缓存、音频价格见本页价格表；实时价格以模型广场为准。', f'Input starts at ${r["input"]} and output at ${r["output"]} per 1M tokens. The table lists all published tiers and applicable cache and audio rates. Check the model catalog for live prices.')),
         (tr(lang, '怎么接入？一次调用返回什么？', 'How do I integrate it, and what does a call return?'),
          tr(lang, f'调用 <code>POST /v1/chat/completions</code>，请求体包含 <code>model</code> 和 <code>messages</code>。本页示例不启用流式输出，返回 JSON，在 <code>choices[0].message.content</code> 读取回复，在 <code>usage</code> 读取用量。字段见<a href="{DOCS}">接口文档</a>。', f'Call <code>POST /v1/chat/completions</code> with <code>model</code> and <code>messages</code>. These non-streaming examples return JSON: read the reply from <code>choices[0].message.content</code> and token usage from <code>usage</code>. See the <a href="{DOCS}">API reference</a>.')),
         (tr(lang, '并发有限制吗？', 'Is there a concurrency limit?'), CONCURRENCY[lang]),
@@ -216,7 +216,7 @@ def hero(lang, slug):
         <nav aria-label="{tr(lang, '面包屑', 'Breadcrumb')}"><ol class="o-crumbs"><li><a href="/">{tr(lang, '首页', 'Home')}</a></li><li><a href="/{lang}/models/">{tr(lang, '模型专题', 'Model guides')}</a></li><li aria-current="page">{e(name(slug))}</li></ol></nav>
         <p class="sd-eyebrow">{logo()}<span>{tr(lang, '字节跳动 · Doubao Seed', 'ByteDance · Doubao Seed')}</span></p>
         <h1 class="sd-h1" id="hero-title">{e(name(slug))} API</h1>
-        <p class="sd-lead">{e(c['tagline'])}{tr(lang, '。', '. ')}<strong>{tr(lang, f'输入 ${r["input"]} / 百万 tokens 起', f'From ${r["input"]} / 1M input tokens')}</strong></p>
+        <p class="sd-lead">{e(c['tagline'])}{tr(lang, '。', '. ')}<strong>{tr(lang, f'输入 ${r["input"]} / 百万 Token 起', f'From ${r["input"]} / 1M input tokens')}</strong></p>
         <p class="sd-lead-sub">{e(c['summary'])}</p>
         <div class="o-cta"><a class="o-btn sd-btn-glass" href="{REG}">{tr(lang, '获取 API Key', 'Get an API key')} <span class="sd-arrow" aria-hidden="true">→</span></a><a class="o-btn sd-btn-glass" href="#pricing">{tr(lang, '查看 API 价格', 'See API pricing')}</a></div>
         <ul class="o-facts">{''.join(f'<li>{e(f)}</li>' for f in facts)}</ul>
@@ -255,7 +255,7 @@ def pricing(lang, slug):
     if model.get('audio_base') is not None:
         notes.append(model['audio_scope_' + lang])
     note_html = ''.join(f'<p class="o-note">{e(note)}</p>\n' for note in notes)
-    billing = [(tr(lang, '按 token 计费', 'Pay per token'), tr(lang, '输入、输出分别计价', 'Input and output billed separately')),
+    billing = [(tr(lang, '按 Token 计费', 'Pay per token'), tr(lang, '输入、输出分别计价', 'Input and output billed separately')),
                (tr(lang, '按实际用量', 'Actual usage'), tr(lang, '回复长度随请求而变', 'Reply length depends on the request')),
                (CONCURRENCY[lang + '_short'], CONCURRENCY[lang + '_audience']),
                (tr(lang, '余额通用', 'Shared balance'), tr(lang, '300+ 模型共用余额', 'One balance across 300+ models'))]
@@ -270,12 +270,12 @@ def pricing(lang, slug):
         desc = tr(lang, f'每次输入 {inp:,}、输出 {out:,} tokens', f'{inp:,} input + {out:,} output tokens per call')
         calc = f'{total_in.normalize():f} × ${r["input"]} + {total_out.normalize():f} × ${r["output"]}'
         cost_cards.append(f'<li class="o-cost o-reveal"><h4>{title}</h4><p class="o-cost-off">{desc}</p><p class="o-cost-calc">{calc}</p><p class="o-cost-total">{currency(total)}</p></li>')
-    note = tr(lang, '单位 USD；展示模型广场最低可用价，按成功提交后的实际 token 用量计费。阶梯取决于单次请求输入长度，实时价格以模型广场为准。', 'Prices are in USD at the lowest available catalog rate, based on actual token usage after successful submission. Tiers depend on input length per request. Check the catalog for live prices.')
+    note = tr(lang, '单位 USD；展示模型广场最低可用价，按成功提交后的实际 Token 用量计费。阶梯取决于单次请求输入长度，实时价格以模型广场为准。', 'Prices are in USD at the lowest available catalog rate, based on actual token usage after successful submission. Tiers depend on input length per request. Check the catalog for live prices.')
     cost_note = tr(lang, '示例采用首档文本价格，不含缓存命中或音频输入；每次请求的输入长度均在首档以内。', 'Examples use first-tier text rates without cache hits or audio input; each request stays within the first input tier.')
     content = f'''{bill}
       <p class="db-table-hint">{tr(lang, '左右滑动查看完整价格表', 'Scroll sideways to see the full pricing table')}</p>
       <div class="o-table-wrap o-reveal" tabindex="0" role="region" aria-label="{tr(lang, 'API 价格表，可横向滚动', 'API pricing table, horizontally scrollable')}">
-        <table class="o-table"><caption class="o-sr">{e(name(slug))} API {tr(lang, '价格（USD / 百万 tokens）', 'prices (USD / 1M tokens)')}</caption>
+        <table class="o-table"><caption class="o-sr">{e(name(slug))} API {tr(lang, '价格（USD / 百万 Token）', 'prices (USD / 1M tokens)')}</caption>
         <thead><tr><th scope="col">{tr(lang, '计费项目', 'Billing item')}</th><th scope="col">{tr(lang, '模型名称', 'Model')}</th><th class="o-num" scope="col">{tr(lang, '单价（USD）', 'Unit price (USD)')}</th></tr></thead>
 {body}        </table>
       </div>
@@ -351,7 +351,7 @@ print(reply.choices[0].message.content)'''
     return [('py', 'Python', py), ('curl', 'cURL', curl), ('sdk', 'OpenAI SDK', sdk)]
 
 def quickstart(lang, slug):
-    steps = [tr(lang, f'<a href="{REG}">注册 AnyAIGC</a>，新用户可先使用 200 万 tokens 试用额度。', f'<a href="{REG}">Create an AnyAIGC account</a> and start with 2M free trial tokens.'),
+    steps = [tr(lang, f'<a href="{REG}">注册 AnyAIGC</a>，新用户可先使用 500 万 Token 试用额度。', f'<a href="{REG}">Create an AnyAIGC account</a> and start with 5M free trial tokens.'),
              tr(lang, '在<a href="https://anyaigc.ai/console">控制台</a>创建 Key，保存到环境变量 <code>ANYAIGC_API_KEY</code>。', 'Create a key in the <a href="https://anyaigc.ai/console">console</a> and save it as <code>ANYAIGC_API_KEY</code>.'),
              tr(lang, '向 <code>POST /v1/chat/completions</code> 发送对话请求，读取 JSON 中的回复。', 'Send a chat request to <code>POST /v1/chat/completions</code> and read the reply from its JSON response.')]
     if not CODE_ID_LITERAL:

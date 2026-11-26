@@ -23,6 +23,8 @@
 .p-eyebrow{margin:0 0 18px;font-size:17px;color:var(--o-muted)}
 .p-h1{margin:0;font-family:var(--o-serif);font-size:72px;line-height:1.02;font-weight:500;letter-spacing:-.025em;color:var(--o-ink);text-wrap:balance}
 .p-lead{margin:26px 0 0;max-width:560px;font-size:19px;line-height:1.6;color:var(--o-muted)}
+/* 首屏折扣短语（“价格约为官方的 1.2 折起”等）用红色 */
+.p-lead-off{color:#d93025;font-weight:500}
 .p-hero .o-cta{justify-content:flex-start;margin-top:30px}
 .p-hero-art{display:flex;justify-content:center}
 .p-hero-art svg{width:260px;height:260px}

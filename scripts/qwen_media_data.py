@@ -23,14 +23,14 @@ def rate(zh, en, amount, unit, multiplier=1, saving=None):
 MODELS = [
     dict(slug='qwen-image-3.0', name='Qwen Image 3.0', kind='image',
          lead=('把长指令，变成信息丰富的画面。', 'Turn detailed instructions into rich visual content.'),
-         summary=('面向海报、信息图与界面创作，支持最长 4.5K tokens 指令，兼顾文字渲染和复杂排版。', 'Create posters, infographics, and interfaces with up to 4.5K instruction tokens and detailed text layouts.'),
+         summary=('面向海报、信息图与界面创作，支持最长 4.5K Token 指令，兼顾文字渲染和复杂排版。', 'Create posters, infographics, and interfaces with up to 4.5K instruction tokens and detailed text layouts.'),
          features=[('4.5K tokens 指令', '4.5K instruction tokens', '为复杂构图、文字内容和元素关系提供更完整的描述空间。', 'Describe composition, wording, and relationships between visual elements in detail.'), ('细小文字与多语言', 'Small text, multiple languages', '官方展示 10px 小字与 12 种语言的渲染能力，适合信息密集的画面。', 'Official examples demonstrate 10px text and 12 languages for information-dense visuals.'), ('生成与参考图编辑', 'Generate and edit with references', '输出图像和参考图片分别计费，适合持续迭代同一创意。', 'Output images and reference images are billed separately for iterative creative work.')],
          rates=[rate('计费基价', 'Billing-unit base rate', '0.00159', 'base')],
          factors=[('输出图片', 'Output image', 18), ('参考图片', 'Reference image', 2)],
          uses=[('信息图与教育内容', 'Infographics and education', '把概念、说明文字与示意内容组合到同一版面。', 'Combine explanations, labels, and visual concepts in a single layout.'), ('产品界面与创意海报', 'Interfaces and posters', '先说明层级、文案、布局与风格，再迭代细节。', 'Specify hierarchy, copy, layout, and style, then iterate on details.')]),
     dict(slug='qwen-image-3.0-pro', name='Qwen Image 3.0 Pro', kind='image',
          lead=('复杂版面，细节也要到位。', 'Complex layouts, with attention to the details.'),
-         summary=('适合报纸、菜单、分镜和界面等密集内容，支持 4.5K tokens 指令，按 1K / 2K 输出档位计费。', 'Build newspapers, menus, storyboards, and interfaces with 4.5K instruction tokens and separate 1K / 2K output rates.'),
+         summary=('适合报纸、菜单、分镜和界面等密集内容，支持 4.5K Token 指令，按 1K / 2K 输出档位计费。', 'Build newspapers, menus, storyboards, and interfaces with 4.5K instruction tokens and separate 1K / 2K output rates.'),
          features=[('密集信息排版', 'Dense visual layouts', '把多块文字、画中画和分镜组织到同一张图中。', 'Organize text blocks, nested visuals, and storyboard panels in one image.'), ('1K / 2K 输出档位', '1K / 2K output tiers', '面积不超过 225 万像素按 1K 档计算；2K 档输出倍率更高。', 'Up to 2.25 million pixels falls in the 1K tier; the 2K output tier uses a higher billing multiplier.'), ('参考图独立计费', 'Separate reference billing', '每张参考图按基价的 2 倍计算，与输出费用相加。', 'Each reference image costs two billing units, added to the output charge.')],
          rates=[rate('计费基价', 'Billing-unit base rate', '0.00159', 'base')],
          factors=[('1K 输出图片', '1K output image', 25), ('2K 输出图片', '2K output image', 50), ('参考图片', 'Reference image', 2)],
@@ -42,7 +42,7 @@ MODELS = [
          rates=[rate('图片输出', 'Image output', '0.0645', 'image')]),
     dict(slug='qwen-image-2.0-2026-03-03', name='Qwen Image 2.0 · 2026-03-03', short='Qwen Image 2.0', kind='image',
          lead=('生成和编辑，在同一创作流程里。', 'Generation and editing in one creative workflow.'),
-         summary=('Qwen Image 2.0 的加速快照版本，统一图像生成与编辑，支持最长 1K tokens 指令。', 'An accelerated Qwen Image 2.0 snapshot combining generation and editing with up to 1K instruction tokens.'),
+         summary=('Qwen Image 2.0 的加速快照版本，统一图像生成与编辑，支持最长 1K Token 指令。', 'An accelerated Qwen Image 2.0 snapshot combining generation and editing with up to 1K instruction tokens.'),
          features=[('加速版本', 'Accelerated variant', '在图像质量与推理效率之间取得平衡，适合持续迭代。', 'Balance image quality and inference efficiency across iterative tasks.'), ('生成编辑一体', 'Unified creation and editing', '在同一模型上完成文生图与图像修改。', 'Use one model for text-to-image creation and image revisions.'), ('固定快照名', 'Dated snapshot ID', '调用时使用完整日期后缀，明确选择 2026-03-03 版本。', 'Use the full dated ID to select the 2026-03-03 snapshot explicitly.')],
          rates=[rate('图片输出', 'Image output', '0.0258', 'image')]),
     dict(slug='z-image-turbo', name='Z-Image Turbo', kind='image',
@@ -102,7 +102,7 @@ MODELS.append(dict(slug='qwen3.8-omni-flash-realtime',name='Qwen3.8 Omni Flash R
 BY_SLUG = {m['slug']: m for m in MODELS}
 IMG = [m for m in MODELS if m['kind']=='image']
 VID = [m for m in MODELS if m['kind']!='image']
-UNITS = {'image':('张','image'), 'request':('次','request'), 'second':('秒','second'), 'clip':('段','clip'), 'tokens':('百万 tokens','1M tokens'), 'base':('计费单位','billing unit')}
+UNITS = {'image':('张','image'), 'request':('次','request'), 'second':('秒','second'), 'clip':('段','clip'), 'tokens':('百万 Token','1M tokens'), 'base':('计费单位','billing unit')}
 
 
 def entry_rate(m):

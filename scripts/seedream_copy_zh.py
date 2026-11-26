@@ -160,7 +160,7 @@ def codes(slug):
 
 
 def steps(mid):
-    return [f'<a href="{G.REG}">注册 AnyAIGC</a>，新用户送 200 万 tokens 试用额度，最低 $1 起充。',
+    return [f'<a href="{G.REG}">注册 AnyAIGC</a>，新用户送 500 万 Token 试用额度，最低 $1 起充。',
             '在<a href="https://anyaigc.ai/console">控制台</a>创建 API Key，保存到环境变量 <code>ANYAIGC_API_KEY</code>。',
             f'向 <code>POST https://anyaigc.ai/v1/images/generations</code> 发请求（OpenAI 兼容格式），<code>model</code> 填 <code>{mid}</code>。']
 
@@ -212,7 +212,7 @@ def price_table_55():
 
 def billing(slug=None):
     one = '一次返回 1 张；组图按实际生成张数计' if slug in (None, 'seedream-5.0-lite', 'seedream-4.5', 'seedream-4.0') else '一次请求返回 1 张图片'
-    return [('按张计费', '固定单价，不按 token 算'), ('产出', one), ('并发不限', '所有用户默认享有'), ('余额通用', '同一余额可调用 300+ 模型')]
+    return [('按张计费', '固定单价，不按 Token 算'), ('产出', one), ('并发不限', '所有用户默认享有'), ('余额通用', '同一余额可调用 300+ 模型')]
 
 
 def compare_table(cur=None):
@@ -297,7 +297,7 @@ def hub():
         offers=[(f'{MODELS[s]["name"]}（每{MODELS[s]["unit"]}起）', CNY[s]) for s in MODEL_SLUGS],
         eyebrow='字节跳动 · Seedream 系列', h1='Seedream API<small>豆包 Seedream 5.5、5.0 Pro、5.0 lite、4.5、4.0 全系</small>',
         lead=f'一个 API Key 调用字节跳动全部 Seedream 型号，<strong>按张 {cny(sl)} 起</strong>。',
-        lead_sub='信息图、海报排版、多图融合、组图和 4K 出图都能直接走 API。固定单价，不按 token 算，国内直接调用。',
+        lead_sub='信息图、海报排版、多图融合、组图和 4K 出图都能直接走 API。固定单价，不按 Token 算，国内直接调用。',
         facts=[('起步价', f'{cny(sl)} / 张'), ('最高', '4K'), ('参考图', '最多 14 张'), ('并发', '不限'), ('企业', '对公 · 专票')],
         tiles=[('info', 'Seedream 5.0 Pro'), ('seq', 'Seedream 5.0 lite'), ('multi', 'Seedream 4.5'), ('edit', 'Seedream 4.0')],
         models_h2='Seedream 全系型号', models_lead='所有型号接口相同，只需切换 <code>model</code>。点卡片查看每个型号的价格、参数和代码示例。',
@@ -319,7 +319,7 @@ def hub():
         qs_note=QS_NOTE,
         family_h2='Seedream 系列专题', family_lead='每个型号单独一页，含完整价格、参数和代码示例。',
         faq_h2='Seedream API 常见问题', faqs=faqs,
-        final_h2='现在开始调用 Seedream', final_p='注册即送 200 万 tokens 试用额度，一个 Key 调用 Seedream 全系和 300+ 其他模型。',
+        final_h2='现在开始调用 Seedream', final_p='注册即送 500 万 Token 试用额度，一个 Key 调用 Seedream 全系和 300+ 其他模型。',
     )
 
 
@@ -338,7 +338,7 @@ def model_page(slug):
                 family_h2='Seedream 系列其他型号', family_lead='接口相同，换 <code>model</code> 即可切换。',
                 faq_h2=f'{name} API 常见问题',
                 price_h2=f'{name} API 价格', price_lead=f'固定单价，{name} 起步价 {p} / {unit}。',
-                final_h2=f'现在开始调用 {name}', final_p=f'注册即送 200 万 tokens 试用额度，{p} / {unit}起，并发不限。',
+                final_h2=f'现在开始调用 {name}', final_p=f'注册即送 500 万 Token 试用额度，{p} / {unit}起，并发不限。',
                 h1=f'{name} API<small>{mid}</small>', eyebrow=f'字节跳动 · {name}')
 
     def price_faq(extra=''):
@@ -388,7 +388,7 @@ def model_page(slug):
             offers=[(f'{name} {t1}（每张）', c1), (f'{name} {t2}（每张）', c2)],
             billing=billing_55(), price_tables=price_table_55(), price_note=price_note_55(),
             price_lead=f'按输出分辨率分档计费，1K / 1.5K 起步价 {p} / 张，输入图片另计。',
-            final_p=f'注册即送 200 万 tokens 试用额度，{p} / 张起，并发不限。',
+            final_p=f'注册即送 500 万 Token 试用额度，{p} / 张起，并发不限。',
             lead=f'多轮编辑一致、原生 RGBA 与图层拆分，<strong>每张 {p} 起</strong>。',
             lead_sub='官方定位为创造力与精确执行能力共同提升的多模态图像生成模型。按输出分辨率分档计费，参考图另计，国内直接调用。',
             facts=[('起步价', f'{p} / 张'), ('最高', '2K'), ('参考图', '最多 10 张'), ('图层', '最多 99 个'), ('并发', '不限'), ('企业', '对公 · 专票')],
@@ -604,7 +604,7 @@ def model_page(slug):
         facts=[('单价', f'{p} / 次'), ('分辨率', '原生 2K'), ('能力', '文生图'), ('并发', '不限'), ('企业', '对公 · 专票')],
         tiles=[('type', '中英双语文字'), ('photo', '原生 2K'), ('info', '小字排版'), ('lang', '指令遵循')],
         price_lead=f'按次计费，每次 {p}，一次返回 1 张图。',
-        billing=[('按次计费', '固定单价，不按 token 算'), ('每次 1 张', '一次请求返回 1 张图片'), ('并发不限', '所有用户默认享有'), ('余额通用', '同一余额可调用 300+ 模型')],
+        billing=[('按次计费', '固定单价，不按 Token 算'), ('每次 1 张', '一次请求返回 1 张图片'), ('并发不限', '所有用户默认享有'), ('余额通用', '同一余额可调用 300+ 模型')],
         about_h2='Seedream 3.0 是什么',
         about_ps=['Seedream 3.0 是字节跳动 Seed 团队 2025 年 4 月发布的中英双语图像生成基础模型，原生支持 2K 高分辨率输出，在小字生成、文字排版、指令遵循和画面美感上都比上一代有明显提升。',
                   f'在 AnyAIGC 上，模型名是 <code>{mid}</code>，按次计费，每次 {p}。它只支持文生图，不支持参考图、改图和组图。'],

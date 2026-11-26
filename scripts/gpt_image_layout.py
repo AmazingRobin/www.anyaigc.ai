@@ -3,7 +3,7 @@ import html
 import json
 import re
 
-from gpt_image_data import (cny, DATE, VER, SITE, REG, PRICING, SUPPORT, IMG, ANIM, MODELS, SLUGS, TOKEN, OFFICIAL, CALL, CALL_4K,
+from gpt_image_data import (usd, cny, C_OF, DATE, VER, SITE, REG, PRICING, SUPPORT, IMG, ANIM, MODELS, SLUGS, TOKEN, OFFICIAL, CALL, CALL_4K,
                             TOKENS_25, TOKENS_26, OFFICIAL_IMG_2, OFFICIAL_POST, money, cost_25, cost_26, cost_2, save)
 
 NL = '\n'
@@ -15,7 +15,7 @@ L = {
                skip='跳到主要内容', nav='主导航', crumbs='面包屑', facts='核心信息', copy='复制', copied='已复制',
                code='代码示例', sales='联系企业客服', trial='先注册试用', signup_any='免费注册 AnyAIGC', read_docs='阅读 API 文档',
                all_hub='全部模型专题', more='更多', series_all='GPT Image 全系总览', in_other='GPT Image API in English',
-               official='OpenAI 官方', item='计费项', saving='节省', per_m='每 100 万 tokens', per_img='/ 张',
+               official='OpenAI 官方', item='计费项', saving='节省', per_m='每 100 万 Token', per_img='/ 张',
                credit='示例图来自 OpenAI《ChatGPT 图像 2.0 现已上线》发布页，由 ChatGPT 图像 2.0 生成，版权归 OpenAI 所有。',
                credit_link='查看原文', home_label='AnyAIGC 首页',
                foot_desc='国内外大模型 API 中转平台。一个 Base URL、一个 API Key，统一调用 300+ 模型。',
@@ -224,6 +224,48 @@ def nav(lang, slug):
 '''
 
 
+def hero_price(lang, slug):
+    """首屏价格：只列「按量计费」「按张计费」两行（用户 2026-11-25 要求简化）。
+    按张价格中文页按 美元 × 6.7 折成人民币并标红，其他语言写美元（标红）。价格全部来自 gpt_image_data。"""
+    z = lang == 'zh'
+    if slug == 'gpt-image':
+        tok_base, bases = '2.6', ('2', '2.5', '2.6')
+    else:
+        tok_base = MODELS[slug]['base']
+        bases = (tok_base,)
+    low = bases[0]
+    out_price, out_list = TOKEN[tok_base]['out'], OFFICIAL['out']
+
+    def one(b, tier='1k'):
+        return cny(b, tier) if z else '$' + (CALL_4K[b] if tier == '4k' else CALL[b])
+
+    if len(bases) > 1:
+        rng = f'{one(bases[0])} – {one(bases[-1])}'
+        main = f'{one(low)} 起' if z else f'from {one(low)}'
+        sub = (f'各型号 {rng}，不随质量变化' if z else f'{rng} depending on the model, flat at any quality')
+    else:
+        main = one(low)
+        if CALL[low] == CALL_4K[low]:
+            sub = '1K、2K、4K 同价，不随质量变化' if z else 'Same price at 1K, 2K and 4K, flat at any quality'
+        else:
+            sub = (f'1K 出图，2K / 4K 为 {one(low, "4k")}，不随质量变化' if z
+                   else f'1K output; 2K / 4K is {one(low, "4k")}. Flat at any quality')
+    unit_call = ' / 张' if z else ' / image'
+    lab_tok, lab_call = ('按量计费', '按张计费') if z else ('Per token', 'Per image')
+    sub_tok = '图片输出，每 100 万 Token' if z else 'Image output, per 1M tokens'
+    rows = (f'<tr><th scope="row">{lab_tok}<small>{sub_tok}</small></th>'
+            f'<td class="o-num o-hl">${out_price} <span class="o-strike">${out_list}</span></td></tr>'
+            f'<tr><th scope="row">{lab_call}<small>{sub}</small></th>'
+            f'<td class="o-num o-red">{main}{unit_call}</td></tr>')
+    cap = (('GPT Image 价格' if z else 'GPT Image pricing') if slug == 'gpt-image' else (f'{MODELS[slug]["name"]} 价格' if z else f'{MODELS[slug]["name"]} pricing'))
+    note = (f'按量计费单位为 USD，划线为 OpenAI 官方价；按张价格按 ¥6.7 / $1 折算，均为<a href="{PRICING}">模型广场</a>最低价，实时价格以模型广场为准。' if z
+            else f'USD. The struck-through price is OpenAI list price. Both are the lowest prices in the <a href="{PRICING}">model catalog</a>; live prices are shown there.')
+    return (f'        <div class="gi-hero-price">{NL}          <div class="o-table-wrap">{NL}'
+            f'            <table class="o-table">{NL}              <caption class="o-sr">{cap}</caption>{NL}'
+            f'              <tbody>{NL}                {rows}{NL}              </tbody>{NL}'
+            f'            </table>{NL}          </div>{NL}          <p class="gi-hero-note">{note}</p>{NL}        </div>{NL}')
+
+
 def hero(lang, slug, c):
     t = L[lang]
     crumbs = [f'<li><a href="/">{t["home"]}</a></li>', f'<li><a href="/{lang}/models/">{t["hub"]}</a></li>']
@@ -232,6 +274,9 @@ def hero(lang, slug, c):
     crumbs.append(f'<li aria-current="page">{c["crumb"]}</li>')
     facts = ''.join(f'<li>{k} <strong>{v}</strong></li>' for k, v in c['facts'])
     notice = f'      <p class="o-notice" role="note">{c["notice"]}</p>{NL}' if c.get('notice') else ''
+    # 标题里的 API 做成显性标签（原来只是屏幕阅读器可见的隐藏文字）
+    h1 = c['h1'].replace('<span class="o-sr"> API</span>', ' <span class="gi-api">API</span>')
+    h1 = re.sub(r'^(GPT Image) API<small>', r'\1 <span class="gi-api">API</span><small>', h1)
     a, b, d = c['hero_imgs']
     return f'''  <!-- Hero -->
   <section class="gi-hero" aria-labelledby="hero-title">
@@ -243,10 +288,9 @@ def hero(lang, slug, c):
           </ol>
         </nav>
         <p class="gi-eyebrow">{logo()}<span>{c['eyebrow']}</span>{shapes()}</p>
-        <h1 class="gi-h1" id="hero-title">{c['h1']}</h1>
+        <h1 class="gi-h1" id="hero-title">{h1}</h1>
         <p class="gi-lead">{c['lead']}</p>
-        <p class="gi-lead-sub">{c['lead_sub']}</p>
-        <div class="o-cta">
+{hero_price(lang, slug)}        <div class="o-cta">
           <a class="o-btn o-btn-dark" href="{REG}">{t['get_key']}</a>
           <a class="o-btn o-btn-light" href="#pricing">{t['see_price']}</a>
         </div>
@@ -373,7 +417,7 @@ def table(caption, head_cells, groups):
 
 
 def token_rows(lang, base):
-    """按 token 计费的单价行"""
+    """按 Token 计费的单价行"""
     z = lang == 'zh'
     names = [('text_in', '文本输入' if z else 'Text input', '提示词' if z else 'Prompt text'),
              ('img_in', '图片输入' if z else 'Image input', '编辑时上传的参考图' if z else 'Reference images for edits'),
@@ -388,7 +432,7 @@ def token_rows(lang, base):
 
 
 def token_rows_plain(lang, base):
-    """按 token 计费的单价行，只列 AnyAIGC 价格（GPT Image 2.6 页不与官方价对比）"""
+    """按 Token 计费的单价行，只列 AnyAIGC 价格（GPT Image 2.6 页不与官方价对比）"""
     z = lang == 'zh'
     names = [('text_in', '文本输入' if z else 'Text input', '提示词' if z else 'Prompt text'),
              ('img_in', '图片输入' if z else 'Image input', '编辑时上传的参考图和标注层' if z else 'Reference images and markup layers'),
@@ -407,7 +451,7 @@ def per_image_26(lang):
         cells = ''.join(f'<td class="o-num"><span class="o-hl">{money(cost_26(q, s))}</span><small>{TOKENS_26[q][s]:,} tokens</small></td>' for s in sizes)
         rows.append(f'<th scope="row"><code>{q}</code></th>{cells}')
     head = [('质量' if z else 'Quality', False)] + [(s.replace('x', '×'), True) for s in sizes]
-    cap = 'GPT Image 2.6 每张图片输出费用估算（美元），按 OpenAI 官方计算器的输出 tokens' if z else "Estimated image output cost per image for GPT Image 2.6 (USD), using output tokens from OpenAI's calculator"
+    cap = 'GPT Image 2.6 每张图片输出费用估算（美元），按 OpenAI 官方计算器的输出 Token' if z else "Estimated image output cost per image for GPT Image 2.6 (USD), using output tokens from OpenAI's calculator"
     return table(cap, head, [(None, rows)])
 
 
@@ -422,7 +466,7 @@ def per_image_25(lang):
             cells += f'<td class="o-num"><span class="o-hl">{money(a)}</span><small>{"官方" if z else "List"} {money(o)}</small></td>'
         rows.append(f'<th scope="row"><code>{q}</code></th>{cells}')
     head = [('质量' if z else 'Quality', False)] + [(s.replace('x', '×'), True) for s in sizes]
-    cap = 'GPT Image 2.5 每张图片输出费用估算（美元），按 OpenAI 官方计算器的输出 tokens' if z else 'Estimated image output cost per image for GPT Image 2.5 (USD), using output tokens from OpenAI\'s calculator'
+    cap = 'GPT Image 2.5 每张图片输出费用估算（美元），按 OpenAI 官方计算器的输出 Token' if z else 'Estimated image output cost per image for GPT Image 2.5 (USD), using output tokens from OpenAI\'s calculator'
     return table(cap, head, [(None, rows)])
 
 
@@ -442,18 +486,17 @@ def per_image_2(lang):
 
 
 def call_vs(lang, base):
-    """按次版与按 token 版、官方价的单张对比（1024×1024）"""
+    """按次版与按 Token 版、官方价的单张对比（1024×1024）"""
     z = lang == 'zh'
     fixed = float(CALL[base])
     if base == '2.6':
         rows = []
         for q in ['low', 'medium', 'high', 'xhigh', 'max']:
             a = cost_26(q, '1024x1024')
-            # 中文页按张价是人民币，不直接比大小，只列出两种计费的数字
             verdict = '' if z else (('Per-image is cheaper' if fixed < a else 'Token-billed is cheaper'))
             rows.append(f'<th scope="row"><code>{q}</code></th><td class="o-num o-hl">{cny(base) if z else '$' + CALL[base]}</td><td class="o-num">{money(a)}</td>'
                         + ('' if z else f'<td>{verdict}</td>'))
-        head = [('质量' if z else 'Quality', False), ('按张版' if z else 'Per image', True), ('按 token 版（美元）' if z else 'Token-billed', True)]
+        head = [('质量' if z else 'Quality', False), ('按张版' if z else 'Per image', True), ('按 Token 版（美元）' if z else 'Token-billed', True)]
         if not z:
             head.append(('Verdict', False))
         return table('1024×1024 单张图片费用对比' if z else 'Cost per 1024×1024 image (USD)', head, [(None, rows)])
@@ -461,16 +504,16 @@ def call_vs(lang, base):
     rows = []
     for q in qs:
         a, o = (cost_25(q, '1024x1024') if base == '2.5' else cost_2(q, '1024x1024'))
-        better = ('按张版更省' if z else 'Per-image is cheaper') if fixed < a else ('按 token 版更省' if z else 'Token-billed is cheaper')
+        better = ('按张版更省' if z else 'Per-image is cheaper') if fixed < a else ('按 Token 版更省' if z else 'Token-billed is cheaper')
         rows.append(f'<th scope="row"><code>{q}</code></th><td class="o-num o-hl">{cny(base) if z else '$' + CALL[base]}</td><td class="o-num">{money(a)}</td><td class="o-num o-strike">{money(o)}</td><td>{better}</td>')
     head = [('质量' if z else 'Quality', False), ('按张版（1K）' if z else 'Per image (1K)', True),
-            ('按 token 版' if z else 'Token-billed', True), ('OpenAI 官方' if z else 'OpenAI list', True), ('对比' if z else 'Verdict', False)]
+            ('按 Token 版' if z else 'Token-billed', True), ('OpenAI 官方' if z else 'OpenAI list', True), ('对比' if z else 'Verdict', False)]
     cap = ('1024×1024 单张图片费用对比' if z else 'Cost per 1024×1024 image (USD)')
     return table(cap, head, [(None, rows)])
 
 
 def call_block(lang, slugs):
-    """价格版块里的「按张计费版」小节：说明平台上的 -c 模型、价格、限制，并与按 token 版对比。
+    """价格版块里的「按张计费版」小节：说明平台上的 -c 模型、价格、限制，并与按 Token 版对比。
     slugs：本页对应的 -c 模型 ID（2.5 Sunburst / Flare 页各一个，GPT Image 2 页一个）"""
     z = lang == 'zh'
     base = MODELS[slugs[0]]['base']
@@ -486,7 +529,7 @@ def call_block(lang, slugs):
             head = (f'      <h3 class="gi-h3 o-reveal" id="per-image">按张计费：{ids}</h3>{NL}'
                     f'      <p class="o-note">AnyAIGC 平台还提供按张计费的版本，接口和调用方式相同，只把 <code>model</code> 换成带 <code>-c</code> 的 ID。'
                     f'每张固定 {p1}，1K、2K、4K 出图同价，质量档位不影响单价。每次请求出 1 张，不支持 <code>n</code>、<code>mask</code> 参数，也不支持透明背景。</p>{NL}')
-            vs = f'      <p class="o-note">和按 token 计费比：以 1024×1024 为例，按张版为人民币价格，按 token 版为美元价格，只算图片输出 tokens。</p>{NL}'
+            vs = f'      <p class="o-note">和按 Token 计费比：以 1024×1024 为例，按张版为人民币（美元价 × 6.7），按 Token 版为美元，只算图片输出 Token。</p>{NL}'
         else:
             head = (f'      <h3 class="gi-h3 o-reveal" id="per-image">Per-image billing: {ids}</h3>{NL}'
                     f'      <p class="o-note">AnyAIGC also offers a per-image version with the same endpoints. Just switch <code>model</code> to the <code>-c</code> ID. '
@@ -502,7 +545,7 @@ def call_block(lang, slugs):
                 f'      <p class="o-note">AnyAIGC 平台还提供按张计费的版本，接口和调用方式相同，只把 <code>model</code> 换成带 <code>-c</code> 的 ID。'
                 f'每张固定价，质量档位不影响单价：1K 出图（如 1024×1024、1536×1024、1024×1536）每张 {p1}，2K、4K 出图每张 {p4}。'
                 f'每次请求出 1 张，不支持 <code>n</code>、<code>mask</code> 参数，也不支持透明背景。</p>{NL}')
-        vs = (f'      <p class="o-note">和按 token 计费比：以 1024×1024 为例，按张版为人民币价格，按 token 版和 OpenAI 官方为美元价格，只算图片输出 tokens。</p>{NL}')
+        vs = (f'      <p class="o-note">和按 Token 计费比：以 1024×1024 为例，按张版为人民币（美元价 × 6.7），按 Token 版和 OpenAI 官方为美元，只算图片输出 Token。</p>{NL}')
     else:
         head = (f'      <h3 class="gi-h3 o-reveal" id="per-image">Per-image billing: {ids}</h3>{NL}'
                 f'      <p class="o-note">AnyAIGC also offers a per-image version with the same endpoints. Just switch <code>model</code> to the <code>-c</code> ID. '

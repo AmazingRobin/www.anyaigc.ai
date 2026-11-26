@@ -26,7 +26,7 @@ def esc(text):
 def table_prices(page):
     """(rows, tier, more_tiers). Tiered tables list their first tier only.
 
-    Rows with a single cell are tier headings ("输入 <= 200,000 tokens"). Mixing
+    Rows with a single cell are tier headings ("输入 <= 200,000 Token"). Mixing
     two tiers would repeat labels like 输入/输出 with different prices, so only the
     first tier is read and the caller is told that other tiers exist.
 

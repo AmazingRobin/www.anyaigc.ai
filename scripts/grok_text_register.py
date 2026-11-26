@@ -13,7 +13,7 @@ def hub(lang):
     for slug, m in MODELS.items():
         cards.append(f'''        <li class="af-model">
           <div class="af-model-head"><span class="af-model-logo gt-lobe" style="background:#0a0a0a;border:1px solid #0a0a0a" aria-hidden="true">{logo('gt-card-mark','#ffffff')}</span><div><h3><a href="/{lang}/models/{slug}">{m['name']} API</a></h3><span class="af-model-cat">xAI · {slug}</span></div></div>
-          <p>{m[lang][2]}{tr(lang,'，按 tokens 计费，所有用户默认并发不限。','. Token billing and unlimited concurrency for every user.')}</p>
+          <p>{m[lang][2]}{tr(lang,'，按 Token 计费，所有用户默认并发不限。','. Token billing and unlimited concurrency for every user.')}</p>
           <ul class="af-tags"><li>{tr(lang,'文本 / 编程','Text / code')}</li><li>{tr(lang,'双接口','Two endpoints') if m['messages'] else 'Chat Completions'}</li><li>{tr(lang,'对公 · 专票','Contracts · invoices')}</li></ul>
           <div class="af-model-foot"><span><strong>${m['prices'][0]}</strong> / 1M {tr(lang,'输入','input')}</span><span class="af-model-go" aria-hidden="true">{tr(lang,'查看专题','View guide')} →</span></div>
         </li>''')

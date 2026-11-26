@@ -77,7 +77,7 @@ def metadata(lang, model):
         title = pick(lang, f"{name} API 价格与接入｜{title_zh} - AnyAIGC", f"{name} API Pricing | {title_en} - AnyAIGC")
     if model is None:
         desc = pick(lang,
-                    "MiniMax API 全系价格与接入：13 个对话、视频与语音模型，文本输入 $0.0603/百万 tokens 起，覆盖编程、H3 视频和语音合成，并发不限，支持对公转账、合同与增值税专票。",
+                    "MiniMax API 全系价格与接入：13 个对话、视频与语音模型，文本输入 $0.0603/百万 Token 起，覆盖编程、H3 视频和语音合成，并发不限，支持对公转账、合同与增值税专票。",
                     "MiniMax API pricing for chat, video and speech. Text from $0.0603/1M input tokens, unlimited concurrency, bank transfers and VAT invoices on AnyAIGC.")
     else:
         kind = model["kind"]
@@ -89,13 +89,13 @@ def metadata(lang, model):
     if model is None:
         title = pick(lang, "MiniMax API 价格与接入｜低至约官方4折 - AnyAIGC", "MiniMax API Pricing | Save up to 59% vs. Official - AnyAIGC")
         desc = pick(lang,
-                    "MiniMax API 全系价格与接入：M3.1 Flash 约官方4折、省59%，输入 $0.0603/百万 tokens 起。覆盖对话、H3视频和语音，并发不限，支持对公转账与增值税专票。",
+                    "MiniMax API 全系价格与接入：M3.1 Flash 约官方4折、省59%，输入 $0.0603/百万 Token 起。覆盖对话、H3视频和语音，并发不限，支持对公转账与增值税专票。",
                     "MiniMax APIs: save up to 59% vs. official. Chat from $0.0603/1M input tokens, plus video and speech. Unlimited concurrency, VAT invoices and contracts.")
     elif model["slug"] in CATALOG_SAVINGS:
         percent = CATALOG_SAVINGS[model["slug"]]
         title = pick(lang, f"{name} API 价格｜{savings_label(lang, model)} - AnyAIGC", f"{name} API Pricing | Save {percent}% - AnyAIGC")
         desc = pick(lang,
-                    f'{name} API 模型广场标注比官方省{percent}%，输入 ${model["price_start"]}/百万 tokens，支持对话与编程。提供完整价格表和接入示例，并发不限，支持对公转账与增值税专票。',
+                    f'{name} API 模型广场标注比官方省{percent}%，输入 ${model["price_start"]}/百万 Token，支持对话与编程。提供完整价格表和接入示例，并发不限，支持对公转账与增值税专票。',
                     f'{name} API: save {percent}% vs. official, from ${model["price_start"]}/1M input tokens for chat and coding. Unlimited concurrency, VAT invoices and contracts.')
     assert len(desc) <= (120 if lang == "zh" else 160), (name, lang, len(desc), desc)
     assert len(desc) >= (60 if lang == "zh" else 120), (name, lang, len(desc), desc)
@@ -149,7 +149,7 @@ def faq_items(lang, model):
                (pick(lang, "一次请求会返回什么？", "What does one request return?"), output)]
     else:
         six = [
-            (pick(lang, "MiniMax API 的起步价格是多少？", "What are the starting prices for MiniMax APIs?"), pick(lang, "M3.1 Flash 输入 $0.0603/百万 tokens；Speech Turbo 语音 $0.3176/万字符，HD 语音 $0.5559/万字符；H3 768P 输出视频 $0.0750/秒。各功能采用不同计费单位，完整价格见表格，实时价格以模型广场为准。", "M3.1 Flash input is $0.0603 per 1M tokens; Speech Turbo is $0.3176 and HD is $0.5559 per 10,000 characters; H3 768P output is $0.0750 per second. Units differ by service. See the full table and the catalog for current prices.")),
+            (pick(lang, "MiniMax API 的起步价格是多少？", "What are the starting prices for MiniMax APIs?"), pick(lang, "M3.1 Flash 输入 $0.0603/百万 Token；Speech Turbo 语音 $0.3176/万字符，HD 语音 $0.5559/万字符；H3 768P 输出视频 $0.0750/秒。各功能采用不同计费单位，完整价格见表格，实时价格以模型广场为准。", "M3.1 Flash input is $0.0603 per 1M tokens; Speech Turbo is $0.3176 and HD is $0.5559 per 10,000 characters; H3 768P output is $0.0750 per second. Units differ by service. See the full table and the catalog for current prices.")),
             (pick(lang, "13 个模型如何选择？", "How should I choose among the 13 models?"), pick(lang, "对话与开发可选 M3.1 Flash、M3、M2.7 或 M2.5；视频选 MiniMax H3 或 Hailuo H3（含 H3-Max 极速版）；文本转语音按版本和 HD/Turbo 选择六个 Speech 型号；文字设计音色选 Voice Design。请先用自己的任务和音色做小规模测试。", "Choose M3.1 Flash, M3, M2.7 or M2.5 for chat and development; MiniMax H3 or Hailuo H3 (including the fast H3-Max) for video; one of six Speech versions and HD/Turbo variants for narration; and Voice Design for text-guided voices. Test with your own workload and voice first.")),
             (pick(lang, "这些模型使用同一个接口吗？", "Do these models share one endpoint?"), pick(lang, "使用同一个 AnyAIGC API Key 和域名，但端点按能力区分：对话用 /v1/chat/completions，MiniMax H3 用 /minimax/v2/video_generation，Hailuo H3 用 /tencent-vod/v1/aigc-video，语音用 /minimax/v1/t2a_v2 或 /minimax/v1/t2a_async_v2，音色设计用 /minimax/v1/voice_design。", "They share an AnyAIGC API key and domain. Chat uses /v1/chat/completions, MiniMax H3 uses /minimax/v2/video_generation, Hailuo H3 uses /tencent-vod/v1/aigc-video, speech uses /minimax/v1/t2a_v2 or /minimax/v1/t2a_async_v2, and Voice Design uses /minimax/v1/voice_design.")),
             (pick(lang, "视频、语音和音色设计如何获取结果？", "How do I receive video, speech and voice-design results?"), pick(lang, "H3 创建请求先返回 task_id；同步语音返回音频相关 JSON。Voice Design 文档正文与响应示例的字段不一致，接入时保留原始响应并确认格式。各独立专题提供对应的最小请求。", "H3 creation returns a task_id first, while synchronous speech returns audio-related JSON. Voice Design has inconsistent result fields in its documentation; retain the full response and confirm the contract. Each guide includes a minimal request.")),
@@ -269,7 +269,7 @@ def hero(lang, slug, model):
         eyebrow = model["id"] + " · " + model["category_" + lang]
     else:
         heading = "MiniMax API<br>" + pick(lang, "让创作，成为可能。", "Ideas into experiences.")
-        lead = pick(lang, "从对话与编程，到视频与声音。一个 AnyAIGC API Key 接入 13 个 MiniMax 模型，文本输入 <strong>$0.0603 / 百万 tokens 起</strong>。", "From conversation and code to video and voice. Access 13 MiniMax models with one AnyAIGC API key, with text input from <strong>$0.0603 / 1M tokens</strong>.")
+        lead = pick(lang, "从对话与编程，到视频与声音。一个 AnyAIGC API Key 接入 13 个 MiniMax 模型，文本输入 <strong>$0.0603 / 百万 Token 起</strong>。", "From conversation and code to video and voice. Access 13 MiniMax models with one AnyAIGC API key, with text input from <strong>$0.0603 / 1M tokens</strong>.")
         eyebrow = pick(lang, "MINIMAX · 对话 / 视频 / 语音", "MINIMAX · CHAT / VIDEO / SPEECH")
     facts = [pick(lang, "并发不限", "Unlimited concurrency"), pick(lang, "300+ 模型 · 一个 Key", "300+ models · One key"), pick(lang, "对公 · 专票 · 合同", "Bank transfer · VAT · Contracts")]
     discount = savings_label(lang, model)
@@ -377,7 +377,7 @@ def pricing(lang, model):
         rows.append('</tbody>')
     if not rows:
         rows.append('<tr><td colspan="3">—</td></tr>')
-    billing = f'<ul class="mm-billing"><li><strong>{pick(lang, "按用量计费", "Usage based")}</strong>{pick(lang, "不同模型使用 token、字符或秒作为单位。", "Units are tokens, characters or seconds depending on the model.")}</li><li><strong>{pick(lang, "并发不限", "Unlimited concurrency")}</strong>{pick(lang, "应用侧请设置合理超时与重试。", "Set timeouts and retries in your application.")}</li><li><strong>{pick(lang, "余额通用", "Shared balance")}</strong>{pick(lang, "一个 Key 调用 300+ 模型。", "One key works across 300+ models.")}</li></ul>'
+    billing = f'<ul class="mm-billing"><li><strong>{pick(lang, "按用量计费", "Usage based")}</strong>{pick(lang, "不同模型使用 Token、字符或秒作为单位。", "Units are tokens, characters or seconds depending on the model.")}</li><li><strong>{pick(lang, "并发不限", "Unlimited concurrency")}</strong>{pick(lang, "应用侧请设置合理超时与重试。", "Set timeouts and retries in your application.")}</li><li><strong>{pick(lang, "余额通用", "Shared balance")}</strong>{pick(lang, "一个 Key 调用 300+ 模型。", "One key works across 300+ models.")}</li></ul>'
     note = pick(lang, "单位为 USD，按成功提交计费，实时价格以模型广场为准。", "Prices are in USD, charged on successful submission. Current prices are shown in the model catalog.")
     if not model or model["kind"] in ("speech", "voice-design"):
         note += pick(lang, "语音按万字符列示，非预设音色可能另计音色费用。Voice Design 的实际计费文本范围请在批量调用前确认。", " Speech is listed per 10,000 characters; non-preset voices may incur a separate voice fee. Confirm which text is billable for Voice Design before batch use.")
@@ -450,7 +450,7 @@ def uses_section(lang, model):
 def platform_section(lang):
     items = [("300+ 模型，一个 Key", "300+ models, one key", "统一 API Key 与账户余额，按任务切换对话、图像、视频和语音模型。", "Use one API key and account balance while choosing chat, image, video and speech models for each task."),
              ("国内直连，按需调用", "Direct access, on demand", "通过 AnyAIGC 域名从国内直接调用；MiniMax 接入并发不限，不设固定 RPM 上限。", "Connect directly through the AnyAIGC domain from mainland China. MiniMax access has unlimited concurrency and no fixed RPM cap."),
-             ("单价明确，用量可查", "Clear rates and usage", "按价格表对应的 token、字符或秒计费，在控制台查看调用与扣费明细。", "Pay the listed token, character or second rate and inspect usage and charges in the console.")]
+             ("单价明确，用量可查", "Clear rates and usage", "按价格表对应的 Token、字符或秒计费，在控制台查看调用与扣费明细。", "Pay the listed token, character or second rate and inspect usage and charges in the console.")]
     cards = ''.join(f'<article class="mm-feature"><span class="mm-number">0{i}</span><h3>{h(pick(lang, a, b))}</h3><p>{h(pick(lang, c, d))}</p></article>' for i, (a, b, c, d) in enumerate(items, 1))
     return section("platform", "AnyAIGC", pick(lang, "让模型接入更简单", "Keep integration straightforward"), pick(lang, "把鉴权、余额和账单集中在一个平台，专注自己的应用。", "Keep authentication, balance and billing in one place so you can focus on the application."), f'<div class="mm-feature-grid">{cards}</div>', soft=True)
 
@@ -466,7 +466,7 @@ def trust_section(lang):
     # Reuse the verified trust copy, translated by trust.py, but in MiniMax's layout.
     items = trust.ITEMS[lang]
     body = ''.join(f'<li class="mm-trust-item"><h3>{h(t)}</h3><p>{d}</p></li>' for t, d in items)
-    return section("trust", pick(lang, "信任与保障", "TRUST"), trust.HEAD[lang][0], trust.HEAD[lang][1], f'<ul class="trust-list">{body}</ul><div class="mm-actions">{button(pick(lang, "先注册领取 200 万 tokens", "Sign up for 2M free tokens"), REG)}</div>')
+    return section("trust", pick(lang, "信任与保障", "TRUST"), trust.HEAD[lang][0], trust.HEAD[lang][1], f'<ul class="trust-list">{body}</ul><div class="mm-actions">{button(pick(lang, "先注册领取 500 万 Token", "Sign up for 5M free tokens"), REG)}</div>')
 
 
 def family(lang, slug):

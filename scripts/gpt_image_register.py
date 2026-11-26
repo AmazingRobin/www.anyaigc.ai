@@ -7,7 +7,7 @@ import re
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from gpt_image_data import SITE, DATE, SLUGS, TOKEN, CALL, cny  # noqa: E402
+from gpt_image_data import SITE, DATE, SLUGS, TOKEN, CALL, usd  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 NL = '\n'
@@ -17,18 +17,18 @@ T2, T25, T26 = TOKEN['2']['out'], TOKEN['2.5']['out'], TOKEN['2.6']['out']
 
 # slug -> (中文名, 中文简介, 中文标签, 中文价格, 英文名, 英文简介, 英文标签, 英文价格)
 CARDS = {
-    'gpt-image': ('GPT Image API（全系总览）', 'OpenAI GPT Image 全系价格对比与选型，含按张计费版，一个 Key 调用。', ['总览', '图像生成', '按张计费'], f'<strong>{cny("2")}</strong> / 张起',
+    'gpt-image': ('GPT Image API（全系总览）', 'OpenAI GPT Image 全系价格对比与选型，含按张计费版，一个 Key 调用。', ['总览', '图像生成', '按张计费'], f'<strong>{usd("2")}</strong> / 张起',
                   'GPT Image API (overview)', 'Compare prices across the OpenAI GPT Image lineup, including per-image versions.', ['Overview', 'Image generation', 'Per image'], f'From <strong>${CALL["2"]}</strong> / image'),
-    'gpt-image-2.6-sunburst': ('GPT Image 2.6 Sunburst API', 'OpenAI 2026 年 11 月发布，细节更强、多轮编辑更一致，支持 GIF、SVG 和标注改图。', ['最新', '多轮编辑', 'GIF · SVG'], f'<strong>${T26}</strong> / 1M 图片输出',
-                               'GPT Image 2.6 Sunburst API', 'Released November 2026, with more detail, steadier edits and GIF, SVG and markup support.', ['New', 'Consistent edits', 'GIF · SVG'], f'<strong>${T26}</strong> / 1M image output'),
-    'gpt-image-2.6-flare': ('GPT Image 2.6 Flare API', 'OpenAI 2026 年 11 月发布，出图提速 50%，low 质量最快约 6 秒，适合 GIF 和实时出图。', ['最新', '出图更快', 'GIF 动图'], f'<strong>${T26}</strong> / 1M 图片输出',
-                            'GPT Image 2.6 Flare API', 'Released November 2026, 50% faster, with low-quality images in about six seconds and animated GIFs.', ['New', 'Faster', 'Animated GIFs'], f'<strong>${T26}</strong> / 1M image output'),
-    'gpt-image-2.5-sunburst': ('GPT Image 2.5 Sunburst API', 'OpenAI 编辑精度最高的图像模型，适合精修、商业海报和改图。', ['图像编辑', 'max 质量', '约 6 折'], f'<strong>${T25}</strong> / 1M 图片输出',
-                               'GPT Image 2.5 Sunburst API', "OpenAI's most precise image generation and editing model.", ['Editing', 'max quality', '41% off'], f'<strong>${T25}</strong> / 1M image output'),
+    'gpt-image-2.6-sunburst': ('GPT Image 2.6 Sunburst API', 'OpenAI 2026 年 11 月发布，细节更强、多轮编辑更一致，支持 GIF、SVG 和标注改图。', ['最新', '约 0.8 折', 'GIF · SVG'], f'<strong>${T26}</strong> / 1M 图片输出',
+                               'GPT Image 2.6 Sunburst API', 'Released November 2026, with more detail, steadier edits and GIF, SVG and markup support.', ['New', '92% off', 'GIF · SVG'], f'<strong>${T26}</strong> / 1M image output'),
+    'gpt-image-2.6-flare': ('GPT Image 2.6 Flare API', 'OpenAI 2026 年 11 月发布，出图提速 50%，low 质量最快约 6 秒，适合 GIF 和实时出图。', ['最新', '约 0.8 折', 'GIF 动图'], f'<strong>${T26}</strong> / 1M 图片输出',
+                            'GPT Image 2.6 Flare API', 'Released November 2026, 50% faster, with low-quality images in about six seconds and animated GIFs.', ['New', '92% off', 'Animated GIFs'], f'<strong>${T26}</strong> / 1M image output'),
+    'gpt-image-2.5-sunburst': ('GPT Image 2.5 Sunburst API', 'OpenAI 编辑精度最高的图像模型，适合精修、商业海报和改图。', ['图像编辑', 'max 质量', '约 0.8 折'], f'<strong>${T25}</strong> / 1M 图片输出',
+                               'GPT Image 2.5 Sunburst API', "OpenAI's most precise image generation and editing model.", ['Editing', 'max quality', '92% off'], f'<strong>${T25}</strong> / 1M image output'),
     'gpt-image-2.5-flare': ('GPT Image 2.5 Flare API', 'OpenAI 速度最快的高质量图像模型，适合日常出图和批量生成。', ['速度最快', '批量出图', '图像生成'], f'<strong>${T25}</strong> / 1M 图片输出',
                             'GPT Image 2.5 Flare API', "OpenAI's fastest high-quality model for everyday image generation.", ['Fastest', 'High volume', 'Generation'], f'<strong>${T25}</strong> / 1M image output'),
-    'gpt-image-2': ('GPT Image 2 API', 'ChatGPT 图像 2.0 背后的模型，按 token 计费单价全系最低。', ['文字渲染', '写实', '约 0.8 折'], f'<strong>${T2}</strong> / 1M 图片输出',
-                    'GPT Image 2 API', 'The model behind ChatGPT Images 2.0, the lowest token rates in the family.', ['Text rendering', 'Photoreal', '92% off'], f'<strong>${T2}</strong> / 1M image output'),
+    'gpt-image-2': ('GPT Image 2 API', 'ChatGPT 图像 2.0 背后的模型，上一代主力，按 Token 单价与 2.5、2.6 相同。', ['文字渲染', '写实', '约 0.8 折'], f'<strong>${T2}</strong> / 1M 图片输出',
+                    'GPT Image 2 API', 'The model behind ChatGPT Images 2.0, the previous generation, at the same token rates as 2.5 and 2.6.', ['Text rendering', 'Photoreal', '92% off'], f'<strong>${T2}</strong> / 1M image output'),
 }
 CAT = {'zh': ('GPT Image 系列', '全系总览与价格对比', '查看专题 →'), 'en': ('GPT Image models', 'overview and price comparison', 'View guide →')}
 

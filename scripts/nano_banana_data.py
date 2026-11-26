@@ -81,3 +81,9 @@ def cny_min(slug):
 def save(a, b):
     """相对官方价节省的百分比（整数）"""
     return round((1 - float(a) / float(b)) * 100)
+
+
+def cny_of(usd, rate='6.7'):
+    """Google 官方美元价按 6.7 折算成人民币，保留 2 位小数（用户 2026-11-26 要求，便于和 AnyAIGC 人民币价对比）"""
+    from decimal import Decimal, ROUND_HALF_UP
+    return '¥' + str((Decimal(str(usd)) * Decimal(rate)).quantize(Decimal('0.01'), rounding=ROUND_HALF_UP))

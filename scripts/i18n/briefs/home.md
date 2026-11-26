@@ -21,7 +21,7 @@ AnyAIGC（API 聚合平台）站点根首页 `/`。一个 API Key 调用 300+ �
 - 品牌与产品名：AnyAIGC、Claude、OpenAI、Gemini、Grok、DeepSeek、Qwen、Kimi、Doubao、Zhipu GLM、Kling、Seedance、Seedream、MiniMax、Claude Code、Codex、Cursor、Dify、OpenClaw、Hermes Agent、Chatbox、Cherry Studio、OpenWebUI、n8n、WeChat Pay、Alipay、USDT、Anthropic、Google、xAI、Moonshot、Zhipu
 - 技术词：OpenAI SDK、Base URL、API Key（在日语里写 APIキー，在韩语里写 API 키，西语 clave de API，德语 API-Schlüssel；但 "API Key" 作为按钮或固定名词时，参考下面的固定译法）、baseURL、apiKey、model、/v1/messages、tokens、cURL、Python、Authorization: Bearer
 - HTML 标签（`<b>`、`<a href="{privacy}">`）、占位符 `{privacy}` `{support}` `{docs}` `{base}`、`&lt;API Key&gt;` 这类实体：原样保留，只翻译标签之间的文字
-- 数字：300+、200 万 tokens（"2M free tokens" 在非英文页写成各语言习惯的写法：日语「200万トークン」、韩语「200만 토큰」、西语「2 millones de tokens」、德语「2 Mio. Tokens」）、$1、7×24
+- 数字：300+、500 万 tokens（"5M free tokens" 在非英文页写成各语言习惯的写法：日语「500万トークン」、韩语「500만 토큰」、西语「5 millones de tokens」、德语「5 Mio. Tokens」）、$1、7×24
 - 价格和小数一律用小数点；本文件里没有小数，如有按小数点
 
 ## 固定译法（与已完成的专题页一致）

@@ -57,7 +57,7 @@ def main():
         price = '1.843' if overview else model['min']
         for lang in langs:
             zh = lang == 'zh'
-            subtitle = (f'多模态视频生成 · ${price} / 1M tokens 起' if zh else f'Multimodal video · from ${price} / 1M tokens')
+            subtitle = (f'多模态视频生成 · ${price} / 1M Token 起' if zh else f'Multimodal video · from ${price} / 1M tokens')
             # 英文键；zh 保持原中文文案，新语言按键查 TXT
             tags = ['五个型号', '音画同步', '并发不限', '对公 · 专票'] if zh else ['5 models', 'Native audio', 'Unlimited concurrency', 'Self-service invoices']
             if not overview:
@@ -68,10 +68,10 @@ def main():
                            'doubao-seedance-2-0-mini': '高频与规模化' if zh else 'High-frequency workloads'}[slug]
                 if slug == 'doubao-seedance-2-5-flash':
                     tags[1] = '最高 720p' if zh else 'Up to 720p'
-                    subtitle = f'高效视频生成 · ${price} / 1M tokens 起' if zh else f'Efficient video · from ${price} / 1M tokens'
+                    subtitle = f'高效视频生成 · ${price} / 1M Token 起' if zh else f'Efficient video · from ${price} / 1M tokens'
                 if slug == 'doubao-seedance-2-0-mini':
-                    tags[1] = '按 tokens 计费' if zh else 'Token-based billing'
-                    subtitle = f'高频视频生成 · ${price} / 1M tokens 起' if zh else f'High-frequency video · from ${price} / 1M tokens'
+                    tags[1] = '按 Token 计费' if zh else 'Token-based billing'
+                    subtitle = f'高频视频生成 · ${price} / 1M Token 起' if zh else f'High-frequency video · from ${price} / 1M tokens'
             if lang in NEW:
                 tags = [TXT[x][lang] for x in tags]
                 subtitle = SUB_FMT['mini' if slug == 'doubao-seedance-2-0-mini' else 'flash' if slug == 'doubao-seedance-2-5-flash' else 'multi'][lang].replace('{p}', price)

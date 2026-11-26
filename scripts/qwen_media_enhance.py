@@ -54,8 +54,8 @@ def estimates(lang,m):
         examples=[(t(lang,'1 张输出，无参考图','One output, no reference'),t(lang,f'原始基价 × {multiplier}，再换算人民币',f'{money(base,m,lang)} × {multiplier}'),base*multiplier),
                   (t(lang,'1 张输出 + 1 张参考图','One output + one reference'),t(lang,f'原始基价 × ({multiplier} + 2)，再换算人民币',f'{money(base,m,lang)} × ({multiplier} + 2)'),base*(multiplier+2))]
     elif m['kind']=='realtime':
-        examples=[(t(lang,'100 万音频输入 tokens','1M audio input tokens'),'$1.3810 × 1',Decimal('1.3810')),
-                  (t(lang,'100 万音频输出 + 100 万文本输出 tokens','1M audio + 1M text output tokens'),'$2.7770 + $1.0400',Decimal('3.8170'))]
+        examples=[(t(lang,'100 万音频输入 Token','1M audio input tokens'),'$1.3810 × 1',Decimal('1.3810')),
+                  (t(lang,'100 万音频输出 + 100 万文本输出 Token','1M audio + 1M text output tokens'),'$2.7770 + $1.0400',Decimal('3.8170'))]
     else:
         first=m['rates'][0]; price=Decimal(first['amount']); unit=UNITS[first['unit']][lang=='en']
         quantities=[5,10] if first['unit']=='second' else [1,10]
@@ -108,7 +108,7 @@ def enhance(s,lang,slug):
     s=s.replace('<h1>'+n+' API</h1>',f'<h1>{e(m["name"])} API</h1>',1)
     s=re.sub(r'<p class="q-sub">.*?</p>',lambda _:f'<p class="qm-tagline">{e(m["lead"][not zh])}</p><p class="q-sub">{e(m["summary"][not zh])}</p><div class="qm-entry-price"><b>{price_label(m,lang)}</b><span>{t(lang,"起 · 完整计费规则见下表","starting rate · see billing details below")}</span></div>',s,count=1,flags=re.S)
     # Scope billing units and realtime labels correctly.
-    if kind=='realtime':s=s.replace('<li>视频生成</li>','<li>实时音视频交互</li>').replace('<li>Video generation</li>','<li>Real-time audio / video</li>').replace('<li>按秒计费</li>','<li>按 tokens 计费</li>')
+    if kind=='realtime':s=s.replace('<li>视频生成</li>','<li>实时音视频交互</li>').replace('<li>Video generation</li>','<li>Real-time audio / video</li>').replace('<li>按秒计费</li>','<li>按 Token 计费</li>')
     if kind=='image' and m['rates'][0]['unit']=='request':s=s.replace('<li>按张计费</li>','<li>按次计费</li>').replace('<li>Per image</li>','<li>Per request</li>')
     if m['rates'][0]['unit']=='clip':s=s.replace('<li>按秒计费</li>','<li>按分辨率与时长计费</li>').replace('<li>Per second</li>','<li>Resolution / duration pricing</li>')
     features=''.join(f'<article><b>0{i+1}</b><h3>{e(f[not zh])}</h3><p>{e(f[2+(not zh)])}</p></article>' for i,f in enumerate(m['features']))
@@ -122,7 +122,7 @@ def enhance(s,lang,slug):
     s=s.replace('<section class="q-section q-tint" id="quickstart">',use_section+'<section class="q-section q-tint" id="quickstart">',1)
     s=s.replace('<section class="q-section" id="faq">',family(lang,m)+'<section class="q-section" id="faq">',1)
     items=''.join(f'<li><h3>{a}</h3><p>{b}</p></li>' for a,b in TRUST_ITEMS[lang])
-    s=re.sub(r'<ul class="trust-list">.*?</ul>',lambda _:'<ul class="trust-list">'+items+'</ul><div class="qm-actions"><a class="q-btn q-primary" href="'+REG+'">'+t(lang,'先注册领取 200 万 tokens','Sign up for 2M free tokens')+'</a></div>',s,count=1,flags=re.S)
+    s=re.sub(r'<ul class="trust-list">.*?</ul>',lambda _:'<ul class="trust-list">'+items+'</ul><div class="qm-actions"><a class="q-btn q-primary" href="'+REG+'">'+t(lang,'先注册领取 500 万 Token','Sign up for 5M free tokens')+'</a></div>',s,count=1,flags=re.S)
     if zh:s=s.replace('<li>WeChat Pay</li>','<li>微信支付</li>').replace('<li>Alipay</li>','<li>支付宝</li>')
     entdetails=[('按实际充值金额开具增值税普通发票和专用发票。','VAT general and special invoices for the actual top-up amount.'),('支持公司账户对公转账充值。','Top up by corporate bank transfer.'),('可签订服务合同，配合采购和法务流程。','Service agreements for procurement and legal review.'),('提供专属客服与技术对接，协助接入和排查。','Dedicated support and technical contact for integration and troubleshooting.')]
     idx=[0]

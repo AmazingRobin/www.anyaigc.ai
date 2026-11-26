@@ -60,7 +60,7 @@ AnyAIGC 的目标客户包括企业，**所有专题页都必须有企业接入�
 
 | 项 | 中文写法 | 英文写法 |
 | :--- | :--- | :--- |
-| 试用 | 新用户注册送 200 万 tokens 试用额度 | 2M free tokens for new accounts |
+| 试用 | 新用户注册送 500 万 tokens 试用额度 | 5M free tokens for new accounts |
 | 充值 | $1 起充 | Top up from $1 |
 | 退款 | 未使用余额可退款，无手续费 | Unused balance refundable, no fee |
 | 渠道 | 官方模型渠道，不掺假不降智（不用低配/逆向模型冒充） | Official model channels, no substitutes |
@@ -70,8 +70,9 @@ AnyAIGC 的目标客户包括企业，**所有专题页都必须有企业接入�
 
 不要写：SLA/可用率、企业专属分组/线路、令牌分组、用户数/成立年限/官方合作关系（没有确认的数字一律不写）。
 
-- 版块 `section#trust`（「为什么可以放心用 AnyAIGC」），放在企业接入之后，6 项清单（`.trust-list`，样式在 `scrollbar.css`）+「先注册领取 200 万 tokens」按钮；FAQ 加 3 条：免费试用额度 / 余额退款 / 是否掺假与数据安全。
+- 版块 `section#trust`（「为什么可以放心用 AnyAIGC」），放在企业接入之后，6 项清单（`.trust-list`，样式在 `scrollbar.css`）+「先注册领取 500 万 tokens」按钮；FAQ 加 3 条：免费试用额度 / 余额退款 / 是否掺假与数据安全。
 - 新页面写完后运行 `python scripts/trust.py` 自动补上（重复运行结果不变，改文案后重跑会整体替换）。缺了 `check_topics.py` 会报错。
+- 赠送额度出图数量表（用户 2026-11-26 确认：500 万 tokens ≈ $0.5，中文页 ≈ ¥3.35）：目前只有 Nano Banana 和 GPT Image 两个系列有，由 `python scripts/gift_tables.py` 写进 6 种语言的价格版块（`<!-- GIFT -->` 包裹，重复运行结果不变）。重新运行 `nano_banana_pages.py`、`gpt_image_pages.py` 或重新翻译 ja/ko/es/de 之后要重跑一次。
 
 ## 工具
 

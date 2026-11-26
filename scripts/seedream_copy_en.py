@@ -179,7 +179,7 @@ def codes(slug):
 
 
 def steps(mid):
-    return [f'<a href="{G.REG}">Sign up for AnyAIGC</a>. New accounts get 2M free tokens, and you can top up from $1.',
+    return [f'<a href="{G.REG}">Sign up for AnyAIGC</a>. New accounts get 5M free tokens, and you can top up from $1.',
             'Create an API key in the <a href="https://anyaigc.ai/console">console</a> and save it as the <code>ANYAIGC_API_KEY</code> environment variable.',
             f'Send a request to <code>POST https://anyaigc.ai/v1/images/generations</code> (OpenAI-compatible) with <code>model</code> set to <code>{mid}</code>.']
 
@@ -351,7 +351,7 @@ def hub():
         qs_note=QS_NOTE,
         family_h2='Seedream model guides', family_lead='Each model has its own page with full pricing, specs and code samples.',
         faq_h2='Seedream API FAQ', faqs=faqs,
-        final_h2='Start using Seedream', final_p='Sign up and get 2M free tokens. One key covers every Seedream model and 300+ others.',
+        final_h2='Start using Seedream', final_p='Sign up and get 5M free tokens. One key covers every Seedream model and 300+ others.',
     )
 
 
@@ -371,7 +371,7 @@ def model_page(slug):
                 family_h2='Other Seedream models', family_lead='Same API; change <code>model</code> to switch.',
                 faq_h2=f'{name} API FAQ',
                 price_h2=f'{name} API pricing', price_lead=f'Flat pricing. {name} starts at {p} / {unit}.',
-                final_h2=f'Start using {name}', final_p=f'Sign up and get 2M free tokens. From {p} / {unit}, with unlimited concurrency.',
+                final_h2=f'Start using {name}', final_p=f'Sign up and get 5M free tokens. From {p} / {unit}, with unlimited concurrency.',
                 h1=f'{name} API<small>{mid}</small>', eyebrow=f'ByteDance · {name}')
 
     def price_faq(extra=''):
@@ -420,7 +420,7 @@ def model_page(slug):
             offers=[(f'{name} {t1} (per image)', u1), (f'{name} {t2} (per image)', u2)],
             billing=billing_55(), price_tables=price_table_55(), price_note=price_note_55(),
             price_lead=f'Billed in tiers by output resolution. 1K / 1.5K starts at {p} / image, and input images are billed separately.',
-            final_p=f'Sign up and get 2M free tokens. From {p} / image, with unlimited concurrency.',
+            final_p=f'Sign up and get 5M free tokens. From {p} / image, with unlimited concurrency.',
             lead=f'Consistent multi-turn edits, native RGBA and layer separation, <strong>from {p} per image</strong>.',
             lead_sub='Described officially as raising creativity and precise execution together. Tiered by output resolution, with reference images billed separately.',
             facts=[('From', f'{p} / image'), ('Up to', '2K'), ('Reference images', 'Up to 10'), ('Layers', 'Up to 99'), ('Concurrency', 'Unlimited'), ('Enterprise', 'Contracts · invoices')],

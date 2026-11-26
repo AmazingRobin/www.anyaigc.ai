@@ -96,7 +96,7 @@ curl https://anyaigc.ai/v1/videos/edits \\
 
 
 STEPS = lambda model: [
-    f'<a href="{REG}">Sign up for AnyAIGC</a>. New accounts get 2M free tokens, and you can top up from $1.',
+    f'<a href="{REG}">Sign up for AnyAIGC</a>. New accounts get 5M free tokens, and you can top up from $1.',
     'Create an API key in the <a href="https://anyaigc.ai/console">console</a> and save it as the <code>ANYAIGC_API_KEY</code> environment variable.',
     f'Submit a job to <code>POST https://anyaigc.ai/v1/videos/generations</code> with <code>model</code> set to <code>{model}</code>, then poll <code>GET /v1/videos/{{request_id}}</code> for the result.',
 ]
@@ -203,7 +203,7 @@ def build(slug):
                 FAQ_ASYNC, FAQ_AUDIO, FAQ_CN, FAQ_CONC, FAQ_INVOICE, FAQ_CONTRACT,
                 ('Can I use the videos commercially?', 'Usage rights and content policy follow xAI’s official terms. AnyAIGC only provides API access and adds no extra restrictions on what you do with the output.'),
             ],
-            final_h2='Start calling the Grok video API', final_p=f'Sign up for 2M free tokens. From {PL} / sec, unlimited concurrency.',
+            final_h2='Start calling the Grok video API', final_p=f'Sign up for 5M free tokens. From {PL} / sec, unlimited concurrency.',
         )
     elif slug == S15:
         c.update(
@@ -249,7 +249,7 @@ def build(slug):
                 ('How long can a video be? Which resolutions and aspect ratios are supported?', '<code>duration</code> takes 1–15 seconds and you pay for the actual length; <code>resolution</code> supports 480p and 720p; <code>aspect_ratio</code> supports 16:9, 9:16 and 1:1, and for image to video the frame follows the input image.'),
                 FAQ_ASYNC, FAQ_AUDIO, FAQ_CN, FAQ_CONC, FAQ_INVOICE, FAQ_CONTRACT,
             ],
-            final_h2='Start calling Grok Imagine Video 1.5', final_p=f'Sign up for 2M free tokens. From {P15} / sec, unlimited concurrency.',
+            final_h2='Start calling Grok Imagine Video 1.5', final_p=f'Sign up for 5M free tokens. From {P15} / sec, unlimited concurrency.',
         )
     elif slug == SL:
         c.update(
@@ -308,7 +308,7 @@ def build(slug):
                 ('How long can a video be? Which aspect ratios are supported?', '<code>duration</code> takes 1–15 seconds and you pay for the actual length; <code>aspect_ratio</code> supports 16:9, 9:16 and 1:1, and for image to video the frame follows the input image.'),
                 FAQ_ASYNC, FAQ_AUDIO, FAQ_CN, FAQ_CONC, FAQ_INVOICE, FAQ_CONTRACT,
             ],
-            final_h2='Start calling Grok Imagine Video 1.5 Lite', final_p=f'Sign up for 2M free tokens. From {PL} / sec, unlimited concurrency.',
+            final_h2='Start calling Grok Imagine Video 1.5 Lite', final_p=f'Sign up for 5M free tokens. From {PL} / sec, unlimited concurrency.',
         )
     elif slug == S10:
         c.update(
@@ -361,6 +361,6 @@ def build(slug):
                 ('Is grok-imagine-video being retired?', 'Not at the moment. What xAI retired on November 2, 2026 was the image model <code>grok-imagine-image-quality</code>; the video models are not affected. xAI’s docs position the first-generation video model for editing and extending videos.'),
                 FAQ_ASYNC, FAQ_AUDIO, FAQ_CN, FAQ_CONC, FAQ_INVOICE, FAQ_CONTRACT,
             ],
-            final_h2='Start calling Grok Imagine Video', final_p=f'Sign up for 2M free tokens. From {P10} / sec, unlimited concurrency.',
+            final_h2='Start calling Grok Imagine Video', final_p=f'Sign up for 5M free tokens. From {P10} / sec, unlimited concurrency.',
         )
     return c

@@ -37,9 +37,9 @@ def rows(lang, selected):
     for slug in selected:
         m = MODELS[slug]
         p = m['prices']
-        tiers = [(tr(lang, '普通输入档 · 输入 ≤ 200,000 tokens', 'Base tier · input ≤ 200,000 tokens') if p[3] else tr(lang, '输入 / 输出', 'Input / output'), p[:3])]
+        tiers = [(tr(lang, '普通输入档 · 输入 ≤ 200,000 Token', 'Base tier · input ≤ 200,000 tokens') if p[3] else tr(lang, '输入 / 输出', 'Input / output'), p[:3])]
         if p[3]:
-            tiers.append((tr(lang, '长输入档 · 200,000 < 输入 ≤ 500,000 tokens', 'Long-input tier · 200,000 < input ≤ 500,000 tokens'), (p[3], p[4], None)))
+            tiers.append((tr(lang, '长输入档 · 200,000 < 输入 ≤ 500,000 Token', 'Long-input tier · 200,000 < input ≤ 500,000 tokens'), (p[3], p[4], None)))
         for tier_name, prices in tiers:
             body = f'<tbody><tr class="gt-tier"><th colspan="3">{e(m["name"])} <span>{e(tier_name)}</span></th></tr>'
             for label, value in zip((tr(lang, '输入', 'Input'), tr(lang, '输出', 'Output'), tr(lang, '缓存命中输入', 'Cache-hit input')), prices):
@@ -56,11 +56,11 @@ def faqs(lang, slug):
     m = MODELS['grok-4.7' if hub else slug]
     p = m['prices']
     ids = '、'.join(MODELS) if lang == 'zh' else ', '.join(MODELS)
-    price_answer = (f'输入 ${p[0]}、输出 ${p[1]}/百万 tokens。' if lang == 'zh' else f'Input costs ${p[0]} and output costs ${p[1]} per million tokens. ')
+    price_answer = (f'输入 ${p[0]}、输出 ${p[1]}/百万 Token。' if lang == 'zh' else f'Input costs ${p[0]} and output costs ${p[1]} per million tokens. ')
     if hub:
-        price_answer = tr(lang, '系列输入最低 $0.0993/百万 tokens（grok-build-0.1）；grok-4.7 输入 $0.1985、输出 $0.5956/百万 tokens。', 'Series input starts at $0.0993 per million tokens for grok-build-0.1. Grok 4.7 input is $0.1985 and output is $0.5956 per million tokens. ')
+        price_answer = tr(lang, '系列输入最低 $0.0993/百万 Token（grok-build-0.1）；grok-4.7 输入 $0.1985、输出 $0.5956/百万 Token。', 'Series input starts at $0.0993 per million tokens for grok-build-0.1. Grok 4.7 input is $0.1985 and output is $0.5956 per million tokens. ')
     if p[3]:
-        price_answer += tr(lang, f'输入超过 200,000 且不超过 500,000 tokens 时，{m["name"]} 输入 ${p[3]}、输出 ${p[4]}/百万 tokens。', f'For {m["name"]} requests with over 200,000 and up to 500,000 input tokens, input is ${p[3]} and output is ${p[4]} per million tokens. ')
+        price_answer += tr(lang, f'输入超过 200,000 且不超过 500,000 Token 时，{m["name"]} 输入 ${p[3]}、输出 ${p[4]}/百万 Token。', f'For {m["name"]} requests with over 200,000 and up to 500,000 input tokens, input is ${p[3]} and output is ${p[4]} per million tokens. ')
     price_answer += tr(lang, '以上为模型广场最低展示价，实时价格以模型广场为准。', 'These are the lowest displayed catalog rates; check the model catalog for current pricing.')
     endpoint = tr(lang, '所有型号支持 POST /v1/chat/completions；grok-4.7、4.6、4.5、4.3 另支持 POST /v1/messages。', 'All listed models support POST /v1/chat/completions. Grok 4.7, 4.6, 4.5, and 4.3 also support POST /v1/messages.') if hub else tr(lang, '支持 POST /v1/chat/completions' + (' 和 POST /v1/messages。' if m['messages'] else '，按模型广场当前标注接入。'), 'Supports POST /v1/chat/completions' + (' and POST /v1/messages.' if m['messages'] else ', as currently listed in the model catalog.'))
     out = [
@@ -99,7 +99,7 @@ def page(lang, slug):
     title = tr(lang, f'{name} API 价格与接入 - AnyAIGC', f'{name} API Pricing & Integration - AnyAIGC')
     p = m['prices']
     low = '0.0993' if hub else p[0]
-    desc = tr(lang, f'{name} API 输入 ${low}/百万 tokens 起，支持文本对话、编程与知识工作，所有用户默认并发不限，国内直连、按量计费，提供企业对公转账、合同与增值税专票。', f'{name} API from ${low}/1M input tokens. Coding and chat, unlimited concurrency, usage billing, bank transfers and VAT invoices via AnyAIGC.')
+    desc = tr(lang, f'{name} API 输入 ${low}/百万 Token 起，支持文本对话、编程与知识工作，所有用户默认并发不限，国内直连、按量计费，提供企业对公转账、合同与增值税专票。', f'{name} API from ${low}/1M input tokens. Coding and chat, unlimited concurrency, usage billing, bank transfers and VAT invoices via AnyAIGC.')
     selected = list(MODELS) if hub else [slug]
     table, offers = rows(lang, selected)
     faq = faqs(lang, slug)
@@ -127,13 +127,13 @@ def page(lang, slug):
     ci, co = Decimal(p[0]), Decimal(p[1])
     cost1, cost2 = ci / 10 + co / 50, ci + co / 5
     costs = tr(lang,
-        f'<article><h3>单次分析</h3><p>100,000 输入 + 20,000 输出 tokens</p><code>${p[0]} × 0.1 + ${p[1]} × 0.02</code><strong>${cost1:f}</strong></article><article><h3>10 次相同规模任务</h3><p>每次 100,000 输入 + 20,000 输出 tokens</p><code>10 × ${cost1:f}</code><strong>${cost2:f}</strong></article>',
+        f'<article><h3>单次分析</h3><p>100,000 输入 + 20,000 输出 Token</p><code>${p[0]} × 0.1 + ${p[1]} × 0.02</code><strong>${cost1:f}</strong></article><article><h3>10 次相同规模任务</h3><p>每次 100,000 输入 + 20,000 输出 Token</p><code>10 × ${cost1:f}</code><strong>${cost2:f}</strong></article>',
         f'<article><h3>One analysis</h3><p>100,000 input + 20,000 output tokens</p><code>${p[0]} × 0.1 + ${p[1]} × 0.02</code><strong>${cost1:f}</strong></article><article><h3>Ten tasks of the same size</h3><p>100,000 input + 20,000 output tokens each</p><code>10 × ${cost1:f}</code><strong>${cost2:f}</strong></article>')
     ent_cards = tr(lang, [('增值税发票', '按实际充值金额开具增值税普通发票或专用发票，普票、专票均支持。'), ('对公转账', '支持企业对公转账充值，方便公司采购与财务核算。'), ('签订合同', '可签订服务合同，满足采购、审批和法务流程。'), ('专属对接', '提供专属客服与技术对接，协助接入和问题排查。')], [('Invoices', 'Chinese VAT general and special invoices based on the actual top-up amount.'), ('Bank transfer', 'Top up directly from your corporate bank account for company procurement.'), ('Contracts', 'Sign a service contract for procurement and legal review.'), ('Dedicated support', 'Dedicated support and technical contacts for integration and troubleshooting.')])
     enterprise = ''.join(f'<article><span class="gt-number">0{i+1}</span><h3>{h}</h3><p>{d}</p></article>' for i,(h,d) in enumerate(ent_cards))
     faq_html = '\n'.join(f'<details><summary><h3>{e(q)}</h3></summary><div class="o-ans"><p>{e(a)}</p></div></details>' for q,a in faq)
     ep_extra = f'<a href="{MESSAGES}"><code>POST /v1/messages</code> ↗</a>' if m['messages'] else ''
-    brief = tr(lang, f'输入 ${low}/百万 tokens 起 · 所有用户默认并发不限', f'Input from ${low}/1M tokens · Unlimited concurrency for every user')
+    brief = tr(lang, f'输入 ${low}/百万 Token 起 · 所有用户默认并发不限', f'Input from ${low}/1M tokens · Unlimited concurrency for every user')
     return f'''<!DOCTYPE html>
 <html lang="{'zh-CN' if lang == 'zh' else 'en'}">
 <head>
@@ -183,9 +183,9 @@ def page(lang, slug):
 <h1 id="hero-title">{name} API</h1><p class="gt-headline">{headline.replace(chr(10),'<br>')}</p><p class="gt-intro">{intro}</p><p class="gt-price-line">{brief}</p><div class="gt-actions"><a class="gt-btn gt-btn-dark" href="{REG}">{tr(lang,'获取 API Key','Get an API key')} <span aria-hidden="true">↗</span></a><a class="gt-btn gt-btn-soft" href="#pricing">{tr(lang,'查看 API 价格','Explore pricing')} <span aria-hidden="true">↓</span></a></div><div class="gt-chips"><span>{tr(lang,'300+ 模型一个 Key','300+ models, one key')}</span><span>{tr(lang,'国内直连','Direct API access')}</span><span>{tr(lang,'对公 · 专票','Contracts · invoices')}</span></div>
 </section>
 <section class="gt-wrap gt-section" id="capabilities"><div class="gt-section-head"><p class="gt-kicker">01 / {tr(lang,'能力','CAPABILITIES')}</p><h2>{tr(lang,'为真正的工作而构建。','Built for work that matters.')}</h2><p>{e(tags)}</p></div><div class="gt-grid gt-features">{feature_html}</div><p class="gt-note">{tr(lang,'模型能力根据官方发布页与模型广场整理；不同型号的能力和接口分别以对应文档为准。','Capabilities are based on official release notes and the catalog. Check the documentation for the model and endpoint you use.')} <a href="{OFFICIAL}">{tr(lang,'Grok 4.7 官方发布说明','Grok 4.7 release notes')} ↗</a></p></section>
-<section class="gt-section gt-tint" id="pricing"><div class="gt-wrap"><div class="gt-section-head"><p class="gt-kicker">02 / {tr(lang,'按量计费','USAGE PRICING')}</p><h2>{name} API {tr(lang,'价格','pricing')}</h2><p>{tr(lang,'按输入与输出 tokens 计费，价格直接列清楚。','Clear input and output rates, billed by token usage.')}</p></div><div class="gt-billing"><span>{tr(lang,'USD / 百万 tokens','USD / 1M tokens')}</span><span>{tr(lang,'所有用户默认并发不限','Unlimited concurrency by default')}</span><span>{tr(lang,'余额跨模型通用','One balance across models')}</span></div>
+<section class="gt-section gt-tint" id="pricing"><div class="gt-wrap"><div class="gt-section-head"><p class="gt-kicker">02 / {tr(lang,'按量计费','USAGE PRICING')}</p><h2>{name} API {tr(lang,'价格','pricing')}</h2><p>{tr(lang,'按输入与输出 Token 计费，价格直接列清楚。','Clear input and output rates, billed by token usage.')}</p></div><div class="gt-billing"><span>{tr(lang,'USD / 百万 Token','USD / 1M tokens')}</span><span>{tr(lang,'所有用户默认并发不限','Unlimited concurrency by default')}</span><span>{tr(lang,'余额跨模型通用','One balance across models')}</span></div>
 <div class="gt-table-wrap" role="region" aria-label="{name} API {tr(lang,'价格表','price table')}" tabindex="0"><table><caption>{tr(lang,'模型广场最低展示价 · 核对日期','Lowest displayed catalog rates · checked')} {DATE}</caption><thead><tr><th scope="col">{tr(lang,'功能 / 档位','Operation / tier')}</th><th scope="col">{tr(lang,'模型名','Model ID')}</th><th scope="col">{tr(lang,'单价（USD）','Price (USD)')}</th></tr></thead>{table}</table></div>
-<p class="gt-note">{tr(lang,'单位 USD。按成功提交的请求计量，依据实际输入、输出 tokens 扣费；实时价格以模型广场为准。200K / 500K 是输入计费档位边界，不代表所有型号的上下文上限。未列出的缓存费用不视为免费；缓存命中和其他计费项以实际账单为准。','Prices are in USD. Successfully submitted requests are metered by actual input and output tokens; current catalog rates apply. The 200K / 500K boundaries describe input billing tiers, not context limits for every model. Unlisted cache rates do not mean free usage; actual cache hits and other charges follow your bill.')}</p>
+<p class="gt-note">{tr(lang,'单位 USD。按成功提交的请求计量，依据实际输入、输出 Token 扣费；实时价格以模型广场为准。200K / 500K 是输入计费档位边界，不代表所有型号的上下文上限。未列出的缓存费用不视为免费；缓存命中和其他计费项以实际账单为准。','Prices are in USD. Successfully submitted requests are metered by actual input and output tokens; current catalog rates apply. The 200K / 500K boundaries describe input billing tiers, not context limits for every model. Unlisted cache rates do not mean free usage; actual cache hits and other charges follow your bill.')}</p>
 <h3 class="gt-cost-heading">{tr(lang,'成本示例','Cost examples')} · {key}</h3><div class="gt-costs">{costs}</div><p class="gt-note">{tr(lang,'示例均按普通输入档计算，不含缓存命中或其他工具费用。','Examples use the base input tier, without cache hits or additional tool charges.')}</p><div class="gt-actions"><a class="gt-btn gt-btn-dark" href="{REG}">{tr(lang,'获取 API Key','Get an API key')} ↗</a><a class="gt-text-link" href="{MARKET}">{tr(lang,'在模型广场查看','View in the model catalog')} ↗</a></div></div></section>
 <section class="gt-section gt-wrap" id="use-cases"><div class="gt-section-head"><p class="gt-kicker">03 / {tr(lang,'应用场景','USE CASES')}</p><h2>{tr(lang,'接进你的工作流。','Bring it into your workflow.')}</h2></div><div class="gt-grid"><article><h3>{tr(lang,'开发与代码评审','Development & code review')}</h3><p>{tr(lang,'提供代码和约束，生成实现建议、测试计划与评审意见，再由项目工具验证。','Supply code and constraints for implementation suggestions, test plans, and review notes. Verify with your project tools.')}</p></article><article><h3>{tr(lang,'业务智能体','Business agents')}</h3><p>{tr(lang,'连接查询、计算与内部系统，把多个步骤编排成可追踪的任务。工具可用性按具体型号确认。','Connect queries, calculations, and internal systems into traceable multi-step tasks. Confirm tool support for your chosen model.')}</p></article><article><h3>{tr(lang,'资料与知识工作','Research & knowledge work')}</h3><p>{tr(lang,'围绕提供的资料组织摘要、方案和报告草稿，为关键事实保留来源与复核。','Turn supplied material into summaries, proposals, and report drafts, with sources and review for key facts.')}</p></article></div></section>
 <section class="gt-section gt-wrap" id="platform"><div class="gt-platform"><div><p class="gt-kicker">AnyAIGC</p><h2>{tr(lang,'一个 Key，连接下一步。','One key. More ways forward.')}</h2></div><div class="gt-platform-list"><p>{tr(lang,'300+ 模型统一接入，余额通用。','One API key and shared balance for 300+ models.')}</p><p>{tr(lang,'国内直连，按公开单价计算成本。','Direct access with published unit rates for budgeting.')}</p><p>{tr(lang,'本系列所有用户默认并发不限。','Unlimited concurrency for every user of this series.')}</p></div></div></section>

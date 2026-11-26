@@ -42,6 +42,8 @@ scripts/check_topics.py   专题页自检
 | 平台模型数 | 300+（不要写 500+ 或其他数字） |
 | 注册链接 | `https://anyaigc.ai/register?aff=oOK7&channel=c_wpduopc9`（所有注册按钮都用这个，参数不能丢） |
 | 模型广场 | `https://anyaigc.ai/pricing` |
+| 价格快照 | `drafts/pricing.json`（全部模型的最低价和各分组价，已被 .gitignore 忽略）。查价格先 `python scripts/pricing_dump.py <模型名子串>`（读本地文件），数据旧了或要核对时先 `python scripts/pricing_dump.py` 重新拉取（直接调 `/api/pricing`，不用开浏览器）。两个已知差异：个别按量价第 4 位小数会比弹窗差 0.0001（例如 Codex-Gpt-2 的输出价弹窗是 $2.4710，文件里是 $2.4709），页面上以模型广场弹窗显示为准；视频和音频的分档倍率在文件的 `raw` 里。 |
+| 人民币换算 | 按张价格显示人民币时 = 美元价 × 6.7（`gpt_image_data.RMB_RATE`，用户 2026-11-25 指定），标红；按量价格保持美元 |
 | 控制台 / 登录 | `https://anyaigc.ai/console` |
 | 联系客服 | `https://anyaigc.ai/customersupport` |
 | 鉴权方式 | `Authorization: Bearer <API Key>` |

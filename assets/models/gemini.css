@@ -31,6 +31,7 @@
   --gm-line-soft:rgba(33,34,38,.06);
   --gm-blue:#3186ff;
   --gm-blue-deep:#2051da;
+  --gm-red:#d93025;
   --gm-dark:#121317;
   --gm-dark-2:#18191d;
   --gm-dark-3:#212226;
@@ -98,7 +99,7 @@ main{display:block}
 .gm-hero-art::before{width:min(62vw,820px);height:min(40vw,520px);right:-12%;top:-8%;background:radial-gradient(closest-side,rgba(33,123,254,.55),rgba(7,142,251,.25) 55%,transparent)}
 .gm-hero-art::after{width:min(46vw,620px);height:min(32vw,420px);right:12%;top:26%;background:radial-gradient(closest-side,rgba(172,135,235,.5),rgba(238,77,93,.18) 60%,transparent);animation:gm-float 18s var(--gm-ease) infinite alternate}
 @keyframes gm-float{from{transform:translate3d(0,0,0) scale(1)}to{transform:translate3d(-6%,4%,0) scale(1.08)}}
-.gm-hero-inner{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:48px;padding-top:36px;padding-bottom:72px}
+.gm-hero-inner{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;padding-top:36px;padding-bottom:72px}
 .o-crumbs{display:flex;flex-wrap:wrap;gap:6px;list-style:none;font-size:14px;line-height:20px;color:var(--gm-ink-3)}
 .o-crumbs li+li::before{content:"/";margin-right:6px;color:rgba(33,34,38,.3)}
 .o-crumbs a{text-decoration:none}
@@ -106,8 +107,16 @@ main{display:block}
 .o-crumbs [aria-current]{color:var(--gm-ink)}
 .gm-eyebrow{display:inline-flex;align-items:center;gap:10px;margin-top:40px;padding:6px 14px 6px 8px;border:1px solid var(--gm-line);border-radius:9999px;background:rgba(255,255,255,.7);font-family:var(--gm-mono);font-size:13px;line-height:1;color:var(--gm-ink-2)}
 .gm-eyebrow .gm-mark{width:20px;height:20px;flex:none}
-.gm-h1{margin-top:22px;font-size:clamp(46px,7.6vw,112px);line-height:1.04;font-weight:450;letter-spacing:-.035em;color:var(--gm-ink)}
+.gm-h1{margin-top:22px;font-size:clamp(46px,7.6vw,82px);line-height:1.04;font-weight:450;letter-spacing:-.035em;color:var(--gm-ink)}
 .gm-h1 .gm-grad-text{padding-right:.04em}
+/* Gemini 全系页面（3.1 Pro、3.8 Flash、3.8 Flash TTS、4 系列）：H1 里的 “API” 显性显示（同字号同字重，用正文墨色）；首屏折扣短语用红色 */
+.gm-h1-api .o-sr{position:static;width:auto;height:auto;margin:0;padding:0;overflow:visible;clip:auto;white-space:normal}
+.gm-off{color:var(--gm-red);font-weight:500}
+/* 单行标题（Gemini 3.1 Pro）：文字列做容器，字号按列宽缩放，保证 “Gemini 3.1 Pro API” 不换行。
+   拉丁字符串宽约 8.33em（西语 “API de Gemini 3.1 Pro” 约 9.73em），各取约 3.5% 余量，最大不超过原来的 82px */
+div:has(>.gm-h1-one){container-type:inline-size}
+.gm-h1.gm-h1-one{white-space:nowrap;font-size:min(82px,11.6cqw)}
+:lang(es) .gm-h1.gm-h1-one{font-size:min(82px,10cqw)}
 .gm-lead{max-width:720px;margin-top:24px;font-size:clamp(20px,2vw,26px);line-height:1.38;font-weight:400;letter-spacing:-.01em;color:var(--gm-ink);text-wrap:pretty}
 .gm-lead-sub{max-width:720px;margin-top:16px;color:var(--gm-ink-2);text-wrap:pretty}
 .o-cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:32px}
@@ -129,10 +138,10 @@ main{display:block}
 .gm-band{background:var(--gm-soft)}
 .o-section.gm-band,.o-section+.o-section.gm-band,.o-section.gm-band+.o-section{padding-top:96px}
 .gm-kicker{display:inline-block;margin-bottom:14px;font-family:var(--gm-mono);font-size:13px;letter-spacing:.02em;color:var(--gm-ink-3)}
-.o-h2{font-size:clamp(30px,3.6vw,48px);line-height:1.1;font-weight:450;letter-spacing:-.025em}
+.o-h2{font-size:clamp(30px,3.6vw,44px);line-height:1.1;font-weight:450;letter-spacing:-.025em}
 .o-lead{margin-top:18px;color:var(--gm-ink-2);font-size:18px}
 .o-col>.o-h2,.o-col>.o-lead{max-width:var(--gm-col)}
-.gm-wide>.o-h2,.gm-wide>.o-lead,.gm-wide>.gm-kicker,.gm-wide>.o-note,.gm-wide>.gm-h3,.gm-wide>p{max-width:var(--gm-col)}
+.gm-wide>.o-lead,.gm-wide>.gm-kicker,.gm-wide>.o-note,.gm-wide>.gm-h3,.gm-wide>p{max-width:var(--gm-col)}
 .gm-h3{margin:56px 0 14px;font-size:24px;line-height:1.25;font-weight:500;letter-spacing:-.01em}
 .gm-prose{margin-top:28px}
 .gm-prose>p{color:var(--gm-ink-2)}

@@ -56,7 +56,7 @@ MODELS = [
      'The 70B Llama 2 model supports established prompts and evaluation workflows. For new projects, compare task quality and cost with the Llama 3 family as well.'),
     ('llama-2-7b', 'Llama 2 7B', '1.3500', '1.3500', 'llama2',
      '为 Llama 2 7B 保留熟悉的接口', 'A familiar interface for Llama 2 7B',
-     'Llama 2 的 7B 型号，适合旧版应用接入、文本实验与版本对照。平台按 tokens 计费，无需自行搭建模型运行环境。',
+     'Llama 2 的 7B 型号，适合旧版应用接入、文本实验与版本对照。平台按 Token 计费，无需自行搭建模型运行环境。',
      'The 7B Llama 2 model is available for existing integrations, text experiments and version comparisons. Pay by token usage without setting up a model runtime.'),
 ]
 KEYS = ('id', 'name', 'input', 'output', 'source', 'tag_zh', 'tag_en', 'desc_zh', 'desc_en')

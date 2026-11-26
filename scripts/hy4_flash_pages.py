@@ -73,7 +73,7 @@ def label(lang, key):
 
 
 def unit(lang):
-    return pick(lang, "百万 tokens", "1M tokens")
+    return pick(lang, "百万 Token", "1M tokens")
 
 
 def deal(lang):
@@ -100,7 +100,7 @@ def metadata(lang):
     title = pick(lang, "Hy4 Flash API 价格与接入｜约官方 4 折 - AnyAIGC",
                  "Hy4 Flash API Pricing | Save 60% - AnyAIGC")
     desc = pick(lang,
-                f"腾讯混元 Hy4 Flash API 价格与接入：约官方 4 折，输入 ${p['amount']}/百万 tokens，输出 ${o['amount']}，支持图像理解与 1M 上下文，并发不限，支持对公转账、合同与增值税专票。",
+                f"腾讯混元 Hy4 Flash API 价格与接入：约官方 4 折，输入 ${p['amount']}/百万 Token，输出 ${o['amount']}，支持图像理解与 1M 上下文，并发不限，支持对公转账、合同与增值税专票。",
                 f"Tencent Hy4 Flash API at about 60% off list: ${p['amount']}/1M input tokens, ${o['amount']} output, 1M context, image input, unlimited concurrency, VAT invoices.")
     assert (width(title) <= 64 if lang == "zh" else len(title) <= 65), (lang, width(title), title)
     assert (60 <= len(desc) <= 120 if lang == "zh" else 120 <= len(desc) <= 160), (lang, len(desc), desc)
@@ -120,7 +120,7 @@ def faq_items(lang):
     items = [
         (pick(lang, "Hy4 Flash API 多少钱？比官方便宜多少？", "How much does the Hy4 Flash API cost, and how far below list price is it?"),
          pick(lang,
-              f"按 token 计费，单位 USD/百万 tokens：输入 ${p['amount']}（官方 ${p['official']}）、输出 ${o['amount']}（官方 ${o['official']}）、缓存命中 ${c['amount']}（官方 ${c['official']}）。腾讯混元官方发布页给出的 API 价格为输入 ¥{p['cny']}、输出 ¥{o['cny']}、缓存命中 ¥{c['cny']}，美元官方价按约 7.19 元/美元折算。AnyAIGC 输入和输出约为官方价的 40%，缓存命中约 43%，整体约官方 4 折。腾讯云 TokenHub 在 2026-11-30 前另有限时 5 折活动，本页不以活动价作对比基线。实时价格以模型广场为准。",
+              f"按 Token 计费，单位 USD/百万 Token：输入 ${p['amount']}（官方 ${p['official']}）、输出 ${o['amount']}（官方 ${o['official']}）、缓存命中 ${c['amount']}（官方 ${c['official']}）。腾讯混元官方发布页给出的 API 价格为输入 ¥{p['cny']}、输出 ¥{o['cny']}、缓存命中 ¥{c['cny']}，美元官方价按约 7.19 元/美元折算。AnyAIGC 输入和输出约为官方价的 40%，缓存命中约 43%，整体约官方 4 折。腾讯云 TokenHub 在 2026-11-30 前另有限时 5 折活动，本页不以活动价作对比基线。实时价格以模型广场为准。",
               f"Billed per token in USD per 1M tokens: input ${p['amount']} (list ${p['official']}), output ${o['amount']} (list ${o['official']}), cache hit ${c['amount']} (list ${c['official']}). Tencent Hunyuan's release notes list ¥{p['cny']} input, ¥{o['cny']} output and ¥{c['cny']} cache hit; USD list prices use about 7.19 CNY per USD. AnyAIGC input and output are about 40% of list and cache hits about 43%, roughly 60% off overall. Tencent Cloud TokenHub also runs a limited 50%-off promotion until 2026-11-30; this page does not use the promo price as its baseline. See the model catalog for live rates.")),
         (pick(lang, "Hy4 flash 和 Hy4 有什么区别？", "What is the difference between Hy4 flash and Hy4?"),
          pick(lang,
@@ -225,8 +225,8 @@ def head(lang, faqs):
 
 
 def topbar(lang):
-    text = pick(lang, "Hy4 Flash API 约官方 4 折，新用户注册送 200 万 tokens。",
-                "Hy4 Flash API at about 60% off Tencent's list price. 2M free tokens for new accounts.")
+    text = pick(lang, "Hy4 Flash API 约官方 4 折，新用户注册送 500 万 Token。",
+                "Hy4 Flash API at about 60% off Tencent's list price. 5M free tokens for new accounts.")
     return (f'<div class="hy-bar"><p>{h(text)}{pick(lang, "", " ")}<a href="#pricing">{pick(lang, "查看价格", "See pricing")} '
             '<span aria-hidden="true">→</span></a></p></div>\n')
 
@@ -283,13 +283,13 @@ def hero(lang):
     p = price_of("input")
     sub = pick(lang, "腾讯混元面向日常工作的高性价比模型，支持图像理解", "Tencent Hunyuan's low-cost model for everyday work, with image understanding")
     lead = pick(lang,
-                f"腾讯混元 Hy4 flash 面向日常工作：总参数 224B、激活参数 12B，支持多模态和 1M 上下文，官方称 API 价格相比 Hy4 大幅降低。通过 AnyAIGC 调用，OpenAI 与 Anthropic 两种接口格式都可用，并发不限。输入 <strong>${p['amount']} / 百万 tokens</strong>，官方 ${p['official']}。",
+                f"腾讯混元 Hy4 flash 面向日常工作：总参数 224B、激活参数 12B，支持多模态和 1M 上下文，官方称 API 价格相比 Hy4 大幅降低。通过 AnyAIGC 调用，OpenAI 与 Anthropic 两种接口格式都可用，并发不限。输入 <strong>${p['amount']} / 百万 Token</strong>，官方 ${p['official']}。",
                 f"Hy4 flash targets everyday work: 224B total and 12B active parameters, multimodal input and a 1M-token context, with API pricing Tencent says is far below Hy4. Call it through AnyAIGC in OpenAI or Anthropic format, with unlimited concurrency. Input is <strong>${p['amount']} / 1M tokens</strong> (list ${p['official']}).")
-    detail = pick(lang, f"输入 ${p['amount']} · 官方 ${p['official']} / 百万 tokens", f"Input ${p['amount']} · list ${p['official']} / 1M tokens")
+    detail = pick(lang, f"输入 ${p['amount']} · 官方 ${p['official']} / 百万 Token", f"Input ${p['amount']} · list ${p['official']} / 1M tokens")
     chip = f'<a class="hy-deal" href="#pricing"><b>{h(deal(lang))}</b><span>{h(detail)}</span></a>'
     facts = [pick(lang, "并发不限", "Unlimited concurrency"), pick(lang, "OpenAI + Anthropic 格式", "OpenAI + Anthropic formats"),
              pick(lang, "300+ 模型 · 一个 Key", "300+ models · one key"), pick(lang, "对公 · 专票", "Contracts · invoices"),
-             pick(lang, "注册送 200 万 tokens", "2M free tokens")]
+             pick(lang, "注册送 500 万 Token", "5M free tokens")]
     return ('<main id="main">\n<section class="hy-hero" aria-labelledby="hero-title"><div class="hy-wrap"><div class="hy-hero-grid"><div>'
             f'<nav class="hy-crumbs" aria-label="{pick(lang, "面包屑", "Breadcrumb")}"><ol>{crumbs}</ol></nav>'
             f'<h1 id="hero-title"><span class="hy-h1-main">{NAME} API</span><span class="hy-h1-sub">{h(sub)}</span></h1>{chip}'
@@ -362,11 +362,11 @@ def pricing_section(lang):
                         f"Input is ${pi['amount']} and output ${po['amount']}, versus Tencent Cloud's ${pi['official']} and ${po['official']} (¥{pi['cny']} and ¥{po['cny']}). That is about 40% of list, roughly 60% off."))
                + pick(lang, "", " ") + f'<a href="{OFFICIAL_URL}" rel="noopener">{pick(lang, "官方价格来源", "Official price source")} ↗</a></p></div>')
     billing = ('<ul class="hy-billing">'
-               f'<li><strong>{pick(lang, "按 token 计费", "Per-token billing")}</strong>{pick(lang, "输入、输出、缓存命中分别计价。", "Input, output and cache hits are priced separately.")}</li>'
+               f'<li><strong>{pick(lang, "按 Token 计费", "Per-token billing")}</strong>{pick(lang, "输入、输出、缓存命中分别计价。", "Input, output and cache hits are priced separately.")}</li>'
                f'<li><strong>{pick(lang, "并发不限", "Unlimited concurrency")}</strong>{pick(lang, "并发不设限制，所有用户默认享有。", "No concurrency limit, for every account.")}</li>'
                f'<li><strong>{pick(lang, "余额通用", "Shared balance")}</strong>{pick(lang, "一个 Key 调用 300+ 模型，$1 起充。", "One key for 300+ models; top up from $1.")}</li></ul>')
     note = pick(lang,
-                f"单位 USD/百万 tokens，按成功请求的实际 tokens 计费，实时价格以模型广场为准。官方价取腾讯云人民币挂牌价（输入 ¥{pi['cny']}、输出 ¥{po['cny']}、缓存命中 ¥{price_of('cache')['cny']}），美元数值按约 7.19 元/美元折算（{CHECKED_DATE} 查询），仅作对比。",
+                f"单位 USD/百万 Token，按成功请求的实际 Token 计费，实时价格以模型广场为准。官方价取腾讯云人民币挂牌价（输入 ¥{pi['cny']}、输出 ¥{po['cny']}、缓存命中 ¥{price_of('cache')['cny']}），美元数值按约 7.19 元/美元折算（{CHECKED_DATE} 查询），仅作对比。",
                 f"Prices are USD per 1M tokens, charged on the actual tokens of successful requests; see the model catalog for live rates. List prices are Tencent Cloud's CNY rates (¥{pi['cny']} input, ¥{po['cny']} output, ¥{price_of('cache')['cny']} cache hit) converted at about 7.19 CNY per USD (checked {CHECKED_DATE}), shown for comparison.")
     note += pick(lang, f" 腾讯云 TokenHub 在 2026-11-30 前另有限时 5 折活动，本页不以活动价作为对比基线。",
                  f" Tencent Cloud TokenHub also runs a limited 50%-off promotion until 2026-11-30; this page does not use the promo price as its baseline.")
@@ -384,7 +384,7 @@ def vs_hy4_section(lang):
     pi, po, pc = price_of("input"), price_of("output"), price_of("cache")
     items = [
         (pick(lang, f"输入 ¥{pi['cny']}，输出 ¥{po['cny']}", f"Input ¥{pi['cny']}, output ¥{po['cny']}"),
-         pick(lang, f"官方 API 价格每百万 tokens：Hy4 flash 输入 ¥{pi['cny']}、输出 ¥{po['cny']}、缓存命中 ¥{pc['cny']}，Hy4 为 ¥6、¥18、¥0.3。",
+         pick(lang, f"官方 API 价格每百万 Token：Hy4 flash 输入 ¥{pi['cny']}、输出 ¥{po['cny']}、缓存命中 ¥{pc['cny']}，Hy4 为 ¥6、¥18、¥0.3。",
               f"Official API prices per 1M tokens: Hy4 flash is ¥{pi['cny']} input, ¥{po['cny']} output and ¥{pc['cny']} cache hit, against ¥6, ¥18 and ¥0.3 for Hy4.")),
         (pick(lang, "总 224B，激活 12B", "224B total, 12B active"),
          pick(lang, "总参数含 64B Engram 参数，支持多模态和 1M 上下文。官方称 KV cache 只有 Hy4 的 1/6，解码速度超过 150 tps。",
@@ -423,7 +423,7 @@ def uses_section(lang):
 def platform_section(lang):
     items = [(pick(lang, "300+ 模型，一个 Key", "300+ models, one key"), pick(lang, "统一 API Key 与余额，在 Hy4 Flash 与其他模型之间按任务切换。", "One API key and balance across Hy4 Flash and other models.")),
              (pick(lang, "国内直连，并发不限", "Unlimited concurrency"), pick(lang, "通过 AnyAIGC 域名从国内直接调用，并发不设限制。", "No concurrency limit, for every account by default.")),
-             (pick(lang, "约官方 4 折，单价透明", "About 60% off, clear rates"), pick(lang, "输入、输出、缓存命中分别计价，控制台可查每次调用的 tokens 与扣费。", "Input, output and cache hits priced separately, with per-request usage in the console.")),
+             (pick(lang, "约官方 4 折，单价透明", "About 60% off, clear rates"), pick(lang, "输入、输出、缓存命中分别计价，控制台可查每次调用的 Token 与扣费。", "Input, output and cache hits priced separately, with per-request usage in the console.")),
              (pick(lang, "两种接口格式", "Two API formats"), pick(lang, "OpenAI 兼容和 Anthropic 格式都能调用 hy4-flash，现有项目改 base_url 与 model 即可。", "Call hy4-flash in OpenAI-compatible or Anthropic format; point an existing project at the new base_url and model."))]
     cards = "".join(f'<article class="hy-card"><span class="hy-num">0{i}</span><h3>{h(t)}</h3><p>{h(d)}</p></article>' for i, (t, d) in enumerate(items, 1))
     return section("platform", "AnyAIGC", pick(lang, "为什么通过 AnyAIGC 接入", "Why use Hy4 Flash through AnyAIGC"), "",
@@ -536,7 +536,7 @@ def trust_section(lang):
     items = "".join(f'<li><h3>{t}</h3><p>{d}</p></li>' for t, d in trust.ITEMS[lang])
     return section("trust", pick(lang, "信任与保障", "TRUST"), trust.HEAD[lang][0], h(trust.HEAD[lang][1]),
                    f'<ul class="trust-list">{items}</ul><div class="hy-actions">'
-                   + button(pick(lang, "先注册领取 200 万 tokens", "Sign up for 2M free tokens"), REG) + "</div>")
+                   + button(pick(lang, "先注册领取 500 万 Token", "Sign up for 5M free tokens"), REG) + "</div>")
 
 
 def faq_section(lang, faqs):
@@ -557,7 +557,7 @@ def final(lang):
                  "Hy4 Flash and Tencent Hunyuan are trademarks of Tencent. AnyAIGC is an independent API provider and is not affiliated with Tencent. Model use and commercial terms follow Tencent Hunyuan's official terms.")
     return (f'<section class="hy-final" aria-labelledby="final-title"><div class="hy-wrap">{mark("hy-final-mark", 56)}'
             f'<h2 id="final-title">{h(pick(lang, "把 Hy4 Flash 接入你的下一个产品", "Build your next product with Hy4 Flash"))}</h2>'
-            f'<p>{h(pick(lang, "注册 AnyAIGC，新用户送 200 万 tokens，一个 API Key 调用 300+ 模型。", "Sign up for AnyAIGC, get 2M free tokens, and call 300+ models with one API key."))}</p>'
+            f'<p>{h(pick(lang, "注册 AnyAIGC，新用户送 500 万 Token，一个 API Key 调用 300+ 模型。", "Sign up for AnyAIGC, get 5M free tokens, and call 300+ models with one API key."))}</p>'
             '<div class="hy-actions">' + button(pick(lang, "获取 API Key", "Get an API key"), REG, "light")
             + button(pick(lang, "查看模型广场", "Open the model catalog"), PRICING_URL, "ghost") + "</div>"
             f'<ul class="hy-final-links">{link_html}</ul></div></section></main>\n'

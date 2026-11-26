@@ -165,7 +165,7 @@
   "steps": [
    [
     "Konto erstellen",
-    "Registrieren Sie sich bei AnyAIGC und erstellen Sie in der Konsole Ihren eigenen API-Schlüssel. Neue Konten erhalten 2 Mio. Tokens kostenlos."
+    "Registrieren Sie sich bei AnyAIGC und erstellen Sie in der Konsole Ihren eigenen API-Schlüssel. Neue Konten erhalten 5 Mio. Tokens kostenlos."
    ],
    [
     "API-Schlüssel erstellen",
@@ -253,7 +253,7 @@
    "<b>Transparente Abrechnung.</b> Die Konsole zeigt Tokens und Kosten jeder Anfrage, und Sie können pro Schlüssel ein Ausgabenlimit setzen.",
    "<b>Support rund um die Uhr.</b> <a href=\"{support}\">Support kontaktieren</a>, jederzeit."
   ],
-  "btn": "Kostenlos mit 2 Mio. Tokens starten"
+  "btn": "Kostenlos mit 5 Mio. Tokens starten"
  },
  "faq": {
   "h2": "FAQ",
@@ -264,7 +264,7 @@
    ],
    [
     "Erhalten neue Konten kostenloses Testguthaben?",
-    "Ja. Neue Konten erhalten 2 Mio. Tokens kostenlos, damit Sie Modelle und die Anbindung in kleinem Umfang testen können."
+    "Ja. Neue Konten erhalten 5 Mio. Tokens kostenlos, damit Sie Modelle und die Anbindung in kleinem Umfang testen können."
    ],
    [
     "Kann nicht genutztes Guthaben erstattet werden?",

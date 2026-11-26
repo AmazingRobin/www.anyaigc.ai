@@ -1,5 +1,5 @@
 # Kimi 系列专题页的数据：模型、价格、官方参数。被 scripts/kimi_pages.py、kimi_register.py、og_kimi.py 引用。
-# AnyAIGC 价格（美元 / 百万 tokens）：模型广场 https://anyaigc.ai/pricing?keyword=kimi 的最低价（2026-10-26 读取；kimi-k3.1-pro 2026-10-30 读取）
+# AnyAIGC 价格（美元 / 百万 Token）：模型广场 https://anyaigc.ai/pricing?keyword=kimi 的最低价（2026-10-26 读取；kimi-k3.1-pro 2026-10-30 读取）
 # 官方价与参数：platform.kimi.ai/docs/pricing/chat、kimi-k3 / kimi-k2-7-code / kimi-k2-6 quickstart、Hugging Face 模型卡（2026-10-26 读取）
 
 DATE = '2026-10-30'
@@ -24,7 +24,7 @@ PRICE = {
     'kimi-k2.7-code': ('0.3847', '1.5980', '0.0770'),
     'kimi-k2.6':      ('0.3847', '1.5980', '0.0651'),
 }
-# Moonshot 官方价（platform.kimi.ai，美元 / 百万 tokens）：(输入, 输出, 缓存命中)
+# Moonshot 官方价（platform.kimi.ai，美元 / 百万 Token）：(输入, 输出, 缓存命中)
 OFFICIAL = {
     'kimi-k3.1-pro':  ('2.00', '10.00', '0.20'),
     'kimi-k3':        ('3.00', '15.00', '0.30'),

@@ -9,27 +9,29 @@ import subprocess
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from gpt_image_data import SLUGS, MODELS, TOKEN, CALL, cny  # noqa: E402
+from gpt_image_data import SLUGS, MODELS, TOKEN, CALL, usd, cny  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, '.playwright-mcp', 'og', 'gpt-image')
 CLI = os.path.expanduser('~/.claude/skills/playwright/scripts/playwright_cli.sh')
 LOGO = re.search(r' d="([^"]+)"', io.open(os.path.join(ROOT, 'assets/icons/openai.svg'), encoding='utf-8').read()).group(1)
-T2, T25, T26 = TOKEN['2']['out'], TOKEN['2.5']['out'], TOKEN['2.6']['out']
+# 分享图价格只写按张计费的最低价（用户 2026-11-25：生图按 Token 的价格没概念，按张的一看就懂）；中文用人民币，其他语言用美元
+P26, P25, P2 = cny('2.6'), cny('2.5'), cny('2')
+C26, C25, C2 = CALL['2.6'], CALL['2.5'], CALL['2']
 
 # slug -> (标题, {语言: 卖点}, {语言: 标签}, 右侧图片)
 DATA = {
-    'gpt-image': ('GPT Image API', {'zh': f'OpenAI 全系图像模型，按张 {cny("2")} 起', 'en': f'Every OpenAI image model, from ${CALL["2"]} / image'},
-                  {'zh': ['按 token / 按张', '生成 · 编辑', '对公 · 专票'], 'en': ['Token or per image', 'Generate · edit', 'Self-service invoices']}, ('polyglot-collage', 'matcha-poster')),
-    'gpt-image-2.6-sunburst': ('GPT Image 2.6 Sunburst', {'zh': f'多轮编辑更一致，图片输出 ${T26} / 1M', 'en': f'Steadier multi-round edits, ${T26} / 1M output'},
+    'gpt-image': ('GPT Image API', {'zh': f'OpenAI 全系图像模型，按张 {P2} 起', 'en': f'Every OpenAI image model, from ${CALL["2"]} / image'},
+                  {'zh': ['按 Token / 按张', '生成 · 编辑', '对公 · 专票'], 'en': ['Token or per image', 'Generate · edit', 'Self-service invoices']}, ('polyglot-collage', 'matcha-poster')),
+    'gpt-image-2.6-sunburst': ('GPT Image 2.6 Sunburst API', {'zh': f'多轮编辑更一致，按张 {P26} 起', 'en': f'Steadier multi-round edits, ${C26} per image'},
                                {'zh': ['最新', 'GIF · SVG', '对公 · 专票'], 'en': ['New', 'GIF · SVG', 'Self-service invoices']}, ('i26-knight-1', 'i26-knight-3')),
-    'gpt-image-2.6-flare': ('GPT Image 2.6 Flare', {'zh': f'出图提速 50%，图片输出 ${T26} / 1M', 'en': f'50% faster images, ${T26} / 1M output'},
+    'gpt-image-2.6-flare': ('GPT Image 2.6 Flare API', {'zh': f'出图提速 50%，按张 {P26} 起', 'en': f'50% faster images, ${C26} per image'},
                             {'zh': ['最新', 'GIF 动图', '并发不限'], 'en': ['New', 'Animated GIFs', 'Unlimited concurrency']}, ('i26-chibi-up', 'i26-owl')),
-    'gpt-image-2.5-sunburst': ('GPT Image 2.5 Sunburst', {'zh': f'编辑精度最高，图片输出 ${T25} / 1M', 'en': f'Highest editing precision, ${T25} / 1M output'},
-                               {'zh': ['约 6 折', 'max 质量', '并发不限'], 'en': ['41% off', 'max quality', 'Unlimited concurrency']}, ('korean-hanok-ad', 'high-fashion')),
-    'gpt-image-2.5-flare': ('GPT Image 2.5 Flare', {'zh': f'速度最快，图片输出 ${T25} / 1M', 'en': f'Fastest high-quality model, ${T25} / 1M output'},
-                            {'zh': ['约 6 折', '批量出图', '并发不限'], 'en': ['41% off', 'High volume', 'Unlimited concurrency']}, ('merch-grid', 'candid-flash')),
-    'gpt-image-2': ('GPT Image 2', {'zh': f'ChatGPT 图像 2.0 同款，输出 ${T2} / 1M', 'en': f'The model behind ChatGPT Images 2.0, ${T2} / 1M'},
+    'gpt-image-2.5-sunburst': ('GPT Image 2.5 Sunburst API', {'zh': f'编辑精度最高，按张 {P25} 起', 'en': f'Highest editing precision, ${C25} per image'},
+                               {'zh': ['约 0.8 折', 'max 质量', '并发不限'], 'en': ['92% off', 'max quality', 'Unlimited concurrency']}, ('korean-hanok-ad', 'high-fashion')),
+    'gpt-image-2.5-flare': ('GPT Image 2.5 Flare API', {'zh': f'速度最快，按张 {P25} 起', 'en': f'Fastest high-quality model, ${C25} per image'},
+                            {'zh': ['约 0.8 折', '批量出图', '并发不限'], 'en': ['92% off', 'High volume', 'Unlimited concurrency']}, ('merch-grid', 'candid-flash')),
+    'gpt-image-2': ('GPT Image 2 API', {'zh': f'ChatGPT 图像 2.0 同款，按张 {P2} 起', 'en': f'The model behind ChatGPT Images 2.0, ${C2} per image'},
                     {'zh': ['约 0.8 折', '中文渲染', '并发不限'], 'en': ['92% off', 'Text rendering', 'Unlimited concurrency']}, ('chinese-comic', 'rice-macro')),
 }
 
@@ -50,25 +52,24 @@ TAG_I18N = {
     'GIF · SVG': _t('GIF · SVG', 'GIF · SVG', 'GIF · SVG', 'GIF · SVG'),
     'Animated GIFs': _t('GIFアニメ', '움직이는 GIF', 'GIF animados', 'Animierte GIFs'),
     'Unlimited concurrency': _t('同時実行数の上限なし', '동시 실행 제한 없음', 'Sin límite de RPM', 'Kein RPM-Limit'),
-    '41% off': _t('41%オフ', '41% 저렴', '41 % menos', '41 % günstiger'),
     '92% off': _t('92%オフ', '92% 저렴', '92 % menos', '92 % günstiger'),
     'max quality': _t('max 品質', 'max 품질', 'Calidad max', 'Qualität max'),
     'High volume': _t('大量生成', '대량 생성', 'Alto volumen', 'Hohes Volumen'),
     'Text rendering': _t('文字レンダリング', '텍스트 렌더링', 'Texto en la imagen', 'Textdarstellung'),
 }
 SUB_I18N = {
-    'gpt-image': lambda: _t(f'OpenAI の全画像モデル、1枚 ${CALL["2"]} から', f'OpenAI 전 이미지 모델, 이미지당 ${CALL["2"]}부터',
-                            f'Todos los modelos de imagen de OpenAI, desde ${CALL["2"]} por imagen', f'Alle OpenAI-Bildmodelle, ab ${CALL["2"]} pro Bild'),
-    'gpt-image-2.6-sunburst': lambda: _t(f'複数回の編集でも一貫性が向上、画像出力 ${T26} / 100万', f'다회 편집이 더 일관됨, 이미지 출력 ${T26} / 100만',
-                                         f'Ediciones en varias rondas más estables, ${T26} / 1 M de salida', f'Stabilere Mehrfachbearbeitung, ${T26} / 1 Mio. Ausgabe'),
-    'gpt-image-2.6-flare': lambda: _t(f'画像生成が50%高速、画像出力 ${T26} / 100万', f'이미지 생성 50% 빨라짐, 이미지 출력 ${T26} / 100만',
-                                      f'Imágenes un 50 % más rápidas, ${T26} / 1 M de salida', f'Bilder 50 % schneller, ${T26} / 1 Mio. Ausgabe'),
-    'gpt-image-2.5-sunburst': lambda: _t(f'編集精度が最高、画像出力 ${T25} / 100万', f'편집 정밀도 최고, 이미지 출력 ${T25} / 100만',
-                                         f'Máxima precisión de edición, ${T25} / 1 M de salida', f'Höchste Bearbeitungsgenauigkeit, ${T25} / 1 Mio. Ausgabe'),
-    'gpt-image-2.5-flare': lambda: _t(f'最速の高品質モデル、画像出力 ${T25} / 100万', f'가장 빠른 고품질 모델, 이미지 출력 ${T25} / 100만',
-                                      f'El modelo de calidad más rápido, ${T25} / 1 M de salida', f'Schnellstes Qualitätsmodell, ${T25} / 1 Mio. Ausgabe'),
-    'gpt-image-2': lambda: _t(f'ChatGPT Images 2.0 と同じモデル、${T2} / 100万', f'ChatGPT Images 2.0과 같은 모델, ${T2} / 100만',
-                              f'El modelo de ChatGPT Images 2.0, ${T2} / 1 M', f'Das Modell hinter ChatGPT Images 2.0, ${T2} / 1 Mio.'),
+    'gpt-image': lambda: _t(f'OpenAI の全画像モデル、1枚 ${C2} から', f'OpenAI 전 이미지 모델, 이미지당 ${C2}부터',
+                            f'Todos los modelos de imagen de OpenAI, desde ${C2} por imagen', f'Alle OpenAI-Bildmodelle, ab ${C2} pro Bild'),
+    'gpt-image-2.6-sunburst': lambda: _t(f'複数回の編集でも一貫性が向上、1枚 ${C26} から', f'다회 편집이 더 일관됨, 이미지당 ${C26}부터',
+                                         f'Ediciones en varias rondas más estables, ${C26} por imagen', f'Stabilere Mehrfachbearbeitung, ${C26} pro Bild'),
+    'gpt-image-2.6-flare': lambda: _t(f'画像生成が50%高速、1枚 ${C26} から', f'이미지 생성 50% 빨라짐, 이미지당 ${C26}부터',
+                                      f'Imágenes un 50 % más rápidas, ${C26} por imagen', f'Bilder 50 % schneller, ${C26} pro Bild'),
+    'gpt-image-2.5-sunburst': lambda: _t(f'編集精度が最高、1枚 ${C25} から', f'편집 정밀도 최고, 이미지당 ${C25}부터',
+                                         f'Máxima precisión de edición, ${C25} por imagen', f'Höchste Bearbeitungsgenauigkeit, ${C25} pro Bild'),
+    'gpt-image-2.5-flare': lambda: _t(f'最速の高品質モデル、1枚 ${C25} から', f'가장 빠른 고품질 모델, 이미지당 ${C25}부터',
+                                      f'El modelo de calidad más rápido, ${C25} por imagen', f'Schnellstes Qualitätsmodell, ${C25} pro Bild'),
+    'gpt-image-2': lambda: _t(f'ChatGPT Images 2.0 と同じモデル、1枚 ${C2} から', f'ChatGPT Images 2.0과 같은 모델, 이미지당 ${C2}부터',
+                              f'El modelo de ChatGPT Images 2.0, ${C2} por imagen', f'Das Modell hinter ChatGPT Images 2.0, ${C2} pro Bild'),
 }
 
 TPL = '''<!doctype html><html><head><meta charset="utf-8"><style>

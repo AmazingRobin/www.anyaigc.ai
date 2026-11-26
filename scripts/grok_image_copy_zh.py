@@ -106,7 +106,7 @@ FAQ_DIFF = ('Image 2.0、Image 和 Quality 有什么区别，该选哪个？',
             f'Grok Imagine Image Quality 已被 xAI 在 2026 年 11 月 2 日并入 2.0，在 AnyAIGC 上 {PQ} / 张起，比 2.0 Low 每档贵约 {SAVE_Q}，建议迁移。')
 
 STEPS = lambda model, edit: [
-    f'<a href="{REG}">注册 AnyAIGC</a>，新用户送 200 万 tokens 试用额度，最低 $1 起充。',
+    f'<a href="{REG}">注册 AnyAIGC</a>，新用户送 500 万 Token 试用额度，最低 $1 起充。',
     '在<a href="https://anyaigc.ai/console">控制台</a>创建 API Key，保存到环境变量 <code>ANYAIGC_API_KEY</code>。',
     f'向 <code>POST https://anyaigc.ai/v1/images/generations</code> 发请求，<code>model</code> 填 <code>{model}</code>'
     + ('；改图走 <code>POST /v1/images/edits</code>。' if edit else '。'),
@@ -181,7 +181,7 @@ def build(slug):
             ratio_alt='同一画面按 {r} 重新构图', ratio_list=['1:1', '3:4', '4:3', '9:16', '16:9', '2:3', '3:2', '9:19.5', '19.5:9', '9:20', '20:9', '1:2', '2:1', '21:9', '5:2', 'auto'],
             gallery_h2='Grok Imagine 官方示例', gallery_lead='以下图片由 Imagine Image 2.0 生成，来自 xAI 官方发布页。', gallery=GALLERY_20,
             pricing_h2='Grok Imagine API 价格', pricing_lead=f'按张计费，最低 {P10} / 张。Image 2.0 和 Quality 按分辨率和画质分档，改图另收输入图费用。',
-            billing=[('按张计费', '按生成的图片张数计，不按 token 算'), ('分档', '2.0 / Quality 按分辨率和画质定价'), ('改图', f'每张输入图另收 {PIN}'), ('并发不限', '所有用户默认享有')],
+            billing=[('按张计费', '按生成的图片张数计，不按 Token 算'), ('分档', '2.0 / Quality 按分辨率和画质定价'), ('改图', f'每张输入图另收 {PIN}'), ('并发不限', '所有用户默认享有')],
             price_rows=[('grok-imagine-image-2.0', 'Grok Imagine Image 2.0（推荐）'), ('grok-imagine-image', 'Grok Imagine Image'),
                         ('grok-imagine-image-quality', 'Grok Imagine Image Quality（xAI 已并入 2.0）')],
             price_note=f'价格来自 AnyAIGC 模型广场，{RATE_NOTE}。改图时每张输入图另收 {PIN}；Grok Imagine Image 只支持生成，不收输入图费用。xAI 官方价：2.0 输出图 Low $0.04 / $0.05 / $0.06、Medium $0.06 / $0.07 / $0.08（1K / 1.5K / 2K），输入图 $0.01 / 张，Image $0.02 / 张（<a href="{XAI_PRICING}" target="_blank" rel="noopener">xAI 价格页</a>）。按成功生成计费，实时价格以<a href="{PRICING}">模型广场</a>为准。',
@@ -196,14 +196,14 @@ def build(slug):
             qs_note=QS_NOTE, ent_h2='企业接入 Grok Imagine API',
             faq_h2='Grok Imagine API 常见问题',
             faqs=[
-                ('Grok Imagine API 多少钱？', f'在 AnyAIGC 上都按张计费，不按 token 算：Grok Imagine Image 每张 {P10}（1K、2K 同价）；Image 2.0 按分辨率和画质分档，{P20}–{P20_HI} / 张；Quality {PQ}–{PQ_HI} / 张。改图时每张输入图另收 {PIN}。xAI 官方价 2.0 为 ${M20["official_lo"]}–${M20["official_hi"]} / 张（约 {O20}），Image 为 ${M10["official_lo"]} / 张（约 {O10}）。实时价格以模型广场为准。'),
+                ('Grok Imagine API 多少钱？', f'在 AnyAIGC 上都按张计费，不按 Token 算：Grok Imagine Image 每张 {P10}（1K、2K 同价）；Image 2.0 按分辨率和画质分档，{P20}–{P20_HI} / 张；Quality {PQ}–{PQ_HI} / 张。改图时每张输入图另收 {PIN}。xAI 官方价 2.0 为 ${M20["official_lo"]}–${M20["official_hi"]} / 张（约 {O20}），Image 为 ${M10["official_lo"]} / 张（约 {O10}）。实时价格以模型广场为准。'),
                 FAQ_DIFF,
                 ('grok-imagine-image-quality 停用了吗？', f'xAI 在 2026 年 11 月 2 日停用了 <code>grok-imagine-image-quality</code>，之后发往这个模型名的请求会由 <code>grok-imagine-image-2.0</code> 以 <code>quality: "low"</code> 处理，请求和返回格式不变。AnyAIGC 上这个模型名仍可调用，{PQ}–{PQ_HI} / 张，比 2.0 Low 同分辨率贵约 {SAVE_Q}；建议直接把 <code>model</code> 改成 <code>grok-imagine-image-2.0</code>。'),
                 ('支持哪些宽高比和分辨率？', '用 <code>aspect_ratio</code> 指定比例，支持 1:1、3:4、4:3、9:16、16:9、2:3、3:2、1:2、2:1、21:9 等，也可以填 <code>auto</code> 让模型决定；用 <code>resolution</code> 选分辨率：Image 2.0 和 Quality 支持 <code>1k</code>、<code>1.5k</code>、<code>2k</code>，Image 支持 <code>1k</code>、<code>2k</code>。Image 2.0 还支持 <code>quality</code>（low / medium / auto）。分辨率和画质越高，单价越高。'),
                 ('能用参考图改图吗？', 'Image 2.0 支持图片编辑：向 <code>POST /v1/images/edits</code> 用 multipart/form-data 上传原图和修改指令即可。xAI 官方支持一次最多 5 张参考图合成，AnyAIGC 文档目前给出的是单张原图的示例，多图请以 AnyAIGC 接口文档为准。'),
                 FAQ_CN, FAQ_CONC, FAQ_INVOICE, FAQ_CONTRACT, FAQ_COMMERCIAL,
             ],
-            final_h2='现在开始调用 Grok Imagine', final_p=f'注册即送 200 万 tokens 试用额度，{P10} / 张起，并发不限。',
+            final_h2='现在开始调用 Grok Imagine', final_p=f'注册即送 500 万 Token 试用额度，{P10} / 张起，并发不限。',
         )
     elif slug == 'grok-imagine-image-2.0':
         c.update(
@@ -231,7 +231,7 @@ def build(slug):
             world_h2='一套画风，做完整个世界观', world_lead='角色、场景和道具分别用几句提示词生成，画风保持一致，可直接用作视频分镜和游戏设定（xAI 官方示例）。',
             gallery_h2='Grok Imagine Image 2.0 官方示例', gallery_lead='以下图片由 Imagine Image 2.0 生成，来自 xAI 官方发布页，说明根据官方图片描述改写。', gallery=GALLERY_20,
             pricing_h2='Grok Imagine Image 2.0 API 价格', pricing_lead=f'按张计费，按分辨率和画质分 6 档，{P20}–{P20_HI} / 张。',
-            billing=[('按张计费', '按生成的图片张数计，不按 token 算'), ('分档', '1K / 1.5K / 2K × Low / Medium'), ('改图', f'每张输入图另收 {PIN}'), ('并发不限', '所有用户默认享有')],
+            billing=[('按张计费', '按生成的图片张数计，不按 Token 算'), ('分档', '1K / 1.5K / 2K × Low / Medium'), ('改图', f'每张输入图另收 {PIN}'), ('并发不限', '所有用户默认享有')],
             price_rows=[('grok-imagine-image-2.0', 'Grok Imagine Image 2.0')],
             price_note=f'价格来自 AnyAIGC 模型广场，{RATE_NOTE}。改图时每张输入图另收 {PIN}。xAI 官方价：2.0 输出图 Low $0.04 / $0.05 / $0.06、Medium $0.06 / $0.07 / $0.08（1K / 1.5K / 2K），输入图 $0.01 / 张（<a href="{XAI_PRICING}" target="_blank" rel="noopener">xAI 价格页</a>）。按成功生成计费，实时价格以<a href="{PRICING}">模型广场</a>为准。',
             costs=[('1,000 张电商主图', f'1,000 × {P20}', total(1000, M20['usd']), '1K Low'),
@@ -253,7 +253,7 @@ def build(slug):
                 ('grok-imagine-image-quality 还能用吗？', f'xAI 已在 2026 年 11 月 2 日把 <code>grok-imagine-image-quality</code> 并入 2.0，请求会由 2.0 以 low 画质处理。旧代码在 AnyAIGC 上仍可调用（{PQ}–{PQ_HI} / 张），比 2.0 Low 同分辨率贵约 {SAVE_Q}，建议把 <code>model</code> 直接改成 <code>grok-imagine-image-2.0</code>。'),
                 FAQ_CN, FAQ_CONC, FAQ_INVOICE, FAQ_CONTRACT, FAQ_COMMERCIAL,
             ],
-            final_h2='现在开始调用 Grok Imagine Image 2.0', final_p=f'注册即送 200 万 tokens 试用额度，{P20} / 张起，并发不限。',
+            final_h2='现在开始调用 Grok Imagine Image 2.0', final_p=f'注册即送 500 万 Token 试用额度，{P20} / 张起，并发不限。',
         )
     elif slug == 'grok-imagine-image':
         c.update(
@@ -284,8 +284,8 @@ def build(slug):
                 (None, '接口兼容', '请求格式和 OpenAI 的 <code>/v1/images/generations</code> 一致，已有的生图代码改 <code>model</code> 即可。'),
                 (None, '一键升级 2.0', f'需要改图或更好的文字排版时，把 <code>model</code> 改成 <code>grok-imagine-image-2.0</code>（{P20} / 张起）。'),
             ],
-            pricing_h2='Grok Imagine Image API 价格', pricing_lead=f'固定单价，每张 {P10}，不按 token 算。',
-            billing=[('按张计费', '固定单价，不按 token 算'), ('不分档', '1k / 2k 同价'), ('并发不限', '所有用户默认享有'), ('余额通用', '同一余额可调用 300+ 模型')],
+            pricing_h2='Grok Imagine Image API 价格', pricing_lead=f'固定单价，每张 {P10}，不按 Token 算。',
+            billing=[('按张计费', '固定单价，不按 Token 算'), ('不分档', '1k / 2k 同价'), ('并发不限', '所有用户默认享有'), ('余额通用', '同一余额可调用 300+ 模型')],
             price_rows=[('grok-imagine-image', 'Grok Imagine Image'), ('grok-imagine-image-2.0', '对比：Grok Imagine Image 2.0')],
             price_note=f'价格来自 AnyAIGC 模型广场，{RATE_NOTE}。Grok Imagine Image 1K、2K 同价，只支持生成。xAI 官方价：Image 1K、2K 都是 $0.02 / 张（<a href="{XAI_PRICING}" target="_blank" rel="noopener">xAI 价格页</a>）。Image 2.0 的完整分档见 <a href="/zh/models/grok-imagine-image-2.0#pricing">Image 2.0 价格</a>。按成功生成计费，实时价格以<a href="{PRICING}">模型广场</a>为准。',
             costs=[('100 张配图', f'100 × {P10}', total(100, M10['usd']), '一次 1 张'),
@@ -312,7 +312,7 @@ def build(slug):
                 ('能改图吗？', '在 AnyAIGC 上，<code>grok-imagine-image</code> 走生成接口 <code>/v1/images/generations</code>。需要上传原图修改的话，请用 <code>grok-imagine-image-2.0</code> 调用 <code>/v1/images/edits</code>。'),
                 FAQ_CN, FAQ_CONC, FAQ_INVOICE, FAQ_CONTRACT, FAQ_COMMERCIAL,
             ],
-            final_h2='现在开始调用 Grok Imagine Image', final_p=f'注册即送 200 万 tokens 试用额度，每张 {P10}，并发不限。',
+            final_h2='现在开始调用 Grok Imagine Image', final_p=f'注册即送 500 万 Token 试用额度，每张 {P10}，并发不限。',
         )
     elif slug == 'grok-imagine-image-quality':
         c.update(
@@ -340,7 +340,7 @@ def build(slug):
             features=[FEATURES_20[0], FEATURES_20[1], FEATURES_20[4]],
             gallery_h2='Image 2.0 官方示例', gallery_lead='Quality 的请求现在由 Image 2.0 处理。以下图片由 Image 2.0 生成，来自 xAI 官方发布页。', gallery=GALLERY_20[:6],
             pricing_h2='Grok Imagine Image Quality API 价格', pricing_lead=f'按分辨率分 3 档，{PQ}–{PQ_HI} / 张。同分辨率下 Image 2.0 Low 更便宜。',
-            billing=[('按张计费', '按生成的图片张数计，不按 token 算'), ('分档', '1K / 1.5K / 2K'), ('改图', f'每张输入图另收 {PIN}'), ('迁移更省', f'2.0 Low 每张便宜约 {SAVE_Q}')],
+            billing=[('按张计费', '按生成的图片张数计，不按 Token 算'), ('分档', '1K / 1.5K / 2K'), ('改图', f'每张输入图另收 {PIN}'), ('迁移更省', f'2.0 Low 每张便宜约 {SAVE_Q}')],
             price_rows=[('grok-imagine-image-quality', '旧模型名（xAI 已并入 2.0）'), ('grok-imagine-image-2.0', '推荐：Grok Imagine Image 2.0')],
             price_note=f'价格来自 AnyAIGC 模型广场，{RATE_NOTE}。改图时每张输入图另收 {PIN}。xAI 已不再公布 Quality 的官方价。按成功生成计费，实时价格以<a href="{PRICING}">模型广场</a>为准。',
             costs=[('1,000 张图（Quality）', f'1,000 × {PQ}', total(1000, MQ['usd']), '1K'),
