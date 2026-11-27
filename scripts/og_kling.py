@@ -79,7 +79,7 @@ PAGES = {
         cap=L('Video & audio models', '動画・音声モデル', '비디오·오디오 모델',
               'Modelos de vídeo y audio', 'Video- und Audiomodelle')),
     'kling-3.0-turbo': dict(
-        h1='Kling 3.0 Turbo API', kind='VIDEO', price=('second', '0.1350'),
+        h1='Kling 3.0 Turbo API', kind='VIDEO', price=('second', '0.1400'),
         sub=L('Fast, lightweight video for batch short clips.',
               'バッチ制作向けの軽量・高速な動画モデル。',
               '배치 숏폼 제작을 위한 가볍고 빠른 비디오 모델.',
@@ -145,6 +145,7 @@ PAGES = {
         cap=L('Video effects', '動画エフェクト', '비디오 효과', 'Efectos de vídeo', 'Videoeffekte')),
     'kling-image-3.0': dict(
         h1='Kling Image 3.0 API', kind='IMAGE', price=('image', '0.00169'),
+        art_imgs=['archer-480', 'azalea-480', 'balcony-480', 'desert-480'],  # 官方发布说明素材，不用代码画
         sub=L('Kuaishou Kling image model, native 2K / 4K.',
               'Kuaishou の Kling 画像モデル。2K / 4K をネイティブ出力。',
               'Kuaishou의 Kling 이미지 모델, 네이티브 2K / 4K.',
@@ -242,6 +243,7 @@ h1{margin:0;font-size:calc(var(--h)*var(--k));line-height:1.08;font-weight:800;l
 .sub b{display:inline-block;color:#2f2a7c;font-weight:700}
 .art{position:absolute;right:64px;top:118px;width:314px;height:332px}
 .art div{position:absolute;width:150px;height:150px;border-radius:22px;box-shadow:0 18px 40px rgba(60,60,160,.18)}
+.art img{position:absolute;display:block;width:150px;height:150px;object-fit:cover;border-radius:22px;box-shadow:0 18px 40px rgba(60,60,160,.18)}
 .a1{left:0;top:0;background:linear-gradient(135deg,#c4b5fd,#6366f1 60%,#312e81)}
 .a2{left:164px;top:18px;background:linear-gradient(160deg,#bae6fd,#38bdf8 50%,#1d4ed8)}
 .a3{left:0;top:164px;background:linear-gradient(160deg,#e9a8ff,#7c3aed 45%,#1e1b4b)}
@@ -309,10 +311,14 @@ def build_html(slug, lang):
     hsize = 84 if len(h1) <= 20 else (72 if len(h1) <= 26 else 64)
     cap = pick(p['cap'], lang)
     e = html.escape
+    if p.get('art_imgs'):
+        art_html = '<div class="art">' + ''.join(f'<img class="a{i}" src="/assets/models/kling-image/{n}.webp" alt="">' for i, n in enumerate(p['art_imgs'], 1)) + '</div>'
+    else:
+        art_html = '<div class="art"><div class="a1"></div><div class="a2"></div><div class="a3"></div><div class="a4"></div></div>'
     return f'''<!doctype html><html lang="{LANGATTR[lang]}" data-k0="{K0[lang]}" style="--k:{K0[lang]};--h:{hsize}px;--s:30px"><head><meta charset="utf-8"><style>{CSS}</style></head>
 <body class="{lang}"><div class="top"><span class="brand">AnyAIGC</span><span class="vendor"><i>{logo()}</i>Kling</span></div>
 <div class="col"><p class="eyebrow">KLING · {p['kind']} API</p><h1>{e(h1)}</h1><p class="sub">{e(sub)} <b>{e(price)}</b></p></div>
-<div class="art"><div class="a1"></div><div class="a2"></div><div class="a3"></div><div class="a4"></div></div>
+{art_html}
 <div class="tags"><span class="cap">{e(cap)}</span><span>{e(TAG_CONC[lang])}</span><span>{e(TAG_INV[lang])}</span></div>
 <div class="rule"></div><div class="foot"><span>www.anyaigc.ai</span><span>{e(FOOT[lang])} ↗</span></div>
 <script>{JS}</script></body></html>'''

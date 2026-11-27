@@ -54,7 +54,7 @@ def main():
         overview = slug == 'seedance'
         model = MODELS.get(slug)
         name = 'Seedance' if overview else model['name']
-        price = '1.843' if overview else model['min']
+        price = '1.911' if overview else model['min']
         for lang in langs:
             zh = lang == 'zh'
             subtitle = (f'多模态视频生成 · ${price} / 1M Token 起' if zh else f'Multimodal video · from ${price} / 1M tokens')

@@ -181,6 +181,7 @@ def head(lang, slug, c):
 <meta name="twitter:image" content="{og_img}">
 <link rel="stylesheet" href="/assets/models/scrollbar.css?v=20261024b">
 <link rel="stylesheet" href="/assets/models/glm.css?v={VER}">
+<link rel="stylesheet" href="/assets/models/ask-demo.css?v=20261127">
 <script type="application/ld+json">
 {ld}
 </script>
@@ -633,6 +634,7 @@ def footer(lang, slug):
 </footer>
 
 <script src="/assets/models/glm.js?v={VER}" defer></script>
+<script src="/assets/models/ask-demo.js?v=20261127" defer></script>
 </body>
 </html>
 '''

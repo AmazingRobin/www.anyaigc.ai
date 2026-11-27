@@ -281,6 +281,36 @@ def family_html(lang, current, items):
     return f"<ul>{lis}</ul>"
 
 
+RELEASE_NOTE = "https://kling.ai/release-note/release-notes/rz3idhopum"
+HERO_IMGS = ["archer-480", "azalea-480", "balcony-480", "desert-480"]
+HERO_ALT = {
+    "zh": ["古代战场黄昏中拉弓的铠甲女子特写", "杜鹃花丛中的短发红唇女子", "巴黎阳台窗边读书的男女", "沙漠公路旁的卷发男子与老爷车"],
+    "en": ["Close-up of an armored woman drawing a bow on a dusk battlefield", "Short-haired woman with red lips among azalea blossoms", "Couple reading by a Paris balcony window", "Curly-haired man beside a vintage car on a desert road"],
+    "ja": ["夕暮れの戦場で弓を引く鎧姿の女性のクローズアップ", "ツツジの花に囲まれた赤い唇のボブの女性", "パリのバルコニーの窓辺で本を読む男女", "砂漠の道路でクラシックカーのそばに立つ巻き毛の男性"],
+    "ko": ["해 질 녘 전장에서 활을 당기는 갑옷 입은 여성 클로즈업", "진달래 꽃밭 속 붉은 입술의 단발 여성", "파리 발코니 창가에서 책을 읽는 남녀", "사막 도로의 클래식 카 옆에 선 곱슬머리 남성"],
+    "es": ["Primer plano de una mujer con armadura tensando un arco en un campo de batalla al atardecer", "Mujer de pelo corto y labios rojos entre azaleas", "Pareja leyendo junto a la ventana de un balcón en París", "Hombre de pelo rizado junto a un coche clásico en una carretera del desierto"],
+    "de": ["Nahaufnahme einer gepanzerten Frau, die auf einem Schlachtfeld im Abendlicht den Bogen spannt", "Frau mit kurzem Haar und roten Lippen zwischen Azaleen", "Paar liest am Balkonfenster in Paris", "Lockiger Mann neben einem Oldtimer auf einer Wüstenstraße"],
+}
+HERO_CAP = {
+    "zh": ("官方示例素材：", "可灵发布说明"),
+    "en": ("Official sample media: ", "Kling release notes"),
+    "ja": ("公式サンプル素材：", "Kling リリースノート"),
+    "ko": ("공식 샘플 자료: ", "Kling 릴리스 노트"),
+    "es": ("Material de muestra oficial: ", "notas de versión de Kling"),
+    "de": ("Offizielles Beispielmaterial: ", "Kling-Release-Notes"),
+}
+
+
+def hero_art(lang):
+    """首屏右侧 2×2 官方示例图（可灵 IMAGE 3.0 发布说明），4 张图都不带文字，6 种语言通用"""
+    imgs = "".join(
+        f'<img src="/assets/models/kling-image/{n}.webp" alt="{h(a)}" width="480" height="480" decoding="async">'
+        for n, a in zip(HERO_IMGS, HERO_ALT[lang]))
+    pre, name = HERO_CAP[lang]
+    return (f'<figure class="k-image-wrap"><div class="k-image-art">{imgs}<b>2K · 4K</b></div>'
+            f'<figcaption>{pre}<a href="{RELEASE_NOTE}" target="_blank" rel="noopener">{name}</a></figcaption></figure>')
+
+
 def page(lang, fam):
     t = T[lang]
     other = "en" if lang == "zh" else "zh"
@@ -343,7 +373,7 @@ def page(lang, fam):
 <meta name="twitter:image" content="{img}">
 <link rel="stylesheet" href="/assets/models/scrollbar.css?v={VER}">
 <link rel="stylesheet" href="/assets/models/kling.css?v={VER}">
-<link rel="stylesheet" href="/assets/models/kling-image.css?v=20261111">
+<link rel="stylesheet" href="/assets/models/kling-image.css?v=20261127">
 <script type="application/ld+json">
 {json.dumps(graph, ensure_ascii=False, indent=2)}
 </script>
@@ -351,7 +381,7 @@ def page(lang, fam):
 <body>
 <header class="k-nav"><a class="k-brand" href="/">AnyAIGC</a><nav>{"".join(f'<a href="{h(u)}">{n}</a>' for n, u in zip(t["nav"], nav_href))}</nav><div><a href="/{other}/models/{SLUG}" hreflang="{"en" if lang == "zh" else "zh-CN"}">{t["other"]}</a><a class="k-btn" href="{h(REG)}">{t["cta"]}</a></div></header>
 <main>
-<section class="k-hero k-hero-solo"><div class="k-hero-copy"><nav aria-label="breadcrumb"><ol class="k-crumbs">{crumbs}</ol></nav><p class="k-eyebrow"><img src="/assets/icons/kling.svg" alt="Kling" width="28" height="28"> {t["eyebrow"]}</p><h1>{t["h1"]}</h1><p class="k-lead">{t["lead"]}</p><div class="k-actions"><a class="k-btn" href="{h(REG)}">{t["cta"]}</a><a class="k-btn k-light" href="#pricing">{t["price_btn"]}</a></div><ul class="k-facts">{facts}</ul></div><div class="k-image-art" aria-hidden="true"><span></span><span></span><span></span><span></span><b>2K · 4K</b></div></section>
+<section class="k-hero k-hero-solo"><div class="k-hero-copy"><nav aria-label="breadcrumb"><ol class="k-crumbs">{crumbs}</ol></nav><p class="k-eyebrow"><img src="/assets/icons/kling.svg" alt="Kling" width="28" height="28"> {t["eyebrow"]}</p><h1>{t["h1"]}</h1><p class="k-lead">{t["lead"]}</p><div class="k-actions"><a class="k-btn" href="{h(REG)}">{t["cta"]}</a><a class="k-btn k-light" href="#pricing">{t["price_btn"]}</a></div><ul class="k-facts">{facts}</ul></div>{hero_art(lang)}</section>
 <section class="k-section" id="capabilities"><div class="k-section-intro"><p class="k-kicker">{t["cap_kicker"]}</p><h2>{h(t["cap_h2"])}</h2><p>{h(t["cap_p"])}</p></div><div class="k-detail-grid k-detail-grid-6">{caps}</div></section>
 <section class="k-section k-use-cases" id="use-cases"><p class="k-kicker">USE CASES</p><h2>{h(t["use_h2"])}</h2><div class="k-use-grid">{uses}</div></section>
 <section class="k-section" id="pricing"><p class="k-kicker">PRICING</p><h2>{h(t["price_h2"])}</h2><ul class="k-billing">{billing}</ul><div class="k-table-wrap"><table><thead><tr><th>{t["th"][0]}</th><th>{t["th"][1]}</th><th>{t["th"][2]}</th></tr></thead><tbody>{rows}</tbody></table></div><p class="k-note">{h(t["note"])}</p><div class="k-costs"><h3>{h(t["cost_h2"])}</h3><ul>{costs}</ul></div><div class="k-actions"><a class="k-btn" href="{h(REG)}">{t["cta"]}</a><a class="k-btn k-light" href="{PRICING}">{t["catalog"]} ↗</a></div></section>

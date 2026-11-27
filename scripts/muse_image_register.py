@@ -27,7 +27,7 @@ def card(lang):
     tg = ''.join(f'{NL}            <li>{t}</li>' for t in tags)
     return f'''        <li class="af-model">
           <div class="af-model-head">
-            <span class="af-model-logo" style="background:#ffffff;border:1px solid #e1e6ec" aria-hidden="true">{LOGO}</span>
+            <span class="af-model-logo mu-lobe" style="background:#ffffff;border:1px solid #e1e6ec" aria-hidden="true">{LOGO}</span>
             <div>
               <h3><a href="/{lang}/models/{SLUG}">Muse Image API</a></h3>
               <span class="af-model-cat">{vendor} · {MODEL}</span>

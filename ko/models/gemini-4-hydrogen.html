@@ -75,7 +75,7 @@
       "mainEntity": {
         "@id": "https://www.anyaigc.ai/ko/models/gemini-4-hydrogen#product"
       },
-      "dateModified": "2026-11-14"
+      "dateModified": "2026-11-27"
     },
     {
       "@type": "BreadcrumbList",
@@ -192,7 +192,7 @@
           "name": "Gemini 4 Hydrogen과 Argon, Carbon, 3.8 Flash 중 무엇을 써야 합니까?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Google의 포지셔닝은 다음과 같습니다. Hydrogen은 일상적인 코딩, 인터랙티브 웹 앱, 도구 호출 에이전트, 멀티모달 문서 작업, 병렬 서브 에이전트 같은 빠른 실행을 담당합니다. Argon과 Carbon은 깊고 긴 호흡의 추론을 담당하며, 가장 오래 사고하는 모델은 Carbon입니다. Google은 Gemini 3.8 Flash에서 Hydrogen으로 업그레이드하고, Carbon이 계획을 세우는 동안 Hydrogen이 코드를 수정하고 테스트를 실행하도록 구성하기를 권장합니다. Google 공식 정가 기준으로 Hydrogen은 Argon, Carbon보다 저렴합니다. AnyAIGC에서는 Hydrogen이 입력 $0.5360, 출력 $2.6800, Argon이 입력 $0.1985, 출력 $0.9927, Carbon이 입력 $0.7147, 출력 $3.5740입니다. 세 모델은 키 하나를 공유하며, 모델 이름만 바꿔서 전환할 수 있습니다."
+            "text": "Google의 포지셔닝은 다음과 같습니다. Hydrogen은 일상적인 코딩, 인터랙티브 웹 앱, 도구 호출 에이전트, 멀티모달 문서 작업, 병렬 서브 에이전트 같은 빠른 실행을 담당합니다. Argon과 Carbon은 깊고 긴 호흡의 추론을 담당하며, 가장 오래 사고하는 모델은 Carbon입니다. Google은 Gemini 3.8 Flash에서 Hydrogen으로 업그레이드하고, Carbon이 계획을 세우는 동안 Hydrogen이 코드를 수정하고 테스트를 실행하도록 구성하기를 권장합니다. Google 공식 정가 기준으로 Hydrogen은 Argon, Carbon보다 저렴합니다. AnyAIGC에서는 Hydrogen이 입력 $0.5360, 출력 $2.6800, Argon이 입력 $0.4200, 출력 $2.1000, Carbon이 입력 $0.7147, 출력 $3.5740입니다. 세 모델은 키 하나를 공유하며, 모델 이름만 바꿔서 전환할 수 있습니다."
           }
         },
         {
@@ -636,8 +636,8 @@ print()</code></pre>
       <ul class="o-family o-reveal">
         <li><a href="/ko/models/gemini-4-hydrogen" aria-current="page"><span class="o-tag">최신</span><b>Gemini 4 Hydrogen</b><span>일상적인 코딩과 에이전트를 위한 고속 실행 모델 · 입력 100만 토큰당 $0.5360</span></a></li>
         <li><a href="/ko/models/gemini-4-carbon"><b>Gemini 4 Carbon</b><span>장시간 에이전트를 위한 Gemini 4 최상위 모델 · 입력 $0.7147 / 1M</span></a></li>
-        <li><a href="/ko/models/gemini-4-argon"><b>Gemini 4 Argon</b><span>Google의 플래그십 추론 모델 · 입력 $0.1985 / 1M</span></a></li>
-        <li><a href="/ko/models/gemini-3.8-flash"><b>Gemini 3.8 Flash</b><span>Google의 가장 지능적인 Flash: 빠르고 저렴 · 입력 $0.0744 / 1M</span></a></li>
+        <li><a href="/ko/models/gemini-4-argon"><b>Gemini 4 Argon</b><span>Google의 플래그십 추론 모델 · 입력 $0.4200 / 1M</span></a></li>
+        <li><a href="/ko/models/gemini-3.8-flash"><b>Gemini 3.8 Flash</b><span>Google의 가장 지능적인 Flash: 빠르고 저렴 · 입력 $0.1575 / 1M</span></a></li>
         <li><a href="/ko/models/gemini-3.8-flash-tts"><b>Gemini 3.8 Flash TTS</b><span>음성 합성(TTS), 음성 30종, 2인 화자 · 오디오 출력 $3.2163 / 1M</span></a></li>
         <li><a href="/ko/models/gemini-3.1-pro-preview"><b>Gemini 3.1 Pro Preview</b><span>Gemini 3 Pro, 프리뷰 · 입력 $0.1985 / 1M</span></a></li>
       </ul>
@@ -656,7 +656,7 @@ print()</code></pre>
         <details><summary><h3>컨텍스트 길이와 최대 출력은 얼마입니까?</h3></summary><div class="o-ans"><p>Google은 입력, 사고, 출력이 함께 사용하는 1,048,576 토큰의 컨텍스트 길이를 명시합니다. 동기 요청은 기본적으로 최대 65,536 출력 토큰을 반환하며, 64K를 초과하는 출력(최대 약 1M 토큰)은 Google의 백그라운드 실행 기능이나 클라이언트 측 이어 쓰기로 처리합니다.</p></div></details>
         <details><summary><h3>사고 수준(thinking level)은 어떻게 설정합니까?</h3></summary><div class="o-ans"><p>Gemini 4 Hydrogen은 low, medium, high, xhigh의 네 가지 사고 수준(thinking level)을 지원하며 기본값은 high입니다. 기본값이 medium인 Argon, Carbon과 다릅니다. 네이티브 엔드포인트에서는 <code>generationConfig.thinkingConfig.thinkingLevel</code>을 설정하세요. Google은 대부분의 작업을 high로 시작하고, xhigh는 high로 풀리지 않는 다단계 문제에만 쓰기를 권장합니다. minimal을 보내면 오류가 반환되고, <code>temperature</code>, <code>top_p</code>, <code>top_k</code>는 무시됩니다.</p></div></details>
         <details><summary><h3>네이티브 Gemini 엔드포인트와 OpenAI 호환 엔드포인트 중 무엇을 써야 합니까?</h3></summary><div class="o-ans"><p>둘 다 사용할 수 있습니다. 네이티브 엔드포인트는 <code>POST https://anyaigc.ai/v1beta/models/gemini-4-hydrogen:generateContent</code>이며 Google Gemini API와 같은 요청 본문을 사용하므로 <code>contents</code>, <code>systemInstruction</code>, <code>tools</code>, <code>thinkingConfig</code>를 쓸 수 있습니다. OpenAI 호환 엔드포인트는 <code>POST https://anyaigc.ai/v1/chat/completions</code>이며, 공식 OpenAI SDK에서는 <code>base_url</code>을 <code>https://anyaigc.ai/v1</code>로 설정하세요. 둘 다 <code>Authorization: Bearer</code>를 사용합니다.</p></div></details>
-        <details><summary><h3>Gemini 4 Hydrogen과 Argon, Carbon, 3.8 Flash 중 무엇을 써야 합니까?</h3></summary><div class="o-ans"><p>Google의 포지셔닝은 다음과 같습니다. Hydrogen은 일상적인 코딩, 인터랙티브 웹 앱, 도구 호출 에이전트, 멀티모달 문서 작업, 병렬 서브 에이전트 같은 빠른 실행을 담당합니다. <a href="/ko/models/gemini-4-argon">Argon</a>과 <a href="/ko/models/gemini-4-carbon">Carbon</a>은 깊고 긴 호흡의 추론을 담당하며, 가장 오래 사고하는 모델은 Carbon입니다. Google은 <a href="/ko/models/gemini-3.8-flash">Gemini 3.8 Flash</a>에서 Hydrogen으로 업그레이드하고, Carbon이 계획을 세우는 동안 Hydrogen이 코드를 수정하고 테스트를 실행하도록 구성하기를 권장합니다. Google 공식 정가 기준으로 Hydrogen은 Argon, Carbon보다 저렴합니다. AnyAIGC에서는 Hydrogen이 입력 $0.5360, 출력 $2.6800, Argon이 입력 $0.1985, 출력 $0.9927, Carbon이 입력 $0.7147, 출력 $3.5740입니다. 세 모델은 키 하나를 공유하며, 모델 이름만 바꿔서 전환할 수 있습니다.</p></div></details>
+        <details><summary><h3>Gemini 4 Hydrogen과 Argon, Carbon, 3.8 Flash 중 무엇을 써야 합니까?</h3></summary><div class="o-ans"><p>Google의 포지셔닝은 다음과 같습니다. Hydrogen은 일상적인 코딩, 인터랙티브 웹 앱, 도구 호출 에이전트, 멀티모달 문서 작업, 병렬 서브 에이전트 같은 빠른 실행을 담당합니다. <a href="/ko/models/gemini-4-argon">Argon</a>과 <a href="/ko/models/gemini-4-carbon">Carbon</a>은 깊고 긴 호흡의 추론을 담당하며, 가장 오래 사고하는 모델은 Carbon입니다. Google은 <a href="/ko/models/gemini-3.8-flash">Gemini 3.8 Flash</a>에서 Hydrogen으로 업그레이드하고, Carbon이 계획을 세우는 동안 Hydrogen이 코드를 수정하고 테스트를 실행하도록 구성하기를 권장합니다. Google 공식 정가 기준으로 Hydrogen은 Argon, Carbon보다 저렴합니다. AnyAIGC에서는 Hydrogen이 입력 $0.5360, 출력 $2.6800, Argon이 입력 $0.4200, 출력 $2.1000, Carbon이 입력 $0.7147, 출력 $3.5740입니다. 세 모델은 키 하나를 공유하며, 모델 이름만 바꿔서 전환할 수 있습니다.</p></div></details>
         <details><summary><h3>캐싱은 어떻게 과금됩니까?</h3></summary><div class="o-ans"><p>Gemini 4 Hydrogen은 암시적 캐싱만 지원하며 명시적 캐싱(<code>cachedContents</code>)은 지원하지 않습니다. Google에 따르면 4,096 토큰 이상의 프롬프트는 자동으로 캐싱 대상이 되며, AnyAIGC에서 캐시 토큰은 100만 토큰당 $0.0268로 입력 가격의 5%입니다.</p></div></details>
         <details><summary><h3>동시 실행 수나 속도 제한이 있습니까?</h3></summary><div class="o-ans"><p>AnyAIGC는 <code>gemini-4-hydrogen</code>에 동시 실행 제한을 두지 않습니다. 모든 계정에 기본으로 적용되므로 배치 작업이나 여러 서브 에이전트를 병렬로 실행하는 데 적합합니다.</p></div></details>
         <details><summary><h3>Google Cloud 계정이 필요합니까?</h3></summary><div class="o-ans"><p>아니요. AnyAIGC 계정만 있으면 됩니다. 요청은 <code>https://anyaigc.ai</code>로 보내고, 요금은 USD로 과금되며, 카드, WeChat Pay, Alipay, USDT로 결제할 수 있습니다.</p></div></details>

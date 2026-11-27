@@ -75,7 +75,7 @@
       "mainEntity": {
         "@id": "https://www.anyaigc.ai/zh/models/gemini-4-hydrogen#product"
       },
-      "dateModified": "2026-11-14"
+      "dateModified": "2026-11-27"
     },
     {
       "@type": "BreadcrumbList",
@@ -192,7 +192,7 @@
           "name": "Gemini 4 Hydrogen 和 Argon、Carbon、3.8 Flash 怎么选？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Google 的定位是：Hydrogen 负责快速执行，适合日常编码、交互式网页应用、调用工具的 Agent、多模态文档处理和并行子 Agent；Argon 和 Carbon 负责深度、长周期的推理，Carbon 思考最多。Google 推荐从 Gemini 3.8 Flash 升级到 Hydrogen，也建议让 Carbon 做规划、Hydrogen 执行代码修改和测试。价格上，Google 官方 Hydrogen 低于 Argon 和 Carbon；在 AnyAIGC，Hydrogen 输入 $0.5360、输出 $2.6800，Argon 输入 $0.1985、输出 $0.9927，Carbon 输入 $0.7147、输出 $3.5740，三者用同一个 Key，按任务需要切换模型名即可。"
+            "text": "Google 的定位是：Hydrogen 负责快速执行，适合日常编码、交互式网页应用、调用工具的 Agent、多模态文档处理和并行子 Agent；Argon 和 Carbon 负责深度、长周期的推理，Carbon 思考最多。Google 推荐从 Gemini 3.8 Flash 升级到 Hydrogen，也建议让 Carbon 做规划、Hydrogen 执行代码修改和测试。价格上，Google 官方 Hydrogen 低于 Argon 和 Carbon；在 AnyAIGC，Hydrogen 输入 $0.5360、输出 $2.6800，Argon 输入 $0.4200、输出 $2.1000，Carbon 输入 $0.7147、输出 $3.5740，三者用同一个 Key，按任务需要切换模型名即可。"
           }
         },
         {
@@ -646,8 +646,8 @@ print()</code></pre>
       <ul class="o-family o-reveal">
         <li><a href="/zh/models/gemini-4-hydrogen" aria-current="page"><span class="o-tag">最新</span><b>Gemini 4 Hydrogen</b><span>日常编码与 Agent 的快速执行模型 · 输入 $0.5360 / 1M</span></a></li>
         <li><a href="/zh/models/gemini-4-carbon"><b>Gemini 4 Carbon</b><span>Gemini 4 前沿模型，长周期 Agent 与复杂推理 · 输入 $0.7147 / 1M</span></a></li>
-        <li><a href="/zh/models/gemini-4-argon"><b>Gemini 4 Argon</b><span>Google 旗舰推理模型 · 输入 $0.1985 / 1M</span></a></li>
-        <li><a href="/zh/models/gemini-3.8-flash"><b>Gemini 3.8 Flash</b><span>Google 称最智能的 Flash，速度快、价格低 · 输入 $0.0744 / 1M</span></a></li>
+        <li><a href="/zh/models/gemini-4-argon"><b>Gemini 4 Argon</b><span>Google 旗舰推理模型 · 输入 $0.4200 / 1M</span></a></li>
+        <li><a href="/zh/models/gemini-3.8-flash"><b>Gemini 3.8 Flash</b><span>Google 称最智能的 Flash，速度快、价格低 · 输入 $0.1575 / 1M</span></a></li>
         <li><a href="/zh/models/gemini-3.8-flash-tts"><b>Gemini 3.8 Flash TTS</b><span>语音合成，30 种音色、双人对话 · 音频输出 $3.2163 / 1M</span></a></li>
         <li><a href="/zh/models/gemini-3.1-pro-preview"><b>Gemini 3.1 Pro Preview</b><span>Gemini 3 代 Pro，预览版 · 输入 $0.1985 / 1M</span></a></li>
       </ul>
@@ -666,7 +666,7 @@ print()</code></pre>
         <details><summary><h3>上下文窗口和最大输出是多少？</h3></summary><div class="o-ans"><p>Google 公布的上下文窗口为 1,048,576 Token，输入、思考和输出共用这一个窗口。单次同步请求默认最多输出 65,536 Token；超过 64K 的长输出（最多约 100 万 Token）需要通过 Google 的后台执行或客户端续写实现。</p></div></details>
         <details><summary><h3>怎么设置思考级别？</h3></summary><div class="o-ans"><p>Gemini 4 Hydrogen 支持 low、medium、high、xhigh 四档思考级别，默认 high，这一点和默认 medium 的 Argon、Carbon 不同。原生接口写在 <code>generationConfig.thinkingConfig.thinkingLevel</code>。Google 建议多数任务从 high 开始，xhigh 只留给 high 解决不了的多步难题；传入 minimal 会报错，<code>temperature</code>、<code>top_p</code>、<code>top_k</code> 会被忽略。</p></div></details>
         <details><summary><h3>用原生 Gemini 接口还是 OpenAI 兼容接口？</h3></summary><div class="o-ans"><p>两种都可以。原生接口是 <code>POST https://anyaigc.ai/v1beta/models/gemini-4-hydrogen:generateContent</code>，请求体格式和 Google Gemini API 一致，适合用 <code>contents</code>、<code>systemInstruction</code>、<code>tools</code>、<code>thinkingConfig</code> 等原生字段。OpenAI 兼容接口是 <code>POST https://anyaigc.ai/v1/chat/completions</code>，OpenAI 官方 SDK 把 <code>base_url</code> 改成 <code>https://anyaigc.ai/v1</code> 即可。两种接口都用 <code>Authorization: Bearer</code> 鉴权。</p></div></details>
-        <details><summary><h3>Gemini 4 Hydrogen 和 Argon、Carbon、3.8 Flash 怎么选？</h3></summary><div class="o-ans"><p>Google 的定位是：Hydrogen 负责快速执行，适合日常编码、交互式网页应用、调用工具的 Agent、多模态文档处理和并行子 Agent；<a href="/zh/models/gemini-4-argon">Argon</a> 和 <a href="/zh/models/gemini-4-carbon">Carbon</a> 负责深度、长周期的推理，Carbon 思考最多。Google 推荐从 <a href="/zh/models/gemini-3.8-flash">Gemini 3.8 Flash</a> 升级到 Hydrogen，也建议让 Carbon 做规划、Hydrogen 执行代码修改和测试。价格上，Google 官方 Hydrogen 低于 Argon 和 Carbon；在 AnyAIGC，Hydrogen 输入 $0.5360、输出 $2.6800，Argon 输入 $0.1985、输出 $0.9927，Carbon 输入 $0.7147、输出 $3.5740，三者用同一个 Key，按任务需要切换模型名即可。</p></div></details>
+        <details><summary><h3>Gemini 4 Hydrogen 和 Argon、Carbon、3.8 Flash 怎么选？</h3></summary><div class="o-ans"><p>Google 的定位是：Hydrogen 负责快速执行，适合日常编码、交互式网页应用、调用工具的 Agent、多模态文档处理和并行子 Agent；<a href="/zh/models/gemini-4-argon">Argon</a> 和 <a href="/zh/models/gemini-4-carbon">Carbon</a> 负责深度、长周期的推理，Carbon 思考最多。Google 推荐从 <a href="/zh/models/gemini-3.8-flash">Gemini 3.8 Flash</a> 升级到 Hydrogen，也建议让 Carbon 做规划、Hydrogen 执行代码修改和测试。价格上，Google 官方 Hydrogen 低于 Argon 和 Carbon；在 AnyAIGC，Hydrogen 输入 $0.5360、输出 $2.6800，Argon 输入 $0.4200、输出 $2.1000，Carbon 输入 $0.7147、输出 $3.5740，三者用同一个 Key，按任务需要切换模型名即可。</p></div></details>
         <details><summary><h3>缓存怎么计费？</h3></summary><div class="o-ans"><p>Gemini 4 Hydrogen 只支持隐式缓存，不支持显式缓存（<code>cachedContents</code>）。按 Google 说明，提示达到 4,096 Token 以上会自动尝试缓存，命中部分在 AnyAIGC 按 $0.0268/百万 Token 计费，是输入价的 5%。</p></div></details>
         <details><summary><h3>并发和速率有限制吗？</h3></summary><div class="o-ans"><p>AnyAIGC 对 <code>gemini-4-hydrogen</code> 不设并发限制，所有用户默认享有，适合批量任务和多个子 Agent 并行。</p></div></details>
         <details><summary><h3>国内可以直接调用 Gemini 4 Hydrogen API 吗？</h3></summary><div class="o-ans"><p>可以。AnyAIGC 面向国内网络优化，通常无需额外代理即可调用 <code>https://anyaigc.ai</code>，按美元价格计费，支持微信支付和支付宝，企业可对公转账并开具增值税发票。</p></div></details>

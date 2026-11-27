@@ -1,0 +1,78 @@
+{
+  "ui": {
+    "send": "Ejecutar demo",
+    "stop": "Detener",
+    "replay": "Repetir",
+    "tag": "Demo simulada",
+    "thinking": "Pensando",
+    "working": "Trabajando",
+    "writing": "Redactando la respuesta",
+    "done": "Resultado de ejemplo listo",
+    "stopped": "Detenido",
+    "region": "Resultado de ejemplo",
+    "note": "Esto es una demo simulada, no una respuesta real del modelo. El resultado real lo devuelve la API."
+  },
+  "pages": {
+    "glm": {
+      "name": "GLM",
+      "steps": [
+        "Leer la estructura del repositorio y la configuración de pruebas",
+        "Ejecutar las pruebas y recopilar los casos fallidos y sus mensajes de error",
+        "Encontrar la causa raíz de cada uno y corregirla",
+        "Completar las definiciones de tipos que faltan y volver a ejecutar la comprobación de tipos"
+      ],
+      "answer": [
+        "Listo (resultado de ejemplo): las 5 pruebas fallidas están corregidas y la comprobación de tipos no reporta errores.",
+        "- Tres fallaban porque no se actualizaron las aserciones tras cambiar un valor de retorno, y dos pruebas asíncronas no tenían await",
+        "- Añadí los tipos que faltaban en utils y api, y eliminé cuatro usos de any",
+        "- No cambió ninguna lógica de negocio. Todas las ediciones están en archivos de pruebas y de tipos"
+      ]
+    },
+    "glm-5.2": {
+      "name": "GLM-5.2",
+      "steps": [
+        "Inventariar las páginas, los componentes y las llamadas a APIs de la plataforma del mini programa",
+        "Elegir un enfoque multiplataforma y extraer la capa de negocio independiente de la plataforma",
+        "Adaptar el enrutamiento, el almacenamiento y los pagos para H5 y la app",
+        "Comparar los tres destinos para comprobar la coherencia de interfaz y estilos"
+      ],
+      "answer": [
+        "Plan de migración (resultado de ejemplo): una sola copia de la lógica de negocio y de la capa de API, las diferencias entre plataformas aisladas en una capa de adaptadores y los mismos componentes en los tres destinos.",
+        "- API: un único wrapper de peticiones y un solo conjunto de endpoints, sin cambiar los campos",
+        "- Estilos: variables de diseño compartidas, con conversión automática de unidades en H5 para que lo visual coincida",
+        "- Diferencias entre plataformas: un adaptador para inicio de sesión, otro para pagos y otro para compartir, seis archivos en total",
+        "- Orden sugerido: migra primero la página de inicio y el flujo de pago, y el resto cuando esos estén validados"
+      ]
+    },
+    "glm-5.3": {
+      "name": "GLM-5.3",
+      "steps": [
+        "Observar la curva de memoria del proceso en la terminal",
+        "Tomar heap snapshots y comparar el crecimiento de objetos entre dos de ellos",
+        "Rastrear el crecimiento hasta unos event listeners que nunca se eliminan",
+        "Aplicar la corrección y escribir una prueba de regresión"
+      ],
+      "answer": [
+        "Encontrado y corregido (resultado de ejemplo): cada petición registra un listener que no se elimina al cerrarse la conexión, así que los objetos crecen de forma lineal con el número de peticiones.",
+        "- Parche: llamar a removeListener en el manejador de cierre, un archivo y cuatro líneas",
+        "- Prueba de regresión: simula 10,000 conexiones y verifica que el crecimiento del heap se mantenga por debajo del 5%",
+        "- Tras la corrección, una prueba de carga de 30 minutos mantiene la memoria estable"
+      ]
+    },
+    "glm-5.3-flash": {
+      "name": "GLM-5.3-Flash",
+      "steps": [
+        "Identificar los bloques, el texto y los iconos de la captura de pantalla",
+        "Dividirlo en los componentes Header, ProductCard y Footer",
+        "Reconstruir el layout y los colores con Flex y variables CSS",
+        "Añadir un breakpoint responsive y atributos de accesibilidad"
+      ],
+      "answer": [
+        "Componentes generados (resultado de ejemplo): la página se divide en Header, ProductCard y Footer, y ProductCard recibe sus datos por props para poder reutilizarse.",
+        "- El layout se reconstruye con Flex, con los colores y espacios en variables CSS",
+        "- Añadí un breakpoint de una sola columna por debajo de 768px, texto alt en las imágenes y botones que se pueden usar con el teclado",
+        "- La captura no incluye URLs de imágenes, así que src es un marcador de posición que debes reemplazar con datos reales"
+      ]
+    }
+  }
+}

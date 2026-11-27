@@ -22,8 +22,8 @@ SUBS = {
     'claude-opus-5-5':  {'zh': '原生 /v1/messages 接口 · 官方价约 1.2 折', 'en': 'Native /v1/messages API · 88% off list price'},
     'claude-sonnet-5-5': {'zh': '接近 Opus 5.5，官方价约 1.2 折', 'en': 'Near-Opus results at 88% off list price'},
     'claude-haiku-5-5': {'zh': '高并发、低成本任务和子 Agent 之选', 'en': 'High-volume, low-cost work and sub-agents'},
-    'claude-fable-5-2': {'zh': '新一代长任务 Agent 模型，官方约 2.4 折', 'en': 'Next-gen long-running agents, 76% off list price'},
-    'claude-fable-5-1': {'zh': 'Mythos 级长任务模型，约 2.4 折', 'en': 'Mythos-level long-running agents, 76% off'},
+    'claude-fable-5-2': {'zh': '新一代长任务 Agent 模型，官方约 2.5 折', 'en': 'Next-gen long-running agents, 75% off list price'},
+    'claude-fable-5-1': {'zh': 'Mythos 级长任务模型，约 2.5 折', 'en': 'Mythos-level long-running agents, 75% off'},
     'claude-fable-5':   {'zh': 'Mythos 级模型，旧版仍可用', 'en': 'Mythos-class model, legacy but still live'},
     'claude-opus-5':    {'zh': '接近 Fable 5 的智能，约 1.2 折', 'en': 'Near-Fable 5 intelligence at 88% off'},
     'claude-sonnet-5':  {'zh': '接近 Opus 4.8 的 Agent 能力', 'en': 'Near-Opus 4.8 agents at 88% off'},
@@ -41,10 +41,10 @@ SUBS_I18N = {
                           'es': 'Resultados cercanos a Opus con un 88 % menos', 'de': 'Ergebnisse nahe Opus, 88 % unter Listenpreis'},
     'claude-haiku-5-5': {'ja': '大量処理・低コストのタスクとサブエージェント向け', 'ko': '대량·저비용 작업과 서브 에이전트용',
                          'es': 'Tareas de alto volumen, bajo coste y subagentes', 'de': 'Hohes Volumen, niedrige Kosten, Sub-Agents'},
-    'claude-fable-5-2': {'ja': '次世代の長時間エージェント、定価より76%オフ', 'ko': '차세대 장시간 에이전트, 정가 대비 76% 저렴',
-                         'es': 'Agentes de larga duración de nueva generación, 76 % menos', 'de': 'Langlaufende Agenten der nächsten Generation, 76 % günstiger'},
-    'claude-fable-5-1': {'ja': 'Mythos級の長時間エージェント、76%オフ', 'ko': 'Mythos급 장시간 에이전트, 76% 저렴',
-                         'es': 'Agentes de larga duración nivel Mythos, 76 % menos', 'de': 'Langlaufende Agenten auf Mythos-Niveau, 76 % günstiger'},
+    'claude-fable-5-2': {'ja': '次世代の長時間エージェント、定価より75%オフ', 'ko': '차세대 장시간 에이전트, 정가 대비 75% 저렴',
+                         'es': 'Agentes de larga duración de nueva generación, 75 % menos', 'de': 'Langlaufende Agenten der nächsten Generation, 75 % günstiger'},
+    'claude-fable-5-1': {'ja': 'Mythos級の長時間エージェント、75%オフ', 'ko': 'Mythos급 장시간 에이전트, 75% 저렴',
+                         'es': 'Agentes de larga duración nivel Mythos, 75 % menos', 'de': 'Langlaufende Agenten auf Mythos-Niveau, 75 % günstiger'},
     'claude-fable-5': {'ja': 'Mythosクラスのモデル。旧世代ですが利用可能', 'ko': 'Mythos급 모델, 이전 세대지만 계속 사용 가능',
                        'es': 'Modelo clase Mythos, generación anterior pero disponible', 'de': 'Modell der Mythos-Klasse, ältere Generation, weiter verfügbar'},
     'claude-opus-5': {'ja': 'Fable 5に迫る知能を88%オフで', 'ko': 'Fable 5에 근접한 지능, 88% 저렴',
@@ -66,14 +66,14 @@ TAGS_I18N = {
                         'es': ['Código / agentes', 'Caché de prompts', 'Claude Code'], 'de': ['Coding / Agenten', 'Prompt-Caching', 'Claude Code']},
     'claude-sonnet-5-5': {'ja': ['88%オフ', 'Sonnet 5より30%以上高速', '請求書を自分で発行'], 'ko': ['88% 저렴', '30%+ 더 빠름', '인보이스 직접 발급'],
                           'es': ['88 % menos', '30 %+ más rápido', 'Facturas en consola'], 'de': ['88 % günstiger', '30 %+ schneller', 'Rechnungen im Konto']},
-    'claude-haiku-5-5': {'ja': ['88%オフ', 'サブエージェント', '同時実行数の上限なし'], 'ko': ['88% 저렴', '서브 에이전트', '동시 실행 제한 없음'],
-                         'es': ['88 % menos', 'Subagentes', 'Sin límite de RPM'], 'de': ['88 % günstiger', 'Sub-Agents', 'Kein RPM-Limit']},
-    'claude-fable-5-2': {'ja': ['長時間エージェント', 'マルチエージェント', '76%オフ'], 'ko': ['장시간 에이전트', '멀티 에이전트', '76% 저렴'],
-                         'es': ['Larga duración', 'Multiagente', '76 % menos'], 'de': ['Langlaufend', 'Multi-Agent', '76 % günstiger']},
-    'claude-fable-5-1': {'ja': ['Mythos級', '長時間エージェント', '76%オフ'], 'ko': ['Mythos급', '장시간 에이전트', '76% 저렴'],
-                         'es': ['Nivel Mythos', 'Larga duración', '76 % menos'], 'de': ['Mythos-Niveau', 'Langlaufend', '76 % günstiger']},
-    'claude-fable-5': {'ja': ['Mythosクラス', '76%オフ', '旧世代・利用可'], 'ko': ['Mythos급', '76% 저렴', '이전 세대, 사용 가능'],
-                       'es': ['Clase Mythos', '76 % menos', 'Anterior, disponible'], 'de': ['Mythos-Klasse', '76 % günstiger', 'Älter, verfügbar']},
+    'claude-haiku-5-5': {'ja': ['75%オフ', 'サブエージェント', '同時実行数の上限なし'], 'ko': ['75% 저렴', '서브 에이전트', '동시 실행 제한 없음'],
+                         'es': ['75 % menos', 'Subagentes', 'Sin límite de RPM'], 'de': ['75 % günstiger', 'Sub-Agents', 'Kein RPM-Limit']},
+    'claude-fable-5-2': {'ja': ['長時間エージェント', 'マルチエージェント', '75%オフ'], 'ko': ['장시간 에이전트', '멀티 에이전트', '75% 저렴'],
+                         'es': ['Larga duración', 'Multiagente', '75 % menos'], 'de': ['Langlaufend', 'Multi-Agent', '75 % günstiger']},
+    'claude-fable-5-1': {'ja': ['Mythos級', '長時間エージェント', '75%オフ'], 'ko': ['Mythos급', '장시간 에이전트', '75% 저렴'],
+                         'es': ['Nivel Mythos', 'Larga duración', '75 % menos'], 'de': ['Mythos-Niveau', 'Langlaufend', '75 % günstiger']},
+    'claude-fable-5': {'ja': ['Mythosクラス', '75%オフ', '旧世代・利用可'], 'ko': ['Mythos급', '75% 저렴', '이전 세대, 사용 가능'],
+                       'es': ['Clase Mythos', '75 % menos', 'Anterior, disponible'], 'de': ['Mythos-Klasse', '75 % günstiger', 'Älter, verfügbar']},
     'claude-opus-5': {'ja': ['88%オフ', 'Frontier-Bench', '旧世代・利用可'], 'ko': ['88% 저렴', 'Frontier-Bench', '이전 세대, 사용 가능'],
                       'es': ['88 % menos', 'Frontier-Bench', 'Anterior, disponible'], 'de': ['88 % günstiger', 'Frontier-Bench', 'Älter, verfügbar']},
     'claude-sonnet-5': {'ja': ['エージェント', 'コーディング', '88%オフ'], 'ko': ['에이전트', '코딩', '88% 저렴'],
@@ -85,7 +85,7 @@ TAGS_I18N = {
     'claude-opus-4-6': {'ja': ['利用可能', '1Mコンテキスト長', '88%オフ'], 'ko': ['사용 가능', '1M 컨텍스트', '88% 저렴'],
                         'es': ['Disponible', 'Contexto de 1M', '88 % menos'], 'de': ['Verfügbar', '1M Kontext', '88 % günstiger']},
 }
-OVERVIEW_PRICE = {'ja': '$0.0119 / 100万トークンから', 'ko': '$0.0119 / 100만 토큰부터', 'es': 'Desde $0.0119 / 1 M', 'de': 'Ab $0.0119 / 1 Mio.'}
+OVERVIEW_PRICE = {'ja': '$0.0247 / 100万トークンから', 'ko': '$0.0247 / 100만 토큰부터', 'es': 'Desde $0.0247 / 1 M', 'de': 'Ab $0.0247 / 1 Mio.'}
 PRICE_UNIT = {'zh': ' / 1M 输入', 'en': ' / 1M input', 'ja': ' / 100万入力トークン', 'ko': ' / 100만 입력 토큰', 'es': ' / 1 M entrada', 'de': ' / 1 Mio. Eingabe'}
 
 TPL = '''<!doctype html><html><head><meta charset="utf-8"><style>
@@ -150,7 +150,7 @@ def main():
                     sub = SUBS_I18N['claude'][lang]
                 else:
                     tags = ['11 个型号', '约官方 1.2 折起', '对公 · 专票'] if lang == 'zh' else ['11 models', 'Up to 88% off', 'Self-service invoices']
-                    first = '$0.0119 / 1M 起' if lang == 'zh' else 'From $0.0119 / 1M'
+                    first = '$0.0247 / 1M 起' if lang == 'zh' else 'From $0.0247 / 1M'
                     sub = SUBS['claude'][lang]
                 chips = f'<span class="d">{first}</span>' + ''.join(f'<span>{t}</span>' for t in tags)
                 html = render(star, 'Claude API', sub, chips, '104', lang)
@@ -167,7 +167,7 @@ def main():
                         sub = re.sub(r'\s*[-|]\s*AnyAIGC.*$', '', sub).strip()
                     card = re.search(r'href="/' + lang + '/models/' + re.escape(slug) + r'">.*?<ul class="af-tags">(.*?)</ul>', hub, re.S)
                     tags = re.findall(r'<li>([^<]*)</li>', card.group(1))[:3] if card else []
-                    chips = f'<span class="d">{price}{PRICE_UNIT[lang]}</span>' + ''.join(f'<span>{t}</span>' for t in tags)
+                chips = f'<span class="d">{price}{PRICE_UNIT[lang]}</span>' + ''.join(f'<span>{t}</span>' for t in tags)
                 html = render(star, name, sub, chips, '96' if len(name) <= 15 else '88', lang)
             io.open(os.path.join(OUT, n + '.html'), 'w', encoding='utf-8').write(html)
             names.append(n)

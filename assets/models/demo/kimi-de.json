@@ -1,0 +1,94 @@
+{
+  "ui": {
+    "send": "Demo starten",
+    "stop": "Stopp",
+    "replay": "Erneut abspielen",
+    "tag": "Simulierte Demo",
+    "thinking": "Denkt nach",
+    "working": "Arbeitet",
+    "writing": "Schreibt die Antwort",
+    "done": "Beispielausgabe fertig",
+    "stopped": "Angehalten",
+    "region": "Beispielausgabe",
+    "note": "Dies ist eine simulierte Demo, keine echte Modellantwort. Die tatsächliche Ausgabe kommt von der API."
+  },
+  "pages": {
+    "kimi": {
+      "name": "Kimi",
+      "steps": [
+        "Repository durchsuchen und das Payments-Modul samt Aufrufern finden",
+        "Aktuelle Schnittstellen erfassen und doppelte Logik sowie ungetestete Zweige markieren",
+        "In einen PaymentService und eine Gateway-Adapterschicht aufteilen",
+        "Unit-Tests schreiben und ausführen"
+      ],
+      "answer": [
+        "Refactoring abgeschlossen (Beispielausgabe): Die Zahlungslogik liegt jetzt in PaymentService und einer Gateway-Adapterschicht, und die Aufrufer hängen nur noch vom Interface ab.",
+        "- 18 neue Unit-Tests decken Rückerstattungen, doppelte Callbacks und Wiederholungen nach Timeouts ab",
+        "- Alle bestehenden test_checkout-Fälle laufen durch, das öffentliche Interface bleibt unverändert",
+        "- Eine Frage an Sie: legacy_pay() hat noch zwei Aufrufer. Ich habe eine Kompatibilitätsschicht beibehalten. Soll ich sie entfernen?"
+      ]
+    },
+    "kimi-k2.6": {
+      "name": "Kimi K2.6",
+      "steps": [
+        "Das Design lesen und Layout, Schrift, Farben und Abstände extrahieren",
+        "Semantisches HTML und responsives CSS erzeugen",
+        "Formularvalidierung ergänzen: Pflichtfelder, E-Mail-Format, Absendestatus",
+        "Das Layout bei 375px, 768px und 1280px prüfen"
+      ],
+      "answer": [
+        "Landingpage erzeugt (Beispielausgabe): Hero, Features, Preise und ein Anmeldeformular, mit konsistentem Layout bei allen drei Breiten.",
+        "- Formularvalidierung: Name erforderlich, Hinweise zum E-Mail-Format während der Eingabe und ein Ladezustand am Button beim Absenden",
+        "- Farben und Abstände folgen dem Design, die Tokens liegen in :root, sodass ein neues Theme nur an einer Stelle Änderungen erfordert",
+        "- Für die Illustration gibt es keine Quelldatei, daher habe ich einen Platzhalter verwendet. Zum Austauschen genügt es, einen Pfad zu ändern"
+      ]
+    },
+    "kimi-k2.7-code": {
+      "name": "Kimi K2.7 Code",
+      "steps": [
+        "Die Test-Suite ausführen und den Fehler in test_checkout reproduzieren",
+        "Den Stacktrace lesen und auf apply_coupon() eingrenzen",
+        "Die Ursache bestätigen: Die Ablaufprüfung des Gutscheins verglich Ortszeit",
+        "Den Fix anwenden und die Tests erneut ausführen"
+      ],
+      "answer": [
+        "Behoben (Beispielausgabe): apply_coupon() verglich den Ablauf in Ortszeit, deshalb liefen Gutscheine auf UTC-Servern einen Tag zu früh ab.",
+        "- Änderung: überall zeitzonenbewusste UTC-Datetimes vergleichen, eine Datei und drei Zeilen",
+        "- Erneuter Lauf: alle 42 Tests bestanden",
+        "- Zusätzlich habe ich einen Regressionstest für die Zeitzonengrenze ergänzt"
+      ]
+    },
+    "kimi-k3": {
+      "name": "Kimi K3",
+      "steps": [
+        "Das gesamte Repository lesen und Abhängigkeiten pro Modul erfassen",
+        "Servicegrenzen nach Datenhoheit und Änderungshäufigkeit ziehen",
+        "Die Services orders, inventory und users samt Schnittstellen definieren",
+        "Reihenfolge der Migration und Rollback planen"
+      ],
+      "answer": [
+        "Vorgeschlagene Aufteilung (Beispielausgabe): drei Services nach Datenhoheit, nämlich orders, inventory und users, mit gemeinsamen Hilfsfunktionen in einer internen Bibliothek.",
+        "- Schritt 1: Module innerhalb des Monolithen entlang der Servicegrenzen umorganisieren, weiterhin ein einziges Deployment",
+        "- Schritt 2: Zuerst den users-Service herauslösen, da nur wenige andere Module direkt auf seine Daten zugreifen",
+        "- Schritt 3: orders und inventory auf ereignisbasierte Kommunikation umstellen und die tabellenübergreifenden Abfragen schrittweise abschaffen",
+        "- In jedem Schritt einen Rollback-Schalter vorhalten und den Traffic nach einem 5%-Canary hochfahren"
+      ]
+    },
+    "kimi-k3.1-pro": {
+      "name": "Kimi K3.1 Pro",
+      "steps": [
+        "Die drei Geschäftsberichte lesen und Umsatz, Gewinn, Cashflow und Capex extrahieren",
+        "Bilanzierungsmethoden vereinheitlichen und auf dasselbe Geschäftsjahr abstimmen",
+        "EV/EBITDA, P/E und EV/Sales wählen und die Vergleichstabelle erstellen",
+        "Sensitivitätsanalyse durchführen und das Ergebnis gegenprüfen"
+      ],
+      "answer": [
+        "Fazit (Beispielausgabe): Von den drei Unternehmen ist A am günstigsten, wächst aber am langsamsten, und C hat den höchsten Aufschlag, gestützt durch Margen und Cash-Conversion.",
+        "- Bewertung: A bei etwa 8x EV/EBITDA, B bei etwa 11x, C bei etwa 15x (alles Beispieldaten)",
+        "- Treiber: C wandelt am meisten Free Cashflow um, und B hat die höchste Capex-Last",
+        "- Risiko: Die Umschlagshäufigkeit der Forderungen bei B sinkt, nehmen Sie daher ein pessimistisches Szenario ins Modell auf",
+        "Vergleichstabelle und Sensitivitätsanalyse sind als Tabellen aufbereitet und können direkt exportiert werden."
+      ]
+    }
+  }
+}

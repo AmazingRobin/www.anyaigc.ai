@@ -1,0 +1,78 @@
+{
+  "ui": {
+    "send": "Run the demo",
+    "stop": "Stop",
+    "replay": "Replay",
+    "tag": "Simulated demo",
+    "thinking": "Thinking",
+    "working": "Working",
+    "writing": "Writing the answer",
+    "done": "Sample output ready",
+    "stopped": "Stopped",
+    "region": "Sample output",
+    "note": "This is a simulated demo, not a real model response. Actual output comes from the API."
+  },
+  "pages": {
+    "glm": {
+      "name": "GLM",
+      "steps": [
+        "Read the repo layout and the test config",
+        "Run the tests and collect failing cases and error messages",
+        "Find each root cause and fix it",
+        "Fill in the missing type definitions and rerun the type check"
+      ],
+      "answer": [
+        "Done (sample output): all 5 failing tests are fixed and the type check reports zero errors.",
+        "- Three failed because assertions weren't updated after a return-value change, and two async tests were missing await",
+        "- Added the missing types in utils and api, and removed four uses of any",
+        "- No business logic changed. Every edit is in test files and type files"
+      ]
+    },
+    "glm-5.2": {
+      "name": "GLM-5.2",
+      "steps": [
+        "Inventory the mini program's pages, components and platform API calls",
+        "Choose a cross-platform approach and pull out the platform-independent business layer",
+        "Adapt routing, storage and payments for H5 and the app",
+        "Compare the three targets for interface and style consistency"
+      ],
+      "answer": [
+        "Migration plan (sample output): one copy of business logic and the API layer, platform differences isolated in an adapter layer, and the same components on all three targets.",
+        "- API: one request wrapper and one set of endpoints, with fields unchanged",
+        "- Styles: shared design variables, with units converted automatically on H5 so the visuals match",
+        "- Platform differences: one adapter each for login, payments and sharing, six files in total",
+        "- Suggested order: migrate the home page and checkout flow first, then the rest once they check out"
+      ]
+    },
+    "glm-5.3": {
+      "name": "GLM-5.3",
+      "steps": [
+        "Watch the process memory curve in the terminal",
+        "Take heap snapshots and diff object growth between two of them",
+        "Trace the growth to event listeners that are never removed",
+        "Apply the fix and write a regression test"
+      ],
+      "answer": [
+        "Found and fixed (sample output): each request registers a listener that is never removed when the connection closes, so objects grow linearly with the request count.",
+        "- Patch: call removeListener in the close handler, one file and four lines",
+        "- Regression test: simulate 10,000 connections and assert that heap growth stays under 5%",
+        "- After the fix, a 30-minute load test keeps memory flat"
+      ]
+    },
+    "glm-5.3-flash": {
+      "name": "GLM-5.3-Flash",
+      "steps": [
+        "Identify the blocks, text and icons in the screenshot",
+        "Split it into Header, ProductCard and Footer components",
+        "Rebuild layout and colors with Flex and CSS variables",
+        "Add a responsive breakpoint and accessibility attributes"
+      ],
+      "answer": [
+        "Components generated (sample output): the page is split into Header, ProductCard and Footer, and ProductCard takes its data through props so it can be reused.",
+        "- Layout is rebuilt with Flex, with colors and spacing in CSS variables",
+        "- Added a single-column breakpoint below 768px, alt text on images and keyboard-operable buttons",
+        "- The screenshot has no image URLs, so src is a placeholder to replace with real data"
+      ]
+    }
+  }
+}

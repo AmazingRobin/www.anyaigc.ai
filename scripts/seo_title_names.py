@@ -28,11 +28,11 @@ NAMES = {
     "wan2.5-i2v-preview": ("Wan 2.5 I2V Preview", "Wan 2.5 I2V"),
     "viduq4-preview": ("Vidu Q4 Preview", "Vidu Q4"),
     # "12-30" has no year, so a reader cannot tell which snapshot this is.
-    "qwen-image-max-2025-12-30": ("Qwen Image Max 12-30", "Qwen Image Max 2025-12-30"),
+    "qwen-image-max-2025-12-30": ("Qwen Image Max", "Qwen Image Max"),
 }
 # Titles that need different wording, not just a different name, to fit.
 TRIMMED = {
-    ("en", "qwen-image-max-2025-12-30"): "Qwen Image Max 2025-12-30 API Pricing | $0.0658/request - AnyAIGC",
+    ("en", "qwen-image-max-2025-12-30"): "Qwen Image Max API Pricing | $0.0658/request - AnyAIGC",
 }
 LIMIT_EN, LIMIT_ZH = 65, 64  # escaped length / display width, as check_topics.py counts
 

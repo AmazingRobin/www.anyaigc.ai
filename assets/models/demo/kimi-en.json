@@ -1,0 +1,94 @@
+{
+  "ui": {
+    "send": "Run the demo",
+    "stop": "Stop",
+    "replay": "Replay",
+    "tag": "Simulated demo",
+    "thinking": "Thinking",
+    "working": "Working",
+    "writing": "Writing the answer",
+    "done": "Sample output ready",
+    "stopped": "Stopped",
+    "region": "Sample output",
+    "note": "This is a simulated demo, not a real model response. Actual output comes from the API."
+  },
+  "pages": {
+    "kimi": {
+      "name": "Kimi",
+      "steps": [
+        "Scan the repo and locate the payments module and its callers",
+        "Map the current interfaces and flag duplicated logic and untested branches",
+        "Split it into a PaymentService and a Gateway adapter layer",
+        "Write the unit tests and run them"
+      ],
+      "answer": [
+        "Refactor done (sample output): payment logic now lives in PaymentService plus a Gateway adapter layer, and callers depend only on the interface.",
+        "- 18 new unit tests cover refunds, duplicate callbacks and timeout retries",
+        "- The existing test_checkout cases all pass and the public interface is unchanged",
+        "- One question for you: legacy_pay() still has two callers. I kept a compatibility shim. Should I remove it?"
+      ]
+    },
+    "kimi-k2.6": {
+      "name": "Kimi K2.6",
+      "steps": [
+        "Read the design and extract layout, type, colors and spacing",
+        "Generate semantic HTML and responsive CSS",
+        "Add form validation: required fields, email format, submit state",
+        "Check the layout at 375px, 768px and 1280px"
+      ],
+      "answer": [
+        "Landing page generated (sample output): hero, features, pricing and a signup form, with a consistent layout at all three widths.",
+        "- Form validation: name required, live email-format hints, and a loading state on the button while submitting",
+        "- Colors and spacing follow the design, with tokens in :root so retheming touches one place",
+        "- The illustration has no source asset, so I used a placeholder. Swapping it means changing one path"
+      ]
+    },
+    "kimi-k2.7-code": {
+      "name": "Kimi K2.7 Code",
+      "steps": [
+        "Run the test suite and reproduce the test_checkout failure",
+        "Read the stack trace and narrow it down to apply_coupon()",
+        "Confirm the cause: the coupon expiry check compared local time",
+        "Apply the fix and rerun the tests"
+      ],
+      "answer": [
+        "Fixed (sample output): apply_coupon() compared expiry in local time, so coupons expired a day early on UTC servers.",
+        "- Change: compare timezone-aware UTC datetimes everywhere, one file and three lines",
+        "- Rerun: all 42 tests pass",
+        "- I also added a regression test for the cross-timezone boundary"
+      ]
+    },
+    "kimi-k3": {
+      "name": "Kimi K3",
+      "steps": [
+        "Read the whole repo and map dependencies by module",
+        "Draw service boundaries by data ownership and change frequency",
+        "Define the orders, inventory and users services and their interfaces",
+        "Plan the migration order and rollback"
+      ],
+      "answer": [
+        "Proposed split (sample output): three services by data ownership, namely orders, inventory and users, with shared helpers pulled into an internal library.",
+        "- Step 1: reorganize modules inside the monolith along the service boundaries, still one deployable",
+        "- Step 2: extract the users service first, since few other modules read or write its data directly",
+        "- Step 3: switch orders and inventory to event-based communication and retire the cross-table queries gradually",
+        "- Keep a rollback switch at every step and ramp traffic after a 5% canary"
+      ]
+    },
+    "kimi-k3.1-pro": {
+      "name": "Kimi K3.1 Pro",
+      "steps": [
+        "Read the three annual reports and extract revenue, profit, cash flow and capex",
+        "Normalize accounting treatment and align on the same fiscal year",
+        "Pick EV/EBITDA, P/E and EV/Sales and build the comps table",
+        "Run a sensitivity analysis and cross-check the conclusion"
+      ],
+      "answer": [
+        "Conclusion (sample output): of the three, A is the cheapest but grows the slowest, and C carries the highest premium, backed by margins and cash conversion.",
+        "- Valuation: A at about 8x EV/EBITDA, B at about 11x, C at about 15x (all sample data)",
+        "- Drivers: C converts the most free cash flow, and B has the heaviest capex load",
+        "- Risk: B's receivables turnover is slowing, so add a pessimistic case to the model",
+        "The comps table and sensitivity analysis are laid out as tables, ready to export."
+      ]
+    }
+  }
+}

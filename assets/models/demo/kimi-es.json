@@ -1,0 +1,94 @@
+{
+  "ui": {
+    "send": "Ejecutar demo",
+    "stop": "Detener",
+    "replay": "Repetir",
+    "tag": "Demo simulada",
+    "thinking": "Pensando",
+    "working": "Trabajando",
+    "writing": "Redactando la respuesta",
+    "done": "Resultado de ejemplo listo",
+    "stopped": "Detenido",
+    "region": "Resultado de ejemplo",
+    "note": "Esto es una demo simulada, no una respuesta real del modelo. El resultado real lo devuelve la API."
+  },
+  "pages": {
+    "kimi": {
+      "name": "Kimi",
+      "steps": [
+        "Escanear el repositorio y localizar el módulo de pagos y quién lo llama",
+        "Mapear las interfaces actuales y señalar la lógica duplicada y las ramas sin pruebas",
+        "Dividirlo en un PaymentService y una capa de adaptadores de Gateway",
+        "Escribir las pruebas unitarias y ejecutarlas"
+      ],
+      "answer": [
+        "Refactorización terminada (resultado de ejemplo): la lógica de pagos ahora vive en PaymentService más una capa de adaptadores de Gateway, y los llamadores dependen solo de la interfaz.",
+        "- 18 pruebas unitarias nuevas cubren reembolsos, callbacks duplicados y reintentos por timeout",
+        "- Todos los casos existentes de test_checkout pasan y la interfaz pública no cambia",
+        "- Una pregunta para ti: legacy_pay() todavía tiene dos llamadores. Dejé una capa de compatibilidad. ¿La elimino?"
+      ]
+    },
+    "kimi-k2.6": {
+      "name": "Kimi K2.6",
+      "steps": [
+        "Leer el diseño y extraer el layout, la tipografía, los colores y los espacios",
+        "Generar HTML semántico y CSS adaptable",
+        "Añadir validación al formulario: campos obligatorios, formato de correo, estado de envío",
+        "Revisar el layout a 375px, 768px y 1280px"
+      ],
+      "answer": [
+        "Landing page generada (resultado de ejemplo): hero, características, precios y un formulario de registro, con un layout consistente en los tres anchos.",
+        "- Validación del formulario: nombre obligatorio, avisos en vivo sobre el formato del correo y un estado de carga en el botón durante el envío",
+        "- Los colores y espacios siguen el diseño, con tokens en :root para que cambiar el tema se haga en un solo lugar",
+        "- La ilustración no tiene archivo de origen, así que usé un marcador de posición. Para reemplazarla basta cambiar una ruta"
+      ]
+    },
+    "kimi-k2.7-code": {
+      "name": "Kimi K2.7 Code",
+      "steps": [
+        "Ejecutar la suite de pruebas y reproducir el fallo de test_checkout",
+        "Leer el stack trace y acotarlo a apply_coupon()",
+        "Confirmar la causa: la comprobación de caducidad del cupón comparaba con la hora local",
+        "Aplicar la corrección y volver a ejecutar las pruebas"
+      ],
+      "answer": [
+        "Corregido (resultado de ejemplo): apply_coupon() comparaba la caducidad en hora local, por lo que los cupones caducaban un día antes en servidores en UTC.",
+        "- Cambio: comparar datetimes UTC con zona horaria en todos los puntos, un archivo y tres líneas",
+        "- Nueva ejecución: las 42 pruebas pasan",
+        "- También añadí una prueba de regresión para el límite entre zonas horarias"
+      ]
+    },
+    "kimi-k3": {
+      "name": "Kimi K3",
+      "steps": [
+        "Leer todo el repositorio y mapear las dependencias por módulo",
+        "Trazar los límites de los servicios según la propiedad de los datos y la frecuencia de cambio",
+        "Definir los servicios de pedidos, inventario y usuarios y sus interfaces",
+        "Planificar el orden de la migración y el rollback"
+      ],
+      "answer": [
+        "Propuesta de división (resultado de ejemplo): tres servicios según la propiedad de los datos, a saber, pedidos, inventario y usuarios, con las utilidades compartidas movidas a una biblioteca interna.",
+        "- Paso 1: reorganizar los módulos dentro del monolito siguiendo los límites de los servicios, aún como un solo despliegue",
+        "- Paso 2: extraer primero el servicio de usuarios, ya que pocos módulos leen o escriben sus datos directamente",
+        "- Paso 3: pasar pedidos e inventario a comunicación basada en eventos y retirar poco a poco las consultas entre tablas",
+        "- Mantén un interruptor de rollback en cada paso y aumenta el tráfico tras un canary del 5%"
+      ]
+    },
+    "kimi-k3.1-pro": {
+      "name": "Kimi K3.1 Pro",
+      "steps": [
+        "Leer los tres informes anuales y extraer ingresos, beneficio, flujo de caja y capex",
+        "Normalizar el tratamiento contable y alinear todo al mismo año fiscal",
+        "Elegir EV/EBITDA, P/E y EV/Sales y construir la tabla de comparables",
+        "Hacer un análisis de sensibilidad y contrastar la conclusión"
+      ],
+      "answer": [
+        "Conclusión (resultado de ejemplo): de las tres, A es la más barata pero la que menos crece, y C tiene la prima más alta, respaldada por sus márgenes y su conversión de caja.",
+        "- Valoración: A a unas 8x EV/EBITDA, B a unas 11x, C a unas 15x (todos son datos de ejemplo)",
+        "- Factores: C convierte más flujo de caja libre, y B tiene la mayor carga de capex",
+        "- Riesgo: la rotación de cuentas por cobrar de B se está ralentizando, así que añade un escenario pesimista al modelo",
+        "La tabla de comparables y el análisis de sensibilidad se presentan como tablas, listas para exportar."
+      ]
+    }
+  }
+}

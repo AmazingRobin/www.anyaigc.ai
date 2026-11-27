@@ -1,0 +1,78 @@
+{
+  "ui": {
+    "send": "Demo starten",
+    "stop": "Stopp",
+    "replay": "Erneut abspielen",
+    "tag": "Simulierte Demo",
+    "thinking": "Denkt nach",
+    "working": "Arbeitet",
+    "writing": "Schreibt die Antwort",
+    "done": "Beispielausgabe fertig",
+    "stopped": "Angehalten",
+    "region": "Beispielausgabe",
+    "note": "Dies ist eine simulierte Demo, keine echte Modellantwort. Die tatsächliche Ausgabe kommt von der API."
+  },
+  "pages": {
+    "glm": {
+      "name": "GLM",
+      "steps": [
+        "Die Repository-Struktur und die Testkonfiguration lesen",
+        "Die Tests ausführen und fehlgeschlagene Fälle samt Fehlermeldungen sammeln",
+        "Jede Ursache finden und beheben",
+        "Fehlende Typdefinitionen ergänzen und die Typprüfung erneut ausführen"
+      ],
+      "answer": [
+        "Erledigt (Beispielausgabe): Alle 5 fehlgeschlagenen Tests sind repariert, und die Typprüfung meldet keine Fehler.",
+        "- Drei schlugen fehl, weil die Assertions nach einer Änderung des Rückgabewerts nicht angepasst wurden, und bei zwei asynchronen Tests fehlte await",
+        "- Fehlende Typen in utils und api ergänzt und vier Verwendungen von any entfernt",
+        "- Die Geschäftslogik blieb unverändert. Alle Änderungen betreffen nur Testdateien und Typdateien"
+      ]
+    },
+    "glm-5.2": {
+      "name": "GLM-5.2",
+      "steps": [
+        "Seiten, Komponenten und Plattform-API-Aufrufe der Mini-Program-App erfassen",
+        "Einen plattformübergreifenden Ansatz wählen und die plattformunabhängige Geschäftsschicht herauslösen",
+        "Routing, Speicher und Zahlungen für H5 und die App anpassen",
+        "Die drei Zielplattformen auf einheitliche Oberfläche und Gestaltung vergleichen"
+      ],
+      "answer": [
+        "Migrationsplan (Beispielausgabe): Geschäftslogik und API-Schicht gibt es nur einmal, Plattformunterschiede sind in einer Adapterschicht gekapselt, und auf allen drei Zielplattformen kommen dieselben Komponenten zum Einsatz.",
+        "- API: ein Request-Wrapper und ein Satz Endpunkte, die Felder bleiben unverändert",
+        "- Styles: gemeinsame Design-Variablen, auf H5 werden die Einheiten automatisch umgerechnet, damit die Darstellung übereinstimmt",
+        "- Plattformunterschiede: je ein Adapter für Login, Zahlungen und Teilen, insgesamt sechs Dateien",
+        "- Empfohlene Reihenfolge: zuerst Startseite und Checkout-Ablauf migrieren, den Rest nach erfolgreicher Prüfung"
+      ]
+    },
+    "glm-5.3": {
+      "name": "GLM-5.3",
+      "steps": [
+        "Die Speicherkurve des Prozesses im Terminal beobachten",
+        "Heap-Snapshots erstellen und das Objektwachstum zwischen zwei Snapshots vergleichen",
+        "Das Wachstum auf Event-Listener zurückführen, die nie entfernt werden",
+        "Den Fix anwenden und einen Regressionstest schreiben"
+      ],
+      "answer": [
+        "Gefunden und behoben (Beispielausgabe): Jede Anfrage registriert einen Listener, der beim Schließen der Verbindung nie entfernt wird, sodass die Objektzahl linear mit der Anzahl der Anfragen wächst.",
+        "- Patch: removeListener im close-Handler aufrufen, eine Datei und vier Zeilen",
+        "- Regressionstest: 10,000 Verbindungen simulieren und prüfen, dass das Heap-Wachstum unter 5% bleibt",
+        "- Nach dem Fix bleibt der Speicherverbrauch in einem 30-minütigen Lasttest konstant"
+      ]
+    },
+    "glm-5.3-flash": {
+      "name": "GLM-5.3-Flash",
+      "steps": [
+        "Blöcke, Texte und Icons im Screenshot erkennen",
+        "In die Komponenten Header, ProductCard und Footer aufteilen",
+        "Layout und Farben mit Flex und CSS-Variablen nachbauen",
+        "Einen responsiven Breakpoint und Barrierefreiheits-Attribute ergänzen"
+      ],
+      "answer": [
+        "Komponenten erzeugt (Beispielausgabe): Die Seite ist in Header, ProductCard und Footer aufgeteilt, und ProductCard erhält seine Daten über Props, sodass es wiederverwendbar ist.",
+        "- Das Layout ist mit Flex nachgebaut, Farben und Abstände liegen in CSS-Variablen",
+        "- Einen einspaltigen Breakpoint unter 768px, Alt-Texte für Bilder und per Tastatur bedienbare Buttons ergänzt",
+        "- Der Screenshot enthält keine Bild-URLs, daher ist src ein Platzhalter, der durch echte Daten ersetzt werden muss"
+      ]
+    }
+  }
+}

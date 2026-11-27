@@ -310,7 +310,7 @@ html:not(.no-js) .o-reveal.is-in .g-bar-fill{transform:scaleX(1)}
 .o-final p{max-width:560px;margin:16px auto 0;color:var(--g-muted)}
 .o-related{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:28px;list-style:none}
 .o-related .o-pill{border:.67px solid var(--g-line)}
-.o-foot{margin-top:24px;padding:56px 0 40px;border-top:.67px solid var(--g-line-soft);font-size:13px;line-height:20px}
+.o-foot{padding:56px 0 40px;border-top:.67px solid var(--g-line-soft);font-size:13px;line-height:20px}
 .o-foot-top{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,2fr);gap:40px}
 .o-foot-brand{display:flex;flex-direction:column;gap:12px;min-width:0}
 .o-foot-brand p{max-width:340px;color:var(--g-muted)}
