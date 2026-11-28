@@ -18,7 +18,8 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 NL = '\n'
 SLUG = 'muse-image'
 DATE = '2026-11-03'
-VER = '20261103'
+VER = '20261103'  # 示例图和脚本的版本
+CSS_VER = '20261127'  # muse-image.css 的版本
 SITE = 'https://www.anyaigc.ai'
 REG = 'https://anyaigc.ai/register?aff=oOK7&channel=c_wpduopc9'
 PRICING = 'https://anyaigc.ai/pricing'
@@ -174,7 +175,7 @@ def copy_zh():
         product='Muse Image API（AnyAIGC）',
         product_desc='通过 AnyAIGC 调用 Meta Muse Image（muse-image）图像生成与编辑模型，按张计费，OpenAI 兼容 /v1/images/generations。',
         category='图像生成 API', currency='CNY', offers=[('Muse Image（每张）', CNY)],
-        badge='Featured', kicker='Meta 超级智能实验室 · 2026 年 7 月发布',
+        kicker='Meta 超级智能实验室 · 2026 年 7 月发布',
         h1='Muse Image API',
         lead=f'Meta 第一款由超级智能实验室开发的生图模型。它会先联网查资料、写代码画图表，再生成并自我修正。在 AnyAIGC 上按张计费 <strong>{p} / 张</strong>，并发不限。',
         facts=[('模型名', f'<code>{MODEL}</code>'), ('单价', f'{p} / 张'), ('一次', '1–10 张'), ('并发', '不限'), ('企业', '对公 · 专票')],
@@ -285,7 +286,7 @@ def copy_en():
         product='Muse Image API (AnyAIGC)',
         product_desc='Call Meta Muse Image (muse-image) for image generation and editing through AnyAIGC, billed per image, OpenAI-compatible /v1/images/generations.',
         category='Image generation API', currency='USD', offers=[('Muse Image (per image)', USD)],
-        badge='Featured', kicker='Meta Superintelligence Labs · released July 2026',
+        kicker='Meta Superintelligence Labs · released July 2026',
         h1='Muse Image API',
         lead=f'The first image model from Meta Superintelligence Labs. It searches the web and writes code before it renders, then checks and refines its own draft. On AnyAIGC it costs <strong>{p} per image</strong> with unlimited concurrency.',
         facts=[('Model', f'<code>{MODEL}</code>'), ('Price', f'{p} / image'), ('Per request', '1–10 images'), ('Concurrency', 'Unlimited'), ('Business', 'Contracts · invoices')],
@@ -439,7 +440,7 @@ def head(lang, c):
 <meta name="twitter:description" content="{e(c['og_desc'])}">
 <meta name="twitter:image" content="{og_img}">
 <link rel="stylesheet" href="/assets/models/scrollbar.css?v=20261024b">
-<link rel="stylesheet" href="/assets/models/{ASSET}.css?v={VER}">
+<link rel="stylesheet" href="/assets/models/{ASSET}.css?v={CSS_VER}">
 <script type="application/ld+json">
 {ld}
 </script>
@@ -488,7 +489,6 @@ def hero(lang, c):
           <li><a href="/">{c['home']}</a></li><li><a href="/{lang}/models/">{c['hub']}</a></li><li aria-current="page">{NAME}</li>
         </ol>
       </nav>
-      <p class="mi-badge">{c['badge']}</p>
       <p class="mi-kicker">{logo_color(28)}<span>{c['kicker']}</span></p>
       <h1 class="mi-h1" id="hero-title">{c['h1']}</h1>
       <p class="mi-lead">{c['lead']}</p>

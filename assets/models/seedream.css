@@ -422,3 +422,5 @@ html:not(.no-js) .sd-hero-media{animation:sd-rise 1.2s .3s cubic-bezier(.66,0,.3
   html:not(.no-js) .o-reveal{opacity:1;transform:none}
   .sd-feature:hover .sd-art,.sd-shot:hover img,.sd-shot-card figure:hover img{transform:none}
 }
+.o-foot-bottom .lang-menu>summary{ background: rgba(127, 127, 127, 0.15);}
+.lang-menu>summary{ background: rgba(127, 127, 127, 0.5);}

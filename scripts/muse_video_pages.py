@@ -169,7 +169,7 @@ def copy_zh():
         product='Muse Video API（AnyAIGC）',
         product_desc='通过 AnyAIGC 调用 Meta Muse Video（muse-video）视频生成模型，按秒计费，POST /v1/videos 异步任务，720P 带音频。',
         category='视频生成 API', currency='CNY', offers=[('Muse Video（每秒）', CNY)],
-        badge='', kicker='Meta 超级智能实验室',
+        kicker='Meta 超级智能实验室',
         h1='Muse Video API',
         lead=f'Meta 超级智能实验室的视频生成模型，和 Muse Image 同一个预训练底座。一次生成带原生音频的 720P 视频，最长 30 秒。在 AnyAIGC 上按秒计费 <strong>{p} / 秒</strong>，并发不限。',
         facts=[('模型名', f'<code>{MODEL}</code>'), ('单价', f'{p} / 秒'), ('时长', '4–30 秒'), ('画质', '720P · 带音频'), ('并发', '不限'), ('企业', '对公 · 专票')],
@@ -268,7 +268,7 @@ def copy_en():
         product='Muse Video API (AnyAIGC)',
         product_desc='Call Meta Muse Video (muse-video) through AnyAIGC, billed per second, as an async POST /v1/videos task with 720p output and audio.',
         category='Video generation API', currency='USD', offers=[('Muse Video (per second)', USD)],
-        badge='', kicker='Meta Superintelligence Labs',
+        kicker='Meta Superintelligence Labs',
         h1='Muse Video API',
         lead=f'The video model from Meta Superintelligence Labs, built on the same pretraining base as Muse Image. It renders 720p video with native audio in one pass, up to 30 seconds. On AnyAIGC it costs <strong>{p} per second</strong> with unlimited concurrency.',
         facts=[('Model', f'<code>{MODEL}</code>'), ('Price', f'{p} / second'), ('Length', '4–30 s'), ('Output', '720p · audio'), ('Concurrency', 'Unlimited'), ('Business', 'Contracts · invoices')],
@@ -457,8 +457,8 @@ def page(lang):
     js = f'<script src="/assets/models/{B.ASSET}.js?v={B.VER}" defer></script>'
     assert out.count(js) == 1
     out = out.replace(js, js + f'\n<script src="/assets/models/muse-video.js?v={UI_VER}" defer></script>', 1)
-    return out.replace(f'<link rel="stylesheet" href="/assets/models/{B.ASSET}.css?v={B.VER}">',
-                       f'<link rel="stylesheet" href="/assets/models/muse-image.css?v={B.VER}">\n<link rel="stylesheet" href="/assets/models/muse-video.css?v={UI_VER}">', 1)
+    return out.replace(f'<link rel="stylesheet" href="/assets/models/{B.ASSET}.css?v={B.CSS_VER}">',
+                       f'<link rel="stylesheet" href="/assets/models/muse-image.css?v={B.CSS_VER}">\n<link rel="stylesheet" href="/assets/models/muse-video.css?v={UI_VER}">', 1)
 
 
 def main():

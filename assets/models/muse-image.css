@@ -87,7 +87,7 @@ strong,b{font-weight:600}
 .o-crumbs a{text-decoration:none}
 .o-crumbs a:hover{color:var(--mi-ink);text-decoration:underline}
 .mi-badge{display:inline-flex;align-items:center;gap:8px;margin-top:28px;height:30px;padding:0 16px;border-radius:15px;background:var(--mi-ink);color:#fff;font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase}
-.mi-kicker{display:flex;align-items:center;gap:10px;margin-top:18px;font-size:16px;color:var(--mi-ink-2)}
+.mi-kicker{display:flex;align-items:center;gap:10px;margin-top:28px;font-size:16px;color:var(--mi-ink-2)}
 .mi-kicker svg{width:28px;height:28px}
 .mi-h1{margin-top:10px;font-size:56px;line-height:1.12;font-weight:500;letter-spacing:-.5px}
 .mi-lead{max-width:760px;margin-top:18px;font-size:20px;line-height:1.55;color:var(--mi-ink-2)}

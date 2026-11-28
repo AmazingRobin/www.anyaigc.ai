@@ -5,7 +5,6 @@
 video{display:block;width:100%;height:auto;background:#0f1a24}
 /* 首屏背景视频（ask: 静音循环自动播放）：视频铺满整个首屏，上面盖一层白色渐变，文字配色保持原样 */
 .mi-hero{position:relative;overflow:hidden;isolation:isolate;padding-bottom:72px}
-.mi-hero .mi-kicker{margin-top:28px}
 .mv-hero-video{position:absolute;inset:0;z-index:-1;margin:0}
 .mv-hero-video video{width:100%;height:100%;aspect-ratio:auto;border-radius:0;object-fit:cover;background:#f6dfe3}
 .mv-hero-video::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,#fff 0,rgba(255,255,255,0) 22%),linear-gradient(90deg,rgba(255,255,255,.95) 0,rgba(255,255,255,.88) 48%,rgba(255,255,255,.3) 100%)}
